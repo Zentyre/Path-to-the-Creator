@@ -557,7 +557,6 @@ void Player::attack(Character* Target) {
             break;
         }
     case 9:
-        extralife = true;
         cout << " --Stats--" << endl;
         cout << "--" << health << " Health--" << endl;
         cout << "--" << defence << " Defence--" << endl;

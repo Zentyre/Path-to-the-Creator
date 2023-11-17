@@ -11,7 +11,7 @@ protected:
 	int level;
 	int defence;
 	int kills;
-	int lives = 1;
+	int lives;
 public:
 	Character();
 	bool isAlive();
@@ -26,4 +26,5 @@ public:
 	int getkills();
 	string getname();
 	virtual void attack(Character* Target) = 0;
+	void addlives(int extralives);
 };
