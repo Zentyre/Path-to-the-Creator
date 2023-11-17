@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Evil Conquest", "Evil Conquest.vcxproj", "{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Dynamic|x64 = Debug Dynamic|x64
+		Debug Dynamic|x86 = Debug Dynamic|x86
+		Debug Static|x64 = Debug Static|x64
+		Debug Static|x86 = Debug Static|x86
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release Dynamic|x64 = Release Dynamic|x64
+		Release Dynamic|x86 = Release Dynamic|x86
+		Release Static|x64 = Release Static|x64
+		Release Static|x86 = Release Static|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Debug Dynamic|x64.ActiveCfg = Debug Dynamic|x64
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Debug Dynamic|x64.Build.0 = Debug Dynamic|x64
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Debug Dynamic|x86.ActiveCfg = Debug Dynamic|Win32
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Debug Dynamic|x86.Build.0 = Debug Dynamic|Win32
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Debug Static|x64.ActiveCfg = Debug Static|x64
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Debug Static|x64.Build.0 = Debug Static|x64
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Debug Static|x86.ActiveCfg = Debug Static|Win32
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Debug Static|x86.Build.0 = Debug Static|Win32
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Debug|x64.ActiveCfg = Debug Dynamic|x64
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Debug|x64.Build.0 = Debug Dynamic|x64
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Debug|x86.ActiveCfg = Debug Dynamic|Win32
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Debug|x86.Build.0 = Debug Dynamic|Win32
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Release Dynamic|x64.ActiveCfg = Release Dynamic|x64
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Release Dynamic|x64.Build.0 = Release Dynamic|x64
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Release Dynamic|x86.ActiveCfg = Release Dynamic|Win32
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Release Dynamic|x86.Build.0 = Release Dynamic|Win32
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Release Static|x64.ActiveCfg = Release Static|x64
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Release Static|x64.Build.0 = Release Static|x64
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Release Static|x86.ActiveCfg = Release Static|Win32
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Release Static|x86.Build.0 = Release Static|Win32
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Release|x64.ActiveCfg = Release Static|x64
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Release|x64.Build.0 = Release Static|x64
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Release|x86.ActiveCfg = Release Static|Win32
+		{74A04F6E-E5F9-4B3C-82BC-B77F13B61138}.Release|x86.Build.0 = Release Static|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC590718-82A0-4769-84A8-DF24074BC928}
+	EndGlobalSection
+EndGlobal
