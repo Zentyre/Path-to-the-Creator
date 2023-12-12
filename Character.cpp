@@ -99,6 +99,7 @@ void Character::takeDmg(int d) {
 	health -= d;
 	if (health <= 0) {
 		lives -= 1;
+		health = maxhealth - (level * 1);
 		isAlive();
 	}
 }
@@ -108,7 +109,6 @@ bool Character::isAlive() {
 		return false;
 	}
 	else {
-		health = maxhealth - (level * 1);
 		return true;
 	}
 }
