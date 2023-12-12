@@ -1,0 +1,543 @@
+#include "Player.h"
+#include <iostream>
+#include <random>
+using namespace std;
+
+Player::Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2) {
+    name = n2;
+    health = hp2;
+    attackPower = atk2;
+    defence = df2;
+    baselevel = lvl2;
+    lives = live2;
+}
+
+void Player::attack(Character* Target) {
+    if (Excalibur == true) {
+        attackPower += 8;
+    }
+    if (Knife == true) {
+        attackPower += 2;
+    }
+    if (Sword == true) {
+        attackPower += 4;
+    }
+    if (leveltonic == true) {
+        level += 10;
+        leveltonic = false;
+    }
+    if (superiorleveltonic == true) {
+        level += 15;
+        superiorleveltonic = false;
+    }
+    if (superpotion == true) {
+        level += 20;
+        attackPower += 10;
+        superpotion = false;
+    }
+    if (healthtonic == true) {
+        health += 25;
+        if (health > maxhealth) {
+            health = maxhealth;
+        }
+        healthtonic = false;
+    }
+    if (helmet == true) {
+        defence += 7;
+    }
+    if (chestplate == true) {
+        defence += 10;
+    }
+    if (boots == true) {
+        defence += 5;
+    }
+    if (shield == true) {
+        defence += 15;
+    }
+    if (godarmor == true) {
+        defence += 25;
+    }
+    if (defenceupgrade == true) {
+        defence += 10;
+    }
+    if (maxhealthupgrade == true) {
+        maxhealthtracker += 1;
+        Character* setmaxhealth();
+        health += 50;
+        maxhealthupgrade = false;
+    }
+    if (attackupgrade == true) {
+        attackPower += 10;
+        attackupgrade = false;
+    }
+    if (levelupgrade == true) {
+        level += 15;
+        levelupgrade = false;
+    }
+    random_device r;
+    int playerInput, x, h;
+    int accuracy = 0;
+    bool fallen = false;
+    if (supermove == true) {
+        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+    }
+    else if (level >= 50) {
+        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+    }
+    else if (level >= 25) {
+        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 9 (Stat page) 0 (Inventory)" << endl;
+    }
+    else if (level >= 15) {
+        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+    }
+    else {
+        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+    }
+    cin >> playerInput;
+    switch (playerInput) {
+    case 0:
+        if (cin.fail()) {
+            cout << endl;
+            cout << "----------------------" << endl;
+            cout << "Please enter a number." << endl;
+            cout << "----------------------" << endl << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            attack(Target);
+            break;
+        }
+        cout << endl;
+        if (accuratesword == true) {
+            cout << "Accurate Sword (No more slipping!)" << endl;
+        }
+        if (helmet == true) {
+            cout << "Helmet (+7 defence)" << endl;
+        }
+        if (boots == true) {
+            cout << "Boots (+5 defence)" << endl;
+        }
+        if (chestplate == true) {
+            cout << "Chestplate (+10 defence)" << endl;
+        }
+        if (Excalibur == true) {
+            cout << "Excalibur (+8 attack)" << endl;
+        }
+        if (Knife == true) {
+            cout << "Knife (+2 attack)" << endl;
+        }
+        if (Sword == true) {
+            cout << "Sword (+4 attack)" << endl;
+        }
+        if (leveltonic == true) {
+            cout << "Level Tonic (+10 level)" << endl;
+        }
+        if (superiorleveltonic == true) {
+            cout << "Superior Level Tonic (+15 level)" << endl;
+        }
+        if (superpotion == true) {
+            cout << "Super Potion (+20 level|+10 attack)" << endl;
+        }
+        if (defenceupgrade == true) {
+            cout << "Defence Perk (+10 defence)" << endl;
+        }
+        if (godarmor == true) {
+            cout << "God Armor (+20 defence)" << endl;
+        }
+        if (attackupgrade == true) {
+            cout << "Attack Perk (+10 attack)" << endl;
+        }
+        if (levelupgrade == true) {
+            cout << "Level Perk (+15 level)" << endl;
+        }
+        if (shield == true) {
+            cout << "Shield (+15 defence)" << endl;
+        }
+        if (shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && godarmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false) {
+            cout << "----------------------" << endl;
+            cout << "You have no items yet." << endl;
+            cout << "----------------------" << endl << endl;
+        }
+        attack(Target);
+        break;
+    case 1:
+        accuracy = r() & 100 + 1;
+        if (accuratesword == true || fallen == true) {
+            x = r() % 5 + 4 + (level % 31) + attackPower; //normal attack
+            Target->takeDmg(x);
+            h = 0;
+            cout << endl;
+            fallen = false;
+            int message;
+            message = r() % 5 + 1;
+            if (message == 1) {
+                cout << "-----------------------------------------------" << endl;
+                cout << name << ", you dealt " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 2) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You kicked the slime for " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 3) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You stabbed the slime for " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 4) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You kicked the slime in the face for " << x << " damage." << endl;
+                break;
+            }
+            else {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You bludgeon the slime for " << x << " damage." << endl;
+                break;
+            }
+        }
+        else if (accuracy > 10) {
+            x = r() % 5 + 4 + (level % 31) + attackPower; //normal attack
+            Target->takeDmg(x);
+            h = 0;
+            cout << endl;
+            fallen = false;
+            int message;
+            message = r() % 5 + 1;
+            if (message == 1) {
+                cout << "-----------------------------------------------" << endl;
+                cout << name << ", you dealt " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 2) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You kicked the slime for " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 3) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You stabbed the slime for " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 4) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You kicked the slime in the face for " << x << " damage." << endl;
+                break;
+            }
+            else {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You bludgeon the slime for " << x << " damage." << endl;
+                break;
+            }
+        }
+        else {
+            cout << "-----------------------------------------------" << endl;
+            cout << name << " You have slipped and fallen, losing this turn." << endl;
+            fallen = true;
+            break;
+        }
+    case 2:
+        accuracy = r() & 100 + 1;
+        if (accuratesword == true || fallen == true) {
+            x = r() % 4 + 2 + (level % 31) + attackPower;
+            Target->takeDmg(x);
+            h = x - 2;
+            cout << endl;
+            fallen = false;
+            cout << "-----------------------------------------------" << endl;
+            cout << name << ", you dealt " << x << " damage." << endl;
+            if (health >= maxhealth) {
+                health = maxhealth;
+                cout << "You have no wounds to heal." << endl;
+            }
+            else {
+                health += h;
+                cout << "You healed for " << h << " damage." << endl;
+            }
+            break;
+        }
+        else if (accuracy > 10) {
+            x = r() % 4 + 2 + (level % 31) + attackPower;
+            Target->takeDmg(x);
+            h = x - 3;
+            cout << endl;
+            fallen = false;
+            cout << "-----------------------------------------------" << endl;
+            cout << name << ", you dealt " << x << " damage." << endl;
+            if (health >= maxhealth) {
+                health = maxhealth;
+                cout << "You have no wounds to heal." << endl;
+            }
+            else {
+                health += h;
+                cout << "You healed for " << h << " damage." << endl;
+            }
+            break;
+        }
+        else {
+            cout << "-----------------------------------------------" << endl;
+            cout << name << ", you have slipped and fallen, losing this turn." << endl;
+            fallen = true;
+            break;
+        }
+    case 3:
+        accuracy = r() & 100 + 1;
+        if (baselevel >= 15 && accuratesword == true || fallen == true) {
+            x = r() % 6 + 6 + (level % 31) + attackPower; //normal attack
+            Target->takeDmg(x);
+            h = 0;
+            cout << endl;
+            fallen = false;
+            int message;
+            message = r() % 5 + 1;
+            if (message == 1) {
+                cout << "-----------------------------------------------" << endl;
+                cout << name << ", you dealt " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 2) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You kicked the slime for " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 3) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You stabbed the slime for " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 4) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You kicked the slime in the face for " << x << " damage." << endl;
+                break;
+            }
+            else {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You bludgeon the slime for " << x << " damage." << endl;
+                break;
+            }
+        }
+        else if (baselevel >= 15 && accuracy > 10) {
+            x = r() % 6 + 6 + (level % 31) + attackPower;
+            Target->takeDmg(x);
+            h = 0;
+            cout << endl;
+            fallen = false;
+            int message;
+            message = r() % 5 + 1;
+            if (message == 1) {
+                cout << "-----------------------------------------------" << endl;
+                cout << name << ", you dealt " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 2) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You kicked the slime for " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 3) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You stabbed the slime for " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 4) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You kicked the slime in the face for " << x << " damage." << endl;
+                break;
+            }
+            else {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You bludgeon the slime for " << x << " damage." << endl;
+                break;
+            }
+        }
+        else if (baselevel >= 15 && accuracy <= 10) {
+            cout << "-----------------------------------------------" << endl;
+            cout << name << ", you have slipped and fallen, losing this turn." << endl;
+            fallen = true;
+            break;
+        }
+        else {
+            cout << "-----------------------------------------------" << endl;
+            cout << "You are not a high enough level for this move." << endl;
+            cout << "-----------------------------------------------" << endl;
+            cout << endl;
+            attack(Target);
+            break;
+        }
+    case 4:
+        accuracy = r() & 100 + 1; //single heal
+        if (baselevel >= 25 && accuratesword == true || fallen == true) {
+            fallen = false;
+            x = r() % 4 + 6 + (level % 31);
+            h = x;
+            cout << "-----------------------------------------------" << endl;
+            if (health >= maxhealth) {
+                health = maxhealth;
+                cout << "You have no wounds to heal." << endl;
+            }
+            else {
+                health += h;
+                cout << "You healed for " << h << " damage." << endl;
+            }
+            x = 0;
+            break;
+        }
+        else if (baselevel >= 25 && accuracy > 10) {
+            fallen = false;
+            x = r() % 4 + 6 + (level % 31);
+            h = x;
+            health += h;
+            cout << "-----------------------------------------------" << endl;
+            if (health >= maxhealth) {
+                health = maxhealth;
+                cout << "You have no wounds to heal." << endl;
+            }
+            else {
+                health += h;
+                cout << "You healed for " << h << " damage." << endl;
+            }
+            x = 0;
+            break;
+        }
+        else if (baselevel >= 25 && accuracy <= 10) {
+            cout << "-----------------------------------------------" << endl;
+            cout << name << ", you have slipped and fallen, losing this turn." << endl;
+            fallen = true;
+            break;
+        }
+        else {
+            cout << "-----------------------------------------------" << endl;
+            cout << "You are not a high enough level for this move." << endl;
+            cout << "-----------------------------------------------" << endl;
+            cout << endl;
+            attack(Target);
+            break;
+        }
+    case 5:
+        accuracy = r() & 100 + 1; //lifesteal attack
+        if (baselevel >= 50 && accuratesword == true || fallen == true) {
+            x = r() % 6 + 7 + (level % 31) + attackPower;
+            Target->takeDmg(x);
+            h = x - 5;
+            cout << endl;
+            fallen = false;
+            cout << "-----------------------------------------------" << endl;
+            cout << name << ", you dealt " << x << " damage." << endl;
+            if (health >= maxhealth) {
+                health = maxhealth;
+                cout << "You have no wounds to heal." << endl;
+            }
+            else {
+                health += h;
+                cout << "You healed for " << h << " damage." << endl;
+            }
+            break;
+        }
+        else if (baselevel >= 50 && accuracy > 10) {
+            x = r() % 6 + 7 + (level % 31) + attackPower;
+            Target->takeDmg(x);
+            h = x - 5;
+            cout << endl;
+            fallen = false;
+            cout << "-----------------------------------------------" << endl;
+            cout << name << ", you dealt " << x << " damage." << endl;
+            if (health >= maxhealth) {
+                health = maxhealth;
+                cout << "You have no wounds to heal." << endl;
+            }
+            else {
+                health += h;
+                cout << "You healed for " << h << " damage." << endl;
+            }
+            break;
+        }
+        else if (baselevel >= 50 && accuracy <= 10) {
+            cout << "-----------------------------------------------" << endl;
+            cout << name << ", you have slipped and fallen, losing this turn." << endl;
+            fallen = true;
+            break;
+        }
+        else {
+            cout << "-----------------------------------------------" << endl;
+            cout << "You are not a high enough level for this move." << endl;
+            cout << "-----------------------------------------------" << endl;
+            cout << endl;
+            attack(Target);
+            break;
+        }
+    case 6:
+        accuracy = r() & 100 + 1;
+        if (supermove == true && accuracy > 10 || fallen == true) {
+            x = r() % 4 + 12 + (level % 31) + attackPower; //normal attack
+            Target->takeDmg(x);
+            h = 0;
+            cout << endl;
+            fallen = false;
+            int message;
+            message = r() % 5 + 1;
+            if (message == 1) {
+                cout << "-----------------------------------------------" << endl;
+                cout << name << ", you dealt " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 2) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You kicked the slime for " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 3) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You stabbed the slime for " << x << " damage." << endl;
+                break;
+            }
+            else if (message == 4) {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You kicked the slime in the face for " << x << " damage." << endl;
+                break;
+            }
+            else {
+                cout << "-----------------------------------------------" << endl;
+                cout << "You bludgeon the slime for " << x << " damage." << endl;
+                break;
+            }
+        }
+        else if (supermove == true && accuracy <= 10) {
+            cout << "-----------------------------------------------" << endl;
+            cout << name << ", you have slipped and fallen, losing this turn." << endl;
+            fallen = true;
+            break;
+        }
+        else {
+            cout << "-----------------------------------------------" << endl;
+            cout << "You are not a high enough level for this move." << endl;
+            cout << "-----------------------------------------------" << endl;
+            cout << endl;
+            attack(Target);
+            break;
+        }
+    case 9:
+        cout << " --Stats--" << endl;
+        cout << "--" << maxhealth << " Maxhealth--" << endl;
+        cout << "--" << health << " Health--" << endl;
+        cout << "--" << defence << " Defence--" << endl;
+        cout << "--" << level + baselevel << " Level--" << endl;
+        cout << "--" << attackPower << " Attack--" << endl;
+        cout << "--" << lives << " Lives--" << endl;
+        cout << "--" << kills << " Kills--" << endl;
+        attack(Target);
+        break;
+    default:
+        cout << "-------------------------" << endl;
+        cout << "Invalid Move, try again!" << endl;
+        cout << "-------------------------" << endl;
+        cout << endl;
+        attack(Target);
+    }
+}
+
+void Player::takeDmg(int d) {
+    d = d - defence;
+    if (d < 0) {
+        d = 0;
+    }
+    health -= d;
+}
