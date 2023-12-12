@@ -25,5 +25,4 @@ public:
 	bool defenceupgrade = false;
 	bool levelupgrade = false;
 	bool attackupgrade = false;
-	void takeDmg(int d) override;
 };

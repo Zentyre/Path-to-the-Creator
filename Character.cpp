@@ -96,11 +96,12 @@ void Character::addlives(int extralives) {
 }
 
 void Character::takeDmg(int d) {
-	health -= d;
+	health -= d - defence;
 	if (health <= 0) {
 		lives -= 1;
-		health = maxhealth - (level * 1);
-		isAlive();
+		if (lives > 0) {
+			health = maxhealth - (level * 1);
+		}
 	}
 }
 

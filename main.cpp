@@ -747,6 +747,7 @@ int main() {
                 }
             }
         }
+
         if (!Knight.isAlive() && Knight.killplayer == false) {
             cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
             int deathmessage = 0;
@@ -767,7 +768,7 @@ int main() {
                 cout << "The slimes have now taken over the world, you failed." << endl;
             }
             cout << endl;
-            cout << "--Your overall stats were...--" << "-" << endl;
+            cout << "--Your overall stats were--" << "-" << endl;
             cout << "-Maxhealth=" << Knight.getmaxhealth() << "-" << endl;
             cout << "-Level= " << Knight.getlevel() << "-" << endl;
             cout << "-Attack= " << Knight.getattackPower() << "-" << endl;
@@ -790,7 +791,7 @@ int main() {
         }
         else {
             cout << "You have saved the universe from the Creator Slime and became a hero!" << endl;
-            cout << "--Your overall stats were...--" << "-" << endl;
+            cout << "--Your overall stats were--" << "-" << endl;
             cout << "-Level= " << Knight.getlevel() << "-" << endl;
             cout << "-Maxhealth=" << Knight.getmaxhealth() << "-" << endl;
             cout << "-Health= " << Knight.gethealth() << "-" << endl;

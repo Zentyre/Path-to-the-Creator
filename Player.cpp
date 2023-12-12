@@ -533,11 +533,3 @@ void Player::attack(Character* Target) {
         attack(Target);
     }
 }
-
-void Player::takeDmg(int d) {
-    d = d - defence;
-    if (d < 0) {
-        d = 0;
-    }
-    health -= d;
-}

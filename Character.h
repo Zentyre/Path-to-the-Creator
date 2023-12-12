@@ -10,9 +10,9 @@ protected:
 	int level;
 	int defence;
 	int kills;
-	int lives;
 	int maxhealth;
 public:
+	int lives;
 	string name;
 	Character();
 	bool isAlive();
