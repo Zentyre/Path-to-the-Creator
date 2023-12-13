@@ -541,14 +541,15 @@ int main() {
                     cout << "----------------------" << endl << endl;
                     cin.clear();
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    areachoiceint = 5;
                     break;
                 }
             }
     }
-        random_device r;
-        int classcurrency = 0;
-        Enemy* Slime = generateEnemy(Knight.getbaselevel());
-        delete Slime;
+    random_device r;
+    int classcurrency = 0;
+    Enemy* Slime = generateEnemy(Knight.getbaselevel());
+    delete Slime;
        if (areachoiceint == 1) {
            Enemy* Slime = generateEnemy(Knight.getbaselevel());
        }
@@ -605,13 +606,30 @@ int main() {
                         cout << "You now have " << Knight.getdefence() << " defence." << endl;
                         cout << "-----------------------------------------------" << endl;
                         break;
-                    default:
+                    case 4:
                         Knight.levelupgrade = true;
                         cout << "You are now level " << Knight.getlevel() << "." << endl;
                         cout << "-----------------------------------------------" << endl;
                         break;
-                    }
+                    default: 
+                    cout << "That choice doesn't exist, I'll choose for you." << endl;
+                    int x = 0;
+                        x = r() % 4 + 1;
+                        if (x == 1) {
+                            Knight.maxhealthupgrade = true;
+                        }
+                        else if (x == 2) {
+                            Knight.attackupgrade = true;
+                        }
+                        else if (x == 3) {
+                        Knight.defenceupgrade = true;
+                        }
+                        else {
+                            Knight.levelupgrade = true;
+                        }
+                    break;
                 }
+            }
                 else if (classcurrency == 20) {
                     cout << "You have found a rare treasure!" << endl;
                     random_device r;
@@ -806,7 +824,7 @@ int main() {
             if (playagain == "N" || playagain == "n") {
                 break;
             }
-            else if (playagain == "Y" || playagain == "n") {
+            else if (playagain == "Y" || playagain == "y") {
                 cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
             }
         }
