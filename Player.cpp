@@ -100,7 +100,7 @@ void Player::attack(Character* Target) {
         cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 9 (Stat page) 0 (Inventory)" << endl;
     }
     else {
-        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        cout << "Attack: 1 " << r() % 5 + 4 + (level % 31) + attackPower << "2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
     }
     cin >> playerInput;
     switch (playerInput) {
