@@ -11,8 +11,7 @@ Player::Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2) {
     baselevel = lvl2;
     lives = live2;
 }
-
-void Player::attack(Character* Target) {
+void Player::checkitems() {
     if (Excalibur == true) {
         attackPower += 8;
     }
@@ -36,7 +35,15 @@ void Player::attack(Character* Target) {
         superpotion = false;
     }
     if (healthtonic == true) {
-        health += 25;
+        if (level >= 150) {
+        health += 75;
+        }
+        else if (level >= 50 && level < 150) {
+            health += 50;
+        }
+        else {
+            health += 25;
+        }
         if (health > maxhealth) {
             health = maxhealth;
         }
@@ -74,6 +81,8 @@ void Player::attack(Character* Target) {
         level += 15;
         levelupgrade = false;
     }
+}
+void Player::attack(Character* Target) {
     random_device r;
     int playerInput, x, h;
     int accuracy = 0;

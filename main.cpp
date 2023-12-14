@@ -567,6 +567,7 @@ int main() {
        }
 
         while (Knight.isAlive() && Slime->isAlive()) {
+            Knight.checkitems();
             Knight.attack(Slime);
             if (Slime->gethealth() < 0) {
                 cout << Slime->getname() << " has 0 health remaining." << endl;
@@ -586,8 +587,8 @@ int main() {
             if (!Slime->isAlive()) {
                 delete Slime;
                 classcurrency += 1;
-                if (classcurrency == 50) {
-                    cout << "Which stat would you like to upgrade? (1=hp, 2=atk, 3=def, 4=lvl) *Note* Only hp can be upgraded more than once." << endl;
+                if (classcurrency == 50 || classcurrency == 100 || classcurrency == 150) {
+                    cout << "Which stat would you like to upgrade? (1=hp, 2=atk, 3=def, 4=lvl, 5=extra life) *Note* Only hp can be upgraded more than once." << endl;
                     int stat = 0;
                     cin >> stat;
                     switch (stat) {
@@ -611,6 +612,11 @@ int main() {
                         cout << "You are now level " << Knight.getlevel() << "." << endl;
                         cout << "-----------------------------------------------" << endl;
                         break;
+                    case 5:
+                        Knight.addlives(1);
+                        cout << "You now have " << Knight.getlives() << " lives" << endl;
+                        cout << "-----------------------------------------------" << endl;
+                        break;
                     default: 
                     cout << "That choice doesn't exist, I'll choose for you." << endl;
                     int x = 0;
@@ -630,7 +636,7 @@ int main() {
                     break;
                 }
             }
-                else if (classcurrency == 20) {
+                else if (classcurrency == 20 || classcurrency == 40 || classcurrency == 60 || classcurrency == 80 || classcurrency == 100 || classcurrency == 120 || classcurrency == 140 || classcurrency == 160 || classcurrency == 180) {
                     cout << "You have found a rare treasure!" << endl;
                     random_device r;
                     int treasure;
@@ -698,13 +704,13 @@ int main() {
                     Enemy* Slime = generateEnemy5(Knight.getbaselevel());
                 }
                 cout << "You are now level " << Knight.getlevel() << "." << endl;
-                int enemyrandom;
-                enemyrandom = r() % 3;
-                if (enemyrandom == 0) {
+                int enemyrandommessage;
+                enemyrandommessage = r() % 3;
+                if (enemyrandommessage == 0) {
                     cout << "A new " << Slime->getname() << " has appeared, stab it!!" << endl;
                     cout << "-----------------------------------------------" << endl;
                 }
-                else if (enemyrandom == 1) {
+                else if (enemyrandommessage == 1) {
                     cout << "A " << Slime->getname() << " is approaching you! BE wary." << endl;
                     cout << "-----------------------------------------------" << endl;
                 }
