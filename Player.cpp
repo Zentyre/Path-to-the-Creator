@@ -13,13 +13,13 @@ Player::Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2) {
 }
 void Player::checkitems() {
     if (Excalibur == true) {
-        attackPower += 8;
+        attackPower += 10;
     }
     if (Knife == true) {
         attackPower += 2;
     }
     if (Sword == true) {
-        attackPower += 4;
+        attackPower += 4.5;
     }
     if (leveltonic == true) {
         level += 10;
@@ -30,8 +30,8 @@ void Player::checkitems() {
         superiorleveltonic = false;
     }
     if (superpotion == true) {
-        level += 20;
-        attackPower += 10;
+        level += 15;
+        attackPower += 6;
         superpotion = false;
     }
     if (healthtonic == true) {
@@ -50,19 +50,19 @@ void Player::checkitems() {
         healthtonic = false;
     }
     if (helmet == true) {
-        defence += 7;
+        defence += 4;
     }
     if (chestplate == true) {
-        defence += 10;
+        defence += 7;
     }
     if (boots == true) {
-        defence += 5;
+        defence += 3;
     }
     if (shield == true) {
-        defence += 15;
+        defence += 10;
     }
     if (godarmor == true) {
-        defence += 25;
+        defence += 20;
     }
     if (defenceupgrade == true) {
         defence += 10;
@@ -446,7 +446,6 @@ void Player::attack(Character* Target) {
             Target->takeDmg(x);
             h = x - 5;
             cout << endl;
-            fallen = false;
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you dealt " << x << " damage." << endl;
             if (health >= maxhealth) {
