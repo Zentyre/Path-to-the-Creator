@@ -88,19 +88,19 @@ void Player::attack(Character* Target) {
     int accuracy = 0;
     bool fallen = false;
     if (supermove == true) {
-        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 (" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "3 (" << r() % 6 + 6 + (level % 31) + attackPower << ") 4 (" << r() % 4 + 6 + (level % 31) << "heal)" << " 5 (" << r() % 6 + 7 + (level % 31) + attackPower << ") 6 (" << r() % 4 + 12 + (level % 31) + attackPower << ") 9 (Stat page) 0 (Inventory)" << endl;
     }
     else if (level >= 50) {
-        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 (" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "3 (" << r() % 6 + 6 + (level % 31) + attackPower << ") 4 (" << r() % 4 + 6 + (level % 31) << "heal)" << " 5 (" << r() % 6 + 7 + (level % 31) + attackPower << ") 9 (Stat page) 0 (Inventory)" << endl;
     }
     else if (level >= 25) {
-        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 9 (Stat page) 0 (Inventory)" << endl;
+        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 (" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "3 (" << r() % 6 + 6 + (level % 31) + attackPower << ") 4 (" << r() % 4 + 6 + (level % 31) << "heal)" << " 9 (Stat page) 0 (Inventory)" << endl;
     }
     else if (level >= 15) {
-        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 (" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "3 (" << r() % 6 + 6 + (level % 31) + attackPower << ") 9 (Stat page) 0 (Inventory)" << endl;
     }
     else {
-        cout << "Attack: 1 " << r() % 5 + 4 + (level % 31) + attackPower << "2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 ()" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "9 (Stat page) 0 (Inventory)" << endl;
     }
     cin >> playerInput;
     switch (playerInput) {
