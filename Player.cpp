@@ -14,23 +14,23 @@ Player::Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2) {
 void Player::checkitems() {
     if (Excalibur == true) {
         int x = 0;
-        if (x == 0) {
-        attackPower += 10;
-        x += 1;
+              if (x == 0) {
+                  attackPower += 10;
+                       x += 1;
         }
     }
     if (Knife == true) {
         int x = 0;
-        if (x == 0) {
-        attackPower += 2;
-        x += 1;
-        }
+             if (x == 0) {
+                attackPower += 2;
+                x += 1;
+      }
     }
     if (Sword == true) {
         int x = 0;
-        if (x == 0) {
-        attackPower += 4.5;
-        x += 1;
+              if (x == 0) {
+                attackPower += 4.5;
+                x += 1;
         }
     }
     if (leveltonic == true) {
@@ -63,44 +63,44 @@ void Player::checkitems() {
     }
     if (helmet == true) {
         int x = 0;
-        if (x == 0) {
-        defence += 4;
-        x += 1;
+             if (x == 0) {
+            defence += 4;
+            x += 1;
         }
     }
     if (chestplate == true) {
-         int x = 0;
-        if (x == 0) {
-        defence += 7;
-        x += 1;
+            int x = 0;
+                if (x == 0) {
+                defence += 7;
+                x += 1;
         }
     }
     if (boots == true) {
-         int x = 0;
+        int x = 0;
         if (x == 0) {
         defence += 3;
         x += 1;
         }
     }
     if (shield == true) {
-         int x = 0;
+        int x = 0;
         if (x == 0) {
-        defence += 10;
-        x += 1;
+             defence += 10;
+             x += 1;
         }
     }
     if (godarmor == true) {
-         int x = 0;
+        int x = 0;
         if (x == 0) {
-        defence += 20;
-        x += 1;
+            defence += 20;
+            x += 1;
         }
     }
     if (defenceupgrade == true) {
-         int x = 0;
+        int x = 0;
         if (x == 0) {
-        defence += 10;
-        x += 1;
+            defence += 10;
+            x += 1;
         }
     }
     if (maxhealthupgrade == true) {
