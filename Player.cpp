@@ -13,13 +13,25 @@ Player::Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2) {
 }
 void Player::checkitems() {
     if (Excalibur == true) {
+        int x = 0;
+        if (x == 0) {
         attackPower += 10;
+        x += 1;
+        }
     }
     if (Knife == true) {
+        int x = 0;
+        if (x == 0) {
         attackPower += 2;
+        x += 1;
+        }
     }
     if (Sword == true) {
+        int x = 0;
+        if (x == 0) {
         attackPower += 4.5;
+        x += 1;
+        }
     }
     if (leveltonic == true) {
         level += 10;
@@ -50,22 +62,46 @@ void Player::checkitems() {
         healthtonic = false;
     }
     if (helmet == true) {
+        int x = 0;
+        if (x == 0) {
         defence += 4;
+        x += 1;
+        }
     }
     if (chestplate == true) {
+         int x = 0;
+        if (x == 0) {
         defence += 7;
+        x += 1;
+        }
     }
     if (boots == true) {
+         int x = 0;
+        if (x == 0) {
         defence += 3;
+        x += 1;
+        }
     }
     if (shield == true) {
+         int x = 0;
+        if (x == 0) {
         defence += 10;
+        x += 1;
+        }
     }
     if (godarmor == true) {
+         int x = 0;
+        if (x == 0) {
         defence += 20;
+        x += 1;
+        }
     }
     if (defenceupgrade == true) {
+         int x = 0;
+        if (x == 0) {
         defence += 10;
+        x += 1;
+        }
     }
     if (maxhealthupgrade == true) {
         maxhealthtracker += 1;
