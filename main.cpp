@@ -789,16 +789,16 @@ delete Slime;
                 cout << "You have been slain, better luck next time soldier." << endl;
             }
             else if (deathmessage == 2) {
-                cout << "The slimes were too powerful... try again." << endl;
+                cout << "The enemies were too powerful... try again." << endl;
             }
             else if (deathmessage == 3) {
-                cout << "You have now become slime food, try again once you get stronger." << endl;
+                cout << "You have now become their food, try again once you get stronger." << endl;
             }
             else if (deathmessage == 4) {
-                cout << "The slimes have erased the memory of you...the end." << endl;
+                cout << "They have erased the memory of you...the end." << endl;
             }
             else {
-                cout << "The slimes have now taken over the world, you failed." << endl;
+                cout << "The attackers have now taken over the world, you failed." << endl;
             }
             cout << endl;
             cout << "--Your overall stats were--" << "-" << endl;
@@ -823,7 +823,7 @@ delete Slime;
             break;
         }
         else {
-            cout << "You have saved the universe from the Creator Slime and became a hero!" << endl;
+            cout << "You have saved the universe from the Creator and became a hero!" << endl;
             cout << "--Your overall stats were--" << "-" << endl;
             cout << "-Level= " << Knight.getlevel() << "-" << endl;
             cout << "-Maxhealth=" << Knight.getmaxhealth() << "-" << endl;
@@ -833,7 +833,7 @@ delete Slime;
             cout << "-Kills= " << Knight.getkills() << "-" << endl;
             cout << "-Lives=" << Knight.getlives() << "-" << endl;
             cout << "The world thanks you for your service, " << Knight.getname() << "." << endl;
-            cout << "Play Again? (y/n)" << endl;
+            cout << "Play Again? (Y/N)" << endl;
             string playagain;
             cin >> playagain;
             if (playagain == "N" || playagain == "n") {
