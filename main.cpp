@@ -546,25 +546,25 @@ int main() {
                 }
             }
     }
-    random_device r;
-    int classcurrency = 0;
-    Enemy* Slime = generateEnemy(Knight.getbaselevel());
-    delete Slime;
-       if (areachoiceint == 1) {
-           Enemy* Slime = generateEnemy(Knight.getbaselevel());
-       }
-       else if (areachoiceint == 2) {
-           Enemy* Slime = generateEnemy2(Knight.getbaselevel());
-       }
-       else if (areachoiceint == 3) {
-           Enemy* Slime = generateEnemy3(Knight.getbaselevel());
-       }
-       else if (areachoiceint == 4) {
-           Enemy* Slime = generateEnemy4(Knight.getbaselevel());
-       }
-       else if (areachoiceint == 5) {
-           Enemy* Slime = generateEnemy5(Knight.getbaselevel());
-       }
+random_device r;
+int classcurrency = 0;
+Enemy* Slime = generateEnemy(Knight.getbaselevel());
+delete Slime;
+    if (areachoiceint == 1) {
+        Enemy* Slime = generateEnemy(Knight.getbaselevel());
+    }
+    else if (areachoiceint == 2) {
+        Enemy* Slime = generateEnemy2(Knight.getbaselevel());
+    }
+    else if (areachoiceint == 3) {
+        Enemy* Slime = generateEnemy3(Knight.getbaselevel());
+    }
+    else if (areachoiceint == 4) {
+        Enemy* Slime = generateEnemy4(Knight.getbaselevel());
+    }
+    else if (areachoiceint == 5) {
+        Enemy* Slime = generateEnemy5(Knight.getbaselevel());
+    }
 
         while (Knight.isAlive() && Slime->isAlive()) {
             Knight.checkitems();
