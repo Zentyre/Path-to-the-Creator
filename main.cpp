@@ -460,7 +460,7 @@ int main() {
             cout << "That wasn't a yes or a no, did you pass kindergarten?" << endl;
             string doesnothing;
             cin >> doesnothing;
-            cout << "I dont even care, whatever you just entered literally did nothing. You're stuck with the name you gave me before now." << endl;
+            cout << "I dont even care, whatever you just entered did absolutely nothing. You're stuck with the name you gave me before now." << endl;
         }
         cout << "Where would you like to journey?" << endl;
         cout << "-Mushroom Kingdom-" << endl;
