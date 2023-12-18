@@ -807,7 +807,7 @@ delete Slime;
             cout << "-Attack= " << Knight.getattackPower() << "-" << endl;
             cout << "-Defence= " << Knight.getdefence() << "-" << endl;
             cout << "-Kills= " << Knight.getkills() << "-" << endl;
-            cout << "Would you like to try Again? (y/n)" << endl;
+            cout << "Would you like to try Again? (Y/N)" << endl;
             string retry;
             cin >> retry;
             if (retry == "N" || retry == "n") {
