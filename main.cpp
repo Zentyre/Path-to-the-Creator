@@ -705,7 +705,7 @@ delete Slime;
                 }
                 cout << "You are now level " << Knight.getlevel() << "." << endl;
                 int enemyrandommessage;
-                enemyrandommessage = r() % 3;
+                enemyrandommessage = r() % 5;
                 if (enemyrandommessage == 0) {
                     cout << "A new " << Slime->getname() << " has appeared, stab it!!" << endl;
                     cout << "-----------------------------------------------" << endl;
@@ -714,8 +714,17 @@ delete Slime;
                     cout << "A " << Slime->getname() << " is approaching you! BE wary." << endl;
                     cout << "-----------------------------------------------" << endl;
                 }
-                else {
-                    cout << "A new " << Slime->getname() << " is preparing to attack, CHARGE!!!" << endl;
+                else if (enemyrandommessage == 2) {
+                    cout << "A " << Slime->getname() << " is preparing to attack, CHARGE!!!" << endl;
+                    cout << "-----------------------------------------------" << endl;
+                }
+                else if (enemyrandommessage == 3) {
+                    cout << "Reinfocements are approaching, be careful!" << endl;
+                    cout << "A " << Slime->getname() << " has appeared." << endl;
+                    cout << "-----------------------------------------------" << endl;
+                }
+                else if (enemyrandommessage == 4) {
+                    cout << "This " << Slime->getname() <<  " seems mad that you killed his friend." << endl;
                     cout << "-----------------------------------------------" << endl;
                 }
                 cout << endl;
