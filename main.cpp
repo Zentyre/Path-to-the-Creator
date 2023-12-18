@@ -472,27 +472,27 @@ int main() {
             int areachoiceint = 0;
             cin >> ws;
             getline(cin, areachoice);
-            if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom") {
+            if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom"|| areachoice == "Mushroom kingdom") {
                 cout << endl;
                 cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get them!-" << endl;
                 areachoiceint = 1;
             }
-            else if (areachoice == "Gooey Glade" || areachoice == "gooey glade") {
+            else if (areachoice == "Gooey Glade" || areachoice == "gooey glade"|| areachoice == "Gooey glade") {
                 cout << endl;
                 cout << "-Welcome to the uneasy feeling area of the slimes. Good Luck Surviving!-" << endl << endl;
                 areachoiceint = 2;
             }
-            else if (areachoice == "Croc Isle" || areachoice == "croc isle") {
+            else if (areachoice == "Croc Isle" || areachoice == "croc isle" || areachoice == "Croc isle") {
                 cout << endl;
                 cout << "-Welcome to the land of the crocs. Go find that croc king!-" << endl << endl;
                 areachoiceint = 3;
             }
-            else if (areachoice == "Hopscotch Highlands" || areachoice == "hopscotch highlands") {
+            else if (areachoice == "Hopscotch Highlands" || areachoice == "hopscotch highlands" || areachoice == "Hopscotch highlands") {
                 cout << endl;
                 cout << "-Welcome to the land of the kangaroos, attack that zoo owner!-" << endl << endl;
                 areachoiceint = 4;
             }
-            else if (areachoice == "Skeletal Sanctum" || areachoice == "skeletal sanctum") {
+            else if (areachoice == "Skeletal Sanctum" || areachoice == "skeletal sanctum" || areachoice == "Skeletal sanctum") {
                 cout << endl;
                 cout << "-Welcome to the graveyeard of your dead family...just kidding. Look out there's a skeleton!-" << endl << endl;
                 areachoiceint = 5;
