@@ -569,7 +569,7 @@ delete Slime;
         while (Knight.isAlive() && Slime->isAlive()) {
             Knight.checkitems();
             Knight.attack(Slime);
-            if (Slime->gethealth() < 0) {
+            if (Slime->gethealth() <= 0) {
                 cout << Slime->getname() << " has 0 health remaining." << endl;
             }
             else {
@@ -577,7 +577,7 @@ delete Slime;
             }
             cout << "-----------------------------------------------" << endl;
             Slime->attack(&Knight);
-            if (Knight.gethealth() < 0) {
+            if (Knight.gethealth() <= 0) {
                 cout << Knight.getname() << ", you have 0 health remaining." << endl;
             }
             else {
