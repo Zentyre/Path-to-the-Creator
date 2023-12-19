@@ -386,7 +386,7 @@ Enemy* generateEnemy5(int l5) {
         return new Enemy("Aimbot Skellie", 40, 3);
         break;
     case 4:
-        return new Enemy("Boner Bob", 60, 4);
+        return new Enemy("Aimbot Skeleton", 60, 4);
         break;
     case 5:
         return new Enemy("Bony Bill", 100, 7);
