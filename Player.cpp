@@ -689,6 +689,24 @@ void Player::attack(Character* Target) {
         cout << "--" << attackPower << " Attack--" << endl;
         cout << "--" << lives << " Lives--" << endl;
         cout << "--" << kills << " Kills--" << endl;
+            if (classtype == 1) {
+                cout << "-Class = Knight" << endl;
+            }
+            else if (classtype == 2) {
+                cout << "-Class = Executioner" << endl;
+            }
+            else if (classtype == 3) {
+                cout << "-Class = Soulweaver" << endl;
+            }
+            else if (classtype == 4) {
+                cout << "-Class = Warforged Engineer" << endl;
+            }
+            else if (classtype == 5) {
+                cout << "-Class = Dreadnought" << endl;
+            }
+            else if (classtype == 6) {
+                cout << "-Class = Trickster" << endl;
+            }
         attack(Target);
         break;
     default:
