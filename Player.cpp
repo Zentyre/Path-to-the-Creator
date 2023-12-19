@@ -12,6 +12,7 @@ Player::Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2, int m
     lives = live2;
     maxhealth = maxh2;
 }
+
 void Player::playerclassexecutioner() {
     health -= 10;
     attackPower += 3;
@@ -94,6 +95,7 @@ void Player::checkitems() {
         int x = 0;
              if (x == 0) {
             defence += 4;
+            maxhealth += 5;
             x += 1;
         }
     }
@@ -101,6 +103,7 @@ void Player::checkitems() {
             int x = 0;
                 if (x == 0) {
                 defence += 7;
+                maxhealth += 8;
                 x += 1;
         }
     }
@@ -108,6 +111,7 @@ void Player::checkitems() {
         int x = 0;
         if (x == 0) {
         defence += 3;
+        maxhealth += 4;
         x += 1;
         }
     }
@@ -122,6 +126,7 @@ void Player::checkitems() {
         int x = 0;
         if (x == 0) {
             defence += 20;
+            maxhealth += 12;
             x += 1;
         }
     }
