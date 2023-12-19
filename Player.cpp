@@ -11,16 +11,27 @@ Player::Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2) {
     baselevel = lvl2;
     lives = live2;
 }
-
-void Player::attack(Character* Target) {
+void Player::checkitems() {
     if (Excalibur == true) {
-        attackPower += 8;
+        int x = 0;
+              if (x == 0) {
+                  attackPower += 10;
+                       x += 1;
+        }
     }
     if (Knife == true) {
-        attackPower += 2;
+        int x = 0;
+             if (x == 0) {
+                attackPower += 2;
+                x += 1;
+      }
     }
     if (Sword == true) {
-        attackPower += 4;
+        int x = 0;
+              if (x == 0) {
+                attackPower += 4.5;
+                x += 1;
+        }
     }
     if (leveltonic == true) {
         level += 10;
@@ -31,34 +42,66 @@ void Player::attack(Character* Target) {
         superiorleveltonic = false;
     }
     if (superpotion == true) {
-        level += 20;
-        attackPower += 10;
+        level += 15;
+        attackPower += 6;
         superpotion = false;
     }
     if (healthtonic == true) {
-        health += 25;
+        if (level >= 150) {
+        health += 75;
+        }
+        else if (level >= 50 && level < 150) {
+            health += 50;
+        }
+        else {
+            health += 25;
+        }
         if (health > maxhealth) {
             health = maxhealth;
         }
         healthtonic = false;
     }
     if (helmet == true) {
-        defence += 7;
+        int x = 0;
+             if (x == 0) {
+            defence += 4;
+            x += 1;
+        }
     }
     if (chestplate == true) {
-        defence += 10;
+            int x = 0;
+                if (x == 0) {
+                defence += 7;
+                x += 1;
+        }
     }
     if (boots == true) {
-        defence += 5;
+        int x = 0;
+        if (x == 0) {
+        defence += 3;
+        x += 1;
+        }
     }
     if (shield == true) {
-        defence += 15;
+        int x = 0;
+        if (x == 0) {
+             defence += 10;
+             x += 1;
+        }
     }
     if (godarmor == true) {
-        defence += 25;
+        int x = 0;
+        if (x == 0) {
+            defence += 20;
+            x += 1;
+        }
     }
     if (defenceupgrade == true) {
-        defence += 10;
+        int x = 0;
+        if (x == 0) {
+            defence += 10;
+            x += 1;
+        }
     }
     if (maxhealthupgrade == true) {
         maxhealthtracker += 1;
@@ -74,24 +117,26 @@ void Player::attack(Character* Target) {
         level += 15;
         levelupgrade = false;
     }
+}
+void Player::attack(Character* Target) {
     random_device r;
     int playerInput, x, h;
     int accuracy = 0;
     bool fallen = false;
     if (supermove == true) {
-        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 (" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "3 (" << r() % 6 + 6 + (level % 31) + attackPower << ") 4 (" << r() % 4 + 6 + (level % 31) << "heal)" << " 5 (" << r() % 6 + 7 + (level % 31) + attackPower << ") 6 (" << r() % 4 + 12 + (level % 31) + attackPower << ") 9 (Stat page) 0 (Inventory)" << endl;
     }
     else if (level >= 50) {
-        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 (" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "3 (" << r() % 6 + 6 + (level % 31) + attackPower << ") 4 (" << r() % 4 + 6 + (level % 31) << "heal)" << " 5 (" << r() % 6 + 7 + (level % 31) + attackPower << ") 9 (Stat page) 0 (Inventory)" << endl;
     }
     else if (level >= 25) {
-        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 9 (Stat page) 0 (Inventory)" << endl;
+        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 (" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "3 (" << r() % 6 + 6 + (level % 31) + attackPower << ") 4 (" << r() % 4 + 6 + (level % 31) << "heal)" << " 9 (Stat page) 0 (Inventory)" << endl;
     }
     else if (level >= 15) {
-        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 (" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "3 (" << r() % 6 + 6 + (level % 31) + attackPower << ") 9 (Stat page) 0 (Inventory)" << endl;
     }
     else {
-        cout << "Attack: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 ()" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "9 (Stat page) 0 (Inventory)" << endl;
     }
     cin >> playerInput;
     switch (playerInput) {
@@ -437,7 +482,6 @@ void Player::attack(Character* Target) {
             Target->takeDmg(x);
             h = x - 5;
             cout << endl;
-            fallen = false;
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you dealt " << x << " damage." << endl;
             if (health >= maxhealth) {

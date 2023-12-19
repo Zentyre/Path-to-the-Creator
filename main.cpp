@@ -460,7 +460,7 @@ int main() {
             cout << "That wasn't a yes or a no, did you pass kindergarten?" << endl;
             string doesnothing;
             cin >> doesnothing;
-            cout << "I dont even care, whatever you just entered literally did nothing. You're stuck with the name you gave me before now." << endl;
+            cout << "I dont even care, whatever you just entered did absolutely nothing. You're stuck with the name you gave me before now." << endl;
         }
         cout << "Where would you like to journey?" << endl;
         cout << "-Mushroom Kingdom-" << endl;
@@ -472,27 +472,27 @@ int main() {
             int areachoiceint = 0;
             cin >> ws;
             getline(cin, areachoice);
-            if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom") {
+            if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom"|| areachoice == "Mushroom kingdom") {
                 cout << endl;
                 cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get them!-" << endl;
                 areachoiceint = 1;
             }
-            else if (areachoice == "Gooey Glade" || areachoice == "gooey glade") {
+            else if (areachoice == "Gooey Glade" || areachoice == "gooey glade"|| areachoice == "Gooey glade") {
                 cout << endl;
                 cout << "-Welcome to the uneasy feeling area of the slimes. Good Luck Surviving!-" << endl << endl;
                 areachoiceint = 2;
             }
-            else if (areachoice == "Croc Isle" || areachoice == "croc isle") {
+            else if (areachoice == "Croc Isle" || areachoice == "croc isle" || areachoice == "Croc isle") {
                 cout << endl;
                 cout << "-Welcome to the land of the crocs. Go find that croc king!-" << endl << endl;
                 areachoiceint = 3;
             }
-            else if (areachoice == "Hopscotch Highlands" || areachoice == "hopscotch highlands") {
+            else if (areachoice == "Hopscotch Highlands" || areachoice == "hopscotch highlands" || areachoice == "Hopscotch highlands") {
                 cout << endl;
                 cout << "-Welcome to the land of the kangaroos, attack that zoo owner!-" << endl << endl;
                 areachoiceint = 4;
             }
-            else if (areachoice == "Skeletal Sanctum" || areachoice == "skeletal sanctum") {
+            else if (areachoice == "Skeletal Sanctum" || areachoice == "skeletal sanctum" || areachoice == "Skeletal sanctum") {
                 cout << endl;
                 cout << "-Welcome to the graveyeard of your dead family...just kidding. Look out there's a skeleton!-" << endl << endl;
                 areachoiceint = 5;
@@ -546,29 +546,30 @@ int main() {
                 }
             }
     }
-    random_device r;
-    int classcurrency = 0;
-    Enemy* Slime = generateEnemy(Knight.getbaselevel());
-    delete Slime;
-       if (areachoiceint == 1) {
-           Enemy* Slime = generateEnemy(Knight.getbaselevel());
-       }
-       else if (areachoiceint == 2) {
-           Enemy* Slime = generateEnemy2(Knight.getbaselevel());
-       }
-       else if (areachoiceint == 3) {
-           Enemy* Slime = generateEnemy3(Knight.getbaselevel());
-       }
-       else if (areachoiceint == 4) {
-           Enemy* Slime = generateEnemy4(Knight.getbaselevel());
-       }
-       else if (areachoiceint == 5) {
-           Enemy* Slime = generateEnemy5(Knight.getbaselevel());
-       }
+random_device r;
+int classcurrency = 0;
+Enemy* Slime = generateEnemy(Knight.getbaselevel());
+delete Slime;
+    if (areachoiceint == 1) {
+        Enemy* Slime = generateEnemy(Knight.getbaselevel());
+    }
+    else if (areachoiceint == 2) {
+        Enemy* Slime = generateEnemy2(Knight.getbaselevel());
+    }
+    else if (areachoiceint == 3) {
+        Enemy* Slime = generateEnemy3(Knight.getbaselevel());
+    }
+    else if (areachoiceint == 4) {
+        Enemy* Slime = generateEnemy4(Knight.getbaselevel());
+    }
+    else if (areachoiceint == 5) {
+        Enemy* Slime = generateEnemy5(Knight.getbaselevel());
+    }
 
         while (Knight.isAlive() && Slime->isAlive()) {
+            Knight.checkitems();
             Knight.attack(Slime);
-            if (Slime->gethealth() < 0) {
+            if (Slime->gethealth() <= 0) {
                 cout << Slime->getname() << " has 0 health remaining." << endl;
             }
             else {
@@ -576,7 +577,7 @@ int main() {
             }
             cout << "-----------------------------------------------" << endl;
             Slime->attack(&Knight);
-            if (Knight.gethealth() < 0) {
+            if (Knight.gethealth() <= 0) {
                 cout << Knight.getname() << ", you have 0 health remaining." << endl;
             }
             else {
@@ -586,8 +587,8 @@ int main() {
             if (!Slime->isAlive()) {
                 delete Slime;
                 classcurrency += 1;
-                if (classcurrency == 50) {
-                    cout << "Which stat would you like to upgrade? (1=hp, 2=atk, 3=def, 4=lvl) *Note* Only hp can be upgraded more than once." << endl;
+                if (classcurrency == 50 || classcurrency == 100 || classcurrency == 150) {
+                    cout << "Which stat would you like to upgrade? (1=hp, 2=atk, 3=def, 4=lvl, 5=extra life) *Note* Only hp can be upgraded more than once." << endl;
                     int stat = 0;
                     cin >> stat;
                     switch (stat) {
@@ -611,6 +612,11 @@ int main() {
                         cout << "You are now level " << Knight.getlevel() << "." << endl;
                         cout << "-----------------------------------------------" << endl;
                         break;
+                    case 5:
+                        Knight.addlives(1);
+                        cout << "You now have " << Knight.getlives() << " lives" << endl;
+                        cout << "-----------------------------------------------" << endl;
+                        break;
                     default: 
                     cout << "That choice doesn't exist, I'll choose for you." << endl;
                     int x = 0;
@@ -630,7 +636,7 @@ int main() {
                     break;
                 }
             }
-                else if (classcurrency == 20) {
+                else if (classcurrency == 20 || classcurrency == 40 || classcurrency == 60 || classcurrency == 80 || classcurrency == 100 || classcurrency == 120 || classcurrency == 140 || classcurrency == 160 || classcurrency == 180) {
                     cout << "You have found a rare treasure!" << endl;
                     random_device r;
                     int treasure;
@@ -698,18 +704,27 @@ int main() {
                     Enemy* Slime = generateEnemy5(Knight.getbaselevel());
                 }
                 cout << "You are now level " << Knight.getlevel() << "." << endl;
-                int enemyrandom;
-                enemyrandom = r() % 3;
-                if (enemyrandom == 0) {
+                int enemyrandommessage;
+                enemyrandommessage = r() % 5;
+                if (enemyrandommessage == 0) {
                     cout << "A new " << Slime->getname() << " has appeared, stab it!!" << endl;
                     cout << "-----------------------------------------------" << endl;
                 }
-                else if (enemyrandom == 1) {
+                else if (enemyrandommessage == 1) {
                     cout << "A " << Slime->getname() << " is approaching you! BE wary." << endl;
                     cout << "-----------------------------------------------" << endl;
                 }
-                else {
-                    cout << "A new " << Slime->getname() << " is preparing to attack, CHARGE!!!" << endl;
+                else if (enemyrandommessage == 2) {
+                    cout << "A " << Slime->getname() << " is preparing to attack, CHARGE!!!" << endl;
+                    cout << "-----------------------------------------------" << endl;
+                }
+                else if (enemyrandommessage == 3) {
+                    cout << "Reinfocements are approaching, be careful!" << endl;
+                    cout << "A " << Slime->getname() << " has appeared." << endl;
+                    cout << "-----------------------------------------------" << endl;
+                }
+                else if (enemyrandommessage == 4) {
+                    cout << "This " << Slime->getname() <<  " seems mad that you killed his friend." << endl;
                     cout << "-----------------------------------------------" << endl;
                 }
                 cout << endl;
@@ -774,16 +789,16 @@ int main() {
                 cout << "You have been slain, better luck next time soldier." << endl;
             }
             else if (deathmessage == 2) {
-                cout << "The slimes were too powerful... try again." << endl;
+                cout << "The enemies were too powerful... try again." << endl;
             }
             else if (deathmessage == 3) {
-                cout << "You have now become slime food, try again once you get stronger." << endl;
+                cout << "You have now become their food, try again once you get stronger." << endl;
             }
             else if (deathmessage == 4) {
-                cout << "The slimes have erased the memory of you...the end." << endl;
+                cout << "They have erased the memory of you...the end." << endl;
             }
             else {
-                cout << "The slimes have now taken over the world, you failed." << endl;
+                cout << "The attackers have now taken over the world, you failed." << endl;
             }
             cout << endl;
             cout << "--Your overall stats were--" << "-" << endl;
@@ -792,7 +807,7 @@ int main() {
             cout << "-Attack= " << Knight.getattackPower() << "-" << endl;
             cout << "-Defence= " << Knight.getdefence() << "-" << endl;
             cout << "-Kills= " << Knight.getkills() << "-" << endl;
-            cout << "Would you like to try Again? (y/n)" << endl;
+            cout << "Would you like to try Again? (Y/N)" << endl;
             string retry;
             cin >> retry;
             if (retry == "N" || retry == "n") {
@@ -808,7 +823,7 @@ int main() {
             break;
         }
         else {
-            cout << "You have saved the universe from the Creator Slime and became a hero!" << endl;
+            cout << "You have saved the universe from the Creator and became a hero!" << endl;
             cout << "--Your overall stats were--" << "-" << endl;
             cout << "-Level= " << Knight.getlevel() << "-" << endl;
             cout << "-Maxhealth=" << Knight.getmaxhealth() << "-" << endl;
@@ -818,7 +833,7 @@ int main() {
             cout << "-Kills= " << Knight.getkills() << "-" << endl;
             cout << "-Lives=" << Knight.getlives() << "-" << endl;
             cout << "The world thanks you for your service, " << Knight.getname() << "." << endl;
-            cout << "Play Again? (y/n)" << endl;
+            cout << "Play Again? (Y/N)" << endl;
             string playagain;
             cin >> playagain;
             if (playagain == "N" || playagain == "n") {

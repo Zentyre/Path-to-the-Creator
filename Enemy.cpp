@@ -10,11 +10,18 @@ Enemy::Enemy(string n, int hp, int atk) {
     attackPower = atk;
 }
 void Enemy::attack(Character* Target) {
+    int critchance;
     if (health > 0 && getlevel() >= 100) {
         random_device r;
         int y, accuracy;
         accuracy = r() % 100 + 1;
-        if (accuracy > 5) {
+        critchance = r() % 100 + 1;
+        if (accuracy > 5 && critchance <= 5) {
+            y = r() % 10 + attackPower * 1.5;
+            cout << name << " dealt " << y << " damage." << endl;
+            Target->takeDmg(y);
+        }
+        else if (accuracy > 5) {
             y = r() % 10 + attackPower;
             cout << name << " dealt " << y << " damage." << endl;
             Target->takeDmg(y);
@@ -27,7 +34,13 @@ void Enemy::attack(Character* Target) {
         random_device r;
         int y, accuracy;
         accuracy = r() % 100 + 1;
-        if (accuracy > 10) {
+        critchance = r() % 100 + 1;
+        if (accuracy > 10 && critchance <= 5) {
+            y = r() % 7 + attackPower * 1.5;
+            cout << name << " dealt " << y << " damage." << endl;
+            Target->takeDmg(y);
+        }
+        else if (accuracy > 10) {
             y = r() % 7 + attackPower;
             cout << name << " dealt " << y << " damage." << endl;
             Target->takeDmg(y);
