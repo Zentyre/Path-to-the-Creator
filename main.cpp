@@ -846,10 +846,14 @@ delete Slime;
             else if (retry == "Y" || retry == "y") {
                 cout << endl << endl;
             }
+            else {
+                cout << "Not a valid answer, I'm kicking you out." << endl;
+                break;
+            }
         }
         else if (Knight.killplayer == true) {
             cout << Knight.getname() << " you should try to be less indecisive." << endl;
-            cout << "Goodbye" << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+            cout << "Game Over." << endl << endl << endl << endl << endl << endl << endl << endl << endl;
             break;
         }
         else {
@@ -871,6 +875,10 @@ delete Slime;
             }
             else if (playagain == "Y" || playagain == "y") {
                 cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+            }
+            else {
+                cout << "Not a valid answer, goodbye." << endl;
+                break;
             }
         }
     }
