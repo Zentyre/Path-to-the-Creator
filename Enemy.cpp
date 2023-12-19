@@ -20,21 +20,25 @@ void Enemy::attack(Character* Target) {
              y = r() % 10 + attackPower * 1.5;
              health -= y;
              cout << "The enemy is confused and attacked itself for" << y << " damage!" << endl;
+             trickstermovebool == false;
         }
         else if (attackself > 60) {
              y = r() % 10 + attackPower;
              health -= y;
              cout << "The enemy is confused and attacked itself for" << y << " damage!" << endl;
+             trickstermovebool == false;
         }
         else if (attackself <= 60 && critchance > 70) {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
             y = r() % 10 + attackPower * 1.5;
             Target->takeDmg(y);
+            trickstermovebool == false;
         }
         else {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
             y = r() % 10 + attackPower;
             Target->takeDmg(y);
+            trickstermovebool == false;
         }
     }
      if (trickstermovebool == true && health > 0) {
@@ -45,21 +49,25 @@ void Enemy::attack(Character* Target) {
              y = r() % 7 + attackPower * 1.5;
              health -= y;
              cout << "The enemy is confused and attacked itself for" << y << " damage!" << endl;
+             trickstermovebool == false;
         }
         else if (attackself > 60) {
              y = r() % 7 + attackPower;
              health -= y;
              cout << "The enemy is confused and attacked itself for" << y << " damage!" << endl;
+             trickstermovebool == false;
         }
         else if (attackself <= 60 && critchance > 70) {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
             y = r() % 7 + attackPower * 1.5;
             Target->takeDmg(y);
+            trickstermovebool == false;
         }
         else {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
             y = r() % 7 + attackPower;
             Target->takeDmg(y);
+            trickstermovebool == false;
         }
     }
     else if (health > 0 && getlevel() >= 100) {
