@@ -3,16 +3,17 @@
 #include <random>
 using namespace std;
 
-Player::Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2) {
+Player::Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2, int maxh2) {
     name = n2;
     health = hp2;
     attackPower = atk2;
     defence = df2;
     baselevel = lvl2;
     lives = live2;
+    maxhealth = maxh2;
 }
 int classtype = 1;
-void Player::playerclassdreadnought() {
+void Player::playerclassexecutioner() {
     health -= 10;
     attackPower += 3;
     classtype = 2;
@@ -25,13 +26,20 @@ void Player::playerclasssoulweaver() {
 }
 void Player::playerclasswarforged() {
     health += 15;
+    maxhealth += 30;
     attackPower -= 2;
     classtype = 4;
 }
-void Player::playerclasspaladin() {
+void Player::playerclassdreadnought() {
     health += 25;
     attackPower -= 3;
+    maxhealth += 50;
     classtype = 5;
+}
+void Player::playerclasstrickster() {
+    health -= 5;
+    attackPower += 1;
+    classtype = 6;
 }
 void Player::checkitems() {
     if (Excalibur == true) {
@@ -162,7 +170,7 @@ void Player::attack(Character* Target) {
             cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
         }
     }
-    if (classtype == 2) { //dreadnought attack messages |health=15|attackPower=7|lives=1|
+    if (classtype == 2) { //executioner attack messages |health=15|attackPower=7|lives=1|
         if (supermove == true) {
             cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
         }
@@ -214,7 +222,24 @@ void Player::attack(Character* Target) {
         }
     }
     if (classtype == 5) {
-        if (supermove == true) { //paladin attack messages |health=50|attackPower=1|lives=1|
+        if (supermove == true) { //dreadnought attack messages |health=50|attackPower=1|lives=1|
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 50) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 25) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 15) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+    }
+     if (classtype == 6) {
+        if (supermove == true) { //trickster attack messages |health=20|attackPower=5|lives=1|
             cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
         }
         else if (level >= 50) {

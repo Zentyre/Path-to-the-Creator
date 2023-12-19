@@ -5,13 +5,14 @@ using namespace std;
 
 class Player : public Character {
 public:
-	Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2);
+	Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2, int maxh2);
 	void attack(Character* Target);
 	void checkitems();
-	void playerclassdreadnought();
+	void playerclassexecutioner();
 	void playerclasssoulweaver();
 	void playerclasswarforged();
-	void playerclasspaladin();
+	void playerclassdreadnought();
+	void playerclasstrickster();
 	bool Knife = false;
 	bool Sword = false;
 	bool Excalibur = false;
