@@ -30,6 +30,7 @@ public:
 	int getkills();
 	int getmaxhealth();
 	int maxhealthtracker = 0;
+	int classtype = 1;
 	string getname();
 	virtual void attack(Character* Target) = 0;
 	void addlives(int extralives);

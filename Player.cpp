@@ -12,7 +12,6 @@ Player::Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2, int m
     lives = live2;
     maxhealth = maxh2;
 }
-int classtype = 1;
 void Player::playerclassexecutioner() {
     health -= 10;
     attackPower += 3;
