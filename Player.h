@@ -8,6 +8,10 @@ public:
 	Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2);
 	void attack(Character* Target);
 	void checkitems();
+	void playerclassdreadnought();
+	void playerclasssoulweaver();
+	void playerclasswarforged();
+	void playerclasspaladin();
 	bool Knife = false;
 	bool Sword = false;
 	bool Excalibur = false;

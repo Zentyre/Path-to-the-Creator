@@ -420,11 +420,37 @@ int main() {
         cout << "Your objective is to kill the operator of all evil...the Creator Slime!" << endl;
         cout << "You start at level one, for every kill you go up a level and gain more damage (Base attack damage + level)" << endl;
         cout << "--Level can only add up to 30 damage and/or healing--(Level gained from items does affect this)" << endl;
-        cout << "At base levels 15, 25, 50 and 100, you gain new abilities. At base level 200 you fight the final boss(Level gained from items does not affect this)" << endl;
+        cout << "At levels 15, 25, 50 and 100, you gain new abilities. At level 200 you fight the final boss(Level gained from items does not affect this)" << endl;
         cout << "I wish you well on your conquest." << endl;
         cout << endl;
-
-        Player Knight("Honorary Knight", 25, 2, 0, 0, 1);
+        Player Knight("Knight", 25, 4, 0, 0, 1);
+        cout << "Would you like to be a 1-Knight, 2-Dreadnought, 3-Soulweaver, 4-Warforged Engineer or a 5-Elite Paladin?" << endl;
+        cout << "Knight has average stats , Dreadnought has less health and a lot more damage, Soulweaver starts with 1 extra life and a little less attack/health, Warforged Engineer has slightly higher health for slightly lower damage, Elite Paladin has more health and a lot less damage." << endl;
+        int playerclasschoice = 0;
+        cin >> playerclasschoice;
+        if (playerclasschoice == 1) {
+            cout << "You chose Knight!" << endl;
+        }
+        else if (playerclasschoice == 2) {
+            Knight.playerclassdreadnought();
+            cout << "You chose Dreadnought!" << endl;
+        }
+        else if (playerclasschoice == 3) {
+            Knight.playerclasssoulweaver();
+            cout << "You chose Soulweaver!" << endl;
+        }
+        else if (playerclasschoice == 4) {
+            Knight.playerclasswarforged();
+            cout << "You chose Warforged Engineer!" << endl;
+        }
+        else if (playerclasschoice == 5) {
+            Knight.playerclasspaladin();
+            cout << "You chose Elite Paladin!" << endl;
+        }
+        else {
+            cout << "You chose nothing so I will choose for you." << endl;
+            Player Knight("Knight", 25, 2, 0, 0, 1);
+        }
         cout << "What would you like me to call you?" << endl;
         cin >> ws;
         getline(cin, Knight.name);

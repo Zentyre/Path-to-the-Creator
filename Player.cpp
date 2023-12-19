@@ -11,12 +11,34 @@ Player::Player(string n2, int hp2, int atk2, int df2, int lvl2, int live2) {
     baselevel = lvl2;
     lives = live2;
 }
+int classtype = 1;
+void Player::playerclassdreadnought() {
+    health -= 10;
+    attackPower += 3;
+    classtype = 2;
+}
+void Player::playerclasssoulweaver() {
+    health -= 5;
+    attackPower -= 1;
+    addlives(1);
+    classtype = 3;
+}
+void Player::playerclasswarforged() {
+    health += 15;
+    attackPower -= 2;
+    classtype = 4;
+}
+void Player::playerclasspaladin() {
+    health += 25;
+    attackPower -= 3;
+    classtype = 5;
+}
 void Player::checkitems() {
     if (Excalibur == true) {
         int x = 0;
               if (x == 0) {
                   attackPower += 10;
-                       x += 1;
+                  x += 1;
         }
     }
     if (Knife == true) {
@@ -123,20 +145,90 @@ void Player::attack(Character* Target) {
     int playerInput, x, h;
     int accuracy = 0;
     bool fallen = false;
-    if (supermove == true) {
-        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 (" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "3 (" << r() % 6 + 6 + (level % 31) + attackPower << ") 4 (" << r() % 4 + 6 + (level % 31) << "heal)" << " 5 (" << r() % 6 + 7 + (level % 31) + attackPower << ") 6 (" << r() % 4 + 12 + (level % 31) + attackPower << ") 9 (Stat page) 0 (Inventory)" << endl;
+    if (classtype == 1) { //knight attack messages |health =25|attackPower=4|lives=1|
+        if (supermove == true) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 50) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 25) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 15) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
     }
-    else if (level >= 50) {
-        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 (" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "3 (" << r() % 6 + 6 + (level % 31) + attackPower << ") 4 (" << r() % 4 + 6 + (level % 31) << "heal)" << " 5 (" << r() % 6 + 7 + (level % 31) + attackPower << ") 9 (Stat page) 0 (Inventory)" << endl;
+    if (classtype == 2) { //dreadnought attack messages |health=15|attackPower=7|lives=1|
+        if (supermove == true) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 50) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 25) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 15) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
     }
-    else if (level >= 25) {
-        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 (" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "3 (" << r() % 6 + 6 + (level % 31) + attackPower << ") 4 (" << r() % 4 + 6 + (level % 31) << "heal)" << " 9 (Stat page) 0 (Inventory)" << endl;
+    if (classtype == 3) { //soulweaver attack messages |health=20|attackPower=3|lives=2|
+        if (supermove == true) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 50) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 25) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 15) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
     }
-    else if (level >= 15) {
-        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 (" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "3 (" << r() % 6 + 6 + (level % 31) + attackPower << ") 9 (Stat page) 0 (Inventory)" << endl;
+    if (classtype == 4) { //warforged attack messages |health=40|attackPower=2|lives=1|
+        if (supermove == true) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 50) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 25) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 15) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else {
+            cout << "Choosek: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
     }
-    else {
-        cout << "Attack: 1 (" << r() % 5 + 4 + (level % 31) + attackPower << ") 2 ()" << r() % 4 + 2 + (level % 31) + attackPower << "lifesteal)" << "9 (Stat page) 0 (Inventory)" << endl;
+    if (classtype == 5) {
+        if (supermove == true) { //paladin attack messages |health=50|attackPower=1|lives=1|
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 50) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 25) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else if (level >= 15) {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 9 (Stat page) 0 (Inventory)" << endl;
+        }
+        else {
+            cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
+        }
     }
     cin >> playerInput;
     switch (playerInput) {
@@ -563,6 +655,7 @@ void Player::attack(Character* Target) {
         cout << "--" << maxhealth << " Maxhealth--" << endl;
         cout << "--" << health << " Health--" << endl;
         cout << "--" << defence << " Defence--" << endl;
+        cout << "--" << baselevel << "Baselevel--" << endl;
         cout << "--" << level + baselevel << " Level--" << endl;
         cout << "--" << attackPower << " Attack--" << endl;
         cout << "--" << lives << " Lives--" << endl;
