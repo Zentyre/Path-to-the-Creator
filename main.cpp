@@ -832,11 +832,29 @@ delete Slime;
             }
             cout << endl;
             cout << "--Your overall stats were--" << "-" << endl;
-            cout << "-Maxhealth=" << Knight.getmaxhealth() << "-" << endl;
-            cout << "-Level= " << Knight.getlevel() << "-" << endl;
-            cout << "-Attack= " << Knight.getattackPower() << "-" << endl;
-            cout << "-Defence= " << Knight.getdefence() << "-" << endl;
-            cout << "-Kills= " << Knight.getkills() << "-" << endl;
+            cout << "-Maxhealth = " << Knight.getmaxhealth() << "-" << endl;
+            cout << "-Level = " << Knight.getlevel() << "-" << endl;
+            cout << "-Attack = " << Knight.getattackPower() << "-" << endl;
+            cout << "-Defence = " << Knight.getdefence() << "-" << endl;
+            cout << "-Kills = " << Knight.getkills() << "-" << endl;
+            if (Knight.getclass() == 1) {
+                cout << "-Class = Knight" << "-" << endl;
+            }
+            else if (Knight.getclass() == 2) {
+                cout << "-Class = Executioner" << "-" << endl;
+            }
+            else if (Knight.getclass() == 3) {
+                cout << "-Class = Soulweaver" << "-" << endl;
+            }
+            else if (Knight.getclass() == 4) {
+                cout << "-Class = Warforged Engineer" << "-" << endl;
+            }
+            else if (Knight.getclass() == 5) {
+                cout << "-Class = Dreadnought" << "-" << endl;
+            }
+            else if (Knight.getclass() == 6) {
+                cout << "-Class = Trickster" << "-" << endl;
+            }
             cout << "Would you like to try Again? (Y/N)" << endl;
             string retry;
             cin >> retry;
@@ -867,22 +885,22 @@ delete Slime;
             cout << "-Kills = " << Knight.getkills() << "-" << endl;
             cout << "-Lives =" << Knight.getlives() << "-" << endl;
             if (Knight.getclass() == 1) {
-                cout << "-Class = Knight" << endl;
+                cout << "-Class = Knight" << "-" << endl;
             }
             else if (Knight.getclass() == 2) {
-                cout << "-Class = Executioner" << endl;
+                cout << "-Class = Executioner" << "-" << endl;
             }
             else if (Knight.getclass() == 3) {
-                cout << "-Class = Soulweaver" << endl;
+                cout << "-Class = Soulweaver" << "-" << endl;
             }
             else if (Knight.getclass() == 4) {
-                cout << "-Class = Warforged Engineer" << endl;
+                cout << "-Class = Warforged Engineer" << "-" << endl;
             }
             else if (Knight.getclass() == 5) {
-                cout << "-Class = Dreadnought" << endl;
+                cout << "-Class = Dreadnought" << "-" << endl;
             }
             else if (Knight.getclass() == 6) {
-                cout << "-Class = Trickster" << endl;
+                cout << "-Class = Trickster" << "-" << endl;
             }
             cout << "The world thanks you for your service, " << Knight.getname() << "." << endl;
             cout << "Play Again? (Y/N)" << endl;
