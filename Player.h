@@ -26,7 +26,7 @@ public:
 	bool godarmor = false;
 	bool accuratesword = false;
 	bool shield = false;
-	bool supermove = false;
+	bool trickstermove = false;
 	bool maxhealthupgrade = false;
 	bool defenceupgrade = false;
 	bool levelupgrade = false;

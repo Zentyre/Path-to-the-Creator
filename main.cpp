@@ -712,7 +712,7 @@ delete Slime;
                     }
                 }
                 if (Knight.isAlive() == true && Knight.getlevel() == 100) {
-                    Knight.supermove = true;
+                    Knight.trickstermove = true;
                     cout << "You have unlocked your super move! (12-15 dmg)" << endl;
                     cout << endl;
                 }

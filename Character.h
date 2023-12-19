@@ -12,6 +12,7 @@ protected:
 	int kills;
 	int maxhealth;
 public:
+	bool trickstermovebool = false;
 	int lives;
 	string name;
 	Character();

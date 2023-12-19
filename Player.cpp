@@ -228,7 +228,10 @@ void Player::attack(Character* Target) {
         }
     }
      if (classtype == 6) { //trickster attack messages |health =20|attackPower=5|lives=1|
-        if (level >= 50) {
+        if (trickstermove == true) {
+            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << "dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Confuse enemy) 9 (Stat page) 10 (Inventory)" << endl;
+        }
+        else if (level >= 50) {
             cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << "dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
         }
         else if (level >= 25) {
@@ -254,59 +257,6 @@ void Player::attack(Character* Target) {
             attack(Target);
             break;
         }
-        cout << endl;
-        if (accuratesword == true) {
-            cout << "Accurate Sword (No more slipping!)" << endl;
-        }
-        if (helmet == true) {
-            cout << "Helmet (+7 defence)" << endl;
-        }
-        if (boots == true) {
-            cout << "Boots (+5 defence)" << endl;
-        }
-        if (chestplate == true) {
-            cout << "Chestplate (+10 defence)" << endl;
-        }
-        if (Excalibur == true) {
-            cout << "Excalibur (+8 attack)" << endl;
-        }
-        if (Knife == true) {
-            cout << "Knife (+2 attack)" << endl;
-        }
-        if (Sword == true) {
-            cout << "Sword (+4 attack)" << endl;
-        }
-        if (leveltonic == true) {
-            cout << "Level Tonic (+10 level)" << endl;
-        }
-        if (superiorleveltonic == true) {
-            cout << "Superior Level Tonic (+15 level)" << endl;
-        }
-        if (superpotion == true) {
-            cout << "Super Potion (+20 level|+10 attack)" << endl;
-        }
-        if (defenceupgrade == true) {
-            cout << "Defence Perk (+10 defence)" << endl;
-        }
-        if (godarmor == true) {
-            cout << "God Armor (+20 defence)" << endl;
-        }
-        if (attackupgrade == true) {
-            cout << "Attack Perk (+10 attack)" << endl;
-        }
-        if (levelupgrade == true) {
-            cout << "Level Perk (+15 level)" << endl;
-        }
-        if (shield == true) {
-            cout << "Shield (+15 defence)" << endl;
-        }
-        if (shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && godarmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false) {
-            cout << "----------------------" << endl;
-            cout << "You have no items yet." << endl;
-            cout << "----------------------" << endl << endl;
-        }
-        attack(Target);
-        break;
     case 1:
         accuracy = r() & 100 + 1;
         if (accuratesword == true || fallen == true) {
@@ -613,50 +563,16 @@ void Player::attack(Character* Target) {
         }
     case 6:
         accuracy = r() & 100 + 1;
-        if (supermove == true && accuracy > 10 || fallen == true) {
-            x = r() % 4 + 12 + (level % 31) + attackPower; //normal attack
-            Target->takeDmg(x);
+        if (trickstermove == true) {
+            trickstermovebool = true;
             h = 0;
             cout << endl;
             fallen = false;
-            int message;
-            message = r() % 5 + 1;
-            if (message == 1) {
-                cout << "-----------------------------------------------" << endl;
-                cout << name << ", you dealt " << x << " damage." << endl;
-                break;
-            }
-            else if (message == 2) {
-                cout << "-----------------------------------------------" << endl;
-                cout << "You kicked the slime for " << x << " damage." << endl;
-                break;
-            }
-            else if (message == 3) {
-                cout << "-----------------------------------------------" << endl;
-                cout << "You stabbed the slime for " << x << " damage." << endl;
-                break;
-            }
-            else if (message == 4) {
-                cout << "-----------------------------------------------" << endl;
-                cout << "You kicked the slime in the face for " << x << " damage." << endl;
-                break;
-            }
-            else {
-                cout << "-----------------------------------------------" << endl;
-                cout << "You bludgeon the slime for " << x << " damage." << endl;
-                break;
-            }
-        }
-        else if (supermove == true && accuracy <= 10) {
-            cout << "-----------------------------------------------" << endl;
-            cout << name << ", you have slipped and fallen, losing this turn." << endl;
-            fallen = true;
-            break;
         }
         else {
-            cout << "-----------------------------------------------" << endl;
-            cout << "You are not a high enough level for this move." << endl;
-            cout << "-----------------------------------------------" << endl;
+            cout << "-------------------------------------------" << endl;
+            cout << " You have not unlocked this move." << endl;
+            cout << "-------------------------------------------" << endl;
             cout << endl;
             attack(Target);
             break;
@@ -689,6 +605,59 @@ void Player::attack(Character* Target) {
             else if (classtype == 6) {
                 cout << "-Class = Trickster" << endl;
             }
+        attack(Target);
+        break;
+    case 10: 
+        if (accuratesword == true) {
+            cout << "Accurate Sword (No more slipping!)" << endl;
+        }
+        if (helmet == true) {
+            cout << "Helmet (+7 defence)" << endl;
+        }
+        if (boots == true) {
+            cout << "Boots (+5 defence)" << endl;
+        }
+        if (chestplate == true) {
+            cout << "Chestplate (+10 defence)" << endl;
+        }
+        if (Excalibur == true) {
+            cout << "Excalibur (+8 attack)" << endl;
+        }
+        if (Knife == true) {
+            cout << "Knife (+2 attack)" << endl;
+        }
+        if (Sword == true) {
+            cout << "Sword (+4 attack)" << endl;
+        }
+        if (leveltonic == true) {
+            cout << "Level Tonic (+10 level)" << endl;
+        }
+        if (superiorleveltonic == true) {
+            cout << "Superior Level Tonic (+15 level)" << endl;
+        }
+        if (superpotion == true) {
+            cout << "Super Potion (+20 level|+10 attack)" << endl;
+        }
+        if (defenceupgrade == true) {
+            cout << "Defence Perk (+10 defence)" << endl;
+        }
+        if (godarmor == true) {
+            cout << "God Armor (+20 defence)" << endl;
+        }
+        if (attackupgrade == true) {
+            cout << "Attack Perk (+10 attack)" << endl;
+        }
+        if (levelupgrade == true) {
+            cout << "Level Perk (+15 level)" << endl;
+        }
+        if (shield == true) {
+            cout << "Shield (+15 defence)" << endl;
+        }
+        if (shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && godarmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false) {
+            cout << "----------------------" << endl;
+            cout << "You have no items yet." << endl;
+            cout << "----------------------" << endl << endl;
+        }
         attack(Target);
         break;
     default:
