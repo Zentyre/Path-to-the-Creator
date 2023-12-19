@@ -423,7 +423,7 @@ int main() {
         cout << "At levels 15, 25, 50 and 100, you gain new abilities. At level 200 you fight the final boss(Level gained from items does not affect this)" << endl;
         cout << "I wish you well on your conquest." << endl;
         cout << endl;
-        Player Knight("Knight", 25, 4, 0, 0, 1, 50);
+        Player Knight("Knight", 50, 25, 4, 0, 0, 1);
         cout << "Would you like to be a 1-Knight, 2-Executioner, 3-Soulweaver, 4-Warforged Engineer, 5-Dreadnought or 6-Trickster?" << endl;
         cout << "Knight has average health and damage, Executioner has a lot less health and a lot more damage, Soulweaver starts with 1 extra life for less attack/health, Warforged Engineer has slightly higher health for slightly lower damage and a special move, Dreadnought has a lot more health/maxhealth and a lot less damage, Trickster has a little less health for barely more attack, and a special move." << endl;
         int playerclasschoice = 0;
@@ -453,7 +453,7 @@ int main() {
         }
         else {
             cout << "You chose nothing so I will choose for you." << endl;
-            Player Knight("Knight", 25, 2, 0, 0, 1, 50);
+            Player Knight("Knight", 50, 25, 2, 0, 0, 1);
         }
         cout << "What would you like me to call you?" << endl;
         cin >> ws;
