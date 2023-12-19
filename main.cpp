@@ -532,47 +532,47 @@ int main() {
                 random_device r;
                 int x = 0;
                 x = r() % 5 + 1;
-                switch (x) {
-                case 1: 
-                    areachoice = "Mushroom Kingdom";
-                    cout << endl;
-                    cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get them!-" << endl;
-                    areachoiceint = 1;
-                    break;
-                case 2: 
-                    areachoice = "Gooey Glade";
-                    cout << endl;
-                    cout << "-Welcome to the uneasy feeling area of the slimes. Good Luck Surviving!-" << endl << endl;
-                    areachoiceint = 2;
-                    break;
-                case 3: 
-                    areachoice = "Croc Isle";
-                    cout << endl;
-                    cout << "-Welcome to the land of the crocs. Go find that croc king!-" << endl << endl;
-                    areachoiceint = 3;
-                    break;
-                case 4: 
-                    areachoice = "Hopscotch Highlands";
-                    cout << endl;
-                    cout << "-Welcome to the land of the kangaroos, attack that zoo owner!-" << endl << endl;
-                    areachoiceint = 4;
-                    break;
-                case 5: 
-                    areachoice = "Skeletal Sanctum";
-                    cout << endl;
-                    cout << "-Welcome to the graveyeard of your dead family...just kidding. Look out there's a skeleton!-" << endl << endl;
-                    areachoiceint = 5;
-                    break;
-                default: 
-                    if (cin.fail()) {
-                    cout << endl;
-                    cout << "----------------------" << endl;
-                    cout << "I chose an area for you." << endl;
-                    cout << "----------------------" << endl << endl;
-                    cin.clear();
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                    areachoiceint = 5;
-                    break;
+    switch (x) {
+        case 1: 
+            areachoice = "Mushroom Kingdom";
+            cout << endl;
+            cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get them!-" << endl;
+            areachoiceint = 1;
+            break;
+        case 2: 
+            areachoice = "Gooey Glade";
+            cout << endl;
+            cout << "-Welcome to the uneasy feeling area of the slimes. Good Luck Surviving!-" << endl << endl;
+            areachoiceint = 2;
+            break;
+        case 3: 
+            areachoice = "Croc Isle";
+            cout << endl;
+            cout << "-Welcome to the land of the crocs. Go find that croc king!-" << endl << endl;
+            areachoiceint = 3;
+            break;
+        case 4: 
+            areachoice = "Hopscotch Highlands";
+            cout << endl;
+            cout << "-Welcome to the land of the kangaroos, attack that zoo owner!-" << endl << endl;
+            areachoiceint = 4;
+            break;
+        case 5: 
+            areachoice = "Skeletal Sanctum";
+            cout << endl;
+            cout << "-Welcome to the graveyeard of your dead family...just kidding. Look out there's a skeleton!-" << endl << endl;
+            areachoiceint = 5;
+            break;
+        default: 
+            if (cin.fail()) {
+            cout << endl;
+            cout << "----------------------" << endl;
+            cout << "I chose an area for you." << endl;
+            cout << "----------------------" << endl << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            areachoiceint = 5;
+            break;
                 }
             }
     }
