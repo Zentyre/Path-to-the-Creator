@@ -18,6 +18,7 @@ public:
 	bool isAlive();
 	bool killplayer = false;
 	virtual void takeDmg(int d);
+	int getclass();
 	int setkillplayer();
 	int getbaselevel();
 	int getlives();

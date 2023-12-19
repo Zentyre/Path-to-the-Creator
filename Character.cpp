@@ -14,6 +14,9 @@ Character::Character() {
 	defence = 0;
 	baselevel = 0;
 }
+int Character::getclass() {
+	return classtype;
+}
 int Character::getbaselevel() {
 	return baselevel;
 }

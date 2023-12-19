@@ -174,7 +174,7 @@ void Player::attack(Character* Target) {
             cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
         }
     }
-    if (classtype == 2) { //executioner attack messages |health=15|attackPower=7|lives=1|
+    else if (classtype == 2) { //executioner attack messages |health=15|attackPower=7|lives=1|
         if (supermove == true) {
             cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
         }
@@ -191,7 +191,7 @@ void Player::attack(Character* Target) {
             cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
         }
     }
-    if (classtype == 3) { //soulweaver attack messages |health=20|attackPower=3|lives=2|
+    else if (classtype == 3) { //soulweaver attack messages |health=20|attackPower=3|lives=2|
         if (supermove == true) {
             cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
         }
@@ -208,7 +208,7 @@ void Player::attack(Character* Target) {
             cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
         }
     }
-    if (classtype == 4) { //warforged attack messages |health=40|attackPower=2|lives=1|
+    else if (classtype == 4) { //warforged attack messages |health=40|attackPower=2|lives=1|
         if (supermove == true) {
             cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
         }
@@ -225,7 +225,7 @@ void Player::attack(Character* Target) {
             cout << "Choosek: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
         }
     }
-    if (classtype == 5) {
+    else if (classtype == 5) {
         if (supermove == true) { //dreadnought attack messages |health=50|attackPower=1|lives=1|
             cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
         }
@@ -242,7 +242,7 @@ void Player::attack(Character* Target) {
             cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 9 (Stat page) 0 (Inventory)" << endl;
         }
     }
-     if (classtype == 6) {
+     else {
         if (supermove == true) { //trickster attack messages |health=20|attackPower=5|lives=1|
             cout << "Choose: 1 (5-8 dmg) 2 (3-5 lifesteal) 3 (6-11 dmg) 4 (6-9 heal) 5 (7-12 lifesteal) 6 (12-15 dmg) 9 (Stat page) 0 (Inventory)" << endl;
         }
