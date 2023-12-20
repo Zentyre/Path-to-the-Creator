@@ -13,6 +13,8 @@ protected:
 	int maxhealth;
 public:
 	bool trickstermovebool = false;
+	bool warforgedmovebool = false;
+	int timetracker = 0;
 	int lives;
 	string name;
 	Character();
@@ -35,6 +37,7 @@ public:
 	int classtype = 1;
 	string getname();
 	virtual void attack(Character* Target) = 0;
+	void healovertime();
 	void addlives(int extralives);
 	void setmaxhealth(int charactermaxhealth);
 };

@@ -53,6 +53,17 @@ int Character::incrementkills() {
 int Character::setkillplayer() {
 	return killplayer = true;
 }
+void Character::healovertime() {
+	if (timetracker == 2) {
+		timetracker = 0;
+		cout << "Your skill has ended." << endl << endl;
+	}
+	else if (timetracker == 1 || timetracker == 2) {
+		int heal = 0;
+		heal = 5 + (level % 31);
+		cout << "Your skill has healed you for " << heal << " health." << endl;
+	}
+}
 void Character::setmaxhealth(int charactermaxhealth) {
 	if (level < 25) {
 		charactermaxhealth = 50;

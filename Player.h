@@ -27,6 +27,8 @@ public:
 	bool accuratesword = false;
 	bool shield = false;
 	bool trickstermove = false;
+	bool soulweavermove = false;
+	bool warforgedmove = false;
 	bool maxhealthupgrade = false;
 	bool defenceupgrade = false;
 	bool levelupgrade = false;

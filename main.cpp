@@ -423,9 +423,9 @@ int main() {
         cout << "At levels 15, 25, 50 and 100, you gain new abilities. At level 200 you fight the final boss(Level gained from items does not affect this)" << endl;
         cout << "I wish you well on your conquest." << endl;
         cout << endl;
-        Player Knight("Knight", 50, 25, 4, 0, 0, 1);
-        cout << "Would you like to be a 1-Knight, 2-Executioner, 3-Soulweaver, 4-Warforged Engineer, 5-Dreadnought or 6-Trickster?" << endl;
-        cout << "Knight has average health and damage, Executioner has a lot less health and a lot more damage, Soulweaver starts with 1 extra life for less attack/health, Warforged Engineer has slightly higher health for slightly lower damage and a special move, Dreadnought has a lot more health/maxhealth and a lot less damage, Trickster has a little less health for barely more attack, and a special move." << endl;
+        Player Knight("Player", 50, 25, 1000, 0, 0, 1);
+        cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought or 6- Trickster?" << endl;
+        cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
         int playerclasschoice = 0;
         cin >> playerclasschoice;
         if (playerclasschoice == 1) {
@@ -504,7 +504,7 @@ int main() {
             getline(cin, areachoice);
             if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom"|| areachoice == "Mushroom kingdom") {
                 cout << endl;
-                cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get them!-" << endl;
+                cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get the invaders!-" << endl << endl;
                 areachoiceint = 1;
             }
             else if (areachoice == "Gooey Glade" || areachoice == "gooey glade"|| areachoice == "Gooey glade") {
@@ -711,13 +711,23 @@ delete Slime;
                         }
                     }
                 }
-                if (Knight.isAlive() == true && Knight.getlevel() == 100) {
-                    Knight.trickstermove = true;
-                    cout << "You have unlocked your super move! (12-15 dmg)" << endl;
-                    cout << endl;
-                }
                 Knight.incrementbaselevel();
                 Knight.incrementkills();
+                if (Knight.isAlive() == true && Knight.getbaselevel() == 50 && playerclasschoice == 6) {
+                    Knight.trickstermove = true;
+                    cout << "You have unlocked your special Trickster skill!" << endl;
+                    cout << endl;
+                }
+                else if (Knight.isAlive() == true && Knight.getbaselevel() == 75 && playerclasschoice == 4) {
+                    Knight.warforgedmove = true;
+                    cout << "You have unlocked your special Warforged Engineer skill!" << endl;
+                    cout << endl;
+                }
+                else if (Knight.isAlive() == true && Knight.getbaselevel() == 90 && playerclasschoice == 3) {
+                    Knight.soulweavermove = true;
+                    cout << "You have unlocked your special Soulweaver skill!" << endl;
+                    cout << endl;
+                }
                 if (areachoiceint == 1) {
                     Enemy* Slime = generateEnemy(Knight.getbaselevel());
                 }
