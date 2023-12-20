@@ -29,6 +29,9 @@ public:
 	bool trickstermove = false;
 	bool soulweavermove = false;
 	bool warforgedmove = false;
+	bool knightmove = false;
+	bool dreadnoughtmove = false;
+	bool executionermove = false;
 	bool maxhealthupgrade = false;
 	bool defenceupgrade = false;
 	bool levelupgrade = false;

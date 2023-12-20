@@ -158,7 +158,10 @@ void Player::attack(Character* Target) {
     int accuracy = 0;
     bool fallen = false;
     if (classtype == 1) { //knight attack messages |health =25|attackPower=4|lives=1|
-        if (level >= 50) {
+        if (knightmove == true) {
+            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Titans Strike) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+        }
+        else if (level >= 50) {
             cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 25) {
@@ -172,7 +175,10 @@ void Player::attack(Character* Target) {
         }
     }
     if (classtype == 2) { //executioner attack messages |health =15|attackPower=7|lives=1|
-        if (level >= 50) {
+        if (executionermove == true) {
+  cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Soul Surge) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+        }
+        else if (level >= 50) {
             cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 25) {
@@ -186,6 +192,9 @@ void Player::attack(Character* Target) {
         }
     }
    if (classtype == 3) { //soulweaver attack messages |health =20|attackPower=3|lives=2|
+   if (soulweavermove == true) {
+            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Fortuitous Gambit) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+   }
         if (level >= 50) {
             cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
@@ -200,7 +209,10 @@ void Player::attack(Character* Target) {
         }
     }
     if (classtype == 4) { //warforged engineer attack messages |health =40|attackPower=3|lives=1|
-        if (level >= 50) {
+        if (warforgedmove == true) {
+            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Guardians Respite) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+        }
+        else if (level >= 50) {
             cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 25) {
@@ -214,7 +226,10 @@ void Player::attack(Character* Target) {
         }
     }
     if (classtype == 5) { //dreadnought attack messages |health =50|attackPower=1|lives=1|
-        if (level >= 50) {
+        if (dreadnoughtmove == true) {
+            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Healing Remedy) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+        }
+        else if (level >= 50) {
             cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 25) {
@@ -229,7 +244,7 @@ void Player::attack(Character* Target) {
     }
      if (classtype == 6) { //trickster attack messages |health =20|attackPower=5|lives=1|
         if (trickstermove == true) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 8 (Confuse enemy) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Confuse) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 50) {
             cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
@@ -258,22 +273,22 @@ void Player::attack(Character* Target) {
             break;
         }
         if (classtype == 1) {
-            cout << "--The knight class unlocks its special skill at level 80. It is just a normal attack but with more damage.--" << endl << endl;
+            cout << "--The knight class unlocks its special skill (Titans Strike) at level 80. It is just a normal attack but with more damage.--" << endl << endl;
         }
         else if (classtype == 2) {
-            cout << "--The executioner class unlocks its special skill at level 80. This skill is a slightly better lifesteal and damage with a 10% chance to crit.--" << endl << endl;
+            cout << "--The executioner class unlocks its special skill (Soul Surge) at level 80. This skill is a slightly better damage lifesteal with a 20% chance to crit.--" << endl << endl;
         }
         else if (classtype == 3) {
-            cout << "--The soulweaver class unlocks its special skill at level 90. This skill is a little damage attack that has a 5% chance to give you a life and a 40% chance to deal damage.--" << endl << endl;
+            cout << "--The soulweaver class unlocks its special skill (Fortuitous Gambit) at level 90. This skill is a little damage attack that has a 5% chance to give you a life and a 40% chance to deal damage.--" << endl << endl;
         }
         else if (classtype == 4) {
-            cout << "--The warforged engineer unlocks its special skill at level 75. This skill makes the enemy deal less damage for 2 turns and heals you over the two rounds but you deal much less damage in its duration.--" << endl << endl;
+            cout << "--The warforged engineer unlocks its special skill (Guardians Respite) at level 75. This skill makes the enemy deal less damage for 2 turns and heals you over the two rounds but you deal much less damage in its duration.--" << endl << endl;
         }
         else if (classtype == 5) {
-            cout << "--The dreadnought class unlocks its special skill at level 75. This skill is a better than normal single heal with a 10% crit chance.--" << endl << endl;
+            cout << "--The dreadnought class unlocks its special skill (Healing Remedy) at level 75. This skill is a better than normal single heal and has a 10% crit chance.--" << endl << endl;
         }
         else if (classtype == 6) {
-            cout << "--The trickster class unlocks its special skill at level 50. This skill has a 40% chance to make the enemy attack itself with a crit rate of 30%.--" << endl << endl;
+            cout << "--The trickster class unlocks its special skill (Confuse) at level 50. This skill has a 40% chance to make the enemy attack itself with a crit rate of 30%.--" << endl << endl;
         }
         cout << "**NOTE** All special skills have 100% accuracy and if it affects an enemy, the enemy will also have 100% accuracy." << endl << endl;
         attack(Target);
@@ -291,27 +306,22 @@ void Player::attack(Character* Target) {
             if (message == 1) {
                 cout << "-----------------------------------------------" << endl;
                 cout << name << ", you dealt " << x << " damage." << endl;
-                break;
             }
             else if (message == 2) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You kicked the slime for " << x << " damage." << endl;
-                break;
             }
             else if (message == 3) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You stabbed the slime for " << x << " damage." << endl;
-                break;
             }
             else if (message == 4) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You kicked the slime in the face for " << x << " damage." << endl;
-                break;
             }
             else {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
-                break;
             }
         }
         else if (accuracy > 10) {
@@ -325,35 +335,30 @@ void Player::attack(Character* Target) {
             if (message == 1) {
                 cout << "-----------------------------------------------" << endl;
                 cout << name << ", you dealt " << x << " damage." << endl;
-                break;
             }
             else if (message == 2) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You kicked the slime for " << x << " damage." << endl;
-                break;
             }
             else if (message == 3) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You stabbed the slime for " << x << " damage." << endl;
-                break;
             }
             else if (message == 4) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You kicked the slime in the face for " << x << " damage." << endl;
-                break;
             }
             else {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
-                break;
             }
         }
         else {
             cout << "-----------------------------------------------" << endl;
             cout << name << " You have slipped and fallen, losing this turn." << endl;
             fallen = true;
-            break;
         }
+        break;
     case 2:
         accuracy = r() & 100 + 1;
         if (accuratesword == true || fallen == true) {
@@ -372,7 +377,6 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
-            break;
         }
         else if (accuracy > 10) {
             x = r() % 4 + 2 + (level % 31) + attackPower;
@@ -390,14 +394,13 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
-            break;
         }
         else {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
-            break;
         }
+        break;
     case 3:
         accuracy = r() & 100 + 1;
         if (baselevel >= 15 && accuratesword == true || fallen == true) {
@@ -411,27 +414,22 @@ void Player::attack(Character* Target) {
             if (message == 1) {
                 cout << "-----------------------------------------------" << endl;
                 cout << name << ", you dealt " << x << " damage." << endl;
-                break;
             }
             else if (message == 2) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You kicked the slime for " << x << " damage." << endl;
-                break;
             }
             else if (message == 3) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You stabbed the slime for " << x << " damage." << endl;
-                break;
             }
             else if (message == 4) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You kicked the slime in the face for " << x << " damage." << endl;
-                break;
             }
             else {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
-                break;
             }
         }
         else if (baselevel >= 15 && accuracy > 10) {
@@ -445,34 +443,28 @@ void Player::attack(Character* Target) {
             if (message == 1) {
                 cout << "-----------------------------------------------" << endl;
                 cout << name << ", you dealt " << x << " damage." << endl;
-                break;
             }
             else if (message == 2) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You kicked the slime for " << x << " damage." << endl;
-                break;
             }
             else if (message == 3) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You stabbed the slime for " << x << " damage." << endl;
-                break;
             }
             else if (message == 4) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You kicked the slime in the face for " << x << " damage." << endl;
-                break;
             }
             else {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
-                break;
             }
         }
         else if (baselevel >= 15 && accuracy <= 10) {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
-            break;
         }
         else {
             cout << "-----------------------------------------------" << endl;
@@ -480,8 +472,8 @@ void Player::attack(Character* Target) {
             cout << "-----------------------------------------------" << endl;
             cout << endl;
             attack(Target);
-            break;
         }
+        break;
     case 4:
         accuracy = r() & 100 + 1; //single heal
         if (baselevel >= 25 && accuratesword == true || fallen == true) {
@@ -497,8 +489,6 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
-            x = 0;
-            break;
         }
         else if (baselevel >= 25 && accuracy > 10) {
             fallen = false;
@@ -514,14 +504,11 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
-            x = 0;
-            break;
         }
         else if (baselevel >= 25 && accuracy <= 10) {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
-            break;
         }
         else {
             cout << "-----------------------------------------------" << endl;
@@ -529,8 +516,8 @@ void Player::attack(Character* Target) {
             cout << "-----------------------------------------------" << endl;
             cout << endl;
             attack(Target);
-            break;
         }
+        break;
     case 5:
         accuracy = r() & 100 + 1; //lifesteal attack
         if (baselevel >= 50 && accuratesword == true || fallen == true) {
@@ -549,7 +536,6 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
-            break;
         }
         else if (baselevel >= 50 && accuracy > 10) {
             x = r() % 6 + 7 + (level % 31) + attackPower;
@@ -566,13 +552,11 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
-            break;
         }
         else if (baselevel >= 50 && accuracy <= 10) {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
-            break;
         }
         else {
             cout << "-----------------------------------------------" << endl;
@@ -580,8 +564,8 @@ void Player::attack(Character* Target) {
             cout << "-----------------------------------------------" << endl;
             cout << endl;
             attack(Target);
-            break;
         }
+        break;
     case 6:
         if (soulweavermove == true) {
             int maybeaddlife;
@@ -590,42 +574,73 @@ void Player::attack(Character* Target) {
                 addlives(1);
                 x = r() % 4 + 4 + (level % 31) + attackPower;
                 Target->takeDmg(x);
-                break;
+                cout << name << ", you dealt " << x << " damage." << endl;
             }
             else if (maybeaddlife > 5 && maybeaddlife <= 40) {
                 x = r() % 4 + 4 + (level % 31) + attackPower;
                 Target->takeDmg(x);
-                break;
+                cout << name << ", you dealt " << x << " damage." << endl;
             }
             else if (maybeaddlife > 40) {
-                break;
-            }
-            else {
-                cout << "-------------------------------------------" << endl;
-                cout << "You do not have this skill yet." << endl;
-                cout << "-------------------------------------------" << endl;
-                cout << endl;
-                attack(Target);
-                break;
+                cout << name << ", your skill failed." << endl;
             }
         }
-    case 7:
-        if (warforgedmove == true) {
+        else if (warforgedmove == true) {
             if (timetracker == 1 || timetracker == 2) {
                 cout << "This skill is already in use." << endl << endl;
                 attack(Target);
-                break;
             }
             else {
                 warforgedmovebool = true;
-                break;
+                cout << endl;
             }
         }
-    case 8:
-        if (trickstermove == true) {
+        else if (trickstermove == true) {
             trickstermovebool = true;
             cout << endl;
-            break;
+        }
+        else if (knightmove == true) {
+            x = r() % 7 + 8 + (level % 31) + attackPower;
+            Target->takeDmg(x);
+            cout << name << ", you dealt " << x << " damage." << endl;
+        }
+        else if (dreadnoughtmove == true) {
+            x = r() % 7 + 10 + (level % 31);
+            int critchance = 0;
+            critchance = r() % 100 + 1;
+            if (critchance <= 10) {
+                x = x * 1.5;
+            }
+            h = x;
+            cout << "-----------------------------------------------" << endl;
+            if (health >= maxhealth) {
+                health = maxhealth;
+                cout << "You have no wounds to heal." << endl;
+            }
+            else {
+                health += h;
+                cout << "You healed for " << h << " damage." << endl;
+            }
+        }
+        else if (executionermove == true) {
+            x = r() % 11 + 7 + (level % 31) + attackPower;
+            int critrate;
+            critrate = r() % 100 + 1;
+            if (critrate <= 20) {
+                x = x * 1.5;
+            }
+            h = x * .77;
+            cout << endl;
+            cout << "-----------------------------------------------" << endl;
+            cout << name << ", you dealt " << x << " damage." << endl;
+            if (health >= maxhealth) {
+                health = maxhealth;
+                cout << "You have no wounds to heal." << endl;
+            }
+            else {
+                health += h;
+                cout << "You healed for " << h << " damage." << endl;
+            }
         }
         else {
             cout << "-------------------------------------" << endl;
@@ -633,8 +648,8 @@ void Player::attack(Character* Target) {
             cout << "-------------------------------------" << endl;
             cout << endl;
             attack(Target);
-            break;
         }
+        break;
     case 9:
         cout << " --Stats--" << endl;
         cout << "--" << maxhealth << " Maxhealth--" << endl;

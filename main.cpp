@@ -715,17 +715,27 @@ delete Slime;
                 Knight.incrementkills();
                 if (Knight.isAlive() == true && Knight.getbaselevel() == 50 && playerclasschoice == 6) {
                     Knight.trickstermove = true;
-                    cout << "You have unlocked your special Trickster skill!" << endl;
+                    cout << "You have unlocked your Trickster skill, Confuse!" << endl;
                     cout << endl;
                 }
                 else if (Knight.isAlive() == true && Knight.getbaselevel() == 75 && playerclasschoice == 4) {
                     Knight.warforgedmove = true;
-                    cout << "You have unlocked your special Warforged Engineer skill!" << endl;
+                    cout << "You have unlocked your Warforged Engineer skill, Guardians Respite!" << endl;
                     cout << endl;
                 }
                 else if (Knight.isAlive() == true && Knight.getbaselevel() == 90 && playerclasschoice == 3) {
                     Knight.soulweavermove = true;
-                    cout << "You have unlocked your special Soulweaver skill!" << endl;
+                    cout << "You have unlocked your Soulweaver skill, Fortuitous Gambit!" << endl;
+                    cout << endl;
+                }
+                else if (Knight.isAlive() == true && Knight.getbaselevel() == 80 && playerclasschoice == 1) {
+                    Knight.knightmove = true;
+                    cout << "You have unlocked your special Knight skill, Titans Strike!" << endl;
+                    cout << endl;
+                }
+                else if (Knight.isAlive() == true && Knight.getbaselevel() == 75 && playerclasschoice == 5) {
+                    Knight.dreadnoughtmove = true;
+                    cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
                     cout << endl;
                 }
                 if (areachoiceint == 1) {
