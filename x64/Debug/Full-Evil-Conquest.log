@@ -1,5 +1,2 @@
-﻿  Player.cpp
-C:\Users\drago\source\repos\Full-Evil-Conquest\Player.cpp(62,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-  main.cpp
-  Generating Code...
+﻿  Character.cpp
   Full-Evil-Conquest.vcxproj -> C:\Users\drago\source\repos\Full-Evil-Conquest\x64\Debug\Full-Evil-Conquest.exe
