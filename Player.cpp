@@ -622,10 +622,8 @@ void Player::attack(Character* Target) {
             }
         }
     case 8:
-        accuracy = r() & 100 + 1;
         if (trickstermove == true) {
             trickstermovebool = true;
-            h = 0;
             cout << endl;
             break;
         }
