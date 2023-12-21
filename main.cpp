@@ -808,22 +808,22 @@ delete Slime;
                     cout << "--You gained a godly item! (Super potion)--" << endl;
                     cout << endl;
                 }
-                else if (item == 15 || item == 16 || item == 17 || item == 18 || item == 19 || item == 20 || item == 21 || item == 22 || item == 23 || item == 24 || item == 25 || item == 26 || item == 27 || item == 28 || item == 29 || item == 30 || item == 31 || item == 32 || item == 33 || item == 34) {
+                else if (item >= 15 && item <= 25) {
                     Knight.healthtonic = true;
                     cout << "--You gained a health tonic! (Healing potion)--" << endl;
                     cout << endl;
                 }
-                else if (item == 35 || item == 36 || item == 37) {
+                else if (item == 26 || item == 26 || item == 28) {
                     Knight.accuratesword = true;
                     cout << "--You gained the legendary accuracy sword! (never miss again)--" << endl;
                     cout << endl;
                 }
-                else if (item == 38 || item == 39 || item == 40 || item == 41 || item == 42) {
+                else if (item == 29 || item == 30 || item == 31 || item == 32 || item == 33) {
                     Knight.shield = true;
                     cout << "--You can now dual wield with a shield! (Shield)--" << endl;
                     cout << endl;
                 }
-                if (Knight.getbaselevel() >= 2000 && Knight.isAlive() == true) {
+                if (Knight.getbaselevel() >= 200 && Knight.isAlive() == true) {
                     break;
                 }
             }
