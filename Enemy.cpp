@@ -13,126 +13,126 @@ random_device r;
 int critchance;
 void Enemy::attack(Character* Target) {
     if (trickstermovebool == true && health > 0 && getlevel() >= 100) {
-        int attackself, y;
+        int attackself, d;
         critchance = r() % 100 + 1;
         attackself = r() % 100 + 1;
         if (attackself > 60 && critchance > 70) {
-             y = r() % 10 + attackPower * 1.5;
-             health -= y;
-             cout << "The enemy is confused and attacked itself for" << y << " damage!" << endl;
+             d = r() % 10 + attackPower * 1.5;
+             health -= d;
+             cout << "The enemy is confused and attacked itself for" << d << " damage!" << endl;
              trickstermovebool == false;
         }
         else if (attackself > 60) {
-             y = r() % 10 + attackPower;
-             health -= y;
-             cout << "The enemy is confused and attacked itself for" << y << " damage!" << endl;
+             d = r() % 10 + attackPower;
+             health -= d;
+             cout << "The enemy is confused and attacked itself for" << d << " damage!" << endl;
              trickstermovebool == false;
         }
         else if (attackself <= 60 && critchance > 70) {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
-            y = r() % 10 + attackPower * 1.5;
-            Target->takeDmg(y);
+            d = r() % 10 + attackPower * 1.5;
+            Target->takeDmg(d);
             trickstermovebool == false;
         }
         else {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
-            y = r() % 10 + attackPower;
-            Target->takeDmg(y);
+            d = r() % 10 + attackPower;
+            Target->takeDmg(d);
             trickstermovebool == false;
         }
     }
      if (trickstermovebool == true && health > 0) {
-        int attackself, y;
+        int attackself, d;
         critchance = r() % 100 + 1;
         attackself = r() % 100 + 1;
         if (attackself > 60 && critchance > 70) {
-             y = r() % 7 + attackPower * 1.5;
-             health -= y;
-             cout << "The enemy is confused and attacked itself for" << y << " damage!" << endl;
+             d = r() % 7 + attackPower * 1.5;
+             health -= d;
+             cout << "The enemy is confused and attacked itself for" << d << " damage!" << endl;
              trickstermovebool == false;
         }
         else if (attackself > 60) {
-             y = r() % 7 + attackPower;
-             health -= y;
-             cout << "The enemy is confused and attacked itself for" << y << " damage!" << endl;
+             d = r() % 7 + attackPower;
+             health -= d;
+             cout << "The enemy is confused and attacked itself for" << d << " damage!" << endl;
              trickstermovebool == false;
         }
         else if (attackself <= 60 && critchance > 70) {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
-            y = r() % 7 + attackPower * 1.5;
-            Target->takeDmg(y);
+            d = r() % 7 + attackPower * 1.5;
+            Target->takeDmg(d);
             trickstermovebool == false;
         }
         else {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
-            y = r() % 7 + attackPower;
-            Target->takeDmg(y);
+            d = r() % 7 + attackPower;
+            Target->takeDmg(d);
             trickstermovebool == false;
         }
     }
     else if (warforgedmovebool == true && getlevel() >= 100 && timetracker < 2 && health > 0) {
-         int y;
+         int d;
          critchance = r() % 100 + 1;
          if (critchance <= 5) {
-             y = r() % 6 + attackPower * 1.5;
-             cout << name << " dealt " << y << " damage." << endl;
-             Target->takeDmg(y);
+             d = r() % 6 + attackPower * 1.5;
+             cout << name << " dealt " << d << " damage." << endl;
+             Target->takeDmg(d);
          }
          else {
-             y = r() % 6 + attackPower;
-             cout << name << " dealt " << y << " damage." << endl;
-             Target->takeDmg(y);
+             d = r() % 6 + attackPower;
+             cout << name << " dealt " << d << " damage." << endl;
+             Target->takeDmg(d);
          }
          timetracker += 1;
          healovertime();
     }
     else if (warforgedmovebool == true && timetracker < 2 && health > 0) {
-         int y;
+         int d;
          critchance = r() % 100 + 1;
          if (critchance <= 5) {
-             y = r() % 3 + attackPower * 1.5;
-             cout << name << " dealt " << y << " damage." << endl;
-             Target->takeDmg(y);
+             d = r() % 3 + attackPower * 1.5;
+             cout << name << " dealt " << d << " damage." << endl;
+             Target->takeDmg(d);
          }
          else {
-             y = r() % 3 + attackPower;
-             cout << name << " dealt " << y << " damage." << endl;
-             Target->takeDmg(y);
+             d = r() % 3 + attackPower;
+             cout << name << " dealt " << d << " damage." << endl;
+             Target->takeDmg(d);
          }
          timetracker += 1;
          healovertime();
      }
     else if (health > 0 && getlevel() >= 100) {
-        int y, accuracy;
+        int d, accuracy;
         accuracy = r() % 100 + 1;
         critchance = r() % 100 + 1;
         if (accuracy > 10 && critchance <= 5) {
-            y = r() % 10 + attackPower * 1.5;
-            cout << name << " dealt " << y << " damage." << endl;
-            Target->takeDmg(y);
+            d = r() % 10 + attackPower * 1.5;
+            cout << name << " dealt " << d << " damage." << endl;
+            Target->takeDmg(d);
         }
         else if (accuracy > 10) {
-            y = r() % 10 + attackPower;
-            cout << name << " dealt " << y << " damage." << endl;
-            Target->takeDmg(y);
+            d = r() % 10 + attackPower;
+            cout << name << " dealt " << d << " damage." << endl;
+            Target->takeDmg(d);
         }
         else if (accuracy <= 10) {
             cout << name << " has missed its attack!" << endl;
         }
     }
     else if (health > 0) {
-        int y, accuracy;
+        int d, accuracy;
         accuracy = r() % 100 + 1;
         critchance = r() % 100 + 1;
         if (accuracy > 10 && critchance <= 5) {
-            y = r() % 6 + attackPower * 1.5;
-            cout << name << " dealt " << y << " damage." << endl;
-            Target->takeDmg(y);
+            d = r() % 6 + attackPower * 1.5;
+            cout << name << " dealt " << d << " damage." << endl;
+            Target->takeDmg(d);
         }
         else if (accuracy > 10) {
-            y = r() % 6 + attackPower;
-            cout << name << " dealt " << y << " damage." << endl;
-            Target->takeDmg(y);
+            d = r() % 6 + attackPower;
+            cout << name << " dealt " << d << " damage." << endl;
+            Target->takeDmg(d);
         }
         else if (accuracy <= 10) {
             cout << name << " has missed its attack!" << endl;

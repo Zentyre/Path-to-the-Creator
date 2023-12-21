@@ -7,6 +7,15 @@ class Player : public Character {
 public:
 	Player(string n, int maxh, int hp, int atk, int def, int lvl, int live);
 	void attack(Character* Target);
+	void takeDmg(int dmg) override {
+		health -= dmg - defence;
+			if (health <= 0) {
+			lives -= 1;
+				if (lives > 0) {
+				health = maxhealth - baselevel / 1.5;
+				}
+			}
+	}
 	void checkitems();
 	void playerclassexecutioner();
 	void playerclasssoulweaver();

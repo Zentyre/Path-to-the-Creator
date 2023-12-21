@@ -15,7 +15,7 @@ Player::Player(string n, int maxh, int hp, int atk, int def, int lvl, int live) 
 int tracklevelpotion, tracksuperpotion, tracksuperiorlevelpotion;
 void Player::playerclassexecutioner() {
     health -= 10;
-    attackPower += 3;
+    attackPower += 4;
     classtype = 2;
 }
 void Player::playerclasssoulweaver() {
