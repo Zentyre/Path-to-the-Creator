@@ -701,6 +701,7 @@ void Player::attack(Character* Target) {
         attack(Target);
         break;
     case 10: 
+        cout << "------------------------------------------------" << endl;
         if (accuratesword == true) {
             cout << "Accurate Sword (No more slipping!)" << endl;
         }
@@ -759,10 +760,10 @@ void Player::attack(Character* Target) {
             cout << "Level Potions (+ " << 10 * tracklevelpotion << " levels)" << endl;
         }
         else if (shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && godarmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false) {
-            cout << "----------------------" << endl;
             cout << "You have no items yet." << endl;
-            cout << "----------------------" << endl << endl;
         }
+        cout << "------------------------------------------------" << endl;
+        cout << endl;
         attack(Target);
         break;
     default:

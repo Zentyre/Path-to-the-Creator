@@ -547,7 +547,7 @@ int main() {
         case 1: 
             areachoice = "Mushroom Kingdom";
             cout << endl;
-            cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get them!-" << endl;
+            cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get them!-" << endl << endl;;
             areachoiceint = 1;
             break;
         case 2: 
