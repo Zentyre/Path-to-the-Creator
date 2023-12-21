@@ -5,7 +5,7 @@ using namespace std;
 
 class Player : public Character {
 public:
-	Player(string n2, int maxh2, int hp2, int atk2, int df2, int lvl2, int live2);
+	Player(string n, int maxh, int hp, int atk, int def, int lvl, int live);
 	void attack(Character* Target);
 	void checkitems();
 	void playerclassexecutioner();

@@ -125,12 +125,12 @@ void Enemy::attack(Character* Target) {
         accuracy = r() % 100 + 1;
         critchance = r() % 100 + 1;
         if (accuracy > 10 && critchance <= 5) {
-            y = r() % 7 + attackPower * 1.5;
+            y = r() % 6 + attackPower * 1.5;
             cout << name << " dealt " << y << " damage." << endl;
             Target->takeDmg(y);
         }
         else if (accuracy > 10) {
-            y = r() % 7 + attackPower;
+            y = r() % 6 + attackPower;
             cout << name << " dealt " << y << " damage." << endl;
             Target->takeDmg(y);
         }

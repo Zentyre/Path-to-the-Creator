@@ -3,14 +3,14 @@
 #include <random>
 using namespace std;
 
-Player::Player(string n2, int maxh2, int hp2, int atk2, int df2, int lvl2, int live2) {
-    name = n2;
-    maxhealth = maxh2;
-    health = hp2;
-    attackPower = atk2;
-    defence = df2;
-    baselevel = lvl2;
-    lives = live2;
+Player::Player(string n, int maxh, int hp, int atk, int def, int lvl, int live) {
+    name = n;
+    maxhealth = maxh;
+    health = hp;
+    attackPower = atk;
+    defence = def;
+    baselevel = lvl;
+    lives = live;
 }
 int tracklevelpotion, tracksuperpotion, tracksuperiorlevelpotion;
 void Player::playerclassexecutioner() {
