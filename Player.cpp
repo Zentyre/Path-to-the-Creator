@@ -299,7 +299,7 @@ void Player::attack(Character* Target) {
     case 1:
         accuracy = r() & 100 + 1;
         if (accuratesword == true || fallen == true) {
-            x = r() % 5 + 4 + (level >= 30) ? 30 : (level % 30) + attackPower; //normal attack
+            x = r() % 5 + 4 + (level >= 30) ? 30 : level + attackPower; //normal attack
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -328,7 +328,7 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (accuracy > 10) {
-            x = r() % 5 + 4 + (level >= 30) ? 30 : (level % 30) + attackPower; //normal attack
+            x = r() % 5 + 4 + (level >= 30) ? 30 : level + attackPower; //normal attack
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -365,7 +365,7 @@ void Player::attack(Character* Target) {
     case 2:
         accuracy = r() & 100 + 1;
         if (accuratesword == true || fallen == true) {
-            x = r() % 4 + 2 + (level >= 30) ? 30 : (level % 30) + attackPower;
+            x = r() % 4 + 2 + (level >= 30) ? 30 : level + attackPower;
             Target->takeDmg(x);
             h = x - 2;
             cout << endl;
@@ -383,7 +383,7 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (accuracy > 10) {
-            x = r() % 4 + 2 + (level >= 30) ? 30 : (level % 30) + attackPower;
+            x = r() % 4 + 2 + (level >= 30) ? 30 : level + attackPower;
             Target->takeDmg(x);
             h = x - 3;
             cout << endl;
@@ -409,7 +409,7 @@ void Player::attack(Character* Target) {
     case 3:
         accuracy = r() & 100 + 1;
         if (baselevel >= 15 && accuratesword == true || fallen == true) {
-            x = r() % 6 + 6 + (level >= 30) ? 30 : (level % 30) + attackPower; //normal attack
+            x = r() % 6 + 6 + (level >= 30) ? 30 : level + attackPower; //normal attack
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -438,7 +438,7 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (baselevel >= 15 && accuracy > 10) {
-            x = r() % 6 + 6 + (level >= 30) ? 30 : (level % 30) + attackPower;
+            x = r() % 6 + 6 + (level >= 30) ? 30 : level + attackPower;
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -485,7 +485,7 @@ void Player::attack(Character* Target) {
         accuracy = r() & 100 + 1; //single heal
         if (baselevel >= 25 && accuratesword == true || fallen == true) {
             fallen = false;
-            x = r() % 4 + 6 + (level >= 30) ? 30 : (level % 30);
+            x = r() % 4 + 6 + (level >= 30) ? 30 : level;
             h = x;
             cout << "-----------------------------------------------" << endl;
             if (health >= maxhealth) {
@@ -500,7 +500,7 @@ void Player::attack(Character* Target) {
         }
         else if (baselevel >= 25 && accuracy > 10) {
             fallen = false;
-            x = r() % 4 + 6 + (level >= 30) ? 30 : (level % 30);
+            x = r() % 4 + 6 + (level >= 30) ? 30 : level;
             h = x;
             health += h;
             cout << "-----------------------------------------------" << endl;
@@ -531,7 +531,7 @@ void Player::attack(Character* Target) {
     case 5:
         accuracy = r() & 100 + 1; //lifesteal attack
         if (baselevel >= 50 && accuratesword == true || fallen == true) {
-            x = r() % 6 + 7 + (level >= 30) ? 30 : (level % 30) + attackPower;
+            x = r() % 6 + 7 + (level >= 30) ? 30 : level + attackPower;
             Target->takeDmg(x);
             h = x - 5;
             cout << endl;
@@ -550,7 +550,7 @@ void Player::attack(Character* Target) {
         }
         else if (baselevel >= 50 && accuracy > 10) {
             fallen = false;
-            x = r() % 6 + 7 + (level >= 30) ? 30 : (level % 30) + attackPower;
+            x = r() % 6 + 7 + (level >= 30) ? 30 : level + attackPower;
             Target->takeDmg(x);
             h = x - 5;
             cout << endl;
@@ -586,12 +586,12 @@ void Player::attack(Character* Target) {
             maybeaddlife = r() % 100 + 1;
             if (maybeaddlife <= 5) {
                 addlives(1);
-                x = r() % 4 + 4 + (level >= 30) ? 30 : (level % 30) + attackPower;
+                x = r() % 4 + 4 + (level >= 30) ? 30 : level + attackPower;
                 Target->takeDmg(x);
                 cout << name << ", you dealt " << x << " damage." << endl;
             }
             else if (maybeaddlife > 5 && maybeaddlife <= 40) {
-                x = r() % 4 + 4 + (level >= 30) ? 30 : (level % 30) + attackPower;
+                x = r() % 4 + 4 + (level >= 30) ? 30 : level + attackPower;
                 Target->takeDmg(x);
                 cout << name << ", you dealt " << x << " damage." << endl;
             }
@@ -617,13 +617,13 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (knightmove == true) {
-            x = r() % 7 + 8 + (level >= 30) ? 30 : (level % 30) + attackPower;
+            x = r() % 7 + 8 + (level >= 30) ? 30 : level + attackPower;
             Target->takeDmg(x);
             cout << name << ", you dealt " << x << " damage." << endl;
             break;
         }
         else if (dreadnoughtmove == true) {
-            x = r() % 7 + 10 + (level >= 30) ? 30 : (level % 30);
+            x = r() % 7 + 10 + (level >= 30) ? 30 : level;
             int critchance = 0;
             critchance = r() % 100 + 1;
             if (critchance <= 10) {
@@ -642,7 +642,7 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (executionermove == true) {
-            x = r() % 11 + 7 + (level >= 30) ? 30 : (level % 30) + attackPower;
+            x = r() % 11 + 7 + (level >= 30) ? 30 : level + attackPower;
             int critrate;
             critrate = r() % 100 + 1;
             if (critrate <= 20) {
