@@ -423,7 +423,7 @@ int main() {
         cout << "At levels 15, 25, 50 and 100, you gain new abilities. At level 200 you fight the final boss(Level gained from items does not affect this)" << endl;
         cout << "I wish you well on your conquest." << endl;
         cout << endl;
-        Player Knight("Player", 50, 25, 4, 0, 0, 1);
+        Player Knight("Player", 1000, 1000, 1000, 1000, 49, 1000);
         cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought or 6- Trickster?" << endl;
         cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
         int playerclasschoice = 0;
@@ -716,27 +716,23 @@ delete Slime;
                 if (Knight.isAlive() == true && Knight.getbaselevel() == 50 && playerclasschoice == 6) {
                     Knight.trickstermove = true;
                     cout << "You have unlocked your Trickster skill, Confuse!" << endl;
-                    cout << endl;
                 }
                 else if (Knight.isAlive() == true && Knight.getbaselevel() == 75 && playerclasschoice == 4) {
                     Knight.warforgedmove = true;
                     cout << "You have unlocked your Warforged Engineer skill, Guardians Respite!" << endl;
-                    cout << endl;
                 }
                 else if (Knight.isAlive() == true && Knight.getbaselevel() == 90 && playerclasschoice == 3) {
                     Knight.soulweavermove = true;
                     cout << "You have unlocked your Soulweaver skill, Fortuitous Gambit!" << endl;
-                    cout << endl;
                 }
                 else if (Knight.isAlive() == true && Knight.getbaselevel() == 80 && playerclasschoice == 1) {
                     Knight.knightmove = true;
                     cout << "You have unlocked your special Knight skill, Titans Strike!" << endl;
-                    cout << endl;
                 }
                 else if (Knight.isAlive() == true && Knight.getbaselevel() == 75 && playerclasschoice == 5) {
                     Knight.dreadnoughtmove = true;
                     cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
-                    cout << endl;
+   
                 }
                 if (areachoiceint == 1) {
                     Enemy* Slime = generateEnemy(Knight.getbaselevel());
@@ -825,7 +821,7 @@ delete Slime;
                     cout << "--You can now dual wield with a shield! (Shield)--" << endl;
                     cout << endl;
                 }
-                if (Knight.getlevel() >= 201 && Knight.isAlive() == true) {
+                if (Knight.getbaselevel() >= 2000 && Knight.isAlive() == true) {
                     break;
                 }
             }

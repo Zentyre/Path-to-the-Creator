@@ -296,9 +296,8 @@ void Player::attack(Character* Target) {
     case 1:
         accuracy = r() & 100 + 1;
         if (accuratesword == true || fallen == true) {
-            x = r() % 5 + 4 + (level % 31) + attackPower; //normal attack
+            x = r() % 5 + 4 + (level > 30) ? (level % 30) : (level % 31) + attackPower; //normal attack
             Target->takeDmg(x);
-            h = 0;
             cout << endl;
             fallen = false;
             int message;
@@ -323,11 +322,11 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
             }
+            break;
         }
         else if (accuracy > 10) {
             x = r() % 5 + 4 + (level % 31) + attackPower; //normal attack
             Target->takeDmg(x);
-            h = 0;
             cout << endl;
             fallen = false;
             int message;
@@ -352,13 +351,14 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
             }
+            break;
         }
         else {
             cout << "-----------------------------------------------" << endl;
             cout << name << " You have slipped and fallen, losing this turn." << endl;
             fallen = true;
+            break;
         }
-        break;
     case 2:
         accuracy = r() & 100 + 1;
         if (accuratesword == true || fallen == true) {
@@ -377,6 +377,7 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            break;
         }
         else if (accuracy > 10) {
             x = r() % 4 + 2 + (level % 31) + attackPower;
@@ -394,19 +395,19 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            break;
         }
         else {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
+            break;
         }
-        break;
     case 3:
         accuracy = r() & 100 + 1;
         if (baselevel >= 15 && accuratesword == true || fallen == true) {
             x = r() % 6 + 6 + (level % 31) + attackPower; //normal attack
             Target->takeDmg(x);
-            h = 0;
             cout << endl;
             fallen = false;
             int message;
@@ -431,11 +432,11 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
             }
+            break;
         }
         else if (baselevel >= 15 && accuracy > 10) {
             x = r() % 6 + 6 + (level % 31) + attackPower;
             Target->takeDmg(x);
-            h = 0;
             cout << endl;
             fallen = false;
             int message;
@@ -460,11 +461,13 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
             }
+            break;
         }
         else if (baselevel >= 15 && accuracy <= 10) {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
+            break;
         }
         else {
             cout << "-----------------------------------------------" << endl;
@@ -472,6 +475,7 @@ void Player::attack(Character* Target) {
             cout << "-----------------------------------------------" << endl;
             cout << endl;
             attack(Target);
+            break;
         }
         break;
     case 4:
@@ -489,6 +493,7 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            break;
         }
         else if (baselevel >= 25 && accuracy > 10) {
             fallen = false;
@@ -504,11 +509,13 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            break;
         }
         else if (baselevel >= 25 && accuracy <= 10) {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
+            break;
         }
         else {
             cout << "-----------------------------------------------" << endl;
@@ -516,8 +523,8 @@ void Player::attack(Character* Target) {
             cout << "-----------------------------------------------" << endl;
             cout << endl;
             attack(Target);
+            break;
         }
-        break;
     case 5:
         accuracy = r() & 100 + 1; //lifesteal attack
         if (baselevel >= 50 && accuratesword == true || fallen == true) {
@@ -536,6 +543,7 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            break;
         }
         else if (baselevel >= 50 && accuracy > 10) {
             x = r() % 6 + 7 + (level % 31) + attackPower;
@@ -552,11 +560,13 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            break;
         }
         else if (baselevel >= 50 && accuracy <= 10) {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
+            break;
         }
         else {
             cout << "-----------------------------------------------" << endl;
@@ -564,8 +574,8 @@ void Player::attack(Character* Target) {
             cout << "-----------------------------------------------" << endl;
             cout << endl;
             attack(Target);
+            break;
         }
-        break;
     case 6:
         if (soulweavermove == true) {
             int maybeaddlife;
@@ -584,6 +594,7 @@ void Player::attack(Character* Target) {
             else if (maybeaddlife > 40) {
                 cout << name << ", your skill failed." << endl;
             }
+            break;
         }
         else if (warforgedmove == true) {
             if (timetracker == 1 || timetracker == 2) {
@@ -594,15 +605,18 @@ void Player::attack(Character* Target) {
                 warforgedmovebool = true;
                 cout << endl;
             }
+            break;
         }
         else if (trickstermove == true) {
             trickstermovebool = true;
             cout << endl;
+            break;
         }
         else if (knightmove == true) {
             x = r() % 7 + 8 + (level % 31) + attackPower;
             Target->takeDmg(x);
             cout << name << ", you dealt " << x << " damage." << endl;
+            break;
         }
         else if (dreadnoughtmove == true) {
             x = r() % 7 + 10 + (level % 31);
@@ -621,6 +635,7 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            break;
         }
         else if (executionermove == true) {
             x = r() % 11 + 7 + (level % 31) + attackPower;
@@ -641,6 +656,7 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            break;
         }
         else {
             cout << "-------------------------------------" << endl;
@@ -648,8 +664,8 @@ void Player::attack(Character* Target) {
             cout << "-------------------------------------" << endl;
             cout << endl;
             attack(Target);
+            break;
         }
-        break;
     case 9:
         cout << " --Stats--" << endl;
         cout << "--" << maxhealth << " Maxhealth--" << endl;
@@ -664,19 +680,19 @@ void Player::attack(Character* Target) {
                 cout << "-Class = Knight-" << endl;
             }
             else if (classtype == 2) {
-                cout << "-Class = Executioner" << endl;
+                cout << "-Class = Executioner-" << endl;
             }
             else if (classtype == 3) {
-                cout << "-Class = Soulweaver" << endl;
+                cout << "-Class = Soulweaver-" << endl;
             }
             else if (classtype == 4) {
-                cout << "-Class = Warforged Engineer" << endl;
+                cout << "-Class = Warforged Engineer-" << endl;
             }
             else if (classtype == 5) {
-                cout << "-Class = Dreadnought" << endl;
+                cout << "-Class = Dreadnought-" << endl;
             }
             else if (classtype == 6) {
-                cout << "-Class = Trickster" << endl;
+                cout << "-Class = Trickster-" << endl;
             }
         attack(Target);
         break;
@@ -739,5 +755,6 @@ void Player::attack(Character* Target) {
         cout << "-------------------------" << endl;
         cout << endl;
         attack(Target);
+        break;
     }
 }
