@@ -12,7 +12,7 @@ Player::Player(string n2, int maxh2, int hp2, int atk2, int df2, int lvl2, int l
     baselevel = lvl2;
     lives = live2;
 }
-
+int tracklevelpotion, tracksuperpotion, tracksuperiorlevelpotion;
 void Player::playerclassexecutioner() {
     health -= 10;
     attackPower += 3;
@@ -44,39 +44,42 @@ void Player::playerclasstrickster() {
 void Player::checkitems() {
     if (Excalibur == true) {
         int x = 0;
-              if (x == 0) {
-                  attackPower += 10;
-                  x += 1;
+         if (x == 0) {
+            attackPower += 10;
+            x += 1;
         }
     }
-    if (Knife == true) {
+    else if (Knife == true) {
         int x = 0;
-             if (x == 0) {
-                attackPower += 2;
-                x += 1;
+         if (x == 0) {
+            attackPower += 2;
+            x += 1;
       }
     }
-    if (Sword == true) {
+    else if (Sword == true) {
         int x = 0;
-              if (x == 0) {
-                attackPower += 4.5;
-                x += 1;
+         if (x == 0) {
+            attackPower += 4.5;
+            x += 1;
         }
     }
-    if (leveltonic == true) {
+    else if (leveltonic == true) {
         level += 10;
+        tracklevelpotion += 1;
         leveltonic = false;
     }
-    if (superiorleveltonic == true) {
+    else if (superiorleveltonic == true) {
         level += 15;
+        tracksuperiorlevelpotion += 1;
         superiorleveltonic = false;
     }
-    if (superpotion == true) {
+    else if (superpotion == true) {
         level += 15;
         attackPower += 6;
+        tracksuperpotion += 1;
         superpotion = false;
     }
-    if (healthtonic == true) {
+    else if (healthtonic == true) {
         if (level >= 150) {
         health += 75;
         }
@@ -91,38 +94,38 @@ void Player::checkitems() {
         }
         healthtonic = false;
     }
-    if (helmet == true) {
+    else if (helmet == true) {
         int x = 0;
-             if (x == 0) {
-            defence += 4;
-            maxhealth += 5;
+        if (x == 0) {
+         defence += 4;
+         maxhealth += 5;
             x += 1;
         }
     }
-    if (chestplate == true) {
-            int x = 0;
-                if (x == 0) {
-                defence += 7;
-                maxhealth += 8;
-                x += 1;
+    else if (chestplate == true) {
+        int x = 0;
+         if (x == 0) {
+           defence += 7;
+           maxhealth += 8;
+           x += 1;
         }
     }
-    if (boots == true) {
+    else if (boots == true) {
         int x = 0;
         if (x == 0) {
-        defence += 3;
-        maxhealth += 4;
-        x += 1;
+          defence += 3;
+          maxhealth += 4;
+          x += 1;
         }
     }
-    if (shield == true) {
+    else if (shield == true) {
         int x = 0;
         if (x == 0) {
-             defence += 10;
-             x += 1;
+          defence += 10;
+          x += 1;
         }
     }
-    if (godarmor == true) {
+    else if (godarmor == true) {
         int x = 0;
         if (x == 0) {
             defence += 20;
@@ -130,24 +133,24 @@ void Player::checkitems() {
             x += 1;
         }
     }
-    if (defenceupgrade == true) {
+    else if (defenceupgrade == true) {
         int x = 0;
         if (x == 0) {
             defence += 10;
             x += 1;
         }
     }
-    if (maxhealthupgrade == true) {
+    else if (maxhealthupgrade == true) {
         maxhealthtracker += 1;
         Character* setmaxhealth();
         health += 50;
         maxhealthupgrade = false;
     }
-    if (attackupgrade == true) {
+    else if (attackupgrade == true) {
         attackPower += 10;
         attackupgrade = false;
     }
-    if (levelupgrade == true) {
+    else if (levelupgrade == true) {
         level += 15;
         levelupgrade = false;
     }
@@ -546,6 +549,7 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (baselevel >= 50 && accuracy > 10) {
+            fallen = false;
             x = r() % 6 + 7 + (level % 31) + attackPower;
             Target->takeDmg(x);
             h = x - 5;
@@ -700,49 +704,61 @@ void Player::attack(Character* Target) {
         if (accuratesword == true) {
             cout << "Accurate Sword (No more slipping!)" << endl;
         }
-        if (helmet == true) {
+        else if (helmet == true) {
             cout << "Helmet (+7 defence)" << endl;
         }
-        if (boots == true) {
+        else if (boots == true) {
             cout << "Boots (+5 defence)" << endl;
         }
-        if (chestplate == true) {
+        else if (chestplate == true) {
             cout << "Chestplate (+10 defence)" << endl;
         }
-        if (Excalibur == true) {
+        else if (Excalibur == true) {
             cout << "Excalibur (+8 attack)" << endl;
         }
-        if (Knife == true) {
+        else if (Knife == true) {
             cout << "Knife (+2 attack)" << endl;
         }
-        if (Sword == true) {
+        else if (Sword == true) {
             cout << "Sword (+4 attack)" << endl;
         }
-        if (leveltonic == true) {
+        else if (leveltonic == true) {
             cout << "Level Tonic (+10 level)" << endl;
         }
-        if (superiorleveltonic == true) {
+        else  if (superiorleveltonic == true) {
             cout << "Superior Level Tonic (+15 level)" << endl;
         }
-        if (superpotion == true) {
+        else if (superpotion == true) {
             cout << "Super Potion (+20 level|+10 attack)" << endl;
         }
-        if (defenceupgrade == true) {
+        else if (defenceupgrade == true) {
             cout << "Defence Perk (+10 defence)" << endl;
         }
-        if (godarmor == true) {
+        else if (godarmor == true) {
             cout << "God Armor (+20 defence)" << endl;
         }
-        if (attackupgrade == true) {
+        else if (attackupgrade == true) {
             cout << "Attack Perk (+10 attack)" << endl;
         }
-        if (levelupgrade == true) {
+        else  if (levelupgrade == true) {
             cout << "Level Perk (+15 level)" << endl;
         }
-        if (shield == true) {
+        else if (shield == true) {
             cout << "Shield (+15 defence)" << endl;
         }
-        if (shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && godarmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false) {
+        else if (tracklevelpotion >= 1) {
+            cout << "Level Potions (+ " << 10 * tracklevelpotion << " levels)" << endl;
+        }
+        else if (tracksuperiorlevelpotion >= 1) {
+            cout << "Superior Level Potions (+ " << 15 * tracksuperiorlevelpotion << " levels)" << endl;
+        }
+        else if (tracksuperpotion >= 1) {
+            cout << "Super Potions (+ " << 15 * tracksuperpotion << " levels + " << 6 * tracksuperpotion << " Attack)" << endl;
+        }
+        else if (maxhealthtracker >= 1) {
+            cout << "Level Potions (+ " << 10 * tracklevelpotion << " levels)" << endl;
+        }
+        else if (shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && godarmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false) {
             cout << "----------------------" << endl;
             cout << "You have no items yet." << endl;
             cout << "----------------------" << endl << endl;

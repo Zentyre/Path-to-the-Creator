@@ -423,7 +423,7 @@ int main() {
         cout << "At levels 15, 25, 50 and 100, you gain new abilities. At level 200 you fight the final boss(Level gained from items does not affect this)" << endl;
         cout << "I wish you well on your conquest." << endl;
         cout << endl;
-        Player Knight("Player", 1000, 1000, 1000, 1000, 49, 1000);
+        Player Knight("Player", 50, 25, 4, 0, 0, 1);
         cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought or 6- Trickster?" << endl;
         cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
         int playerclasschoice = 0;
@@ -650,18 +650,21 @@ delete Slime;
                     default: 
                     cout << "That choice doesn't exist, I'll choose for you." << endl;
                     int x = 0;
-                        x = r() % 4 + 1;
+                        x = r() % 5 + 1;
                         if (x == 1) {
-                            Knight.maxhealthupgrade = true;
+                           Knight.maxhealthupgrade = true;
                         }
                         else if (x == 2) {
-                            Knight.attackupgrade = true;
+                           Knight.attackupgrade = true;
                         }
                         else if (x == 3) {
-                        Knight.defenceupgrade = true;
+                           Knight.defenceupgrade = true;
+                        }
+                        else if (x == 4) {
+                           Knight.levelupgrade = true;
                         }
                         else {
-                            Knight.levelupgrade = true;
+                           Knight.addlives(1);
                         }
                     break;
                 }
@@ -732,7 +735,6 @@ delete Slime;
                 else if (Knight.isAlive() == true && Knight.getbaselevel() == 75 && playerclasschoice == 5) {
                     Knight.dreadnoughtmove = true;
                     cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
-   
                 }
                 if (areachoiceint == 1) {
                     Enemy* Slime = generateEnemy(Knight.getbaselevel());
@@ -848,11 +850,14 @@ delete Slime;
             }
             cout << endl;
             cout << "--Your overall stats were--" << "-" << endl;
-            cout << "-Maxhealth = " << Knight.getmaxhealth() << "-" << endl;
+            cout << "-Baselevel = " << Knight.getbaselevel() << "-" << endl;
             cout << "-Level = " << Knight.getlevel() << "-" << endl;
+            cout << "-Maxhealth = " << Knight.getmaxhealth() << "-" << endl;
+            cout << "-Health = " << Knight.gethealth() << "-" << endl;
             cout << "-Attack = " << Knight.getattackPower() << "-" << endl;
             cout << "-Defence = " << Knight.getdefence() << "-" << endl;
             cout << "-Kills = " << Knight.getkills() << "-" << endl;
+            cout << "-Lives = " << Knight.getlives() << "-" << endl;
             if (Knight.getclass() == 1) {
                 cout << "-Class = Knight" << "-" << endl;
             }
@@ -893,13 +898,14 @@ delete Slime;
         else {
             cout << "You have saved the universe from the Creator and became a hero!" << endl;
             cout << "--Your overall stats were--" << "-" << endl;
+            cout << "-Baselevel = " << Knight.getbaselevel() << "-" << endl;
             cout << "-Level = " << Knight.getlevel() << "-" << endl;
             cout << "-Maxhealth = " << Knight.getmaxhealth() << "-" << endl;
             cout << "-Health = " << Knight.gethealth() << "-" << endl;
             cout << "-Attack = " << Knight.getattackPower() << "-" << endl;
             cout << "-Defence = " << Knight.getdefence() << "-" << endl;
             cout << "-Kills = " << Knight.getkills() << "-" << endl;
-            cout << "-Lives =" << Knight.getlives() << "-" << endl;
+            cout << "-Lives = " << Knight.getlives() << "-" << endl;
             if (Knight.getclass() == 1) {
                 cout << "-Class = Knight" << "-" << endl;
             }
@@ -923,6 +929,7 @@ delete Slime;
             string playagain;
             cin >> playagain;
             if (playagain == "N" || playagain == "n") {
+                cout << "Hope to see you again soon!";
                 break;
             }
             else if (playagain == "Y" || playagain == "y") {
