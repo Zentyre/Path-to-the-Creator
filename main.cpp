@@ -46,43 +46,43 @@ Enemy* generateEnemy(int l) {
     }
     switch (x) {
     case 0:
-        return new Enemy("Shroom", 20, 2);
+        return new Enemy("Shroom", 20, 2, 1, 20);
         break;
     case 1:
-        return new Enemy("Shroom Knight", 30, 1);
+        return new Enemy("Shroom Knight", 30, 1, 1, 30);
         break;
     case 2:
-        return new Enemy("Shroom ArchKnight", 25, 2);
+        return new Enemy("Shroom ArchKnight", 25, 2, 1, 25);
         break;
     case 3:
-        return new Enemy("Noble Shroom", 40, 3);
+        return new Enemy("Noble Shroom", 40, 3, 1, 40);
         break;
     case 4:
-        return new Enemy("Royal Shroom", 60, 4);
+        return new Enemy("Royal Shroom", 60, 4, 1, 60);
         break;
     case 5:
-        return new Enemy("Princess Slime", 100, 7);
+        return new Enemy("Princess Slime", 100, 7, 1, 100);
         break;
     case 6:
-        return new Enemy("Prince Shroom", 250, 13);
+        return new Enemy("Prince Shroom", 250, 13, 1, 250);
         break;
     case 7:
-        return new Enemy("King Shroom", 150, 20);
+        return new Enemy("King Shroom", 150, 20, 1, 150);
         break;
     case 8:
-        return new Enemy("Emperor Shroom", 250, 25);
+        return new Enemy("Emperor Shroom", 250, 25, 1, 250);
         break;
     case 9:
-        return new Enemy("Leader Shroom", 350, 30);
+        return new Enemy("Leader Shroom", 350, 30, 1, 350);
         break;
     case 10:
-        return new Enemy("Divine Shroom", 400, 40);
+        return new Enemy("Divine Shroom", 400, 40, 1, 400);
         break;
     case 11:
-        return new Enemy("Boss Shroom", 450, 50);
+        return new Enemy("Boss Shroom", 450, 50, 1, 450);
         break;
     default:
-        return new Enemy("Creator Shroom", 500, 60);
+        return new Enemy("Creator Shroom", 500, 60, 1, 500);
         break;
     }
 }
@@ -128,43 +128,43 @@ Enemy* generateEnemy2(int l2) {
 
     switch (x) {
     case 0:
-        return new Enemy("Slime", 20, 2);
+        return new Enemy("Slime", 20, 2, 1, 20);
         break;
     case 1:
-        return new Enemy("Epic Slime", 30, 1);
+        return new Enemy("Epic Slime", 30, 1, 1, 30);
         break;
     case 2:
-        return new Enemy("Superior Slime", 25, 2);
+        return new Enemy("Superior Slime", 25, 2, 1, 25);
         break;
     case 3:
-        return new Enemy("Super Slime", 40, 3);
+        return new Enemy("Super Slime", 40, 3, 1, 40);
         break;
     case 4:
-        return new Enemy("Incredible Slime", 60, 4);
+        return new Enemy("Incredible Slime", 60, 4, 1, 60);
         break;
     case 5:
-        return new Enemy("Superb Slime", 100, 7);
+        return new Enemy("Superb Slime", 100, 7, 1, 100);
         break;
     case 6:
-        return new Enemy("King Slime", 250, 13);
+        return new Enemy("King Slime", 250, 13, 1, 250);
         break;
     case 7:
-        return new Enemy("Demon Slime", 150, 20);
+        return new Enemy("Demon Slime", 150, 20, 1, 150);
         break;
     case 8:
-        return new Enemy("Overlord Slime", 250, 25);
+        return new Enemy("Overlord Slime", 250, 25, 1, 250);
         break;
     case 9:
-        return new Enemy("Universal Super Slime", 350, 30);
+        return new Enemy("Universal Super Slime", 350, 30, 1, 350);
         break;
     case 10:
-        return new Enemy("Godly Slime", 400, 40);
+        return new Enemy("Godly Slime", 400, 40, 1, 400);
         break;
     case 11:
-        return new Enemy("Boss Slime", 450, 50);
+        return new Enemy("Boss Slime", 450, 50, 1, 450);
         break;
     default:
-        return new Enemy("Creator Slime", 500, 60);
+        return new Enemy("Creator Slime", 500, 60, 1, 500);
         break;
     }
 }
@@ -210,43 +210,43 @@ Enemy* generateEnemy3(int l3) {
 
     switch (x) {
     case 0:
-        return new Enemy("Croc", 20, 2);
+        return new Enemy("Croc", 20, 2, 1, 20);
         break;
     case 1:
-        return new Enemy("Croc Pot", 30, 1);
+        return new Enemy("Croc Pot", 30, 1, 1, 30);
         break;
     case 2:
-        return new Enemy("Mini Croc", 25, 2);
+        return new Enemy("Mini Croc", 25, 2, 1, 25);
         break;
     case 3:
-        return new Enemy("Big Croc", 40, 3);
+        return new Enemy("Big Croc", 40, 3, 1, 40);
         break;
     case 4:
-        return new Enemy("Land Croc", 60, 4);
+        return new Enemy("Land Croc", 60, 4, 1, 60);
         break;
     case 5:
-        return new Enemy("SharpTooth Croc", 100, 7);
+        return new Enemy("SharpTooth Croc", 100, 7, 1, 100);
         break;
     case 6:
-        return new Enemy("King Croc", 250, 13);
+        return new Enemy("King Croc", 250, 13, 1, 250);
         break;
     case 7:
-        return new Enemy("Evil Croc", 150, 20);
+        return new Enemy("Evil Croc", 150, 20, 1, 150);
         break;
     case 8:
-        return new Enemy("Crocodile Dundee", 250, 25);
+        return new Enemy("Crocodile Dundee", 250, 25, 1, 250);
         break;
     case 9:
-        return new Enemy("Killer Croc", 350, 30);
+        return new Enemy("Killer Croc", 350, 30, 1, 350);
         break;
     case 10:
-        return new Enemy("Transcendent Croc", 400, 40);
+        return new Enemy("Transcendent Croc", 400, 40, 1, 400);
         break;
     case 11:
-        return new Enemy("Florida Croc", 450, 50);
+        return new Enemy("Florida Croc", 450, 50, 1, 450);
         break;
     default:
-        return new Enemy("Creator Croc", 500, 60);
+        return new Enemy("Creator Croc", 500, 60, 1, 500);
         break;
     }
 }
@@ -292,43 +292,43 @@ Enemy* generateEnemy4(int l4) {
 
     switch (x) {
     case 0:
-        return new Enemy("Roo", 20, 2);
+        return new Enemy("Roo", 20, 2, 1, 20);
         break;
     case 1:
-        return new Enemy("Joey Roo", 30, 1);
+        return new Enemy("Joey Roo", 30, 1, 1, 30);
         break;
     case 2:
-        return new Enemy("Kangaroo", 25, 2);
+        return new Enemy("Kangaroo", 25, 2, 1, 25);
         break;
     case 3:
-        return new Enemy("Mother Kangaroo", 40, 3);
+        return new Enemy("Mother Kangaroo", 40, 3, 1, 40);
         break;
     case 4:
-        return new Enemy("Boxer Roo", 60, 4);
+        return new Enemy("Boxer Roo", 60, 4, 1, 60);
         break;
     case 5:
-        return new Enemy("Jumping Roo", 100, 7);
+        return new Enemy("Jumping Roo", 100, 7, 1, 100);
         break;
     case 6:
-        return new Enemy("Killer Roo", 250, 13);
+        return new Enemy("Killer Roo", 250, 13, 1, 250);
         break;
     case 7:
-        return new Enemy("Crackhead Roo", 150, 20);
+        return new Enemy("Crackhead Roo", 150, 20, 1, 150);
         break;
     case 8:
-        return new Enemy("Aussie Roo", 250, 25);
+        return new Enemy("Aussie Roo", 250, 25, 1, 250);
         break;
     case 9:
-        return new Enemy("Jacked Roo", 350, 30);
+        return new Enemy("Jacked Roo", 350, 30, 1, 350);
         break;
     case 10:
-        return new Enemy("Paragon Roo", 400, 40);
+        return new Enemy("Paragon Roo", 400, 40, 1, 400);
         break;
     case 11:
-        return new Enemy("Boomaroo", 450, 50);
+        return new Enemy("Boomaroo", 450, 50, 1, 450);
         break;
     default:
-        return new Enemy("Creator Kangaroo", 500, 60);
+        return new Enemy("Creator Kangaroo", 500, 60, 1, 500);
         break;
     }
 }
@@ -374,43 +374,43 @@ Enemy* generateEnemy5(int l5) {
 
     switch (x) {
     case 0:
-        return new Enemy("Skeleton", 20, 2);
+        return new Enemy("Skeleton", 20, 2, 1, 20);
         break;
     case 1:
-        return new Enemy("Skellie", 30, 1);
+        return new Enemy("Skellie", 30, 1, 1, 30);
         break;
     case 2:
-        return new Enemy("Enchanted Bow Skeleton", 25, 2);
+        return new Enemy("Enchanted Bow Skeleton", 25, 2, 1, 25);
         break;
     case 3:
-        return new Enemy("Aimbot Skellie", 40, 3);
+        return new Enemy("Aimbot Skellie", 40, 3, 1, 40);
         break;
     case 4:
-        return new Enemy("Aimbot Skeleton", 60, 4);
+        return new Enemy("Aimbot Skeleton", 60, 4, 1, 60);
         break;
     case 5:
-        return new Enemy("Bony Bill", 100, 7);
+        return new Enemy("Bony Bill", 100, 7, 1, 100);
         break;
     case 6:
-        return new Enemy("Crazy Bones", 250, 13);
+        return new Enemy("Crazy Bones", 250, 13, 1, 250);
         break;
     case 7:
-        return new Enemy("Broken Bone Skeleton", 150, 20);
+        return new Enemy("Broken Bone Skeleton", 150, 20, 1, 150);
         break;
     case 8:
-        return new Enemy("Boogie Bone", 250, 25);
+        return new Enemy("Boogie Bone", 250, 25, 1, 250);
         break;
     case 9:
-        return new Enemy("Ranked Skeleton", 350, 30);
+        return new Enemy("Ranked Skeleton", 350, 30, 1, 350);
         break;
     case 10:
-        return new Enemy("Captain Skellie", 400, 40);
+        return new Enemy("Captain Skellie", 400, 40, 1, 400);
         break;
     case 11:
-        return new Enemy("Super Skellie", 450, 50);
+        return new Enemy("Super Skellie", 450, 50, 1, 450);
         break;
     default:
-        return new Enemy("Creator Skeleton", 500, 60);
+        return new Enemy("Creator Skeleton", 500, 60, 1, 500);
         break;
     }
 }
@@ -533,6 +533,17 @@ int main() {
                 int x = 0;
                 x = r() % 5 + 1;
     switch (x) {
+        case 0:
+            if (cin.fail()) {
+                cout << endl;
+                cout << "----------------------" << endl;
+                cout << "I chose an area for you." << endl;
+                cout << "----------------------" << endl << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                areachoiceint = r() % 5 + 1;
+                break;
+            }
         case 1: 
             areachoice = "Mushroom Kingdom";
             cout << endl;
@@ -571,7 +582,7 @@ int main() {
             cout << "----------------------" << endl << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            areachoiceint = 5;
+            areachoiceint = r() % 5 + 1;
             break;
                 }
             }
@@ -778,47 +789,47 @@ delete Slime;
                 cout << endl;
                 int item = 0;
                 item = r() % 100 + 1;
-                if (item == 1 || item == 2) {
+                if (item == 1) {
                     Knight.Excalibur = true;
                     cout << "--You gained a super item! (Excalibur)--" << endl;
                     cout << endl;
                 }
-                else if (item == 3 || item == 4) {
+                else if (item == 2) {
                     Knight.superiorleveltonic = true;
                     cout << "--You gained a super item! (SuperiorLevelTonic)--" << endl;
                     cout << endl;
                 }
-                else if (item == 5 || item == 6 || item == 7) {
+                else if (item == 3 || item == 4 || item == 5) {
                     Knight.Knife = true;
                     cout << "--You gained an item! (Knife)--" << endl;
                     cout << endl;
                 }
-                else if (item == 8 || item == 9 || item == 10) {
+                else if (item == 6 || item == 7) {
                     Knight.Sword = true;
                     cout << "--You gained an item! (Sword)--" << endl;
                     cout << endl;
                 }
-                else if (item == 11 || item == 12 || item == 13) {
+                else if (item == 8 || item == 9 || item == 10 || item == 11) {
                     Knight.leveltonic = true;
                     cout << "--You gained an item! (LevelTonic)--" << endl;
                     cout << endl;
                 }
-                else if (item == 14) {
+                else if (item == 12) {
                     Knight.superpotion = true;
                     cout << "--You gained a godly item! (Super potion)--" << endl;
                     cout << endl;
                 }
-                else if (item >= 15 && item <= 25) {
+                else if (item >= 13 && item <= 23) {
                     Knight.healthtonic = true;
                     cout << "--You gained a health tonic! (Healing potion)--" << endl;
                     cout << endl;
                 }
-                else if (item == 26 || item == 26 || item == 28) {
+                else if (item == 24 || item == 25 || item == 26) {
                     Knight.accuratesword = true;
                     cout << "--You gained the legendary accuracy sword! (never miss again)--" << endl;
                     cout << endl;
                 }
-                else if (item == 29 || item == 30 || item == 31 || item == 32 || item == 33) {
+                else if (item == 27 || item == 28 || item == 29 || item == 30) {
                     Knight.shield = true;
                     cout << "--You can now dual wield with a shield! (Shield)--" << endl;
                     cout << endl;
@@ -859,22 +870,22 @@ delete Slime;
             cout << "-Kills = " << Knight.getkills() << "-" << endl;
             cout << "-Lives = " << Knight.getlives() << "-" << endl;
             if (Knight.getclass() == 1) {
-                cout << "-Class = Knight" << "-" << endl;
+                cout << "-Class = Knight-" << endl;
             }
             else if (Knight.getclass() == 2) {
-                cout << "-Class = Executioner" << "-" << endl;
+                cout << "-Class = Executioner-" << endl;
             }
             else if (Knight.getclass() == 3) {
-                cout << "-Class = Soulweaver" << "-" << endl;
+                cout << "-Class = Soulweaver-"<< endl;
             }
             else if (Knight.getclass() == 4) {
-                cout << "-Class = Warforged Engineer" << "-" << endl;
+                cout << "-Class = Warforged Engineer-" << endl;
             }
             else if (Knight.getclass() == 5) {
-                cout << "-Class = Dreadnought" << "-" << endl;
+                cout << "-Class = Dreadnought-" << endl;
             }
             else if (Knight.getclass() == 6) {
-                cout << "-Class = Trickster" << "-" << endl;
+                cout << "-Class = Trickster-"<< endl;
             }
             cout << "Would you like to try Again? (Y/N)" << endl;
             string retry;

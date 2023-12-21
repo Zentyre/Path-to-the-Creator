@@ -16,6 +16,7 @@ public:
 	bool warforgedmovebool = false;
 	int timetracker = 0;
 	int lives;
+	int enemygenerator = 0;
 	string name;
 	Character();
 	bool isAlive();

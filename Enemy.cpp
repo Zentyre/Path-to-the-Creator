@@ -3,11 +3,12 @@
 #include <random>
 using namespace std;
 
-Enemy::Enemy(string n, int hp, int atk) {
+Enemy::Enemy(string n2, int hp2, int atk2, int live2, int maxh2) {
 
-    name = n;
-    health = hp;
-    attackPower = atk;
+    name = n2;
+    health = hp2;
+    attackPower = atk2;
+    lives = live2;
 }
 random_device r;
 int critchance;
