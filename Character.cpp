@@ -58,9 +58,9 @@ void Character::healovertime() {
 		timetracker = 0;
 		cout << "Your skill has ended." << endl << endl;
 	}
-	else if (timetracker == 1 || timetracker == 2) {
-		int heal = 0;
-		heal = 5 + (level % 31);
+	else {
+		int heal;
+		heal = 5 + (level > 30) ? (level % 30) : (level % 31);
 		cout << "Your skill has healed you for " << heal << " health." << endl;
 	}
 }

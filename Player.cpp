@@ -162,104 +162,104 @@ void Player::attack(Character* Target) {
     bool fallen = false;
     if (classtype == 1) { //knight attack messages |health =25|attackPower=4|lives=1|
         if (knightmove == true) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Titans Strike) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 5 (" << 7 + ((level >= 30) ? 30 : level) + attackPower << "-" << 12 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 6 (Titans Strike) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 50) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 5 (" << 7 + ((level >= 30) ? 30 : level) + attackPower << "-" << 12 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 25) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 15) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
     }
     if (classtype == 2) { //executioner attack messages |health =15|attackPower=7|lives=1|
         if (executionermove == true) {
-  cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Soul Surge) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+  cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 5 (" << 7 + ((level >= 30) ? 30 : level) + attackPower << "-" << 12 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 6 (Soul Surge) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 50) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 5 (" << 7 + ((level >= 30) ? 30 : level) + attackPower << "-" << 12 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 25) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 15) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
     }
    if (classtype == 3) { //soulweaver attack messages |health =20|attackPower=3|lives=2|
    if (soulweavermove == true) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Fortuitous Gambit) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 5 (" << 7 + ((level >= 30) ? 30 : level) + attackPower << "-" << 12 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 6 (Fortuitous Gambit) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
    }
         if (level >= 50) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 5 (" << 7 + ((level >= 30) ? 30 : level) + attackPower << "-" << 12 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 25) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 15) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
     }
     if (classtype == 4) { //warforged engineer attack messages |health =40|attackPower=3|lives=1|
         if (warforgedmove == true) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Guardians Respite) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 5 (" << 7 + ((level >= 30) ? 30 : level) + attackPower << "-" << 12 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 6 (Guardians Respite) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 50) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 5 (" << 7 + ((level >= 30) ? 30 : level) + attackPower << "-" << 12 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 25) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 15) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
     }
     if (classtype == 5) { //dreadnought attack messages |health =50|attackPower=1|lives=1|
         if (dreadnoughtmove == true) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Healing Remedy) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 5 (" << 7 + ((level >= 30) ? 30 : level) + attackPower << "-" << 12 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 6 (Healing Remedy) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 50) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 5 (" << 7 + ((level >= 30) ? 30 : level) + attackPower << "-" << 12 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 25) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 15) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
     }
      if (classtype == 6) { //trickster attack messages |health =20|attackPower=5|lives=1|
         if (trickstermove == true) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 6 (Confuse) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 5 (" << 7 + ((level >= 30) ? 30 : level) + attackPower << "-" << 12 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 6 (Confuse) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 50) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 5 (" << 7 + (level % 31) + attackPower << "-" << 12 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 5 (" << 7 + ((level >= 30) ? 30 : level) + attackPower << "-" << 12 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 25) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 4 (" << 6 + (level % 31) + attackPower << "-" << 9 + (level % 31) + attackPower << " heal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 4 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 9 + ((level >= 30) ? 30 : level) + attackPower << " heal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else if (level >= 15) {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 3 (" << 6 + (level % 31) + attackPower << "-" << 11 + (level % 31) + attackPower << "dmg) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 3 (" << 6 + ((level >= 30) ? 30 : level) + attackPower << "-" << 11 + ((level >= 30) ? 30 : level) + attackPower << "dmg) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
         else {
-            cout << "Choose: 1 (" << 4 + (level % 31) + attackPower << "-" << 8 + (level % 31) + attackPower << " dmg) 2 (" << 2 + (level % 31) + attackPower << "-" << 5 + (level % 31) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + ((level >= 30) ? 30 : level) + attackPower << "-" << 8 + ((level >= 30) ? 30 : level) + attackPower << " dmg) 2 (" << 2 + ((level >= 30) ? 30 : level) + attackPower << "-" << 5 + ((level >= 30) ? 30 : level) + attackPower << " lifesteal) 9 (Stat page) 10 (Inventory) 0 (Special Skill Info)" << endl;
         }
     }
     cin >> playerInput;
@@ -299,7 +299,7 @@ void Player::attack(Character* Target) {
     case 1:
         accuracy = r() & 100 + 1;
         if (accuratesword == true || fallen == true) {
-            x = r() % 5 + 4 + (level > 30) ? (level % 30) : (level % 31) + attackPower; //normal attack
+            x = r() % 5 + 4 + (level >= 30) ? 30 : (level % 30) + attackPower; //normal attack
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -328,7 +328,7 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (accuracy > 10) {
-            x = r() % 5 + 4 + (level % 31) + attackPower; //normal attack
+            x = r() % 5 + 4 + (level >= 30) ? 30 : (level % 30) + attackPower; //normal attack
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -365,7 +365,7 @@ void Player::attack(Character* Target) {
     case 2:
         accuracy = r() & 100 + 1;
         if (accuratesword == true || fallen == true) {
-            x = r() % 4 + 2 + (level % 31) + attackPower;
+            x = r() % 4 + 2 + (level >= 30) ? 30 : (level % 30) + attackPower;
             Target->takeDmg(x);
             h = x - 2;
             cout << endl;
@@ -383,7 +383,7 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (accuracy > 10) {
-            x = r() % 4 + 2 + (level % 31) + attackPower;
+            x = r() % 4 + 2 + (level >= 30) ? 30 : (level % 30) + attackPower;
             Target->takeDmg(x);
             h = x - 3;
             cout << endl;
@@ -409,7 +409,7 @@ void Player::attack(Character* Target) {
     case 3:
         accuracy = r() & 100 + 1;
         if (baselevel >= 15 && accuratesword == true || fallen == true) {
-            x = r() % 6 + 6 + (level % 31) + attackPower; //normal attack
+            x = r() % 6 + 6 + (level >= 30) ? 30 : (level % 30) + attackPower; //normal attack
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -438,7 +438,7 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (baselevel >= 15 && accuracy > 10) {
-            x = r() % 6 + 6 + (level % 31) + attackPower;
+            x = r() % 6 + 6 + (level >= 30) ? 30 : (level % 30) + attackPower;
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -485,7 +485,7 @@ void Player::attack(Character* Target) {
         accuracy = r() & 100 + 1; //single heal
         if (baselevel >= 25 && accuratesword == true || fallen == true) {
             fallen = false;
-            x = r() % 4 + 6 + (level % 31);
+            x = r() % 4 + 6 + (level >= 30) ? 30 : (level % 30);
             h = x;
             cout << "-----------------------------------------------" << endl;
             if (health >= maxhealth) {
@@ -500,7 +500,7 @@ void Player::attack(Character* Target) {
         }
         else if (baselevel >= 25 && accuracy > 10) {
             fallen = false;
-            x = r() % 4 + 6 + (level % 31);
+            x = r() % 4 + 6 + (level >= 30) ? 30 : (level % 30);
             h = x;
             health += h;
             cout << "-----------------------------------------------" << endl;
@@ -531,7 +531,7 @@ void Player::attack(Character* Target) {
     case 5:
         accuracy = r() & 100 + 1; //lifesteal attack
         if (baselevel >= 50 && accuratesword == true || fallen == true) {
-            x = r() % 6 + 7 + (level % 31) + attackPower;
+            x = r() % 6 + 7 + (level >= 30) ? 30 : (level % 30) + attackPower;
             Target->takeDmg(x);
             h = x - 5;
             cout << endl;
@@ -550,7 +550,7 @@ void Player::attack(Character* Target) {
         }
         else if (baselevel >= 50 && accuracy > 10) {
             fallen = false;
-            x = r() % 6 + 7 + (level % 31) + attackPower;
+            x = r() % 6 + 7 + (level >= 30) ? 30 : (level % 30) + attackPower;
             Target->takeDmg(x);
             h = x - 5;
             cout << endl;
@@ -586,12 +586,12 @@ void Player::attack(Character* Target) {
             maybeaddlife = r() % 100 + 1;
             if (maybeaddlife <= 5) {
                 addlives(1);
-                x = r() % 4 + 4 + (level % 31) + attackPower;
+                x = r() % 4 + 4 + (level >= 30) ? 30 : (level % 30) + attackPower;
                 Target->takeDmg(x);
                 cout << name << ", you dealt " << x << " damage." << endl;
             }
             else if (maybeaddlife > 5 && maybeaddlife <= 40) {
-                x = r() % 4 + 4 + (level % 31) + attackPower;
+                x = r() % 4 + 4 + (level >= 30) ? 30 : (level % 30) + attackPower;
                 Target->takeDmg(x);
                 cout << name << ", you dealt " << x << " damage." << endl;
             }
@@ -617,13 +617,13 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (knightmove == true) {
-            x = r() % 7 + 8 + (level % 31) + attackPower;
+            x = r() % 7 + 8 + (level >= 30) ? 30 : (level % 30) + attackPower;
             Target->takeDmg(x);
             cout << name << ", you dealt " << x << " damage." << endl;
             break;
         }
         else if (dreadnoughtmove == true) {
-            x = r() % 7 + 10 + (level % 31);
+            x = r() % 7 + 10 + (level >= 30) ? 30 : (level % 30);
             int critchance = 0;
             critchance = r() % 100 + 1;
             if (critchance <= 10) {
@@ -642,7 +642,7 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (executionermove == true) {
-            x = r() % 11 + 7 + (level % 31) + attackPower;
+            x = r() % 11 + 7 + (level >= 30) ? 30 : (level % 30) + attackPower;
             int critrate;
             critrate = r() % 100 + 1;
             if (critrate <= 20) {
