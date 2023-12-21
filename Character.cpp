@@ -65,42 +65,45 @@ void Character::healovertime() {
 	}
 }
 void Character::setmaxhealth(int charactermaxhealth) {
-	if (level < 25) {
-		charactermaxhealth = 50;
+	if (level >= 500) {
+		charactermaxhealth = 500;
 	}
-	else if (level >= 150) {
+	else if (level >= 450) {
+		charactermaxhealth = 450;
+	}
+	else if (level >= 400) {
+		charactermaxhealth = 400;
+	}
+	else if (level >= 350) {
+		charactermaxhealth = 350;
+	}
+	else if (level >= 300) {
 		charactermaxhealth = 300;
 	}
-	else if (level >= 100) {
+	else if (level >= 250) {
 		charactermaxhealth = 250;
 	}
-	else if (level >= 75) {
+	else if (level >= 200) {
 		charactermaxhealth = 200;
 	}
-	else if (level >= 50) {
+	else if (level >= 150) {
 		charactermaxhealth = 150;
 	}
-	else if (level >= 25) {
+	else if (level >= 100) {
 		charactermaxhealth = 100;
 	}
-	//adds more health based on maxhealthupgrade amount
-	if (maxhealthtracker == 1) {
-		charactermaxhealth += 50;
+	else if (level >= 75) {
+		charactermaxhealth = 75;
 	}
-	else if (maxhealthtracker == 2) {
-		charactermaxhealth += 100;
-	}
-	else if (maxhealthtracker == 3) {
-		charactermaxhealth += 150;
-	}
-	else if (maxhealthtracker == 4) {
-		charactermaxhealth += 200;
-	}
-	else if (maxhealthtracker == 5) {
-		charactermaxhealth += 250;
+	else if (level >= 50) {
+		charactermaxhealth = 50;
 	}
 	else {
-		charactermaxhealth += 250;
+		charactermaxhealth = 30;
+	}
+	//adds more health based on maxhealthupgrade amount
+	if (maxhealthtracker >= 1) {
+		charactermaxhealth = charactermaxhealth + (50 * maxhealthtracker);
 	}
 	maxhealth = charactermaxhealth;
 }
