@@ -1,5 +1,14 @@
-﻿  main.cpp
+﻿  Character.cpp
 C:\Users\drago\source\repos\Full-Evil-Conquest\Player.h(15,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  (compiling source file 'main.cpp')
+  (compiling source file 'Character.cpp')
   
+  Player.cpp
+C:\Users\drago\source\repos\Full-Evil-Conquest\Player.h(15,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\drago\source\repos\Full-Evil-Conquest\Player.cpp(62,28): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Full-Evil-Conquest\Player.cpp(674,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Full-Evil-Conquest\Player.cpp(693,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Full-Evil-Conquest\Player.cpp(695,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
   Full-Evil-Conquest.vcxproj -> C:\Users\drago\source\repos\Full-Evil-Conquest\x64\Debug\Full-Evil-Conquest.exe

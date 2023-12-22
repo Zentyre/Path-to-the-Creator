@@ -1,5 +1,6 @@
 #include "Character.h"
 #include <iostream>
+#include "Player.h"
 using namespace std;
 
 
@@ -52,6 +53,29 @@ int Character::incrementkills() {
 }
 int Character::setkillplayer() {
 	return killplayer = true;
+}
+void Character::itemusehealthtonic() {
+	if (level >= 150) {
+		health += 100;
+	}
+	else if (level >= 100) {
+		health += 75;
+	}
+	else if (level >= 50) {
+		health += 50;
+	}
+	else {
+		health += 25;
+	}
+	if (health > maxhealth) {
+		health = maxhealth;
+	}
+	healthtonicitem -= 1;
+	cout << "You now have " << health << " health." << endl;
+}
+void Character::itemuseinvispotion() {
+	usinginvispotion = true;
+	invisibilitypotion -= 1;
 }
 void Character::healovertime() {
 	if (timetracker == 2) {

@@ -45,4 +45,17 @@ public:
 	bool defenceupgrade = false;
 	bool levelupgrade = false;
 	bool attackupgrade = false;
+	bool armorupgrade = false;
+	bool weaponupgrade = false;
+	bool flaminglongsword = false;
+	bool maxhealthupgradeitem = false;
+	bool healingpotionitem = false;
+	bool lightningshard = false;
+	int forgehammer = 0;
+	bool glassshoes = false;
+	bool mystichelmet = false;
+	bool dragonscalechestplate = false;
+	bool travelersbackpack = false; // make it so that when this is acquired, you can now save potions you get instead of them being instantly used.
+	int molotov = 0;
+	bool playerpet = false;;
 };

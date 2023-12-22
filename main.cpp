@@ -6,7 +6,7 @@
 #include "Enemy.h"
 using namespace std;
 Enemy* generateEnemy(int l) {
-   random_device r;
+    random_device r;
     int x;
     if (l == 200) {
         x = 12;
@@ -587,10 +587,10 @@ int main() {
                 }
             }
     }
-random_device r;
-int classcurrency = 0;
-Enemy* Slime = generateEnemy(Knight.getbaselevel());
-delete Slime;
+    random_device r;
+    int classcurrency = 0;
+    Enemy* Slime = generateEnemy(Knight.getbaselevel());
+    delete Slime;
     if (areachoiceint == 1) {
         Enemy* Slime = generateEnemy(Knight.getbaselevel());
     }
@@ -727,6 +727,8 @@ delete Slime;
                 }
                 Knight.incrementbaselevel();
                 Knight.incrementkills();
+                Knight.storetracker += 1;
+                Knight.Goldloom += r() % 16 + 5;
                 if (Knight.isAlive() == true && Knight.getbaselevel() == 50 && playerclasschoice == 6) {
                     Knight.trickstermove = true;
                     cout << "You have unlocked your Trickster skill, Confuse!" << endl;
@@ -917,6 +919,7 @@ delete Slime;
             cout << "-Defence = " << Knight.getdefence() << "-" << endl;
             cout << "-Kills = " << Knight.getkills() << "-" << endl;
             cout << "-Lives = " << Knight.getlives() << "-" << endl;
+            cout << "-Store Currency = " << Knight.Goldloom << "-" << endl;
             if (Knight.getclass() == 1) {
                 cout << "-Class = Knight" << "-" << endl;
             }

@@ -16,7 +16,9 @@ public:
 	bool warforgedmovebool = false;
 	int timetracker = 0;
 	int lives;
-	int enemygenerator = 0;
+	int Goldloom = 0;
+	int storetracker = 0;
+	int healthtonicitem = 0;
 	string name;
 	Character();
 	bool isAlive();
@@ -38,6 +40,10 @@ public:
 	int classtype = 1;
 	string getname();
 	virtual void attack(Character* Target) = 0;
+	void itemusehealthtonic();
+	void itemuseinvispotion();
+	bool usinginvispotion = false;
+	int invisibilitypotion = 1;
 	void healovertime();
 	void addlives(int extralives);
 	void setmaxhealth(int charactermaxhealth);
