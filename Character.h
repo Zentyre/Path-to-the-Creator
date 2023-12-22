@@ -44,6 +44,8 @@ public:
 	void itemuseinvispotion();
 	bool usinginvispotion = false;
 	int invisibilitypotion = 1;
+	void itemusemolotov();
+	int molotov = 0;
 	void healovertime();
 	void addlives(int extralives);
 	void setmaxhealth(int charactermaxhealth);

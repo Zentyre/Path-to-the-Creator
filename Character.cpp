@@ -77,6 +77,9 @@ void Character::itemuseinvispotion() {
 	usinginvispotion = true;
 	invisibilitypotion -= 1;
 }
+void Character::itemusemolotov() {
+	
+}
 void Character::healovertime() {
 	if (timetracker == 2) {
 		timetracker = 0;

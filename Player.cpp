@@ -995,9 +995,18 @@ void Player::attack(Character* Target) {
         attack(Target);
         break;
     case 10: 
-        cout << "------------------------------------------------" << endl;
-        if (accuratesword == true) {
-            cout << "Accurate Sword (No more slipping!)" << endl;
+        cout << "------------------------------------------------" << endl; //organize items into setions
+        if (godarmor == true) {
+            cout << "God Armor (+20 defence)" << endl;
+        }
+        else if (glassshoes == true) {
+            cout << "Glass Shoes (+7 defence|+6 maxhealth)" << endl;
+        }
+        else if (mystichelmet == true) {
+            cout << "Mystic Helmet (+9 defence|+8 maxhealth)" << endl;
+        }
+        else if (dragonscalechestplate == true) {
+            cout << "Dragonscale Chestplate (+11 defence|+14 maxhealth)" << endl;
         }
         else if (helmet == true) {
             cout << "Helmet (+7 defence|+5 maxhealth)" << endl;
@@ -1005,17 +1014,11 @@ void Player::attack(Character* Target) {
         else if (boots == true) {
             cout << "Boots (+5 defence|+4 maxhealth)" << endl;
         }
+        else if (shield == true) {
+            cout << "Shield (+15 defence)" << endl;
+        }
         else if (chestplate == true) {
             cout << "Chestplate (+10 defence|+8 maxhealth)" << endl;
-        }
-        else if (Excalibur == true) {
-            cout << "Excalibur (+14 attack)" << endl;
-        }
-        else if (Knife == true) {
-            cout << "Knife (+2 attack)" << endl;
-        }
-        else if (Sword == true) {
-            cout << "Sword (+4 attack)" << endl;
         }
         else if (leveltonic == true) {
             cout << "Level Tonic (+10 level)" << endl;
@@ -1029,17 +1032,11 @@ void Player::attack(Character* Target) {
         else if (defenceupgrade == true) {
             cout << "Defence Perk (+10 defence)" << endl;
         }
-        else if (godarmor == true) {
-            cout << "God Armor (+20 defence)" << endl;
-        }
         else if (attackupgrade == true) {
             cout << "Attack Perk (+10 attack)" << endl;
         }
         else  if (levelupgrade == true) {
             cout << "Level Perk (+15 level)" << endl;
-        }
-        else if (shield == true) {
-            cout << "Shield (+15 defence)" << endl;
         }
         else if (tracklevelpotion >= 1) {
             cout << "Level Potions (+ " << 10 * tracklevelpotion << " levels)" << endl;
@@ -1053,23 +1050,29 @@ void Player::attack(Character* Target) {
         else if (maxhealthtracker >= 1) {
             cout << "Level Potions (+ " << 10 * tracklevelpotion << " levels)" << endl;
         }
-        else if (glassshoes == true) {
-            cout << "Glass Shoes (+7 defence|+6 maxhealth)" << endl;
+        else if (invisibilitypotion > 0) {
+            cout << invisibilitypotion << " Invisibility Potion (Skip a battle)" << endl;
         }
-        else if (mystichelmet == true) {
-            cout << "Mystic Helmet (+9 defence|+8 maxhealth)" << endl;
-        }
-        else if (dragonscalechestplate == true) {
-            cout << "Dragonscale Chestplate (+11 defence|+14 maxhealth)" << endl;
+        else if (healthtonicitem > 0) {
+            cout << healthtonicitem << "Healh Tonic (Heal 100,75,50 or 25 based on level)" << endl;
         }
         else if (flaminglongsword == true) {
             cout << "Flaming Longsword (+11 attack)" << endl;
         }
+        else if (accuratesword == true) {
+            cout << "Accurate Sword (No more slipping!)" << endl;
+        }
+        else if (Excalibur == true) {
+            cout << "Excalibur (+14 attack)" << endl;
+        }
+        else if (Knife == true) {
+            cout << "Knife (+2 attack)" << endl;
+        }
+        else if (Sword == true) {
+            cout << "Sword (+4 attack)" << endl;
+        }
         else if (molotov > 0) {
             cout << molotov << " Molotov (60% max health dmg)" << endl;
-        }
-        else if (forgehammer > 0) {
-            cout << forgehammer << " Forge Hammer (Used with other items to enhance artillery)" << endl;
         }
         else if (travelersbackpack == true) {
             cout << "Travelers Backpack (Allows you to hold potions)" << endl;
@@ -1077,8 +1080,8 @@ void Player::attack(Character* Target) {
         else if (playerpet == true) {
             cout << "Companion (Does something random every attack)" << endl;
         }
-        else if (invisibilitypotion > 0) {
-            cout << invisibilitypotion << " Invisibility Potion (Skip a battle)" << endl;
+        else if (forgehammer > 0) {
+            cout << forgehammer << " Forge Hammer (Used with other items to enhance artillery)" << endl;
         }
         else if (armorupgrade == true) {
             cout << "Armor Plating (Used to upgrade armor)" << endl;
@@ -1088,9 +1091,6 @@ void Player::attack(Character* Target) {
         }
         else if (lightningshard == true) {
             cout << "Lightning Shard (Used to upgrade armor/weapons)" << endl;
-        }
-        else if (healthtonicitem > 0) {
-            cout << healthtonicitem << "Healh Tonic (Heal 100,75,50 or 25 based on level)" << endl;
         }
         else if (shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && godarmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playerpet == false && travelersbackpack == false && healthtonicitem == 0) {
             cout << "You have no items yet." << endl;
@@ -1115,6 +1115,10 @@ void Player::attack(Character* Target) {
             else if (itemuse == "Invisibility Potion" || itemuse == "Invisibility potion" || itemuse == "invisibility potion") {
                 cout << "You used an Invisibility Potion!" << endl;
                 itemuseinvispotion();
+            }
+            else if (itemuse == "Molotov" || itemuse == "molotov") {
+                cout << "You used a Molotov!" << endl;
+                
             }
         }
         else if (yesnobackpack == "No" || yesnobackpack == "no" || yesnobackpack == "n" || yesnobackpack == "N") {

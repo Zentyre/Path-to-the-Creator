@@ -56,6 +56,5 @@ public:
 	bool mystichelmet = false;
 	bool dragonscalechestplate = false;
 	bool travelersbackpack = false; // make it so that when this is acquired, you can now save potions you get instead of them being instantly used.
-	int molotov = 0;
 	bool playerpet = false;;
 };
