@@ -1,6 +1,7 @@
 #include "Character.h"
 #include <iostream>
 #include "Player.h"
+#include "Enemy.h"
 using namespace std;
 
 
@@ -73,8 +74,9 @@ void Character::itemusehealthtonic() {
 	healthtonicitem -= 1;
 	cout << "You now have " << health << " health." << endl;
 }
-void Character::itemuseinvispotion() {
+void Character::itemuseinvispotion(Character* Target) {
 	usinginvispotion = true;
+	Target->takeDmg(99999999);
 	invisibilitypotion -= 1;
 }
 void Character::itemusemolotov() {

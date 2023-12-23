@@ -13,11 +13,7 @@ Enemy::Enemy(string n2, int hp2, int atk2, int live2, int maxh2) {
 random_device r;
 int critchance;
 void Enemy::attack(Character* Target) {
-    if (usinginvispotion == true) {
-        health = 0;
-        cout << "The " << name << " has been ended and skipped." << endl;
-    }
-    else if (trickstermovebool == true && health > 0 && getlevel() >= 100) {
+    if (trickstermovebool == true && health > 0 && getlevel() >= 100) {
         int attackself, d;
         critchance = r() % 100 + 1;
         attackself = r() % 100 + 1;

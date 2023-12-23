@@ -1114,7 +1114,7 @@ void Player::attack(Character* Target) {
             }
             else if (itemuse == "Invisibility Potion" || itemuse == "Invisibility potion" || itemuse == "invisibility potion") {
                 cout << "You used an Invisibility Potion!" << endl;
-                itemuseinvispotion();
+                itemuseinvispotion(Target);
             }
             else if (itemuse == "Molotov" || itemuse == "molotov") {
                 cout << "You used a Molotov!" << endl;
