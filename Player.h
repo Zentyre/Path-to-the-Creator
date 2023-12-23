@@ -9,12 +9,12 @@ public:
 	void attack(Character* Target) override;
 	void takeDmg(int dmg) override {
 		health -= dmg - defence;
-			if (health <= 0) {
-			lives -= 1;
-				if (lives > 0) {
-				health = maxhealth - baselevel / 1.5;
-				}
+		if (health <= 0) {
+		lives -= 1;
+			if (lives > 0) {
+			health = maxhealth - baselevel / 1.5;
 			}
+		}
 	}
 	void checkitems();
 	void playerclassexecutioner();

@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-#include "Enemy.h"
 using namespace std;
 
 class Character {
@@ -44,9 +43,9 @@ public:
 	void itemusehealthtonic();
 	void itemuseinvispotion(Character* Target);
 	bool usinginvispotion = false;
-	int invisibilitypotion = 1;
-	void itemusemolotov();
-	int molotov = 0;
+	int invisibilitypotion = 0;
+	void itemusemolotov(Character* Target);
+	int molotov = 1;
 	void healovertime();
 	void addlives(int extralives);
 	void setmaxhealth(int charactermaxhealth);

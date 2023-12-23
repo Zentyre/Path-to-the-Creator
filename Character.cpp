@@ -76,11 +76,15 @@ void Character::itemusehealthtonic() {
 }
 void Character::itemuseinvispotion(Character* Target) {
 	usinginvispotion = true;
-	Target->takeDmg(99999999);
+	Target->takeDmg(9999);
 	invisibilitypotion -= 1;
 }
-void Character::itemusemolotov() {
-	
+void Character::itemusemolotov(Character* Target) {
+	int molotovdmg;
+	molotovdmg = Target->gethealth() * .6;
+	Target->takeDmg(molotovdmg);
+	cout << "You dealt " << molotovdmg << " damage using the molotov." << endl;
+	cout << "The enemy has " << Target->gethealth() << " health remaining." << endl << endl;
 }
 void Character::healovertime() {
 	if (timetracker == 2) {

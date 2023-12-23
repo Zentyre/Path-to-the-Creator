@@ -607,25 +607,67 @@ int main() {
         Enemy* Slime = generateEnemy5(Knight.getbaselevel());
     }
 
-        while (Knight.isAlive() && Slime->isAlive()) {
-            Knight.checkitems();
-            Knight.attack(Slime);
-            if (Slime->gethealth() <= 0) {
-                cout << Slime->getname() << " has 0 health remaining." << endl;
+    while (Knight.isAlive() && Slime->isAlive()) {
+        Knight.checkitems();
+        Knight.attack(Slime);
+        if (Slime->gethealth() <= 0 && Knight.usinginvispotion == false) {
+            cout << Slime->getname() << " has 0 health remaining." << endl;
+        }
+        else if (Slime->gethealth() > 0 && Knight.usinginvispotion == false) {
+            cout << Slime->getname() << " has " << Slime->gethealth() << " health remaining." << endl;
+        }
+        cout << "-----------------------------------------------" << endl;
+        Slime->attack(&Knight);
+        if (Knight.gethealth() <= 0) {
+            cout << Knight.getname() << ", you have 0 health remaining." << endl;
+        }
+        else if (Knight.gethealth() > 0 && Knight.usinginvispotion == false) {
+            cout << Knight.getname() << ", you have " << Knight.gethealth() << " health remaining." << endl;
+        }
+        cout << "-----------------------------------------------" << endl;
+        if (!Slime->isAlive()) {
+            if (Knight.usinginvispotion == true) {
+                cout << "This enemy has been ended and skipped. You will get no rewards." << endl;
+                if (areachoiceint == 1) {
+                    Enemy* Slime = generateEnemy(Knight.getbaselevel());
+                }
+                else if (areachoiceint == 2) {
+                    Enemy* Slime = generateEnemy2(Knight.getbaselevel());
+                }
+                else if (areachoiceint == 3) {
+                    Enemy* Slime = generateEnemy3(Knight.getbaselevel());
+                }
+                else if (areachoiceint == 4) {
+                    Enemy* Slime = generateEnemy4(Knight.getbaselevel());
+                }
+                else if (areachoiceint == 5) {
+                    Enemy* Slime = generateEnemy5(Knight.getbaselevel());
+                }
+                int enemyrandommessage;
+                enemyrandommessage = r() % 5;
+                if (enemyrandommessage == 0) {
+                    cout << "A new " << Slime->getname() << " has appeared, stab it!!" << endl;
+                    cout << "-----------------------------------------------" << endl;
+                }
+                else if (enemyrandommessage == 1) {
+                    cout << "A " << Slime->getname() << " is approaching you! BE wary." << endl;
+                    cout << "-----------------------------------------------" << endl;
+                }
+                else if (enemyrandommessage == 2) {
+                    cout << "A " << Slime->getname() << " is preparing to attack, CHARGE!!!" << endl;
+                    cout << "-----------------------------------------------" << endl;
+                }
+                else if (enemyrandommessage == 3) {
+                    cout << "Reinfocements are approaching, be careful!" << endl;
+                    cout << "A " << Slime->getname() << " has appeared." << endl;
+                    cout << "-----------------------------------------------" << endl;
+                }
+                else if (enemyrandommessage == 4) {
+                    cout << "This " << Slime->getname() << " seems mad that you killed his friend." << endl;
+                    cout << "-----------------------------------------------" << endl;
+                }
             }
-            else {
-                cout << Slime->getname() << " has " << Slime->gethealth() << " health remaining." << endl;
-            }
-            cout << "-----------------------------------------------" << endl;
-            Slime->attack(&Knight);
-            if (Knight.gethealth() <= 0) {
-                cout << Knight.getname() << ", you have 0 health remaining." << endl;
-            }
-            else {
-                cout << Knight.getname() << ", you have " << Knight.gethealth() << " health remaining." << endl;
-            }
-            cout << "-----------------------------------------------" << endl;
-            if (!Slime->isAlive()) {
+            else if (Knight.usinginvispotion == false) {
                 delete Slime;
                 classcurrency += 1;
                 if (classcurrency == 50 || classcurrency == 100 || classcurrency == 150) {
@@ -658,28 +700,28 @@ int main() {
                         cout << "You now have " << Knight.getlives() << " lives" << endl;
                         cout << "-----------------------------------------------" << endl;
                         break;
-                    default: 
-                    cout << "That choice doesn't exist, I'll choose for you." << endl;
-                    int x = 0;
+                    default:
+                        cout << "That choice doesn't exist, I'll choose for you." << endl;
+                        int x = 0;
                         x = r() % 5 + 1;
                         if (x == 1) {
-                           Knight.maxhealthupgrade = true;
+                            Knight.maxhealthupgrade = true;
                         }
                         else if (x == 2) {
-                           Knight.attackupgrade = true;
+                            Knight.attackupgrade = true;
                         }
                         else if (x == 3) {
-                           Knight.defenceupgrade = true;
+                            Knight.defenceupgrade = true;
                         }
                         else if (x == 4) {
-                           Knight.levelupgrade = true;
+                            Knight.levelupgrade = true;
                         }
                         else {
-                           Knight.addlives(1);
+                            Knight.addlives(1);
                         }
-                    break;
+                        break;
+                    }
                 }
-            }
                 else if (classcurrency == 20 || classcurrency == 40 || classcurrency == 60 || classcurrency == 80 || classcurrency == 100 || classcurrency == 120 || classcurrency == 140 || classcurrency == 160 || classcurrency == 180) {
                     cout << "You have found a rare treasure!" << endl;
                     random_device r;
@@ -785,7 +827,7 @@ int main() {
                     cout << "-----------------------------------------------" << endl;
                 }
                 else if (enemyrandommessage == 4) {
-                    cout << "This " << Slime->getname() <<  " seems mad that you killed his friend." << endl;
+                    cout << "This " << Slime->getname() << " seems mad that you killed his friend." << endl;
                     cout << "-----------------------------------------------" << endl;
                 }
                 cout << endl;
@@ -841,7 +883,7 @@ int main() {
                 }
             }
         }
-
+    }
         if (!Knight.isAlive() && Knight.killplayer == false) {
             cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
             int deathmessage = 0;
