@@ -627,7 +627,7 @@ int main() {
         cout << "-----------------------------------------------" << endl;
         if (!Slime->isAlive()) {
             if (Knight.usinginvispotion == true) {
-                cout << "This enemy has been ended and skipped. You will get no rewards." << endl;
+                cout << "You have escaped from this enemy using your invisibility. You will get no rewards for this escape." << endl;
                 if (areachoiceint == 1) {
                     Enemy* Slime = generateEnemy(Knight.getbaselevel());
                 }
@@ -666,6 +666,7 @@ int main() {
                     cout << "This " << Slime->getname() << " seems mad that you killed his friend." << endl;
                     cout << "-----------------------------------------------" << endl;
                 }
+                Knight.usinginvispotion = false;
             }
             else if (Knight.usinginvispotion == false) {
                 delete Slime;
@@ -770,7 +771,7 @@ int main() {
                 Knight.incrementbaselevel();
                 Knight.incrementkills();
                 Knight.storetracker += 1;
-                Knight.Goldloom += r() % 16 + 5;
+                Knight.Goldloom += r() % 26 + 10;
                 if (Knight.isAlive() == true && Knight.getbaselevel() == 50 && playerclasschoice == 6) {
                     Knight.trickstermove = true;
                     cout << "You have unlocked your Trickster skill, Confuse!" << endl;

@@ -139,7 +139,7 @@ void Enemy::attack(Character* Target) {
             cout << name << " has missed its attack!" << endl;
         }
     }
-    else {
+    else if (usinginvispotion == false && health <= 0) {
         cout << "You have killed the " << name << "!" << endl;
     }
 }

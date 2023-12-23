@@ -75,7 +75,6 @@ void Character::itemusehealthtonic() {
 	cout << "You now have " << health << " health." << endl;
 }
 void Character::itemuseinvispotion(Character* Target) {
-	usinginvispotion = true;
 	Target->takeDmg(9999);
 	invisibilitypotion -= 1;
 }
@@ -84,7 +83,9 @@ void Character::itemusemolotov(Character* Target) {
 	molotovdmg = Target->gethealth() * .6;
 	Target->takeDmg(molotovdmg);
 	cout << "You dealt " << molotovdmg << " damage using the molotov." << endl;
-	cout << "The enemy has " << Target->gethealth() << " health remaining." << endl << endl;
+	cout << "The enemy has " << Target->gethealth() << " health remaining." << endl;
+	cout << "------------------------------------------------" << endl;
+	molotov -= 1;
 }
 void Character::healovertime() {
 	if (timetracker == 2) {
