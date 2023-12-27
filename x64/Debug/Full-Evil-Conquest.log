@@ -1,4 +1,26 @@
-﻿  Player.cpp
+﻿  Character.cpp
+C:\Users\drago\source\repos\Full-Evil-Conquest\Player.h(15,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Character.cpp')
+  
+C:\Users\drago\source\repos\Full-Evil-Conquest\Character.cpp(83,35): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Enemy.cpp
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(21,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(24,32): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(30,32): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(34,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(36,31): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(42,31): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(50,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(53,32): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(59,32): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(63,25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(65,31): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(71,31): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(78,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(94,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(111,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Full-Evil-Conquest\Enemy.cpp(129,25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Player.cpp
 C:\Users\drago\source\repos\Full-Evil-Conquest\Player.h(15,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   (compiling source file 'Player.cpp')
   
@@ -6,4 +28,9 @@ C:\Users\drago\source\repos\Full-Evil-Conquest\Player.cpp(62,28): warning C4244:
 C:\Users\drago\source\repos\Full-Evil-Conquest\Player.cpp(674,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 C:\Users\drago\source\repos\Full-Evil-Conquest\Player.cpp(693,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 C:\Users\drago\source\repos\Full-Evil-Conquest\Player.cpp(695,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  main.cpp
+C:\Users\drago\source\repos\Full-Evil-Conquest\Player.h(15,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+  Generating Code...
   Full-Evil-Conquest.vcxproj -> C:\Users\drago\source\repos\Full-Evil-Conquest\x64\Debug\Full-Evil-Conquest.exe

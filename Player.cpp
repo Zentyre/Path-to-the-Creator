@@ -973,7 +973,7 @@ void Player::attack(Character* Target) {
         cout << "--" << attackPower << " Attack--" << endl;
         cout << "--" << lives << " Lives--" << endl;
         cout << "--" << kills << " Kills--" << endl;
-        cout << "--" << Goldloom << " Store Currency--" << endl;
+        cout << "--" << Goldloom << " Goldloom--" << endl;
             if (classtype == 1) {
                 cout << "-Class = Knight-" << endl;
             }
