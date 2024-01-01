@@ -201,7 +201,7 @@ void Player::checkitems() {
 void Player::attack(Character* Target) {
     random_device r;
     int playerInput, x, h;
-    string purchasechoice, yesnobackpack;
+    string purchasechoice, yesnobackpack, yesnopurchase;
     int accuracy = 0;
     bool fallen = false;
     if (classtype == 1) { //knight attack messages |health =25|attackPower=4|lives=1|
@@ -765,6 +765,14 @@ void Player::attack(Character* Target) {
             }
             else if (shop3 == 14) {
                 cout << "Mystic Helmet - 250 - A helmet that can protect you from anything that falls on your head." << endl << endl;
+            }
+            cout << "Would you like to buy anything this visit?" << endl;
+            cin >> ws;
+            getline(cin, yesnopurchase);
+            if (yesnopurchase == "n" || yesnopurchase == "N" || yesnopurchase == "no" || yesnopurchase == "No") {
+                cout << "Maybe next time." << endl << endl;
+                attack(Target);
+                break;
             }
             cout << "What would you like to buy this visit?" << endl << endl;
             cin >> ws;

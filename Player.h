@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Character.h"
+#include <iostream>
 using namespace std;
 
 class Player : public Character {
@@ -8,6 +9,12 @@ public:
 	Player(string n, int maxh, int hp, int atk, int def, int lvl, int live);
 	void attack(Character* Target) override;
 	void takeDmg(int dmg) override {
+		if (defence > dmg) {
+			cout << "Your defence absorbed all " << dmg << " enemy damage!" << endl;
+		}
+		else if (defence > 0 && defence < dmg) {
+			cout << "Your defence absorbed " << getdefence() << " damage!" << endl;
+		}
 		dmg -= defence;
 		if (dmg < 0) {
 			dmg = 0;
@@ -16,7 +23,7 @@ public:
 		if (health <= 0) {
 		lives -= 1;
 			if (lives > 0) {
-			health = maxhealth - baselevel / 1.5;
+			health = maxhealth - baselevel * .8;
 			}
 		}
 	}
