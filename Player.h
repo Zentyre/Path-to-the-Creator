@@ -8,7 +8,11 @@ public:
 	Player(string n, int maxh, int hp, int atk, int def, int lvl, int live);
 	void attack(Character* Target) override;
 	void takeDmg(int dmg) override {
-		health -= dmg - defence;
+		dmg -= defence;
+		if (dmg < 0) {
+			dmg = 0;
+		}
+		health -= dmg;
 		if (health <= 0) {
 		lives -= 1;
 			if (lives > 0) {

@@ -43,7 +43,7 @@ public:
 	void itemusehealthtonic();
 	void itemuseinvispotion(Character* Target);
 	bool usinginvispotion = false;
-	int invisibilitypotion = 1;
+	int invisibilitypotion = 0;
 	void itemusemolotov(Character* Target);
 	int molotov = 0;
 	void healovertime();
