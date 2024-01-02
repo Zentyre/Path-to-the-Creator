@@ -203,6 +203,7 @@ void Player::attack(Character* Target) {
     int playerInput, x, h;
     string purchasechoice, yesnobackpack, yesnopurchase;
     int accuracy = 0;
+    int warforgedablilitytracker = 0;
     bool fallen = false;
     if (classtype == 1) { //knight attack messages |health =25|attackPower=4|lives=1|
         if (knightmove == true) {
@@ -645,11 +646,16 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (warforgedmove == true) {
-            int ablilitytracker = 0;
-            ablilitytracker += 1;
-            warforgedmovebool = true;
-            cout << endl;
-
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2 || warforgedablilitytracker == 3) {
+                cout << "Your skill is already in use." << endl;
+                attack(Target);
+            }
+            else {
+                warforgedablilitytracker += 1;
+                warforgedmovebool = true;
+                cout << endl;
+            }
+            break;
         }
         else if (trickstermove == true) {
             trickstermovebool = true;
