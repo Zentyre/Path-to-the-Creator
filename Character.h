@@ -11,10 +11,10 @@ protected:
 	int defence;
 	int kills;
 	int maxhealth;
+	int timetracker = 0;
 public:
 	bool trickstermovebool = false;
 	bool warforgedmovebool = false;
-	int timetracker = 0;
 	int lives;
 	int Goldloom = 0;
 	int storetracker = 0;
@@ -46,7 +46,7 @@ public:
 	int invisibilitypotion = 0;
 	void itemusemolotov(Character* Target);
 	int molotov = 0;
-	void healovertime();
+	void healovertime(Character* Target);
 	void addlives(int extralives);
 	void setmaxhealth(int charactermaxhealth);
 };

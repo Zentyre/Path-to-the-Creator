@@ -34,7 +34,7 @@ void Enemy::attack(Character* Target) {
         else if (attackself <= 60 && critchance > 70) {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
             d = r() % 10 + attackPower * 1.5;
-            cout << name << " dealt " << d << " damage." << endl;
+            cout << name << " has crit and dealt " << d << " damage." << endl;
             Target->takeDmg(d);
             trickstermovebool = false;
         }
@@ -67,7 +67,7 @@ void Enemy::attack(Character* Target) {
         else if (attackself <= 60 && critchance > 70) {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
             d = r() % 7 + attackPower * 1.5;
-            cout << name << " dealt " << d << " damage." << endl;
+            cout << name << " has crit and dealt " << d << " damage." << endl;
             Target->takeDmg(d);
             trickstermovebool = false;
         }
@@ -84,7 +84,7 @@ void Enemy::attack(Character* Target) {
          critchance = r() % 100 + 1;
          if (critchance <= 5) {
              d = r() % 6 + attackPower * 1.5;
-             cout << name << " dealt " << d << " damage." << endl;
+             cout << name << " has crit and dealt " << d << " damage." << endl;
              Target->takeDmg(d);
          }
          else {
@@ -92,15 +92,14 @@ void Enemy::attack(Character* Target) {
              cout << name << " dealt " << d << " damage." << endl;
              Target->takeDmg(d);
          }
-         timetracker += 1;
-         healovertime();
+         healovertime(Target);
     }
     else if (Target->warforgedmovebool == true && timetracker < 2 && health > 0) {
          int d;
          critchance = r() % 100 + 1;
          if (critchance <= 5) {
              d = r() % 3 + attackPower * 1.5;
-             cout << name << " dealt " << d << " damage." << endl;
+             cout << name << " has crit and dealt " << d << " damage." << endl;
              Target->takeDmg(d);
          }
          else {
@@ -108,8 +107,7 @@ void Enemy::attack(Character* Target) {
              cout << name << " dealt " << d << " damage." << endl;
              Target->takeDmg(d);
          }
-         timetracker += 1;
-         healovertime();
+         healovertime(Target);
      }
     else if (health > 0 && getlevel() >= 100) {
         int d, accuracy;

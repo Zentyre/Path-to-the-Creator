@@ -423,7 +423,7 @@ int main() {
         cout << "At levels 15, 25, 50 and 100, you gain new abilities. At level 200 you fight the final boss(Level gained from items does not affect this)" << endl;
         cout << "I wish you well on your conquest." << endl;
         cout << endl;
-        Player Knight("Player", 50, 25, 400, 100, 49, 1);
+        Player Knight("Player", 50, 25, 400, 100, 74, 1);
         cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought or 6- Trickster?" << endl;
         cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
         int playerclasschoice = 0;
@@ -613,7 +613,7 @@ int main() {
         if (Slime->gethealth() <= 0 && Knight.usinginvispotion == false) {
             cout << Slime->getname() << " has 0 health remaining." << endl;
         }
-        else if (Slime->gethealth() > 0 && Knight.usinginvispotion == false) {
+        else if (Slime->gethealth() > 0 && Knight.usinginvispotion == false && Knight.trickstermovebool == false && Knight.warforgedmovebool == false) {
             cout << Slime->getname() << " has " << Slime->gethealth() << " health remaining." << endl;
         }
         cout << "-----------------------------------------------" << endl;
@@ -627,6 +627,7 @@ int main() {
         cout << "-----------------------------------------------" << endl;
         if (!Slime->isAlive()) {
             if (Knight.usinginvispotion == true) {
+                delete Slime;
                 cout << "You have escaped from this enemy using your invisibility. You will get no rewards for this escape." << endl;
                 if (areachoiceint == 1) {
                     Enemy* Slime = generateEnemy(Knight.getbaselevel());

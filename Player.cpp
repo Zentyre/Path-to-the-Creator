@@ -645,15 +645,11 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (warforgedmove == true) {
-            if (timetracker == 1 || timetracker == 2) {
-                cout << "This skill is already in use." << endl << endl;
-                attack(Target);
-            }
-            else {
-                warforgedmovebool = true;
-                cout << endl;
-            }
-            break;
+            int ablilitytracker = 0;
+            ablilitytracker += 1;
+            warforgedmovebool = true;
+            cout << endl;
+
         }
         else if (trickstermove == true) {
             trickstermovebool = true;
