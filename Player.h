@@ -43,7 +43,9 @@ public:
 	bool chestplate = false;
 	bool helmet = false;
 	bool boots = false;
-	bool godarmor = false;
+	bool narsosArmor = false;
+	bool lockhartsArmor = false;
+	bool vladimirsArmor = false;
 	bool accuratesword = false;
 	bool shield = false;
 	bool trickstermove = false;

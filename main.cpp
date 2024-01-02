@@ -748,7 +748,6 @@ int main() {
                         treasure = 0;
                     }
                     else {
-                        Knight.godarmor = true;
                         random_device r;
                         int legend;
                         legend = r() % 3;
@@ -793,22 +792,24 @@ int main() {
                         treasure = 0;
                     }
                     else {
-                        Knight.godarmor = true;
                         random_device r;
                         int legend;
                         legend = r() % 3;
                         if (legend == 0) {
                             cout << "You acquired the armor of the legend...Vladimir!" << endl;
+                            Knight.vladimirsArmor = true;
                             cout << endl;
                             treasure = 0;
                         }
                         else if (legend == 1) {
                             cout << "You acquired the armor of the legend...Lockhart!" << endl;
+                            Knight.lockhartsArmor = true;
                             cout << endl;
                             treasure = 0;
                         }
                         else {
                             cout << "You acquired the armor of the legend...Narso!" << endl;
+                            Knight.narsosArmor = true;
                             cout << endl;
                             treasure = 0;
                         }

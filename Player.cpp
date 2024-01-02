@@ -132,7 +132,7 @@ void Player::checkitems() {
           shieldtracker += 1;
         }
     }
-    else if (godarmor == true) {
+    else if (narsosArmor == true || lockhartsArmor == true || vladimirsArmor == true) {
         int godtracker = 0;
         if (godtracker == 0) {
             defence += 20;
@@ -201,7 +201,7 @@ void Player::checkitems() {
 void Player::attack(Character* Target) {
     random_device r;
     int playerInput, x, h;
-    string purchasechoice, yesnobackpack, yesnopurchase;
+    string purchasechoice, yesnobackpack, yesnopurchase, forgeUpgrade;
     int accuracy = 0;
     int warforgedablilitytracker = 0;
     bool fallen = false;
@@ -1345,6 +1345,88 @@ void Player::attack(Character* Target) {
         cout << endl;
         attack(Target);
         break;
+    case 8: 
+        cout << "Welcome to the forge, " << name << "." << endl;
+        cout << "In this ancient place, you can combine special ores with your armor to enhance its abilities." << endl;
+        if (weaponupgrade == false && armorupgrade == false && lightningshard == false && forgehammer == 0) {
+            cout << "You have no upgrades yet. Go buy some from the store." << endl;
+            attack(Target);
+            break;
+        }
+        cout << "You have these upgrades currently:" << endl;
+        if (weaponupgrade == true) {
+            cout << "-Weapon Upgrade-" << endl;
+        }
+        if (armorupgrade == true) {
+            cout << "-Armor Upgrade-" << endl;
+        }
+        if (lightningshard == true) {
+            cout << "-Ligntning Shard-" << endl;
+        }
+        if (forgehammer > 0) {
+            if (forgehammer == 1) {
+            cout << "-" << forgehammer << " Forgehammer-" << endl;
+            }
+            else if (forgehammer > 1) {
+            cout << "-" << forgehammer << " Forgehammers-" << endl;
+            }
+        }
+        if (dragonscalechestplate == false && mystichelmet == false && glassshoes == false && Excalibur == false && flaminglongsword == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false) {
+            cout << "You have no armor or weapons to upgrade, go buy some from the store or get them as a lucky drop." << endl;
+            attack(Target);
+            break;
+        }
+        cout << "You have these items to upgrade:" << endl;
+        if (narsosArmor == true) {
+            cout << "-Narso's Armor (+20 defence)-" << endl;
+        }
+        if (vladimirsArmor == true) {
+            cout << "-Vladirmir's Armor (+20 defence)-" << endl;
+        }
+        if (lockhartsArmor == true) {
+            cout << "-Lockhart's Armor (+20 defence)-" << endl;
+        }
+        if (glassshoes == true) {
+            cout << "-Glass Shoes (+7 defence|+6 maxhealth)-" << endl;
+        }
+        if (mystichelmet == true) {
+            cout << "-Mystic Helmet (+9 defence|+8 maxhealth)-" << endl;
+        }
+        if (dragonscalechestplate == true) {
+            cout << "-Dragonscale Chestplate (+11 defence|+14 maxhealth)-" << endl;
+        }
+        if (flaminglongsword == true) {
+            cout << "-Flaming Longsword (+11 attack)-" << endl;
+        }
+        if (Excalibur == true) {
+            cout << "-Excalibur (+14 attack)-" << endl;
+        }
+        cout << "What would you like to upgrade?" << endl;
+        cin >> ws;
+        getline(cin, forgeUpgrade);
+        if (forgeUpgrade == "god armor") {
+
+        }
+        else if (forgeUpgrade == "glass shoes" || forgeUpgrade == "Glass shoes" || forgeUpgrade == "glass Shoes"|| forgeUpgrade == "Glass Shoes") {
+
+        }
+        else if (forgeUpgrade == "mystic helmet" || forgeUpgrade == "Mystic helmet" || forgeUpgrade == "mystic Helmet" || forgeUpgrade == "Mystic Helmet") {
+
+        }
+        else if (forgeUpgrade == "dragonscale chestplate" || forgeUpgrade == "Dragonscale chestplate" || forgeUpgrade == "dragonscale Chestplate" || forgeUpgrade == "Dragonscale Chestplate") {
+
+        }
+        else if (forgeUpgrade == "flaming longsword" || forgeUpgrade == "Flaming Longsword" || forgeUpgrade == "flaming Longsword" || forgeUpgrade == "Flaming longsword") {
+
+        }
+        else if (forgeUpgrade == "excalibur" || forgeUpgrade == "Excalibur") {
+
+        }
+        else {
+            cout << "That item does not exist. Try again." << endl;
+            attack(Target);
+            break;
+        }
     case 9:
         cout << " --Stats--" << endl;
         cout << "--" << maxhealth << " Maxhealth--" << endl;
@@ -1378,8 +1460,14 @@ void Player::attack(Character* Target) {
         break;
     case 10: 
         cout << "------------------------------------------------" << endl;
-        if (godarmor == true) {
-            cout << "God Armor (+20 defence)" << endl;
+        if (vladimirsArmor == true) {
+            cout << "Vladimir's Armor (+20 defence)" << endl;
+        }
+        if (narsosArmor == true) {
+            cout << "-Narso's Armor (+20 defence)-" << endl;
+        }
+        if (lockhartsArmor == true) {
+            cout << "-Lockhart's Armor (+20 defence)-" << endl;
         }
         if (glassshoes == true) {
             cout << "Glass Shoes (+7 defence|+6 maxhealth)" << endl;
@@ -1474,7 +1562,7 @@ void Player::attack(Character* Target) {
         if (lightningshard == true) {
             cout << "Lightning Shard (Used to upgrade armor/weapons)" << endl;
         }
-        if (shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && godarmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && molotov == 0 && invisibilitypotion == 0) {
+        if (shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && molotov == 0 && invisibilitypotion == 0) {
             cout << "You have no items yet." << endl;
             cout << "------------------------------------------------" << endl;
             attack(Target);
