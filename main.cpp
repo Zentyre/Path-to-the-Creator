@@ -724,6 +724,51 @@ int main() {
                         break;
                     }
                 }
+                else if (classcurrency == 20 || classcurrency == 40 || classcurrency == 60 || classcurrency == 80 || classcurrency == 100 || classcurrency == 120 || classcurrency == 140 || classcurrency == 160 || classcurrency == 180 && Knight.playercompanion == true) {
+                    cout << "You have found a rare treasure!" << endl;
+                    random_device r;
+                    int treasure;
+                    treasure = r() % 99 + 1;
+                    if (treasure <= 30) {
+                        Knight.helmet = true;
+                        cout << "You got a fancy hat." << endl;
+                        cout << endl;
+                        treasure = 0;
+                    }
+                    else if (treasure > 30 && treasure <= 60) {
+                        Knight.chestplate = true;
+                        cout << "You have acquired a weird robe." << endl;
+                        cout << endl;
+                        treasure = 0;
+                    }
+                    else if (treasure > 61 && treasure <= 90) {
+                        Knight.boots = true;
+                        cout << "You put on some cool shoes." << endl;
+                        cout << endl;
+                        treasure = 0;
+                    }
+                    else {
+                        Knight.godarmor = true;
+                        random_device r;
+                        int legend;
+                        legend = r() % 3;
+                        if (legend == 0) {
+                            cout << "You acquired the armor of the legend...Vladimir!" << endl;
+                            cout << endl;
+                            treasure = 0;
+                        }
+                        else if (legend == 1) {
+                            cout << "You acquired the armor of the legend...Lockhart!" << endl;
+                            cout << endl;
+                            treasure = 0;
+                        }
+                        else {
+                            cout << "You acquired the armor of the legend...Narso!" << endl;
+                            cout << endl;
+                            treasure = 0;
+                        }
+                    }
+                }
                 else if (classcurrency == 20 || classcurrency == 40 || classcurrency == 60 || classcurrency == 80 || classcurrency == 100 || classcurrency == 120 || classcurrency == 140 || classcurrency == 160 || classcurrency == 180) {
                     cout << "You have found a rare treasure!" << endl;
                     random_device r;
@@ -768,7 +813,6 @@ int main() {
                             treasure = 0;
                         }
                     }
-                }
                 Knight.incrementbaselevel();
                 Knight.incrementkills();
                 Knight.storetracker += 1;

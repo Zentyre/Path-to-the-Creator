@@ -327,7 +327,7 @@ void Player::attack(Character* Target) {
             cout << "--The executioner class unlocks its special skill (Soul Surge) at level 80. This skill is a slightly better damage lifesteal with a 20% chance to crit.--" << endl << endl;
         }
         else if (classtype == 3) {
-            cout << "--The soulweaver class unlocks its special skill (Fortuitous Gambit) at level 90. This skill is a little damage attack that has a 5% chance to give you a life and a 40% chance to deal damage.--" << endl << endl;
+            cout << "--The soulweaver class unlocks its special skill (Fortuitous Gambit) at level 90. This skill is a little damage attack that has a 5% chance to give you a life and a 50% chance to deal damage.--" << endl << endl;
         }
         else if (classtype == 4) {
             cout << "--The warforged engineer unlocks its special skill (Guardians Respite) at level 75. This skill makes the enemy deal less damage for 2 turns and heals you over the two rounds but you deal much less damage in its duration.--" << endl << endl;
@@ -345,6 +345,25 @@ void Player::attack(Character* Target) {
         accuracy = r() & 100 + 1;
         if (accuratesword == true || fallen == true) {
             x = r() % 5 + 4 + (((level >= 30) ? 30 : level)) + attackPower; //normal attack
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -374,6 +393,25 @@ void Player::attack(Character* Target) {
         }
         else if (accuracy > 10) {
             x = r() % 5 + 4 + (((level >= 30) ? 30 : level)) + attackPower; //normal attack
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -411,6 +449,25 @@ void Player::attack(Character* Target) {
         accuracy = r() & 100 + 1;
         if (accuratesword == true || fallen == true) {
             x = r() % 4 + 2 + ((level >= 30) ? 30 : level) + attackPower;
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
             Target->takeDmg(x);
             h = x - 2;
             cout << endl;
@@ -429,6 +486,25 @@ void Player::attack(Character* Target) {
         }
         else if (accuracy > 10) {
             x = r() % 4 + 2 + ((level >= 30) ? 30 : level) + attackPower;
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
             Target->takeDmg(x);
             h = x - 3;
             cout << endl;
@@ -455,6 +531,25 @@ void Player::attack(Character* Target) {
         accuracy = r() & 100 + 1;
         if (baselevel >= 15 && accuratesword == true || fallen == true) {
             x = r() % 6 + 6 + ((level >= 30) ? 30 : level) + attackPower; //normal attack
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -484,6 +579,25 @@ void Player::attack(Character* Target) {
         }
         else if (baselevel >= 15 && accuracy > 10) {
             x = r() % 6 + 6 + ((level >= 30) ? 30 : level) + attackPower;
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -531,6 +645,25 @@ void Player::attack(Character* Target) {
         if (baselevel >= 25 && accuratesword == true || fallen == true) {
             fallen = false;
             x = r() % 4 + 6 + ((level >= 30) ? 30 : level);
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a healing buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
             h = x;
             cout << "-----------------------------------------------" << endl;
             if (health >= maxhealth) {
@@ -546,6 +679,25 @@ void Player::attack(Character* Target) {
         else if (baselevel >= 25 && accuracy > 10) {
             fallen = false;
             x = r() % 4 + 6 + ((level >= 30) ? 30 : level);
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a healing buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
             h = x;
             health += h;
             cout << "-----------------------------------------------" << endl;
@@ -577,6 +729,25 @@ void Player::attack(Character* Target) {
         accuracy = r() & 100 + 1; //lifesteal attack
         if (baselevel >= 50 && accuratesword == true || fallen == true) {
             x = r() % 6 + 7 + ((level >= 30) ? 30 : level) + attackPower;
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
             Target->takeDmg(x);
             h = x - 5;
             cout << endl;
@@ -596,6 +767,25 @@ void Player::attack(Character* Target) {
         else if (baselevel >= 50 && accuracy > 10) {
             fallen = false;
             x = r() % 6 + 7 + ((level >= 30) ? 30 : level) + attackPower;
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
             Target->takeDmg(x);
             h = x - 5;
             cout << endl;
@@ -627,43 +817,142 @@ void Player::attack(Character* Target) {
         }
     case 6:
         if (soulweavermove == true) {
-            int maybeaddlife;
-            maybeaddlife = r() % 100 + 1;
-            if (maybeaddlife <= 5) {
+            int addLifeChance;
+            addLifeChance = r() % 100 + 1;
+            if (addLifeChance <= 5) {
                 addlives(1);
                 x = r() % 4 + 4 + ((level >= 30) ? 30 : level) + attackPower;
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
                 Target->takeDmg(x);
                 cout << name << ", you dealt " << x << " damage." << endl;
             }
-            else if (maybeaddlife > 5 && maybeaddlife <= 40) {
+            else if (addLifeChance > 5 && addLifeChance <= 50) {
                 x = r() % 4 + 4 + ((level >= 30) ? 30 : level) + attackPower;
+                if (playercompanion == true) {
+                    int randomcompanionevent = 0;
+                    randomcompanionevent = r() % 4;
+                    if (randomcompanionevent == 0) {
+                        cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                        defence += 2;
+                    }
+                     else if (randomcompanionevent == 1) {
+                        cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                        health += ((level >= 30) ? 30 : level);
+                    }
+                    else if (randomcompanionevent == 2) {
+                     cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                     x += ((level >= 30) ? 30 : level);
+                    }
+                    else {
+                        cout << "Your companion didn't do anything this round." << endl;
+                    }
+                }
                 Target->takeDmg(x);
                 cout << name << ", you dealt " << x << " damage." << endl;
             }
-            else if (maybeaddlife > 40) {
+            else if (addLifeChance > 50) {
                 cout << name << ", your skill failed." << endl;
             }
             break;
         }
         else if (warforgedmove == true) {
-            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2 || warforgedablilitytracker == 3) {
+            if (warforgedablilitytracker == 3) {
+                warforgedablilitytracker = 0;
+            }
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
                 cout << "Your skill is already in use." << endl;
+                warforgedablilitytracker += 1;
                 attack(Target);
             }
             else {
                 warforgedablilitytracker += 1;
                 warforgedmovebool = true;
                 cout << endl;
+                if (playercompanion == true) {
+                    int randomcompanionevent = 0;
+                    randomcompanionevent = r() % 4;
+                    if (randomcompanionevent == 0) {
+                        cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                        defence += 2;
+                    }
+                    else if (randomcompanionevent == 1) {
+                        cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                        health += ((level >= 30) ? 30 : level);
+                    }
+                    else if (randomcompanionevent == 2) {
+                        cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                        x += ((level >= 30) ? 30 : level);
+                    }
+                    else {
+                        cout << "Your companion didn't do anything this round." << endl;
+                    }
+                }
             }
             break;
         }
         else if (trickstermove == true) {
+                if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
             trickstermovebool = true;
             cout << endl;
             break;
         }
         else if (knightmove == true) {
             x = r() % 7 + 8 + ((level >= 30) ? 30 : level) + attackPower;
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
+            }
             Target->takeDmg(x);
             cout << name << ", you dealt " << x << " damage." << endl;
             break;
@@ -674,6 +963,25 @@ void Player::attack(Character* Target) {
             critchance = r() % 100 + 1;
             if (critchance <= 10) {
                 x = x * 1.5;
+            }
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a healing buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
             }
             h = x;
             cout << "-----------------------------------------------" << endl;
@@ -693,6 +1001,25 @@ void Player::attack(Character* Target) {
             critrate = r() % 100 + 1;
             if (critrate <= 20) {
                 x = x * 1.5;
+            }
+            if (playercompanion == true) {
+                int randomcompanionevent = 0;
+                randomcompanionevent = r() % 4;
+                if (randomcompanionevent == 0) {
+                    cout << "Your companion has mysteriously made your armor stronger!" << endl;
+                    defence += 2;
+                }
+                else if (randomcompanionevent == 1) {
+                    cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
+                    health += ((level >= 30) ? 30 : level);
+                }
+                else if (randomcompanionevent == 2) {
+                    cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
+                    x += ((level >= 30) ? 30 : level);
+                }
+                else {
+                    cout << "Your companion didn't do anything this round." << endl;
+                }
             }
             h = x * .77;
             Target->takeDmg(x);
@@ -1088,7 +1415,7 @@ void Player::attack(Character* Target) {
             cout << "Travelers Backpack (Allows you to hold potions)" << endl;
         }
         if (playercompanion == true) {
-            cout << "Companion (Does something random every attack)" << endl;
+            cout << "Companion (Does something random every attack and increases odds of finding treasure)" << endl;
         }
         if (forgehammer > 0) {
             cout << forgehammer << " Forge Hammer (Used with other items to enhance artillery)" << endl;
