@@ -389,6 +389,9 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
             }
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else if (accuracy > 10) {
@@ -437,12 +440,18 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
             }
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else {
             cout << "-----------------------------------------------" << endl;
             cout << name << " You have slipped and fallen, losing this turn." << endl;
             fallen = true;
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
     case 2:
@@ -482,6 +491,9 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else if (accuracy > 10) {
@@ -519,12 +531,18 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
     case 3:
@@ -575,6 +593,9 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
             }
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else if (baselevel >= 15 && accuracy > 10) {
@@ -623,12 +644,18 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
             }
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else if (baselevel >= 15 && accuracy <= 10) {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else {
@@ -674,6 +701,9 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else if (baselevel >= 25 && accuracy > 10) {
@@ -709,12 +739,18 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else if (baselevel >= 25 && accuracy <= 10) {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else {
@@ -762,6 +798,9 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else if (baselevel >= 50 && accuracy > 10) {
@@ -799,12 +838,18 @@ void Player::attack(Character* Target) {
                 health += h;
                 cout << "You healed for " << h << " damage." << endl;
             }
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else if (baselevel >= 50 && accuracy <= 10) {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
+            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
+                warforgedablilitytracker += 1;
+            }
             break;
         }
         else {
