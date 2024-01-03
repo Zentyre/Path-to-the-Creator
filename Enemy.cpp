@@ -79,36 +79,6 @@ void Enemy::attack(Character* Target) {
             trickstermovebool = false;
         }
     }
-    else if (Target->warforgedmovebool == true && Target->getlevel() >= 100 && timetracker < 2 && health > 0) {
-         int d;
-         critchance = r() % 100 + 1;
-         if (critchance <= 5) {
-             d = r() % 6 + attackPower * 1.5;
-             cout << name << " has crit and dealt " << d << " damage." << endl;
-             Target->takeDmg(d);
-         }
-         else {
-             d = r() % 6 + attackPower;
-             cout << name << " dealt " << d << " damage." << endl;
-             Target->takeDmg(d);
-         }
-         healovertime(Target);
-    }
-    else if (Target->warforgedmovebool == true && timetracker < 2 && health > 0) {
-         int d;
-         critchance = r() % 100 + 1;
-         if (critchance <= 5) {
-             d = r() % 3 + attackPower * 1.5;
-             cout << name << " has crit and dealt " << d << " damage." << endl;
-             Target->takeDmg(d);
-         }
-         else {
-             d = r() % 3 + attackPower;
-             cout << name << " dealt " << d << " damage." << endl;
-             Target->takeDmg(d);
-         }
-         healovertime(Target);
-     }
     else if (health > 0 && getlevel() >= 100) {
         int d, accuracy;
         accuracy = r() % 100 + 1;

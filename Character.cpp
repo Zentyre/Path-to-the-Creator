@@ -87,20 +87,6 @@ void Character::itemusemolotov(Character* Target) {
 	cout << "------------------------------------------------" << endl;
 	molotov -= 1;
 }
-void Character::healovertime(Character* Target) {
-	timetracker += 1;
-	if (timetracker == 3) {
-		timetracker = 0;
-		cout << "Your skill has ended." << endl << endl;
-		warforgedmovebool = false;
-	}
-	else {
-		int heal;
-		heal = 5 + Target->getbaselevel();
-		cout << "Your skill has healed you for " << heal << " health." << endl;
-		health += heal;
-	}
-}
 void Character::setmaxhealth(int charactermaxhealth) {
 	if (level >= 500) {
 		charactermaxhealth = 500;

@@ -46,7 +46,6 @@ public:
 	int invisibilitypotion = 0;
 	void itemusemolotov(Character* Target);
 	int molotov = 0;
-	void healovertime(Character* Target);
 	void addlives(int extralives);
 	void setmaxhealth(int charactermaxhealth);
 };

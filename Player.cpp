@@ -1143,37 +1143,18 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (warforgedmove == true) {
-            if (warforgedablilitytracker == 3) {
-                warforgedablilitytracker = 0;
-            }
-            if (warforgedablilitytracker == 1 || warforgedablilitytracker == 2) {
-                cout << "Your skill is already in use." << endl;
-                warforgedablilitytracker += 1;
+            int warforgedabilitytracker = 0;
+            warforgedablilitytracker += 1;
+            if (warforgedablilitytracker == 1 || warforgedabilitytracker == 2) {
+                cout << "Your ability is already in use." << endl;
                 attack(Target);
+                break;
             }
             else {
-                warforgedablilitytracker += 1;
+                cout << "-----------------------------------------------" << endl;
+                cout << "You have used your ability! It lasts 3 rounds." << endl;
+                defence += 15;
                 warforgedmovebool = true;
-                cout << endl;
-                if (playercompanion == true) {
-                    int randomcompanionevent = 0;
-                    randomcompanionevent = r() % 4;
-                    if (randomcompanionevent == 0) {
-                        cout << "Your companion has mysteriously made your armor stronger!" << endl;
-                        defence += 2;
-                    }
-                    else if (randomcompanionevent == 1) {
-                        cout << "Your companion healed you for " << ((level >= 30) ? 30 : level) << "!" << endl;
-                        health += ((level >= 30) ? 30 : level);
-                    }
-                    else if (randomcompanionevent == 2) {
-                        cout << "Your companion gave you a damage buff of " << ((level >= 30) ? 30 : level) <<  "." << endl;
-                        x += ((level >= 30) ? 30 : level);
-                    }
-                    else {
-                        cout << "Your companion didn't do anything this round." << endl;
-                    }
-                }
             }
             break;
         }
