@@ -28,6 +28,7 @@ public:
 		}
 	}
 	void checkitems();
+	void forgerestarting();
 	void playerclassexecutioner();
 	void playerclasssoulweaver();
 	void playerclasswarforged();
@@ -36,6 +37,8 @@ public:
 	bool Knife = false;
 	bool Sword = false;
 	bool Excalibur = false;
+	bool upgradedexcalibur = false;
+	bool lightningexcalibur = false;
 	bool leveltonic = false;
 	bool superiorleveltonic = false;
 	bool superpotion = false;
@@ -46,6 +49,8 @@ public:
 	bool narsosArmor = false;
 	bool lockhartsArmor = false;
 	bool vladimirsArmor = false;
+	bool upgradedgodarmor = false;
+	bool lightningGodarmor = false;
 	bool accuratesword = false;
 	bool shield = false;
 	bool trickstermove = false;
@@ -61,13 +66,21 @@ public:
 	bool armorupgrade = false;
 	bool weaponupgrade = false;
 	bool flaminglongsword = false;
+	bool upgradedflaminglongsword = false;
+	bool lightningflaminglongsword = false;
 	bool maxhealthupgradeitem = false;
 	bool healingpotionitem = false;
 	bool lightningshard = false;
 	int forgehammer = 0;
 	bool glassshoes = false;
+	bool upgradedglassshoes = false;
+	bool lightningglassshoes = false;
 	bool mystichelmet = false;
+	bool upgradedmystichelmet = false;
+	bool lightningmystichelmet = false;
 	bool dragonscalechestplate = false;
+	bool upgradedDragonscalechestplate = false;
+	bool lightningdragonscalechestplate = false;
 	bool travelersbackpack = false;
 	bool playercompanion = false;
 };

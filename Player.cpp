@@ -41,6 +41,135 @@ void Player::playerclasstrickster() {
     attackPower += 1;
     classtype = 6;
 }
+void Player ::forgerestarting() {
+    string forgeUpgrade, forgechoice;
+        cout << "What would you like to upgrade?" << endl;
+        cin >> ws;
+        getline(cin, forgeUpgrade);
+        if (forgeUpgrade == "narso's armor" || forgeUpgrade == "Narso's armor" || forgeUpgrade == "Narso's Armor" || forgeUpgrade == "narso's Armor" && armorupgrade == true || lightningshard == true) {
+            cout << "What would you like to use to upgrade Narso's Armor? (Lightning Shard or Armor Upgrade)" << endl;
+            cin >> ws;
+            getline(cin, forgechoice);
+            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+                cout << "You have upgraded Narso's Armor using a Lightning Shard!" << endl;
+                lightningGodarmor = true;
+                checkitems();
+            }
+            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+                cout << "You have upgraded Narso's Armor using an Armor Upgrade!" << endl;
+                upgradedgodarmor = true;
+                checkitems();
+            }
+        }
+        else if (forgeUpgrade == "lockhart's armor" || forgeUpgrade == "Lockhart's armor" || forgeUpgrade == "Lockhart's Armor" || forgeUpgrade == "lockhart's Armor" && armorupgrade == true || lightningshard == true) {
+            cout << "What would you like to use to upgrade Lockhart's Armor? (Lightning Shard or Armor Upgrade)" << endl;
+            cin >> ws;
+            getline(cin, forgechoice);
+            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+                cout << "You have upgraded Lockhart's Armor using a Lightning Shard!" << endl;
+                lightningGodarmor = true;
+                checkitems();
+            }
+            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+                cout << "You have upgraded Lockhart's Armor using an Armor Upgrade!" << endl;
+                upgradedgodarmor = true;
+                checkitems();
+            }
+        }
+        else if (forgeUpgrade == "vladimir's armor" || forgeUpgrade == "Vladimir's armor" || forgeUpgrade == "Vladimir's Armor" || forgeUpgrade == "vladimir's Armor" && armorupgrade == true || lightningshard == true) {
+            cout << "What would you like to use to upgrade Vladimir's Armor? (Lightning Shard or Armor Upgrade)" << endl;
+            cin >> ws;
+            getline(cin, forgechoice);
+            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+                cout << "You have upgraded Vladimir's Armor using a Lightning Shard!" << endl;
+                lightningGodarmor = true;
+                checkitems();
+            }
+            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+                cout << "You have upgraded Vladimir's Armor using an Armor Upgrade!" << endl;
+                upgradedgodarmor = true;
+                checkitems();
+            }
+        }
+        else if (forgeUpgrade == "glass shoes" || forgeUpgrade == "Glass shoes" || forgeUpgrade == "glass Shoes"|| forgeUpgrade == "Glass Shoes" && armorupgrade == true || lightningshard == true) {
+            cout << "What would you like to use to upgrade these Glass Shoes? (Lightning Shard or Armor Upgrade)" << endl;
+            cin >> ws;
+            getline(cin, forgechoice);
+            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+                cout << "You have upgraded your Glass Shoes using a Lightning Shard!" << endl;
+                lightningglassshoes = true;
+                checkitems();
+            }
+            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+                cout << "You have upgraded your Glass Shoes using an Armor Upgrade!" << endl;
+                upgradedglassshoes = true;
+                checkitems();
+            }
+        }
+        else if (forgeUpgrade == "mystic helmet" || forgeUpgrade == "Mystic helmet" || forgeUpgrade == "mystic Helmet" || forgeUpgrade == "Mystic Helmet" && armorupgrade == true || lightningshard == true) {
+            cout << "What would you like to use to upgrade? (Lightning Shard or Armor Upgrade)" << endl;
+            cin >> ws;
+            getline(cin, forgechoice);
+            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+                cout << "You have upgraded your Mystic Helmet using a Lightning Shard!" << endl;
+                lightningmystichelmet = true;
+                checkitems();
+            }
+            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+                cout << "You have upgraded your Mystic Helmet using an Armor Upgrade!" << endl;
+                upgradedmystichelmet = true;
+                checkitems();
+            }
+        }
+        else if (forgeUpgrade == "dragonscale chestplate" || forgeUpgrade == "Dragonscale chestplate" || forgeUpgrade == "dragonscale Chestplate" || forgeUpgrade == "Dragonscale Chestplate" && armorupgrade == true || lightningshard == true) {
+            cout << "What would you like to use to upgrade? (Lightning Shard or Armor Upgrade)" << endl;
+            cin >> ws;
+            getline(cin, forgechoice);
+            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+                cout << "You have upgraded Nyour Dragonscale Chestplate using a Lightning Shard!" << endl;
+                lightningdragonscalechestplate = true;
+                checkitems();
+            }
+            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+                cout << "You have upgraded your Dragonscale Chestplate using an Armor Upgrade!" << endl;
+                upgradedDragonscalechestplate = true;
+                checkitems();
+            }
+        }
+        else if (forgeUpgrade == "flaming longsword" || forgeUpgrade == "Flaming Longsword" || forgeUpgrade == "flaming Longsword" || forgeUpgrade == "Flaming longsword" && weaponupgrade == true || lightningshard == true) {
+            cout << "What would you like to use to upgrade? (Lightning Shard or Armor Upgrade)" << endl;
+            cin >> ws;
+            getline(cin, forgechoice);
+            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+                cout << "You have upgraded your Flaming Longsword using a Lightning Shard!" << endl;
+                lightningflaminglongsword = true;
+                checkitems();
+            }
+            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+                cout << "You have upgraded your Flaming Longsword using an Armor Upgrade!" << endl;
+                upgradedflaminglongsword = true;
+                checkitems();
+            }
+        }
+        else if (forgeUpgrade == "excalibur" || forgeUpgrade == "Excalibur" && weaponupgrade == true || lightningshard == true) {
+            cout << "What would you like to use to upgrade? (Lightning Shard or Armor Upgrade)" << endl;
+            cin >> ws;
+            getline(cin, forgechoice);
+            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+                cout << "You have upgraded your Excalibur using a Lightning Shard!" << endl;
+                lightningexcalibur = true;
+                checkitems();
+            }
+            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+                cout << "You have upgraded your Excalibur using an Armor Upgrade!" << endl;
+                upgradedexcalibur = true;
+                checkitems();
+            }
+        }
+        else {
+            cout << "That item does not exist. Try again." << endl;
+        }
+}
 void Player::checkitems() {
     if (Excalibur == true) {
         int excaliburtracker = 0;
@@ -197,11 +326,106 @@ void Player::checkitems() {
         cout << "You have healed to " << health << " health." << endl;
         healingpotionitem = false;
     }
+    else if (lightningdragonscalechestplate == true) {
+        int lightningdragontracker = 0;
+        if (lightningdragontracker == 0) {
+            defence += 11;
+            maxhealth += 14;
+            attackPower += 25;
+            lightningdragontracker += 1;
+        }
+    }
+    else if (upgradedDragonscalechestplate == true) {
+        int upgradeddragontracker = 0;
+        if (upgradeddragontracker == 0) {
+            defence += 18;
+            maxhealth += 25;
+            upgradeddragontracker += 1;
+        }
+    }
+    else if (lightningexcalibur == true) {
+        int lightningexcaliburtracker = 0;
+        if (lightningexcaliburtracker == 0) {
+            attackPower += 35;
+            lightningexcaliburtracker += 1;
+        }
+    }
+    else if (upgradedexcalibur == true) {
+        int upgradedexcaltracker = 0;
+        if (upgradedexcaltracker == 0) {
+            attackPower += 18;
+            maxhealth += maxhealth * .25;
+            upgradedexcaltracker += 1;
+        }
+    }
+    else if (lightningflaminglongsword == true) {
+        int lightninglongswordtracker = 0;
+        if (lightninglongswordtracker == 0) {
+            attackPower += 20;
+            lightninglongswordtracker += 1;
+        }
+    }
+    else if (upgradedflaminglongsword == true) {
+        int upgradedlongswordtracker = 0;
+        if (upgradedlongswordtracker == 0) {
+            attackPower += 11;
+            maxhealth += maxhealth * .1;
+            upgradedlongswordtracker += 1;
+        }
+    }
+    else if (lightningGodarmor == true) {
+        int lightninggodtracker = 0;
+        if (lightninggodtracker == 0) {
+            defence += 30;
+            attackPower += 35;
+            lightninggodtracker += 1;
+        }
+    }
+    else if (upgradedgodarmor == true) {
+        int upgradedgodtracker = 0;
+        if (upgradedgodtracker == 0) {
+            defence += 40;
+            maxhealth += 40;
+            upgradedgodtracker += 1;
+        }
+    }
+    else if (upgradedmystichelmet == true) {
+        int upgradedmystictracker = 0;
+        if (upgradedmystictracker == 0) {
+            defence += 16;
+            maxhealth += 20;
+            upgradedmystictracker += 1;
+        }
+    }
+    else if (lightningmystichelmet == true) {
+        int lightningmystictracker = 0;
+        if (lightningmystictracker == 0) {
+            defence += 12;
+            attackPower += 20;
+            lightningmystictracker += 1;
+        }
+    }
+    else if (upgradedglassshoes == true) {
+        int upgradedglasstracker = 0;
+        if (upgradedglasstracker == 0) {
+            defence += 11;
+            maxhealth += 14;
+            upgradedglasstracker += 1;
+        }
+    }
+    else if (lightningglassshoes == true) {
+        int lightningglasstracker = 0;
+        if (lightningglasstracker == 0) {
+            defence += 9;
+            attackPower += 12;
+            lightningglasstracker += 1;
+        }
+    }
 }
 void Player::attack(Character* Target) {
     random_device r;
     int playerInput, x, h;
-    string purchasechoice, yesnobackpack, yesnopurchase, forgeUpgrade;
+    string purchasechoice, yesnobackpack, yesnopurchase, forgerestart;
     int accuracy = 0;
     int warforgedablilitytracker = 0;
     bool fallen = false;
@@ -1401,29 +1625,13 @@ void Player::attack(Character* Target) {
         if (Excalibur == true) {
             cout << "-Excalibur (+14 attack)-" << endl;
         }
-        cout << "What would you like to upgrade?" << endl;
-        cin >> ws;
-        getline(cin, forgeUpgrade);
-        if (forgeUpgrade == "god armor") {
-
+        forgerestarting();
+        cout << "Would you like to upgrade something else?" << endl;
+        cin >> forgerestart;
+        if (forgerestart == "Yes" || forgerestart == "yes" || forgerestart == "y" || forgerestart == "Y") {
+            forgerestarting();
         }
-        else if (forgeUpgrade == "glass shoes" || forgeUpgrade == "Glass shoes" || forgeUpgrade == "glass Shoes"|| forgeUpgrade == "Glass Shoes") {
-
-        }
-        else if (forgeUpgrade == "mystic helmet" || forgeUpgrade == "Mystic helmet" || forgeUpgrade == "mystic Helmet" || forgeUpgrade == "Mystic Helmet") {
-
-        }
-        else if (forgeUpgrade == "dragonscale chestplate" || forgeUpgrade == "Dragonscale chestplate" || forgeUpgrade == "dragonscale Chestplate" || forgeUpgrade == "Dragonscale Chestplate") {
-
-        }
-        else if (forgeUpgrade == "flaming longsword" || forgeUpgrade == "Flaming Longsword" || forgeUpgrade == "flaming Longsword" || forgeUpgrade == "Flaming longsword") {
-
-        }
-        else if (forgeUpgrade == "excalibur" || forgeUpgrade == "Excalibur") {
-
-        }
-        else {
-            cout << "That item does not exist. Try again." << endl;
+        else if (forgerestart == "No" || forgerestart == "no" || forgerestart == "n" || forgerestart == "N") {
             attack(Target);
             break;
         }
@@ -1561,6 +1769,42 @@ void Player::attack(Character* Target) {
         }
         if (lightningshard == true) {
             cout << "Lightning Shard (Used to upgrade armor/weapons)" << endl;
+        }
+        if (lightningdragonscalechestplate == true) {
+            cout << "Lightning Dragonscale Chestplate(+11 Defence|+14 Max Health|+25 Attack)" << endl;
+        }
+        if (lightningmystichelmet == true) {
+            cout << "Lightning Mystic Helmet(+12 Defence|+20 Attack)" << endl;
+        }
+        if (lightningexcalibur == true) {
+            cout << "Lightning Excalibur(+35 Attack)" << endl;
+        }
+        if (lightningglassshoes == true) {
+            cout << "Lightning Glass Shoes(+9 Defence|+12 Attack)" << endl;
+        }
+        if (lightningflaminglongsword == true) {
+            cout << "Lightning Framing Longsword(+20 Attack)" << endl;
+        }
+        if (lightningGodarmor == true) {
+            cout << "Lightning God Armor(+30 Defence|+35 Attack)" << endl;
+        }
+        if (upgradedgodarmor == true) {
+            cout << "Upgraded God Armor(+40 Defence|+40 Max Health)" << endl;
+        }
+        if (upgradedmystichelmet == true) {
+            cout << "Upgraded Mystic Helmet(+16 Defence|+20 Max Health)" << endl;
+        }
+        if (upgradedglassshoes == true) {
+            cout << "Upgraded Glass Shoes(+11 Defence|+14 Max Health)" << endl;
+        }
+        if (upgradedflaminglongsword == true) {
+            cout << "Upgraded Flaming Longsword(+11 Attack|+10% Max Health)" << endl;
+        }
+        if (upgradedexcalibur == true) {
+            cout << "Upgraded Excalibur(+18 Attack|+25% Max Health)" << endl;
+        }
+        if (upgradedDragonscalechestplate == true) {
+            cout << "Upgraded Dragonscale Chestplate(+18 Defence|+25 Max Health)" << endl;
         }
         if (shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && molotov == 0 && invisibilitypotion == 0) {
             cout << "You have no items yet." << endl;
