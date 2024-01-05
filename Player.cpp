@@ -42,7 +42,7 @@ void Player::playerclasstrickster() {
     classtype = 6;
 }
 void Player ::forgerestarting() {
-    string forgeUpgrade, forgechoice;
+    string forgeUpgrade = "", forgechoice = "";
         cout << "What would you like to upgrade?" << endl;
         cin >> ws;
         getline(cin, forgeUpgrade);
@@ -425,7 +425,7 @@ void Player::checkitems() {
 void Player::attack(Character* Target) {
     random_device r;
     int playerInput, x, h;
-    string purchasechoice, yesnobackpack, yesnopurchase, forgerestart;
+    string purchasechoice = "", yesnobackpack = "", yesnopurchase = "", forgerestart = "";
     int accuracy = 0;
     int warforgedabilitytracker = 0;
     bool fallen = false;
@@ -1748,7 +1748,7 @@ void Player::attack(Character* Target) {
         getline(cin, yesnobackpack);
         if (yesnobackpack == "Yes" || yesnobackpack == "yes" || yesnobackpack == "y" || yesnobackpack == "Y") {
             cout << "Which item would you like to use?" << endl;
-            string itemuse;
+            string itemuse = "";
             cin >> ws;
             getline(cin, itemuse);
             if (itemuse == "Health Tonic" || itemuse == "Health tonic" || itemuse == "health tonic") {

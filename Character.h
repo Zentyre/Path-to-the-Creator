@@ -19,7 +19,7 @@ public:
 	int Goldloom = 0;
 	int storetracker = 0;
 	int healthtonicitem = 0;
-	string name;
+	string name = "";
 	Character();
 	bool isAlive();
 	bool killplayer = false;
