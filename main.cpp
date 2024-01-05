@@ -427,13 +427,37 @@ int main() {
         Player Knight("Player", 50, 25, 4, 0, 1, 1);
         cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought or 6- Trickster?" << endl;
         cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
-        int playerclasschoice = 0;
+        int playerclasschoice = 0, cinFailchoice = 0;
         cin >> playerclasschoice;
         if (cin.fail()) {
             cout << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "You chose knight." << endl << endl;
+            cout << "You typed a letter...I asked for a number. You lose privledge to choose your class now." << endl;
+            cinFailchoice = r() % 6 +1;
+            if (cinFailchoice == 1) {
+                cout << "You chose Knight!" << endl;
+            }
+            else if (cinFailchoice == 2) {
+                Knight.playerclassexecutioner();
+                cout << "You chose Executioner!" << endl;
+            }
+            else if (cinFailchoice == 3) {
+                Knight.playerclasssoulweaver();
+                cout << "You chose Soulweaver!" << endl;
+            }
+            else if (cinFailchoice == 4) {
+                Knight.playerclasswarforged();
+                cout << "You chose Warforged Engineer!" << endl;
+            }
+            else if (cinFailchoice == 5) {
+                Knight.playerclassdreadnought();
+                cout << "You chose Dreadnought!" << endl;
+            }
+            else if (cinFailchoice == 6) {
+                Knight.playerclasstrickster();
+                cout << "You chose Trickster!" << endl;
+            }
         }
         else if (playerclasschoice == 1) {
             cout << "You chose Knight!" << endl;
