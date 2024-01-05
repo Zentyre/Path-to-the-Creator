@@ -12,7 +12,7 @@ Player::Player(string n, int maxh, int hp, int atk, int def, int lvl, int live) 
     baselevel = lvl;
     lives = live;
 }
-int tracklevelpotion, tracksuperpotion, tracksuperiorlevelpotion;
+int tracklevelpotion = 0, tracksuperpotion = 0, tracksuperiorlevelpotion = 0;
 void Player::playerclassexecutioner() {
     health -= 10;
     attackPower += 4;
