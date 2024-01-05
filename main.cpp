@@ -880,7 +880,7 @@ int main() {
                     cout << "-----------------------------------------------" << endl;
                 }
                 else if (enemyrandommessage == 4) {
-                    cout << "This guy seems mad that you killed his friend." << endl;
+                    cout << "This guy seems mad that you killed his friend. GET HIM!!" << endl;
                     cout << "-----------------------------------------------" << endl;
                 }
                 cout << endl;
@@ -906,27 +906,27 @@ int main() {
                     cout << "--You gained an item! (Sword)--" << endl;
                     cout << endl;
                 }
-                else if (item == 8 || item == 9 || item == 10 || item == 11) {
+                else if (item == 8 || item == 9 || item == 10) {
                     Knight.leveltonic = true;
                     cout << "--You gained an item! (LevelTonic)--" << endl;
                     cout << endl;
                 }
-                else if (item == 12) {
+                else if (item == 11) {
                     Knight.superpotion = true;
                     cout << "--You gained a godly item! (Super potion)--" << endl;
                     cout << endl;
                 }
-                else if (item >= 13 && item <= 23) {
+                else if (item >= 12 && item <= 13) {
                     Knight.healthtonic = true;
                     cout << "--You gained a health tonic! (Healing potion)--" << endl;
                     cout << endl;
                 }
-                else if (item == 24 || item == 25 || item == 26) {
+                else if (item == 14 || item == 15 || item == 16) {
                     Knight.accuratesword = true;
                     cout << "--You gained the legendary accuracy sword! (never miss again)--" << endl;
                     cout << endl;
                 }
-                else if (item == 27 || item == 28 || item == 29 || item == 30) {
+                else if (item == 17 || item == 18 || item == 19 || item == 20) {
                     Knight.shield = true;
                     cout << "--You can now dual wield with a shield! (Shield)--" << endl;
                     cout << endl;
