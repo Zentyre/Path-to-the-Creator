@@ -415,6 +415,7 @@ Enemy* generateEnemy5(int l5) {
     }
 }
 int main() {
+    random_device r;
     while (true) {
         cout << "Welcome to Evil Conquest!" << endl;
         cout << "Your objective is to kill the operator of all evil...the Creator Slime!" << endl;
@@ -459,7 +460,30 @@ int main() {
         }
         else {
             cout << "You chose nothing so I will choose for you." << endl;
-            Player Knight("Knight", 50, 25, 2, 0, 0, 1);
+            playerclasschoice = r() % 6 +1;
+            if (playerclasschoice == 1) {
+                cout << "You chose Knight!" << endl;
+            }
+            else if (playerclasschoice == 2) {
+                Knight.playerclassexecutioner();
+                cout << "You chose Executioner!" << endl;
+            }
+            else if (playerclasschoice == 3) {
+                Knight.playerclasssoulweaver();
+                cout << "You chose Soulweaver!" << endl;
+            }
+            else if (playerclasschoice == 4) {
+                Knight.playerclasswarforged();
+                cout << "You chose Warforged Engineer!" << endl;
+            }
+            else if (playerclasschoice == 5) {
+                Knight.playerclassdreadnought();
+                cout << "You chose Dreadnought!" << endl;
+            }
+            else if (playerclasschoice == 6) {
+                Knight.playerclasstrickster();
+                cout << "You chose Trickster!" << endl;
+            }
         }
         cout << "What would you like me to call you?" << endl;
         cin >> ws;
@@ -535,7 +559,6 @@ int main() {
             }
             else {
                 cout << "That area doesn't exist so I guess I'll choose for you" << endl;
-                random_device r;
                 int x = 0;
                 x = r() % 5 + 1;
     switch (x) {
@@ -593,7 +616,6 @@ int main() {
                 }
             }
     }
-    random_device r;
     int classcurrency = 0;
     Enemy* Slime = generateEnemy(Knight.getbaselevel());
     delete Slime;
@@ -732,7 +754,6 @@ int main() {
                 }
                 else if (classcurrency == 20 || classcurrency == 40 || classcurrency == 60 || classcurrency == 80 || classcurrency == 100 || classcurrency == 120 || classcurrency == 140 || classcurrency == 160 || classcurrency == 180 && Knight.playercompanion == true) {
                     cout << "You have found a rare treasure!" << endl;
-                    random_device r;
                     int treasure;
                     treasure = r() % 99 + 1;
                     if (treasure <= 30) {
@@ -754,7 +775,6 @@ int main() {
                         treasure = 0;
                     }
                     else {
-                        random_device r;
                         int legend;
                         legend = r() % 3;
                         if (legend == 0) {
@@ -776,7 +796,6 @@ int main() {
                 }
                 else if (classcurrency == 20 || classcurrency == 40 || classcurrency == 60 || classcurrency == 80 || classcurrency == 100 || classcurrency == 120 || classcurrency == 140 || classcurrency == 160 || classcurrency == 180) {
                     cout << "You have found a rare treasure!" << endl;
-                    random_device r;
                     int treasure;
                     treasure = r() % 99 + 1;
                     if (treasure <= 33) {
@@ -798,7 +817,6 @@ int main() {
                         treasure = 0;
                     }
                     else {
-                        random_device r;
                         int legend;
                         legend = r() % 3;
                         if (legend == 0) {
