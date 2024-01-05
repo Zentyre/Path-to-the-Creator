@@ -126,7 +126,7 @@ void Character::setmaxhealth(int charactermaxhealth) {
 	}
 	//adds more health based on maxhealthupgrade amount
 	if (maxhealthtracker >= 1) {
-		charactermaxhealth = charactermaxhealth + (50 * maxhealthtracker);
+		charactermaxhealth += 50 * maxhealthtracker;
 	}
 	maxhealth = charactermaxhealth;
 }

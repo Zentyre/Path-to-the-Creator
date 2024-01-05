@@ -636,9 +636,10 @@ int main() {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             areachoiceint = r() % 5 + 1;
-            break; //} was removed after the purple one if error happens add it back.
+            break;
         }
     }
+}
     Enemy* Slime = generateEnemy(Knight.getbaselevel());
     delete Slime;
     if (areachoiceint == 1) {
