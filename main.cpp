@@ -427,7 +427,7 @@ int main() {
         Player Knight("Player", 50, 25, 4, 0, 1, 1);
         cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought or 6- Trickster?" << endl;
         cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
-        int playerclasschoice = 0, cinFailchoice = 0;
+        int playerclasschoice = 0, cinFailchoice = 0, classcurrency = 0;
         cin >> playerclasschoice;
         if (cin.fail()) {
             cout << endl;
@@ -636,11 +636,9 @@ int main() {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             areachoiceint = r() % 5 + 1;
-            break;
-                }
-            }
+            break; //} was removed after the purple one if error happens add it back.
+        }
     }
-    int classcurrency = 0;
     Enemy* Slime = generateEnemy(Knight.getbaselevel());
     delete Slime;
     if (areachoiceint == 1) {
@@ -696,7 +694,7 @@ int main() {
                 else if (areachoiceint == 5) {
                     Enemy* Slime = generateEnemy5(Knight.getbaselevel());
                 }
-                int enemyrandommessage;
+                int enemyrandommessage = 0;
                 enemyrandommessage = r() % 5;
                 if (enemyrandommessage == 0) {
                     cout << "A new " << Slime->getname() << " has appeared, stab it!!" << endl;
