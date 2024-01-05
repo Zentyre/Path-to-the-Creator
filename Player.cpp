@@ -14,13 +14,17 @@ Player::Player(string n, int maxh, int hp, int atk, int def, int lvl, int live) 
 }
 int tracklevelpotion = 0, tracksuperpotion = 0, tracksuperiorlevelpotion = 0;
 void Player::playerclassexecutioner() {
+    maxhealth -= 20;
     health -= 10;
     attackPower += 4;
+    defence += 1;
     classtype = 2;
 }
 void Player::playerclasssoulweaver() {
+    maxhealth -= 10;
     health -= 5;
     attackPower -= 1;
+    defence += 2;
     addlives(1);
     classtype = 3;
 }
@@ -28,17 +32,21 @@ void Player::playerclasswarforged() {
     health += 15;
     maxhealth += 30;
     attackPower -= 2;
+    defence += 3;
     classtype = 4;
 }
 void Player::playerclassdreadnought() {
     health += 25;
     attackPower -= 3;
     maxhealth += 50;
+    defence += 2;
     classtype = 5;
 }
 void Player::playerclasstrickster() {
+    maxhealth -= 10;
     health -= 5;
     attackPower += 1;
+    defence += 1;
     classtype = 6;
 }
 void Player ::forgerestarting() {
