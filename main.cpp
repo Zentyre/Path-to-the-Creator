@@ -1,13 +1,14 @@
 #include <iostream>
 #include <random>
 #include <string>
+#include <cmath>
 #include "Character.h"
 #include "Player.h"
 #include "Enemy.h"
 using namespace std;
 Enemy* generateEnemy(int l, Character* Target) {
     random_device r;
-    int x, enemyhp, enemyatk, enemylives, enemydef;
+    int x, enemyhp, enemyatk, enemylives, enemydef, enemylvl, enemymaxh;
     if (l == 200) {
         x = 12;
     }
@@ -47,52 +48,70 @@ Enemy* generateEnemy(int l, Character* Target) {
     enemyatk = Target->getattackPower() * .75;
     enemydef = Target->getdefence() * .75;
     enemyhp = Target->getmaxhealth() * .75;
-    enemylives = Target->getlives() * .75;
+    enemylives = floor(Target->getlives() * .5);
+    enemylvl = Target->getlevel();
+    enemymaxh = enemyhp;
+    if (x==12) {
+        enemyatk = Target->getattackPower() * 1.25;
+        enemydef = Target->getdefence() * 1,25;
+        enemyhp = Target->getmaxhealth() * 1.25;
+        enemylives = floor(Target->getlives() * .5);
+        enemylvl = Target->getlevel();
+        enemymaxh = enemyhp;
+    }
+    else if (x== 6) {
+        enemyatk = Target->getattackPower() * 1.1;
+        enemydef = Target->getdefence() * 1.1;
+        enemyhp = Target->getmaxhealth() * 1.1;
+        enemylives = floor(Target->getlives() * .5);
+        enemylvl = Target->getlevel();
+        enemymaxh = enemyhp;
+    }
     switch (x) {
     case 0:
-        return new Enemy("Shroom", 20, 2, 1, 1, 20);
+        return new Enemy("Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     case 1:
-        return new Enemy("Shroom Knight", 30, 1, 1, 1, 30);
+        return new Enemy("Shroom Knight", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     case 2:
-        return new Enemy("Shroom ArchKnight", 25, 2, 1, 1, 25);
+        return new Enemy("Shroom ArchKnight", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     case 3:
-        return new Enemy("Noble Shroom", 40, 3, 1, 1, 40);
+        return new Enemy("Noble Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     case 4:
-        return new Enemy("Royal Shroom", 60, 4, 1, 1, 60);
+        return new Enemy("Royal Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     case 5:
-        return new Enemy("Princess Slime", 100, 7, 1, 1, 100);
+        return new Enemy("Princess Slime", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     case 6:
-        return new Enemy("Prince Shroom", 250, 13, 1, 1, 250);
+        return new Enemy("Prince Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     case 7:
-        return new Enemy("King Shroom", 150, 20, 1, 1, 150);
+        return new Enemy("King Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     case 8:
-        return new Enemy("Emperor Shroom", 250, 25, 1, 1, 250);
+        return new Enemy("Emperor Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     case 9:
-        return new Enemy("Leader Shroom", 350, 30, 1, 1, 350);
+        return new Enemy("Leader Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     case 10:
-        return new Enemy("Divine Shroom", 400, 40, 1, 1, 400);
+        return new Enemy("Divine Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     case 11:
-        return new Enemy("Boss Shroom", 450, 50, 1, 1, 450);
+        return new Enemy("Boss Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     default:
-        return new Enemy("Creator Shroom", 500, 60, 1, 1, 500);
+        return new Enemy("Creator Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
         break;
     }
 }
 Enemy* generateEnemy2(int l2, Character* Target) {
     random_device r;
-    int x, enemyhp2, enemyatk2, enemylives2, enemydef2;
+    int x, enemyhp2, enemyatk2, enemylives2, enemydef2, enemylvl2, enemymaxh2;
     if (l2 == 200) {
         x = 12;
     }
@@ -132,7 +151,25 @@ Enemy* generateEnemy2(int l2, Character* Target) {
     enemyatk2 = Target->getattackPower() * .75;
     enemydef2 = Target->getdefence() * .75;
     enemyhp2 = Target->getmaxhealth() * .75;
-    enemylives2 = Target->getlives() * .75;
+    enemylives2 = floor(Target->getlives() * .5);
+    enemylvl2 = Target->getlevel();
+    enemymaxh2 = enemyhp2;
+    if (x==12) {
+        enemyatk2 = Target->getattackPower() * 1.25;
+        enemydef2 = Target->getdefence() * 1,25;
+        enemyhp2 = Target->getmaxhealth() * 1.25;
+        enemylives2 = floor(Target->getlives() * .5);
+        enemylvl2 = Target->getlevel();
+        enemymaxh2 = enemyhp2;
+    }
+    else if (x== 6) {
+        enemyatk2 = Target->getattackPower() * 1.1;
+        enemydef2 = Target->getdefence() * 1.1;
+        enemyhp2 = Target->getmaxhealth() * 1.1;
+        enemylives2 = floor(Target->getlives() * .5);
+        enemylvl2 = Target->getlevel();
+        enemymaxh2 = enemyhp2;
+    }
     switch (x) {
     case 0:
         return new Enemy("Slime", 20, 2, 1, 1, 20);
