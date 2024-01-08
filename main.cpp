@@ -59,6 +59,14 @@ Enemy* generateEnemy(int l, Character* Target) {
         enemylvl = Target->getlevel();
         enemymaxh = enemyhp;
     }
+    else if (x == 11) {
+        enemyatk = Target->getattackPower() * 1.1;
+        enemydef = Target->getdefence() * 1,1;
+        enemyhp = Target->getmaxhealth() * 1.1;
+        enemylives = floor(Target->getlives() * .5);
+        enemylvl = Target->getlevel();
+        enemymaxh = enemyhp;
+    }
     else if (x== 6) {
         enemyatk = Target->getattackPower() * 1.1;
         enemydef = Target->getdefence() * 1.1;
@@ -158,6 +166,14 @@ Enemy* generateEnemy2(int l2, Character* Target) {
         enemyatk2 = Target->getattackPower() * 1.25;
         enemydef2 = Target->getdefence() * 1,25;
         enemyhp2 = Target->getmaxhealth() * 1.25;
+        enemylives2 = floor(Target->getlives() * .5);
+        enemylvl2 = Target->getlevel();
+        enemymaxh2 = enemyhp2;
+    }
+    else if (x == 11) {
+        enemyatk2 = Target->getattackPower() * 1.1;
+        enemydef2 = Target->getdefence() * 1,1;
+        enemyhp2 = Target->getmaxhealth() * 1.1;
         enemylives2 = floor(Target->getlives() * .5);
         enemylvl2 = Target->getlevel();
         enemymaxh2 = enemyhp2;
@@ -265,6 +281,14 @@ Enemy* generateEnemy3(int l3, Character* Target) {
         enemylvl3 = Target->getlevel();
         enemymaxh3 = enemyhp3;
     }
+    else if (x == 11) {
+        enemyatk3 = Target->getattackPower() * 1.1;
+        enemydef3 = Target->getdefence() * 1,1;
+        enemyhp3 = Target->getmaxhealth() * 1.1;
+        enemylives3 = floor(Target->getlives() * .5);
+        enemylvl3 = Target->getlevel();
+        enemymaxh3 = enemyhp3;
+    }
     else if (x== 6) {
         enemyatk3 = Target->getattackPower() * 1.1;
         enemydef3 = Target->getdefence() * 1.1;
@@ -368,6 +392,14 @@ Enemy* generateEnemy4(int l4, Character* Target) {
         enemylvl4 = Target->getlevel();
         enemymaxh4 = enemyhp4;
     }
+    else if (x == 11) {
+        enemyatk4 = Target->getattackPower() * 1.1;
+        enemydef4 = Target->getdefence() * 1,1;
+        enemyhp4 = Target->getmaxhealth() * 1.1;
+        enemylives4 = floor(Target->getlives() * .5);
+        enemylvl4 = Target->getlevel();
+        enemymaxh4 = enemyhp4;
+    }
     else if (x== 6) {
         enemyatk4 = Target->getattackPower() * 1.1;
         enemydef4 = Target->getdefence() * 1.1;
@@ -467,6 +499,14 @@ Enemy* generateEnemy5(int l5, Character* Target) {
         enemyatk5 = Target->getattackPower() * 1.25;
         enemydef5 = Target->getdefence() * 1,25;
         enemyhp5 = Target->getmaxhealth() * 1.25;
+        enemylives5 = floor(Target->getlives() * .5);
+        enemylvl5 = Target->getlevel();
+        enemymaxh5 = enemyhp5;
+    }
+    else if (x == 11) {
+        enemyatk5 = Target->getattackPower() * 1.1;
+        enemydef5 = Target->getdefence() * 1,1;
+        enemyhp5 = Target->getmaxhealth() * 1.1;
         enemylives5 = floor(Target->getlives() * .5);
         enemylvl5 = Target->getlevel();
         enemymaxh5 = enemyhp5;
