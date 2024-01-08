@@ -570,7 +570,7 @@ void Player::attack(Character* Target) {
         else if (classtype == 6) {
             cout << "--The trickster class unlocks its special skill (Confuse) at level 50. This skill has a 40% chance to make the enemy attack itself with a crit rate of 30%.--" << endl << endl;
         }
-        cout << "**NOTE** All special skills have 100% accuracy and if it affects an enemy, the enemy will also have 100% accuracy." << endl << endl;
+        cout << "**NOTE** All special skills have 100% accuracy." << endl << endl;
         attack(Target);
         break;
     case 1:
