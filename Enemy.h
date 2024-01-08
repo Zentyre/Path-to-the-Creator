@@ -22,7 +22,7 @@ public:
 		if (health <= 0) {
 			lives -= 1;
 			if (lives >= 1) {
-				health = maxhealth - level;
+				health = maxhealth - (level / 2);
 			}
 		}
 	}
