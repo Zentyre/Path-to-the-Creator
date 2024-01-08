@@ -3,7 +3,7 @@
 #include <random>
 using namespace std;
 
-Enemy::Enemy(string n2, int hp2, int atk2, int live2, int lvl2, int maxh2) {
+Enemy::Enemy(string n2, int hp2, int atk2, int def2, int live2, int lvl2, int maxh2) {
 
     name = n2;
     health = hp2;
@@ -11,6 +11,7 @@ Enemy::Enemy(string n2, int hp2, int atk2, int live2, int lvl2, int maxh2) {
     lives = live2;
     level = lvl2;
     maxhealth = maxh2;
+    defence = def2;
 }
 random_device r;
 int critchance;

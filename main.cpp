@@ -8,7 +8,7 @@
 using namespace std;
 Enemy* generateEnemy(int l, Character* Target) {
     random_device r;
-    int x, enemyhp, enemyatk, enemylives, enemydef, enemylvl, enemymaxh;
+    int x, enemyhp, enemyatk, enemylives, enemydef, enemylvl, enemymaxh, enemydef;
     if (l == 200) {
         x = 12;
     }
@@ -48,6 +48,7 @@ Enemy* generateEnemy(int l, Character* Target) {
     enemyatk = Target->getattackPower() * .75;
     enemydef = Target->getdefence() * .75;
     enemyhp = Target->getmaxhealth() * .75;
+    enemydef = Target->getdefence() * .75;
     enemylives = floor(Target->getlives() * .5);
     enemylvl = Target->getlevel();
     enemymaxh = enemyhp;
@@ -55,6 +56,7 @@ Enemy* generateEnemy(int l, Character* Target) {
         enemyatk = Target->getattackPower() * 1.25;
         enemydef = Target->getdefence() * 1,25;
         enemyhp = Target->getmaxhealth() * 1.25;
+        enemydef = Target->getdefence() * 1.25;
         enemylives = floor(Target->getlives() * .5);
         enemylvl = Target->getlevel();
         enemymaxh = enemyhp;
@@ -63,6 +65,7 @@ Enemy* generateEnemy(int l, Character* Target) {
         enemyatk = Target->getattackPower() * 1.1;
         enemydef = Target->getdefence() * 1,1;
         enemyhp = Target->getmaxhealth() * 1.1;
+        enemydef = Target->getdefence() * 1.1;
         enemylives = floor(Target->getlives() * .5);
         enemylvl = Target->getlevel();
         enemymaxh = enemyhp;
@@ -71,55 +74,56 @@ Enemy* generateEnemy(int l, Character* Target) {
         enemyatk = Target->getattackPower() * 1.1;
         enemydef = Target->getdefence() * 1.1;
         enemyhp = Target->getmaxhealth() * 1.1;
+        enemydef = Target->getdefence() * 1.2;
         enemylives = floor(Target->getlives() * .5);
         enemylvl = Target->getlevel();
         enemymaxh = enemyhp;
     }
     switch (x) {
     case 0:
-        return new Enemy("Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Shroom", 20, 1, 1, 0, 1, 20);
         break;
     case 1:
-        return new Enemy("Shroom Knight", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Shroom Knight", 25, 1,0, 1, 2, 25);
         break;
     case 2:
-        return new Enemy("Shroom ArchKnight", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Shroom ArchKnight", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
     case 3:
-        return new Enemy("Noble Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Noble Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
     case 4:
-        return new Enemy("Royal Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Royal Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
     case 5:
-        return new Enemy("Princess Slime", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Princess Slime", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
     case 6:
-        return new Enemy("Prince Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Prince Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
     case 7:
-        return new Enemy("King Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("King Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
     case 8:
-        return new Enemy("Emperor Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Emperor Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
     case 9:
-        return new Enemy("Leader Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Leader Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
     case 10:
-        return new Enemy("Divine Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Divine Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
     case 11:
-        return new Enemy("Boss Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Boss Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
     default:
-        return new Enemy("Creator Shroom", enemyhp, enemyatk, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Creator Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
     }
 }
 Enemy* generateEnemy2(int l2, Character* Target) {
     random_device r;
-    int x, enemyhp2, enemyatk2, enemylives2, enemydef2, enemylvl2, enemymaxh2;
+    int x, enemyhp2, enemyatk2, enemylives2, enemydef2, enemylvl2, enemymaxh2, enemydef2;
     if (l2 == 200) {
         x = 12;
     }
@@ -159,6 +163,7 @@ Enemy* generateEnemy2(int l2, Character* Target) {
     enemyatk2 = Target->getattackPower() * .75;
     enemydef2 = Target->getdefence() * .75;
     enemyhp2 = Target->getmaxhealth() * .75;
+    enemydef2 = Target->getdefence() * .75;
     enemylives2 = floor(Target->getlives() * .5);
     enemylvl2 = Target->getlevel();
     enemymaxh2 = enemyhp2;
@@ -166,6 +171,7 @@ Enemy* generateEnemy2(int l2, Character* Target) {
         enemyatk2 = Target->getattackPower() * 1.25;
         enemydef2 = Target->getdefence() * 1,25;
         enemyhp2 = Target->getmaxhealth() * 1.25;
+        enemydef2 = Target->getdefence() * 1.25;
         enemylives2 = floor(Target->getlives() * .5);
         enemylvl2 = Target->getlevel();
         enemymaxh2 = enemyhp2;
@@ -174,6 +180,7 @@ Enemy* generateEnemy2(int l2, Character* Target) {
         enemyatk2 = Target->getattackPower() * 1.1;
         enemydef2 = Target->getdefence() * 1,1;
         enemyhp2 = Target->getmaxhealth() * 1.1;
+        enemydef2 = Target->getdefence() * 1.1;
         enemylives2 = floor(Target->getlives() * .5);
         enemylvl2 = Target->getlevel();
         enemymaxh2 = enemyhp2;
@@ -182,55 +189,56 @@ Enemy* generateEnemy2(int l2, Character* Target) {
         enemyatk2 = Target->getattackPower() * 1.1;
         enemydef2 = Target->getdefence() * 1.1;
         enemyhp2 = Target->getmaxhealth() * 1.1;
+        enemydef2 = Target->getdefence() * 1.1;
         enemylives2 = floor(Target->getlives() * .5);
         enemylvl2 = Target->getlevel();
         enemymaxh2 = enemyhp2;
     }
     switch (x) {
     case 0:
-        return new Enemy("Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("Slime", 20, 1, 0, 1, 0, 20);
         break;
     case 1:
-        return new Enemy("Epic Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("Epic Slime", 25, 1, 0, 1, 0, 25);
         break;
     case 2:
-        return new Enemy("Superior Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("Superior Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
         break;
     case 3:
-        return new Enemy("Super Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("Super Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
         break;
     case 4:
-        return new Enemy("Incredible Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("Incredible Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
         break;
     case 5:
-        return new Enemy("Superb Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("Superb Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
         break;
     case 6:
-        return new Enemy("King Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("King Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
         break;
     case 7:
-        return new Enemy("Demon Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("Demon Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
         break;
     case 8:
-        return new Enemy("Overlord Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("Overlord Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
         break;
     case 9:
-        return new Enemy("Universal Super Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("Universal Super Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
         break;
     case 10:
-        return new Enemy("Godly Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("Godly Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
         break;
     case 11:
-        return new Enemy("Boss Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("Boss Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
         break;
     default:
-        return new Enemy("Creator Slime", enemyhp2, enemyatk2, enemylives2, enemylvl2, enemymaxh2);
+        return new Enemy("Creator Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
         break;
     }
 }
 Enemy* generateEnemy3(int l3, Character* Target) {
     random_device r;
-    int x, enemyhp3, enemyatk3, enemylives3, enemydef3, enemylvl3, enemymaxh3;
+    int x, enemyhp3, enemyatk3, enemylives3, enemydef3, enemylvl3, enemymaxh3, enemydef3;
     if (l3 == 200) {
         x = 12;
     }
@@ -270,6 +278,7 @@ Enemy* generateEnemy3(int l3, Character* Target) {
     enemyatk3 = Target->getattackPower() * .75;
     enemydef3 = Target->getdefence() * .75;
     enemyhp3 = Target->getmaxhealth() * .75;
+    enemydef3 = Target->getdefence() * .75;
     enemylives3 = floor(Target->getlives() * .5);
     enemylvl3 = Target->getlevel();
     enemymaxh3 = enemyhp3;
@@ -277,6 +286,7 @@ Enemy* generateEnemy3(int l3, Character* Target) {
         enemyatk3 = Target->getattackPower() * 1.25;
         enemydef3 = Target->getdefence() * 1,25;
         enemyhp3 = Target->getmaxhealth() * 1.25;
+        enemydef3 = Target->getdefence() * 1.25;
         enemylives3 = floor(Target->getlives() * .5);
         enemylvl3 = Target->getlevel();
         enemymaxh3 = enemyhp3;
@@ -285,6 +295,7 @@ Enemy* generateEnemy3(int l3, Character* Target) {
         enemyatk3 = Target->getattackPower() * 1.1;
         enemydef3 = Target->getdefence() * 1,1;
         enemyhp3 = Target->getmaxhealth() * 1.1;
+        enemydef3 = Target->getdefence() * 1.1;
         enemylives3 = floor(Target->getlives() * .5);
         enemylvl3 = Target->getlevel();
         enemymaxh3 = enemyhp3;
@@ -293,55 +304,56 @@ Enemy* generateEnemy3(int l3, Character* Target) {
         enemyatk3 = Target->getattackPower() * 1.1;
         enemydef3 = Target->getdefence() * 1.1;
         enemyhp3 = Target->getmaxhealth() * 1.1;
+        enemydef3 = Target->getdefence() * 1.1;
         enemylives3 = floor(Target->getlives() * .5);
         enemylvl3 = Target->getlevel();
         enemymaxh3 = enemyhp3;
     }
     switch (x) {
     case 0:
-        return new Enemy("Croc", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("Croc", 20, 1, 0, 1, 0, 20);
         break;
     case 1:
-        return new Enemy("Croc Pot", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("Croc Pot", 25, 1, 0, 1, 0, 25);
         break;
     case 2:
-        return new Enemy("Mini Croc", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("Mini Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
         break;
     case 3:
-        return new Enemy("Big Croc", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("Big Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
         break;
     case 4:
-        return new Enemy("Land Croc", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("Land Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
         break;
     case 5:
-        return new Enemy("Sharptooth Croc", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("Sharptooth Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
         break;
     case 6:
-        return new Enemy("King Croc", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("King Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
         break;
     case 7:
-        return new Enemy("Develish Croc", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("Develish Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
         break;
     case 8:
-        return new Enemy("Crocodile Dundee", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("Crocodile Dundee", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
         break;
     case 9:
-        return new Enemy("Killer Croc", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("Killer Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
         break;
     case 10:
-        return new Enemy("Transcendent Croc", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("Transcendent Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
         break;
     case 11:
-        return new Enemy("Florida Croc", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("Florida Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
         break;
     default:
-        return new Enemy("Creator Croc", enemyhp3, enemyatk3, enemylives3, enemylvl3, enemymaxh3);
+        return new Enemy("Creator Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
         break;
     }
 }
 Enemy* generateEnemy4(int l4, Character* Target) {
     random_device r;
-    int x, enemyhp4, enemyatk4, enemylives4, enemydef4, enemylvl4, enemymaxh4;
+    int x, enemyhp4, enemyatk4, enemylives4, enemydef4, enemylvl4, enemymaxh4, enemydef4;
     if (l4 == 200) {
         x = 12;
     }
@@ -381,6 +393,7 @@ Enemy* generateEnemy4(int l4, Character* Target) {
     enemyatk4 = Target->getattackPower() * .75;
     enemydef4 = Target->getdefence() * .75;
     enemyhp4 = Target->getmaxhealth() * .75;
+    enemydef4 = Target->getdefence() * .75;
     enemylives4 = floor(Target->getlives() * .5);
     enemylvl4 = Target->getlevel();
     enemymaxh4 = enemyhp4;
@@ -388,6 +401,7 @@ Enemy* generateEnemy4(int l4, Character* Target) {
         enemyatk4 = Target->getattackPower() * 1.25;
         enemydef4 = Target->getdefence() * 1,25;
         enemyhp4 = Target->getmaxhealth() * 1.25;
+        enemydef4 = Target->getdefence() * 1.25;
         enemylives4 = floor(Target->getlives() * .5);
         enemylvl4 = Target->getlevel();
         enemymaxh4 = enemyhp4;
@@ -396,6 +410,7 @@ Enemy* generateEnemy4(int l4, Character* Target) {
         enemyatk4 = Target->getattackPower() * 1.1;
         enemydef4 = Target->getdefence() * 1,1;
         enemyhp4 = Target->getmaxhealth() * 1.1;
+        enemydef4 = Target->getdefence() * 1.1;
         enemylives4 = floor(Target->getlives() * .5);
         enemylvl4 = Target->getlevel();
         enemymaxh4 = enemyhp4;
@@ -404,55 +419,56 @@ Enemy* generateEnemy4(int l4, Character* Target) {
         enemyatk4 = Target->getattackPower() * 1.1;
         enemydef4 = Target->getdefence() * 1.1;
         enemyhp4 = Target->getmaxhealth() * 1.1;
+        enemydef4 = Target->getdefence() * 1.1;
         enemylives4 = floor(Target->getlives() * .5);
         enemylvl4 = Target->getlevel();
         enemymaxh4 = enemyhp4;
     }
     switch (x) {
     case 0:
-        return new Enemy("Roo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Roo", 20, 1, 0, 1, 0, 20);
         break;
     case 1:
-        return new Enemy("Joey Roo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Joey Roo", 25, 1, 0, 1, 0, 25);
         break;
     case 2:
-        return new Enemy("Kangaroo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Kangaroo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
         break;
     case 3:
-        return new Enemy("Mother Roo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Mother Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
         break;
     case 4:
-        return new Enemy("Boxer Roo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Boxer Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
         break;
     case 5:
-        return new Enemy("Jumping Roo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Jumping Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
         break;
     case 6:
-        return new Enemy("Killer Roo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Killer Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
         break;
     case 7:
-        return new Enemy("Crackhead Roo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Crackhead Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
         break;
     case 8:
-        return new Enemy("Aussie Roo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Aussie Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
         break;
     case 9:
-        return new Enemy("Jacked Roo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Jacked Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
         break;
     case 10:
-        return new Enemy("Paragon Roo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Paragon Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
         break;
     case 11:
-        return new Enemy("Boomaroo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Boomaroo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
         break;
     default:
-        return new Enemy("Creator Kangaroo", enemyhp4, enemyatk4, enemylives4, enemylvl4, enemymaxh4);
+        return new Enemy("Creator Kangaroo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
         break;
     }
 }
 Enemy* generateEnemy5(int l5, Character* Target) {
     random_device r;
-    int x, enemyhp5, enemyatk5, enemylives5, enemydef5, enemylvl5, enemymaxh5;
+    int x, enemyhp5, enemyatk5, enemylives5, enemydef5, enemylvl5, enemymaxh5, enemydef5;
     if (l5 == 200) {
         x = 12;
     }
@@ -492,6 +508,7 @@ Enemy* generateEnemy5(int l5, Character* Target) {
     enemyatk5 = Target->getattackPower() * .75;
     enemydef5 = Target->getdefence() * .75;
     enemyhp5 = Target->getmaxhealth() * .75;
+    enemydef5 = Target->getdefence() * .75;
     enemylives5 = floor(Target->getlives() * .5);
     enemylvl5 = Target->getlevel();
     enemymaxh5 = enemyhp5;
@@ -499,6 +516,7 @@ Enemy* generateEnemy5(int l5, Character* Target) {
         enemyatk5 = Target->getattackPower() * 1.25;
         enemydef5 = Target->getdefence() * 1,25;
         enemyhp5 = Target->getmaxhealth() * 1.25;
+        enemydef5 = Target->getdefence() * 1.25;
         enemylives5 = floor(Target->getlives() * .5);
         enemylvl5 = Target->getlevel();
         enemymaxh5 = enemyhp5;
@@ -507,6 +525,7 @@ Enemy* generateEnemy5(int l5, Character* Target) {
         enemyatk5 = Target->getattackPower() * 1.1;
         enemydef5 = Target->getdefence() * 1,1;
         enemyhp5 = Target->getmaxhealth() * 1.1;
+        enemydef5 = Target->getdefence() * 1.1;
         enemylives5 = floor(Target->getlives() * .5);
         enemylvl5 = Target->getlevel();
         enemymaxh5 = enemyhp5;
@@ -515,49 +534,50 @@ Enemy* generateEnemy5(int l5, Character* Target) {
         enemyatk5 = Target->getattackPower() * 1.1;
         enemydef5 = Target->getdefence() * 1.1;
         enemyhp5 = Target->getmaxhealth() * 1.1;
+        enemydef5 = Target->getdefence() * 1.1;
         enemylives5 = floor(Target->getlives() * .5);
         enemylvl5 = Target->getlevel();
         enemymaxh5 = enemyhp5;
     }
     switch (x) {
     case 0:
-        return new Enemy("Skeleton", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Skeleton", 20, 1, 0, 1, 0, 20);
         break;
     case 1:
-        return new Enemy("Skellie", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Skellie", 25, 1, 0, 1, 0, 25);
         break;
     case 2:
-        return new Enemy("Enchanted Bow Skeleton", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Enchanted Bow Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
         break;
     case 3:
-        return new Enemy("Aimbot Skellie", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Aimbot Skellie", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
         break;
     case 4:
-        return new Enemy("Sharpshooter Skeleton", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Sharpshooter Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
         break;
     case 5:
-        return new Enemy("Bony Bill", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Bony Bill", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
         break;
     case 6:
-        return new Enemy("Crazy Bones", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Crazy Bones", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
         break;
     case 7:
-        return new Enemy("Broken Bone Skeleton", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Broken Bone Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
         break;
     case 8:
-        return new Enemy("Boogie Bone", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Boogie Bone", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
         break;
     case 9:
-        return new Enemy("Ranked Skeleton", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Ranked Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
         break;
     case 10:
-        return new Enemy("Captain Skellie", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Captain Skellie", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
         break;
     case 11:
-        return new Enemy("Super Skellie", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Super Skellie", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
         break;
     default:
-        return new Enemy("Creator Skeleton", enemyhp5, enemyatk5, enemylives5, enemylvl5, enemymaxh5);
+        return new Enemy("Creator Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
         break;
     }
 }
