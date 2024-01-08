@@ -486,27 +486,27 @@ int main() {
             cout << "You chose nothing so I will choose for you." << endl;
             playerclasschoice = r() % 6 +1;
             if (playerclasschoice == 1) {
-                cout << "You chose Knight!" << endl;
+                cout << "You were given Knight." << endl;
             }
             else if (playerclasschoice == 2) {
                 Knight.playerclassexecutioner();
-                cout << "You chose Executioner!" << endl;
+                cout << "You were given Executioner." << endl;
             }
             else if (playerclasschoice == 3) {
                 Knight.playerclasssoulweaver();
-                cout << "You chose Soulweaver!" << endl;
+                cout << "You were given Soulweaver." << endl;
             }
             else if (playerclasschoice == 4) {
                 Knight.playerclasswarforged();
-                cout << "You chose Warforged Engineer!" << endl;
+                cout << "You were given Warforged Engineer." << endl;
             }
             else if (playerclasschoice == 5) {
                 Knight.playerclassdreadnought();
-                cout << "You chose Dreadnought!" << endl;
+                cout << "You were given Dreadnought." << endl;
             }
             else if (playerclasschoice == 6) {
                 Knight.playerclasstrickster();
-                cout << "You chose Trickster!" << endl;
+                cout << "You were given Trickster." << endl;
             }
         }
         cout << "What would you like me to call you?" << endl;
@@ -556,27 +556,27 @@ int main() {
             int areachoiceint = 0;
             cin >> ws;
             getline(cin, areachoice);
-            if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom"|| areachoice == "Mushroom kingdom") {
+            if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom"|| areachoice == "Mushroom kingdom"|| areachoice == "1") {
                 cout << endl;
                 cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get the invaders!-" << endl << endl;
                 areachoiceint = 1;
             }
-            else if (areachoice == "Gooey Glade" || areachoice == "gooey glade"|| areachoice == "Gooey glade") {
+            else if (areachoice == "Gooey Glade" || areachoice == "gooey glade"|| areachoice == "Gooey glade"|| areachoice == "2") {
                 cout << endl;
                 cout << "-Welcome to the uneasy feeling area of the slimes. Good Luck Surviving!-" << endl << endl;
                 areachoiceint = 2;
             }
-            else if (areachoice == "Croc Isle" || areachoice == "croc isle" || areachoice == "Croc isle") {
+            else if (areachoice == "Croc Isle" || areachoice == "croc isle" || areachoice == "Croc isle"|| areachoice == "3") {
                 cout << endl;
                 cout << "-Welcome to the land of the crocs. Go find that croc king!-" << endl << endl;
                 areachoiceint = 3;
             }
-            else if (areachoice == "Hopscotch Highlands" || areachoice == "hopscotch highlands" || areachoice == "Hopscotch highlands") {
+            else if (areachoice == "Hopscotch Highlands" || areachoice == "hopscotch highlands" || areachoice == "Hopscotch highlands"|| areachoice == "4") {
                 cout << endl;
                 cout << "-Welcome to the land of the kangaroos, attack that zoo owner!-" << endl << endl;
                 areachoiceint = 4;
             }
-            else if (areachoice == "Skeletal Sanctum" || areachoice == "skeletal sanctum" || areachoice == "Skeletal sanctum") {
+            else if (areachoice == "Skeletal Sanctum" || areachoice == "skeletal sanctum" || areachoice == "Skeletal sanctum"|| areachoice == "5") {
                 cout << endl;
                 cout << "-Welcome to the graveyeard of your dead family...just kidding. Look out there's a skeleton!-" << endl << endl;
                 areachoiceint = 5;
