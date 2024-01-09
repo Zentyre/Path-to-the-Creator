@@ -1572,6 +1572,7 @@ void Player::attack(Character* Target) {
             attack(Target);
             break;
         }
+        break;//check if this breaks the forge
     case 9:
         cout << " --Stats--" << endl;
         cout << "--" << maxhealth << " Maxhealth--" << endl;
