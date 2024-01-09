@@ -6,73 +6,73 @@
 #include "Player.h"
 #include "Enemy.h"
 using namespace std;
-Enemy* generateEnemy(int l, Character* Target) {
+Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives) {
     random_device r;
-    int x, enemyhp, enemyatk, enemylives, enemydef, enemylvl, enemymaxh, enemydef;
-    if (l == 200) {
+    int x, enemyhp, enemyatk, enemylives, enemydef, enemylvl, enemymaxh;
+    if (baselevel == 200) {
         x = 12;
     }
-    else if (l == 100) {
+    else if (baselevel == 100) {
         x = 11;
     }
-    else if (l >= 101) {
+    else if (baselevel >= 101) {
         x = r() % 4 + 8;
     }
-    else if (l >= 80) {
+    else if (baselevel >= 80) {
         x = r() % 4 + 7;
     }
-    else if (l >= 70) {
+    else if (baselevel >= 70) {
         x = r() % 4 + 6;
     }
-    else if (l >= 60) {
+    else if (baselevel >= 60) {
         x = r() % 4 + 5;
     }
-    else if (l >= 50) {
+    else if (baselevel >= 50) {
         x = r() % 4 + 4;
     }
-    else if (l >= 40) {
+    else if (baselevel >= 40) {
         x = r() % 4 + 3;
     }
-    else if (l >= 30) {
+    else if (baselevel >= 30) {
         x = r() % 4 + 2;
     }
-    else if (l >= 20) {
+    else if (baselevel >= 20) {
         x = r() % 4 + 1;
     }
-    else if (l >= 10) {
+    else if (baselevel >= 10) {
         x = r() % 3;
     }
     else {
         x = r() % 2;
     }
-    enemyatk = Target->getattackPower() * .75;
-    enemydef = Target->getdefence() * .75;
-    enemyhp = Target->getmaxhealth() * .75;
-    enemylives = floor(Target->getlives() * .5);
-    enemylvl = Target->getlevel();
+    enemyatk = atk;
+    enemydef = def;
+    enemyhp = hp;
+    enemylives = floor(lives);
+    enemylvl = level;
     enemymaxh = enemyhp;
     if (x==12) {
-        enemyatk = Target->getattackPower() * 1.25;
-        enemydef = Target->getdefence() * 1,25;
-        enemyhp = Target->getmaxhealth() * 1.25;
-        enemylives = floor(Target->getlives() * .5);
-        enemylvl = Target->getlevel();
+        enemyatk = atk * 1.25;
+        enemydef = def * 1,25;
+        enemyhp = hp * 1.25;
+        enemylives = floor(lives * .5);
+        enemylvl = level;
         enemymaxh = enemyhp;
     }
     else if (x == 11) {
-        enemyatk = Target->getattackPower() * 1.1;
-        enemydef = Target->getdefence() * 1,1;
-        enemyhp = Target->getmaxhealth() * 1.1;
-        enemylives = floor(Target->getlives() * .5);
-        enemylvl = Target->getlevel();
+        enemyatk = atk * 1.1;
+        enemydef = def * 1,1;
+        enemyhp = hp * 1.1;
+        enemylives = floor(lives * .5);
+        enemylvl = level;
         enemymaxh = enemyhp;
     }
     else if (x== 6) {
-        enemyatk = Target->getattackPower() * 1.1;
-        enemydef = Target->getdefence() * 1.1;
-        enemyhp = Target->getmaxhealth() * 1.1;
-        enemylives = floor(Target->getlives() * .5);
-        enemylvl = Target->getlevel();
+        enemyatk = atk * 1.1;
+        enemydef = def * 1.1;
+        enemyhp = hp * 1.1;
+        enemylives = floor(lives * .5);
+        enemylvl = level;
         enemymaxh = enemyhp;
     }
     switch (x) {
@@ -117,73 +117,73 @@ Enemy* generateEnemy(int l, Character* Target) {
         break;
     }
 }
-Enemy* generateEnemy2(int l2, Character* Target) {
+Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, int lives2) {
     random_device r;
     int x, enemyhp2, enemyatk2, enemylives2, enemydef2, enemylvl2, enemymaxh2, enemydef2;
-    if (l2 == 200) {
+    if (baselevel2 == 200) {
         x = 12;
     }
-    else if (l2 == 100) {
+    else if (baselevel2 == 100) {
         x = 11;
     }
-    else if (l2 >= 101) {
+    else if (baselevel2 >= 101) {
         x = r() % 4 + 8;
     }
-    else if (l2 >= 80) {
+    else if (baselevel2 >= 80) {
         x = r() % 4 + 7;
     }
-    else if (l2 >= 70) {
+    else if (baselevel2 >= 70) {
         x = r() % 4 + 6;
     }
-    else if (l2 >= 60) {
+    else if (baselevel2 >= 60) {
         x = r() % 4 + 5;
     }
-    else if (l2 >= 50) {
+    else if (baselevel2 >= 50) {
         x = r() % 4 + 4;
     }
-    else if (l2 >= 40) {
+    else if (baselevel2 >= 40) {
         x = r() % 4 + 3;
     }
-    else if (l2 >= 30) {
+    else if (baselevel2 >= 30) {
         x = r() % 4 + 2;
     }
-    else if (l2 >= 20) {
+    else if (baselevel2 >= 20) {
         x = r() % 4 + 1;
     }
-    else if (l2 >= 10) {
+    else if (baselevel2 >= 10) {
         x = r() % 3;
     }
     else {
         x = r() % 2;
     }
-    enemyatk2 = Target->getattackPower() * .75;
-    enemydef2 = Target->getdefence() * .75;
-    enemyhp2 = Target->getmaxhealth() * .75;
-    enemylives2 = floor(Target->getlives() * .5);
-    enemylvl2 = Target->getlevel();
+    enemyatk2 = atk2 * .75;
+    enemydef2 = def2 * .75;
+    enemyhp2= hp2 * .75;
+    enemylives2 = floor(lives2 * .5);
+    enemylvl2 = level2;
     enemymaxh2 = enemyhp2;
     if (x==12) {
-        enemyatk2 = Target->getattackPower() * 1.25;
-        enemydef2 = Target->getdefence() * 1,25;
-        enemyhp2 = Target->getmaxhealth() * 1.25;
-        enemylives2 = floor(Target->getlives() * .5);
-        enemylvl2 = Target->getlevel();
+        enemyatk2 = atk2 * 1.25;
+        enemydef2 = def2 * 1,25;
+        enemyhp2 = hp2 * 1.25;
+        enemylives2 = floor(lives2 * .5);
+        enemylvl2 = level2;
         enemymaxh2 = enemyhp2;
     }
     else if (x == 11) {
-        enemyatk2 = Target->getattackPower() * 1.1;
-        enemydef2 = Target->getdefence() * 1,1;
-        enemyhp2 = Target->getmaxhealth() * 1.1;
-        enemylives2 = floor(Target->getlives() * .5);
-        enemylvl2 = Target->getlevel();
+        enemyatk2 = atk2 * 1.1;
+        enemydef2 = def2 * 1,1;
+        enemyhp2 = hp2 * 1.1;
+        enemylives2 = floor(lives2 * .5);
+        enemylvl2 = level2;
         enemymaxh2 = enemyhp2;
     }
     else if (x== 6) {
-        enemyatk2 = Target->getattackPower() * 1.1;
-        enemydef2 = Target->getdefence() * 1.1;
-        enemyhp2 = Target->getmaxhealth() * 1.1;
-        enemylives2 = floor(Target->getlives() * .5);
-        enemylvl2 = Target->getlevel();
+        enemyatk2 = atk2 * 1.1;
+        enemydef2 = def2 * 1.1;
+        enemyhp2 = hp2 * 1.1;
+        enemylives2 = floor(lives2 * .5);
+        enemylvl2 = level2;
         enemymaxh2 = enemyhp2;
     }
     switch (x) {
@@ -228,73 +228,73 @@ Enemy* generateEnemy2(int l2, Character* Target) {
         break;
     }
 }
-Enemy* generateEnemy3(int l3, Character* Target) {
+Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, int lives3) {
     random_device r;
     int x, enemyhp3, enemyatk3, enemylives3, enemydef3, enemylvl3, enemymaxh3, enemydef3;
-    if (l3 == 200) {
+    if (baselevel3 == 200) {
         x = 12;
     }
-    else if (l3 == 100) {
+    else if (baselevel3 == 100) {
         x = 11;
     }
-    else if (l3 >= 101) {
+    else if (baselevel3 >= 101) {
         x = r() % 4 + 8;
     }
-    else if (l3 >= 80) {
+    else if (baselevel3 >= 80) {
         x = r() % 4 + 7;
     }
-    else if (l3 >= 70) {
+    else if (baselevel3 >= 70) {
         x = r() % 4 + 6;
     }
-    else if (l3 >= 60) {
+    else if (baselevel3 >= 60) {
         x = r() % 4 + 5;
     }
-    else if (l3 >= 50) {
+    else if (baselevel3 >= 50) {
         x = r() % 4 + 4;
     }
-    else if (l3 >= 40) {
+    else if (baselevel3 >= 40) {
         x = r() % 4 + 3;
     }
-    else if (l3 >= 30) {
+    else if (baselevel3 >= 30) {
         x = r() % 4 + 2;
     }
-    else if (l3 >= 20) {
+    else if (baselevel3 >= 20) {
         x = r() % 4 + 1;
     }
-    else if (l3 >= 10) {
+    else if (baselevel3 >= 10) {
         x = r() % 3;
     }
     else {
         x = r() % 2;
     }
-    enemyatk3 = Target->getattackPower() * .75;
-    enemydef3 = Target->getdefence() * .75;
-    enemyhp3 = Target->getmaxhealth() * .75;
-    enemylives3 = floor(Target->getlives() * .5);
-    enemylvl3 = Target->getlevel();
+    enemyatk3 = atk3 * .75;
+    enemydef3 = def3 * .75;
+    enemyhp3 = hp3 * .75;
+    enemylives3= floor(lives3 * .5);
+    enemylvl3 = level3;
     enemymaxh3 = enemyhp3;
     if (x==12) {
-        enemyatk3 = Target->getattackPower() * 1.25;
-        enemydef3 = Target->getdefence() * 1,25;
-        enemyhp3 = Target->getmaxhealth() * 1.25;
-        enemylives3 = floor(Target->getlives() * .5);
-        enemylvl3 = Target->getlevel();
+        enemyatk3 = atk3 * 1.25;
+        enemydef3 = def3 * 1,25;
+        enemyhp3 = hp3 * 1.25;
+        enemylives3= floor(lives3 * .5);
+        enemylvl3 = level3;
         enemymaxh3 = enemyhp3;
     }
     else if (x == 11) {
-        enemyatk3 = Target->getattackPower() * 1.1;
-        enemydef3 = Target->getdefence() * 1,1;
-        enemyhp3 = Target->getmaxhealth() * 1.1;
-        enemylives3 = floor(Target->getlives() * .5);
-        enemylvl3 = Target->getlevel();
+        enemyatk3 = atk3 * 1.1;
+        enemydef3 = def3 * 1,1;
+        enemyhp3 = hp3 * 1.1;
+        enemylives3= floor(lives3 * .5);
+        enemylvl3 = level3;
         enemymaxh3 = enemyhp3;
     }
     else if (x== 6) {
-        enemyatk3 = Target->getattackPower() * 1.1;
-        enemydef3 = Target->getdefence() * 1.1;
-        enemyhp3 = Target->getmaxhealth() * 1.1;
-        enemylives3 = floor(Target->getlives() * .5);
-        enemylvl3 = Target->getlevel();
+        enemyatk3 = atk3 * 1.1;
+        enemydef3 = def3 * 1.1;
+        enemyhp3 = hp3 * 1.1;
+        enemylives3= floor(lives3 * .5);
+        enemylvl3 = level3;
         enemymaxh3 = enemyhp3;
     }
     switch (x) {
@@ -339,73 +339,73 @@ Enemy* generateEnemy3(int l3, Character* Target) {
         break;
     }
 }
-Enemy* generateEnemy4(int l4, Character* Target) {
+Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, int lives4) {
     random_device r;
     int x, enemyhp4, enemyatk4, enemylives4, enemydef4, enemylvl4, enemymaxh4, enemydef4;
-    if (l4 == 200) {
+    if (baselevel4 == 200) {
         x = 12;
     }
-    else if (l4 == 100) {
+    else if (baselevel4 == 100) {
         x = 11;
     }
-    else if (l4 >= 101) {
+    else if (baselevel4 >= 101) {
         x = r() % 4 + 8;
     }
-    else if (l4 >= 80) {
+    else if (baselevel4 >= 80) {
         x = r() % 4 + 7;
     }
-    else if (l4 >= 70) {
+    else if (baselevel4 >= 70) {
         x = r() % 4 + 6;
     }
-    else if (l4 >= 60) {
+    else if (baselevel4 >= 60) {
         x = r() % 4 + 5;
     }
-    else if (l4 >= 50) {
+    else if (baselevel4 >= 50) {
         x = r() % 4 + 4;
     }
-    else if (l4 >= 40) {
+    else if (baselevel4 >= 40) {
         x = r() % 4 + 3;
     }
-    else if (l4 >= 30) {
+    else if (baselevel4 >= 30) {
         x = r() % 4 + 2;
     }
-    else if (l4 >= 20) {
+    else if (baselevel4 >= 20) {
         x = r() % 4 + 1;
     }
-    else if (l4 >= 10) {
+    else if (baselevel4 >= 10) {
         x = r() % 3;
     }
     else {
         x = r() % 2;
     }
-    enemyatk4 = Target->getattackPower() * .75;
-    enemydef4 = Target->getdefence() * .75;
-    enemyhp4 = Target->getmaxhealth() * .75;
-    enemylives4 = floor(Target->getlives() * .5);
-    enemylvl4 = Target->getlevel();
+    enemyatk4 = atk4 * .75;
+    enemydef4 = def4 * .75;
+    enemyhp4 = hp4 * .75;
+    enemylives4= floor(lives4 * .5);
+    enemylvl4 = level4;
     enemymaxh4 = enemyhp4;
     if (x==12) {
-        enemyatk4 = Target->getattackPower() * 1.25;
-        enemydef4 = Target->getdefence() * 1,25;
-        enemyhp4 = Target->getmaxhealth() * 1.25;
-        enemylives4 = floor(Target->getlives() * .5);
-        enemylvl4 = Target->getlevel();
+        enemyatk4 = atk4 * 1.25;
+        enemydef4 = def4 * 1,25;
+        enemyhp4 = hp4 * 1.25;
+        enemylives4= floor(lives4 * .5);
+        enemylvl4 = level4;
         enemymaxh4 = enemyhp4;
     }
     else if (x == 11) {
-        enemyatk4 = Target->getattackPower() * 1.1;
-        enemydef4 = Target->getdefence() * 1,1;
-        enemyhp4 = Target->getmaxhealth() * 1.1;
-        enemylives4 = floor(Target->getlives() * .5);
-        enemylvl4 = Target->getlevel();
+        enemyatk4 = atk4 * 1.1;
+        enemydef4 = def4 * 1,1;
+        enemyhp4 = hp4 * 1.1;
+        enemylives4= floor(lives4 * .5);
+        enemylvl4 = level4;
         enemymaxh4 = enemyhp4;
     }
     else if (x== 6) {
-        enemyatk4 = Target->getattackPower() * 1.1;
-        enemydef4 = Target->getdefence() * 1.1;
-        enemyhp4 = Target->getmaxhealth() * 1.1;
-        enemylives4 = floor(Target->getlives() * .5);
-        enemylvl4 = Target->getlevel();
+        enemyatk4 = atk4 * 1.1;
+        enemydef4 = def4 * 1.1;
+        enemyhp4 = hp4 * 1.1;
+        enemylives4= floor(lives4 * .5);
+        enemylvl4 = level4;
         enemymaxh4 = enemyhp4;
     }
     switch (x) {
@@ -450,73 +450,73 @@ Enemy* generateEnemy4(int l4, Character* Target) {
         break;
     }
 }
-Enemy* generateEnemy5(int l5, Character* Target) {
+Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, int lives5) {
     random_device r;
     int x, enemyhp5, enemyatk5, enemylives5, enemydef5, enemylvl5, enemymaxh5, enemydef5;
-    if (l5 == 200) {
+    if (baselevel5 == 200) {
         x = 12;
     }
-    else if (l5 == 100) {
+    else if (baselevel5 == 100) {
         x = 11;
     }
-    else if (l5 >= 101) {
+    else if (baselevel5 >= 101) {
         x = r() % 4 + 8;
     }
-    else if (l5 >= 80) {
+    else if (baselevel5 >= 80) {
         x = r() % 4 + 7;
     }
-    else if (l5 >= 70) {
+    else if (baselevel5 >= 70) {
         x = r() % 4 + 6;
     }
-    else if (l5 >= 60) {
+    else if (baselevel5 >= 60) {
         x = r() % 4 + 5;
     }
-    else if (l5 >= 50) {
+    else if (baselevel5 >= 50) {
         x = r() % 4 + 4;
     }
-    else if (l5 >= 40) {
+    else if (baselevel5 >= 40) {
         x = r() % 4 + 3;
     }
-    else if (l5 >= 30) {
+    else if (baselevel5 >= 30) {
         x = r() % 4 + 2;
     }
-    else if (l5 >= 20) {
+    else if (baselevel5 >= 20) {
         x = r() % 4 + 1;
     }
-    else if (l5 >= 10) {
+    else if (baselevel5 >= 10) {
         x = r() % 3;
     }
     else {
         x = r() % 2;
     }
-    enemyatk5 = Target->getattackPower() * .75;
-    enemydef5 = Target->getdefence() * .75;
-    enemyhp5 = Target->getmaxhealth() * .75;
-    enemylives5 = floor(Target->getlives() * .5);
-    enemylvl5 = Target->getlevel();
+    enemyatk5 = atk5 * .75;
+    enemydef5 = def5 * .75;
+    enemyhp5 = hp5 * .75;
+    enemylives5= floor(lives5 * .5);
+    enemylvl5 = level5;
     enemymaxh5 = enemyhp5;
     if (x==12) {
-        enemyatk5 = Target->getattackPower() * 1.25;
-        enemydef5 = Target->getdefence() * 1,25;
-        enemyhp5 = Target->getmaxhealth() * 1.25;
-        enemylives5 = floor(Target->getlives() * .5);
-        enemylvl5 = Target->getlevel();
+        enemyatk5 = atk5 * 1.25;
+        enemydef5 = def5 * 1,25;
+        enemyhp5 = hp5 * 1.25;
+        enemylives5= floor(lives5 * .5);
+        enemylvl5 = level5;
         enemymaxh5 = enemyhp5;
     }
     else if (x == 11) {
-        enemyatk5 = Target->getattackPower() * 1.1;
-        enemydef5 = Target->getdefence() * 1,1;
-        enemyhp5 = Target->getmaxhealth() * 1.1;
-        enemylives5 = floor(Target->getlives() * .5);
-        enemylvl5 = Target->getlevel();
+        enemyatk5 = atk5 * 1.1;
+        enemydef5 = def5 * 1,1;
+        enemyhp5 = hp5 * 1.1;
+        enemylives5= floor(lives5 * .5);
+        enemylvl5 = level5;
         enemymaxh5 = enemyhp5;
     }
     else if (x== 6) {
-        enemyatk5 = Target->getattackPower() * 1.1;
-        enemydef5 = Target->getdefence() * 1.1;
-        enemyhp5 = Target->getmaxhealth() * 1.1;
-        enemylives5 = floor(Target->getlives() * .5);
-        enemylvl5 = Target->getlevel();
+        enemyatk5 = atk5 * 1.1;
+        enemydef5 = def5 * 1.1;
+        enemyhp5 = hp5 * 1.1;
+        enemylives5= floor(lives5 * .5);
+        enemylvl5 = level5;
         enemymaxh5 = enemyhp5;
     }
     switch (x) {
@@ -787,22 +787,23 @@ int main() {
         }
     }
 }
-    Enemy* Slime = generateEnemy(Knight.getbaselevel(), &Knight);
+//int baselevel, int hp, int atk, int def, int level, int lives, int maxh
+    Enemy* Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
     delete Slime;
     if (areachoiceint == 1) {
-        Enemy* Slime = generateEnemy(Knight.getbaselevel(), &Knight);
+        Enemy* Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
     }
     else if (areachoiceint == 2) {
-        Enemy* Slime = generateEnemy2(Knight.getbaselevel(), &Knight);
+        Enemy* Slime = generateEnemy2(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
     }
     else if (areachoiceint == 3) {
-        Enemy* Slime = generateEnemy3(Knight.getbaselevel(), &Knight);
+        Enemy* Slime = generateEnemy3(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
     }
     else if (areachoiceint == 4) {
-        Enemy* Slime = generateEnemy4(Knight.getbaselevel(), &Knight);
+        Enemy* Slime = generateEnemy4(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
     }
     else if (areachoiceint == 5) {
-        Enemy* Slime = generateEnemy5(Knight.getbaselevel(), &Knight);
+        Enemy* Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
     }
 
     while (Knight.isAlive() && Slime->isAlive()) {
@@ -827,21 +828,21 @@ int main() {
             if (Knight.usinginvispotion == true) {
                 delete Slime;
                 cout << "You have escaped from this enemy using your invisibility. You will get no rewards for this escape." << endl;
-                if (areachoiceint == 1) {
-                    Enemy* Slime = generateEnemy(Knight.getbaselevel(), &Knight);
-                }
-                else if (areachoiceint == 2) {
-                    Enemy* Slime = generateEnemy2(Knight.getbaselevel(), &Knight);
-                }
-                else if (areachoiceint == 3) {
-                    Enemy* Slime = generateEnemy3(Knight.getbaselevel(), &Knight);
-                }
-                else if (areachoiceint == 4) {
-                    Enemy* Slime = generateEnemy4(Knight.getbaselevel(), &Knight);
-                }
-                else if (areachoiceint == 5) {
-                    Enemy* Slime = generateEnemy5(Knight.getbaselevel(), &Knight);
-                }
+                   if (areachoiceint == 1) {
+                        Enemy* Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+                    }
+                    else if (areachoiceint == 2) {
+                        Enemy* Slime = generateEnemy2(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+                    }
+                    else if (areachoiceint == 3) {
+                        Enemy* Slime = generateEnemy3(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+                    }
+                    else if (areachoiceint == 4) {
+                        Enemy* Slime = generateEnemy4(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+                    }
+                    else if (areachoiceint == 5) {
+                        Enemy* Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+                    }
                 int enemyrandommessage = 0;
                 enemyrandommessage = r() % 5;
                 if (enemyrandommessage == 0) {
@@ -1034,19 +1035,19 @@ int main() {
                     cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
                 }
                 if (areachoiceint == 1) {
-                    Enemy* Slime = generateEnemy(Knight.getbaselevel(), &Knight);
+                    Enemy* Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
                 }
                 else if (areachoiceint == 2) {
-                    Enemy* Slime = generateEnemy2(Knight.getbaselevel(), &Knight);
+                    Enemy* Slime = generateEnemy2(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
                 }
                 else if (areachoiceint == 3) {
-                    Enemy* Slime = generateEnemy3(Knight.getbaselevel(), &Knight);
+                    Enemy* Slime = generateEnemy3(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
                 }
                 else if (areachoiceint == 4) {
-                    Enemy* Slime = generateEnemy4(Knight.getbaselevel(), &Knight);
+                    Enemy* Slime = generateEnemy4(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
                 }
                 else if (areachoiceint == 5) {
-                    Enemy* Slime = generateEnemy5(Knight.getbaselevel(), &Knight);
+                    Enemy* Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
                 }
                 cout << "You are now level " << Knight.getlevel() << "." << endl;
                int enemyrandommessage;
