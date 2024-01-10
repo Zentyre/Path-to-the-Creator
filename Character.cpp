@@ -5,7 +5,6 @@
 #include <cmath>
 using namespace std;
 
-
 Character::Character() {
 	name = name;
 	health = 25;
@@ -131,11 +130,9 @@ void Character::setmaxhealth(int charactermaxhealth) {
 	}
 	maxhealth = charactermaxhealth;
 }
-
 void Character::addlives(int extralives) {
 	lives += extralives;
 }
-
 void Character::takeDmg(int dmg) {
 	health -= dmg - defence;
 	if (health <= 0) {
@@ -145,7 +142,6 @@ void Character::takeDmg(int dmg) {
 		}
 	}
 }
-
 bool Character::isAlive() {
 	if (lives <= 0 || killplayer == true) {
 		return false;

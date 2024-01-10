@@ -6,8 +6,8 @@
 #include "Player.h"
 #include "Enemy.h"
 using namespace std;
+random_device r;
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives) {
-    random_device r;
     int x, enemyhp, enemyatk, enemylives, enemydef, enemylvl, enemymaxh;
     if (baselevel == 200) {
         x = 12;
@@ -118,7 +118,6 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
     }
 }
 Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, int lives2) {
-    random_device r;
     int x, enemyhp2, enemyatk2, enemylives2, enemydef2, enemylvl2, enemymaxh2;
     if (baselevel2 == 200) {
         x = 12;
@@ -229,7 +228,6 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
     }
 }
 Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, int lives3) {
-    random_device r;
     int x, enemyhp3, enemyatk3, enemylives3, enemydef3, enemylvl3, enemymaxh3;
     if (baselevel3 == 200) {
         x = 12;
@@ -340,7 +338,6 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
     }
 }
 Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, int lives4) {
-    random_device r;
     int x, enemyhp4, enemyatk4, enemylives4, enemydef4, enemylvl4, enemymaxh4;
     if (baselevel4 == 200) {
         x = 12;
@@ -451,7 +448,6 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
     }
 }
 Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, int lives5) {
-    random_device r;
     int x, enemyhp5, enemyatk5, enemylives5, enemydef5, enemylvl5, enemymaxh5;
     if (baselevel5 == 200) {
         x = 12;
@@ -562,7 +558,6 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
     }
 }
 int main() {
-    random_device r;
     while (true) {
         cout << "Welcome to Evil Conquest!" << endl;
         cout << "Your objective is to kill the operator of all evil...the Creator Slime!" << endl;
