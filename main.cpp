@@ -6,7 +6,7 @@
 #include "Player.h"
 #include "Enemy.h"
 using namespace std;
-random_device r;
+random_device r1;
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives) {
     int x, enemyhp, enemyatk, enemylives, enemydef, enemylvl, enemymaxh;
     if (baselevel == 200) {
@@ -16,34 +16,34 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
         x = 11;
     }
     else if (baselevel >= 101) {
-        x = r() % 4 + 8;
+        x = r1() % 4 + 8;
     }
     else if (baselevel >= 80) {
-        x = r() % 4 + 7;
+        x = r1() % 4 + 7;
     }
     else if (baselevel >= 70) {
-        x = r() % 4 + 6;
+        x = r1() % 4 + 6;
     }
     else if (baselevel >= 60) {
-        x = r() % 4 + 5;
+        x = r1() % 4 + 5;
     }
     else if (baselevel >= 50) {
-        x = r() % 4 + 4;
+        x = r1() % 4 + 4;
     }
     else if (baselevel >= 40) {
-        x = r() % 4 + 3;
+        x = r1() % 4 + 3;
     }
     else if (baselevel >= 30) {
-        x = r() % 4 + 2;
+        x = r1() % 4 + 2;
     }
     else if (baselevel >= 20) {
-        x = r() % 4 + 1;
+        x = r1() % 4 + 1;
     }
     else if (baselevel >= 10) {
-        x = r() % 3;
+        x = r1() % 3;
     }
     else {
-        x = r() % 2;
+        x = r1() % 2;
     }
     enemyatk = atk;
     enemydef = def;
@@ -126,34 +126,34 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
         x = 11;
     }
     else if (baselevel2 >= 101) {
-        x = r() % 4 + 8;
+        x = r1() % 4 + 8;
     }
     else if (baselevel2 >= 80) {
-        x = r() % 4 + 7;
+        x = r1() % 4 + 7;
     }
     else if (baselevel2 >= 70) {
-        x = r() % 4 + 6;
+        x = r1() % 4 + 6;
     }
     else if (baselevel2 >= 60) {
-        x = r() % 4 + 5;
+        x = r1() % 4 + 5;
     }
     else if (baselevel2 >= 50) {
-        x = r() % 4 + 4;
+        x = r1() % 4 + 4;
     }
     else if (baselevel2 >= 40) {
-        x = r() % 4 + 3;
+        x = r1() % 4 + 3;
     }
     else if (baselevel2 >= 30) {
-        x = r() % 4 + 2;
+        x = r1() % 4 + 2;
     }
     else if (baselevel2 >= 20) {
-        x = r() % 4 + 1;
+        x = r1() % 4 + 1;
     }
     else if (baselevel2 >= 10) {
-        x = r() % 3;
+        x = r1() % 3;
     }
     else {
-        x = r() % 2;
+        x = r1() % 2;
     }
     enemyatk2 = atk2 * .75;
     enemydef2 = def2 * .75;
@@ -236,34 +236,34 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
         x = 11;
     }
     else if (baselevel3 >= 101) {
-        x = r() % 4 + 8;
+        x = r1() % 4 + 8;
     }
     else if (baselevel3 >= 80) {
-        x = r() % 4 + 7;
+        x = r1() % 4 + 7;
     }
     else if (baselevel3 >= 70) {
-        x = r() % 4 + 6;
+        x = r1() % 4 + 6;
     }
     else if (baselevel3 >= 60) {
-        x = r() % 4 + 5;
+        x = r1() % 4 + 5;
     }
     else if (baselevel3 >= 50) {
-        x = r() % 4 + 4;
+        x = r1() % 4 + 4;
     }
     else if (baselevel3 >= 40) {
-        x = r() % 4 + 3;
+        x = r1() % 4 + 3;
     }
     else if (baselevel3 >= 30) {
-        x = r() % 4 + 2;
+        x = r1() % 4 + 2;
     }
     else if (baselevel3 >= 20) {
-        x = r() % 4 + 1;
+        x = r1() % 4 + 1;
     }
     else if (baselevel3 >= 10) {
-        x = r() % 3;
+        x = r1() % 3;
     }
     else {
-        x = r() % 2;
+        x = r1() % 2;
     }
     enemyatk3 = atk3 * .75;
     enemydef3 = def3 * .75;
@@ -346,34 +346,34 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
         x = 11;
     }
     else if (baselevel4 >= 101) {
-        x = r() % 4 + 8;
+        x = r1() % 4 + 8;
     }
     else if (baselevel4 >= 80) {
-        x = r() % 4 + 7;
+        x = r1() % 4 + 7;
     }
     else if (baselevel4 >= 70) {
-        x = r() % 4 + 6;
+        x = r1() % 4 + 6;
     }
     else if (baselevel4 >= 60) {
-        x = r() % 4 + 5;
+        x = r1() % 4 + 5;
     }
     else if (baselevel4 >= 50) {
-        x = r() % 4 + 4;
+        x = r1() % 4 + 4;
     }
     else if (baselevel4 >= 40) {
-        x = r() % 4 + 3;
+        x = r1() % 4 + 3;
     }
     else if (baselevel4 >= 30) {
-        x = r() % 4 + 2;
+        x = r1() % 4 + 2;
     }
     else if (baselevel4 >= 20) {
-        x = r() % 4 + 1;
+        x = r1() % 4 + 1;
     }
     else if (baselevel4 >= 10) {
-        x = r() % 3;
+        x = r1() % 3;
     }
     else {
-        x = r() % 2;
+        x = r1() % 2;
     }
     enemyatk4 = atk4 * .75;
     enemydef4 = def4 * .75;
@@ -456,34 +456,34 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
         x = 11;
     }
     else if (baselevel5 >= 101) {
-        x = r() % 4 + 8;
+        x = r1() % 4 + 8;
     }
     else if (baselevel5 >= 80) {
-        x = r() % 4 + 7;
+        x = r1() % 4 + 7;
     }
     else if (baselevel5 >= 70) {
-        x = r() % 4 + 6;
+        x = r1() % 4 + 6;
     }
     else if (baselevel5 >= 60) {
-        x = r() % 4 + 5;
+        x = r1() % 4 + 5;
     }
     else if (baselevel5 >= 50) {
-        x = r() % 4 + 4;
+        x = r1() % 4 + 4;
     }
     else if (baselevel5 >= 40) {
-        x = r() % 4 + 3;
+        x = r1() % 4 + 3;
     }
     else if (baselevel5 >= 30) {
-        x = r() % 4 + 2;
+        x = r1() % 4 + 2;
     }
     else if (baselevel5 >= 20) {
-        x = r() % 4 + 1;
+        x = r1() % 4 + 1;
     }
     else if (baselevel5 >= 10) {
-        x = r() % 3;
+        x = r1() % 3;
     }
     else {
-        x = r() % 2;
+        x = r1() % 2;
     }
     enemyatk5 = atk5 * .75;
     enemydef5 = def5 * .75;
@@ -576,7 +576,7 @@ int main() {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "You typed a letter...I asked for a number. You lose privledge to choose your class now." << endl;
-            cinFailchoice = r() % 6 +1;
+            cinFailchoice = r1() % 6 +1;
             if (cinFailchoice == 1) {
                 cout << "You chose Knight!" << endl;
             }
@@ -626,7 +626,7 @@ int main() {
         }
         else {
             cout << "You chose nothing so I will choose for you." << endl;
-            playerclasschoice = r() % 6 +1;
+            playerclasschoice = r1() % 6 +1;
             if (playerclasschoice == 1) {
                 cout << "You were given Knight." << endl;
             }
@@ -726,7 +726,7 @@ int main() {
             else {
                 cout << "That area doesn't exist so I guess I'll choose for you" << endl;
                 int x = 0;
-                x = r() % 5 + 1;
+                x = r1() % 5 + 1;
     switch (x) {
         case 0:
             if (cin.fail()) {
@@ -736,7 +736,7 @@ int main() {
                 cout << "----------------------" << endl << endl;
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                areachoiceint = r() % 5 + 1;
+                areachoiceint = r1() % 5 + 1;
                 break;
             }
         case 1: 
@@ -777,12 +777,11 @@ int main() {
             cout << "----------------------" << endl << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            areachoiceint = r() % 5 + 1;
+            areachoiceint = r1() % 5 + 1;
             break;
         }
     }
 }
-//int baselevel, int hp, int atk, int def, int level, int lives, int maxh
     Enemy* Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
     delete Slime;
     if (areachoiceint == 1) {
@@ -839,7 +838,7 @@ int main() {
                         Enemy* Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
                     }
                 int enemyrandommessage = 0;
-                enemyrandommessage = r() % 5;
+                enemyrandommessage = r1() % 5;
                 if (enemyrandommessage == 0) {
                     cout << "A new " << Slime->getname() << " has appeared, stab it!!" << endl;
                     cout << "-----------------------------------------------" << endl;
@@ -899,7 +898,7 @@ int main() {
                     default:
                         cout << "That choice doesn't exist, I'll choose for you." << endl;
                         int x = 0;
-                        x = r() % 5 + 1;
+                        x = r1() % 5 + 1;
                         if (x == 1) {
                             Knight.maxhealthupgrade = true;
                         }
@@ -921,7 +920,7 @@ int main() {
                 else if (classcurrency == 20 || classcurrency == 40 || classcurrency == 60 || classcurrency == 80 || classcurrency == 100 || classcurrency == 120 || classcurrency == 140 || classcurrency == 160 || classcurrency == 180 && Knight.playercompanion == true) {
                     cout << "You have found a rare treasure!" << endl;
                     int treasure;
-                    treasure = r() % 99 + 1;
+                    treasure = r1() % 99 + 1;
                     if (treasure <= 30) {
                         Knight.helmet = true;
                         cout << "You got a fancy hat." << endl;
@@ -942,7 +941,7 @@ int main() {
                     }
                     else {
                         int legend;
-                        legend = r() % 3;
+                        legend = r1() % 3;
                         if (legend == 0) {
                             cout << "You acquired the armor of the legend...Vladimir!" << endl;
                             cout << endl;
@@ -963,7 +962,7 @@ int main() {
                 else if (classcurrency == 20 || classcurrency == 40 || classcurrency == 60 || classcurrency == 80 || classcurrency == 100 || classcurrency == 120 || classcurrency == 140 || classcurrency == 160 || classcurrency == 180) {
                     cout << "You have found a rare treasure!" << endl;
                     int treasure;
-                    treasure = r() % 99 + 1;
+                    treasure = r1() % 99 + 1;
                     if (treasure <= 33) {
                         Knight.helmet = true;
                         cout << "You got a fancy hat." << endl;
@@ -984,7 +983,7 @@ int main() {
                     }
                     else {
                         int legend;
-                        legend = r() % 3;
+                        legend = r1() % 3;
                         if (legend == 0) {
                             cout << "You acquired the armor of the legend...Vladimir!" << endl;
                             Knight.vladimirsArmor = true;
@@ -1008,7 +1007,7 @@ int main() {
                 Knight.incrementbaselevel();
                 Knight.incrementkills();
                 Knight.storetracker += 1;
-                Knight.Goldloom += r() % 26 + 10;
+                Knight.Goldloom += r1() % 26 + 10;
                 if (Knight.isAlive() == true && Knight.getbaselevel() == 50 && playerclasschoice == 6) {
                     Knight.trickstermove = true;
                     cout << "You have unlocked your Trickster skill, Confuse!" << endl;
@@ -1046,7 +1045,7 @@ int main() {
                 }
                 cout << "You are now level " << Knight.getlevel() << "." << endl;
                int enemyrandommessage;
-                enemyrandommessage = r() % 5;
+                enemyrandommessage = r1() % 5;
                 if (enemyrandommessage == 0) {
                     cout << "A new enemy has appeared, stab it!!" << endl;
                     cout << "-----------------------------------------------" << endl;
@@ -1069,7 +1068,7 @@ int main() {
                 }
                 cout << endl;
                 int item = 0;
-                item = r() % 100 + 1;
+                item = r1() % 100 + 1;
                 if (item == 1) {
                     Knight.Excalibur = true;
                     cout << "--You gained a super item! (Excalibur)--" << endl;
@@ -1124,7 +1123,7 @@ int main() {
         if (!Knight.isAlive() && Knight.killplayer == false) {
             cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
             int deathmessage = 0;
-            deathmessage = r() % 5 + 1;
+            deathmessage = r1() % 5 + 1;
             if (deathmessage == 1) {
                 cout << "You have been slain, better luck next time soldier." << endl;
             }

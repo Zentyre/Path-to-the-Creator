@@ -2,6 +2,7 @@
 #include "Character.h"
 #include <string>
 #include <cmath>
+#include <iostream>
 using namespace std;
 
 class Enemy : public Character {
