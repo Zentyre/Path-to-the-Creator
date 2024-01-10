@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include <iostream>
 #include <random>
+#include <cmath>
 using namespace std;
 
 Enemy::Enemy(string n2, int hp2, int atk2, int def2, int live2, int lvl2, int maxh2) {
@@ -20,7 +21,7 @@ void Enemy::attack(Character* Target) {
         critchance = r() % 100 + 1;
         attackself = r() % 100 + 1;
         if (attackself > 60 && critchance > 70) {
-             d = r() % 10 + attackPower * 1.5;
+             d = r() % 10 + ceil(attackPower * 1.5);
              health -= d;
              cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
              cout << "The " << name << " has " << health << " remaining." << endl;
@@ -35,7 +36,7 @@ void Enemy::attack(Character* Target) {
         }
         else if (attackself <= 60 && critchance > 70) {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
-            d = r() % 10 + attackPower * 1.5;
+            d = r() % 10 + ceil(attackPower * 1.5);
             cout << name << " has crit and dealt " << d << " damage." << endl;
             Target->takeDmg(d);
             trickstermovebool = false;
@@ -53,7 +54,7 @@ void Enemy::attack(Character* Target) {
         critchance = r() % 100 + 1;
         attackself = r() % 100 + 1;
         if (attackself > 60 && critchance > 70) {
-             d = r() % 7 + attackPower * 1.5;
+             d = r() % 7 + ceil(attackPower * 1.5);
              health -= d;
              cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
              cout << "The " << name << " has " << health << " remaining." << endl;
@@ -68,7 +69,7 @@ void Enemy::attack(Character* Target) {
         }
         else if (attackself <= 60 && critchance > 70) {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
-            d = r() % 7 + attackPower * 1.5;
+            d = r() % 7 + ceil(attackPower * 1.5);
             cout << name << " has crit and dealt " << d << " damage." << endl;
             Target->takeDmg(d);
             trickstermovebool = false;
@@ -86,7 +87,7 @@ void Enemy::attack(Character* Target) {
         accuracy = r() % 100 + 1;
         critchance = r() % 100 + 1;
         if (accuracy > 10 && critchance <= 5) {
-            d = r() % 10 + attackPower * 1.5;
+            d = r() % 10 + ceil(attackPower * 1.5);
             cout << name << " dealt " << d << " damage." << endl;
             Target->takeDmg(d);
         }
@@ -104,7 +105,7 @@ void Enemy::attack(Character* Target) {
         accuracy = r() % 100 + 1;
         critchance = r() % 100 + 1;
         if (accuracy > 10 && critchance <= 5) {
-            d = r() % 6 + attackPower * 1.5;
+            d = r() % 6 + ceil(attackPower * 1.5);
             cout << name << " dealt " << d << " damage." << endl;
             Target->takeDmg(d);
         }
