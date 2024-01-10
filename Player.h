@@ -1,7 +1,8 @@
 #pragma once
-#include <string>
 #include "Character.h"
+#include <string>
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 class Player : public Character {
@@ -23,7 +24,7 @@ public:
 		if (health <= 0) {
 		lives -= 1;
 			if (lives > 0) {
-			health = maxhealth - baselevel * .8;
+				health = maxhealth - floor(baselevel * .8);
 			}
 		}
 	}

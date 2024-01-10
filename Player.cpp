@@ -1,6 +1,7 @@
 #include "Player.h"
 #include <iostream>
 #include <random>
+#include <cmath>
 using namespace std;
 
 Player::Player(string n, int maxh, int hp, int atk, int def, int lvl, int live) {
@@ -286,7 +287,7 @@ void Player::checkitems() {
     }
     else if (maxhealthupgrade == true) {
         maxhealthtracker += 1;
-        Character* setmaxhealth();
+        setmaxhealth(maxhealth);//removed Character*, make sure it still works
         health += 50;
         maxhealthupgrade = false;
     }
@@ -362,7 +363,7 @@ void Player::checkitems() {
         int upgradedexcaltracker = 0;
         if (upgradedexcaltracker == 0) {
             attackPower += 18;
-            maxhealth += maxhealth * .25;
+            maxhealth += ceil(maxhealth * .25);
             upgradedexcaltracker += 1;
         }
     }
@@ -377,7 +378,7 @@ void Player::checkitems() {
         int upgradedlongswordtracker = 0;
         if (upgradedlongswordtracker == 0) {
             attackPower += 11;
-            maxhealth += maxhealth * .1;
+            maxhealth += ceil(maxhealth * .1);
             upgradedlongswordtracker += 1;
         }
     }
@@ -701,7 +702,7 @@ void Player::attack(Character* Target) {
                 }
             }
             Target->takeDmg(x);
-            h = x - 2;
+            h = ceil(x / 2.5);
             cout << endl;
             fallen = false;
             cout << "-----------------------------------------------" << endl;
@@ -738,7 +739,7 @@ void Player::attack(Character* Target) {
                 }
             }
             Target->takeDmg(x);
-            h = x - 3;
+            h = ceil(x / 2.5);
             cout << endl;
             fallen = false;
             cout << "-----------------------------------------------" << endl;
@@ -981,7 +982,7 @@ void Player::attack(Character* Target) {
                 }
             }
             Target->takeDmg(x);
-            h = x - 5;
+            h = ceil(x / 2.5);
             cout << endl;
             fallen = false;
             cout << "-----------------------------------------------" << endl;
@@ -1019,7 +1020,7 @@ void Player::attack(Character* Target) {
                 }
             }
             Target->takeDmg(x);
-            h = x - 5;
+            h = ceil(x / 2.5);
             cout << endl;
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you dealt " << x << " damage." << endl;
@@ -1162,7 +1163,7 @@ void Player::attack(Character* Target) {
             int critchance = 0;
             critchance = r() % 100 + 1;
             if (critchance <= 10) {
-                x = x * 1.5;
+                x = ceil(x * 1.5);
             }
             if (playercompanion == true) {
                 int randomcompanionevent = 0;
@@ -1200,7 +1201,7 @@ void Player::attack(Character* Target) {
             int critrate;
             critrate = r() % 100 + 1;
             if (critrate <= 20) {
-                x = x * 1.5;
+                x = ceil(x * 1.5);
             }
             if (playercompanion == true) {
                 int randomcompanionevent = 0;
@@ -1221,7 +1222,7 @@ void Player::attack(Character* Target) {
                     cout << "Your companion didn't do anything this round." << endl;
                 }
             }
-            h = x * .77;
+            h = ceil(x * .5);
             Target->takeDmg(x);
             cout << endl;
             cout << "-----------------------------------------------" << endl;

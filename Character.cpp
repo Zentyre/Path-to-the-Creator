@@ -1,7 +1,8 @@
 #include "Character.h"
-#include <iostream>
 #include "Player.h"
 #include "Enemy.h"
+#include <iostream>
+#include <cmath>
 using namespace std;
 
 
@@ -75,7 +76,7 @@ void Character::itemusehealthtonic() {
 	cout << "You now have " << health << " health." << endl;
 }
 void Character::itemuseinvispotion(Character* Target) {
-	Target->takeDmg(9999);
+	Target->takeDmg(1000000);
 	invisibilitypotion -= 1;
 }
 void Character::itemusemolotov(Character* Target) {
@@ -126,7 +127,7 @@ void Character::setmaxhealth(int charactermaxhealth) {
 	}
 	//adds more health based on maxhealthupgrade amount
 	if (maxhealthtracker >= 1) {
-		charactermaxhealth += 50 * maxhealthtracker;
+		charactermaxhealth += ceil(50 * maxhealthtracker);
 	}
 	maxhealth = charactermaxhealth;
 }
@@ -140,7 +141,7 @@ void Character::takeDmg(int dmg) {
 	if (health <= 0) {
 		lives -= 1;
 		if (lives > 0) {
-			health = maxhealth - (level * 1);
+			health = maxhealth - floor(baselevel * .8);
 		}
 	}
 }

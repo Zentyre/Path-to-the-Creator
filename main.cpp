@@ -48,7 +48,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
     enemyatk = atk;
     enemydef = def;
     enemyhp = hp;
-    enemylives = floor(lives);
+    enemylives = floor(lives * .5);
     enemylvl = level;
     enemymaxh = enemyhp;
     if (x==12) {
