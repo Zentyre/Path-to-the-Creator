@@ -11,10 +11,10 @@ public:
 	void attack(Character* Target) override;
 	void takeDmg(int dmg) override {
 		if (defence > dmg) {
-			cout << "Your defence absorbed all " << dmg << " enemy damage!" << endl;
+			cout << "The enemies defence absorbed all " << dmg << " enemy damage!" << endl;
 		}
 		else if (defence > 0 && defence < dmg) {
-			cout << "Your defence absorbed " << getdefence() << " damage!" << endl;
+			cout << "The enemies defence absorbed " << getdefence() << " damage!" << endl;
 		}
 		dmg -= defence;
 		if (dmg < 0) {

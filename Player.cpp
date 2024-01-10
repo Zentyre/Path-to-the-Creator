@@ -181,21 +181,18 @@ void Player ::forgerestarting() {
 }
 void Player::checkitems() {
     if (Excalibur == true) {
-        int excaliburtracker = 0;
          if (excaliburtracker == 0) {
             attackPower += 14;
             excaliburtracker += 1;
         }
     }
     else if (Knife == true) {
-        int knifetracker = 0;
          if (knifetracker == 0) {
             attackPower += 2;
             knifetracker += 1;
       }
     }
     else if (Sword == true) {
-        int swordtracker = 0;
          if (swordtracker == 0) {
             attackPower += 4.5;
             swordtracker += 1;
@@ -240,7 +237,6 @@ void Player::checkitems() {
         healthtonic = false;
     }
     else if (helmet == true) {
-        int helmtracker = 0;
         if (helmtracker == 0) {
          defence += 4;
          maxhealth += 5;
@@ -248,7 +244,6 @@ void Player::checkitems() {
         }
     }
     else if (chestplate == true) {
-        int chesttracker = 0;
          if (chesttracker == 0) {
            defence += 7;
            maxhealth += 8;
@@ -256,7 +251,6 @@ void Player::checkitems() {
         }
     }
     else if (boots == true) {
-        int boottracker = 0;
         if (boottracker == 0) {
           defence += 3;
           maxhealth += 4;
@@ -264,14 +258,12 @@ void Player::checkitems() {
         }
     }
     else if (shield == true) {
-        int shieldtracker = 0;
         if (shieldtracker == 0) {
           defence += 10;
           shieldtracker += 1;
         }
     }
     else if (narsosArmor == true || lockhartsArmor == true || vladimirsArmor == true) {
-        int godtracker = 0;
         if (godtracker == 0) {
             defence += 20;
             maxhealth += 12;
@@ -279,7 +271,6 @@ void Player::checkitems() {
         }
     }
     else if (defenceupgrade == true) {
-        int defenceupgradetracker = 0;
         if (defenceupgradetracker == 0) {
             defence += 10;
             defenceupgradetracker += 1;
@@ -300,14 +291,12 @@ void Player::checkitems() {
         levelupgrade = false;
     }
     else if (flaminglongsword == true) {
-        int flamingtracker = 0;
         if (flamingtracker == 0) {
             attackPower += 11;
             flamingtracker += 1;
         }
     }
     else if (dragonscalechestplate == true) {
-        int dragontracker = 0;
         if (dragontracker == 0) {
             defence += 11;
             maxhealth += 14;
@@ -315,7 +304,6 @@ void Player::checkitems() {
         }
     }
     else if (glassshoes == true) {
-        int shoetracker = 0;
         if (shoetracker == 0) {
             defence += 7;
             maxhealth += 6;
@@ -323,7 +311,6 @@ void Player::checkitems() {
         }
     }
     else if (mystichelmet == true) {
-        int mystictracker = 0;
         if (mystictracker == 0) {
             defence += 9;
             maxhealth += 8;
@@ -336,7 +323,6 @@ void Player::checkitems() {
         healingpotionitem = false;
     }
     else if (lightningdragonscalechestplate == true) {
-        int lightningdragontracker = 0;
         if (lightningdragontracker == 0) {
             defence += 11;
             maxhealth += 14;
@@ -345,7 +331,6 @@ void Player::checkitems() {
         }
     }
     else if (upgradedDragonscalechestplate == true) {
-        int upgradeddragontracker = 0;
         if (upgradeddragontracker == 0) {
             defence += 18;
             maxhealth += 25;
@@ -353,14 +338,12 @@ void Player::checkitems() {
         }
     }
     else if (lightningexcalibur == true) {
-        int lightningexcaliburtracker = 0;
         if (lightningexcaliburtracker == 0) {
             attackPower += 35;
             lightningexcaliburtracker += 1;
         }
     }
     else if (upgradedexcalibur == true) {
-        int upgradedexcaltracker = 0;
         if (upgradedexcaltracker == 0) {
             attackPower += 18;
             maxhealth += ceil(maxhealth * .25);
@@ -368,14 +351,12 @@ void Player::checkitems() {
         }
     }
     else if (lightningflaminglongsword == true) {
-        int lightninglongswordtracker = 0;
         if (lightninglongswordtracker == 0) {
             attackPower += 20;
             lightninglongswordtracker += 1;
         }
     }
     else if (upgradedflaminglongsword == true) {
-        int upgradedlongswordtracker = 0;
         if (upgradedlongswordtracker == 0) {
             attackPower += 11;
             maxhealth += ceil(maxhealth * .1);
@@ -383,7 +364,6 @@ void Player::checkitems() {
         }
     }
     else if (lightningGodarmor == true) {
-        int lightninggodtracker = 0;
         if (lightninggodtracker == 0) {
             defence += 30;
             attackPower += 35;
@@ -391,7 +371,6 @@ void Player::checkitems() {
         }
     }
     else if (upgradedgodarmor == true) {
-        int upgradedgodtracker = 0;
         if (upgradedgodtracker == 0) {
             defence += 40;
             maxhealth += 40;
@@ -399,7 +378,6 @@ void Player::checkitems() {
         }
     }
     else if (upgradedmystichelmet == true) {
-        int upgradedmystictracker = 0;
         if (upgradedmystictracker == 0) {
             defence += 16;
             maxhealth += 20;
@@ -407,7 +385,6 @@ void Player::checkitems() {
         }
     }
     else if (lightningmystichelmet == true) {
-        int lightningmystictracker = 0;
         if (lightningmystictracker == 0) {
             defence += 12;
             attackPower += 20;
@@ -415,7 +392,6 @@ void Player::checkitems() {
         }
     }
     else if (upgradedglassshoes == true) {
-        int upgradedglasstracker = 0;
         if (upgradedglasstracker == 0) {
             defence += 11;
             maxhealth += 14;
@@ -423,7 +399,6 @@ void Player::checkitems() {
         }
     }
     else if (lightningglassshoes == true) {
-        int lightningglasstracker = 0;
         if (lightningglasstracker == 0) {
             defence += 9;
             attackPower += 12;
@@ -1655,7 +1630,7 @@ void Player::attack(Character* Target) {
             cout << "Boots (+5 defence|+4 maxhealth)" << endl;
         }
         if (shield == true) {
-            cout << "Shield (+15 defence)" << endl;
+            cout << "Shield (+10 defence)" << endl;
         }
         if (chestplate == true) {
             cout << "Chestplate (+10 defence|+8 maxhealth)" << endl;
