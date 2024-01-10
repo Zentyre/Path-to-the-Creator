@@ -14,10 +14,9 @@ Enemy::Enemy(string n2, int hp2, int atk2, int def2, int live2, int lvl2, int ma
     defence = def2;
 }
 random_device r;
-int critchance;
+int critchance, d, accuracy, attackself;
 void Enemy::attack(Character* Target) {
     if (Target->trickstermovebool == true && health > 0 && Target->getlevel() >= 100) {
-        int attackself, d;
         critchance = r() % 100 + 1;
         attackself = r() % 100 + 1;
         if (attackself > 60 && critchance > 70) {
@@ -50,7 +49,6 @@ void Enemy::attack(Character* Target) {
         }
     }
     else if (Target->trickstermovebool == true && health > 0) {
-        int attackself, d;
         critchance = r() % 100 + 1;
         attackself = r() % 100 + 1;
         if (attackself > 60 && critchance > 70) {
@@ -83,7 +81,6 @@ void Enemy::attack(Character* Target) {
         }
     }
     else if (health > 0 && getlevel() >= 100) {
-        int d, accuracy;
         accuracy = r() % 100 + 1;
         critchance = r() % 100 + 1;
         if (accuracy > 10 && critchance <= 5) {
@@ -101,7 +98,6 @@ void Enemy::attack(Character* Target) {
         }
     }
     else if (health > 0) {
-        int d, accuracy;
         accuracy = r() % 100 + 1;
         critchance = r() % 100 + 1;
         if (accuracy > 10 && critchance <= 5) {
