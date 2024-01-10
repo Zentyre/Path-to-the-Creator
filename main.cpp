@@ -8,134 +8,114 @@
 using namespace std;
 random_device r1;
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives) {
-	int x, enemyhp, enemyatk, enemylives, enemydef, enemylvl, enemymaxh;
-	if (baselevel == 200) {
-		x = 12;
-	}
-	else if (baselevel == 100) {
-		x = 11;
-	}
-	else if (baselevel >= 101) {
-		x = r1() % 4 + 8;
-	}
-	else if (baselevel >= 80) {
-		x = r1() % 4 + 7;
-	}
-	else if (baselevel >= 70) {
-		x = r1() % 4 + 6;
-	}
-	else if (baselevel >= 60) {
-		x = r1() % 4 + 5;
-	}
-	else if (baselevel >= 50) {
-		x = r1() % 4 + 4;
-	}
-	else if (baselevel >= 40) {
-		x = r1() % 4 + 3;
-	}
-	else if (baselevel >= 30) {
-		x = r1() % 4 + 2;
-	}
-	else if (baselevel >= 20) {
-		x = r1() % 4 + 1;
-	}
-	else if (baselevel >= 10) {
-		x = r1() % 3;
-	}
-	else {
-		x = r1() % 2;
-	}
-	enemyatk = atk;
-	enemydef = def;
-	enemyhp = hp;
-	if (lives >= 2) {
-		enemylives = floor(lives * .5);
-	}
-	else {
-		enemylives = 1;
-	}
-	enemylvl = level;
-	enemymaxh = enemyhp;
-	if (x == 12) {
-		enemyatk = atk * 1.25;
-		enemydef = def * 1, 25;
-		enemyhp = hp * 1.25;
-		if (lives >= 2) {
-			enemylives = floor(lives * .5);
-		}
-		else {
-			enemylives = 1;
-		}
-		enemylvl = level;
-		enemymaxh = enemyhp;
-	}
-	else if (x == 11) {
-		enemyatk = atk * 1.1;
-		enemydef = def * 1, 1;
-		enemyhp = hp * 1.1;
-		if (lives >= 2) {
-			enemylives = floor(lives * .5);
-		}
-		else {
-			enemylives = 1;
-		}
-		enemylvl = level;
-		enemymaxh = enemyhp;
-	}
-	else if (x == 6) {
-		enemyatk = atk * 1.1;
-		enemydef = def * 1.1;
-		enemyhp = hp * 1.1;
-		if (lives >= 2) {
-			enemylives = floor(lives * .5);
-		}
-		else {
-			enemylives = 1;
-		}
-		enemylvl = level;
-		enemymaxh = enemyhp;
-	}
-	switch (x) {
-	case 0:
-		return new Enemy("Shroom", 20, 1, 1, 1, 1, 20);
-		break;
-	case 1:
-		return new Enemy("Shroom Knight", 25, 1, 0, 1, 2, 25);
-		break;
-	case 2:
-		return new Enemy("Shroom ArchKnight", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
-		break;
-	case 3:
-		return new Enemy("Noble Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
-		break;
-	case 4:
-		return new Enemy("Royal Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
-		break;
-	case 5:
-		return new Enemy("Princess Slime", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
-		break;
-	case 6:
-		return new Enemy("Prince Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
-		break;
-	case 7:
-		return new Enemy("King Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
-		break;
-	case 8:
-		return new Enemy("Emperor Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
-		break;
-	case 9:
-		return new Enemy("Leader Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
-		break;
-	case 10:
-		return new Enemy("Divine Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
-		break;
-	case 11:
-		return new Enemy("Boss Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
-		break;
-	default:
-		return new Enemy("Creator Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
-		break;
-	}
+    int x, enemyhp, enemyatk, enemylives, enemydef, enemylvl, enemymaxh;
+    if (baselevel == 200) {
+        x = 12;
+    }
+    else if (baselevel == 100) {
+        x = 11;
+    }
+    else if (baselevel >= 101) {
+        x = r1() % 4 + 8;
+    }
+    else if (baselevel >= 80) {
+        x = r1() % 4 + 7;
+    }
+    else if (baselevel >= 70) {
+        x = r1() % 4 + 6;
+    }
+    else if (baselevel >= 60) {
+        x = r1() % 4 + 5;
+    }
+    else if (baselevel >= 50) {
+        x = r1() % 4 + 4;
+    }
+    else if (baselevel >= 40) {
+        x = r1() % 4 + 3;
+    }
+    else if (baselevel >= 30) {
+        x = r1() % 4 + 2;
+    }
+    else if (baselevel >= 20) {
+        x = r1() % 4 + 1;
+    }
+    else if (baselevel >= 10) {
+        x = r1() % 3;
+    }
+    else {
+        x = r1() % 2;
+    }
+    enemyatk = atk;
+    enemydef = def;
+    enemyhp = hp;
+    enemylives = floor(lives * .5);
+    enemylvl = level;
+    enemymaxh = enemyhp;
+    if (x==12) {
+        enemyatk = atk * 1.25;
+        enemydef = def * 1,25;
+        enemyhp = hp * 1.25;
+        enemylives = floor(lives * .5);
+        enemylvl = level;
+        enemymaxh = enemyhp;
+    }
+    else if (x == 11) {
+        enemyatk = atk * 1.1;
+        enemydef = def * 1,1;
+        enemyhp = hp * 1.1;
+        enemylives = floor(lives * .5);
+        enemylvl = level;
+        enemymaxh = enemyhp;
+    }
+    else if (x== 6) {
+        enemyatk = atk * 1.1;
+        enemydef = def * 1.1;
+        enemyhp = hp * 1.1;
+        enemylives = floor(lives * .5);
+        enemylvl = level;
+        enemymaxh = enemyhp;
+    }
+    switch (x) {
+    case 0:
+        return new Enemy("Shroom", 20, 1, 1, 0, 1, 20);
+        break;
+    case 1:
+        return new Enemy("Shroom Knight", 25, 1,0, 1, 2, 25);
+        break;
+    case 2:
+        return new Enemy("Shroom ArchKnight", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        break;
+    case 3:
+        return new Enemy("Noble Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        break;
+    case 4:
+        return new Enemy("Royal Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        break;
+    case 5:
+        return new Enemy("Princess Slime", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        break;
+    case 6:
+        return new Enemy("Prince Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        break;
+    case 7:
+        return new Enemy("King Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        break;
+    case 8:
+        return new Enemy("Emperor Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        break;
+    case 9:
+        return new Enemy("Leader Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        break;
+    case 10:
+        return new Enemy("Divine Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        break;
+    case 11:
+        return new Enemy("Boss Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        break;
+    default:
+        return new Enemy("Creator Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        break;
+    }
 }
 Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, int lives2) {
 	int x, enemyhp2, enemyatk2, enemylives2, enemydef2, enemylvl2, enemymaxh2;
