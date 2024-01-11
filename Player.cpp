@@ -30,16 +30,16 @@ void Player::playerclasssoulweaver() {
     classtype = 3;
 }
 void Player::playerclasswarforged() {
-    health += 15;
     maxhealth += 30;
+    health += 15;
     attackPower -= 2;
     defence += 3;
     classtype = 4;
 }
 void Player::playerclassdreadnought() {
+    maxhealth += 50;
     health += 25;
     attackPower -= 3;
-    maxhealth += 50;
     defence += 2;
     classtype = 5;
 }
