@@ -80,7 +80,7 @@ void Character::itemuseinvispotion(Character* Target) {
 }
 void Character::itemusemolotov(Character* Target) {
 	int molotovdmg;
-	molotovdmg = Target->gethealth() * .6;
+	molotovdmg = ceil(Target->gethealth() * .6);
 	Target->takeDmg(molotovdmg);
 	cout << "You dealt " << molotovdmg << " damage using the molotov." << endl;
 	cout << "The enemy has " << Target->gethealth() << " health remaining." << endl;

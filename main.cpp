@@ -1107,7 +1107,7 @@ int main() {
 					Knight.incrementbaselevel();
 					Knight.incrementkills();
 					Knight.storetracker += 1;
-					Knight.Goldloom += r1() % 26 + 10;
+					Knight.Goldloom += r1() % 16 + 10;
 					if (Knight.isAlive() == true && Knight.getbaselevel() == 50 && playerclasschoice == 6) {
 						Knight.trickstermove = true;
 						cout << "You have unlocked your Trickster skill, Confuse!" << endl;
