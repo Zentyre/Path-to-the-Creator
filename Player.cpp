@@ -544,7 +544,7 @@ void Player::attack(Character* Target) {
             cout << "--The dreadnought class unlocks its special skill (Healing Remedy) at level 75. This skill is a better than normal single heal and has a 10% crit chance.--" << endl << endl;
         }
         else if (classtype == 6) {
-            cout << "--The trickster class unlocks its special skill (Confuse) at level 50. This skill has a 40% chance to make the enemy attack itself with a crit rate of 30%.--" << endl << endl;
+            cout << "--The trickster class unlocks its special skill (Confuse) at level 50. This skill has a 40% chance to make the enemy attack itself with a crit rate of 30% and it negates all defence.--" << endl << endl;
         }
         cout << "**NOTE** All special skills have 100% accuracy." << endl << endl;
         attack(Target);
