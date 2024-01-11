@@ -1143,7 +1143,7 @@ int main() {
 					else if (areachoiceint == 5) {
 						Enemy* Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
 					}
-					cout << "You are now level " << Knight.getlevel() << "." << endl;
+					cout << "You are now level " << Knight.getbaselevel() << "." << endl;
 					int enemyrandommessage;
 					enemyrandommessage = r1() % 5;
 					if (enemyrandommessage == 0) {
