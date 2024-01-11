@@ -788,7 +788,7 @@ int main() {
 			cin >> doesnothing;
 			cout << "I dont even care, whatever you just entered did absolutely nothing. You're stuck with the name you gave me before now." << endl;
 		}
-		cout << "Where would you like to journey?" << endl;
+		cout << "Where would you like to journey << Knight.getname() << "?**1-5**" << endl;
 		cout << "-Mushroom Kingdom-" << endl;
 		cout << "-Gooey Glade-" << endl;
 		cout << "-Croc Isle-" << endl;
