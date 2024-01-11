@@ -48,14 +48,24 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
     enemyatk = atk;
     enemydef = def;
     enemyhp = hp;
-    enemylives = floor(lives * .5);
+	if (lives >= 2) {
+		enemylives = floor(lives * .5);
+	}
+	else {
+		enemylives = 1;
+	}
     enemylvl = level;
     enemymaxh = enemyhp;
     if (x==12) {
         enemyatk = atk * 1.25;
         enemydef = def * 1,25;
         enemyhp = hp * 1.25;
-        enemylives = floor(lives * .5);
+	if (lives >= 2) {
+		enemylives = floor(lives * .5);
+	}
+	else {
+		enemylives = 1;
+	}
         enemylvl = level;
         enemymaxh = enemyhp;
     }
@@ -63,7 +73,12 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
         enemyatk = atk * 1.1;
         enemydef = def * 1,1;
         enemyhp = hp * 1.1;
-        enemylives = floor(lives * .5);
+	if (lives >= 2) {
+		enemylives = floor(lives * .5);
+	}
+	else {
+		enemylives = 1;
+	}
         enemylvl = level;
         enemymaxh = enemyhp;
     }
@@ -71,7 +86,12 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
         enemyatk = atk * 1.1;
         enemydef = def * 1.1;
         enemyhp = hp * 1.1;
-        enemylives = floor(lives * .5);
+	if (lives >= 2) {
+		enemylives = floor(lives * .5);
+	}
+	else {
+		enemylives = 1;
+	}
         enemylvl = level;
         enemymaxh = enemyhp;
     }
