@@ -4,13 +4,13 @@
 #include <cmath>
 using namespace std;
 
-Player::Player(string n, int maxh, int hp, int atk, int def, int lvl, int live) {
+Player::Player(string n, int maxh, int hp, int atk, int def, int baselvl, int live) {
     name = n;
     maxhealth = maxh;
     health = hp;
     attackPower = atk;
     defence = def;
-    baselevel = lvl;
+    baselevel = baselvl;
     lives = live;
 }
 int tracklevelpotion = 0, tracksuperpotion = 0, tracksuperiorlevelpotion = 0;

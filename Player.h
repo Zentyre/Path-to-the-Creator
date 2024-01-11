@@ -7,7 +7,7 @@ using namespace std;
 
 class Player : public Character {
 public:
-	Player(string n, int maxh, int hp, int atk, int def, int lvl, int live);
+	Player(string n, int maxh, int hp, int atk, int def, int baselvl, int live);
 	void attack(Character* Target) override;
 	void takeDmg(int dmg) override {
 		if (defence > dmg) {
