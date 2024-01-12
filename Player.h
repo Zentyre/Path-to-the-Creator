@@ -67,6 +67,9 @@ public:
 	bool armorupgrade = false;
 	bool weaponupgrade = false;
 	bool flaminglongsword = false;
+	bool VoidshroudSlicer = false;
+	bool upgradedvoidshroudslicer = false;
+	bool lightningvoidshroudslicer = false;
 	bool upgradedflaminglongsword = false;
 	bool lightningflaminglongsword = false;
 	bool maxhealthupgradeitem = false;
@@ -109,4 +112,7 @@ public:
 	int lightningmystictracker = 0;
 	int upgradedglasstracker = 0;
 	int lightningglasstracker = 0;
+	int voidshroudtracker = 0;
+	int upgradedvoidshroudtracker = 0;
+	int lightningvoidshroudtracker = 0;
 };

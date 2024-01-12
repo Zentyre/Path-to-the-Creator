@@ -1153,19 +1153,19 @@ int main() {
 						cin >> ws;
 						getline(cin, Knight.factionchoice);
 						if (Knight.factionchoice == "1" || Knight.factionchoice == "Shadowborn Syndicate"|| Knight.factionchoice == "Shadowborn syndicate"|| Knight.factionchoice == "shadowborn syndicate"|| Knight.factionchoice == "shadowborn Syndicate") {
-							cout << "You chose the Shadowborn Syndicate." << endl;
+							cout << "You chose the Shadowborn Syndicate. Welcome to the land of no return." << endl;
 							Knight.factionchoiceint = 1;
 						}
 						else if (Knight.factionchoice == "2" || Knight.factionchoice == "emberfall covenant"|| Knight.factionchoice == "Emberfall covenant"|| Knight.factionchoice == "emberfall Covenant"|| Knight.factionchoice == "Emberfall Covenant") {
-							cout << "You chose the Emberfall Covenant!" << endl;
+							cout << "You chose the Emberfall Covenant! Good luck on your journey to wield the ancient flames." << endl;
 							Knight.factionchoiceint = 2;
 						}
 						else if (Knight.factionchoice == "3" || Knight.factionchoice == "Celestial Vanguard"|| Knight.factionchoice == "celestial Vanguard"|| Knight.factionchoice == "Celestial vanguard"|| Knight.factionchoice == "celestial vanguard") {
-							cout << "You chose the Celestial Vanguard!" << endl;
+							cout << "You chose the Celestial Vanguard! I hope you will find the light in this darkness." << endl;
 							Knight.factionchoiceint = 3;
 						}
 						else if (Knight.factionchoice == "4" || Knight.factionchoice == "Ironclad Dominion"|| Knight.factionchoice == "Ironclad dominion"|| Knight.factionchoice == "ironclad Dominion"|| Knight.factionchoice == "ironclad dominion") {
-							cout << "You chose the Ironclad Cominion." << endl;
+							cout << "You chose the Ironclad Dominion. I wish you well, becoming the best." << endl;
 							Knight.factionchoiceint = 4;
 						}
 					}

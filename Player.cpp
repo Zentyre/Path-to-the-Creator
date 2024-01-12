@@ -155,7 +155,7 @@ void Player ::forgerestarting() {
                 checkitems();
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
-                cout << "You have upgraded your Flaming Longsword using an Armor Upgrade!" << endl;
+                cout << "You have upgraded your Flaming Longsword using a Weapon Upgrade!" << endl;
                 upgradedflaminglongsword = true;
                 checkitems();
             }
@@ -170,8 +170,23 @@ void Player ::forgerestarting() {
                 checkitems();
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
-                cout << "You have upgraded your Excalibur using an Armor Upgrade!" << endl;
+                cout << "You have upgraded your Excalibur using a Weapon Upgrade!" << endl;
                 upgradedexcalibur = true;
+                checkitems();
+            }
+        }
+        else if (forgeUpgrade == "Voidshroud Slicer" || forgeUpgrade == "Voidshroud slicer" || forgeUpgrade == "voidshroud Slicer" || forgeUpgrade == "voidshroud slicer" && weaponupgrade == true || lightningshard == true) {
+            cout << "What would you like to use to upgrade? (Lightning Shard or Armor Upgrade)" << endl;
+            cin >> ws;
+            getline(cin, forgechoice);
+            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+                cout << "You have upgraded your Voidshroud Slicer using a Lightning Shard!" << endl;
+                lightningvoidshroudslicer = true;
+                checkitems();
+            }
+            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+                cout << "You have upgraded your Voidshroud Slicer using a Weapon Upgrade!" << endl;
+                upgradedvoidshroudslicer = true;
                 checkitems();
             }
         }
@@ -184,6 +199,12 @@ void Player::checkitems() {
          if (excaliburtracker == 0) {
             attackPower += 14;
             excaliburtracker += 1;
+        }
+    }
+    else if (VoidshroudSlicer == true) {
+        if (voidshroudtracker == 0) {
+            attackPower += 18;
+            voidshroudtracker += 1;
         }
     }
     else if (Knife == true) {
@@ -405,6 +426,19 @@ void Player::checkitems() {
             lightningglasstracker += 1;
         }
     }
+    else if (upgradedvoidshroudslicer == true) {
+        if (upgradedvoidshroudtracker == 0) {
+            attackPower += 22;
+            maxhealth += ceil(maxhealth * .4);
+            upgradedvoidshroudtracker += 1;
+        }
+    }
+    else if (lightningvoidshroudslicer == true) {
+        if (lightningvoidshroudtracker == 0) {
+            attackPower += 42;
+            lightningvoidshroudtracker += 1;
+        }
+    }
 }
 void Player::attack(Character* Target) {
     random_device r;
@@ -528,6 +562,18 @@ void Player::attack(Character* Target) {
             attack(Target);
             break;
         }
+        if (factionchoiceint == 1) {
+			cout << "You are a part of the Shadowborn Syndicate. You gain a .1% increase to attack and defence on kill. You deal more damage with the Voidshroud Slicer." << endl;
+		}
+		else if (factionchoiceint == 2) {
+			cout << "You chose the Emberfall Covenant! You gain a .3% increase to attack on kill. You deal more damage with the Flaming Longsword." << endl;
+		}
+		else if (factionchoiceint == 3) {
+			cout << "You chose the Celestial Vanguard! You gain a .2% increase to health and maxhealth on kill. You gain more defence from the Mystic Helmet." << endl;
+		}
+		else if (factionchoiceint == 4) {
+			cout << "You are a part of the Ironclad Dominion. You gain a .1% increase to attack and health on kill. You gain more defence from the Dragonscale Chestplate." << endl;
+		}
         if (classtype == 1) {
             cout << "--The knight class unlocks its special skill (Titans Strike) at level 80. It is just a normal attack but with more damage.--" << endl << endl;
         }
@@ -1251,7 +1297,7 @@ void Player::attack(Character* Target) {
             int shop1, shop2, shop3;
             shop1 = r() % 5 + 1;
             shop2 = r() % 5 + 6;
-            shop3 = r() % 4 + 11;
+            shop3 = r() % 5 + 11;
             if (shop1 == 1) {
                 cout << "Armor Plating - 100 - A mysterious plating that enhances armor if combined with a forgehammer..." << endl << endl;
             }
@@ -1294,6 +1340,9 @@ void Player::attack(Character* Target) {
             else if (shop3 == 14) {
                 cout << "Mystic Helmet - 250 - A helmet that can protect you from anything that falls on your head." << endl << endl;
             }
+            else if (shop3 == 15) {
+                cout << "Voidshroud Slicer - 300 - A sword forged specially for the shadows." << endl << endl;
+            }
             cout << "Would you like to buy anything this visit?" << endl;
             cin >> ws;
             getline(cin, yesnopurchase);
@@ -1306,7 +1355,7 @@ void Player::attack(Character* Target) {
             cin >> ws;
             getline(cin, purchasechoice);
             cout << endl;
-            if (purchasechoice == "Armor Plating" || purchasechoice == "Armor plating" || purchasechoice == "armor plating" && shop1 == 1) {
+            if (purchasechoice == "Armor Plating" || purchasechoice == "armor Plating" || purchasechoice == "Armor plating" || purchasechoice == "armor plating" && shop1 == 1) {
                 if (Goldloom >= 100) {
                     cout << "You bought Armor Plating!" << endl;
                     armorupgrade = true;
@@ -1319,7 +1368,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Sharpening Stone" || purchasechoice == "Sharpening stone" || purchasechoice == "sharpening stone" && shop1 == 2) {
+            else if (purchasechoice == "Sharpening Stone" || purchasechoice == "sharpening Stone" || purchasechoice == "Sharpening stone" || purchasechoice == "sharpening stone" && shop1 == 2) {
                 if (Goldloom >= 100) {
                     cout << "You bought a Sharpening Stone!" << endl;
                     weaponupgrade = true;
@@ -1332,7 +1381,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Forge Hammer" || purchasechoice == "Forge hammer" || purchasechoice == "forge hammer" && shop1 == 3) {
+            else if (purchasechoice == "Forge Hammer" || purchasechoice == "forge Hammer" || purchasechoice == "Forge hammer" || purchasechoice == "forge hammer" && shop1 == 3) {
                 if (Goldloom >= 50) {
                     cout << "You bought a Forge Hammer!" << endl;
                     forgehammer += 1;
@@ -1345,7 +1394,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Lightning Shard" || purchasechoice == "Lightning shard" || purchasechoice == "lightning shard" && shop1 == 4) {
+            else if (purchasechoice == "Lightning Shard" || purchasechoice == "lightning Shard" || purchasechoice == "Lightning shard" || purchasechoice == "lightning shard" && shop1 == 4) {
                 if (Goldloom >= 200) {
                     cout << "You bought a Lightning Shard!" << endl;
                     lightningshard = true;
@@ -1358,7 +1407,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Invisibility Potion" || purchasechoice == "Invisibility potion" || purchasechoice == "invisibility potion" && shop1 == 5) {
+            else if (purchasechoice == "Invisibility Potion" || purchasechoice == "invisibility Potion" || purchasechoice == "Invisibility potion" || purchasechoice == "invisibility potion" && shop1 == 5) {
                 if (Goldloom >= 400) {
                     cout << "You bought an Invisibility Potion!" << endl;
                     invisibilitypotion += 1;
@@ -1371,7 +1420,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Travelers Backpack" || purchasechoice == "Travelers backpack" || purchasechoice == "travelers backpack" && shop2 == 6) {
+            else if (purchasechoice == "Travelers Backpack" || purchasechoice == "travelers Backpack" || purchasechoice == "Travelers backpack" || purchasechoice == "travelers backpack" && shop2 == 6) {
                 if (Goldloom >= 250) {
                     cout << "You bought A Travelers Backpack!" << endl;
                     travelersbackpack = true;
@@ -1397,7 +1446,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Flaming Longsword" || purchasechoice == "Flaming longsword" || purchasechoice == "flaming longsword" && shop2 == 8) {
+            else if (purchasechoice == "Flaming Longsword" || purchasechoice == "Flaming longsword" || purchasechoice == "flaming longsword" || purchasechoice == "flaming Longsword" && shop2 == 8) {
                 if (Goldloom >= 250) {
                     cout << "You bought your very own Flaming Longsword!" << endl;
                     flaminglongsword = true;
@@ -1423,7 +1472,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Dragonscale Chestplate" || purchasechoice == "Dragonscale chestplate" || purchasechoice == "dragonscale chestplate" && shop2 == 10) {
+            else if (purchasechoice == "Dragonscale Chestplate" || purchasechoice == "Dragonscale chestplate" || purchasechoice == "dragonscale chestplate" || purchasechoice == "dragonscale Chestplate"&& shop2 == 10) {
                 if (Goldloom >= 250) {
                     cout << "You bought a Dragonscale Chestplate!" << endl;
                     dragonscalechestplate = true;
@@ -1436,7 +1485,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Maxhealth Upgrade" || purchasechoice == "Maxhealth upgrade" || purchasechoice == "maxhealth upgrade" && shop3 == 11) {
+            else if (purchasechoice == "Maxhealth Upgrade" || purchasechoice == "Maxhealth upgrade" || purchasechoice == "maxhealth upgrade" || purchasechoice == "maxhealth Upgrade" && shop3 == 11) {
                 if (Goldloom >= 300) {
                     cout << "You bought a Maxhealth upgrade!" << endl;
                     maxhealthupgradeitem = true;
@@ -1449,7 +1498,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Healing Potion" || purchasechoice == "Healing potion" || purchasechoice == "healing potion" && shop3 == 12) {
+            else if (purchasechoice == "Healing Potion" || purchasechoice == "Healing potion" || purchasechoice == "healing potion" || purchasechoice == "healing Potion" && shop3 == 12) {
                 if (Goldloom >= 150) {
                     cout << "You bought a Healing Potion!" << endl;
                     healingpotionitem = true;
@@ -1462,7 +1511,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Glass Shoes" || purchasechoice == "Glass shoes" || purchasechoice == "glass shoes" && shop3 == 13) {
+            else if (purchasechoice == "Glass Shoes" || purchasechoice == "Glass shoes" || purchasechoice == "glass shoes" || purchasechoice == "glass Shoes" && shop3 == 13) {
                 if (Goldloom >= 250) {
                     cout << "You bought the lost glass shoe!" << endl;
                     glassshoes = true;
@@ -1475,7 +1524,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Mystic Helmet" || purchasechoice == "Mystic helmet" || purchasechoice == "mystic helmet" && shop3 == 14) {
+            else if (purchasechoice == "Mystic Helmet" || purchasechoice == "Mystic helmet" || purchasechoice == "mystic helmet" || purchasechoice == "mystic Helmet" && shop3 == 14) {
                 if (Goldloom >= 250) {
                     cout << "You bought a Mystic Helmet!" << endl;
                     mystichelmet = true;
@@ -1484,6 +1533,19 @@ void Player::attack(Character* Target) {
                     checkitems();
                 }
                 else if (Goldloom < 250) {
+                    cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
+                    storetracker -= 1;
+                }
+            }
+            else if (purchasechoice == "Voidshroud Slicer" || purchasechoice == "voidshroud Slicer" || purchasechoice == "Voidshroud slicer" || purchasechoice == "voidshroud slicer" && shop3 == 14) {
+                if (Goldloom >= 300) {
+                    cout << "You bought a Voidshroud Slicer!" << endl;
+                    VoidshroudSlicer = true;
+                    Goldloom -= 300;
+                    storetracker = 0;
+                    checkitems();
+                }
+                else if (Goldloom < 300) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
                     storetracker -= 1;
                 }
@@ -1504,7 +1566,7 @@ void Player::attack(Character* Target) {
         cout << "Welcome to the forge, " << name << "." << endl;
         cout << "In this ancient place, you can combine special ores with your armor to enhance its abilities." << endl;
         if (weaponupgrade == false && armorupgrade == false && lightningshard == false && forgehammer == 0) {
-            cout << "You have no upgrades yet. Go buy some from the store." << endl;
+            cout << "You have no upgrades to use yet. Go buy some from the store." << endl;
             cout << "-----------------------------------------------" << endl;
             attack(Target);
             break;
@@ -1528,7 +1590,7 @@ void Player::attack(Character* Target) {
             cout << "-" << forgehammer << " Forgehammers-" << endl;
             }
         }
-        if (dragonscalechestplate == false && mystichelmet == false && glassshoes == false && Excalibur == false && flaminglongsword == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false) {
+        if (dragonscalechestplate == false && mystichelmet == false && glassshoes == false && Excalibur == false && flaminglongsword == false && VoidshroudSlicer == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false) {
             cout << "You have no armor or weapons to upgrade, go buy some from the store or get them as a lucky drop." << endl;
             cout << "-----------------------------------------------" << endl;
             attack(Target);
@@ -1559,6 +1621,9 @@ void Player::attack(Character* Target) {
         }
         if (Excalibur == true) {
             cout << "-Excalibur (+14 attack)-" << endl;
+        }
+        if (VoidshroudSlicer == true) {
+            cout << "-Voidshroud Slicer (+18 attack)-" << endl;
         }
         cout << "-----------------------------------------------" << endl;
         forgerestarting();
@@ -1622,6 +1687,9 @@ void Player::attack(Character* Target) {
         }
         if (dragonscalechestplate == true) {
             cout << "Dragonscale Chestplate (+11 defence|+14 maxhealth)" << endl;
+        }
+        if (VoidshroudSlicer == true) {
+            cout << "Voidshroud Slicer (+18 Attack)" << endl;
         }
         if (helmet == true) {
             cout << "Helmet (+7 defence|+5 maxhealth)" << endl;
@@ -1743,7 +1811,13 @@ void Player::attack(Character* Target) {
         if (upgradedDragonscalechestplate == true) {
             cout << "Upgraded Dragonscale Chestplate(+18 Defence|+25 Max Health)" << endl;
         }
-        if (shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && molotov == 0 && invisibilitypotion == 0) {
+        if (upgradedvoidshroudslicer == true) {
+            cout << "Upgraded Voidshroud Slicer(+18 Attack|+40% Max Health)" << endl;
+        }
+        if (lightningvoidshroudslicer == true) {
+            cout << "Lightning Voidshroud Slicer(+42 Attack)" << endl;
+        }
+        if (VoidshroudSlicer == false && lightningvoidshroudslicer == false && upgradedvoidshroudslicer == false && shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && molotov == 0 && invisibilitypotion == 0) {
             cout << "You have no items yet." << endl;
             cout << "------------------------------------------------" << endl;
             attack(Target);
