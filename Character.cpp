@@ -188,7 +188,7 @@ void Character::addlives(int extralives) {
 	lives += extralives;
 }
 void Character::takeDmg(int dmg) {
-	dmg = dmg - defence;
+	dmg = ceil(dmg - defence);
 	if (dmg < 0) {
 		dmg = 0;
 	}

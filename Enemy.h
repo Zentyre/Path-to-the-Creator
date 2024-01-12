@@ -24,7 +24,7 @@ public:
 		if (health <= 0) {
 			lives -= 1;
 			if (lives >= 1) {
-				health = maxhealth - floor(level / 2);
+				health = maxhealth - floor(level * .8);
 			}
 		}
 	}
