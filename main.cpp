@@ -1146,10 +1146,10 @@ int main() {
 					cout << "You are now level " << Knight.getbaselevel() << "." << endl;
 					if (Knight.getbaselevel() == 50) {
 						cout << "You can now join a faction! Which faction would you like to join?" << endl;
-						cout << "-Shadowborn Syndicate-" << endl;
-						cout << "-Emberfall Covenant-" << endl;
-						cout << "-Celestial Vanguard-" << endl;
-						cout << "-Ironclad Dominion-" << endl;
+						cout << "-Shadowborn Syndicate - A faction for those who tread a dark path..." << endl;
+						cout << "-Emberfall Covenant - A faction for those who wish to wield the power of ancient flames..." << endl;
+						cout << "-Celestial Vanguard - A faction for those who wish to find the light in all this darkness..." << endl;
+						cout << "-Ironclad Dominion - A faction for those who believe they can become the best of the best..." << endl;
 						cin >> ws;
 						getline(cin, Knight.factionchoice);
 						if (Knight.factionchoice == "1" || Knight.factionchoice == "Shadowborn Syndicate"|| Knight.factionchoice == "Shadowborn syndicate"|| Knight.factionchoice == "shadowborn syndicate"|| Knight.factionchoice == "shadowborn Syndicate") {
