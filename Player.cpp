@@ -202,7 +202,11 @@ void Player::checkitems() {
         }
     }
     else if (VoidshroudSlicer == true) {
-        if (voidshroudtracker == 0) {
+        if (factionchoiceint == 1 && voidshroudtracker > 0 && voidshroudtracker < 2) {
+            attackPower += 6;
+            voidshroudtracker += 1;
+        }
+        else if (voidshroudtracker == 0) {
             attackPower += 18;
             voidshroudtracker += 1;
         }
@@ -312,12 +316,20 @@ void Player::checkitems() {
         levelupgrade = false;
     }
     else if (flaminglongsword == true) {
-        if (flamingtracker == 0) {
+        if (factionchoiceint == 2 && flamingtracker > 0 && flamingtracker < 2) {
+            attackPower += 4;
+            flamingtracker += 1;
+        }
+        else if (flamingtracker == 0) {
             attackPower += 11;
             flamingtracker += 1;
         }
     }
     else if (dragonscalechestplate == true) {
+        if (factionchoiceint == 4 && dragontracker > 0 && dragontracker < 2) {
+            defence += 5;
+            dragontracker += 1;
+        }
         if (dragontracker == 0) {
             defence += 11;
             maxhealth += 14;
@@ -332,7 +344,11 @@ void Player::checkitems() {
         }
     }
     else if (mystichelmet == true) {
-        if (mystictracker == 0) {
+        if (factionchoiceint == 3 && mystictracker > 0 && mystictracker < 2) {
+            defence += 3;
+            mystictracker += 1;
+        }
+        else if (mystictracker == 0) {
             defence += 9;
             maxhealth += 8;
             mystictracker += 1;
@@ -344,7 +360,11 @@ void Player::checkitems() {
         healingpotionitem = false;
     }
     else if (lightningdragonscalechestplate == true) {
-        if (lightningdragontracker == 0) {
+        if (factionchoiceint == 4 && lightningdragontracker > 0 && lightningdragontracker < 2) {
+            defence += 5;
+            lightningdragontracker += 1;
+        }
+        else if (lightningdragontracker == 0) {
             defence += 11;
             maxhealth += 14;
             attackPower += 25;
@@ -352,7 +372,11 @@ void Player::checkitems() {
         }
     }
     else if (upgradedDragonscalechestplate == true) {
-        if (upgradeddragontracker == 0) {
+        if (factionchoiceint == 4 && upgradeddragontracker > 0 && upgradeddragontracker < 2) {
+            defence += 10;
+            upgradeddragontracker += 1;
+        }
+       else if (upgradeddragontracker == 0) {
             defence += 18;
             maxhealth += 25;
             upgradeddragontracker += 1;
@@ -373,13 +397,22 @@ void Player::checkitems() {
         }
     }
     else if (lightningflaminglongsword == true) {
-        if (lightninglongswordtracker == 0) {
+        if (factionchoiceint == 2 && lightninglongswordtracker > 0 && lightninglongswordtracker < 2) {
+            attackPower += 7;
+            lightninglongswordtracker += 1;
+        }
+        else if (lightninglongswordtracker == 0) {
             attackPower += 20;
             lightninglongswordtracker += 1;
         }
     }
     else if (upgradedflaminglongsword == true) {
-        if (upgradedlongswordtracker == 0) {
+        if (factionchoiceint == 2 && upgradedlongswordtracker > 0 && upgradedlongswordtracker < 2) {
+            attackPower += 4;
+            defence += 3;
+            upgradedlongswordtracker += 1;
+        }
+        else if (upgradedlongswordtracker == 0) {
             attackPower += 11;
             trackflamingmaxhealth += ceil(maxhealth * .1);
             maxhealth += trackflamingmaxhealth;
@@ -401,14 +434,22 @@ void Player::checkitems() {
         }
     }
     else if (upgradedmystichelmet == true) {
-        if (upgradedmystictracker == 0) {
+        if (factionchoiceint == 3 && upgradedmystictracker > 0 &&upgradedmystictracker < 2) {
+            defence += 9;
+            upgradedmystictracker += 1;
+        }
+        else if (upgradedmystictracker == 0) {
             defence += 16;
             maxhealth += 20;
             upgradedmystictracker += 1;
         }
     }
     else if (lightningmystichelmet == true) {
-        if (lightningmystictracker == 0) {
+        if (factionchoiceint == 3 && lightningmystictracker > 0 &&lightningmystictracker < 2) {
+            defence += 7;
+            lightningmystictracker += 1;
+        }
+        else if (lightningmystictracker == 0) {
             defence += 12;
             attackPower += 20;
             lightningmystictracker += 1;
@@ -429,7 +470,11 @@ void Player::checkitems() {
         }
     }
     else if (upgradedvoidshroudslicer == true) {
-        if (upgradedvoidshroudtracker == 0) {
+        if (factionchoiceint == 1 && upgradedvoidshroudtracker > 0 && upgradedvoidshroudtracker < 2) {
+            attackPower += 8;
+            upgradedvoidshroudtracker += 1;
+        }
+        else if (upgradedvoidshroudtracker == 0) {
             attackPower += 22;
             trackvoidshroudmaxhealth += ceil(maxhealth * .4);
             maxhealth += trackvoidshroudmaxhealth;
@@ -437,7 +482,12 @@ void Player::checkitems() {
         }
     }
     else if (lightningvoidshroudslicer == true) {
-        if (lightningvoidshroudtracker == 0) {
+        if (factionchoiceint == 1 && lightningvoidshroudtracker > 0 && lightningvoidshroudtracker < 2) {
+            attackPower += 18;
+            defence += 5;
+            lightningvoidshroudtracker += 1;
+        }
+        else if (lightningvoidshroudtracker == 0) {
             attackPower += 42;
             lightningvoidshroudtracker += 1;
         }
