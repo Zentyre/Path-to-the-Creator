@@ -13,6 +13,8 @@ protected:
 	int maxhealth;
 	int timetracker = 0;
 public:
+	string factionchoice = "";
+	int factionchoiceint = 0;
 	bool trickstermovebool = false;
 	bool warforgedmovebool = false;
 	int lives;

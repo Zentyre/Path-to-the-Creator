@@ -7,8 +7,6 @@
 #include "Enemy.h"
 using namespace std;
 random_device r1;
-string factionchoice = "";
-int factionchoiceint = 0;
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives) {
     int x, enemyhp, enemyatk, enemylives, enemydef, enemylvl, enemymaxh;
     if (baselevel == 200) {
@@ -1153,22 +1151,22 @@ int main() {
 						cout << "-Celestial Vanguard-" << endl;
 						cout << "-Ironclad Dominion-" << endl;
 						cin >> ws;
-						getline(cin, factionchoice);
-						if (factionchoice == "1" || factionchoice == "Shadowborn Syndicate"|| factionchoice == "Shadowborn syndicate"|| factionchoice == "shadowborn syndicate"|| factionchoice == "shadowborn Syndicate") {
+						getline(cin, Knight.factionchoice);
+						if (Knight.factionchoice == "1" || Knight.factionchoice == "Shadowborn Syndicate"|| Knight.factionchoice == "Shadowborn syndicate"|| Knight.factionchoice == "shadowborn syndicate"|| Knight.factionchoice == "shadowborn Syndicate") {
 							cout << "You chose the Shadowborn Syndicate." << endl;
-							factionchoiceint = 1;
+							Knight.factionchoiceint = 1;
 						}
-						else if (factionchoice == "2" || factionchoice == "emberfall covenant"|| factionchoice == "Emberfall covenant"|| factionchoice == "emberfall Covenant"|| factionchoice == "Emberfall Covenant") {
+						else if (Knight.factionchoice == "2" || Knight.factionchoice == "emberfall covenant"|| Knight.factionchoice == "Emberfall covenant"|| Knight.factionchoice == "emberfall Covenant"|| Knight.factionchoice == "Emberfall Covenant") {
 							cout << "You chose the Emberfall Covenant!" << endl;
-							factionchoiceint = 2;
+							Knight.factionchoiceint = 2;
 						}
-						else if (factionchoice == "3" || factionchoice == "Celestial Vanguard"|| factionchoice == "celestial Vanguard"|| factionchoice == "Celestial vanguard"|| factionchoice == "celestial vanguard") {
+						else if (Knight.factionchoice == "3" || Knight.factionchoice == "Celestial Vanguard"|| Knight.factionchoice == "celestial Vanguard"|| Knight.factionchoice == "Celestial vanguard"|| Knight.factionchoice == "celestial vanguard") {
 							cout << "You chose the Celestial Vanguard!" << endl;
-							factionchoiceint = 3;
+							Knight.factionchoiceint = 3;
 						}
-						else if (factionchoice == "4" || factionchoice == "Ironclad Dominion"|| factionchoice == "Ironclad dominion"|| factionchoice == "ironclad Dominion"|| factionchoice == "ironclad dominion") {
+						else if (Knight.factionchoice == "4" || Knight.factionchoice == "Ironclad Dominion"|| Knight.factionchoice == "Ironclad dominion"|| Knight.factionchoice == "ironclad Dominion"|| Knight.factionchoice == "ironclad dominion") {
 							cout << "You chose the Ironclad Cominion." << endl;
-							factionchoiceint = 4;
+							Knight.factionchoiceint = 4;
 						}
 					}
 					int enemyrandommessage;
