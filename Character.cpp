@@ -188,7 +188,11 @@ void Character::addlives(int extralives) {
 	lives += extralives;
 }
 void Character::takeDmg(int dmg) {
-	health -= dmg - defence;
+	dmg = dmg - defence;
+	if (dmg < 0) {
+		dmg = 0;
+	}
+	health -= dmg;
 	if (health <= 0) {
 		lives -= 1;
 		if (lives > 0) {
