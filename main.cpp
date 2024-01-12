@@ -1104,6 +1104,21 @@ int main() {
 							}
 						}
 					}
+					if (Knight.factionchoiceint == 1) {
+						Knight.attackPower += ceil(Knight.getattackPower() * .01);
+						Knight.defence += ceil(Knight.getdefence() * .01);
+					}
+					else if (Knight.factionchoiceint == 2) {
+						Knight.attackPower += ceil(Knight.getattackPower() * .02);
+					}
+					else if (Knight.factionchoiceint == 3) {
+						Knight.maxhealth += ceil(Knight.getmaxhealth() * .01);
+						Knight.defence += ceil(Knight.getdefence() * .01);
+					}
+					else if (Knight.factionchoiceint == 4) {
+						Knight.attackPower += ceil(Knight.getattackPower() * .01);
+						Knight.maxhealth += ceil(Knight.getmaxhealth() * .01);
+					}
 					Knight.incrementbaselevel();
 					Knight.incrementkills();
 					Knight.storetracker += 1;

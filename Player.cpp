@@ -563,16 +563,16 @@ void Player::attack(Character* Target) {
             break;
         }
         if (factionchoiceint == 1) {
-			cout << "You are a part of the Shadowborn Syndicate. You gain a .1% increase to attack and defence on kill. You deal more damage with the Voidshroud Slicer." << endl;
+			cout << "You are a part of the Shadowborn Syndicate. You gain a 1% increase to attack and defence on kill. You deal more damage with the Voidshroud Slicer." << endl;
 		}
 		else if (factionchoiceint == 2) {
-			cout << "You chose the Emberfall Covenant! You gain a .3% increase to attack on kill. You deal more damage with the Flaming Longsword." << endl;
+			cout << "You chose the Emberfall Covenant! You gain a 2% increase to attack on kill. You deal more damage with the Flaming Longsword." << endl;
 		}
 		else if (factionchoiceint == 3) {
-			cout << "You chose the Celestial Vanguard! You gain a .2% increase to health and maxhealth on kill. You gain more defence from the Mystic Helmet." << endl;
+			cout << "You chose the Celestial Vanguard! You gain a 1% increase to defence and maxhealth on kill. You gain more defence from the Mystic Helmet." << endl;
 		}
 		else if (factionchoiceint == 4) {
-			cout << "You are a part of the Ironclad Dominion. You gain a .1% increase to attack and health on kill. You gain more defence from the Dragonscale Chestplate." << endl;
+			cout << "You are a part of the Ironclad Dominion. You gain a 1% increase to attack and maxhealth on kill. You gain more defence from the Dragonscale Chestplate." << endl;
 		}
         if (classtype == 1) {
             cout << "--The knight class unlocks its special skill (Titans Strike) at level 80. It is just a normal attack but with more damage.--" << endl << endl;

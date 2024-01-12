@@ -4,15 +4,15 @@ using namespace std;
 
 class Character {
 protected:
-	int health;
-	int attackPower;
 	int baselevel;
 	int level;
-	int defence;
 	int kills;
-	int maxhealth;
 	int timetracker = 0;
 public:
+	int health;
+	int attackPower;
+	int defence;
+	int maxhealth;
 	string factionchoice = "";
 	int factionchoiceint = 0;
 	bool trickstermovebool = false;
