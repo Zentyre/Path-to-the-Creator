@@ -74,11 +74,11 @@ void Character::itemusehealthtonic() {
 	healthtonicitem -= 1;
 	cout << "You now have " << health << " health." << endl;
 }
-void Character::itemuseinvispotion(Character* Target) {
+void Character::itemuseinvispotion(Enemy* Target) {
 	Target->takeDmg(1000000);
 	invisibilitypotion -= 1;
 }
-void Character::itemusemolotov(Character* Target) {
+void Character::itemusemolotov(Enemy* Target) {
 	int molotovdmg;
 	molotovdmg = ceil(Target->gethealth() * .6);
 	Target->takeDmg(molotovdmg);
