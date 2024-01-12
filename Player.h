@@ -75,7 +75,6 @@ public:
 	bool maxhealthupgradeitem = false;
 	bool healingpotionitem = false;
 	bool lightningshard = false;
-	int forgehammer = 0;
 	bool glassshoes = false;
 	bool upgradedglassshoes = false;
 	bool lightningglassshoes = false;
@@ -87,6 +86,10 @@ public:
 	bool lightningdragonscalechestplate = false;
 	bool travelersbackpack = false;
 	bool playercompanion = false;
+	int trackexcaliburmaxhealth = 0;
+	int trackflamingmaxhealth = 0;
+	int trackvoidshroudmaxhealth = 0;
+	int forgehammer = 0;
 	int excaliburtracker = 0;
 	int knifetracker = 0;
 	int swordtracker = 0;

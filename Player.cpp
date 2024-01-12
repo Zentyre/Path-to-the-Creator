@@ -299,8 +299,8 @@ void Player::checkitems() {
     }
     else if (maxhealthupgrade == true) {
         maxhealthtracker += 1;
-        setmaxhealth(maxhealth);//removed Character*, make sure it still works
-        health += 50;
+        setmaxhealth(nullptr);
+        health += 25;
         maxhealthupgrade = false;
     }
     else if (attackupgrade == true) {
@@ -367,7 +367,8 @@ void Player::checkitems() {
     else if (upgradedexcalibur == true) {
         if (upgradedexcaltracker == 0) {
             attackPower += 18;
-            maxhealth += ceil(maxhealth * .25);
+            trackexcaliburmaxhealth += ceil(maxhealth * .25);
+            maxhealth += trackexcaliburmaxhealth;
             upgradedexcaltracker += 1;
         }
     }
@@ -380,7 +381,8 @@ void Player::checkitems() {
     else if (upgradedflaminglongsword == true) {
         if (upgradedlongswordtracker == 0) {
             attackPower += 11;
-            maxhealth += ceil(maxhealth * .1);
+            trackflamingmaxhealth += ceil(maxhealth * .1);
+            maxhealth += trackflamingmaxhealth;
             upgradedlongswordtracker += 1;
         }
     }
@@ -429,7 +431,8 @@ void Player::checkitems() {
     else if (upgradedvoidshroudslicer == true) {
         if (upgradedvoidshroudtracker == 0) {
             attackPower += 22;
-            maxhealth += ceil(maxhealth * .4);
+            trackvoidshroudmaxhealth += ceil(maxhealth * .4);
+            maxhealth += trackvoidshroudmaxhealth;
             upgradedvoidshroudtracker += 1;
         }
     }

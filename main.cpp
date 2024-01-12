@@ -1119,6 +1119,7 @@ int main() {
 						Knight.attackPower += ceil(Knight.getattackPower() * .01);
 						Knight.maxhealth += ceil(Knight.getmaxhealth() * .01);
 					}
+					Knight.setmaxhealth(&Knight);
 					Knight.incrementbaselevel();
 					Knight.incrementkills();
 					Knight.storetracker += 1;

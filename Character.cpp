@@ -87,7 +87,8 @@ void Character::itemusemolotov(Character* Target) {
 	cout << "------------------------------------------------" << endl;
 	molotov -= 1;
 }
-void Character::setmaxhealth(int charactermaxhealth) {
+void Character::setmaxhealth(Player* Target) {
+	int charactermaxhealth = 0;
 	if (level >= 500) {
 		charactermaxhealth = 500;
 	}
@@ -127,6 +128,59 @@ void Character::setmaxhealth(int charactermaxhealth) {
 	//adds more health based on maxhealthupgrade amount
 	if (maxhealthtracker >= 1) {
 		charactermaxhealth += ceil(50 * maxhealthtracker);
+	}
+	//adds more health based on items
+	if (Target->upgradedexcalibur == true) {
+		charactermaxhealth += Target->trackexcaliburmaxhealth;
+	}
+	if (Target->upgradedflaminglongsword == true) {
+		charactermaxhealth += Target->trackflamingmaxhealth;
+	}
+	if (Target->upgradedvoidshroudslicer == true) {
+		charactermaxhealth += Target->trackvoidshroudmaxhealth;
+	}
+	if (Target->upgradedDragonscalechestplate == true) {
+		charactermaxhealth += 25;
+	}
+	if (Target->lightningdragonscalechestplate == true) {
+		charactermaxhealth += 14;
+	}
+	if (Target->upgradedgodarmor == true) {
+		charactermaxhealth += 40;
+	}
+	if (Target->upgradedmystichelmet == true) {
+		charactermaxhealth += 20;
+	}
+	if (Target->upgradedglassshoes == true) {
+		charactermaxhealth += 14;
+	}
+	if (Target->mystichelmet == true) {
+		charactermaxhealth += 8;
+	}
+	if (Target->helmet == true) {
+		charactermaxhealth += 5;
+	}
+	if (Target->boots == true) {
+		charactermaxhealth += 4;
+	}
+	if (Target->chestplate == true) {
+		charactermaxhealth += 8;
+	}
+	if (Target->narsosArmor == true) {
+		charactermaxhealth += 12;
+	}
+	if (Target->lockhartsArmor == true) {
+		charactermaxhealth += 12;
+	}
+	if (Target->vladimirsArmor == true) {
+		charactermaxhealth += 12;
+	}
+	//maxhealth upgrade based on faction
+	if (factionchoiceint == 3) {
+		charactermaxhealth += ceil(.01 * (kills - 50));
+	}
+	if (factionchoiceint == 4) {
+		charactermaxhealth += ceil(.01 * (kills - 50));
 	}
 	maxhealth = charactermaxhealth;
 }

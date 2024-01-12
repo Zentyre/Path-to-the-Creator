@@ -49,5 +49,5 @@ public:
 	void itemusemolotov(Character* Target);
 	int molotov = 0;
 	void addlives(int extralives);
-	void setmaxhealth(int charactermaxhealth);
+	void setmaxhealth(Player* Target);
 };
