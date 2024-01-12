@@ -7,6 +7,8 @@
 #include "Enemy.h"
 using namespace std;
 random_device r1;
+string factionchoice = "";
+int factionchoiceint = 0;
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives) {
     int x, enemyhp, enemyatk, enemylives, enemydef, enemylvl, enemymaxh;
     if (baselevel == 200) {
@@ -798,27 +800,27 @@ int main() {
 		int areachoiceint = 0;
 		cin >> ws;
 		getline(cin, areachoice);
-		if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom" || areachoice == "Mushroom kingdom" || areachoice == "1") {
+		if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom" || areachoice == "Mushroom kingdom"|| areachoice == "mushroom Kingdom" || areachoice == "1") {
 			cout << endl;
 			cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get the invaders!-" << endl << endl;
 			areachoiceint = 1;
 		}
-		else if (areachoice == "Gooey Glade" || areachoice == "gooey glade" || areachoice == "Gooey glade" || areachoice == "2") {
+		else if (areachoice == "Gooey Glade" || areachoice == "gooey glade" || areachoice == "Gooey glade" || areachoice == "gooey Glade" || areachoice == "2") {
 			cout << endl;
 			cout << "-Welcome to the uneasy feeling area of the slimes. Good Luck Surviving!-" << endl << endl;
 			areachoiceint = 2;
 		}
-		else if (areachoice == "Croc Isle" || areachoice == "croc isle" || areachoice == "Croc isle" || areachoice == "3") {
+		else if (areachoice == "Croc Isle" || areachoice == "croc isle" || areachoice == "Croc isle"|| areachoice == "croc Isle" || areachoice == "3") {
 			cout << endl;
 			cout << "-Welcome to the land of the crocs. Go find that croc king!-" << endl << endl;
 			areachoiceint = 3;
 		}
-		else if (areachoice == "Hopscotch Highlands" || areachoice == "hopscotch highlands" || areachoice == "Hopscotch highlands" || areachoice == "4") {
+		else if (areachoice == "Hopscotch Highlands" || areachoice == "hopscotch highlands"|| areachoice == "hopscotch Highlands" || areachoice == "Hopscotch highlands" || areachoice == "4") {
 			cout << endl;
 			cout << "-Welcome to the land of the kangaroos, attack that zoo owner!-" << endl << endl;
 			areachoiceint = 4;
 		}
-		else if (areachoice == "Skeletal Sanctum" || areachoice == "skeletal sanctum" || areachoice == "Skeletal sanctum" || areachoice == "5") {
+		else if (areachoice == "Skeletal Sanctum" || areachoice == "skeletal sanctum"|| areachoice == "skeletal Sanctum" || areachoice == "Skeletal sanctum" || areachoice == "5") {
 			cout << endl;
 			cout << "-Welcome to the graveyeard of your dead family...just kidding. Look out there's a skeleton!-" << endl << endl;
 			areachoiceint = 5;
@@ -1144,6 +1146,31 @@ int main() {
 						Enemy* Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
 					}
 					cout << "You are now level " << Knight.getbaselevel() << "." << endl;
+					if (Knight.getbaselevel() == 50) {
+						cout << "You can now join a faction! Which faction would you like to join?" << endl;
+						cout << "-Shadowborn Syndicate-" << endl;
+						cout << "-Emberfall Covenant-" << endl;
+						cout << "-Celestial Vanguard-" << endl;
+						cout << "-Ironclad Dominion-" << endl;
+						cin >> ws;
+						getline(cin, factionchoice);
+						if (factionchoice == "1" || factionchoice == "Shadowborn Syndicate"|| factionchoice == "Shadowborn syndicate"|| factionchoice == "shadowborn syndicate"|| factionchoice == "shadowborn Syndicate") {
+							cout << "You chose the Shadowborn Syndicate." << endl;
+							factionchoiceint = 1;
+						}
+						else if (factionchoice == "2" || factionchoice == "emberfall covenant"|| factionchoice == "Emberfall covenant"|| factionchoice == "emberfall Covenant"|| factionchoice == "Emberfall Covenant") {
+							cout << "You chose the Emberfall Covenant!" << endl;
+							factionchoiceint = 2;
+						}
+						else if (factionchoice == "3" || factionchoice == "Celestial Vanguard"|| factionchoice == "celestial Vanguard"|| factionchoice == "Celestial vanguard"|| factionchoice == "celestial vanguard") {
+							cout << "You chose the Celestial Vanguard!" << endl;
+							factionchoiceint = 3;
+						}
+						else if (factionchoice == "4" || factionchoice == "Ironclad Dominion"|| factionchoice == "Ironclad dominion"|| factionchoice == "ironclad Dominion"|| factionchoice == "ironclad dominion") {
+							cout << "You chose the Ironclad Cominion." << endl;
+							factionchoiceint = 4;
+						}
+					}
 					int enemyrandommessage;
 					enemyrandommessage = r1() % 5;
 					if (enemyrandommessage == 0) {
