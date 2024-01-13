@@ -1772,7 +1772,7 @@ void Player::attack(Character* Target) {
     case 8: 
         cout << "-----------------------------------------------" << endl;
         cout << "Welcome to the forge, " << name << "." << endl;
-        cout << "In this ancient place, you can combine special ores with your armor to enhance its abilities." << endl;
+        cout << "In this ancient place, you can combine special materials with your armor and weapons to enhance their abilities." << endl;
         if (weaponupgrade == false && armorupgrade == false && lightningshard == false && forgehammer == 0) {
             cout << "You have no upgrades to use yet. Go buy some from the store." << endl;
             cout << "-----------------------------------------------" << endl;
@@ -1844,7 +1844,7 @@ void Player::attack(Character* Target) {
             attack(Target);
             break;
         }
-        break;//check if this breaks the forge
+        break;
     case 9:
         cout << " --Your Stats--" << endl;
         cout << "--" << maxhealth << " Maxhealth--" << endl;

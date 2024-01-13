@@ -792,8 +792,8 @@ int main() {
 		cout << "-1-Mushroom Kingdom-" << endl;
 		cout << "-2-Gooey Glade-" << endl;
 		cout << "-3-Croc Isle-" << endl;
-		cout << "-5-Hopscotch Highlands-" << endl;
-		cout << "-6-Skeletal Sanctum-" << endl;
+		cout << "-4-Hopscotch Highlands-" << endl;
+		cout << "-5-Skeletal Sanctum-" << endl;
 		string areachoice = "";
 		int areachoiceint = 0;
 		cin >> ws;
