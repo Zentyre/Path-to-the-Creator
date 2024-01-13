@@ -97,10 +97,10 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
     }
     switch (x) {
     case 0:
-        return new Enemy("Shroom", 20, 1, 1, 0, 1, 20);
+        return new Enemy("Shroom", 20, 1, 1, 1, 1, 20);
         break;
     case 1:
-        return new Enemy("Shroom Knight", 25, 1,0, 1, 2, 25);
+        return new Enemy("Shroom Knight", 25, 1, 1, 1, 2, 25);
         break;
     case 2:
         return new Enemy("Shroom ArchKnight", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
@@ -666,7 +666,7 @@ int main() {
 		cout << "At levels 15, 25, 50 and 100, you gain new abilities. At level 200 you fight the final boss(Level gained from items does not affect this)" << endl;
 		cout << "I wish you well on your conquest." << endl;
 		cout << endl;
-		Player Knight("Player", 50, 25, 4, 0, 1, 1);
+		Player Knight("Player", 50, 25, 4, 1, 1, 1);
 		cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought or 6- Trickster?" << endl;
 		cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
 		int playerclasschoice = 0, cinFailchoice = 0, classcurrency = 0;
@@ -882,22 +882,21 @@ int main() {
 				}
 			}
 		}
-		Enemy* Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
-		delete Slime;
+		Enemy* Slime = nullptr;
 		if (areachoiceint == 1) {
-			Enemy* Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+			Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
 		}
 		else if (areachoiceint == 2) {
-			Enemy* Slime = generateEnemy2(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+			Slime = generateEnemy2(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
 		}
 		else if (areachoiceint == 3) {
-			Enemy* Slime = generateEnemy3(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+			Slime = generateEnemy3(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
 		}
 		else if (areachoiceint == 4) {
-			Enemy* Slime = generateEnemy4(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+			Slime = generateEnemy4(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
 		}
 		else if (areachoiceint == 5) {
-			Enemy* Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+			Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
 		}
 
 		while (Knight.isAlive() && Slime->isAlive()) {

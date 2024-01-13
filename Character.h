@@ -7,7 +7,6 @@ protected:
 	int baselevel;
 	int level;
 	int kills;
-	int timetracker = 0;
 public:
 	int health;
 	int attackPower;
@@ -49,4 +48,5 @@ public:
 	int invisibilitypotion = 0;
 	int molotov = 0;
 	void addlives(int extralives);
+	string enemyDefenceReduction = "";
 };
