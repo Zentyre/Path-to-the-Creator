@@ -28,6 +28,7 @@ public:
 			}
 		}
 	}
+	void setmaxhealth();
 	void checkitems();
 	void forgerestarting();
 	void playerclassexecutioner();

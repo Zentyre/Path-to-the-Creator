@@ -43,11 +43,10 @@ public:
 	string getname();
 	virtual void attack(Character* Target) = 0;
 	void itemusehealthtonic();
-	void itemuseinvispotion(Enemy* Target);
 	bool usinginvispotion = false;
+	void itemuseinvispotion(Character* Target);
+	void itemusemolotov(Character* Target);
 	int invisibilitypotion = 0;
-	void itemusemolotov(Enemy* Target);
 	int molotov = 0;
 	void addlives(int extralives);
-	void setmaxhealth(Player* Target);
 };

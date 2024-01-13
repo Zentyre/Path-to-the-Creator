@@ -194,6 +194,103 @@ void Player ::forgerestarting() {
             cout << "That item does not exist. Try again." << endl;
         }
 }
+void Player::setmaxhealth() {
+    int charactermaxhealth = 0;
+    if (level >= 500) {
+        charactermaxhealth = 500;
+    }
+    else if (level >= 450) {
+        charactermaxhealth = 450;
+    }
+    else if (level >= 400) {
+        charactermaxhealth = 400;
+    }
+    else if (level >= 350) {
+        charactermaxhealth = 350;
+    }
+    else if (level >= 300) {
+        charactermaxhealth = 300;
+    }
+    else if (level >= 250) {
+        charactermaxhealth = 250;
+    }
+    else if (level >= 200) {
+        charactermaxhealth = 200;
+    }
+    else if (level >= 150) {
+        charactermaxhealth = 150;
+    }
+    else if (level >= 100) {
+        charactermaxhealth = 100;
+    }
+    else if (level >= 75) {
+        charactermaxhealth = 75;
+    }
+    else if (level >= 50) {
+        charactermaxhealth = 50;
+    }
+    else {
+        charactermaxhealth = 30;
+    }
+    //adds more health based on maxhealthupgrade amount
+    if (maxhealthtracker >= 1) {
+        charactermaxhealth += ceil(50 * maxhealthtracker);
+    }
+    //adds more health based on items
+    if (upgradedexcalibur == true) {
+        charactermaxhealth += trackexcaliburmaxhealth;
+    }
+    if (upgradedflaminglongsword == true) {
+        charactermaxhealth += trackflamingmaxhealth;
+    }
+    if (upgradedvoidshroudslicer == true) {
+        charactermaxhealth += trackvoidshroudmaxhealth;
+    }
+    if (upgradedDragonscalechestplate == true) {
+        charactermaxhealth += 25;
+    }
+    if (lightningdragonscalechestplate == true) {
+        charactermaxhealth += 14;
+    }
+    if (upgradedgodarmor == true) {
+        charactermaxhealth += 40;
+    }
+    if (upgradedmystichelmet == true) {
+        charactermaxhealth += 20;
+    }
+    if (upgradedglassshoes == true) {
+        charactermaxhealth += 14;
+    }
+    if (mystichelmet == true) {
+        charactermaxhealth += 8;
+    }
+    if (helmet == true) {
+        charactermaxhealth += 5;
+    }
+    if (boots == true) {
+        charactermaxhealth += 4;
+    }
+    if (chestplate == true) {
+        charactermaxhealth += 8;
+    }
+    if (narsosArmor == true) {
+        charactermaxhealth += 12;
+    }
+    if (lockhartsArmor == true) {
+        charactermaxhealth += 12;
+    }
+    if (vladimirsArmor == true) {
+        charactermaxhealth += 12;
+    }
+    //maxhealth upgrade based on faction
+    if (factionchoiceint == 3) {
+        charactermaxhealth += ceil(.01 * (kills - 50));
+    }
+    if (factionchoiceint == 4) {
+        charactermaxhealth += ceil(.01 * (kills - 50));
+    }
+    maxhealth = charactermaxhealth;
+}
 void Player::checkitems() {
     if (Excalibur == true) {
          if (excaliburtracker == 0) {
@@ -303,7 +400,7 @@ void Player::checkitems() {
     }
     else if (maxhealthupgrade == true) {
         maxhealthtracker += 1;
-        setmaxhealth(nullptr);
+        setmaxhealth();
         health += 25;
         maxhealthupgrade = false;
     }
