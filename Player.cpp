@@ -289,6 +289,10 @@ void Player::setmaxhealth() {
     if (factionchoiceint == 4) {
         charactermaxhealth += ceil(.01 * (kills - 50));
     }
+    //maxhealth based on classes
+    if (classtype == 1) {
+
+    }
     maxhealth = charactermaxhealth;
 }
 void Player::checkitems() {

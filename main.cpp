@@ -49,7 +49,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
     enemydef = def;
     enemyhp = hp;
 	if (lives >= 2) {
-		enemylives = floor(lives * .5);
+		enemylives = ceil(lives * .5);
 	}
 	else {
 		enemylives = 1;
@@ -61,7 +61,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
         enemydef = def * 1,25;
         enemyhp = hp * 1.25;
 	if (lives >= 2) {
-		enemylives = floor(lives * .5);
+		enemylives = ceil(lives * .5);
 	}
 	else {
 		enemylives = 1;
@@ -74,7 +74,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
         enemydef = def * 1,1;
         enemyhp = hp * 1.1;
 	if (lives >= 2) {
-		enemylives = floor(lives * .5);
+		enemylives = ceil(lives * .5);
 	}
 	else {
 		enemylives = 1;
@@ -87,7 +87,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
         enemydef = def * 1.1;
         enemyhp = hp * 1.1;
 	if (lives >= 2) {
-		enemylives = floor(lives * .5);
+		enemylives = ceil(lives * .5);
 	}
 	else {
 		enemylives = 1;
@@ -179,7 +179,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 	enemydef2 = def2 * .75;
 	enemyhp2 = hp2 * .75;
 	if (lives2 >= 2) {
-		enemylives2 = floor(lives2 * .5);
+		enemylives2 = ceil(lives2 * .5);
 	}
 	else {
 		enemylives2 = 1;
@@ -191,7 +191,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 		enemydef2 = def2 * 1, 25;
 		enemyhp2 = hp2 * 1.25;
 		if (lives2 >= 2) {
-			enemylives2 = floor(lives2 * .5);
+			enemylives2 = ceil(lives2 * .5);
 		}
 		else {
 			enemylives2 = 1;
@@ -204,7 +204,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 		enemydef2 = def2 * 1, 1;
 		enemyhp2 = hp2 * 1.1;
 		if (lives2 >= 2) {
-			enemylives2 = floor(lives2 * .5);
+			enemylives2 = ceil(lives2 * .5);
 		}
 		else {
 			enemylives2 = 1;
@@ -217,7 +217,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 		enemydef2 = def2 * 1.1;
 		enemyhp2 = hp2 * 1.1;
 		if (lives2 >= 2) {
-			enemylives2 = floor(lives2 * .5);
+			enemylives2 = ceil(lives2 * .5);
 		}
 		else {
 			enemylives2 = 1;
@@ -309,7 +309,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 	enemydef3 = def3 * .75;
 	enemyhp3 = hp3 * .75;
 	if (lives3 >= 2) {
-		enemylives3 = floor(lives3 * .5);
+		enemylives3 = ceil(lives3 * .5);
 	}
 	else {
 		enemylives3 = 1;
@@ -321,7 +321,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 		enemydef3 = def3 * 1, 25;
 		enemyhp3 = hp3 * 1.25;
 		if (lives3 >= 2) {
-			enemylives3 = floor(lives3 * .5);
+			enemylives3 = ceil(lives3 * .5);
 		}
 		else {
 			enemylives3 = 1;
@@ -334,7 +334,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 		enemydef3 = def3 * 1, 1;
 		enemyhp3 = hp3 * 1.1;
 		if (lives3 >= 2) {
-			enemylives3 = floor(lives3 * .5);
+			enemylives3 = ceil(lives3 * .5);
 		}
 		else {
 			enemylives3 = 1;
@@ -347,7 +347,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 		enemydef3 = def3 * 1.1;
 		enemyhp3 = hp3 * 1.1;
 		if (lives3 >= 2) {
-			enemylives3 = floor(lives3 * .5);
+			enemylives3 = ceil(lives3 * .5);
 		}
 		else {
 			enemylives3 = 1;
@@ -439,7 +439,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 	enemydef4 = def4 * .75;
 	enemyhp4 = hp4 * .75;
 	if (lives4 >= 2) {
-		enemylives4 = floor(lives4 * .5);
+		enemylives4 = ceil(lives4 * .5);
 	}
 	else {
 		enemylives4 = 1;
@@ -451,7 +451,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 		enemydef4 = def4 * 1, 25;
 		enemyhp4 = hp4 * 1.25;
 		if (lives4 >= 2) {
-			enemylives4 = floor(lives4 * .5);
+			enemylives4 = ceil(lives4 * .5);
 		}
 		else {
 			enemylives4 = 1;
@@ -464,7 +464,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 		enemydef4 = def4 * 1, 1;
 		enemyhp4 = hp4 * 1.1;
 		if (lives4 >= 2) {
-			enemylives4 = floor(lives4 * .5);
+			enemylives4 = ceil(lives4 * .5);
 		}
 		else {
 			enemylives4 = 1;
@@ -477,7 +477,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 		enemydef4 = def4 * 1.1;
 		enemyhp4 = hp4 * 1.1;
 		if (lives4 >= 2) {
-			enemylives4 = floor(lives4 * .5);
+			enemylives4 = ceil(lives4 * .5);
 		}
 		else {
 			enemylives4 = 1;
@@ -569,7 +569,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 	enemydef5 = def5 * .75;
 	enemyhp5 = hp5 * .75;
 	if (lives5 >= 2) {
-		enemylives5 = floor(lives5 * .5);
+		enemylives5 = ceil(lives5 * .5);
 	}
 	else {
 		enemylives5 = 1;
@@ -581,7 +581,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 		enemydef5 = def5 * 1, 25;
 		enemyhp5 = hp5 * 1.25;
 		if (lives5 >= 2) {
-			enemylives5 = floor(lives5 * .5);
+			enemylives5 = ceil(lives5 * .5);
 		}
 		else {
 			enemylives5 = 1;
@@ -594,7 +594,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 		enemydef5 = def5 * 1, 1;
 		enemyhp5 = hp5 * 1.1;
 		if (lives5 >= 2) {
-			enemylives5 = floor(lives5 * .5);
+			enemylives5 = ceil(lives5 * .5);
 		}
 		else {
 			enemylives5 = 1;
@@ -607,7 +607,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 		enemydef5 = def5 * 1.1;
 		enemyhp5 = hp5 * 1.1;
 		if (lives5 >= 2) {
-			enemylives5 = floor(lives5 * .5);
+			enemylives5 = ceil(lives5 * .5);
 		}
 		else {
 			enemylives5 = 1;
@@ -788,12 +788,12 @@ int main() {
 			cin >> doesnothing;
 			cout << "I dont even care, whatever you just entered did absolutely nothing. You're stuck with the name you gave me before now." << endl;
 		}
-		cout << "Where would you like to journey" << Knight.getname() << "?**1-5**" << endl;
-		cout << "-Mushroom Kingdom-" << endl;
-		cout << "-Gooey Glade-" << endl;
-		cout << "-Croc Isle-" << endl;
-		cout << "-Hopscotch Highlands-" << endl;
-		cout << "-Skeletal Sanctum-" << endl;
+		cout << "Where would you like to journey" << Knight.getname() << " ?" << endl;
+		cout << "-1-Mushroom Kingdom-" << endl;
+		cout << "-2-Gooey Glade-" << endl;
+		cout << "-3-Croc Isle-" << endl;
+		cout << "-5-Hopscotch Highlands-" << endl;
+		cout << "-6-Skeletal Sanctum-" << endl;
 		string areachoice = "";
 		int areachoiceint = 0;
 		cin >> ws;
