@@ -5,9 +5,9 @@ using namespace std;
 class Character {
 protected:
 	int baselevel;
-	int level;
 	int kills;
 public:
+	int level;
 	int health;
 	int attackPower;
 	int defence;

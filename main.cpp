@@ -1187,23 +1187,23 @@ int main() {
 					int enemyrandommessage;
 					enemyrandommessage = r1() % 5;
 					if (enemyrandommessage == 0) {
-						cout << "A new enemy has appeared, stab it!!" << endl;
+						cout << "A " << Slime->getname() << " has appeared, stab it!!" << endl;
 						cout << "-----------------------------------------------" << endl;
 					}
 					else if (enemyrandommessage == 1) {
-						cout << "A new enemy is approaching you! BE wary." << endl;
+						cout << "A " << Slime->getname() << " is approaching you! BE wary." << endl;
 						cout << "-----------------------------------------------" << endl;
 					}
 					else if (enemyrandommessage == 2) {
-						cout << "An enemy is preparing to attack, CHARGE!!!" << endl;
+						cout << "A " << Slime->getname() << " is preparing to attack, CHARGE!!!" << endl;
 						cout << "-----------------------------------------------" << endl;
 					}
 					else if (enemyrandommessage == 3) {
-						cout << "Reinfocements are approaching, be careful!" << endl;
+						cout << "Reinforcements are approaching, be careful!" << endl;
 						cout << "-----------------------------------------------" << endl;
 					}
 					else if (enemyrandommessage == 4) {
-						cout << "This guy seems mad that you killed his friend. GET HIM!!" << endl;
+						cout << "This" << Slime->getname() << " seems mad that you killed his friend. GET HIM!!" << endl;
 						cout << "-----------------------------------------------" << endl;
 					}
 					cout << endl;
