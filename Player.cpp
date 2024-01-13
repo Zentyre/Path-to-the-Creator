@@ -809,7 +809,7 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
             }
-            cout << enemyDefenceReduction << endl;
+            cout << Target->enemyDefenceReduction << endl;
             break;
         }
         else if (accuracy > 10) {
@@ -858,14 +858,13 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
             }
-            cout << enemyDefenceReduction << endl;
+            cout << Target->enemyDefenceReduction << endl;
             break;
         }
         else {
             cout << "-----------------------------------------------" << endl;
             cout << name << " You have slipped and fallen, losing this turn." << endl;
             fallen = true;
-            cout << enemyDefenceReduction << endl;
             break;
         }
     case 2:
@@ -998,7 +997,7 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
             }
-            cout << enemyDefenceReduction << endl;
+            cout << Target->enemyDefenceReduction << endl;
             break;
         }
         else if (baselevel >= 15 && accuracy > 10) {
@@ -1047,7 +1046,7 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 cout << "You bludgeon the slime for " << x << " damage." << endl;
             }
-            cout << enemyDefenceReduction << endl;
+            cout << Target->enemyDefenceReduction << endl;
             break;
         }
         else if (baselevel >= 15 && accuracy <= 10) {
