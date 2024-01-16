@@ -36,6 +36,7 @@ public:
 	void playerclasswarforged();
 	void playerclassdreadnought();
 	void playerclasstrickster();
+	int failedforge = 0;
 	bool Knife = false;
 	bool Sword = false;
 	bool Excalibur = false;
@@ -68,14 +69,14 @@ public:
 	bool armorupgrade = false;
 	bool weaponupgrade = false;
 	bool flaminglongsword = false;
-	bool VoidshroudSlicer = false;
+	bool VoidshroudSlicer = true;
 	bool upgradedvoidshroudslicer = false;
 	bool lightningvoidshroudslicer = false;
 	bool upgradedflaminglongsword = false;
 	bool lightningflaminglongsword = false;
 	bool maxhealthupgradeitem = false;
 	bool healingpotionitem = false;
-	bool lightningshard = false;
+	bool lightningshard = true;
 	bool glassshoes = false;
 	bool upgradedglassshoes = false;
 	bool lightningglassshoes = false;

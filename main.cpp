@@ -45,9 +45,9 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
     else {
         x = r1() % 2;
     }
-    enemyatk = atk;
-    enemydef = def;
-    enemyhp = hp;
+    enemyatk = floor(atk * .75);
+    enemydef = floor(def * .5);
+    enemyhp = floor(hp * .75);
 	if (lives >= 2) {
 		enemylives = ceil(lives * .5);
 	}
@@ -175,9 +175,9 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 	else {
 		x = r1() % 2;
 	}
-	enemyatk2 = atk2 * .75;
-	enemydef2 = def2 * .75;
-	enemyhp2 = hp2 * .75;
+	enemyatk2 = floor(atk2 * .75);
+	enemydef2 = floor(def2 * .5);
+	enemyhp2 = floor(hp2 * .75);
 	if (lives2 >= 2) {
 		enemylives2 = ceil(lives2 * .5);
 	}
@@ -305,9 +305,9 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 	else {
 		x = r1() % 2;
 	}
-	enemyatk3 = atk3 * .75;
-	enemydef3 = def3 * .75;
-	enemyhp3 = hp3 * .75;
+	enemyatk3 = floor(atk3 * .75);
+	enemydef3 = floor(def3 * .5);
+	enemyhp3 = floor(hp3 * .75);
 	if (lives3 >= 2) {
 		enemylives3 = ceil(lives3 * .5);
 	}
@@ -435,9 +435,9 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 	else {
 		x = r1() % 2;
 	}
-	enemyatk4 = atk4 * .75;
-	enemydef4 = def4 * .75;
-	enemyhp4 = hp4 * .75;
+	enemyatk4 = floor(atk4 * .75);
+	enemydef4 = floor(def4 * .5);
+	enemyhp4 = floor(hp4 * .75);
 	if (lives4 >= 2) {
 		enemylives4 = ceil(lives4 * .5);
 	}
@@ -565,9 +565,9 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 	else {
 		x = r1() % 2;
 	}
-	enemyatk5 = atk5 * .75;
-	enemydef5 = def5 * .75;
-	enemyhp5 = hp5 * .75;
+	enemyatk5 = floor(atk5 * .75);
+	enemydef5 = floor(def5 * .5);
+	enemyhp5 = floor(hp5 * .75);
 	if (lives5 >= 2) {
 		enemylives5 = ceil(lives5 * .5);
 	}
@@ -1022,19 +1022,19 @@ int main() {
 						treasure = r1() % 99 + 1;
 						if (treasure <= 30) {
 							Knight.helmet = true;
-							cout << "You got a fancy hat." << endl;
+							cout << "You got a fancy hat.";
 							cout << endl;
 							treasure = 0;
 						}
 						else if (treasure > 30 && treasure <= 60) {
 							Knight.chestplate = true;
-							cout << "You have acquired a weird robe." << endl;
+							cout << "You have acquired a weird robe.";
 							cout << endl;
 							treasure = 0;
 						}
 						else if (treasure > 61 && treasure <= 90) {
 							Knight.boots = true;
-							cout << "You put on some cool shoes." << endl;
+							cout << "You put on some cool shoes.";
 							cout << endl;
 							treasure = 0;
 						}
@@ -1203,7 +1203,7 @@ int main() {
 						cout << "-----------------------------------------------" << endl;
 					}
 					else if (enemyrandommessage == 4) {
-						cout << "This" << Slime->getname() << " seems mad that you killed his friend. GET HIM!!" << endl;
+						cout << "This " << Slime->getname() << " seems mad that you killed his friend. GET HIM!!" << endl;
 						cout << "-----------------------------------------------" << endl;
 					}
 					cout << endl;
