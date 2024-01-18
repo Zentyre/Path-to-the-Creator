@@ -69,14 +69,14 @@ public:
 	bool armorupgrade = false;
 	bool weaponupgrade = false;
 	bool flaminglongsword = false;
-	bool VoidshroudSlicer = true;
+	bool VoidshroudSlicer = false;
 	bool upgradedvoidshroudslicer = false;
 	bool lightningvoidshroudslicer = false;
 	bool upgradedflaminglongsword = false;
 	bool lightningflaminglongsword = false;
 	bool maxhealthupgradeitem = false;
 	bool healingpotionitem = false;
-	bool lightningshard = true;
+	bool lightningshard = false;
 	bool glassshoes = false;
 	bool upgradedglassshoes = false;
 	bool lightningglassshoes = false;

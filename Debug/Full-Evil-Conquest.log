@@ -157,4 +157,4 @@ C:\Users\drago\source\repos\Full-Evil-Conquest\main.cpp(1095,29): warning C4244:
 C:\Users\drago\source\repos\Full-Evil-Conquest\main.cpp(1098,33): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
 C:\Users\drago\source\repos\Full-Evil-Conquest\main.cpp(1099,31): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
   Generating Code...
-  Full-Evil-Conquest.vcxproj -> C:\Users\drago\source\repos\Full-Evil-Conquest\x64\Debug\Full-Evil-Conquest.exe
+  Full-Evil-Conquest.vcxproj -> C:\Users\drago\source\repos\Full-Evil-Conquest\Debug\Full-Evil-Conquest.exe
