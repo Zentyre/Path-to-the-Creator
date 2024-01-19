@@ -7,7 +7,7 @@
 #include "Enemy.h"
 using namespace std;
 random_device r1;
-Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives) {
+Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives, int playerclass) {
     int x = 0, enemyhp = 0, enemyatk = 0, enemylives = 0, enemydef = 0, enemylvl = 0, enemymaxh = 0;
     if (baselevel == 200) {
         x = 12;
@@ -134,7 +134,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
         break;
     }
 }
-Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, int lives2) {
+Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, int lives2, int playerclass2) {
 	int x = 0, enemyhp2 = 0, enemyatk2 = 0, enemylives2 = 0, enemydef2 = 0, enemylvl2 = 0, enemymaxh2 = 0;
 	if (baselevel2 == 200) {
 		x = 12;
@@ -261,7 +261,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 		break;
 	}
 }
-Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, int lives3) {
+Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, int lives3, int playerclass3) {
 	int x = 0, enemyhp3 = 0, enemyatk3 = 0, enemylives3 = 0, enemydef3 = 0, enemylvl3 = 0, enemymaxh3 = 0;
 	if (baselevel3 == 200) {
 		x = 12;
@@ -388,7 +388,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 		break;
 	}
 }
-Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, int lives4) {
+Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, int lives4, int playerclass4) {
 	int x = 0, enemyhp4 = 0, enemyatk4 = 0, enemylives4 = 0, enemydef4 = 0, enemylvl4 = 0, enemymaxh4 = 0;
 	if (baselevel4 == 200) {
 		x = 12;
@@ -510,7 +510,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 		break;
 	}
 }
-Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, int lives5) {
+Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, int lives5, int playerclass5) {
 	int x = 0, enemyhp5 = 0, enemyatk5 = 0, enemylives5 = 0, enemydef5 = 0, enemylvl5 = 0, enemymaxh5 = 0;
 	if (baselevel5 == 200) {
 		x = 12;
@@ -864,19 +864,19 @@ int main() {
 		}
 		Enemy* Slime = nullptr;
 		if (areachoiceint == 1) {
-			Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+			Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 		}
 		else if (areachoiceint == 2) {
-			Slime = generateEnemy2(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+			Slime = generateEnemy2(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 		}
 		else if (areachoiceint == 3) {
-			Slime = generateEnemy3(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+			Slime = generateEnemy3(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 		}
 		else if (areachoiceint == 4) {
-			Slime = generateEnemy4(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+			Slime = generateEnemy4(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 		}
 		else if (areachoiceint == 5) {
-			Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+			Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 		}
 
 		while (Knight.isAlive() && Slime->isAlive()) {
@@ -902,19 +902,19 @@ int main() {
 					delete Slime;
 					cout << "You have escaped from this enemy using your invisibility. You will get no rewards for this escape." << endl;
 					if (areachoiceint == 1) {
-						Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+						Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					else if (areachoiceint == 2) {
-						Slime = generateEnemy2(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+						Slime = generateEnemy2(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					else if (areachoiceint == 3) {
-						Slime = generateEnemy3(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+						Slime = generateEnemy3(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					else if (areachoiceint == 4) {
-						Slime = generateEnemy4(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+						Slime = generateEnemy4(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					else if (areachoiceint == 5) {
-						Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+						Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					int enemyrandommessage = 0;
 					enemyrandommessage = r1() % 5;
@@ -1124,19 +1124,19 @@ int main() {
 						cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
 					}
 					if (areachoiceint == 1) {
-						Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+						Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					else if (areachoiceint == 2) {
-						Slime = generateEnemy2(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+						Slime = generateEnemy2(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					else if (areachoiceint == 3) {
-						Slime = generateEnemy3(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+						Slime = generateEnemy3(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					else if (areachoiceint == 4) {
-						Slime = generateEnemy4(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+						Slime = generateEnemy4(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					else if (areachoiceint == 5) {
-						Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives());
+						Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					cout << "You are now level " << Knight.getbaselevel() << "." << endl;
 					if (Knight.getbaselevel() == 50) {
