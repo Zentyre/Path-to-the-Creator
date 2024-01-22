@@ -1349,10 +1349,24 @@ int main() {
 						Knight.maxhealth += ceil(Knight.getmaxhealth() * .01);
 					}
 					Knight.setmaxhealth();
-					Knight.incrementbaselevel();
+					if (Knight.horsemount == true) {
+						Knight.incrementbaselevel(2);
+					}
+					else if (Knight.dragonmount == true) {
+						Knight.incrementbaselevel(4);
+					}
+					else {
+						Knight.incrementbaselevel(1);
+					}
 					Knight.incrementkills();
-					Knight.storetracker += 1;
-					Knight.Goldloom += r1() % 16 + 10;
+					if (Knight.goldloomMagnet == true) {
+						Knight.storetracker += 2.5;
+						Knight.Goldloom += r1() % 26 + 10;
+					}
+					else {
+						Knight.storetracker += 1;
+						Knight.Goldloom += r1() % 16 + 10;
+					}
 					if (Knight.isAlive() == true && Knight.getbaselevel() == 50 && playerclasschoice == 6) {
 						Knight.trickstermove = true;
 						cout << "You have unlocked your Trickster skill, Confuse!" << endl;
@@ -1438,8 +1452,8 @@ int main() {
 					}
 					cout << endl;
 					int item = 0;
-					item = r1() % 100 + 1;
-					if (item == 1) {
+					item = r1() % 105 + 1;
+					if (item == 1 && Knight.Excalibur == false) {
 						Knight.Excalibur = true;
 						cout << "--You gained a super item! (Excalibur)--" << endl;
 						cout << endl;
@@ -1449,12 +1463,12 @@ int main() {
 						cout << "--You gained a super item! (SuperiorLevelTonic)--" << endl;
 						cout << endl;
 					}
-					else if (item == 3 || item == 4 || item == 5) {
+					else if (item == 3 || item == 4 || item == 5 && Knight.Knife == false) {
 						Knight.Knife = true;
 						cout << "--You gained an item! (Knife)--" << endl;
 						cout << endl;
 					}
-					else if (item == 6 || item == 7) {
+					else if (item == 6 || item == 7 && Knight.Sword == false) {
 						Knight.Sword = true;
 						cout << "--You gained an item! (Sword)--" << endl;
 						cout << endl;
@@ -1474,14 +1488,29 @@ int main() {
 						cout << "--You gained a health tonic! (Healing potion)--" << endl;
 						cout << endl;
 					}
-					else if (item == 14 || item == 15 || item == 16) {
+					else if (item == 14 || item == 15 || item == 16 && Knight.accuratesword == false) {
 						Knight.accuratesword = true;
 						cout << "--You gained the legendary accuracy sword! (never miss again)--" << endl;
 						cout << endl;
 					}
-					else if (item == 17 || item == 18 || item == 19 || item == 20) {
+					else if (item == 17 || item == 18 && Knight.shield == false) {
 						Knight.shield = true;
 						cout << "--You can now dual wield with a shield! (Shield)--" << endl;
+						cout << endl;
+					}
+					else if (item == 19 && Knight.horsemount == false) {
+						Knight.horsemount = true;
+						cout << "--You can now progress faster! (Horse Mount)--" << endl;
+						cout << endl;
+					}
+					else if (item == 20 && Knight.dragonmount == false) {
+						Knight.dragonmount = true;
+						cout << "--You can now progress the fastest! (Dragon Mount)--" << endl;
+						cout << endl;
+					}
+					else if (item == 21 && Knight.goldloomMagnet == false) {
+						Knight.goldloomMagnet = true;
+						cout << "--Your shop now appears more frequently and you get more money! (Goldloom Magnet)--" << endl;
 						cout << endl;
 					}
 					if (Knight.getbaselevel() >= 200 && Knight.isAlive() == true) {

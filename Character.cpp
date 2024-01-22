@@ -46,8 +46,8 @@ int Character::getmaxhealth() {
 string Character::getname() {
 	return name;
 }
-int Character::incrementbaselevel() {
-	return baselevel++;
+int Character::incrementbaselevel(int amount) {
+	return baselevel + amount;
 }
 int Character::incrementkills() {
 	return kills++;

@@ -33,7 +33,7 @@ public:
 	int getdefence();
 	int getattackPower();
 	int getlevel();
-	int incrementbaselevel();
+	int incrementbaselevel(int amount);
 	int incrementkills();
 	int getkills();
 	int getmaxhealth();

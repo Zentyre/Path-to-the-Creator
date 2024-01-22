@@ -37,6 +37,9 @@ public:
 	void playerclassdreadnought();
 	void playerclasstrickster();
 	int failedforge = 0;
+	bool horsemount = false;
+	bool dragonmount = false;
+	bool goldloomMagnet = false;
 	bool Knife = false;
 	bool Sword = false;
 	bool Excalibur = false;
