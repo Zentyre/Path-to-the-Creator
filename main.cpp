@@ -9,7 +9,7 @@ using namespace std;
 random_device r1;
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives, int playerclass) {
     int x = 0, enemyhp = 0, enemyatk = 0, enemylives = 0, enemydef = 0, enemylvl = 0, enemymaxh = 0;
-    if (baselevel == 200) {
+    if (baselevel == 200 || baselevel == 201) {
         x = 12;
     }
     else if (baselevel == 100) {
@@ -1412,7 +1412,7 @@ int main() {
 						Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					cout << "You are now level " << Knight.getbaselevel() << "." << endl;
-					if (Knight.getbaselevel() == 50) {
+					if (Knight.getbaselevel() >= 50 && Knight.isAlive() == true) {
 						cout << "You can now join a faction! Which faction would you like to join?" << endl;
 						cout << "-Shadowborn Syndicate - A faction for those who tread a dark path..." << endl;
 						cout << "-Emberfall Covenant - A faction for those who wish to wield the power of ancient flames..." << endl;
