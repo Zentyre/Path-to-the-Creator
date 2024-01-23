@@ -1358,11 +1358,11 @@ int main() {
 						Knight.maxhealth += ceil(Knight.getmaxhealth() * .01);
 					}
 					Knight.setmaxhealth();
-					if (Knight.horsemount == true) {
-						Knight.incrementbaselevel(2);
-					}
-					else if (Knight.dragonmount == true) {
+					if (Knight.dragonmount == true) {
 						Knight.incrementbaselevel(4);
+					}
+					else if (Knight.horsemount == true) {
+						Knight.incrementbaselevel(2);
 					}
 					else {
 						Knight.incrementbaselevel(1);
@@ -1642,7 +1642,7 @@ int main() {
 			}
 		}
 	}
-	while (Knight.storymode == true) {
+	while (Knight.endlessmode == true) {
 		cout << "Welcome to Evil Conquest...Endless mode!" << endl;
 		cout << "Your goal is to progress as far as you can and gain the best stats possible." << endl;
 		cout << "You start at level one, for every kill you go up a level and gain more damage (Base attack damage + level)" << endl;

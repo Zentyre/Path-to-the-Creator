@@ -56,7 +56,7 @@ int Character::incrementbaselevel(int amount) {
 		return baselevel = 200;
 	}
 	else {
-		return baselevel + amount;
+		return baselevel = (baselevel + amount);
 	}
 }
 int Character::incrementkills() {
