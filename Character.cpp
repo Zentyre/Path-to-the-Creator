@@ -47,7 +47,17 @@ string Character::getname() {
 	return name;
 }
 int Character::incrementbaselevel(int amount) {
-	return baselevel + amount;
+	if (baselevel > 100 && incrementamount == 0) {
+		incrementamount = 1;
+		return baselevel = 100;
+	}
+	else if (baselevel > 200 && incrementamount == 1) {
+		incrementamount = 2;
+		return baselevel = 200;
+	}
+	else {
+		return baselevel + amount;
+	}
 }
 int Character::incrementkills() {
 	return kills++;

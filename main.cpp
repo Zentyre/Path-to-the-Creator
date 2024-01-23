@@ -1643,11 +1643,11 @@ int main() {
 		}
 	}
 	while (Knight.storymode == true) {
-		cout << "Welcome to Evil Conquest!" << endl;
-		cout << "Your objective is to kill the operator of all evil...the Creator Slime!" << endl;
+		cout << "Welcome to Evil Conquest...Endless mode!" << endl;
+		cout << "Your goal is to progress as far as you can and gain the best stats possible." << endl;
 		cout << "You start at level one, for every kill you go up a level and gain more damage (Base attack damage + level)" << endl;
 		cout << "--Level can only add up to 30 damage and/or healing--(Level gained from items does affect this)" << endl;
-		cout << "At levels 15, 25, 50 and 100, you gain new abilities. At level 200 you fight the final boss(Level gained from items does not affect this)" << endl;
+		cout << "At levels 15, 25, 50 and 100, you gain new abilities. Every 100 levels a boss spawns and every 50 levels a mini boss spawns." << endl;
 		cout << "I wish you well on your conquest." << endl;
 		cout << endl;
 		cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought or 6- Trickster?" << endl;

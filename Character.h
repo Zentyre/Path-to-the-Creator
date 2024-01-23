@@ -45,6 +45,7 @@ public:
 	int classtype = 1;
 	int invisibilitypotion = 0;
 	int molotov = 0;
+	int incrementamount = 0;
 	void itemusehealthtonic();
 	void itemuseinvispotion(Character* Target);
 	void itemusemolotov(Character* Target);
