@@ -105,15 +105,7 @@ void Character::takeDmg(int dmg) {
 }
 bool Character::isAlive() {
 	if (lives <= 0 || killplayer == true) {
-		if (storymode == true) {
-			return storymode = false;
-		}
-		else if (endlessmode == true) {
-			return endlessmode = false;
-		}
-		else {
 			return false;
-		}
 	}
 	else {
 		return true;
