@@ -1376,23 +1376,23 @@ int main() {
 						Knight.storetracker += 1;
 						Knight.Goldloom += r1() % 16 + 10;
 					}
-					if (Knight.isAlive() == true && Knight.getbaselevel() == 50 && playerclasschoice == 6) {
+					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == 6) {
 						Knight.trickstermove = true;
 						cout << "You have unlocked your Trickster skill, Confuse!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() == 75 && playerclasschoice == 4) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == 4) {
 						Knight.warforgedmove = true;
 						cout << "You have unlocked your Warforged Engineer skill, Guardians Respite!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() == 90 && playerclasschoice == 3) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 90 && playerclasschoice == 3) {
 						Knight.soulweavermove = true;
 						cout << "You have unlocked your Soulweaver skill, Fortuitous Gambit!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() == 80 && playerclasschoice == 1) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 80 && playerclasschoice == 1) {
 						Knight.knightmove = true;
 						cout << "You have unlocked your special Knight skill, Titans Strike!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() == 75 && playerclasschoice == 5) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == 5) {
 						Knight.dreadnoughtmove = true;
 						cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
 					}
@@ -2120,23 +2120,23 @@ int main() {
 						Knight.storetracker += 1;
 						Knight.Goldloom += r1() % 16 + 10;
 					}
-					if (Knight.isAlive() == true && Knight.getbaselevel() == 50 && playerclasschoice == 6) {
+					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == 6) {
 						Knight.trickstermove = true;
 						cout << "You have unlocked your Trickster skill, Confuse!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() == 75 && playerclasschoice == 4) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == 4) {
 						Knight.warforgedmove = true;
 						cout << "You have unlocked your Warforged Engineer skill, Guardians Respite!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() == 90 && playerclasschoice == 3) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 90 && playerclasschoice == 3) {
 						Knight.soulweavermove = true;
 						cout << "You have unlocked your Soulweaver skill, Fortuitous Gambit!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() == 80 && playerclasschoice == 1) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 80 && playerclasschoice == 1) {
 						Knight.knightmove = true;
 						cout << "You have unlocked your special Knight skill, Titans Strike!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() == 75 && playerclasschoice == 5) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == 5) {
 						Knight.dreadnoughtmove = true;
 						cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
 					}
@@ -2156,7 +2156,7 @@ int main() {
 						Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					cout << "You are now level " << Knight.getbaselevel() << "." << endl;
-					if (Knight.getbaselevel() == 50) {
+					if (Knight.getbaselevel() >= 50) {
 						cout << "You can now join a faction! Which faction would you like to join?" << endl;
 						cout << "-Shadowborn Syndicate - A faction for those who tread a dark path..." << endl;
 						cout << "-Emberfall Covenant - A faction for those who wish to wield the power of ancient flames..." << endl;
