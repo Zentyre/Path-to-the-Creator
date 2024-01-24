@@ -757,9 +757,9 @@ void Player::attack(Character* Target) {
             cout << "--The dreadnought class unlocks its special skill (Healing Remedy) at level 75. This skill is a better than normal single heal and has a 10% crit chance.--" << endl << endl;
         }
         else if (classtype == 6) {
-            cout << "--The trickster class unlocks its special skill (Confuse) at level 50. This skill has a 40% chance to make the enemy attack itself with a crit rate of 30% and it negates all defence.--" << endl << endl;
+            cout << "--The trickster class unlocks its special skill (Confuse) at level 50. This skill has a 40% chance to make the enemy attack itself with a crit rate of 30% and it negates all defence, but, if it fails the enemy will also have 100% accuracy for that attack.--" << endl << endl;
         }
-        cout << "**NOTE** All special skills have 100% accuracy." << endl << endl;
+        cout << "**NOTE** All special skills have 100% accuracy and 10% crit chance." << endl << endl;
         attack(Target);
         break;
     case 1:
@@ -1265,6 +1265,11 @@ void Player::attack(Character* Target) {
             if (addLifeChance <= 5) {
                 addlives(1);
                 x = r() % 4 + 4 + ((level >= 75) ? 30 : floor(level / 2.5)) + attackPower;
+                int critchance = 0;
+                critchance = r() % 100 + 1;
+                if (critchance <= 10) {
+                     x = ceil(x * 1.5);
+                }
             if (playercompanion == true) {
                 int randomcompanionevent = 0;
                 cout << "-----------------------------------------------" << endl;
@@ -1294,6 +1299,11 @@ void Player::attack(Character* Target) {
             }
             else if (addLifeChance > 5 && addLifeChance <= 50) {
                 x = r() % 4 + 4 + ((level >= 75) ? 30 : floor(level / 2.5)) + attackPower;
+                int critchance = 0;
+                critchance = r() % 100 + 1;
+                if (critchance <= 10) {
+                     x = ceil(x * 1.5);
+                }
                 if (playercompanion == true) {
                     int randomcompanionevent = 0;
                     cout << "-----------------------------------------------" << endl;
@@ -1329,6 +1339,11 @@ void Player::attack(Character* Target) {
         }
         else if (warforgedmove == true) {
             x = r() % 26 + 25;
+            int critchance = 0;
+            critchance = r() % 100 + 1;
+            if (critchance <= 10) {
+                x = ceil(x * 1.5);
+            }
             if (playercompanion == true) {
                 int randomcompanionevent = 0;
                 cout << "-----------------------------------------------" << endl;
@@ -1380,6 +1395,11 @@ void Player::attack(Character* Target) {
         }
         else if (knightmove == true) {
             x = r() % 7 + 8 + ((level >= 75) ? 30 : floor(level / 2.5)) + attackPower;
+            int critchance = 0;
+            critchance = r() % 100 + 1;
+            if (critchance <= 10) {
+                x = ceil(x * 1.5);
+            }
             if (playercompanion == true) {
                 int randomcompanionevent = 0;
                 cout << "-----------------------------------------------" << endl;
@@ -1426,30 +1446,25 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a healing buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
                     cout << "Your companion didn't do anything this round.";
                 }
             }
-            h = x;
+            x = x + floor(defence / 2);
+            Target->takeDmg(x);
+            cout << endl;
             cout << "-----------------------------------------------" << endl;
-            if (health >= maxhealth) {
-                health = maxhealth;
-                cout << "You have no wounds to heal." << endl;
-            }
-            else {
-                health += h;
-                cout << "You healed for " << h << " damage." << endl;
-            }
+            cout << name << ", you dealt " << x << " damage." << endl;
             break;
         }
         else if (executionermove == true) {
             x = r() % 11 + 7 + ((level >= 75) ? 30 : floor(level / 2.5)) + attackPower;
             int critrate;
             critrate = r() % 100 + 1;
-            if (critrate <= 20) {
+            if (critrate <= 10) {
                 x = ceil(x * 1.5);
             }
             if (playercompanion == true) {
