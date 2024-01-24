@@ -191,6 +191,10 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
     case 11:
         return new Enemy("Boss Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
+	case 12: 
+		cout << "An endless mode boss has arrived..." << endl;
+		return new Enemy("Jock Mushroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+		break;
     default:
         return new Enemy("Creator Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
         break;
@@ -340,6 +344,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 			enemylives2 = ceil(lives2 * .5);
 			enemylvl2 = level2;
 			enemymaxh2 = enemyhp2;
+			x = 12;
 		}
 	}
 	switch (x) {
@@ -378,6 +383,10 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 		break;
 	case 11:
 		return new Enemy("Boss Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+		break;
+	case 12: 
+		cout << "An endless mode boss has arrived..." << endl;
+		return new Enemy("Jock Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
 		break;
 	default:
 		return new Enemy("Creator Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
@@ -528,6 +537,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 			enemylives3 = ceil(lives3 * .5);
 			enemylvl3 = level3;
 			enemymaxh3 = enemyhp3;
+			x = 12;
 		}
 	}
 	switch (x) {
@@ -566,6 +576,10 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 		break;
 	case 11:
 		return new Enemy("Florida Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+		break;
+	case 12: 
+		cout << "An endless mode boss has arrived..." << endl;
+		return new Enemy("Jock Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
 		break;
 	default:
 		return new Enemy("Creator Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
@@ -706,6 +720,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 			enemylives4 = ceil(lives4 * .5);
 			enemylvl4 = level4;
 			enemymaxh4 = enemyhp4;
+			x = 12;
 		}
 	}
 	switch (x) {
@@ -744,6 +759,10 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 		break;
 	case 11:
 		return new Enemy("Boomaroo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+		break;
+	case 12: 
+		cout << "An endless mode boss has arrived..." << endl;
+		return new Enemy("Jock Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
 		break;
 	default:
 		return new Enemy("Creator Kangaroo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
@@ -894,6 +913,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 			enemylives5 = ceil(lives5 * .5);
 			enemylvl5 = level5;
 			enemymaxh5 = enemyhp5;
+			x = 12;
 		}
 	}
 	switch (x) {
@@ -932,6 +952,10 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 		break;
 	case 11:
 		return new Enemy("Super Skellie", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+		break;
+	case 12: 
+		cout << "An endless mode boss has arrived..." << endl;
+		return new Enemy("Jock Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
 		break;
 	default:
 		return new Enemy("Creator Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
