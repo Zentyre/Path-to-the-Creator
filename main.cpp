@@ -7,8 +7,9 @@
 #include "Enemy.h"
 using namespace std;
 random_device r1;
+Player Knight("Player", 50, 25, 4, 1, 1, 1);
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives, int playerclass) {
-    int x = 0, enemyhp = 0, enemyatk = 0, enemylives = 0, enemydef = 0, enemylvl = 0, enemymaxh = 0;
+    int x = 0, z = 0, enemyhp = 0, enemyatk = 0, enemylives = 0, enemydef = 0, enemylvl = 0, enemymaxh = 0;
     if (baselevel == 200) {
         x = 12;
     }
@@ -139,6 +140,16 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 			else {
 				enemylives = 1;
 			}
+			enemylvl = level;
+			enemymaxh = enemyhp;
+		}
+	}
+	if (Knight.endlessmode == true && Knight.getkills() > 200) {
+		if (Knight.getkills() % 50 == 0) {
+			enemyhp = ceil(hp * 1.25);
+			enemyatk = ceil(def * 2);
+			enemydef = ceil(atk * .8);
+			enemylives = ceil(lives * .5);
 			enemylvl = level;
 			enemymaxh = enemyhp;
 		}
@@ -321,6 +332,16 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 			enemymaxh2 = enemyhp2;
 		}
 	}
+	if (Knight.endlessmode == true && Knight.getkills() > 200) {
+		if (Knight.getkills() % 50 == 0) {
+			enemyhp2 = ceil(hp2 * 1.25);
+			enemyatk2 = ceil(def2 * 2);
+			enemydef2 = ceil(atk2 * .8);
+			enemylives2 = ceil(lives2 * .5);
+			enemylvl2 = level2;
+			enemymaxh2 = enemyhp2;
+		}
+	}
 	switch (x) {
 	case 0:
 		return new Enemy("Slime", 20, 1, 0, 1, 0, 20);
@@ -499,6 +520,16 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 			enemymaxh3 = enemyhp3;
 		}
 	}
+	if (Knight.endlessmode == true && Knight.getkills() > 200) {
+		if (Knight.getkills() % 50 == 0) {
+			enemyhp3 = ceil(hp3 * 1.25);
+			enemyatk3 = ceil(def3 * 2);
+			enemydef3 = ceil(atk3 * .8);
+			enemylives3 = ceil(lives3 * .5);
+			enemylvl3 = level3;
+			enemymaxh3 = enemyhp3;
+		}
+	}
 	switch (x) {
 	case 0:
 		return new Enemy("Croc", 20, 1, 0, 1, 0, 20);
@@ -663,6 +694,16 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 			else {
 				enemylives4 = 1;
 			}
+			enemylvl4 = level4;
+			enemymaxh4 = enemyhp4;
+		}
+	}
+	if (Knight.endlessmode == true && Knight.getkills() > 200) {
+		if (Knight.getkills() % 50 == 0) {
+			enemyhp4 = ceil(hp4 * 1.25);
+			enemyatk4 = ceil(def4 * 2);
+			enemydef4 = ceil(atk4 * .8);
+			enemylives4 = ceil(lives4 * .5);
 			enemylvl4 = level4;
 			enemymaxh4 = enemyhp4;
 		}
@@ -845,6 +886,16 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 			enemymaxh5 = enemyhp5;
 		}
 	}
+	if (Knight.endlessmode == true && Knight.getkills() > 200) {
+		if (Knight.getkills() % 50 == 0) {
+			enemyhp5 = ceil(hp5 * 1.25);
+			enemyatk5 = ceil(def5 * 2);
+			enemydef5 = ceil(atk5 * .8);
+			enemylives5 = ceil(lives5 * .5);
+			enemylvl5 = level5;
+			enemymaxh5 = enemyhp5;
+		}
+	}
 	switch (x) {
 	case 0:
 		return new Enemy("Skeleton", 20, 1, 0, 1, 0, 20);
@@ -888,7 +939,6 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 	}
 }
 int main() {
-	Player Knight("Player", 50, 25, 4, 1, 1, 1);
 	string modeChoice = "";
 	cout << "Would you like to play in story mode or compete in... endless mode?" << endl;
 	cin >> modeChoice;
