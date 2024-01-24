@@ -751,10 +751,10 @@ void Player::attack(Character* Target) {
             cout << "--The soulweaver class unlocks its special skill (Fortuitous Gambit) at level 90. This skill is a little damage attack that has a 5% chance to give you a life and a 50% chance to deal damage.--" << endl << endl;
         }
         else if (classtype == 4) {
-            cout << "--The warforged engineer unlocks its special skill (Guardians Respite) at level 75. This skill makes the enemy deal less damage for 2 turns and heals you over the two rounds but you deal much less damage in its duration.--" << endl << endl;
+            cout << "--The warforged engineer unlocks its special skill (Risky Detonation) at level 75. This skill throws a very high damage bomb but also damages you. As this class enemies have 50% of your defence instead of the usual 75%.--" << endl << endl;
         }
         else if (classtype == 5) {
-            cout << "--The dreadnought class unlocks its special skill (Healing Remedy) at level 75. This skill is a better than normal single heal and has a 10% crit chance.--" << endl << endl;
+            cout << "--The dreadnought class unlocks its special skill (Fortress Fury) at level 75. This skill deals damage that scales with your defence.--" << endl << endl;
         }
         else if (classtype == 6) {
             cout << "--The trickster class unlocks its special skill (Confuse) at level 50. This skill has a 40% chance to make the enemy attack itself with a crit rate of 30% and it negates all defence, but, if it fails the enemy will also have 100% accuracy for that attack.--" << endl << endl;

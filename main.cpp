@@ -45,7 +45,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
     else {
         x = r1() % 2;
     }
-	if (playerclass == 1 || playerclass == 2 || playerclass == 3 || playerclass == 6) {
+	if (playerclass == 1 || playerclass == 2 || playerclass == 3 || playerclass == 5 || playerclass == 6) {
 		if (x == 3 || x == 4 || x == 5 || x == 7 || x == 8 || x == 9 || x == 10) {
 			enemyatk = floor(def * 1.25);
 			enemydef = floor(atk * .75);
