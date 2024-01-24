@@ -7,7 +7,7 @@
 #include "Enemy.h"
 using namespace std;
 random_device r1;
-Player Knight("Player", 50, 25, 4, 1, 1, 1);
+Player Knight("Player", 50, 25, 4, 0, 1, 1);
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives, int playerclass) {
     int x = 0, z = 0, enemyhp = 0, enemyatk = 0, enemylives = 0, enemydef = 0, enemylvl = 0, enemymaxh = 0;
     if (baselevel == 200) {
@@ -156,10 +156,10 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 	}
     switch (x) {
     case 0:
-        return new Enemy("Shroom", 20, 1, 0, 1, 1, 20);
+        return new Enemy("Shroom", 20, 3, 0, 1, 1, 20);
         break;
     case 1:
-        return new Enemy("Shroom Knight", 25, 1, 0, 1, 2, 25);
+        return new Enemy("Shroom Knight", 25, 4, 0, 1, 2, 25);
         break;
     case 2:
         return new Enemy("Shroom ArchKnight", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);

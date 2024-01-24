@@ -40,7 +40,7 @@ void Player::playerclassdreadnought() {
     maxhealth += 50;
     health += 25;
     attackPower -= 3;
-    defence += 2;
+    defence += 3;
     classtype = 5;
 }
 void Player::playerclasstrickster() {
