@@ -294,17 +294,14 @@ void Player::setmaxhealth() {
     if (classtype == 2) {
         charactermaxhealth -= 20;
     }
-    if (classtype == 3) {
+    else if (classtype == 3 || classtype == 6) {
         charactermaxhealth -= 10;
     }
-    if (classtype == 4) {
+   else if (classtype == 4) {
         charactermaxhealth += 30;
     }
-    if (classtype == 5) {
+    else if (classtype == 5) {
         charactermaxhealth += 50;
-    }
-    if (classtype == 6) {
-        charactermaxhealth -= 10;
     }
     maxhealth = charactermaxhealth;
 }
