@@ -5,7 +5,6 @@
 #include <cmath>
 #include <random>
 using namespace std;
-random_device r2;
 class Player : public Character {
 public:
 	Player(string n, int maxh, int hp, int atk, int def, int baselvl, int live);

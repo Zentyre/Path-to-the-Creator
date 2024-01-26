@@ -45,9 +45,10 @@ public:
 	int invisibilitypotion = 0;
 	int molotov = 0;
 	int incrementamount = 0;
-	void itemuseinvispotion(Enemy* Target);
+	void itemuseinvispotion(Character* Target);
 	void itemusemolotov(Character* Target);
 	void addlives(int extralives);
+	void killenemy();
 	virtual void attack(Character* Target) = 0;
 	virtual void takeDmg(int d);
 };

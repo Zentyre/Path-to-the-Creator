@@ -28,8 +28,4 @@ public:
 			}
 		}
 	}
-	void killenemy() {
-		lives = 0;
-		health = 0;
-	}
 };
