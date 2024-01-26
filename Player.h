@@ -49,6 +49,8 @@ public:
 	bool horsemount = false;
 	bool dragonmount = false;
 	bool goldloomMagnet = false;
+	bool regenerativemantle = false;
+	bool fallen = false;
 	bool Knife = false;
 	bool Sword = false;
 	bool Excalibur = false;

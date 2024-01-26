@@ -76,6 +76,9 @@ void Player::itemusehealthtonic() {
 void Player ::forgerestarting() {
     string forgeUpgrade = "", forgechoice = "";
         cout << "What would you like to upgrade?" << endl;
+        if (ciphertracker == 4) {
+            cout << "If you are here to craft the Regenerative Mantle, type Mantle." << endl;
+        }
         cin >> ws;
         getline(cin, forgeUpgrade);
         if (forgeUpgrade == "narso's armor" || forgeUpgrade == "Narso's armor" || forgeUpgrade == "Narso's Armor" || forgeUpgrade == "narso's Armor" && (armorupgrade == true || lightningshard == true)) {
@@ -211,6 +214,31 @@ void Player ::forgerestarting() {
                 cout << "You have upgraded your Voidshroud Slicer using a Weapon Upgrade!" << endl;
                 upgradedvoidshroudslicer = true;
                 checkitems();
+            }
+        }
+        else if (forgeUpgrade == "Mantle" || forgeUpgrade == "mantle") {
+            string yesno = "";
+            cout << "Are you sure you want to craft the Regenerative Mantle?" << endl;
+            cin >> ws;
+            getline(cin, yesno);
+            if (yesno == "Yes" || yesno == "yes") {
+                if (radiantgem >= 4 && soulstone >= 2 && Goldloom >= 50 && healthtonicitem >= 1) {
+                    cout << "You now have the Regenerative Mantle!" << endl;
+                    radiantgem -= 4;
+                    soulstone -= 2;
+                    Goldloom -= 50;
+                    healthtonicitem -= 1;
+                    regenerativemantle = true;
+                }
+                else {
+                    cout << "You don't have the required materials to craft this yet." << endl;
+                }
+            }
+            else if (yesno == "No" || yesno == "no") {
+                cout << "Come again later and ill make it for ya." << endl;
+            }
+            else {
+                cout << "That wasnt yes or no." << endl;
             }
         }
         else {
@@ -633,7 +661,6 @@ void Player::attack(Character* Target) {
     string purchasechoice = "", yesnobackpack = "", yesnopurchase = "", forgerestart = "";
     int accuracy = 0;
     int warforgedabilitytracker = 0;
-    bool fallen = false;
     if (classtype == 1) { //knight attack messages |health =25|attackPower=4|lives=1|
         if (knightmove == true) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Titans Strike) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 0 (Special Skill Info)" << endl;
@@ -810,6 +837,19 @@ void Player::attack(Character* Target) {
                     cout << "Your companion didn't do anything this round.";
                 }
             }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
+                }
+            }
             Target->takeDmg(x);
             cout << endl;
             fallen = false;
@@ -860,6 +900,19 @@ void Player::attack(Character* Target) {
                 }
                 else {
                     cout << "Your companion didn't do anything this round.";
+                }
+            }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
                 }
             }
             Target->takeDmg(x);
@@ -922,6 +975,19 @@ void Player::attack(Character* Target) {
                     cout << "Your companion didn't do anything this round.";
                 }
             }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
+                }
+            }
             Target->takeDmg(x);
             h = ceil(x / 2.5);
             health += h;
@@ -958,6 +1024,19 @@ void Player::attack(Character* Target) {
                 }
                 else {
                     cout << "Your companion didn't do anything this round.";
+                }
+            }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
                 }
             }
             Target->takeDmg(x);
@@ -1004,6 +1083,19 @@ void Player::attack(Character* Target) {
                 }
                 else {
                     cout << "Your companion didn't do anything this round.";
+                }
+            }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
                 }
             }
             Target->takeDmg(x);
@@ -1056,6 +1148,19 @@ void Player::attack(Character* Target) {
                 }
                 else {
                     cout << "Your companion didn't do anything this round.";
+                }
+            }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
                 }
             }
             Target->takeDmg(x);
@@ -1128,6 +1233,19 @@ void Player::attack(Character* Target) {
                     cout << "Your companion didn't do anything this round.";
                 }
             }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
+                }
+            }
             h = x;
             health += h;
             cout << "-----------------------------------------------" << endl;
@@ -1161,6 +1279,19 @@ void Player::attack(Character* Target) {
                 }
                 else {
                     cout << "Your companion didn't do anything this round.";
+                }
+            }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
                 }
             }
             h = x;
@@ -1213,6 +1344,19 @@ void Player::attack(Character* Target) {
                     cout << "Your companion didn't do anything this round.";
                 }
             }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
+                }
+            }
             Target->takeDmg(x);
             h = ceil(x / 2.5);
             health += h;
@@ -1250,6 +1394,19 @@ void Player::attack(Character* Target) {
                 }
                 else {
                     cout << "Your companion didn't do anything this round.";
+                }
+            }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
                 }
             }
             Target->takeDmg(x);
@@ -1314,6 +1471,19 @@ void Player::attack(Character* Target) {
                     cout << "Your companion didn't do anything this round.";
                 }
             }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
+                }
+            }
                 Target->takeDmg(x);
                 cout << "-----------------------------------------------" << endl;
                 cout << name << ", you dealt " << x << " damage and gained an extra life!" << endl;
@@ -1348,6 +1518,19 @@ void Player::attack(Character* Target) {
                         cout << "Your companion didn't do anything this round.";
                     }
                 }
+                if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
+                }
+            }
                 Target->takeDmg(x);
                 cout << "-----------------------------------------------" << endl;
                 cout << name << ", you dealt " << x << " damage." << endl;
@@ -1388,6 +1571,19 @@ void Player::attack(Character* Target) {
                     cout << "Your companion didn't do anything this round.";
                 }
             }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
+                }
+            }
             cout << "You threw a bomb at the enemy, it dealt " << x << " damage! You took " << ceil(x / 2.5) << " damage." << endl;
             Target->takeDmg(x);
             health -= ceil(x / 2.5);
@@ -1397,7 +1593,7 @@ void Player::attack(Character* Target) {
             break;
         }
         else if (trickstermove == true) {
-                if (playercompanion == true) {
+            if (playercompanion == true) {
                 int randomcompanionevent = 0;
                 cout << "-----------------------------------------------" << endl;
                 randomcompanionevent = r() % 3;
@@ -1411,6 +1607,19 @@ void Player::attack(Character* Target) {
                 }
                 else {
                     cout << "Your companion didn't do anything this round.";
+                }
+            }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
                 }
             }
             trickstermovebool = true;
@@ -1442,6 +1651,19 @@ void Player::attack(Character* Target) {
                 }
                 else {
                     cout << "Your companion didn't do anything this round.";
+                }
+            }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
                 }
             }
             Target->takeDmg(x);
@@ -1477,6 +1699,19 @@ void Player::attack(Character* Target) {
                     cout << "Your companion didn't do anything this round.";
                 }
             }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
+                }
+            }
             x = x + floor(defence / 2);
             Target->takeDmg(x);
             cout << endl;
@@ -1509,6 +1744,19 @@ void Player::attack(Character* Target) {
                 }
                 else {
                     cout << "Your companion didn't do anything this round.";
+                }
+            }
+            if (regenerativemantle == true) {
+                setmaxhealth();
+                int heal = 0;
+                heal += ceil((getlevel() - getbaselevel()) * .25);
+                health += heal;
+                if (health > maxhealth) {
+                    health = maxhealth;
+                    cout << "You had no wounds to heal." << endl;
+                }
+                else if (health < maxhealth) {
+                    cout << "You healed for " << heal << " health." << endl;
                 }
             }
             h = ceil(x * .5);
@@ -1813,14 +2061,13 @@ void Player::attack(Character* Target) {
         cout << "-----------------------------------------------" << endl;
         cout << "Welcome to the forge, " << name << "." << endl;
         cout << "In this ancient place, you can combine special materials with your armor and weapons to enhance their abilities." << endl;
-        if (weaponupgrade == false && armorupgrade == false && lightningshard == false && forgehammer == 0) {
+        if ((weaponupgrade == false && armorupgrade == false && lightningshard == false && forgehammer == 0 && radiantgem == 0 && soulstone == 0)) {
             cout << "You have no upgrades to use yet. Go buy some from the store." << endl;
             cout << "-----------------------------------------------" << endl;
             attack(Target);
             break;
         }
-        cout << "-----------------------------------------------" << endl;
-        cout << "You have these upgrades currently:" << endl;
+                cout << "You have these upgrades currently:" << endl;
         if (weaponupgrade == true) {
             cout << "-Weapon Upgrade-" << endl;
         }
@@ -1834,11 +2081,27 @@ void Player::attack(Character* Target) {
             if (forgehammer == 1) {
             cout << "-" << forgehammer << " Forgehammer-" << endl;
             }
-            else if (forgehammer > 1) {
+            else {
             cout << "-" << forgehammer << " Forgehammers-" << endl;
             }
         }
-        if (dragonscalechestplate == false && mystichelmet == false && glassshoes == false && Excalibur == false && flaminglongsword == false && VoidshroudSlicer == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false) {
+        if (soulstone >= 1) {
+            if (soulstone == 1) {
+                cout << "-" << soulstone << " Soulstone" << endl;
+            }
+            else {
+                cout << "-" << soulstone << " Soulstones" << endl;
+            }
+        }
+        if (radiantgem >= 1) {
+            if (radiantgem == 1) {
+                cout << "-" << radiantgem << " Radiant Gem" << endl;
+            }
+            else {
+                cout << "-" << radiantgem << " Radiant Gems" << endl;
+            }
+        }
+        if (dragonscalechestplate == false && mystichelmet == false && glassshoes == false && Excalibur == false && flaminglongsword == false && VoidshroudSlicer == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && ciphertracker <= 3) {
             cout << "You have no armor or weapons to upgrade, go buy some from the store or get them as a lucky drop." << endl;
             cout << "-----------------------------------------------" << endl;
             attack(Target);
