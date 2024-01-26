@@ -1609,6 +1609,21 @@ int main() {
 						cout << "--You got a cipher key! Use it on blueprints to unlock new information...--" << endl;
 						cout << endl;
 					}
+					else if ((item == 26 || item == 27) && Knight.endlessmode == true && Knight.ciphertracker == 3) {
+						Knight.riddle == true;
+						cout << "--You acquired a special riddle! Use it from your backpack...--" << endl;
+						cout << endl;
+					}
+					else if ((item == 27 || item == 28) && Knight.endlessmode == true && Knight.ciphertracker == 4) {
+						Knight.soulstone += 1;
+						cout << "--You found a rate Soulstone!--" << endl;
+						cout << endl;
+					}
+					else if ((item == 29 || item == 30 || item == 31) && Knight.endlessmode == true && Knight.ciphertracker == 4) {
+						Knight.radiantgem += 1;
+						cout << "--You stumbled upon a Radiant Gem!--" << endl;
+						cout << endl;
+					}
 					if (Knight.getbaselevel() >= 200 && Knight.isAlive() == true) {
 						break;
 					}

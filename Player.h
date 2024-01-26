@@ -40,9 +40,12 @@ public:
 	void itemusehealthtonic();
 	int healthtonicitem = 0;
 	int failedforge = 0;
-	bool cipherkey = false;
 	int cipherblueprint = 0;
 	int ciphertracker = 0;
+	int soulstone = 0;
+	int radiantgem = 0;
+	bool riddle = false;
+	bool cipherkey = false;
 	bool horsemount = false;
 	bool dragonmount = false;
 	bool goldloomMagnet = false;

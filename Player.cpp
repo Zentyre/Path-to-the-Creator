@@ -2093,7 +2093,10 @@ void Player::attack(Character* Target) {
         if (cipherkey == true) {
             cout << "Cipher Key (Use this to read the blueprint...)" << endl;
         }
-        if (cipherkey == false && cipherblueprint == 0 && VoidshroudSlicer == false && lightningvoidshroudslicer == false && upgradedvoidshroudslicer == false && shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && goldloomMagnet == false && horsemount == false && dragonmount == false && molotov == 0 && invisibilitypotion == 0) {
+        if (riddle == true) {
+            cout << "Riddle (Unlocks a special recipe if answered correctly...)" << endl;
+        }
+        if (riddle == false && cipherkey == false && cipherblueprint == 0 && VoidshroudSlicer == false && lightningvoidshroudslicer == false && upgradedvoidshroudslicer == false && shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && goldloomMagnet == false && horsemount == false && dragonmount == false && molotov == 0 && invisibilitypotion == 0) {
             cout << "You have no items yet." << endl;
             cout << "------------------------------------------------" << endl;
             attack(Target);
@@ -2162,6 +2165,23 @@ void Player::attack(Character* Target) {
                 }
                 attack(Target);
                 break;
+            }
+            else if ((itemuse == "riddle" || itemuse == "Riddle") && endlessmode == true && riddle == true) {
+                string riddleanswer = "";
+                cout << "In the heart of shadows, where secrets are born" << endl << "a creature of riddles, with wisdom adorned." << endl << "Its tongue is a puzzle, its voice a maze" << endl << "Speak its name, unlock the hidden ways." << endl;
+                cin >> ws;
+                getline(cin, riddleanswer);
+                if (riddleanswer == "Troll" || riddleanswer == "troll") {
+                    cout << "Thats correct. You have proven your worth and shown you deserve these ingredients. In order to make the Regenerative Mantle, you need 4 Radiant Gems, 2 Soulstone, a healing potion and 50 goldloom for the forgers hard work." << endl;
+                    ciphertracker += 1;
+                    attack(Target);
+                    break;
+                }
+                else {
+                    cout << "You are wrong, try again." << endl;
+                    attack(Target);
+                    break;
+                }
             }
         }
         else if (yesnobackpack == "No" || yesnobackpack == "no" || yesnobackpack == "n" || yesnobackpack == "N") {
