@@ -2087,7 +2087,13 @@ void Player::attack(Character* Target) {
         if (dragonmount == true) {
             cout << "Dragon Mount (Best increase in baselevel on kill)" << endl;
         }
-        if (VoidshroudSlicer == false && lightningvoidshroudslicer == false && upgradedvoidshroudslicer == false && shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && goldloomMagnet == false && horsemount == false && dragonmount == false && molotov == 0 && invisibilitypotion == 0) {
+        if (cipherblueprint >= 1) {
+            cout << "Cipher Blueprint (Use a key to read...)" << endl;   
+        }
+        if (cipherkey == true) {
+            cout << "Cipher Key (Use this to read the blueprint...)" << endl;
+        }
+        if (cipherkey == false && cipherblueprint == 0 && VoidshroudSlicer == false && lightningvoidshroudslicer == false && upgradedvoidshroudslicer == false && shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && goldloomMagnet == false && horsemount == false && dragonmount == false && molotov == 0 && invisibilitypotion == 0) {
             cout << "You have no items yet." << endl;
             cout << "------------------------------------------------" << endl;
             attack(Target);
@@ -2100,23 +2106,62 @@ void Player::attack(Character* Target) {
         getline(cin, yesnobackpack);
         if (yesnobackpack == "Yes" || yesnobackpack == "yes" || yesnobackpack == "y" || yesnobackpack == "Y") {
             cout << "Which item would you like to use?" << endl;
+            if (healthtonicitem >= 1) {
+                cout << "-Health Tonic-" << endl;
+            }
+            if (invisibilitypotion >= 1) {
+                cout << "Invisibility Potion-" << endl;
+            }
+            if (molotov >= 1) {
+                cout << "-Molotov-" << endl;
+            }
+            if (cipherkey == true && endlessmode == true) {
+                cout << "-Cipher Key-" << endl;
+            }
             string itemuse = "";
             cin >> ws;
             getline(cin, itemuse);
-            if (itemuse == "Health Tonic" || itemuse == "Health tonic" || itemuse == "health tonic") {
+            if ((itemuse == "Health Tonic" || itemuse == "Health tonic" || itemuse == "health tonic") && healthtonicitem >= 1) {
                 cout << "You used a Health Tonic!" << endl;
                 itemusehealthtonic();
             }
-            else if (itemuse == "Invisibility Potion" || itemuse == "Invisibility potion" || itemuse == "invisibility potion") {
+            else if ((itemuse == "Invisibility Potion" || itemuse == "Invisibility potion" || itemuse == "invisibility potion") && invisibilitypotion >= 1) {
                 cout << "You used an Invisibility Potion!" << endl;
                 usinginvispotion = true;
-                itemuseinvispotion(Target); //wins game if used
-                break;
+                itemuseinvispotion(Target); //test to see if works
             }
             else if (itemuse == "Molotov" || itemuse == "molotov") {
                 cout << "------------------------------------------------" << endl;
                 cout << "You used a Molotov!" << endl;
                 itemusemolotov(Target);
+            }
+            else if ((itemuse == "Cipher Key" || itemuse == "Cipher key"|| itemuse == "cipher key"|| itemuse == "cipher Key") && cipherkey == true && endlessmode == true) {
+                cout << "------------------------------------------------" << endl;
+                if (cipherblueprint >= 1) {
+                    if (ciphertracker == 0) {
+                        ciphertracker += 1;
+                        cout << "You hear a distant roar, 18..." << endl;
+                        cipherblueprint -= 1;
+                    }
+                    else if (ciphertracker == 1) {
+                        ciphertracker += 1;
+                        cout << "You hear another distant roar, 20..." << endl;
+                        cipherblueprint -= 1;
+                    }
+                    else if (ciphertracker == 2) {
+                        ciphertracker += 1;
+                        cout << "You hear the last distant roar, 97..." << endl;
+                        cipherblueprint -= 1;
+                    }
+                    else {
+                        cout << "You've already heard all of the clues." << endl;
+                    }
+                }
+                else {
+                    cout << "You don't have a cipher blueprint to read." << endl;
+                }
+                attack(Target);
+                break;
             }
         }
         else if (yesnobackpack == "No" || yesnobackpack == "no" || yesnobackpack == "n" || yesnobackpack == "N") {
@@ -2127,6 +2172,13 @@ void Player::attack(Character* Target) {
         }
         attack(Target);
         break;
+    case 182097:
+        if (ciphertracker == 3) {
+            cout << "You've unlocked a secret blueprint to the Regenerative Mantle. Find some more clues to find the ingredients..." << endl;
+        }
+        else {
+            cout << "Nice try bud, I knew you would try that." << endl;
+        }
     default:
         cout << "-------------------------" << endl;
         cout << "Invalid Move, try again!" << endl;

@@ -3,8 +3,9 @@
 #include <string>
 #include <iostream>
 #include <cmath>
+#include <random>
 using namespace std;
-
+random_device r2;
 class Player : public Character {
 public:
 	Player(string n, int maxh, int hp, int atk, int def, int baselvl, int live);
@@ -37,7 +38,12 @@ public:
 	void playerclassdreadnought();
 	void playerclasstrickster();
 	void itemusehealthtonic();
+	int randomciphernumber = r2() % 100000;
+	int healthtonicitem = 0;
 	int failedforge = 0;
+	bool cipherkey = false;
+	int cipherblueprint = 0;
+	int ciphertracker = 0;
 	bool horsemount = false;
 	bool dragonmount = false;
 	bool goldloomMagnet = false;

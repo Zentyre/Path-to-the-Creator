@@ -23,7 +23,6 @@ public:
 	int lives;
 	int Goldloom = 0;
 	int storetracker = 0;
-	int healthtonicitem = 0;
 	bool isAlive();
 	bool killplayer = false;
 	bool usinginvispotion = false;
@@ -46,7 +45,7 @@ public:
 	int invisibilitypotion = 0;
 	int molotov = 0;
 	int incrementamount = 0;
-	void itemuseinvispotion(Character* Target);
+	void itemuseinvispotion(Enemy* Target);
 	void itemusemolotov(Character* Target);
 	void addlives(int extralives);
 	virtual void attack(Character* Target) = 0;

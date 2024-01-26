@@ -1596,7 +1596,17 @@ int main() {
 					}
 					else if (item == 21 && Knight.goldloomMagnet == false) {
 						Knight.goldloomMagnet = true;
-						cout << "--Your shop now appears more frequently and you get more money! (Goldloom Magnet)--" << endl;
+						cout << "--The shop now refreshes more frequently and you get more Goldloom! (Goldloom Magnet)--" << endl;
+						cout << endl;
+					}
+					else if ((item == 22 || item == 23) && Knight.endlessmode == true) {
+						Knight.cipherblueprint += 1;
+						cout << "--You got a cipher blueprint! Use the key to read it...--" << endl;
+						cout << endl;
+					}
+					else if ((item == 24 || item == 25) && Knight.endlessmode == true) {
+						Knight.cipherkey == true;
+						cout << "--You got a cipher key! Use it on blueprints to unlock new information...--" << endl;
 						cout << endl;
 					}
 					if (Knight.getbaselevel() >= 200 && Knight.isAlive() == true) {

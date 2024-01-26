@@ -66,8 +66,8 @@ int Character::incrementkills() {
 int Character::setkillplayer() {
 	return killplayer = true;
 }
-void Character::itemuseinvispotion(Character* Target) {
-	Target->takeDmg(1000000);
+void Character::itemuseinvispotion(Enemy* Target) {
+	Target->killenemy();
 	invisibilitypotion -= 1;
 }
 void Character::addlives(int extralives) {
@@ -75,7 +75,7 @@ void Character::addlives(int extralives) {
 }
 void Character::itemusemolotov(Character* Target) {
 	int molotovdmg;
-	molotovdmg = ceil(Target->gethealth() * .6);
+	molotovdmg = floor(Target->gethealth() * .6);
 	Target->takeDmg(molotovdmg);
 	cout << "You dealt " << molotovdmg << " damage using the molotov." << endl;
 	cout << "The enemy has " << Target->gethealth() << " health remaining." << endl;
