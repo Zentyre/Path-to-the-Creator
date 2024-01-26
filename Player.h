@@ -38,7 +38,6 @@ public:
 	void playerclassdreadnought();
 	void playerclasstrickster();
 	void itemusehealthtonic();
-	int randomciphernumber = r2() % 100000;
 	int healthtonicitem = 0;
 	int failedforge = 0;
 	bool cipherkey = false;
