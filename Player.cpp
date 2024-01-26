@@ -50,6 +50,29 @@ void Player::playerclasstrickster() {
     defence += 1;
     classtype = 6;
 }
+void Player::itemusehealthtonic() {
+    setmaxhealth();
+	if (level >= 200) {
+		health += 150;
+	}
+	else if (level >= 150) {
+		health += 100;
+	}
+	else if (level >= 100) {
+		health += 75;
+	}
+	else if (level >= 50) {
+		health += 50;
+	}
+	else {
+		health += 25;
+	}
+	if (health > maxhealth) {
+		health = maxhealth;
+	}
+	healthtonicitem -= 1;
+	cout << "You now have " << health << " health." << endl;
+}
 void Player ::forgerestarting() {
     string forgeUpgrade = "", forgechoice = "";
         cout << "What would you like to upgrade?" << endl;
@@ -235,7 +258,7 @@ void Player::setmaxhealth() {
     }
     //adds more health based on maxhealthupgrade amount
     if (maxhealthtracker >= 1) {
-        charactermaxhealth += ceil(50 * maxhealthtracker);
+        charactermaxhealth += 50 * maxhealthtracker;
     }
     //adds more health based on items
     if (upgradedexcalibur == true) {

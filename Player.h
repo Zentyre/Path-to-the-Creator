@@ -36,6 +36,7 @@ public:
 	void playerclasswarforged();
 	void playerclassdreadnought();
 	void playerclasstrickster();
+	void itemusehealthtonic();
 	int failedforge = 0;
 	bool horsemount = false;
 	bool dragonmount = false;

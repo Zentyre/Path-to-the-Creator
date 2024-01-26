@@ -66,25 +66,6 @@ int Character::incrementkills() {
 int Character::setkillplayer() {
 	return killplayer = true;
 }
-void Character::itemusehealthtonic() {
-	if (level >= 150) {
-		health += 100;
-	}
-	else if (level >= 100) {
-		health += 75;
-	}
-	else if (level >= 50) {
-		health += 50;
-	}
-	else {
-		health += 25;
-	}
-	if (health > maxhealth) {
-		health = maxhealth;
-	}
-	healthtonicitem -= 1;
-	cout << "You now have " << health << " health." << endl;
-}
 void Character::itemuseinvispotion(Character* Target) {
 	Target->takeDmg(1000000);
 	invisibilitypotion -= 1;
