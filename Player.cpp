@@ -2445,7 +2445,9 @@ void Player::attack(Character* Target) {
         if (lightningglassshoes == true) {
             cout << "Lightning Glass Shoes (+9 Defence|+12 Attack)" << endl;
         }
-        cout << "--Upgrades/Potions--" << endl;
+        if (defenceupgrade == true || attackupgrade == true || levelupgrade == true || maxhealthtracker > 0 || levelupgrade == true || tracklevelpotion > 0 ||tracksuperiorlevelpotion > 0 || tracksuperpotion > 0 || leveltonic == true ||superiorleveltonic == true || superpotion == true) {
+            cout << "--Upgrades/Potions--" << endl;
+        }
         if (defenceupgrade == true) {
             cout << "Defence Perk (+10 defence)" << endl;
         }
@@ -2455,16 +2457,16 @@ void Player::attack(Character* Target) {
         if (levelupgrade == true) {
             cout << "Level Perk (+15 level)" << endl;
         }
-        if (maxhealthtracker >= 1) {
+        if (maxhealthtracker > 0) {
             cout << "Max Health Upgrade (+" << 50 * maxhealthtracker << " maxhealth)" << endl;
         }
-        if (tracklevelpotion >= 1) {
+        if (tracklevelpotion > 0) {
             cout << "Level Potions (+ " << 10 * tracklevelpotion << " levels)" << endl;
         }
-        if (tracksuperiorlevelpotion >= 1) {
+        if (tracksuperiorlevelpotion > 0) {
             cout << "Superior Level Potions (+ " << 15 * tracksuperiorlevelpotion << " levels)" << endl;
         }
-        if (tracksuperpotion >= 1) {
+        if (tracksuperpotion > 0) {
             cout << "Super Potions (+ " << 15 * tracksuperpotion << " levels + " << 6 * tracksuperpotion << " Attack)" << endl;
         }
         if (leveltonic == true) {
@@ -2476,7 +2478,9 @@ void Player::attack(Character* Target) {
         if (superpotion == true) {
             cout << "Super Potion (+20 level|+10 attack)" << endl;
         }
-        cout << "--Special Items--" << endl;
+        if (travelersbackpack == true || playercompanion == true || goldloomMagnet == true || horsemount == true || dragonmount == true || cipherblueprint > 0 || armorupgrade == true || weaponupgrade == true || lightningshard == true || forgehammer > 0) {
+            cout << "--Special Items--" << endl;
+        }
         if (travelersbackpack == true) {
             cout << "Travelers Backpack (Allows you to hold potions)" << endl;
         }
@@ -2492,8 +2496,8 @@ void Player::attack(Character* Target) {
         if (dragonmount == true) {
             cout << "Dragon Mount (Best increase in baselevel on kill)" << endl;
         }
-        if (cipherblueprint >= 1) {
-            cout << "Cipher Blueprint (Use a key to read...)" << endl;   
+        if (cipherblueprint > 0) {
+            cout << cipherblueprint << " Cipher Blueprint (Use a key to read...)" << endl;   
         }
         if (armorupgrade == true) {
             cout << "Armor Plating (Used to upgrade armor)" << endl;
@@ -2507,7 +2511,9 @@ void Player::attack(Character* Target) {
         if (forgehammer > 0) {
             cout << forgehammer << " Forge Hammer (Used with other items to enhance artillery)" << endl;
         }
-        cout << "--Usable--" << endl;
+        if (invisibilitypotion > 0 || healthtonicitem > 0 && molotov > 0 || cipherkey == true || riddle == true) {
+            cout << "--Usable--" << endl;
+        }
         if (invisibilitypotion > 0) {
             cout << invisibilitypotion << " Invisibility Potion (Skip a battle)" << endl;
         }
