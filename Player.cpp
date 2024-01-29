@@ -247,7 +247,56 @@ void Player::forgerestarting() {
         }
 }
 void Player::forgecrafting() {
+    string craftingchoice = "";
     cout << "You have these crafting materials currently." << endl;
+    if (soulstone >= 1) {
+        if (soulstone == 1) {
+                cout << "-" << soulstone << " Soulstone" << endl;
+    }
+    }
+    else {
+        cout << "-" << soulstone << " Soulstones" << endl;
+    }
+    if (radiantgem >= 1) {
+        if (radiantgem == 1) {
+            cout << "-" << radiantgem << " Radiant Gem" << endl;
+        }
+    }
+    else {
+        cout << "-" << radiantgem << " Radiant Gems" << endl;
+    }
+    cout << "You can currently craft";
+    if (soulstone >= 2 && radiantgem >= 4 && Goldloom >= 50 && healthtonicitem >= 1) {
+        cout << " the Regenerative Mantle." << endl;
+    }
+    cout << "What would you like to craft?" << endl;
+        cin >> ws;
+        getline(cin, craftingchoice);
+        if (craftingchoice == "Mantle" || craftingchoice == "mantle") {
+            string yesno = "";
+            cout << "Are you sure you want to craft the Regenerative Mantle?" << endl;
+            cin >> ws;
+            getline(cin, yesno);
+            if (yesno == "Yes" || yesno == "yes") {
+                if (radiantgem >= 4 && soulstone >= 2 && Goldloom >= 50 && healthtonicitem >= 1) {
+                    cout << "You now have the Regenerative Mantle!" << endl;
+                    radiantgem -= 4;
+                    soulstone -= 2;
+                    Goldloom -= 50;
+                    healthtonicitem -= 1;
+                    regenerativemantle = true;
+                }
+                else {
+                    cout << "You don't have the required materials to craft this yet." << endl;
+                }
+            }
+            else if (yesno == "No" || yesno == "no") {
+                cout << "Come again later and ill make it for ya." << endl;
+            }
+            else {
+                cout << "That wasnt yes or no." << endl;
+            }
+        }
 }
 void Player::setmaxhealth() {
     int charactermaxhealth = 0;
@@ -2096,22 +2145,6 @@ void Player::attack(Character* Target) {
                     }
                     else {
                         cout << "-" << forgehammer << " Forgehammers-" << endl;
-                    }
-                }
-                if (soulstone >= 1) {
-                    if (soulstone == 1) {
-                        cout << "-" << soulstone << " Soulstone" << endl;
-                    }
-                    else {
-                        cout << "-" << soulstone << " Soulstones" << endl;
-                    }
-                }
-                if (radiantgem >= 1) {
-                    if (radiantgem == 1) {
-                        cout << "-" << radiantgem << " Radiant Gem" << endl;
-                    }
-                    else {
-                        cout << "-" << radiantgem << " Radiant Gems" << endl;
                     }
                 }
                 if (dragonscalechestplate == false && mystichelmet == false && glassshoes == false && Excalibur == false && flaminglongsword == false && VoidshroudSlicer == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && ciphertracker <= 3) {
