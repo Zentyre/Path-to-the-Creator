@@ -2347,6 +2347,50 @@ void Player::attack(Character* Target) {
         break;
     case 10: 
         cout << "------------------------------------------------" << endl;
+         if (riddle == false && cipherkey == false && cipherblueprint == 0 && VoidshroudSlicer == false && lightningvoidshroudslicer == false && upgradedvoidshroudslicer == false && shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && goldloomMagnet == false && horsemount == false && dragonmount == false && molotov == 0 && invisibilitypotion == 0) {
+            cout << "You have no items yet." << endl;
+            cout << "------------------------------------------------" << endl;
+            attack(Target);
+            break;
+        }
+        cout << "--Weapons--" << endl;
+        if (lightningflaminglongsword == true) {
+            cout << "Lightning Framing Longsword (+20 Attack)" << endl;
+        }
+        if (upgradedflaminglongsword == true) {
+            cout << "Upgraded Flaming Longsword (+11 Attack|+10% Max Health)" << endl;
+        }
+        if (upgradedexcalibur == true) {
+            cout << "Upgraded Excalibur (+18 Attack|+25% Max Health)" << endl;
+        }
+        if (upgradedvoidshroudslicer == true) {
+            cout << "Upgraded Voidshroud Slicer (+18 Attack|+40% Max Health)" << endl;
+        }
+        if (lightningvoidshroudslicer == true) {
+            cout << "Lightning Voidshroud Slicer (+42 Attack)" << endl;
+        }
+        if (flaminglongsword == true) {
+            cout << "Flaming Longsword (+11 attack)" << endl;
+        }
+        if (lightningexcalibur == true) {
+            cout << "Lightning Excalibur (+35 Attack)" << endl;
+        }
+        if (VoidshroudSlicer == true) {
+            cout << "Voidshroud Slicer (+18 Attack)" << endl;
+        }
+        if (accuratesword == true) {
+            cout << "Accurate Sword (No more slipping!)" << endl;
+        }
+        if (Excalibur == true) {
+            cout << "Excalibur (+14 attack)" << endl;
+        }
+        if (Knife == true) {
+            cout << "Knife (+2 attack)" << endl;
+        }
+        if (Sword == true) {
+            cout << "Sword (+4 attack)" << endl;
+        }
+        cout << "--Armor--" << endl;
         if (vladimirsArmor == true) {
             cout << "Vladimir's Armor (+20 defence)" << endl;
         }
@@ -2365,9 +2409,6 @@ void Player::attack(Character* Target) {
         if (dragonscalechestplate == true) {
             cout << "Dragonscale Chestplate (+11 defence|+14 maxhealth)" << endl;
         }
-        if (VoidshroudSlicer == true) {
-            cout << "Voidshroud Slicer (+18 Attack)" << endl;
-        }
         if (helmet == true) {
             cout << "Helmet (+7 defence|+5 maxhealth)" << endl;
         }
@@ -2380,92 +2421,14 @@ void Player::attack(Character* Target) {
         if (chestplate == true) {
             cout << "Chestplate (+10 defence|+8 maxhealth)" << endl;
         }
-        if (leveltonic == true) {
-            cout << "Level Tonic (+10 level)" << endl;
-        }
-        if (superiorleveltonic == true) {
-            cout << "Superior Level Tonic (+15 level)" << endl;
-        }
-        if (superpotion == true) {
-            cout << "Super Potion (+20 level|+10 attack)" << endl;
-        }
-        if (defenceupgrade == true) {
-            cout << "Defence Perk (+10 defence)" << endl;
-        }
-        if (attackupgrade == true) {
-            cout << "Attack Perk (+10 attack)" << endl;
-        }
-        if (levelupgrade == true) {
-            cout << "Level Perk (+15 level)" << endl;
-        }
-        if (tracklevelpotion >= 1) {
-            cout << "Level Potions (+ " << 10 * tracklevelpotion << " levels)" << endl;
-        }
-        if (tracksuperiorlevelpotion >= 1) {
-            cout << "Superior Level Potions (+ " << 15 * tracksuperiorlevelpotion << " levels)" << endl;
-        }
-        if (tracksuperpotion >= 1) {
-            cout << "Super Potions (+ " << 15 * tracksuperpotion << " levels + " << 6 * tracksuperpotion << " Attack)" << endl;
-        }
-        if (maxhealthtracker >= 1) {
-            cout << "Level Potions (+ " << 10 * tracklevelpotion << " levels)" << endl;
-        }
-        if (invisibilitypotion > 0) {
-            cout << invisibilitypotion << " Invisibility Potion (Skip a battle)" << endl;
-        }
-        if (healthtonicitem > 0) {
-            cout << healthtonicitem << " Health Tonic (Heal 100,75,50 or 25 based on level)" << endl;
-        }
-        if (flaminglongsword == true) {
-            cout << "Flaming Longsword (+11 attack)" << endl;
-        }
-        if (accuratesword == true) {
-            cout << "Accurate Sword (No more slipping!)" << endl;
-        }
-        if (Excalibur == true) {
-            cout << "Excalibur (+14 attack)" << endl;
-        }
-        if (Knife == true) {
-            cout << "Knife (+2 attack)" << endl;
-        }
-        if (Sword == true) {
-            cout << "Sword (+4 attack)" << endl;
-        }
-        if (molotov > 0) {
-            cout << molotov << " Molotov (60% max health dmg)" << endl;
-        }
-        if (travelersbackpack == true) {
-            cout << "Travelers Backpack (Allows you to hold potions)" << endl;
-        }
-        if (playercompanion == true) {
-            cout << "Companion (Does something random every attack and increases odds of finding treasure)" << endl;
-        }
-        if (forgehammer > 0) {
-            cout << forgehammer << " Forge Hammer (Used with other items to enhance artillery)" << endl;
-        }
-        if (armorupgrade == true) {
-            cout << "Armor Plating (Used to upgrade armor)" << endl;
-        }
-        if (weaponupgrade == true) {
-            cout << "Sharpening Stone (Used to upgrade weapons)" << endl;
-        }
-        if (lightningshard == true) {
-            cout << "Lightning Shard (Used to upgrade armor/weapons)" << endl;
+        if (upgradedDragonscalechestplate == true) {
+            cout << "Upgraded Dragonscale Chestplate (+18 Defence|+25 Max Health)" << endl;
         }
         if (lightningdragonscalechestplate == true) {
             cout << "Lightning Dragonscale Chestplate (+11 Defence|+14 Max Health|+25 Attack)" << endl;
         }
         if (lightningmystichelmet == true) {
             cout << "Lightning Mystic Helmet (+12 Defence|+20 Attack)" << endl;
-        }
-        if (lightningexcalibur == true) {
-            cout << "Lightning Excalibur (+35 Attack)" << endl;
-        }
-        if (lightningglassshoes == true) {
-            cout << "Lightning Glass Shoes (+9 Defence|+12 Attack)" << endl;
-        }
-        if (lightningflaminglongsword == true) {
-            cout << "Lightning Framing Longsword (+20 Attack)" << endl;
         }
         if (lightningGodarmor == true) {
             cout << "Lightning God Armor (+30 Defence|+35 Attack)" << endl;
@@ -2479,23 +2442,49 @@ void Player::attack(Character* Target) {
         if (upgradedglassshoes == true) {
             cout << "Upgraded Glass Shoes (+11 Defence|+14 Max Health)" << endl;
         }
-        if (upgradedflaminglongsword == true) {
-            cout << "Upgraded Flaming Longsword (+11 Attack|+10% Max Health)" << endl;
+        if (lightningglassshoes == true) {
+            cout << "Lightning Glass Shoes (+9 Defence|+12 Attack)" << endl;
         }
-        if (upgradedexcalibur == true) {
-            cout << "Upgraded Excalibur (+18 Attack|+25% Max Health)" << endl;
+        cout << "--Upgrades/Potions--" << endl;
+        if (defenceupgrade == true) {
+            cout << "Defence Perk (+10 defence)" << endl;
         }
-        if (upgradedDragonscalechestplate == true) {
-            cout << "Upgraded Dragonscale Chestplate (+18 Defence|+25 Max Health)" << endl;
+        if (attackupgrade == true) {
+            cout << "Attack Perk (+10 attack)" << endl;
         }
-        if (upgradedvoidshroudslicer == true) {
-            cout << "Upgraded Voidshroud Slicer (+18 Attack|+40% Max Health)" << endl;
+        if (levelupgrade == true) {
+            cout << "Level Perk (+15 level)" << endl;
         }
-        if (lightningvoidshroudslicer == true) {
-            cout << "Lightning Voidshroud Slicer (+42 Attack)" << endl;
+        if (maxhealthtracker >= 1) {
+            cout << "Max Health Upgrade (+" << 50 * maxhealthtracker << " maxhealth)" << endl;
+        }
+        if (tracklevelpotion >= 1) {
+            cout << "Level Potions (+ " << 10 * tracklevelpotion << " levels)" << endl;
+        }
+        if (tracksuperiorlevelpotion >= 1) {
+            cout << "Superior Level Potions (+ " << 15 * tracksuperiorlevelpotion << " levels)" << endl;
+        }
+        if (tracksuperpotion >= 1) {
+            cout << "Super Potions (+ " << 15 * tracksuperpotion << " levels + " << 6 * tracksuperpotion << " Attack)" << endl;
+        }
+        if (leveltonic == true) {
+            cout << "Level Tonic (+10 level)" << endl;
+        }
+        if (superiorleveltonic == true) {
+            cout << "Superior Level Tonic (+15 level)" << endl;
+        }
+        if (superpotion == true) {
+            cout << "Super Potion (+20 level|+10 attack)" << endl;
+        }
+        cout << "--Special Items--" << endl;
+        if (travelersbackpack == true) {
+            cout << "Travelers Backpack (Allows you to hold potions)" << endl;
+        }
+        if (playercompanion == true) {
+            cout << "Companion (Does something random every attack and increases odds of finding treasure)" << endl;
         }
         if (goldloomMagnet == true) {
-            cout << "Goldloom Magnet (More money and more often shop)" << endl;
+            cout << "Goldloom Magnet (More money and shop refreshes faster)" << endl;
         }
         if (horsemount == true) {
             cout << "Horse Mount (Better increase in baselevel on kill)" << endl;
@@ -2506,17 +2495,33 @@ void Player::attack(Character* Target) {
         if (cipherblueprint >= 1) {
             cout << "Cipher Blueprint (Use a key to read...)" << endl;   
         }
+        if (armorupgrade == true) {
+            cout << "Armor Plating (Used to upgrade armor)" << endl;
+        }
+        if (weaponupgrade == true) {
+            cout << "Sharpening Stone (Used to upgrade weapons)" << endl;
+        }
+        if (lightningshard == true) {
+            cout << "Lightning Shard (Used to upgrade armor/weapons)" << endl;
+        }
+        if (forgehammer > 0) {
+            cout << forgehammer << " Forge Hammer (Used with other items to enhance artillery)" << endl;
+        }
+        cout << "--Usable--" << endl;
+        if (invisibilitypotion > 0) {
+            cout << invisibilitypotion << " Invisibility Potion (Skip a battle)" << endl;
+        }
+        if (healthtonicitem > 0) {
+            cout << healthtonicitem << " Health Tonic (Heal 100,75,50 or 25 based on level)" << endl;
+        }
+        if (molotov > 0) {
+            cout << molotov << " Molotov (60% max health dmg)" << endl;
+        }
         if (cipherkey == true) {
             cout << "Cipher Key (Use this to read the blueprint...)" << endl;
         }
         if (riddle == true) {
             cout << "Riddle (Unlocks a special recipe if answered correctly...)" << endl;
-        }
-        if (riddle == false && cipherkey == false && cipherblueprint == 0 && VoidshroudSlicer == false && lightningvoidshroudslicer == false && upgradedvoidshroudslicer == false && shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && goldloomMagnet == false && horsemount == false && dragonmount == false && molotov == 0 && invisibilitypotion == 0) {
-            cout << "You have no items yet." << endl;
-            cout << "------------------------------------------------" << endl;
-            attack(Target);
-            break;
         }
         cout << "------------------------------------------------" << endl;
         cout << endl;
