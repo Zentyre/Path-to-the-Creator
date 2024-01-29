@@ -73,7 +73,7 @@ void Player::itemusehealthtonic() {
 	healthtonicitem -= 1;
 	cout << "You now have " << health << " health." << endl;
 }
-void Player ::forgerestarting() {
+void Player::forgerestarting() {
     string forgeUpgrade = "", forgechoice = "";
         cout << "What would you like to upgrade?" << endl;
         if (ciphertracker == 4) {
@@ -245,6 +245,9 @@ void Player ::forgerestarting() {
             cout << "That item does not exist. Try again." << endl;
             failedforge = 1;
         }
+}
+void Player::forgecrafting() {
+    cout << "You have these crafting materials currently." << endl;
 }
 void Player::setmaxhealth() {
     int charactermaxhealth = 0;
@@ -658,7 +661,7 @@ void Player::checkitems() {
 void Player::attack(Character* Target) {
     random_device r;
     int playerInput, x, h;
-    string purchasechoice = "", yesnobackpack = "", yesnopurchase = "", forgerestart = "";
+    string purchasechoice = "", yesnobackpack = "", yesnopurchase = "", forgerestart = "", forgeOption = "";
     int accuracy = 0;
     int warforgedabilitytracker = 0;
     if (classtype == 1) { //knight attack messages |health =25|attackPower=4|lives=1|
@@ -2060,97 +2063,214 @@ void Player::attack(Character* Target) {
     case 8: 
         cout << "-----------------------------------------------" << endl;
         cout << "Welcome to the forge, " << name << "." << endl;
-        cout << "In this ancient place, you can combine special materials with your armor and weapons to enhance their abilities." << endl;
-        if ((weaponupgrade == false && armorupgrade == false && lightningshard == false && forgehammer == 0 && radiantgem == 0 && soulstone == 0)) {
-            cout << "You have no upgrades to use yet. Go buy some from the store." << endl;
-            cout << "-----------------------------------------------" << endl;
-            attack(Target);
-            break;
+        if (endlessmode == true) {
+            cout << "In this ancient place, you can combine special materials to enhance your stats." << endl;
         }
+        else if (storymode == true) {
+            cout << "In this ancient place, you can combine special materials with your armor and weapons to enhance their abilities." << endl;
+        }
+        if (endlessmode == true) {
+            cout << "Are you here for forging or crafting?" << endl;
+            cin >> ws;
+            getline(cin, forgeOption);
+            if (forgeOption == "Forging" || forgeOption == "forging") {
+                if ((weaponupgrade == false && armorupgrade == false && lightningshard == false && forgehammer == 0 && radiantgem == 0 && soulstone == 0)) {
+                    cout << "You have no upgrades to use yet. Go buy some from the store." << endl;
+                    cout << "-----------------------------------------------" << endl;
+                    attack(Target);
+                    break;
+                }
                 cout << "You have these upgrades currently:" << endl;
-        if (weaponupgrade == true) {
-            cout << "-Weapon Upgrade-" << endl;
-        }
-        if (armorupgrade == true) {
-            cout << "-Armor Upgrade-" << endl;
-        }
-        if (lightningshard == true) {
-            cout << "-Ligntning Shard-" << endl;
-        }
-        if (forgehammer > 0) {
-            if (forgehammer == 1) {
-            cout << "-" << forgehammer << " Forgehammer-" << endl;
+                if (weaponupgrade == true) {
+                    cout << "-Weapon Upgrade-" << endl;
+                }
+                if (armorupgrade == true) {
+                    cout << "-Armor Upgrade-" << endl;
+                }
+                if (lightningshard == true) {
+                    cout << "-Ligntning Shard-" << endl;
+                }
+                if (forgehammer > 0) {
+                    if (forgehammer == 1) {
+                        cout << "-" << forgehammer << " Forgehammer-" << endl;
+                    }
+                    else {
+                        cout << "-" << forgehammer << " Forgehammers-" << endl;
+                    }
+                }
+                if (soulstone >= 1) {
+                    if (soulstone == 1) {
+                        cout << "-" << soulstone << " Soulstone" << endl;
+                    }
+                    else {
+                        cout << "-" << soulstone << " Soulstones" << endl;
+                    }
+                }
+                if (radiantgem >= 1) {
+                    if (radiantgem == 1) {
+                        cout << "-" << radiantgem << " Radiant Gem" << endl;
+                    }
+                    else {
+                        cout << "-" << radiantgem << " Radiant Gems" << endl;
+                    }
+                }
+                if (dragonscalechestplate == false && mystichelmet == false && glassshoes == false && Excalibur == false && flaminglongsword == false && VoidshroudSlicer == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && ciphertracker <= 3) {
+                    cout << "You have no armor or weapons to upgrade, go buy some from the store or get them as a lucky drop." << endl;
+                    cout << "-----------------------------------------------" << endl;
+                    attack(Target);
+                    break;
+                }
+                cout << "-----------------------------------------------" << endl;
+                cout << "You have these items to upgrade:" << endl;
+                if (narsosArmor == true) {
+                    cout << "-Narso's Armor (+20 defence)-" << endl;
+                }
+                if (vladimirsArmor == true) {
+                    cout << "-Vladirmir's Armor (+20 defence)-" << endl;
+                }
+                if (lockhartsArmor == true) {
+                    cout << "-Lockhart's Armor (+20 defence)-" << endl;
+                }
+                if (glassshoes == true) {
+                    cout << "-Glass Shoes (+7 defence|+6 maxhealth)-" << endl;
+                }
+                if (mystichelmet == true) {
+                    cout << "-Mystic Helmet (+9 defence|+8 maxhealth)-" << endl;
+                }
+                if (dragonscalechestplate == true) {
+                    cout << "-Dragonscale Chestplate (+11 defence|+14 maxhealth)-" << endl;
+                }
+                if (flaminglongsword == true) {
+                    cout << "-Flaming Longsword (+11 attack)-" << endl;
+                }
+                if (Excalibur == true) {
+                    cout << "-Excalibur (+14 attack)-" << endl;
+                }
+                if (VoidshroudSlicer == true) {
+                    cout << "-Voidshroud Slicer (+18 attack)-" << endl;
+                }
+                cout << "-----------------------------------------------" << endl;
+                forgerestarting();
+                if (failedforge = 1) {
+                    failedforge = 0;
+                    attack(Target);
+                    break;
+                }
+                cout << "Would you like to upgrade something else?" << endl;
+                cin >> forgerestart;
+                if (forgerestart == "Yes" || forgerestart == "yes" || forgerestart == "y" || forgerestart == "Y") {
+                    forgerestarting();
+                }
+                else if (forgerestart == "No" || forgerestart == "no" || forgerestart == "n" || forgerestart == "N") {
+                    attack(Target);
+                    break;
+                }
             }
-            else {
-            cout << "-" << forgehammer << " Forgehammers-" << endl;
+            else if (forgeOption == "Crafting" || forgeOption == "crafting") {
+                forgecrafting();
+                cout << "Would you like to craft something else?" << endl;
+                cin >> forgerestart;
+                if (forgerestart == "Yes" || forgerestart == "yes" || forgerestart == "y" || forgerestart == "Y") {
+                    forgecrafting();
+                }
+                else if (forgerestart == "No" || forgerestart == "no" || forgerestart == "n" || forgerestart == "N") {
+                    attack(Target);
+                    break;
+                }
             }
         }
-        if (soulstone >= 1) {
-            if (soulstone == 1) {
-                cout << "-" << soulstone << " Soulstone" << endl;
+        else if (storymode == true) {
+            if ((weaponupgrade == false && armorupgrade == false && lightningshard == false && forgehammer == 0 && radiantgem == 0 && soulstone == 0)) {
+                cout << "You have no upgrades to use yet. Go buy some from the store." << endl;
+                cout << "-----------------------------------------------" << endl;
+                attack(Target);
+                break;
             }
-            else {
-                cout << "-" << soulstone << " Soulstones" << endl;
+            cout << "You have these upgrades currently:" << endl;
+            if (weaponupgrade == true) {
+                cout << "-Weapon Upgrade-" << endl;
             }
-        }
-        if (radiantgem >= 1) {
-            if (radiantgem == 1) {
-                cout << "-" << radiantgem << " Radiant Gem" << endl;
+            if (armorupgrade == true) {
+                cout << "-Armor Upgrade-" << endl;
             }
-            else {
-                cout << "-" << radiantgem << " Radiant Gems" << endl;
+            if (lightningshard == true) {
+                cout << "-Ligntning Shard-" << endl;
             }
-        }
-        if (dragonscalechestplate == false && mystichelmet == false && glassshoes == false && Excalibur == false && flaminglongsword == false && VoidshroudSlicer == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && ciphertracker <= 3) {
-            cout << "You have no armor or weapons to upgrade, go buy some from the store or get them as a lucky drop." << endl;
+            if (forgehammer > 0) {
+                if (forgehammer == 1) {
+                    cout << "-" << forgehammer << " Forgehammer-" << endl;
+                }
+                else {
+                    cout << "-" << forgehammer << " Forgehammers-" << endl;
+                }
+            }
+            if (soulstone >= 1) {
+                if (soulstone == 1) {
+                    cout << "-" << soulstone << " Soulstone" << endl;
+                }
+                else {
+                    cout << "-" << soulstone << " Soulstones" << endl;
+                }
+            }
+            if (radiantgem >= 1) {
+                if (radiantgem == 1) {
+                    cout << "-" << radiantgem << " Radiant Gem" << endl;
+                }
+                else {
+                    cout << "-" << radiantgem << " Radiant Gems" << endl;
+                }
+            }
+            if (dragonscalechestplate == false && mystichelmet == false && glassshoes == false && Excalibur == false && flaminglongsword == false && VoidshroudSlicer == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && ciphertracker <= 3) {
+                cout << "You have no armor or weapons to upgrade, go buy some from the store or get them as a lucky drop." << endl;
+                cout << "-----------------------------------------------" << endl;
+                attack(Target);
+                break;
+            }
             cout << "-----------------------------------------------" << endl;
-            attack(Target);
-            break;
-        }
-        cout << "-----------------------------------------------" << endl;
-        cout << "You have these items to upgrade:" << endl;
-        if (narsosArmor == true) {
-            cout << "-Narso's Armor (+20 defence)-" << endl;
-        }
-        if (vladimirsArmor == true) {
-            cout << "-Vladirmir's Armor (+20 defence)-" << endl;
-        }
-        if (lockhartsArmor == true) {
-            cout << "-Lockhart's Armor (+20 defence)-" << endl;
-        }
-        if (glassshoes == true) {
-            cout << "-Glass Shoes (+7 defence|+6 maxhealth)-" << endl;
-        }
-        if (mystichelmet == true) {
-            cout << "-Mystic Helmet (+9 defence|+8 maxhealth)-" << endl;
-        }
-        if (dragonscalechestplate == true) {
-            cout << "-Dragonscale Chestplate (+11 defence|+14 maxhealth)-" << endl;
-        }
-        if (flaminglongsword == true) {
-            cout << "-Flaming Longsword (+11 attack)-" << endl;
-        }
-        if (Excalibur == true) {
-            cout << "-Excalibur (+14 attack)-" << endl;
-        }
-        if (VoidshroudSlicer == true) {
-            cout << "-Voidshroud Slicer (+18 attack)-" << endl;
-        }
-        cout << "-----------------------------------------------" << endl;
-        forgerestarting();
-        if (failedforge = 1) {
-            failedforge = 0;
-            attack(Target);
-            break;
-        }
-        cout << "Would you like to upgrade something else?" << endl;
-        cin >> forgerestart;
-        if (forgerestart == "Yes" || forgerestart == "yes" || forgerestart == "y" || forgerestart == "Y") {
+            cout << "You have these items to upgrade:" << endl;
+            if (narsosArmor == true) {
+                cout << "-Narso's Armor (+20 defence)-" << endl;
+            }
+            if (vladimirsArmor == true) {
+                cout << "-Vladirmir's Armor (+20 defence)-" << endl;
+            }
+            if (lockhartsArmor == true) {
+                cout << "-Lockhart's Armor (+20 defence)-" << endl;
+            }
+            if (glassshoes == true) {
+                cout << "-Glass Shoes (+7 defence|+6 maxhealth)-" << endl;
+            }
+            if (mystichelmet == true) {
+                cout << "-Mystic Helmet (+9 defence|+8 maxhealth)-" << endl;
+            }
+            if (dragonscalechestplate == true) {
+                cout << "-Dragonscale Chestplate (+11 defence|+14 maxhealth)-" << endl;
+            }
+            if (flaminglongsword == true) {
+                cout << "-Flaming Longsword (+11 attack)-" << endl;
+            }
+            if (Excalibur == true) {
+                cout << "-Excalibur (+14 attack)-" << endl;
+            }
+            if (VoidshroudSlicer == true) {
+                cout << "-Voidshroud Slicer (+18 attack)-" << endl;
+            }
+            cout << "-----------------------------------------------" << endl;
             forgerestarting();
-        }
-        else if (forgerestart == "No" || forgerestart == "no" || forgerestart == "n" || forgerestart == "N") {
-            attack(Target);
-            break;
+            if (failedforge = 1) {
+                failedforge = 0;
+                attack(Target);
+                break;
+            }
+            cout << "Would you like to upgrade something else?" << endl;
+            cin >> forgerestart;
+            if (forgerestart == "Yes" || forgerestart == "yes" || forgerestart == "y" || forgerestart == "Y") {
+                forgerestarting();
+            }
+            else if (forgerestart == "No" || forgerestart == "no" || forgerestart == "n" || forgerestart == "N") {
+                attack(Target);
+                break;
+            }
         }
         break;
     case 9:

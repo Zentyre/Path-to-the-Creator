@@ -31,6 +31,7 @@ public:
 	void setmaxhealth();
 	void checkitems();
 	void forgerestarting();
+	void forgecrafting();
 	void playerclassexecutioner();
 	void playerclasssoulweaver();
 	void playerclasswarforged();
