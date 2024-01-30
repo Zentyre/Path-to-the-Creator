@@ -899,7 +899,7 @@ void Player::attack(Character* Target) {
                     cout << "You had no wounds to heal." << endl;
                 }
                 else if (health < maxhealth) {
-                    cout << "You healed for " << heal << " health." << endl;
+                    cout << "Your mantle healed you for " << heal << " health." << endl;
                 }
             }
             Target->takeDmg(x);
