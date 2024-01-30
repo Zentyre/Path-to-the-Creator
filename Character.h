@@ -35,7 +35,7 @@ public:
 	int getmaxhealth();
 	int maxhealthtracker = 0;
 	int classtype = 1;
-	int invisibilitypotion = 0;
+	int invisibilitypotion = 1;
 	int molotov = 0;
 	int incrementamount = 0;
 	bool trickstermovebool = false;
@@ -48,7 +48,6 @@ public:
 	void itemuseinvispotion(Character* Target);
 	void itemusemolotov(Character* Target);
 	void addlives(int extralives);
-	void killenemy();
 	virtual void attack(Character* Target) = 0;
 	virtual void takeDmg(int d);
 };

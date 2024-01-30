@@ -75,6 +75,7 @@ void Player::itemusehealthtonic() {
 }
 void Player::forgerestarting() {
     string forgeUpgrade = "", forgechoice = "";
+    while (true) {
         cout << "What would you like to upgrade?" << endl;
         if (ciphertracker == 4) {
             cout << "If you are here to craft the Regenerative Mantle, type Mantle." << endl;
@@ -126,7 +127,7 @@ void Player::forgerestarting() {
                 checkitems();
             }
         }
-        else if (forgeUpgrade == "glass shoes" || forgeUpgrade == "Glass shoes" || forgeUpgrade == "glass Shoes"|| forgeUpgrade == "Glass Shoes" && (armorupgrade == true || lightningshard == true)) {
+        else if (forgeUpgrade == "glass shoes" || forgeUpgrade == "Glass shoes" || forgeUpgrade == "glass Shoes" || forgeUpgrade == "Glass Shoes" && (armorupgrade == true || lightningshard == true)) {
             cout << "What would you like to use to upgrade your Glass Shoes? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -235,7 +236,8 @@ void Player::forgerestarting() {
                 }
             }
             else if (yesno == "No" || yesno == "no") {
-                cout << "Come again later and ill make it for ya." << endl;
+                cout << "Come again later and ill make it for you." << endl;
+                break;
             }
             else {
                 cout << "That wasnt yes or no." << endl;
@@ -243,33 +245,44 @@ void Player::forgerestarting() {
         }
         else {
             cout << "That item does not exist. Try again." << endl;
-            failedforge = 1;
         }
+        cout << "Would you like to upgrade something else?" << endl;
+        cin >> forgechoice;
+        if (forgechoice == "No" || forgechoice == "no" || forgechoice == "n" || forgechoice == "N") {
+            break;
+        }
+    }
 }
 void Player::forgecrafting() {
     string craftingchoice = "";
-    cout << "You have these crafting materials currently." << endl;
-    if (soulstone >= 1) {
-        if (soulstone == 1) {
+    int craftedsomething = 0;
+    while (true) {
+        cout << "You have these crafting materials currently." << endl;
+        if (soulstone >= 1) {
+            if (soulstone == 1) {
                 cout << "-" << soulstone << " Soulstone" << endl;
-    }
-    }
-    else {
-        cout << "-" << soulstone << " Soulstones" << endl;
-    }
-    if (radiantgem >= 1) {
-        if (radiantgem == 1) {
-            cout << "-" << radiantgem << " Radiant Gem" << endl;
+            }
         }
-    }
-    else {
-        cout << "-" << radiantgem << " Radiant Gems" << endl;
-    }
-    cout << "You can currently craft";
-    if (soulstone >= 2 && radiantgem >= 4 && Goldloom >= 50 && healthtonicitem >= 1) {
-        cout << " the Regenerative Mantle." << endl;
-    }
-    cout << "What would you like to craft?" << endl;
+        else {
+            cout << "-" << soulstone << " Soulstones" << endl;
+        }
+        if (radiantgem >= 1) {
+            if (radiantgem == 1) {
+                cout << "-" << radiantgem << " Radiant Gem" << endl;
+            }
+        }
+        else {
+            cout << "-" << radiantgem << " Radiant Gems" << endl;
+        }
+        cout << endl << "You can currently craft ";
+        if (soulstone >= 2 && radiantgem >= 4 && Goldloom >= 50 && healthtonicitem >= 1) {
+            cout << "the Regenerative Mantle." << endl;
+        }
+        else {
+            cout << "nothing." << endl;
+            break;
+        }
+        cout << "What would you like to craft?" << endl;
         cin >> ws;
         getline(cin, craftingchoice);
         if (craftingchoice == "Mantle" || craftingchoice == "mantle") {
@@ -291,12 +304,22 @@ void Player::forgecrafting() {
                 }
             }
             else if (yesno == "No" || yesno == "no") {
-                cout << "Come again later and ill make it for ya." << endl;
+                cout << "Come again later and ill make it for you." << endl;
+                break;
             }
             else {
                 cout << "That wasnt yes or no." << endl;
             }
         }
+        if (craftedsomething >= 1) {
+            cin >> craftingchoice;
+            cout << "Would you like to craft anything else?" << endl;
+            if (craftingchoice == "No" || craftingchoice == "no" || craftingchoice == "n" || craftingchoice == "N") {
+                break;
+            }
+        }
+        break;
+    }
 }
 void Player::setmaxhealth() {
     int charactermaxhealth = 0;
@@ -2184,32 +2207,11 @@ void Player::attack(Character* Target) {
                 }
                 cout << "-----------------------------------------------" << endl;
                 forgerestarting();
-                if (failedforge = 1) {
-                    failedforge = 0;
-                    attack(Target);
-                    break;
-                }
-                cout << "Would you like to upgrade something else?" << endl;
-                cin >> forgerestart;
-                if (forgerestart == "Yes" || forgerestart == "yes" || forgerestart == "y" || forgerestart == "Y") {
-                    forgerestarting();
-                }
-                else if (forgerestart == "No" || forgerestart == "no" || forgerestart == "n" || forgerestart == "N") {
-                    attack(Target);
-                    break;
-                }
             }
             else if (forgeOption == "Crafting" || forgeOption == "crafting") {
                 forgecrafting();
-                cout << "Would you like to craft something else?" << endl;
-                cin >> forgerestart;
-                if (forgerestart == "Yes" || forgerestart == "yes" || forgerestart == "y" || forgerestart == "Y") {
-                    forgecrafting();
-                }
-                else if (forgerestart == "No" || forgerestart == "no" || forgerestart == "n" || forgerestart == "N") {
-                    attack(Target);
-                    break;
-                }
+                attack(Target);
+                break;
             }
         }
         else if (storymode == true) {
@@ -2239,18 +2241,18 @@ void Player::attack(Character* Target) {
             }
             if (soulstone >= 1) {
                 if (soulstone == 1) {
-                    cout << "-" << soulstone << " Soulstone" << endl;
+                    cout << "-" << soulstone << " Soulstone-" << endl;
                 }
                 else {
-                    cout << "-" << soulstone << " Soulstones" << endl;
+                    cout << "-" << soulstone << " Soulstones-" << endl;
                 }
             }
             if (radiantgem >= 1) {
                 if (radiantgem == 1) {
-                    cout << "-" << radiantgem << " Radiant Gem" << endl;
+                    cout << "-" << radiantgem << " Radiant Gem-" << endl;
                 }
                 else {
-                    cout << "-" << radiantgem << " Radiant Gems" << endl;
+                    cout << "-" << radiantgem << " Radiant Gems-" << endl;
                 }
             }
             if (dragonscalechestplate == false && mystichelmet == false && glassshoes == false && Excalibur == false && flaminglongsword == false && VoidshroudSlicer == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && ciphertracker <= 3) {
@@ -2535,12 +2537,12 @@ void Player::attack(Character* Target) {
         cin >> ws;
         getline(cin, yesnobackpack);
         if (yesnobackpack == "Yes" || yesnobackpack == "yes" || yesnobackpack == "y" || yesnobackpack == "Y") {
-            cout << "Which item would you like to use?" << endl;
+            cout << "Which item would you like to use?" << endl << endl;
             if (healthtonicitem >= 1) {
                 cout << "-Health Tonic-" << endl;
             }
             if (invisibilitypotion >= 1) {
-                cout << "Invisibility Potion-" << endl;
+                cout << "-Invisibility Potion-" << endl;
             }
             if (molotov >= 1) {
                 cout << "-Molotov-" << endl;

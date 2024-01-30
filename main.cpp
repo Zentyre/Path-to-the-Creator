@@ -1218,7 +1218,7 @@ int main() {
 			if (Slime->gethealth() <= 0 && Knight.usinginvispotion == false) {
 				cout << Slime->getname() << " has 0 health remaining." << endl;
 			}
-			else if (Slime->gethealth() > 0 && Knight.usinginvispotion == false && Knight.trickstermovebool == false && Knight.warforgedmovebool == false) {
+			else if (Slime->gethealth() > 0 && Knight.usinginvispotion == false && Knight.trickstermovebool == false) {
 				cout << Slime->getname() << " has " << Slime->gethealth() << " health remaining." << endl;
 			}
 			cout << "-----------------------------------------------" << endl;
