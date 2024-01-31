@@ -7,7 +7,7 @@
 #include "Enemy.h"
 using namespace std;
 random_device r1;
-Player Knight("Player", 50, 25, 10000, 0, 0, 1);
+Player Knight("Player", 50, 25, 4, 0, 0, 1);
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives, int playerclass) {
     int x = 0, z = 0, enemyhp = 0, enemyatk = 0, enemylives = 0, enemydef = 0, enemylvl = 0, enemymaxh = 0;
     if (baselevel == 200) {
