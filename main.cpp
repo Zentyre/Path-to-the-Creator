@@ -2,6 +2,8 @@
 #include <random>
 #include <string>
 #include <cmath>
+#include <chrono>
+#include <thread>
 #include "Character.h"
 #include "Player.h"
 #include "Enemy.h"
@@ -1264,6 +1266,7 @@ int main() {
 				cout << "-Class = Trickster-" << endl;
 			}
 			cout << "Would you like to try Again? (Y/N)" << endl;
+			Knight.delay(3);
 			string retry = "";
 			cin >> retry;
 			if (retry == "N" || retry == "n") {
@@ -1315,6 +1318,7 @@ int main() {
 			}
 			cout << "The world thanks you for your service, " << Knight.getname() << "." << endl;
 			cout << "Play Again? (Y/N)" << endl;
+			Knight.delay(3);
 			string playagain = "";
 			cin >> playagain;
 			if (playagain == "N" || playagain == "n") {
@@ -2009,6 +2013,7 @@ int main() {
 				cout << "-Class = Trickster-" << endl;
 			}
 			cout << "Would you like to try Again? (Y/N)" << endl;
+			Knight.delay(3);
 			string retry = "";
 			cin >> retry;
 			if (retry == "N" || retry == "n") {

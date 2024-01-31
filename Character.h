@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <chrono>
+#include <thread>
 using namespace std;
 
 class Character {
@@ -50,4 +52,7 @@ public:
 	void addlives(int extralives);
 	virtual void attack(Character* Target) = 0;
 	virtual void takeDmg(int d);
+	void delay(int x){
+		this_thread::sleep_for(chrono::seconds(x));
+	}
 };
