@@ -15,8 +15,8 @@ Player::Player(string n, int maxh, int hp, int atk, int def, int baselvl, int li
 }
 int tracklevelpotion = 0, tracksuperpotion = 0, tracksuperiorlevelpotion = 0;
 void Player::playerclassexecutioner() {
-    maxhealth -= 20;
-    health -= 10;
+    maxhealth -= 14;
+    health -= 7;
     attackPower += 4;
     defence += 1;
     classtype = 2;
