@@ -35,7 +35,7 @@ public:
 	int getmaxhealth();
 	int maxhealthtracker = 0;
 	int classtype = 1;
-	int invisibilitypotion = 1;
+	int invisibilitypotion = 0;
 	int molotov = 0;
 	int incrementamount = 0;
 	bool trickstermovebool = false;
