@@ -980,7 +980,7 @@ int main() {
 		cout << "At levels 15, 25, 50 and 100, you gain new abilities. At level 200 you fight the final boss(Level gained from items does not affect this)" << endl;
 		cout << "I wish you well on your conquest." << endl;
 		cout << endl;
-		cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought or 6- Trickster?" << endl;
+		cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought, 6- Trickster or 7- Random?" << endl;
 		cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
 		int playerclasschoice = 0, cinFailchoice = 0, classcurrency = 0;
 		cin >> playerclasschoice;
@@ -1036,6 +1036,32 @@ int main() {
 		else if (playerclasschoice == 6) {
 			Knight.playerclasstrickster();
 			cout << "You chose Trickster!" << endl;
+		}
+		else if (playerclasschoice == 7) {
+			playerclasschoice = r1() % 6 + 1;
+			if (playerclasschoice == 1) {
+				cout << "You were given Knight." << endl;
+			}
+			else if (playerclasschoice == 2) {
+				Knight.playerclassexecutioner();
+				cout << "You were given Executioner." << endl;
+			}
+			else if (playerclasschoice == 3) {
+				Knight.playerclasssoulweaver();
+				cout << "You were given Soulweaver." << endl;
+			}
+			else if (playerclasschoice == 4) {
+				Knight.playerclasswarforged();
+				cout << "You were given Warforged Engineer." << endl;
+			}
+			else if (playerclasschoice == 5) {
+				Knight.playerclassdreadnought();
+				cout << "You were given Dreadnought." << endl;
+			}
+			else if (playerclasschoice == 6) {
+				Knight.playerclasstrickster();
+				cout << "You were given Trickster." << endl;
+			}
 		}
 		else {
 			cout << "You chose nothing so I will choose for you." << endl;
