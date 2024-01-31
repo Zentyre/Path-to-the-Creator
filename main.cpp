@@ -11,13 +11,13 @@ Player Knight("Player", 50, 25, 4, 0, 1, 1);
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives, int playerclass) {
     int x = 0, z = 0, enemyhp = 0, enemyatk = 0, enemylives = 0, enemydef = 0, enemylvl = 0, enemymaxh = 0;
     if (baselevel == 200) {
-        x = 12;
+        x = 13;
     }
     else if (baselevel == 100) {
         x = 11;
     }
     else if (baselevel >= 101) {
-        x = r1() % 4 + 8;
+        x = r1() % 2 + 10;
     }
     else if (baselevel >= 80) {
         x = r1() % 4 + 7;
@@ -46,104 +46,13 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
     else {
         x = r1() % 2;
     }
-	if (playerclass == 1 || playerclass == 2 || playerclass == 3 || playerclass == 5 || playerclass == 6) {
-		if (x == 3 || x == 4 || x == 5 || x == 7 || x == 8 || x == 9 || x == 10) {
-			enemyatk = floor(def * 1.25);
-			enemydef = floor(atk * .75);
-			enemyhp = floor(hp * .75);
-			if (lives >= 2) {
-				enemylives = ceil(lives * .5);
-			}
-			else {
-				enemylives = 1;
-			}
-			enemylvl = level;
-			enemymaxh = enemyhp;
-		}
-		if (x == 12) {
-			enemyatk = def * 2;
-			enemydef = atk * .85;
-			enemyhp = hp * 1.25;
-			enemylives = 1;
-			enemylvl = level;
-			enemymaxh = enemyhp;
-		}
-		else if (x == 11) {
-			enemyatk = def * 1.7;
-			enemydef = atk * .75;
-			enemyhp = hp * 1.15;
-			if (lives >= 2) {
-				enemylives = ceil(lives * .5);
-			}
-			else {
-				enemylives = 1;
-			}
-			enemylvl = level;
-			enemymaxh = enemyhp;
-		}
-		else if (x == 6) {
-			enemyatk = def * 1.7;
-			enemydef = atk * .75;
-			enemyhp = hp * 1.15;
-			if (lives >= 2) {
-				enemylives = ceil(lives * .5);
-			}
-			else {
-				enemylives = 1;
-			}
-			enemylvl = level;
-			enemymaxh = enemyhp;
-		}
+	if (lives >= 2) {
+		enemylives = ceil(lives * .5);
 	}
 	else {
-		if (x == 3 || x == 4 || x == 5 || x == 7 || x == 8 || x == 9 || x == 10) {
-			enemyatk = floor(def * 1.25);
-			enemydef = floor(atk * .5);
-			enemyhp = floor(hp * .75);
-			if (lives >= 2) {
-				enemylives = ceil(lives * .5);
-			}
-			else {
-				enemylives = 1;
-			}
-			enemylvl = level;
-			enemymaxh = enemyhp;
-		}
-		if (x == 12) {
-			enemyatk = ceil(def * 2);
-			enemydef = ceil(atk * .85);
-			enemyhp = ceil(hp * 1.25);
-			enemylives = 1;
-			enemylvl = level;
-			enemymaxh = enemyhp;
-		}
-		else if (x == 11) {
-			enemyatk = ceil(def * 1.7);
-			enemydef = ceil(atk * .7);
-			enemyhp = ceil(hp * 1.15);
-			if (lives >= 2) {
-				enemylives = ceil(lives * .5);
-			}
-			else {
-				enemylives = 1;
-			}
-			enemylvl = level;
-			enemymaxh = enemyhp;
-		}
-		else if (x == 6) {
-			enemyatk = ceil(def * 1.7);
-			enemydef = ceil(atk * .7);
-			enemyhp = ceil(hp * 1.15);
-			if (lives >= 2) {
-				enemylives = ceil(lives * .5);
-			}
-			else {
-				enemylives = 1;
-			}
-			enemylvl = level;
-			enemymaxh = enemyhp;
-		}
+		enemylives = 1;
 	}
+	enemylvl = level;
 	if (Knight.endlessmode == true && Knight.getkills() > 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp = ceil(hp * 1.25);
@@ -152,6 +61,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 			enemylives = ceil(lives * .5);
 			enemylvl = level;
 			enemymaxh = enemyhp;
+			x = 12;
 		}
 	}
     switch (x) {
@@ -162,48 +72,48 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
         return new Enemy("Shroom Knight", 25, 4, 0, 1, 2, 25);
         break;
     case 2:
-        return new Enemy("Shroom ArchKnight", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Shroom ArchKnight", 30, 5, 2, enemylives, enemylvl, 30);
         break;
     case 3:
-        return new Enemy("Noble Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Noble Shroom", 35, 7, 4, enemylives, enemylvl, 35);
         break;
     case 4:
-        return new Enemy("Royal Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Royal Shroom", 45, 10, 7, enemylives, enemylvl, 45);
         break;
     case 5:
-        return new Enemy("Princess Slime", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Princess Slime", 70, 13, 10, enemylives, enemylvl, 70);
         break;
     case 6:
-        return new Enemy("Prince Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Prince Shroom", 85, 15, 16, enemylives, enemylvl, 85);
         break;
     case 7:
-        return new Enemy("King Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        return new Enemy("King Shroom", 115, 18, 19, enemylives, enemylvl, 115);
         break;
     case 8:
-        return new Enemy("Emperor Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Emperor Shroom", 150, 22, 22, enemylives, enemylvl, 150);
         break;
     case 9:
-        return new Enemy("Leader Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Leader Shroom", 170, 25, 27, enemylives, enemylvl, 170);
         break;
     case 10:
-        return new Enemy("Divine Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Divine Shroom", 200, 30, 30, enemylives, enemylvl, 200);
         break;
     case 11:
-        return new Enemy("Boss Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Boss Shroom", 250, 37, 35, enemylives, enemylvl, 250);
         break;
 	case 12: 
 		cout << "An endless mode boss has arrived..." << endl;
 		return new Enemy("Jock Mushroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
 		break;
     default:
-        return new Enemy("Creator Shroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+        return new Enemy("Creator Shroom", 1000, 50, 45, enemylives, enemylvl, 10000);
         break;
     }
 }
 Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, int lives2, int playerclass2) {
 	int x = 0, enemyhp2 = 0, enemyatk2 = 0, enemylives2 = 0, enemydef2 = 0, enemylvl2 = 0, enemymaxh2 = 0;
 	if (baselevel2 == 200) {
-		x = 12;
+		x = 13;
 	}
 	else if (baselevel2 == 100) {
 		x = 11;
@@ -238,104 +148,13 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 	else {
 		x = r1() % 2;
 	}
-	if (playerclass2 == 1 || playerclass2 == 2 || playerclass2 == 3 || playerclass2 == 6) {
-		if (x == 3 || x == 4 || x == 5 || x == 7 || x == 8 || x == 9 || x == 10) {
-			enemyatk2 = floor(def2 * 1.25);
-			enemydef2 = floor(atk2 * .75);
-			enemyhp2 = floor(hp2 * .75);
-			if (lives2 >= 2) {
-				enemylives2 = ceil(lives2 * .5);
-			}
-			else {
-				enemylives2 = 1;
-			}
-			enemylvl2 = level2;
-			enemymaxh2 = enemyhp2;
-		}
-		if (x == 12) {
-			enemyatk2 = ceil(def2 * 2);
-			enemydef2 = ceil(atk2 * .85);
-			enemyhp2 = ceil(hp2 * 1.25);
-			enemylives2 = 1;
-			enemylvl2 = level2;
-			enemymaxh2 = enemyhp2;
-		}
-		else if (x == 11) {
-			enemyatk2 = ceil(def2 * 1.7);
-			enemydef2 = ceil(atk2 * .75);
-			enemyhp2 = ceil(hp2 * 1.15);
-			if (lives2 >= 2) {
-				enemylives2 = ceil(lives2 * .5);
-			}
-			else {
-				enemylives2 = 1;
-			}
-			enemylvl2 = level2;
-			enemymaxh2 = enemyhp2;
-		}
-		else if (x == 6) {
-			enemyatk2 = ceil(def2 * 1.7);
-			enemydef2 = ceil(atk2 * .75);
-			enemyhp2 = ceil(hp2 * 1.15);
-			if (lives2 >= 2) {
-				enemylives2 = ceil(lives2 * .5);
-			}
-			else {
-				enemylives2 = 1;
-			}
-			enemylvl2 = level2;
-			enemymaxh2 = enemyhp2;
-		}
+	if (lives2 >= 2) {
+		enemylives2 = ceil(lives2 * .5);
 	}
 	else {
-		if (x == 3 || x == 4 || x == 5 || x == 7 || x == 8 || x == 9 || x == 10) {
-			enemyatk2 = floor(def2 * 1.25);
-			enemydef2 = floor(atk2 * .5);
-			enemyhp2 = floor(hp2 * .75);
-			if (lives2 >= 2) {
-				enemylives2 = ceil(lives2 * .5);
-			}
-			else {
-				enemylives2 = 1;
-			}
-			enemylvl2 = level2;
-			enemymaxh2 = enemyhp2;
-		}
-		if (x == 12) {
-			enemyatk2 = ceil(def2 * 2);
-			enemydef2 = ceil(atk2 * .85);
-			enemyhp2 = ceil(hp2 * 1.25);
-			enemylives2 = 1;
-			enemylvl2 = level2;
-			enemymaxh2 = enemyhp2;
-		}
-		else if (x == 11) {
-			enemyatk2 = ceil(def2 * 1.7);
-			enemydef2 = ceil(atk2 * .7);
-			enemyhp2 = ceil(hp2 * 1.15);
-			if (lives2 >= 2) {
-				enemylives2 = ceil(lives2 * .5);
-			}
-			else {
-				enemylives2 = 1;
-			}
-			enemylvl2 = level2;
-			enemymaxh2 = enemyhp2;
-		}
-		else if (x == 6) {
-			enemyatk2 = ceil(def2 * 1.7);
-			enemydef2 = ceil(atk2 * .7);
-			enemyhp2 = ceil(hp2 * 1.15);
-			if (lives2 >= 2) {
-				enemylives2 = ceil(lives2 * .5);
-			}
-			else {
-				enemylives2 = 1;
-			}
-			enemylvl2 = level2;
-			enemymaxh2 = enemyhp2;
-		}
+		enemylives2 = 1;
 	}
+	enemylvl2 = level2;
 	if (Knight.endlessmode == true && Knight.getkills() > 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp2 = ceil(hp2 * 1.25);
@@ -355,48 +174,48 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 		return new Enemy("Epic Slime", 25, 1, 0, 1, 0, 25);
 		break;
 	case 2:
-		return new Enemy("Superior Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+		return new Enemy("Superior Slime", 30, 5, 2, enemylives2, enemylvl2, 30);
 		break;
 	case 3:
-		return new Enemy("Super Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+		return new Enemy("Super Slime", 35, 7, 4, enemylives2, enemylvl2, 35);
 		break;
 	case 4:
-		return new Enemy("Incredible Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+		return new Enemy("Incredible Slime", 45, 10, 7, enemylives2, enemylvl2, 45);
 		break;
 	case 5:
-		return new Enemy("Superb Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+		return new Enemy("Superb Slime", 70, 13, 10, enemylives2, enemylvl2, 70);
 		break;
 	case 6:
-		return new Enemy("King Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+		return new Enemy("King Slime", 85, 15, 16, enemylives2, enemylvl2, 85);
 		break;
 	case 7:
-		return new Enemy("Demon Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+		return new Enemy("Demon Slime", 115, 18, 19, enemylives2, enemylvl2, 115);
 		break;
 	case 8:
-		return new Enemy("Overlord Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+		return new Enemy("Overlord Slime", 150, 22, 22, enemylives2, enemylvl2, 150);
 		break;
 	case 9:
-		return new Enemy("Universal Super Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+		return new Enemy("Universal Super Slime", 170, 25, 27, enemylives2, enemylvl2, 170);
 		break;
 	case 10:
-		return new Enemy("Godly Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+		return new Enemy("Godly Slime", 200, 30, 30, enemylives2, enemylvl2, 200);
 		break;
 	case 11:
-		return new Enemy("Boss Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+		return new Enemy("Boss Slime", 250, 37, 35, enemylives2, enemylvl2, 250);
 		break;
 	case 12: 
 		cout << "An endless mode boss has arrived..." << endl;
 		return new Enemy("Jock Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
 		break;
 	default:
-		return new Enemy("Creator Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+		return new Enemy("Creator Slime", 1000, 50, 45, enemylives2, enemylvl2, 1000);
 		break;
 	}
 }
 Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, int lives3, int playerclass3) {
 	int x = 0, enemyhp3 = 0, enemyatk3 = 0, enemylives3 = 0, enemydef3 = 0, enemylvl3 = 0, enemymaxh3 = 0;
 	if (baselevel3 == 200) {
-		x = 12;
+		x = 13;
 	}
 	else if (baselevel3 == 100) {
 		x = 11;
@@ -431,104 +250,13 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 	else {
 		x = r1() % 2;
 	}
-	if (playerclass3 == 1 || playerclass3 == 2 || playerclass3 == 3 || playerclass3 == 6) {
-		if (x == 3 || x == 4 || x == 5 || x == 7 || x == 8 || x == 9 || x == 10) {
-			enemyatk3 = floor(atk3 * 1.25);
-			enemydef3 = floor(atk3 * .75);
-			enemyhp3 = floor(hp3 * .75);
-			if (lives3 >= 2) {
-				enemylives3 = ceil(lives3 * .5);
-			}
-			else {
-				enemylives3 = 1;
-			}
-			enemylvl3 = level3;
-			enemymaxh3 = enemyhp3;
-		}
-		if (x == 12) {
-			enemyatk3 = ceil(def3 * 2);
-			enemydef3 = ceil(atk3 * .85);
-			enemyhp3 = ceil(hp3 * 1.25);
-			enemylives3 = 1;
-			enemylvl3 = level3;
-			enemymaxh3 = enemyhp3;
-		}
-		else if (x == 11) {
-			enemyatk3 = ceil(def3 * 1.7);
-			enemydef3 = ceil(atk3 * .75);
-			enemyhp3 = ceil(hp3 * 1.15);
-			if (lives3 >= 2) {
-				enemylives3 = ceil(lives3 * .5);
-			}
-			else {
-				enemylives3 = 1;
-			}
-			enemylvl3 = level3;
-			enemymaxh3 = enemyhp3;
-		}
-		else if (x == 6) {
-			enemyatk3 = ceil(def3 * 1.7);
-			enemydef3 = ceil(atk3 * .75);
-			enemyhp3 = ceil(hp3 * 1.15);
-			if (lives3 >= 2) {
-				enemylives3 = ceil(lives3 * .5);
-			}
-			else {
-				enemylives3 = 1;
-			}
-			enemylvl3 = level3;
-			enemymaxh3 = enemyhp3;
-		}
+	if (lives3 >= 2) {
+		enemylives3 = ceil(lives3 * .5);
 	}
 	else {
-		if (x == 3 || x == 4 || x == 5 || x == 7 || x == 8 || x == 9 || x == 10) {
-			enemyatk3 = floor(atk3 * 1.25);
-			enemydef3 = floor(atk3 * .5);
-			enemyhp3 = floor(hp3 * .75);
-			if (lives3 >= 2) {
-				enemylives3 = ceil(lives3 * .5);
-			}
-			else {
-				enemylives3 = 1;
-			}
-			enemylvl3 = level3;
-			enemymaxh3 = enemyhp3;
-		}
-		if (x == 12) {
-			enemyatk3 = ceil(def3 * 2);
-			enemydef3 = ceil(atk3 * .85);
-			enemyhp3 = ceil(hp3 * 1.25);
-			enemylives3 = 1;
-			enemylvl3 = level3;
-			enemymaxh3 = enemyhp3;
-		}
-		else if (x == 11) {
-			enemyatk3 = ceil(def3 * 1.7);
-			enemydef3 = ceil(atk3 * .7);
-			enemyhp3 = ceil(hp3 * 1.15);
-			if (lives3 >= 2) {
-				enemylives3 = ceil(lives3 * .5);
-			}
-			else {
-				enemylives3 = 1;
-			}
-			enemylvl3 = level3;
-			enemymaxh3 = enemyhp3;
-		}
-		else if (x == 6) {
-			enemyatk3 = ceil(def3 * 1.7);
-			enemydef3 = ceil(atk3 * .7);
-			enemyhp3 = ceil(hp3 * 1.15);
-			if (lives3 >= 2) {
-				enemylives3 = ceil(lives3 * .5);
-			}
-			else {
-				enemylives3 = 1;
-			}
-			enemylvl3 = level3;
-			enemymaxh3 = enemyhp3;
-		}
+		enemylives3 = 1;
 	}
+	enemylvl3 = level3;
 	if (Knight.endlessmode == true && Knight.getkills() > 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp3 = ceil(hp3 * 1.25);
@@ -542,54 +270,54 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 	}
 	switch (x) {
 	case 0:
-		return new Enemy("Croc", 20, 1, 0, 1, 0, 20);
+		return new Enemy("Croc", 20, 3, 0, 1, 0, 20);
 		break;
 	case 1:
-		return new Enemy("Croc Pot", 25, 1, 0, 1, 0, 25);
+		return new Enemy("Croc Pot", 25, 4, 0, 1, 0, 25);
 		break;
 	case 2:
-		return new Enemy("Mini Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+		return new Enemy("Mini Croc", 30, 5, 2, enemylives3, enemylvl3, 30);
 		break;
 	case 3:
-		return new Enemy("Big Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+		return new Enemy("Big Croc", 35, 7, 4, enemylives3, enemylvl3, 35);
 		break;
 	case 4:
-		return new Enemy("Land Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+		return new Enemy("Land Croc", 45, 10, 7, enemylives3, enemylvl3, 45);
 		break;
 	case 5:
-		return new Enemy("Sharptooth Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+		return new Enemy("Sharptooth Croc", 70, 13, 10, enemylives3, enemylvl3, 70);
 		break;
 	case 6:
-		return new Enemy("King Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+		return new Enemy("King Croc", 85, 15, 16, enemylives3, enemylvl3, 85);
 		break;
 	case 7:
-		return new Enemy("Develish Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+		return new Enemy("Develish Croc", 115, 18, 19, enemylives3, enemylvl3, 115);
 		break;
 	case 8:
-		return new Enemy("Crocodile Dundee", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+		return new Enemy("Crocodile Dundee", 150, 22, 22, enemylives3, enemylvl3, 150);
 		break;
 	case 9:
-		return new Enemy("Killer Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+		return new Enemy("Killer Croc", 170, 25, 27, enemylives3, enemylvl3, 170);
 		break;
 	case 10:
-		return new Enemy("Transcendent Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+		return new Enemy("Transcendent Croc", 200, 30, 30, enemylives3, enemylvl3, 200);
 		break;
 	case 11:
-		return new Enemy("Florida Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+		return new Enemy("Florida Croc", 250, 37, 35, enemylives3, enemylvl3, 250);
 		break;
 	case 12: 
 		cout << "An endless mode boss has arrived..." << endl;
 		return new Enemy("Jock Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
 		break;
 	default:
-		return new Enemy("Creator Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+		return new Enemy("Creator Croc", 1000, 50, 45, enemylives3, enemylvl3, 1000);
 		break;
 	}
 }
 Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, int lives4, int playerclass4) {
 	int x = 0, enemyhp4 = 0, enemyatk4 = 0, enemylives4 = 0, enemydef4 = 0, enemylvl4 = 0, enemymaxh4 = 0;
 	if (baselevel4 == 200) {
-		x = 12;
+		x = 13;
 	}
 	else if (baselevel4 == 100) {
 		x = 11;
@@ -624,94 +352,13 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 	else {
 		x = r1() % 2;
 	}
-	if (playerclass4 == 1 || playerclass4 == 2 || playerclass4 == 3 || playerclass4 == 6) {
-		if (x == 3 || x == 4 || x == 5 || x == 7 || x == 8 || x == 9 || x == 10) {
-			enemyatk4 = floor(def4 * 1.25);
-			enemydef4 = floor(atk4 * .75);
-			enemyhp4 = floor(hp4 * .75);
-			enemylives4 = 1;
-			enemylvl4 = level4;
-			enemymaxh4 = enemyhp4;
-		}
-		if (x == 12) {
-			enemyatk4 = ceil(def4 * 2);
-			enemydef4 = ceil(atk4 * .85);
-			enemyhp4 = ceil(hp4 * 1.25);
-			enemylives4 = 1;
-			enemylvl4 = level4;
-			enemymaxh4 = enemyhp4;
-		}
-		else if (x == 11) {
-			enemyatk4 = ceil(def4 * 1.7);
-			enemydef4 = ceil(atk4 * .75);
-			enemyhp4 = ceil(hp4 * 1.15);
-			if (lives4 >= 2) {
-				enemylives4 = ceil(lives4 * .5);
-			}
-			else {
-				enemylives4 = 1;
-			}
-			enemylvl4 = level4;
-			enemymaxh4 = enemyhp4;
-		}
-		else if (x == 6) {
-			enemyatk4 = ceil(def4 * 1.7);
-			enemydef4 = ceil(atk4 * .75);
-			enemyhp4 = ceil(hp4 * 1.15);
-			if (lives4 >= 2) {
-				enemylives4 = ceil(lives4 * .5);
-			}
-			else {
-				enemylives4 = 1;
-			}
-			enemylvl4 = level4;
-			enemymaxh4 = enemyhp4;
-		}
+	if (lives4 >= 2) {
+		enemylives4 = ceil(lives4 * .5);
 	}
 	else {
-		if (x == 3 || x == 4 || x == 5 || x == 7 || x == 8 || x == 9 || x == 10) {
-			enemyatk4 = floor(def4 * 1.25);
-			enemydef4 = floor(atk4 * .5);
-			enemyhp4 = floor(hp4 * .75);
-			enemylives4 = 1;
-			enemylvl4 = level4;
-			enemymaxh4 = enemyhp4;
-		}
-		if (x == 12) {
-			enemyatk4 = ceil(def4 * 2);
-			enemydef4 = ceil(atk4 * .85);
-			enemyhp4 = ceil(hp4 * 1.25);
-			enemylives4 = 1;
-			enemylvl4 = level4;
-			enemymaxh4 = enemyhp4;
-		}
-		else if (x == 11) {
-			enemyatk4 = ceil(def4 * 1.7);
-			enemydef4 = ceil(atk4 * .7);
-			enemyhp4 = ceil(hp4 * 1.15);
-			if (lives4 >= 2) {
-				enemylives4 = ceil(lives4 * .5);
-			}
-			else {
-				enemylives4 = 1;
-			}
-			enemylvl4 = level4;
-			enemymaxh4 = enemyhp4;
-		}
-		else if (x == 6) {
-			enemyatk4 = ceil(def4 * 1.7);
-			enemydef4 = ceil(atk4 * .7);
-			enemyhp4 = ceil(hp4 * 1.15);
-			if (lives4 >= 2) {
-				enemylives4 = ceil(lives4 * .5);
-			}
-			else {
-				enemylives4 = 1;
-			}
-			enemylvl4 = level4;
-			enemymaxh4 = enemyhp4;
-		}
+		enemylives4 = 1;
 	}
+	enemylvl4 = level4;
 	if (Knight.endlessmode == true && Knight.getkills() > 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp4 = ceil(hp4 * 1.25);
@@ -725,54 +372,54 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 	}
 	switch (x) {
 	case 0:
-		return new Enemy("Roo", 20, 1, 0, 1, 0, 20);
+		return new Enemy("Roo", 20, 3, 0, 1, 0, 20);
 		break;
 	case 1:
-		return new Enemy("Joey Roo", 25, 1, 0, 1, 0, 25);
+		return new Enemy("Joey Roo", 25, 4, 0, 1, 0, 25);
 		break;
 	case 2:
-		return new Enemy("Kangaroo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+		return new Enemy("Kangaroo", 30, 5, 2, enemylives4, enemylvl4, 30);
 		break;
 	case 3:
-		return new Enemy("Mother Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+		return new Enemy("Mother Roo", 35, 7, 4, enemylives4, enemylvl4, 35);
 		break;
 	case 4:
-		return new Enemy("Boxer Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+		return new Enemy("Boxer Roo", 45, 10, 7, enemylives4, enemylvl4, 45);
 		break;
 	case 5:
-		return new Enemy("Jumping Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+		return new Enemy("Jumping Roo", 70, 13, 10, enemylives4, enemylvl4, 70);
 		break;
 	case 6:
-		return new Enemy("Killer Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+		return new Enemy("Killer Roo", 85, 15, 16, enemylives4, enemylvl4, 85);
 		break;
 	case 7:
-		return new Enemy("Crackhead Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+		return new Enemy("Crackhead Roo", 115, 18, 19, enemylives4, enemylvl4, 115);
 		break;
 	case 8:
-		return new Enemy("Aussie Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+		return new Enemy("Aussie Roo", 150, 22, 22, enemylives4, enemylvl4, 150);
 		break;
 	case 9:
-		return new Enemy("Jacked Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+		return new Enemy("Jacked Roo", 170, 25, 27, enemylives4, enemylvl4, 170);
 		break;
 	case 10:
-		return new Enemy("Paragon Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+		return new Enemy("Paragon Roo", 200, 30, 30, enemylives4, enemylvl4, 200);
 		break;
 	case 11:
-		return new Enemy("Boomaroo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+		return new Enemy("Boomaroo", 250, 37, 35, enemylives4, enemylvl4, 250);
 		break;
 	case 12: 
 		cout << "An endless mode boss has arrived..." << endl;
 		return new Enemy("Jock Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
 		break;
 	default:
-		return new Enemy("Creator Kangaroo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+		return new Enemy("Creator Kangaroo", 1000, 50, 45, enemylives4, enemylvl4, enemymaxh4);
 		break;
 	}
 }
 Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, int lives5, int playerclass5) {
 	int x = 0, enemyhp5 = 0, enemyatk5 = 0, enemylives5 = 0, enemydef5 = 0, enemylvl5 = 0, enemymaxh5 = 0;
 	if (baselevel5 == 200) {
-		x = 12;
+		x = 13;
 	}
 	else if (baselevel5 == 100) {
 		x = 11;
@@ -807,104 +454,13 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 	else {
 		x = r1() % 2;
 	}
-	if (playerclass5 == 1 || playerclass5 == 2 || playerclass5 == 3 || playerclass5 == 6) {
-		if (x == 3 || x == 4 || x == 5 || x == 7 || x == 8 || x == 9 || x == 10) {
-			enemyatk5 = floor(def5 * 1.25);
-			enemydef5 = floor(atk5 * .75);
-			enemyhp5 = floor(hp5 * .75);
-			if (lives5 >= 2) {
-				enemylives5 = ceil(lives5 * .5);
-			}
-			else {
-				enemylives5 = 1;
-			}
-			enemylvl5 = level5;
-			enemymaxh5 = enemyhp5;
-		}
-		if (x == 12) {
-			enemyatk5 = ceil(def5 * 2);
-			enemydef5 = ceil(atk5 * .85);
-			enemyhp5 = ceil(hp5 * 1.25);
-			enemylives5 = 1;
-			enemylvl5 = level5;
-			enemymaxh5 = enemyhp5;
-		}
-		else if (x == 11) {
-			enemyatk5 = ceil(def5 * 1.7);
-			enemydef5 = ceil(atk5 * .75);
-			enemyhp5 = ceil(hp5 * 1.15);
-			if (lives5 >= 2) {
-				enemylives5 = ceil(lives5 * .5);
-			}
-			else {
-				enemylives5 = 1;
-			}
-			enemylvl5 = level5;
-			enemymaxh5 = enemyhp5;
-		}
-		else if (x == 6) {
-			enemyatk5 = ceil(def5 * 1.7);
-			enemydef5 = ceil(atk5 * .75);
-			enemyhp5 = ceil(hp5 * 1.15);
-			if (lives5 >= 2) {
-				enemylives5 = ceil(lives5 * .5);
-			}
-			else {
-				enemylives5 = 1;
-			}
-			enemylvl5 = level5;
-			enemymaxh5 = enemyhp5;
-		}
+	if (lives5 >= 2) {
+		enemylives5 = ceil(lives5 * .5);
 	}
 	else {
-		if (x == 3 || x == 4 || x == 5 || x == 7 || x == 8 || x == 9 || x == 10) {
-			enemyatk5 = floor(def5 * 1.25);
-			enemydef5 = floor(atk5 * .5);
-			enemyhp5 = floor(hp5 * .75);
-			if (lives5 >= 2) {
-				enemylives5 = ceil(lives5 * .5);
-			}
-			else {
-				enemylives5 = 1;
-			}
-			enemylvl5 = level5;
-			enemymaxh5 = enemyhp5;
-		}
-		if (x == 12) {
-			enemyatk5 = ceil(def5 * 2);
-			enemydef5 = ceil(atk5 * .85);
-			enemyhp5 = ceil(hp5 * 1.25);
-			enemylives5 = 1;
-			enemylvl5 = level5;
-			enemymaxh5 = enemyhp5;
-		}
-		else if (x == 11) {
-			enemyatk5 = ceil(def5 * 1.7);
-			enemydef5 = ceil(atk5 * .7);
-			enemyhp5 = ceil(hp5 * 1.15);
-			if (lives5 >= 2) {
-				enemylives5 = ceil(lives5 * .5);
-			}
-			else {
-				enemylives5 = 1;
-			}
-			enemylvl5 = level5;
-			enemymaxh5 = enemyhp5;
-		}
-		else if (x == 6) {
-			enemyatk5 = ceil(def5 * 1.7);
-			enemydef5 = ceil(atk5 * .7);
-			enemyhp5 = ceil(hp5 * 1.15);
-			if (lives5 >= 2) {
-				enemylives5 = ceil(lives5 * .5);
-			}
-			else {
-				enemylives5 = 1;
-			}
-			enemylvl5 = level5;
-			enemymaxh5 = enemyhp5;
-		}
+		enemylives5 = 1;
 	}
+	enemylvl5 = level5;
 	if (Knight.endlessmode == true && Knight.getkills() > 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp5 = ceil(hp5 * 1.25);
@@ -918,47 +474,47 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 	}
 	switch (x) {
 	case 0:
-		return new Enemy("Skeleton", 20, 1, 0, 1, 0, 20);
+		return new Enemy("Skeleton", 20, 3, 0, 1, 0, 20);
 		break;
 	case 1:
-		return new Enemy("Skellie", 25, 1, 0, 1, 0, 25);
+		return new Enemy("Skellie", 25, 4, 0, 1, 0, 25);
 		break;
 	case 2:
-		return new Enemy("Enchanted Bow Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+		return new Enemy("Enchanted Bow Skeleton", 30, 5, 2, enemylives5, enemylvl5, 30);
 		break;
 	case 3:
-		return new Enemy("Aimbot Skellie", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+		return new Enemy("Aimbot Skellie", 35, 7, 4, enemylives5, enemylvl5, 35);
 		break;
 	case 4:
-		return new Enemy("Sharpshooter Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+		return new Enemy("Sharpshooter Skeleton", 45, 10, 7, enemylives5, enemylvl5, 45);
 		break;
 	case 5:
-		return new Enemy("Bony Bill", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+		return new Enemy("Bony Bill", 70, 13, 10, enemylives5, enemylvl5, 70);
 		break;
 	case 6:
-		return new Enemy("Crazy Bones", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+		return new Enemy("Crazy Bones", 85, 15, 16, enemylives5, enemylvl5, 85);
 		break;
 	case 7:
-		return new Enemy("Broken Bone Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+		return new Enemy("Broken Bone Skeleton", 115, 18, 19, enemylives5, enemylvl5, 115);
 		break;
 	case 8:
-		return new Enemy("Boogie Bone", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+		return new Enemy("Boogie Bone", 150, 22, 22, enemylives5, enemylvl5, 150);
 		break;
 	case 9:
-		return new Enemy("Ranked Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+		return new Enemy("Ranked Skeleton", 170, 25, 27, enemylives5, enemylvl5, 170);
 		break;
 	case 10:
-		return new Enemy("Captain Skellie", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+		return new Enemy("Captain Skellie", 200, 30, 30, enemylives5, enemylvl5, 200);
 		break;
 	case 11:
-		return new Enemy("Super Skellie", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+		return new Enemy("Super Skellie", 250, 37, 35, enemylives5, enemylvl5, 250);
 		break;
 	case 12: 
 		cout << "An endless mode boss has arrived..." << endl;
 		return new Enemy("Jock Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
 		break;
 	default:
-		return new Enemy("Creator Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+		return new Enemy("Creator Skeleton", 1000, 50, 45, enemylives5, enemylvl5, 1000);
 		break;
 	}
 }
