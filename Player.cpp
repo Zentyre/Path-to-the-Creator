@@ -2355,7 +2355,9 @@ void Player::attack(Character* Target) {
             attack(Target);
             break;
         }
-        cout << "--Weapons--" << endl;
+         if (Knife == true || Sword == true || Excalibur == true || VoidshroudSlicer == true || accuratesword == true || lightningexcalibur == true || lightningflaminglongsword == true || flaminglongsword == true || lightningvoidshroudslicer == true || upgradedexcalibur == true || upgradedflaminglongsword == true || upgradedvoidshroudslicer == true) {
+             cout << "--Weapons--" << endl;
+         }
         if (lightningflaminglongsword == true) {
             cout << "Lightning Framing Longsword (+20 Attack)" << endl;
         }
@@ -2392,7 +2394,9 @@ void Player::attack(Character* Target) {
         if (Sword == true) {
             cout << "Sword (+4 attack)" << endl;
         }
-        cout << "--Armor--" << endl;
+        if (vladimirsArmor == true || narsosArmor == true || lockhartsArmor == true || glassshoes == true || mystichelmet == true || dragonscalechestplate == true || helmet == true || boots == true || chestplate == true || shield == true || lightningdragonscalechestplate == true || lightningglassshoes == true || lightningmystichelmet == true || upgradedDragonscalechestplate == true || upgradedgodarmor == true || upgradedglassshoes == true || upgradedmystichelmet == true || lightningGodarmor == true) {
+            cout << "--Armor--" << endl;
+        }
         if (vladimirsArmor == true) {
             cout << "Vladimir's Armor (+20 defence)" << endl;
         }
@@ -2447,7 +2451,7 @@ void Player::attack(Character* Target) {
         if (lightningglassshoes == true) {
             cout << "Lightning Glass Shoes (+9 Defence|+12 Attack)" << endl;
         }
-        if (defenceupgrade == true || attackupgrade == true || levelupgrade == true || maxhealthtracker > 0 || levelupgrade == true || tracklevelpotion > 0 ||tracksuperiorlevelpotion > 0 || tracksuperpotion > 0 || leveltonic == true ||superiorleveltonic == true || superpotion == true) {
+        if (defenceupgrade == true || attackupgrade == true || levelupgrade == true || maxhealthtracker > 0 || tracklevelpotion > 0 ||tracksuperiorlevelpotion > 0 || tracksuperpotion > 0 || leveltonic == true ||superiorleveltonic == true || superpotion == true) {
             cout << "--Upgrades/Potions--" << endl;
         }
         if (defenceupgrade == true) {
@@ -2617,7 +2621,7 @@ void Player::attack(Character* Target) {
             cout << "Then we shall move on." << endl << endl;
         }
         else {
-            cout << "Invalid Answer, try again." << endl << endl;
+            cout << "Invalid Answer." << endl << endl;
         }
         attack(Target);
         break;
