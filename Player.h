@@ -38,6 +38,7 @@ public:
 	void playerclassdreadnought();
 	void playerclasstrickster();
 	void itemusehealthtonic();
+	int stopremessaging = 0;
 	int healthtonicitem = 0;
 	int failedforge = 0;
 	int cipherblueprint = 0;

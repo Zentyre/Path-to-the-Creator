@@ -7,7 +7,7 @@
 #include "Enemy.h"
 using namespace std;
 random_device r1;
-Player Knight("Player", 50, 25, 4, 0, 0, 1);
+Player Knight("Player", 50, 25, 10000, 10000, 260, 1);
 int endlessSpawn = 1;
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
 	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefence = 30, endlesslevel = levele, endlessmaxhealth;
@@ -585,7 +585,7 @@ int main() {
 	}
 	while (Knight.storymode == true) {
 		cout << "Welcome to Evil Conquest!" << endl;
-		cout << "Your objective is to kill the operator of all evil...the Creator Slime!" << endl;
+		cout << "Your objective is to kill the operator of all evil...the Creator!" << endl;
 		cout << "You start at level one, for every kill you go up a level and gain more damage (Base attack damage + level)" << endl;
 		cout << "--Level can only add up to 30 damage and/or healing--(Level gained from items does affect this)" << endl;
 		cout << "At levels 15, 25, 50 and 100, you gain new abilities. At level 200 you fight the final boss(Level gained from items does not affect this)" << endl;
@@ -1091,22 +1091,27 @@ int main() {
 						Knight.Goldloom += r1() % 16 + 10;
 					}
 					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == 6) {
+						Knight.stopremessaging = 1;
 						Knight.trickstermove = true;
 						cout << "You have unlocked your Trickster skill, Confuse!" << endl;
 					}
 					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == 4) {
+						Knight.stopremessaging = 1;
 						Knight.warforgedmove = true;
 						cout << "You have unlocked your Warforged Engineer skill, Guardians Respite!" << endl;
 					}
 					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 90 && playerclasschoice == 3) {
+						Knight.stopremessaging = 1;
 						Knight.soulweavermove = true;
 						cout << "You have unlocked your Soulweaver skill, Fortuitous Gambit!" << endl;
 					}
 					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 80 && playerclasschoice == 1) {
+						Knight.stopremessaging = 1;
 						Knight.knightmove = true;
 						cout << "You have unlocked your special Knight skill, Titans Strike!" << endl;
 					}
 					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == 5) {
+						Knight.stopremessaging = 1;
 						Knight.dreadnoughtmove = true;
 						cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
 					}
@@ -1387,6 +1392,7 @@ int main() {
 			}
 		}
 	}
+	//start of endless mode
 	while (Knight.endlessmode == true) {
 		cout << "Welcome to Evil Conquest...Endless mode!" << endl;
 		cout << "Your goal is to progress as far as you can and gain the best stats possible." << endl;
