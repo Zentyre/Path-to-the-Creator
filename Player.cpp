@@ -22,23 +22,23 @@ void Player::playerclassexecutioner() {
     classtype = 2;
 }
 void Player::playerclasssoulweaver() {
-    maxhealth -= 10;
-    health -= 5;
-    attackPower -= 1;
+    maxhealth -= 12;
+    health -= 6;
+    attackPower -= 2;
     defence += 2;
     addlives(1);
     classtype = 3;
 }
 void Player::playerclasswarforged() {
-    maxhealth += 30;
-    health += 15;
+    maxhealth += 24;
+    health += 12;
     attackPower -= 2;
     defence += 3;
     classtype = 4;
 }
 void Player::playerclassdreadnought() {
-    maxhealth += 50;
-    health += 25;
+    maxhealth += 40;
+    health += 20;
     attackPower -= 3;
     defence += 3;
     classtype = 5;
@@ -418,16 +418,16 @@ void Player::setmaxhealth() {
     }
     //maxhealth based on classes
     if (classtype == 2) {
-        charactermaxhealth -= 20;
+        charactermaxhealth -= 14;
     }
     else if (classtype == 3 || classtype == 6) {
-        charactermaxhealth -= 10;
+        charactermaxhealth -= 12;
     }
    else if (classtype == 4) {
-        charactermaxhealth += 30;
+        charactermaxhealth += 24;
     }
     else if (classtype == 5) {
-        charactermaxhealth += 50;
+        charactermaxhealth += 40;
     }
     maxhealth = charactermaxhealth;
 }
