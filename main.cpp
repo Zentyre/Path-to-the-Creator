@@ -12,7 +12,7 @@ int endlessSpawn = 0;
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
 	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefence = 30, endlesslevel = levele, endlessmaxhealth;
 	while (xtracker >= 10) {
-		if (baselevele % 10 == 0) {
+		if (xtracker % 10 == 0) {
 			xtracker -= 10;
 			x++;
 		}
@@ -85,53 +85,53 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 			x = 12;
 		}
 	}
-if (endlessSpawn == 1) {
-    switch (x) {
-    case 0:
-        return new Enemy("Shroom", 20, 3, 0, 1, 1, 20);
-        break;
-    case 1:
-        return new Enemy("Shroom Knight", 25, 4, 0, 1, 2, 25);
-        break;
-    case 2:
-        return new Enemy("Shroom ArchKnight", 30, 5, 2, enemylives, enemylvl, 30);
-        break;
-    case 3:
-        return new Enemy("Noble Shroom", 35, 7, 4, enemylives, enemylvl, 35);
-        break;
-    case 4:
-        return new Enemy("Royal Shroom", 45, 10, 7, enemylives, enemylvl, 45);
-        break;
-    case 5:
-        return new Enemy("Princess Slime", 70, 13, 10, enemylives, enemylvl, 70);
-        break;
-    case 6:
-        return new Enemy("Prince Shroom", 85, 15, 16, enemylives, enemylvl, 85);
-        break;
-    case 7:
-        return new Enemy("King Shroom", 115, 18, 19, enemylives, enemylvl, 115);
-        break;
-    case 8:
-        return new Enemy("Emperor Shroom", 150, 22, 22, enemylives, enemylvl, 150);
-        break;
-    case 9:
-        return new Enemy("Leader Shroom", 170, 25, 27, enemylives, enemylvl, 170);
-        break;
-    case 10:
-        return new Enemy("Divine Shroom", 200, 30, 30, enemylives, enemylvl, 200);
-        break;
-    case 11:
-        return new Enemy("Boss Shroom", 250, 37, 35, enemylives, enemylvl, 250);
-        break;
-	case 12: 
-		cout << "--An endless mode boss has arrived...--" << endl;
-		return new Enemy("Jock Mushroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
-		break;
-    default:
-        return new Enemy("Creator Shroom", 1000, 50, 45, enemylives, enemylvl, 10000);
-        break;
-    }
-}
+	if (endlessSpawn == 1) {
+    	switch (x) {
+    	case 0:
+        	return new Enemy("Shroom", 20, 3, 0, 1, 1, 20);
+        	break;
+    	case 1:
+        	return new Enemy("Shroom Knight", 25, 4, 0, 1, 2, 25);
+        	break;
+    	case 2:
+        	return new Enemy("Shroom ArchKnight", 30, 5, 2, enemylives, enemylvl, 30);
+        	break;
+    	case 3:
+        	return new Enemy("Noble Shroom", 35, 7, 4, enemylives, enemylvl, 35);
+        	break;
+    	case 4:
+        	return new Enemy("Royal Shroom", 45, 10, 7, enemylives, enemylvl, 45);
+        	break;
+    	case 5:
+        	return new Enemy("Princess Slime", 70, 13, 10, enemylives, enemylvl, 70);
+        	break;
+    	case 6:
+        	return new Enemy("Prince Shroom", 85, 15, 16, enemylives, enemylvl, 85);
+        	break;
+   		case 7:
+        	return new Enemy("King Shroom", 115, 18, 19, enemylives, enemylvl, 115);
+        	break;
+    	case 8:
+        	return new Enemy("Emperor Shroom", 150, 22, 22, enemylives, enemylvl, 150);
+        	break;
+    	case 9:
+        	return new Enemy("Leader Shroom", 170, 25, 27, enemylives, enemylvl, 170);
+        	break;
+    	case 10:
+        	return new Enemy("Divine Shroom", 200, 30, 30, enemylives, enemylvl, 200);
+        	break;
+    	case 11:
+        	return new Enemy("Boss Shroom", 250, 37, 35, enemylives, enemylvl, 250);
+        	break;
+		case 12: 
+			cout << "--An endless mode boss has arrived...--" << endl;
+			return new Enemy("Jock Mushroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
+			break;
+    	default:
+        	return new Enemy("Creator Shroom", 1000, 50, 45, enemylives, enemylvl, 10000);
+        	break;
+    	}
+	}
 }
 Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, int lives2, int playerclass2) {
 	int x = 0, enemyhp2 = 0, enemyatk2 = 0, enemylives2 = 0, enemydef2 = 0, enemylvl2 = 0, enemymaxh2 = 0;
@@ -195,53 +195,53 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 			x = 12;
 		}
 	}
-if (endlessSpawn == 1) {
-	switch (x) {
-	case 0:
-		return new Enemy("Slime", 20, 1, 0, 1, 0, 20);
-		break;
-	case 1:
-		return new Enemy("Epic Slime", 25, 1, 0, 1, 0, 25);
-		break;
-	case 2:
-		return new Enemy("Superior Slime", 30, 5, 2, enemylives2, enemylvl2, 30);
-		break;
-	case 3:
-		return new Enemy("Super Slime", 35, 7, 4, enemylives2, enemylvl2, 35);
-		break;
-	case 4:
-		return new Enemy("Incredible Slime", 45, 10, 7, enemylives2, enemylvl2, 45);
-		break;
-	case 5:
-		return new Enemy("Superb Slime", 70, 13, 10, enemylives2, enemylvl2, 70);
-		break;
-	case 6:
-		return new Enemy("King Slime", 85, 15, 16, enemylives2, enemylvl2, 85);
-		break;
-	case 7:
-		return new Enemy("Demon Slime", 115, 18, 19, enemylives2, enemylvl2, 115);
-		break;
-	case 8:
-		return new Enemy("Overlord Slime", 150, 22, 22, enemylives2, enemylvl2, 150);
-		break;
-	case 9:
-		return new Enemy("Universal Super Slime", 170, 25, 27, enemylives2, enemylvl2, 170);
-		break;
-	case 10:
-		return new Enemy("Godly Slime", 200, 30, 30, enemylives2, enemylvl2, 200);
-		break;
-	case 11:
-		return new Enemy("Boss Slime", 250, 37, 35, enemylives2, enemylvl2, 250);
-		break;
-	case 12: 
-		cout << "--An endless mode boss has arrived...--" << endl;
-		return new Enemy("Jock Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
-		break;
-	default:
-		return new Enemy("Creator Slime", 1000, 50, 45, enemylives2, enemylvl2, 1000);
-		break;
+	if (endlessSpawn == 1) {
+		switch (x) {
+       	case 0:
+       		return new Enemy("Slime", 20, 1, 0, 1, 0, 20);
+       		break;
+       	case 1:
+       		return new Enemy("Epic Slime", 25, 1, 0, 1, 0, 25);
+       		break;
+       	case 2:
+       		return new Enemy("Superior Slime", 30, 5, 2, enemylives2, enemylvl2, 30);
+       		break;
+       	case 3:
+       		return new Enemy("Super Slime", 35, 7, 4, enemylives2, enemylvl2, 35);
+       		break;
+       	case 4:
+       		return new Enemy("Incredible Slime", 45, 10, 7, enemylives2, enemylvl2, 45);
+       		break;
+       	case 5:
+       		return new Enemy("Superb Slime", 70, 13, 10, enemylives2, enemylvl2, 70);
+       		break;
+       	case 6:
+       		return new Enemy("King Slime", 85, 15, 16, enemylives2, enemylvl2, 85);
+       		break;
+       	case 7:
+       		return new Enemy("Demon Slime", 115, 18, 19, enemylives2, enemylvl2, 115);
+       		break;
+       	case 8:
+       		return new Enemy("Overlord Slime", 150, 22, 22, enemylives2, enemylvl2, 150);
+       		break;
+       	case 9:
+       		return new Enemy("Universal Super Slime", 170, 25, 27, enemylives2, enemylvl2, 170);
+       		break;
+       	case 10:
+       		return new Enemy("Godly Slime", 200, 30, 30, enemylives2, enemylvl2, 200);
+       		break;
+       	case 11:
+       		return new Enemy("Boss Slime", 250, 37, 35, enemylives2, enemylvl2, 250);
+       		break;
+       	case 12: 
+       		cout << "--An endless mode boss has arrived...--" << endl;
+       		return new Enemy("Jock Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+       		break;
+       	default:
+       		return new Enemy("Creator Slime", 1000, 50, 45, enemylives2, enemylvl2, 1000);
+       		break;
+       	}
 	}
-}
 }
 Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, int lives3, int playerclass3) {
 	int x = 0, enemyhp3 = 0, enemyatk3 = 0, enemylives3 = 0, enemydef3 = 0, enemylvl3 = 0, enemymaxh3 = 0;
@@ -305,53 +305,53 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 			x = 12;
 		}
 	}
-if (endlessSpawn == 1) {
-	switch (x) {
-	case 0:
-		return new Enemy("Croc", 20, 3, 0, 1, 0, 20);
-		break;
-	case 1:
-		return new Enemy("Croc Pot", 25, 4, 0, 1, 0, 25);
-		break;
-	case 2:
-		return new Enemy("Mini Croc", 30, 5, 2, enemylives3, enemylvl3, 30);
-		break;
-	case 3:
-		return new Enemy("Big Croc", 35, 7, 4, enemylives3, enemylvl3, 35);
-		break;
-	case 4:
-		return new Enemy("Land Croc", 45, 10, 7, enemylives3, enemylvl3, 45);
-		break;
-	case 5:
-		return new Enemy("Sharptooth Croc", 70, 13, 10, enemylives3, enemylvl3, 70);
-		break;
-	case 6:
-		return new Enemy("King Croc", 85, 15, 16, enemylives3, enemylvl3, 85);
-		break;
-	case 7:
-		return new Enemy("Develish Croc", 115, 18, 19, enemylives3, enemylvl3, 115);
-		break;
-	case 8:
-		return new Enemy("Crocodile Dundee", 150, 22, 22, enemylives3, enemylvl3, 150);
-		break;
-	case 9:
-		return new Enemy("Killer Croc", 170, 25, 27, enemylives3, enemylvl3, 170);
-		break;
-	case 10:
-		return new Enemy("Transcendent Croc", 200, 30, 30, enemylives3, enemylvl3, 200);
-		break;
-	case 11:
-		return new Enemy("Florida Croc", 250, 37, 35, enemylives3, enemylvl3, 250);
-		break;
-	case 12: 
-		cout << "--An endless mode boss has arrived...--" << endl;
-		return new Enemy("Jock Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
-		break;
-	default:
-		return new Enemy("Creator Croc", 1000, 50, 45, enemylives3, enemylvl3, 1000);
-		break;
+	if (endlessSpawn == 1) {
+    	switch (x) {
+    	case 0:
+    		return new Enemy("Croc", 20, 3, 0, 1, 0, 20);
+    		break;
+    	case 1:
+    		return new Enemy("Croc Pot", 25, 4, 0, 1, 0, 25);
+    		break;
+    	case 2:
+    		return new Enemy("Mini Croc", 30, 5, 2, enemylives3, enemylvl3, 30);
+    		break;
+    	case 3:
+    		return new Enemy("Big Croc", 35, 7, 4, enemylives3, enemylvl3, 35);
+    		break;
+    	case 4:
+    		return new Enemy("Land Croc", 45, 10, 7, enemylives3, enemylvl3, 45);
+    		break;
+    	case 5:
+    		return new Enemy("Sharptooth Croc", 70, 13, 10, enemylives3, enemylvl3, 70);
+    		break;
+    	case 6:
+    		return new Enemy("King Croc", 85, 15, 16, enemylives3, enemylvl3, 85);
+    		break;
+    	case 7:
+    		return new Enemy("Develish Croc", 115, 18, 19, enemylives3, enemylvl3, 115);
+    		break;
+    	case 8:
+    		return new Enemy("Crocodile Dundee", 150, 22, 22, enemylives3, enemylvl3, 150);
+    		break;
+    	case 9:
+    		return new Enemy("Killer Croc", 170, 25, 27, enemylives3, enemylvl3, 170);
+    		break;
+    	case 10:
+    		return new Enemy("Transcendent Croc", 200, 30, 30, enemylives3, enemylvl3, 200);
+    		break;
+    	case 11:
+    		return new Enemy("Florida Croc", 250, 37, 35, enemylives3, enemylvl3, 250);
+    		break;
+    	case 12: 
+    		cout << "--An endless mode boss has arrived...--" << endl;
+    		return new Enemy("Jock Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+    		break;
+    	default:
+    		return new Enemy("Creator Croc", 1000, 50, 45, enemylives3, enemylvl3, 1000);
+    		break;
+    	}
 	}
-}
 }
 Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, int lives4, int playerclass4) {
 	int x = 0, enemyhp4 = 0, enemyatk4 = 0, enemylives4 = 0, enemydef4 = 0, enemylvl4 = 0, enemymaxh4 = 0;
@@ -415,53 +415,53 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 			x = 12;
 		}
 	}
-if (endlessSpawn == 1) {
-	switch (x) {
-	case 0:
-		return new Enemy("Roo", 20, 3, 0, 1, 0, 20);
-		break;
-	case 1:
-		return new Enemy("Joey Roo", 25, 4, 0, 1, 0, 25);
-		break;
-	case 2:
-		return new Enemy("Kangaroo", 30, 5, 2, enemylives4, enemylvl4, 30);
-		break;
-	case 3:
-		return new Enemy("Mother Roo", 35, 7, 4, enemylives4, enemylvl4, 35);
-		break;
-	case 4:
-		return new Enemy("Boxer Roo", 45, 10, 7, enemylives4, enemylvl4, 45);
-		break;
-	case 5:
-		return new Enemy("Jumping Roo", 70, 13, 10, enemylives4, enemylvl4, 70);
-		break;
-	case 6:
-		return new Enemy("Killer Roo", 85, 15, 16, enemylives4, enemylvl4, 85);
-		break;
-	case 7:
-		return new Enemy("Crackhead Roo", 115, 18, 19, enemylives4, enemylvl4, 115);
-		break;
-	case 8:
-		return new Enemy("Aussie Roo", 150, 22, 22, enemylives4, enemylvl4, 150);
-		break;
-	case 9:
-		return new Enemy("Jacked Roo", 170, 25, 27, enemylives4, enemylvl4, 170);
-		break;
-	case 10:
-		return new Enemy("Paragon Roo", 200, 30, 30, enemylives4, enemylvl4, 200);
-		break;
-	case 11:
-		return new Enemy("Boomaroo", 250, 37, 35, enemylives4, enemylvl4, 250);
-		break;
-	case 12: 
-		cout << "--An endless mode boss has arrived...--" << endl;
-		return new Enemy("Jock Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
-		break;
-	default:
-		return new Enemy("Creator Kangaroo", 1000, 50, 45, enemylives4, enemylvl4, enemymaxh4);
-		break;
+	if (endlessSpawn == 1) {
+    	switch (x) {
+    	case 0:
+    		return new Enemy("Roo", 20, 3, 0, 1, 0, 20);
+    		break;
+    	case 1:
+    		return new Enemy("Joey Roo", 25, 4, 0, 1, 0, 25);
+    		break;
+    	case 2:
+    		return new Enemy("Kangaroo", 30, 5, 2, enemylives4, enemylvl4, 30);
+    		break;
+    	case 3:
+    		return new Enemy("Mother Roo", 35, 7, 4, enemylives4, enemylvl4, 35);
+    		break;
+    	case 4:
+    		return new Enemy("Boxer Roo", 45, 10, 7, enemylives4, enemylvl4, 45);
+    		break;
+    	case 5:
+    		return new Enemy("Jumping Roo", 70, 13, 10, enemylives4, enemylvl4, 70);
+    		break;
+    	case 6:
+    		return new Enemy("Killer Roo", 85, 15, 16, enemylives4, enemylvl4, 85);
+    		break;
+    	case 7:
+    		return new Enemy("Crackhead Roo", 115, 18, 19, enemylives4, enemylvl4, 115);
+    		break;
+    	case 8:
+    		return new Enemy("Aussie Roo", 150, 22, 22, enemylives4, enemylvl4, 150);
+    		break;
+    	case 9:
+    		return new Enemy("Jacked Roo", 170, 25, 27, enemylives4, enemylvl4, 170);
+    		break;
+    	case 10:
+    		return new Enemy("Paragon Roo", 200, 30, 30, enemylives4, enemylvl4, 200);
+    		break;
+    	case 11:
+    		return new Enemy("Boomaroo", 250, 37, 35, enemylives4, enemylvl4, 250);
+    		break;
+    	case 12: 
+    		cout << "--An endless mode boss has arrived...--" << endl;
+    		return new Enemy("Jock Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+    		break;
+    	default:
+    		return new Enemy("Creator Kangaroo", 1000, 50, 45, enemylives4, enemylvl4, enemymaxh4);
+    		break;
+    	}
 	}
-}
 }
 Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, int lives5, int playerclass5) {
 	int x = 0, enemyhp5 = 0, enemyatk5 = 0, enemylives5 = 0, enemydef5 = 0, enemylvl5 = 0, enemymaxh5 = 0;
@@ -525,53 +525,53 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 			x = 12;
 		}
 	}
-if (endlessSpawn == 1) {
-	switch (x) {
-	case 0:
-		return new Enemy("Skeleton", 20, 3, 0, 1, 0, 20);
-		break;
-	case 1:
-		return new Enemy("Skellie", 25, 4, 0, 1, 0, 25);
-		break;
-	case 2:
-		return new Enemy("Enchanted Bow Skeleton", 30, 5, 2, enemylives5, enemylvl5, 30);
-		break;
-	case 3:
-		return new Enemy("Aimbot Skellie", 35, 7, 4, enemylives5, enemylvl5, 35);
-		break;
-	case 4:
-		return new Enemy("Sharpshooter Skeleton", 45, 10, 7, enemylives5, enemylvl5, 45);
-		break;
-	case 5:
-		return new Enemy("Bony Bill", 70, 13, 10, enemylives5, enemylvl5, 70);
-		break;
-	case 6:
-		return new Enemy("Crazy Bones", 85, 15, 16, enemylives5, enemylvl5, 85);
-		break;
-	case 7:
-		return new Enemy("Broken Bone Skeleton", 115, 18, 19, enemylives5, enemylvl5, 115);
-		break;
-	case 8:
-		return new Enemy("Boogie Bone", 150, 22, 22, enemylives5, enemylvl5, 150);
-		break;
-	case 9:
-		return new Enemy("Ranked Skeleton", 170, 25, 27, enemylives5, enemylvl5, 170);
-		break;
-	case 10:
-		return new Enemy("Captain Skellie", 200, 30, 30, enemylives5, enemylvl5, 200);
-		break;
-	case 11:
-		return new Enemy("Super Skellie", 250, 37, 35, enemylives5, enemylvl5, 250);
-		break;
-	case 12: 
-		cout << "--An endless mode boss has arrived...--" << endl;
-		return new Enemy("Jock Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
-		break;
-	default:
-		return new Enemy("Creator Skeleton", 1000, 50, 45, enemylives5, enemylvl5, 1000);
-		break;
+    if (endlessSpawn == 1) {
+    	switch (x) {
+    	case 0:
+    		return new Enemy("Skeleton", 20, 3, 0, 1, 0, 20);
+    		break;
+    	case 1:
+    		return new Enemy("Skellie", 25, 4, 0, 1, 0, 25);
+    		break;
+    	case 2:
+    		return new Enemy("Enchanted Bow Skeleton", 30, 5, 2, enemylives5, enemylvl5, 30);
+    		break;
+    	case 3:
+    		return new Enemy("Aimbot Skellie", 35, 7, 4, enemylives5, enemylvl5, 35);
+    		break;
+    	case 4:
+    		return new Enemy("Sharpshooter Skeleton", 45, 10, 7, enemylives5, enemylvl5, 45);
+    		break;
+    	case 5:
+    		return new Enemy("Bony Bill", 70, 13, 10, enemylives5, enemylvl5, 70);
+    		break;
+    	case 6:
+    		return new Enemy("Crazy Bones", 85, 15, 16, enemylives5, enemylvl5, 85);
+    		break;
+    	case 7:
+    		return new Enemy("Broken Bone Skeleton", 115, 18, 19, enemylives5, enemylvl5, 115);
+    		break;
+    	case 8:
+    		return new Enemy("Boogie Bone", 150, 22, 22, enemylives5, enemylvl5, 150);
+    		break;
+    	case 9:
+    		return new Enemy("Ranked Skeleton", 170, 25, 27, enemylives5, enemylvl5, 170);
+    		break;
+    	case 10:
+    		return new Enemy("Captain Skellie", 200, 30, 30, enemylives5, enemylvl5, 200);
+    		break;
+    	case 11:
+    		return new Enemy("Super Skellie", 250, 37, 35, enemylives5, enemylvl5, 250);
+    		break;
+    	case 12: 
+    		cout << "--An endless mode boss has arrived...--" << endl;
+    		return new Enemy("Jock Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+    		break;
+    	default:
+    		return new Enemy("Creator Skeleton", 1000, 50, 45, enemylives5, enemylvl5, 1000);
+    		break;
+    	}
 	}
-}
 }
 int main() {
 	string modeChoice = "";
