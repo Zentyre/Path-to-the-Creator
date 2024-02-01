@@ -286,7 +286,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 			x = 12;
 		}
 	}
-	//add if (endlessSpawn == 1)
+if (endlessSpawn == 1) {
     switch (x) {
     case 0:
         return new Enemy("Shroom", 20, 3, 0, 1, 1, 20);
@@ -332,6 +332,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
         return new Enemy("Creator Shroom", 1000, 50, 45, enemylives, enemylvl, 10000);
         break;
     }
+}
 }
 Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, int lives2, int playerclass2) {
 	int x = 0, enemyhp2 = 0, enemyatk2 = 0, enemylives2 = 0, enemydef2 = 0, enemylvl2 = 0, enemymaxh2 = 0;
@@ -395,6 +396,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 			x = 12;
 		}
 	}
+if (endlessSpawn == 1) {
 	switch (x) {
 	case 0:
 		return new Enemy("Slime", 20, 1, 0, 1, 0, 20);
@@ -440,6 +442,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 		return new Enemy("Creator Slime", 1000, 50, 45, enemylives2, enemylvl2, 1000);
 		break;
 	}
+}
 }
 Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, int lives3, int playerclass3) {
 	int x = 0, enemyhp3 = 0, enemyatk3 = 0, enemylives3 = 0, enemydef3 = 0, enemylvl3 = 0, enemymaxh3 = 0;
@@ -503,6 +506,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 			x = 12;
 		}
 	}
+if (endlessSpawn == 1) {
 	switch (x) {
 	case 0:
 		return new Enemy("Croc", 20, 3, 0, 1, 0, 20);
@@ -548,6 +552,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 		return new Enemy("Creator Croc", 1000, 50, 45, enemylives3, enemylvl3, 1000);
 		break;
 	}
+}
 }
 Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, int lives4, int playerclass4) {
 	int x = 0, enemyhp4 = 0, enemyatk4 = 0, enemylives4 = 0, enemydef4 = 0, enemylvl4 = 0, enemymaxh4 = 0;
@@ -611,6 +616,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 			x = 12;
 		}
 	}
+if (endlessSpawn == 1) {
 	switch (x) {
 	case 0:
 		return new Enemy("Roo", 20, 3, 0, 1, 0, 20);
@@ -656,6 +662,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 		return new Enemy("Creator Kangaroo", 1000, 50, 45, enemylives4, enemylvl4, enemymaxh4);
 		break;
 	}
+}
 }
 Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, int lives5, int playerclass5) {
 	int x = 0, enemyhp5 = 0, enemyatk5 = 0, enemylives5 = 0, enemydef5 = 0, enemylvl5 = 0, enemymaxh5 = 0;
@@ -719,6 +726,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 			x = 12;
 		}
 	}
+if (endlessSpawn == 1) {
 	switch (x) {
 	case 0:
 		return new Enemy("Skeleton", 20, 3, 0, 1, 0, 20);
@@ -764,6 +772,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 		return new Enemy("Creator Skeleton", 1000, 50, 45, enemylives5, enemylvl5, 1000);
 		break;
 	}
+}
 }
 int main() {
 	string modeChoice = "";
