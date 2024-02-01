@@ -44,6 +44,10 @@ public:
 	int ciphertracker = 0;
 	int soulstone = 0;
 	int radiantgem = 0;
+	int questtracker = 0;
+	int questpicker = 0;
+	int questrandomizer = 0;
+	int questrandomizer2 = 0;
 	bool riddle = false;
 	bool cipherkey = false;
 	bool horsemount = false;
@@ -102,6 +106,16 @@ public:
 	bool lightningdragonscalechestplate = false;
 	bool travelersbackpack = false;
 	bool playercompanion = false;
+	bool killememiesquest = false;
+	int questoneprogress = 0;
+	bool craftanitemquest = false;
+	int questtwoprogress = 0;
+	bool forgeanitemquest = false;
+	int questthreeprogress = 0;
+	bool usetwoitemsquest = false;
+	int questfourprogress = 0;
+	bool killabossquest = false;
+	int questfiveprogress = 0;
 	int trackexcaliburmaxhealth = 0;
 	int trackflamingmaxhealth = 0;
 	int trackvoidshroudmaxhealth = 0;

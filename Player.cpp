@@ -2337,6 +2337,22 @@ void Player::attack(Character* Target) {
             else if (classtype == 6) {
                 cout << "-Class = Trickster-" << endl;
             }
+            cout << "--Quest--" << endl;
+            if (questpicker == 1) {
+            cout << "You have killed " << questoneprogress << "enemies out of 15." << endl;
+            }
+            else if (questpicker == 2) {
+                cout << "You have crafted " << questtwoprogress << "out of 1." << endl;
+            }
+            else if (questpicker == 3) {
+                cout << "You have forged " << questthreeprogress << "out of 1." << endl;
+            }
+            else if (questpicker == 4) {
+                cout << "You have used " << questfourprogress << "out of 2." << endl;
+            }
+            else if (questpicker == 5) {
+                cout << "You have killed " << questfiveprogress << "out of 1." << endl;
+            }
             cout << endl << endl;
             cout << " --" << Target->name << " Stats--" << endl;
             cout << "--" << Target->maxhealth << " Maxhealth--" << endl;
@@ -2625,6 +2641,76 @@ void Player::attack(Character* Target) {
         }
         attack(Target);
         break;
+    case 11:
+    if (questoneprogress >= 15) {
+        cout << "Thank you for getting rid of those persky monsters!" << endl;
+    }
+    else if (questtwoprogress == 1) {
+        cout << "" << endl;
+    }
+    else if (questthreeprogress == 1) {
+
+    }
+    else if (questfourprogress == 2) {
+
+    }
+    else if (questfiveprogress == 1) {
+
+    }
+    if (questtracker == 0) {
+        cout << "--Welcome to the Taskmaster's Plaza.--" << endl << "Which quest would you like?" << endl;
+        questrandomizer = r() % 3 + 1;
+        if (questrandomizer == 1) {
+            cout << "Kill 15 enemies." << endl;
+        }
+        else if (questrandomizer == 2) {
+            cout << "-Craft an item.-" << endl;
+        }
+        else if (questrandomizer == 3) {
+            cout << "-Forge an item.-" << endl;
+        }
+        questrandomizer2 = r() % 2 + 1;
+        if (questrandomizer == 4) {
+            cout << "-Use 2 items.-" << endl;
+        }
+        else if (questrandomizer == 5) {
+            cout << "-Kill a Boss.-" << endl;
+        }
+        cin >> questpicker;
+        if (questpicker == 1 && questrandomizer == 1) {
+            cout << "The quest to kill 15 enemies has been started." << endl;
+            killememiesquest = true;
+        }
+        else if (questpicker == 2 && questrandomizer == 2) {
+            cout << "The quest to craft an item has been started." << endl;
+            craftanitemquest = true;
+        }
+        else if (questpicker == 3 && questrandomizer == 3) {
+            cout << "The quest to forge an item has been started." << endl;
+            forgeanitemquest = true;
+        }
+        else if (questpicker == 4 && questrandomizer2 == 4) {
+            cout << "The quest to use 2 items has been started." << endl;
+            usetwoitemsquest = true;
+        }
+        else if (questpicker == 5 && questrandomizer2 == 5) {
+            cout << "The quest to kill a boss has been started." << endl;
+            killabossquest = true;
+        }
+        else {
+            cout << "That wasn't an option. Try again." << endl;
+            attack(Target);
+            break;
+        }
+        questtracker = 1;
+        attack(Target);
+        break;
+    }
+    else {
+        cout << "Come back when you're done with your quest to turn it in." << endl;
+        attack(Target);
+        break;
+    }
     case 182097:
         if (ciphertracker == 3) {
             cout << "You've unlocked a secret blueprint to the Regenerative Mantle. Find some more clues to find the ingredients..." << endl;
