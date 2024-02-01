@@ -8,7 +8,7 @@
 using namespace std;
 random_device r1;
 Player Knight("Player", 50, 25, 4, 0, 0, 1);
-int endlessSpawn = 0;
+int endlessSpawn = 1;
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
 	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefence = 30, endlesslevel = levele, endlessmaxhealth;
 	while (xtracker >= 10) {
