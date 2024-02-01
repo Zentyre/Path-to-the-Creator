@@ -23,205 +23,205 @@ Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int lev
 	endlessmaxhealth = endlesshealth;
 	switch(x) {
 	case 1:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 2:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 3:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 4:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 5:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 6:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 7:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 8:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 9:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 10:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 11:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 12:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 13:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 14:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 15:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 16:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 17:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 18:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 19:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 20:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 21:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 22:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 23:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 24:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 25:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 26:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 27:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 28:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 29:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 30:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 31:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 32:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 33:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 34:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 35:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 36:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 37:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 38:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 39:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 40:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 41:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 42:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 43:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 44:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 45:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 46:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 47:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 48:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 49:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 50:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 51:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 52:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 53:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 54:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 55:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 56:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 57:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 58:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 59:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 60:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 61:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 62:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 63:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 64:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 65:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 66:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 67:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 68:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 69:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 70:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 71:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 72:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 73:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 74:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 75:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 76:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 77:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 78:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 79:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 80:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 81:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 82:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 83:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 84:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 85:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 86:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 87:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 88:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 89:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 90:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 91:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 92:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 93:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 94:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 95:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 96:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 97:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 98:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 99:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	case 100:
-		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth); break;
 	}
 }
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives, int playerclass) {
