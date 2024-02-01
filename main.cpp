@@ -2,14 +2,228 @@
 #include <random>
 #include <string>
 #include <cmath>
-#include <chrono>
-#include <thread>
 #include "Character.h"
 #include "Player.h"
 #include "Enemy.h"
 using namespace std;
 random_device r1;
 Player Knight("Player", 50, 25, 4, 0, 0, 1);
+int endlessSpawn = 0;
+Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
+	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefence = 30, endlesslevel = levele, endlessmaxhealth;
+	while (xtracker >= 10) {
+		if (baselevele % 10 == 0) {
+			xtracker -= 10;
+			x++;
+		}
+	}
+	endlesshealth = endlesshealth + (15 * x);
+	endlessattack = endlessattack + (5 * x);
+	endlessdefence = endlessdefence + (4 * x);
+	endlessmaxhealth = endlesshealth;
+	switch(x) {
+	case 1:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 2:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 3:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 4:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 5:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 6:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 7:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 8:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 9:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 10:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 11:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 12:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 13:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 14:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 15:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 16:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 17:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 18:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 19:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 20:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 21:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 22:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 23:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 24:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 25:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 26:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 27:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 28:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 29:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 30:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 31:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 32:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 33:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 34:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 35:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 36:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 37:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 38:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 39:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 40:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 41:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 42:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 43:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 44:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 45:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 46:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 47:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 48:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 49:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 50:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 51:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 52:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 53:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 54:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 55:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 56:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 57:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 58:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 59:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 60:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 61:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 62:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 63:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 64:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 65:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 66:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 67:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 68:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 69:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 70:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 71:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 72:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 73:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 74:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 75:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 76:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 77:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 78:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 79:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 80:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 81:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 82:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 83:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 84:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 85:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 86:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 87:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 88:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 89:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 90:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 91:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 92:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 93:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 94:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 95:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 96:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 97:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 98:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 99:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	case 100:
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
+	}
+}
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives, int playerclass) {
     int x = 0, z = 0, enemyhp = 0, enemyatk = 0, enemylives = 0, enemydef = 0, enemylvl = 0, enemymaxh = 0;
     if (baselevel == 200) {
@@ -55,7 +269,13 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 		enemylives = 1;
 	}
 	enemylvl = level;
-	if (Knight.endlessmode == true && Knight.getkills() > 200) {
+	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
+		endlessSpawn = r1() % 4 + 1;
+		if (endlessSpawn == 1 || endlessSpawn == 2 || endlessSpawn == 3) {
+			generateEndlessEnemy(baselevel, hp, atk, def, level, lives, playerclass);
+		}
+	}
+	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp = ceil(hp * 1.25);
 			enemyatk = ceil(def * 2);
@@ -66,6 +286,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 			x = 12;
 		}
 	}
+	//add if (endlessSpawn == 1)
     switch (x) {
     case 0:
         return new Enemy("Shroom", 20, 3, 0, 1, 1, 20);
@@ -157,7 +378,13 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 		enemylives2 = 1;
 	}
 	enemylvl2 = level2;
-	if (Knight.endlessmode == true && Knight.getkills() > 200) {
+	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
+		endlessSpawn = r1() % 2 + 1;
+		if (endlessSpawn == 2) {
+			generateEndlessEnemy(baselevel2, hp2, atk2, def2, level2, lives2, playerclass2);
+		}
+	}
+	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp2 = ceil(hp2 * 1.25);
 			enemyatk2 = ceil(def2 * 2);
@@ -259,7 +486,13 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 		enemylives3 = 1;
 	}
 	enemylvl3 = level3;
-	if (Knight.endlessmode == true && Knight.getkills() > 200) {
+	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
+		endlessSpawn = r1() % 2 + 1;
+		if (endlessSpawn == 2) {
+			generateEndlessEnemy(baselevel3, hp3, atk3, def3, level3, lives3, playerclass3);
+		}
+	}
+	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp3 = ceil(hp3 * 1.25);
 			enemyatk3 = ceil(def3 * 2);
@@ -361,7 +594,13 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 		enemylives4 = 1;
 	}
 	enemylvl4 = level4;
-	if (Knight.endlessmode == true && Knight.getkills() > 200) {
+	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
+		endlessSpawn = r1() % 2 + 1;
+		if (endlessSpawn == 2) {
+			generateEndlessEnemy(baselevel4, hp4, atk4, def4, level4, lives4, playerclass4);
+		}
+	}
+	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp4 = ceil(hp4 * 1.25);
 			enemyatk4 = ceil(def4 * 2);
@@ -463,7 +702,13 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 		enemylives5 = 1;
 	}
 	enemylvl5 = level5;
-	if (Knight.endlessmode == true && Knight.getkills() > 200) {
+	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
+		endlessSpawn = r1() % 2 + 1;
+		if (endlessSpawn == 2) {
+			generateEndlessEnemy(baselevel5, hp5, atk5, def5, level5, lives5, playerclass5);
+		}
+	}
+	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp5 = ceil(hp5 * 1.25);
 			enemyatk5 = ceil(def5 * 2);
