@@ -104,7 +104,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
         return new Enemy("Boss Shroom", 250, 37, 35, enemylives, enemylvl, 250);
         break;
 	case 12: 
-		cout << "An endless mode boss has arrived..." << endl;
+		cout << "--An endless mode boss has arrived...--" << endl;
 		return new Enemy("Jock Mushroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
 		break;
     default:
@@ -206,7 +206,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 		return new Enemy("Boss Slime", 250, 37, 35, enemylives2, enemylvl2, 250);
 		break;
 	case 12: 
-		cout << "An endless mode boss has arrived..." << endl;
+		cout << "--An endless mode boss has arrived...--" << endl;
 		return new Enemy("Jock Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
 		break;
 	default:
@@ -308,7 +308,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 		return new Enemy("Florida Croc", 250, 37, 35, enemylives3, enemylvl3, 250);
 		break;
 	case 12: 
-		cout << "An endless mode boss has arrived..." << endl;
+		cout << "--An endless mode boss has arrived...--" << endl;
 		return new Enemy("Jock Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
 		break;
 	default:
@@ -410,7 +410,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 		return new Enemy("Boomaroo", 250, 37, 35, enemylives4, enemylvl4, 250);
 		break;
 	case 12: 
-		cout << "An endless mode boss has arrived..." << endl;
+		cout << "--An endless mode boss has arrived...--" << endl;
 		return new Enemy("Jock Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
 		break;
 	default:
@@ -512,7 +512,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 		return new Enemy("Super Skellie", 250, 37, 35, enemylives5, enemylvl5, 250);
 		break;
 	case 12: 
-		cout << "An endless mode boss has arrived..." << endl;
+		cout << "--An endless mode boss has arrived...--" << endl;
 		return new Enemy("Jock Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
 		break;
 	default:

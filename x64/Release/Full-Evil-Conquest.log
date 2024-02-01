@@ -155,8 +155,8 @@ C:\Users\drago\source\repos\Full-Evil-Conquest\main.cpp(1793,33): warning C4244:
 C:\Users\drago\source\repos\Full-Evil-Conquest\main.cpp(1794,31): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
 C:\Users\drago\source\repos\Full-Evil-Conquest\main.cpp(1808,30): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
   Generating code
-  3 of 260 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+  5 of 260 functions ( 1.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    3 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Full-Evil-Conquest.vcxproj -> C:\Users\drago\source\repos\Full-Evil-Conquest\x64\Release\Full-Evil-Conquest.exe
