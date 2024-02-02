@@ -64,7 +64,6 @@ public:
 	bool leveltonic = false;
 	bool superiorleveltonic = false;
 	bool superpotion = false;
-	bool healthtonic = false;
 	bool chestplate = false;
 	bool helmet = false;
 	bool boots = false;

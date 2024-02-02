@@ -70,7 +70,9 @@ void Player::itemusehealthtonic() {
 	if (health > maxhealth) {
 		health = maxhealth;
 	}
-	healthtonicitem -= 1;
+    if (healthtonicitem >= 1) {
+	    healthtonicitem -= 1;
+    }
 	cout << "You now have " << health << " health." << endl;
 }
 void Player::forgerestarting() {
@@ -478,28 +480,6 @@ void Player::checkitems() {
         attackPower += 6;
         tracksuperpotion += 1;
         superpotion = false;
-    }
-    if (travelersbackpack == true && healthtonic == true) {
-        healthtonicitem += 1;
-        healthtonic = false;
-    }
-    if (healthtonic == true && travelersbackpack == false) {
-        if (level >= 150) {
-            health += 100;
-        }
-        else if (level >= 100) {
-            health += 75;
-        }
-        else if (level >= 50) {
-            health += 50;
-        }
-        else {
-            health += 25;
-        }
-        if (health > maxhealth) {
-            health = maxhealth;
-        }
-        healthtonic = false;
     }
     if (helmet == true) {
         if (helmtracker == 0) {

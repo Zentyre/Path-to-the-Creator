@@ -1253,7 +1253,12 @@ int main() {
 						cout << endl;
 					}
 					else if (item >= 12 && item <= 13) {
-						Knight.healthtonic = true;
+						if (Knight.travelersbackpack == true) {
+							Knight.healthtonicitem += 1;
+						}
+						else {
+							Knight.itemusehealthtonic();
+						}
 						cout << "--You gained a health tonic! (Healing potion)--" << endl;
 						cout << endl;
 					}
@@ -2047,7 +2052,12 @@ int main() {
 						cout << endl;
 					}
 					else if (item >= 12 && item <= 13) {
-						Knight.healthtonic = true;
+						if (Knight.travelersbackpack == true) {
+							Knight.healthtonicitem += 1;
+						}
+						else {
+							Knight.itemusehealthtonic();
+						}
 						cout << "--You gained a health tonic! (Healing potion)--" << endl;
 						cout << endl;
 					}
