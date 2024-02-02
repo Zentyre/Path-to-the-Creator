@@ -262,17 +262,17 @@ void Player::forgecrafting() {
             if (soulstone == 1) {
                 cout << "-" << soulstone << " Soulstone" << endl;
             }
-        }
-        else {
+            else {
             cout << "-" << soulstone << " Soulstones" << endl;
+            }
         }
         if (radiantgem >= 1) {
             if (radiantgem == 1) {
                 cout << "-" << radiantgem << " Radiant Gem" << endl;
             }
-        }
-        else {
+            else {
             cout << "-" << radiantgem << " Radiant Gems" << endl;
+            } 
         }
         cout << endl << "You can currently craft ";
         if (soulstone >= 2 && radiantgem >= 4 && Goldloom >= 50 && healthtonicitem >= 1) {
@@ -2218,7 +2218,7 @@ void Player::attack(Character* Target) {
                 break;
             }
             else {
-                cout << "That isn't an option." << endl;
+                cout << "That isn't an option. Try again." << endl;
                 attack(Target);
                 break;
             }
@@ -2246,22 +2246,6 @@ void Player::attack(Character* Target) {
                 }
                 else {
                     cout << "-" << forgehammer << " Forgehammers-" << endl;
-                }
-            }
-            if (soulstone >= 1) {
-                if (soulstone == 1) {
-                    cout << "-" << soulstone << " Soulstone-" << endl;
-                }
-                else {
-                    cout << "-" << soulstone << " Soulstones-" << endl;
-                }
-            }
-            if (radiantgem >= 1) {
-                if (radiantgem == 1) {
-                    cout << "-" << radiantgem << " Radiant Gem-" << endl;
-                }
-                else {
-                    cout << "-" << radiantgem << " Radiant Gems-" << endl;
                 }
             }
             if (dragonscalechestplate == false && mystichelmet == false && glassshoes == false && Excalibur == false && flaminglongsword == false && VoidshroudSlicer == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && ciphertracker <= 3) {
