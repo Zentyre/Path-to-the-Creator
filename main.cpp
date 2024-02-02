@@ -611,6 +611,17 @@ int main() {
 	else if (modeChoice == "Endless" || modeChoice == "endless") {
 		Knight.endlessmode = true;
 	}
+	else {
+		cout << "I'll choose for you then since you can't type." << endl;
+		int randomMode;
+		randomMode = r1() % 2;
+		if (randomMode == 0) {
+			Knight.storymode = true;
+		}
+		else {
+			Knight.endlessmode = true;
+		}
+	}
 	while (Knight.storymode == true) {
 		cout << "Welcome to Evil Conquest!" << endl;
 		cout << "Your objective is to kill the operator of all evil...the Creator!" << endl;

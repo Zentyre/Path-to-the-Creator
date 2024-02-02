@@ -3,36 +3,13 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
-//#include <windows.h>
 using namespace std;
-using namespace chrono;
 
 class Character {
 protected:
 	int baselevel;
 	int kills;
 public:
-	/*void gotoxy(int x, int y) {
-    	COORD coord;
-    	coord.X = x;
-    	coord.Y = y;
-    	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-	}
-	void timerFunction() {
-        while (true) {
-            // Sleep for 1 second
-            this_thread::sleep_for(seconds(1));
-            // Increment the timer
-            elapsedTime++;
-    		CONSOLE_SCREEN_BUFFER_INFO csbi;
-        	GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-        	int consoleWidth = csbi.srWindow.Right - csbi.srWindow.Left + 1;
-        	int consoleHeight = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
-            gotoxy(consoleWidth - 15, 0);
-            cout << "Time Elapsed: " << elapsedTime;
-        }
-	}
-	*/
 	Character();
 	string factionchoice = "";
 	string name = "";
