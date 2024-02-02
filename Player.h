@@ -117,6 +117,7 @@ public:
 	int questfourprogress = 0;
 	bool killabossquest = false;
 	int questfiveprogress = 0;
+	int questscompleted = 0;
 	int trackexcaliburmaxhealth = 0;
 	int trackflamingmaxhealth = 0;
 	int trackvoidshroudmaxhealth = 0;

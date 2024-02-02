@@ -47,6 +47,7 @@ public:
 	bool usinginvispotion = false;
 	bool endlessmode = false;
 	bool storymode = false;
+	bool bossSpawned = false;
 	void itemuseinvispotion(Character* Target);
 	void itemusemolotov(Character* Target);
 	void addlives(int extralives);

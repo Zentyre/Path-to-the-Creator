@@ -2651,21 +2651,6 @@ void Player::attack(Character* Target) {
         attack(Target);
         break;
     case 11:
-    if (questoneprogress >= 15) {
-        cout << "Thank you for getting rid of those persky monsters!" << endl;
-    }
-    else if (questtwoprogress == 1) {
-        cout << "" << endl;
-    }
-    else if (questthreeprogress == 1) {
-
-    }
-    else if (questfourprogress == 2) {
-
-    }
-    else if (questfiveprogress == 1) {
-
-    }
     if (questtracker == 0) {
         cout << "--Welcome to the Taskmaster's Plaza.--" << endl << "Which quest would you like?" << endl;
         questrandomizer = r() % 3 + 1;
@@ -2714,6 +2699,156 @@ void Player::attack(Character* Target) {
         questtracker = 1;
         attack(Target);
         break;
+    }
+    else if (questoneprogress >= 15) {
+        int randomitem;
+        cout << "Thank you for getting rid of those persky monsters!" << endl;
+        questtracker = 0;
+        questoneprogress = 0;
+        questscompleted += 1;
+        randomitem = r() % 2;
+        if (randomitem == 0) {
+            int randomamt;
+            randomamt = r() % 3 + 1;
+            soulstone += randomamt;
+            if (randomamt == 1) {
+                cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+            }
+            else {
+                cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
+            }
+        }
+        else if (randomitem == 1) {
+            int randomamt;
+            randomamt = r() % 3 + 1;
+            radiantgem += randomamt;
+            if (randomamt == 1) {
+                cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
+            }
+            else {
+                cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+            }
+        }
+    }
+    else if (questtwoprogress == 1) {
+        int randomitem;
+        cout << "That item looks pretty good!" << endl;
+        questtracker = 0;
+        questtwoprogress = 0;
+        questscompleted += 1;
+        randomitem = r() % 2;
+        if (randomitem == 0) {
+            int randomamt;
+            randomamt = r() % 5 + 1;
+            soulstone += randomamt;
+            if (randomamt == 1) {
+                cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+            }
+            else {
+                cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
+            }
+        }
+        else if (randomitem == 1) {
+            int randomamt;
+            randomamt = r() % 5 + 1;
+            radiantgem += randomamt;
+            if (randomamt == 1) {
+                cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
+            }
+            else {
+                cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+            }
+        }
+    }
+    else if (questthreeprogress == 1) {
+        int randomitem;
+        cout << "That looks much better now. Doesn't it?" << endl;
+        questtracker = 0;
+        questthreeprogress = 0;
+        questscompleted += 1;
+        randomitem = r() % 2;
+        if (randomitem == 0) {
+            int randomamt;
+            randomamt = r() % 4 + 1;
+            soulstone += randomamt;
+            if (randomamt == 1) {
+                cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+            }
+            else {
+                cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
+            }
+        }
+        else if (randomitem == 1) {
+            int randomamt;
+            randomamt = r() % 4 + 1;
+            radiantgem += randomamt;
+            if (randomamt == 1) {
+                cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
+            }
+            else {
+                cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+            }
+        }
+    }
+    else if (questfourprogress == 2) {
+        int randomitem;
+        cout << "You feel much stronger after those 2 items don't ya??" << endl;
+        questtracker = 0;
+        questfourprogress = 0;
+        questscompleted += 1;
+        randomitem = r() % 2;
+        if (randomitem == 0) {
+            int randomamt;
+            randomamt = r() % 3 + 1;
+            soulstone += randomamt;
+            if (randomamt == 1) {
+                cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+            }
+            else {
+                cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
+            }
+        }
+        else if (randomitem == 1) {
+            int randomamt;
+            randomamt = r() % 3 + 1;
+            radiantgem += randomamt;
+            if (randomamt == 1) {
+                cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
+            }
+            else {
+                cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+            }
+        }
+    }
+    else if (questfiveprogress == 1) {
+        int randomitem;
+        cout << "That boss didn't know what hit em!" << endl;
+        questtracker = 0;
+        questfiveprogress = 0;
+        questscompleted += 1;
+        randomitem = r() % 2;
+        if (randomitem == 0) {
+            int randomamt;
+            randomamt = r() % 4 + 1;
+            soulstone += randomamt;
+            if (randomamt == 1) {
+                cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+            }
+            else {
+                cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
+            }
+        }
+        else if (randomitem == 1) {
+            int randomamt;
+            randomamt = r() % 4 + 1;
+            radiantgem += randomamt;
+            if (randomamt == 1) {
+                cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
+            }
+            else {
+                cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+            }
+        }
     }
     else {
         cout << "Come back when you're done with your quest to turn it in." << endl;

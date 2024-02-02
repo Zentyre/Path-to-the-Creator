@@ -7,7 +7,7 @@
 #include "Enemy.h"
 using namespace std;
 random_device r1;
-Player Knight("Player", 50, 25, 10000, 10000, 260, 1);
+Player Knight("Player", 50, 25, 4, 0, 0, 1);
 int endlessSpawn = 1;
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
 	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefence = 30, endlesslevel = levele, endlessmaxhealth;
@@ -121,13 +121,18 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
         	return new Enemy("Divine Shroom", 200, 30, 30, enemylives, enemylvl, 200);
         	break;
     	case 11:
+			cout << "--A boss has appeared!--" << endl;
         	return new Enemy("Boss Shroom", 250, 37, 35, enemylives, enemylvl, 250);
+			Knight.bossSpawned = true;
         	break;
 		case 12: 
 			cout << "--An endless mode boss has arrived...--" << endl;
+			Knight.bossSpawned = true;
 			return new Enemy("Jock Mushroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
 			break;
     	default:
+			cout << "The creator has arrived...I wish you luck." << endl;
+			Knight.bossSpawned = true;
         	return new Enemy("Creator Shroom", 1000, 50, 45, enemylives, enemylvl, 10000);
         	break;
     	}
@@ -231,13 +236,18 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
        		return new Enemy("Godly Slime", 200, 30, 30, enemylives2, enemylvl2, 200);
        		break;
        	case 11:
+			cout << "--A boss has appeared!--" << endl;
+			Knight.bossSpawned = true;
        		return new Enemy("Boss Slime", 250, 37, 35, enemylives2, enemylvl2, 250);
        		break;
        	case 12: 
        		cout << "--An endless mode boss has arrived...--" << endl;
+			Knight.bossSpawned = true;
        		return new Enemy("Jock Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
        		break;
        	default:
+			cout << "The creator has arrived...I wish you luck." << endl;
+			Knight.bossSpawned = true;
        		return new Enemy("Creator Slime", 1000, 50, 45, enemylives2, enemylvl2, 1000);
        		break;
        	}
@@ -341,13 +351,18 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
     		return new Enemy("Transcendent Croc", 200, 30, 30, enemylives3, enemylvl3, 200);
     		break;
     	case 11:
+			cout << "--A boss has appeared!--" << endl;
+			Knight.bossSpawned = true;
     		return new Enemy("Florida Croc", 250, 37, 35, enemylives3, enemylvl3, 250);
     		break;
     	case 12: 
     		cout << "--An endless mode boss has arrived...--" << endl;
+			Knight.bossSpawned = true;
     		return new Enemy("Jock Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
     		break;
     	default:
+			cout << "The creator has arrived...I wish you luck." << endl;
+			Knight.bossSpawned = true;
     		return new Enemy("Creator Croc", 1000, 50, 45, enemylives3, enemylvl3, 1000);
     		break;
     	}
@@ -451,13 +466,18 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
     		return new Enemy("Paragon Roo", 200, 30, 30, enemylives4, enemylvl4, 200);
     		break;
     	case 11:
+			cout << "--A boss has appeared!--" << endl;
+			Knight.bossSpawned = true;
     		return new Enemy("Boomaroo", 250, 37, 35, enemylives4, enemylvl4, 250);
     		break;
     	case 12: 
     		cout << "--An endless mode boss has arrived...--" << endl;
+			Knight.bossSpawned = true;
     		return new Enemy("Jock Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
     		break;
     	default:
+			cout << "The creator has arrived...I wish you luck." << endl;
+			Knight.bossSpawned = true;
     		return new Enemy("Creator Kangaroo", 1000, 50, 45, enemylives4, enemylvl4, enemymaxh4);
     		break;
     	}
@@ -561,13 +581,18 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
     		return new Enemy("Captain Skellie", 200, 30, 30, enemylives5, enemylvl5, 200);
     		break;
     	case 11:
+			cout << "--A boss has appeared!--" << endl;
+			Knight.bossSpawned = true;
     		return new Enemy("Super Skellie", 250, 37, 35, enemylives5, enemylvl5, 250);
     		break;
     	case 12: 
     		cout << "--An endless mode boss has arrived...--" << endl;
+			Knight.bossSpawned = true;
     		return new Enemy("Jock Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
     		break;
     	default:
+			cout << "The creator has arrived...I wish you luck." << endl;
+			Knight.bossSpawned = true;
     		return new Enemy("Creator Skeleton", 1000, 50, 45, enemylives5, enemylvl5, 1000);
     		break;
     	}
@@ -991,19 +1016,19 @@ int main() {
 						else {
 							int legend;
 							legend = r1() % 3;
-							if (legend == 0) {
+							if (legend == 0 && Knight.vladimirsArmor == false) {
 								cout << "You acquired the armor of the legend...Vladimir!" << endl;
 								Knight.vladimirsArmor = true;
 								cout << endl;
 								treasure = 0;
 							}
-							else if (legend == 1) {
+							else if (legend == 1 && Knight.lockhartsArmor == false) {
 								cout << "You acquired the armor of the legend...Lockhart!" << endl;
 								Knight.lockhartsArmor = true;
 								cout << endl;
 								treasure = 0;
 							}
-							else {
+							else if (legend == 2 && Knight.narsosArmor == false) {
 								cout << "You acquired the armor of the legend...Narso!" << endl;
 								Knight.narsosArmor = true;
 								cout << endl;
@@ -1036,19 +1061,19 @@ int main() {
 						else {
 							int legend;
 							legend = r1() % 3;
-							if (legend == 0) {
+							if (legend == 0 && Knight.vladimirsArmor == false) {
 								cout << "You acquired the armor of the legend...Vladimir!" << endl;
 								Knight.vladimirsArmor = true;
 								cout << endl;
 								treasure = 0;
 							}
-							else if (legend == 1) {
+							else if (legend == 1 && Knight.lockhartsArmor == false) {
 								cout << "You acquired the armor of the legend...Lockhart!" << endl;
 								Knight.lockhartsArmor = true;
 								cout << endl;
 								treasure = 0;
 							}
-							else {
+							else if (legend == 2 && Knight.narsosArmor == false) {
 								cout << "You acquired the armor of the legend...Narso!" << endl;
 								Knight.narsosArmor = true;
 								cout << endl;
@@ -1160,6 +1185,18 @@ int main() {
 							Knight.factionchoiceint = 4;
 						}
 					}
+					if (Knight.killememiesquest == true)  {
+						Knight.questoneprogress += 1;
+						if (Knight.questoneprogress >= 15) {
+							cout << "-Your quest is ready to turn in!-" << endl;
+						}
+					}
+					if (Knight.killabossquest == true) {
+						if (Knight.bossSpawned == true) {
+							Knight.questfiveprogress += 1;
+							cout << "-Your quest is ready to turn in!-" << endl;
+						} 
+					}
 					int enemyrandommessage;
 					enemyrandommessage = r1() % 5;
 					if (enemyrandommessage == 0) {
@@ -1220,42 +1257,42 @@ int main() {
 						cout << "--You gained a health tonic! (Healing potion)--" << endl;
 						cout << endl;
 					}
-					else if (item == 14 || item == 15 || item == 16 && Knight.accuratesword == false) {
+					else if (item == 14 || item == 15 && Knight.accuratesword == false) {
 						Knight.accuratesword = true;
 						cout << "--You gained the legendary accuracy sword! (never miss again)--" << endl;
 						cout << endl;
 					}
-					else if (item == 17 || item == 18 && Knight.shield == false) {
+					else if (item == 16 || item == 17 && Knight.shield == false) {
 						Knight.shield = true;
 						cout << "--You can now dual wield with a shield! (Shield)--" << endl;
 						cout << endl;
 					}
-					else if (item == 19 && Knight.horsemount == false) {
+					else if (item == 18 && Knight.horsemount == false) {
 						Knight.horsemount = true;
 						cout << "--You can now progress faster! (Horse Mount)--" << endl;
 						cout << endl;
 					}
-					else if (item == 20 && Knight.dragonmount == false) {
+					else if (item == 19 && Knight.dragonmount == false) {
 						Knight.dragonmount = true;
 						cout << "--You can now progress the fastest! (Dragon Mount)--" << endl;
 						cout << endl;
 					}
-					else if (item == 21 && Knight.goldloomMagnet == false) {
+					else if (item == 20 && Knight.goldloomMagnet == false) {
 						Knight.goldloomMagnet = true;
 						cout << "--The shop now refreshes more frequently and you get more Goldloom! (Goldloom Magnet)--" << endl;
 						cout << endl;
 					}
-					else if ((item == 22 || item == 23) && Knight.endlessmode == true) {
+					else if ((item == 21 || item == 22) && Knight.endlessmode == true) {
 						Knight.cipherblueprint += 1;
 						cout << "--You got a cipher blueprint! Use the key to read it...--" << endl;
 						cout << endl;
 					}
-					else if ((item == 24 || item == 25) && Knight.endlessmode == true) {
+					else if ((item == 23 || item == 24) && Knight.endlessmode == true) {
 						Knight.cipherkey == true;
 						cout << "--You got a cipher key! Use it on blueprints to unlock new information...--" << endl;
 						cout << endl;
 					}
-					else if ((item == 26 || item == 27) && Knight.endlessmode == true && Knight.ciphertracker == 3) {
+					else if ((item == 25 || item == 26) && Knight.endlessmode == true && Knight.ciphertracker == 3) {
 						Knight.riddle == true;
 						cout << "--You acquired a special riddle! Use it from your backpack...--" << endl;
 						cout << endl;
@@ -1269,6 +1306,9 @@ int main() {
 						Knight.radiantgem += 1;
 						cout << "--You stumbled upon a Radiant Gem!--" << endl;
 						cout << endl;
+					}
+					if (Knight.bossSpawned == true) {
+						Knight.bossSpawned = false;
 					}
 					if (Knight.getbaselevel() >= 200 && Knight.isAlive() == true) {
 						break;
@@ -1775,18 +1815,21 @@ int main() {
 						else {
 							int legend;
 							legend = r1() % 3;
-							if (legend == 0) {
+							if (legend == 0 && Knight.vladimirsArmor == false) {
 								cout << "You acquired the armor of the legend...Vladimir!" << endl;
+								Knight.vladimirsArmor = true;
 								cout << endl;
 								treasure = 0;
 							}
-							else if (legend == 1) {
+							else if (legend == 1 && Knight.lockhartsArmor == false) {
 								cout << "You acquired the armor of the legend...Lockhart!" << endl;
+								Knight.lockhartsArmor = true;
 								cout << endl;
 								treasure = 0;
 							}
-							else {
+							else if (legend == 2 && Knight.narsosArmor == false) {
 								cout << "You acquired the armor of the legend...Narso!" << endl;
+								Knight.narsosArmor = true;
 								cout << endl;
 								treasure = 0;
 							}
@@ -1936,6 +1979,18 @@ int main() {
 							Knight.factionchoiceint = 4;
 						}
 					}
+					if (Knight.killememiesquest == true)  {
+						Knight.questoneprogress += 1;
+						if (Knight.questoneprogress >= 15) {
+							cout << "-Your quest is ready to turn in!-" << endl;
+						}
+					}
+					if (Knight.killabossquest == true) {
+						if (Knight.bossSpawned == true) {
+							Knight.questfiveprogress += 1;
+							cout << "-Your quest is ready to turn in!-" << endl;
+						} 
+					}
 					int enemyrandommessage;
 					enemyrandommessage = r1() % 5;
 					if (enemyrandommessage == 0) {
@@ -2020,6 +2075,9 @@ int main() {
 						Knight.goldloomMagnet = true;
 						cout << "--Your shop now appears more frequently and you get more money! (Goldloom Magnet)--" << endl;
 						cout << endl;
+					}
+					if (Knight.bossSpawned == true) {
+						Knight.bossSpawned = false;
 					}
 				}
 			}
