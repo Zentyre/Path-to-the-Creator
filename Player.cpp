@@ -2328,6 +2328,7 @@ void Player::attack(Character* Target) {
         cout << "--" << lives << " Lives--" << endl;
         cout << "--" << kills << " Kills--" << endl;
         cout << "--" << Goldloom << " Goldloom--" << endl;
+        cout << "--" << questscompleted << " Quests Completed--" << endl;
             if (classtype == 1) {
                 cout << "-Class = Knight-" << endl;
             }
