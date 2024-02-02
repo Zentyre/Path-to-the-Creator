@@ -602,18 +602,6 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 	}
 }
 int main() {
-	steady_clock::time_point start = steady_clock::now();
-	while (true) {
-        // Calculate the elapsed time
-        steady_clock::time_point end = steady_clock::now();
-        duration<int> elapsed_seconds = duration_cast<seconds>(end - start);
-
-        // Print the elapsed time in seconds
-        cout << "Elapsed time: " << elapsed_seconds.count() << " seconds" << endl;
-
-        // Wait for one second
-        this_thread::sleep_for(seconds(1));
-    }
 	string modeChoice = "";
 	cout << "Would you like to play in story mode or compete in... endless mode?" << endl;
 	cin >> modeChoice;
