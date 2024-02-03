@@ -39,4 +39,10 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Library Include="steam_api.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="steam_api.dll" />
+  </ItemGroup>
 </Project>

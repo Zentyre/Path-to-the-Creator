@@ -4,7 +4,6 @@
 #include <chrono>
 #include <thread>
 using namespace std;
-
 class Character {
 protected:
 	int baselevel;

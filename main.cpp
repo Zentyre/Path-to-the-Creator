@@ -7,11 +7,16 @@
 #include "Character.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "..//Steam/steam_api.h"
 using namespace std;
 using namespace chrono;
 random_device r1;
 Player Knight("Player", 50, 25, 4, 0, 0, 1);
 int endlessSpawn = 1;
+static void UploadStat(const char* statName, int statValue) {
+	SteamUserStats()->SetStat(statName, statValue);
+	SteamUserStats()->StoreStats();
+}
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
 	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefence = 30, endlesslevel = levele, endlessmaxhealth;
 	while (xtracker >= 10) {
@@ -601,7 +606,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
     	}
 	}
 }
-int main() {
+static void gameplay() {
 	string modeChoice = "";
 	cout << "Would you like to play in story mode or compete in... endless mode?" << endl;
 	cin >> modeChoice;
@@ -787,7 +792,7 @@ int main() {
 		int areachoiceint = 0;
 		cin >> ws;
 		getline(cin, areachoice);
-		if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom" || areachoice == "Mushroom kingdom"|| areachoice == "mushroom Kingdom" || areachoice == "1") {
+		if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom" || areachoice == "Mushroom kingdom" || areachoice == "mushroom Kingdom" || areachoice == "1") {
 			cout << endl;
 			cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get the invaders!-" << endl << endl;
 			areachoiceint = 1;
@@ -797,17 +802,17 @@ int main() {
 			cout << "-Welcome to the uneasy feeling area of the slimes. Good Luck Surviving!-" << endl << endl;
 			areachoiceint = 2;
 		}
-		else if (areachoice == "Croc Isle" || areachoice == "croc isle" || areachoice == "Croc isle"|| areachoice == "croc Isle" || areachoice == "3") {
+		else if (areachoice == "Croc Isle" || areachoice == "croc isle" || areachoice == "Croc isle" || areachoice == "croc Isle" || areachoice == "3") {
 			cout << endl;
 			cout << "-Welcome to the land of the crocs. Go find that croc king!-" << endl << endl;
 			areachoiceint = 3;
 		}
-		else if (areachoice == "Hopscotch Highlands" || areachoice == "hopscotch highlands"|| areachoice == "hopscotch Highlands" || areachoice == "Hopscotch highlands" || areachoice == "4") {
+		else if (areachoice == "Hopscotch Highlands" || areachoice == "hopscotch highlands" || areachoice == "hopscotch Highlands" || areachoice == "Hopscotch highlands" || areachoice == "4") {
 			cout << endl;
 			cout << "-Welcome to the land of the kangaroos, attack that zoo owner!-" << endl << endl;
 			areachoiceint = 4;
 		}
-		else if (areachoice == "Skeletal Sanctum" || areachoice == "skeletal sanctum"|| areachoice == "skeletal Sanctum" || areachoice == "Skeletal sanctum" || areachoice == "5") {
+		else if (areachoice == "Skeletal Sanctum" || areachoice == "skeletal sanctum" || areachoice == "skeletal Sanctum" || areachoice == "Skeletal sanctum" || areachoice == "5") {
 			cout << endl;
 			cout << "-Welcome to the graveyeard of your dead family...just kidding. Look out there's a skeleton!-" << endl << endl;
 			areachoiceint = 5;
@@ -1178,28 +1183,28 @@ int main() {
 						cout << "-Ironclad Dominion - A faction for those who believe they can become the best of the best..." << endl;
 						cin >> ws;
 						getline(cin, Knight.factionchoice);
-						if (Knight.factionchoice == "1" || Knight.factionchoice == "Shadowborn Syndicate"|| Knight.factionchoice == "Shadowborn syndicate"|| Knight.factionchoice == "shadowborn syndicate"|| Knight.factionchoice == "shadowborn Syndicate") {
+						if (Knight.factionchoice == "1" || Knight.factionchoice == "Shadowborn Syndicate" || Knight.factionchoice == "Shadowborn syndicate" || Knight.factionchoice == "shadowborn syndicate" || Knight.factionchoice == "shadowborn Syndicate") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Shadowborn Syndicate. Welcome to the land of no return." << endl;
 							Knight.factionchoiceint = 1;
 						}
-						else if (Knight.factionchoice == "2" || Knight.factionchoice == "emberfall covenant"|| Knight.factionchoice == "Emberfall covenant"|| Knight.factionchoice == "emberfall Covenant"|| Knight.factionchoice == "Emberfall Covenant") {
+						else if (Knight.factionchoice == "2" || Knight.factionchoice == "emberfall covenant" || Knight.factionchoice == "Emberfall covenant" || Knight.factionchoice == "emberfall Covenant" || Knight.factionchoice == "Emberfall Covenant") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Emberfall Covenant! Good luck on your journey to wield the ancient flames." << endl;
 							Knight.factionchoiceint = 2;
 						}
-						else if (Knight.factionchoice == "3" || Knight.factionchoice == "Celestial Vanguard"|| Knight.factionchoice == "celestial Vanguard"|| Knight.factionchoice == "Celestial vanguard"|| Knight.factionchoice == "celestial vanguard") {
+						else if (Knight.factionchoice == "3" || Knight.factionchoice == "Celestial Vanguard" || Knight.factionchoice == "celestial Vanguard" || Knight.factionchoice == "Celestial vanguard" || Knight.factionchoice == "celestial vanguard") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Celestial Vanguard! I hope you will find the light in this darkness." << endl;
 							Knight.factionchoiceint = 3;
 						}
-						else if (Knight.factionchoice == "4" || Knight.factionchoice == "Ironclad Dominion"|| Knight.factionchoice == "Ironclad dominion"|| Knight.factionchoice == "ironclad Dominion"|| Knight.factionchoice == "ironclad dominion") {
+						else if (Knight.factionchoice == "4" || Knight.factionchoice == "Ironclad Dominion" || Knight.factionchoice == "Ironclad dominion" || Knight.factionchoice == "ironclad Dominion" || Knight.factionchoice == "ironclad dominion") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Ironclad Dominion. I wish you well, becoming the best." << endl;
 							Knight.factionchoiceint = 4;
 						}
 					}
-					if (Knight.killememiesquest == true)  {
+					if (Knight.killememiesquest == true) {
 						Knight.questoneprogress += 1;
 						if (Knight.questoneprogress >= 15) {
 							cout << "-Your quest is ready to turn in!-" << endl;
@@ -1209,7 +1214,7 @@ int main() {
 						if (Knight.bossSpawned == true) {
 							Knight.questfiveprogress += 1;
 							cout << "-Your quest is ready to turn in!-" << endl;
-						} 
+						}
 					}
 					int enemyrandommessage;
 					enemyrandommessage = r1() % 5;
@@ -1332,6 +1337,12 @@ int main() {
 					if (Knight.getbaselevel() >= 200 && Knight.isAlive() == true) {
 						break;
 					}
+					UploadStat("Maxhealth", Knight.getmaxhealth());
+					UploadStat("Health", Knight.gethealth());
+					UploadStat("Attack", Knight.getattackPower());
+					UploadStat("Defence", Knight.getdefence());
+					UploadStat("Level", Knight.getlevel());
+					UploadStat("Baselevel", Knight.getbaselevel());
 				}
 			}
 		}
@@ -1591,7 +1602,7 @@ int main() {
 		int areachoiceint = 0;
 		cin >> ws;
 		getline(cin, areachoice);
-		if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom" || areachoice == "Mushroom kingdom"|| areachoice == "mushroom Kingdom" || areachoice == "1") {
+		if (areachoice == "Mushroom Kingdom" || areachoice == "mushroom kingdom" || areachoice == "Mushroom kingdom" || areachoice == "mushroom Kingdom" || areachoice == "1") {
 			cout << endl;
 			cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get the invaders!-" << endl << endl;
 			areachoiceint = 1;
@@ -1601,17 +1612,17 @@ int main() {
 			cout << "-Welcome to the uneasy feeling area of the slimes. Good Luck Surviving!-" << endl << endl;
 			areachoiceint = 2;
 		}
-		else if (areachoice == "Croc Isle" || areachoice == "croc isle" || areachoice == "Croc isle"|| areachoice == "croc Isle" || areachoice == "3") {
+		else if (areachoice == "Croc Isle" || areachoice == "croc isle" || areachoice == "Croc isle" || areachoice == "croc Isle" || areachoice == "3") {
 			cout << endl;
 			cout << "-Welcome to the land of the crocs. Go find that croc king!-" << endl << endl;
 			areachoiceint = 3;
 		}
-		else if (areachoice == "Hopscotch Highlands" || areachoice == "hopscotch highlands"|| areachoice == "hopscotch Highlands" || areachoice == "Hopscotch highlands" || areachoice == "4") {
+		else if (areachoice == "Hopscotch Highlands" || areachoice == "hopscotch highlands" || areachoice == "hopscotch Highlands" || areachoice == "Hopscotch highlands" || areachoice == "4") {
 			cout << endl;
 			cout << "-Welcome to the land of the kangaroos, attack that zoo owner!-" << endl << endl;
 			areachoiceint = 4;
 		}
-		else if (areachoice == "Skeletal Sanctum" || areachoice == "skeletal sanctum"|| areachoice == "skeletal Sanctum" || areachoice == "Skeletal sanctum" || areachoice == "5") {
+		else if (areachoice == "Skeletal Sanctum" || areachoice == "skeletal sanctum" || areachoice == "skeletal Sanctum" || areachoice == "Skeletal sanctum" || areachoice == "5") {
 			cout << endl;
 			cout << "-Welcome to the graveyeard of your dead family...just kidding. Look out there's a skeleton!-" << endl << endl;
 			areachoiceint = 5;
@@ -1977,28 +1988,28 @@ int main() {
 						cout << "-Ironclad Dominion - A faction for those who believe they can become the best of the best..." << endl;
 						cin >> ws;
 						getline(cin, Knight.factionchoice);
-						if (Knight.factionchoice == "1" || Knight.factionchoice == "Shadowborn Syndicate"|| Knight.factionchoice == "Shadowborn syndicate"|| Knight.factionchoice == "shadowborn syndicate"|| Knight.factionchoice == "shadowborn Syndicate") {
+						if (Knight.factionchoice == "1" || Knight.factionchoice == "Shadowborn Syndicate" || Knight.factionchoice == "Shadowborn syndicate" || Knight.factionchoice == "shadowborn syndicate" || Knight.factionchoice == "shadowborn Syndicate") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Shadowborn Syndicate. Welcome to the land of no return." << endl;
 							Knight.factionchoiceint = 1;
 						}
-						else if (Knight.factionchoice == "2" || Knight.factionchoice == "emberfall covenant"|| Knight.factionchoice == "Emberfall covenant"|| Knight.factionchoice == "emberfall Covenant"|| Knight.factionchoice == "Emberfall Covenant") {
+						else if (Knight.factionchoice == "2" || Knight.factionchoice == "emberfall covenant" || Knight.factionchoice == "Emberfall covenant" || Knight.factionchoice == "emberfall Covenant" || Knight.factionchoice == "Emberfall Covenant") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Emberfall Covenant! Good luck on your journey to wield the ancient flames." << endl;
 							Knight.factionchoiceint = 2;
 						}
-						else if (Knight.factionchoice == "3" || Knight.factionchoice == "Celestial Vanguard"|| Knight.factionchoice == "celestial Vanguard"|| Knight.factionchoice == "Celestial vanguard"|| Knight.factionchoice == "celestial vanguard") {
+						else if (Knight.factionchoice == "3" || Knight.factionchoice == "Celestial Vanguard" || Knight.factionchoice == "celestial Vanguard" || Knight.factionchoice == "Celestial vanguard" || Knight.factionchoice == "celestial vanguard") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Celestial Vanguard! I hope you will find the light in this darkness." << endl;
 							Knight.factionchoiceint = 3;
 						}
-						else if (Knight.factionchoice == "4" || Knight.factionchoice == "Ironclad Dominion"|| Knight.factionchoice == "Ironclad dominion"|| Knight.factionchoice == "ironclad Dominion"|| Knight.factionchoice == "ironclad dominion") {
+						else if (Knight.factionchoice == "4" || Knight.factionchoice == "Ironclad Dominion" || Knight.factionchoice == "Ironclad dominion" || Knight.factionchoice == "ironclad Dominion" || Knight.factionchoice == "ironclad dominion") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Ironclad Dominion. I wish you well, becoming the best." << endl;
 							Knight.factionchoiceint = 4;
 						}
 					}
-					if (Knight.killememiesquest == true)  {
+					if (Knight.killememiesquest == true) {
 						Knight.questoneprogress += 1;
 						if (Knight.questoneprogress >= 15) {
 							cout << "-Your quest is ready to turn in!-" << endl;
@@ -2008,7 +2019,7 @@ int main() {
 						if (Knight.bossSpawned == true) {
 							Knight.questfiveprogress += 1;
 							cout << "-Your quest is ready to turn in!-" << endl;
-						} 
+						}
 					}
 					int enemyrandommessage;
 					enemyrandommessage = r1() % 5;
@@ -2172,6 +2183,24 @@ int main() {
 			cout << Knight.getname() << " you should try to be less indecisive." << endl;
 			cout << "Game Over." << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 			break;
+		}
+	}
+	SteamAPI_Shutdown();
+}
+int main() {
+	if (SteamAPI_Init()) {
+		gameplay();
+	}
+	else {
+		cout << "Steam initialization failed. You can still play if you don't mind your stats not saving to leaderboard in endless mode." << endl;
+		cout << "Would you still like to play?" << endl;
+		string yesorno;
+		cin >> yesorno;
+		if (yesorno == "Y" || yesorno == "y" || yesorno == "Yes" || yesorno == "yes") {
+			gameplay();
+		}
+		else {
+			cout << "Came back soon!" << endl;
 		}
 	}
 	return 0;
