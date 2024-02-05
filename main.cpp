@@ -19,12 +19,8 @@ static void UploadStat(const char* statName, int statValue) {
 }
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
 	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefence = 30, endlesslevel = levele, endlessmaxhealth;
-	while (xtracker >= 10) {
-		if (xtracker % 10 == 0) {
-			xtracker -= 10;
-			x++;
-		}
-	}
+	xtracker = floor(xtracker / 10);
+	x = xtracker;
 	endlesshealth = endlesshealth + (15 * x);
 	endlessattack = endlessattack + (5 * x);
 	endlessdefence = endlessdefence + (4 * x);
@@ -77,10 +73,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 	}
 	enemylvl = level;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-		endlessSpawn = r1() % 4 + 1;
-		if (endlessSpawn == 1 || endlessSpawn == 2 || endlessSpawn == 3) {
 			generateEndlessEnemy(baselevel, hp, atk, def, level, lives, playerclass);
-		}
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -192,10 +185,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 	}
 	enemylvl2 = level2;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-		endlessSpawn = r1() % 2 + 1;
-		if (endlessSpawn == 2) {
 			generateEndlessEnemy(baselevel2, hp2, atk2, def2, level2, lives2, playerclass2);
-		}
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -307,10 +297,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 	}
 	enemylvl3 = level3;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-		endlessSpawn = r1() % 2 + 1;
-		if (endlessSpawn == 2) {
 			generateEndlessEnemy(baselevel3, hp3, atk3, def3, level3, lives3, playerclass3);
-		}
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -422,10 +409,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 	}
 	enemylvl4 = level4;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-		endlessSpawn = r1() % 2 + 1;
-		if (endlessSpawn == 2) {
 			generateEndlessEnemy(baselevel4, hp4, atk4, def4, level4, lives4, playerclass4);
-		}
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -537,10 +521,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 	}
 	enemylvl5 = level5;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-		endlessSpawn = r1() % 2 + 1;
-		if (endlessSpawn == 2) {
 			generateEndlessEnemy(baselevel5, hp5, atk5, def5, level5, lives5, playerclass5);
-		}
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
