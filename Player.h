@@ -4,7 +4,6 @@
 #include <iostream>
 #include <cmath>
 #include <random>
-#include "..//Steam/steam_api.h"
 using namespace std;
 class Player : public Character {
 public:
