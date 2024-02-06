@@ -12,7 +12,7 @@ using namespace std;
 using namespace chrono;
 random_device r1;
 Player Knight("Player", 50, 25, 4, 0, 0, 1);
-int endlessSpawn = 1;
+int endlessSpawn = 1, randomevent = 0;
 /*
 static void UploadStat(const char* statName, int statValue) {
 	SteamUserStats()->SetStat(statName, statValue);
@@ -2093,6 +2093,10 @@ static void gameplay() {
 					}
 					if (Knight.bossSpawned == true) {
 						Knight.bossSpawned = false;
+					}
+					randomevent = r1() % 100 + 1;
+					if (randomevent == 1 || randomevent == 2) {
+						cout << "A mysterious stranger has appeared!" << endl;//finish this update
 					}
 				}
 			}

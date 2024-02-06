@@ -155,4 +155,6 @@ public:
 	bool glowingglasses = false;
 	bool fierynecklace = false;
 	bool shinybelt = false;
+	bool mysteriousstranger = false;
+	bool mysteriousstrangerquest = false;
 };
