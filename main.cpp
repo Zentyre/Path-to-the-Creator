@@ -13,10 +13,12 @@ using namespace chrono;
 random_device r1;
 Player Knight("Player", 50, 25, 4, 0, 0, 1);
 int endlessSpawn = 1;
+/*
 static void UploadStat(const char* statName, int statValue) {
 	SteamUserStats()->SetStat(statName, statValue);
 	SteamUserStats()->StoreStats();
 }
+*/
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
 	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefence = 30, endlesslevel = levele, endlessmaxhealth;
 	xtracker = floor(xtracker / 10);
@@ -2093,12 +2095,14 @@ static void gameplay() {
 			}
 		}
 		if (!Knight.isAlive() && Knight.killplayer == false) {
+			/*
 			UploadStat("Maxhealth", Knight.getmaxhealth());
 			UploadStat("Health", Knight.gethealth());
 			UploadStat("Attack", Knight.getattackPower());
 			UploadStat("Defence", Knight.getdefence());
 			UploadStat("Level", Knight.getlevel());
 			UploadStat("Baselevel", Knight.getbaselevel());
+			*/
 			cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 			int deathmessage = 0;
 			deathmessage = r1() % 5 + 1;
