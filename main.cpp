@@ -1701,7 +1701,7 @@ static void gameplay() {
 			if (!Slime->isAlive()) {
 				if (Knight.usinginvispotion == true) {
 					delete Slime;
-					cout << "You have escaped from this enemy using your invisibility. You will get no rewards for this escape." << endl;
+					cout << "You have escaped from this enemy using your invisibility." << endl;
 					if (areachoiceint == 1) {
 						Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefence(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}

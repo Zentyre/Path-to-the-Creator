@@ -67,7 +67,7 @@ int Character::setkillplayer() {
 	return killplayer = true;
 }
 void Character::itemuseinvispotion(Character* Target) {
-	Target->takeDmg(9999);
+	Target->takeDmg(Target->getmaxhealth());
 	invisibilitypotion -= 1;
 }
 void Character::addlives(int extralives) {
