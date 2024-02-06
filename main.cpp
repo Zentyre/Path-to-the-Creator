@@ -1314,6 +1314,9 @@ static void gameplay() {
 						cout << "--You stumbled upon a Radiant Gem!--" << endl;
 						cout << endl;
 					}
+					else if (item == 32 || item == 33 || item == 33 || item == 33 || item == 33 && Knight.bossSpawned == true) {
+						Knight.lostartifact =+ 1;
+					}
 					if (Knight.bossSpawned == true) {
 						Knight.bossSpawned = false;
 					}

@@ -314,7 +314,7 @@ void Player::forgerestarting() {
 }
 void Player::forgecrafting() {
     string craftingchoice = "";
-    int craftedsomething = 0;
+    int craftedsomething = 0, trackwhatcanbecrafted = 0;
     while (true) {
         cout << "You have these crafting materials currently." << endl;
         if (soulstone >= 1) {
@@ -335,11 +335,22 @@ void Player::forgecrafting() {
         }
         cout << endl << "You can currently craft ";
         if (soulstone >= 2 && radiantgem >= 4 && Goldloom >= 50 && healthtonicitem >= 1) {
-            cout << "the Regenerative Mantle." << endl;
+            cout << "the Regenerative Mantle"
+            trackwhatcanbecrafted += 1;
         }
-        else {
+        if (lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
+            if (trackwhatcanbecrafted == 1) {
+                cout << ", ";
+            }
+            cout << "any artifact"
+            trackwhatcanbecrafted += 1;
+        }
+        if (trackwhatcanbecrafted == 0) {}
             cout << "nothing." << endl;
             break;
+        }
+        else {
+            cout << "." << endl;
         }
         cout << "What would you like to craft?" << endl;
         cin >> ws;
@@ -357,6 +368,7 @@ void Player::forgecrafting() {
                     Goldloom -= 50;
                     healthtonicitem -= 1;
                     regenerativemantle = true;
+                    craftedsomething++;
                     if (craftanitemquest == true) {
                         questtwoprogress += 1;
                     }
@@ -373,14 +385,97 @@ void Player::forgecrafting() {
                 cout << "That wasnt yes or no." << endl;
             }
         }
-        if (craftedsomething >= 1) {
-            cin >> craftingchoice;
+        else if (craftingchoice == "Artifact" || craftingchoice == "artifact") {
+            tring yesno = "";
+            cout << "Are you sure you want to craft a cursed artifact?" << endl;
+            cin >> ws;
+            getline(cin, yesno);
+            if (yesno == "Yes" || yesno == "yes") {
+                cout << "Would you like to craft the 1-Cursed Heart, 2-Enchanted Sachel, 3-Glowing Glasses, 4-Fiery Necklace or 5-Shiny Belt." << endl;
+                getline(cin, yesno);
+                if (yesno == 1 && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
+                    cout << "You crafted a Cursed Heart!" << endl;
+                    cursedheart = true;
+                    lostartifact -= 1;
+                    soulstone -= 1;
+                    radiantgem -= 1;
+                    Goldloom -= 25;
+                    if (craftanitemquest == true) {
+                        questtwoprogress += 1;
+                    }
+                    craftedsomething++;
+                }
+                else if (yesno == 2 && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
+                    cout << "You crafted an Enchanted Sachel!" << endl;
+                    enchantedsachel = true;
+                    lostartifact -= 1;
+                    soulstone -= 1;
+                    radiantgem -= 1;
+                    Goldloom -= 25;
+                    if (craftanitemquest == true) {
+                        questtwoprogress += 1;
+                    }
+                    craftedsomething++;
+                }
+                else if (yesno == 3 && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
+                    cout << "You crafted some Glowing Glasses!" << endl;
+                    glowingglasses = true;
+                    lostartifact -= 1;
+                    soulstone -= 1;
+                    radiantgem -= 1;
+                    Goldloom -= 25;
+                    if (craftanitemquest == true) {
+                        questtwoprogress += 1;
+                    }
+                    craftedsomething++;
+                }
+                else if (yesno == 4 && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
+                    cout << "You crafted the Fiery Necklace!" << endl;
+                    fierynecklace = true;
+                    lostartifact -= 1;
+                    soulstone -= 1;
+                    radiantgem -= 1;
+                    Goldloom -= 25;
+                    if (craftanitemquest == true) {
+                        questtwoprogress += 1;
+                    }
+                    craftedsomething++;
+                }
+                else if (yesno == 5 && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
+                    cout << "You crafted a Shiny Belt!" << endl;
+                    shinybelt = true;
+                    lostartifact -= 1;
+                    soulstone -= 1;
+                    radiantgem -= 1;
+                    Goldloom -= 25;
+                    if (craftanitemquest == true) {
+                        questtwoprogress += 1;
+                    }
+                    craftedsomething++;
+                }
+                else {
+                    cout << "You don't have the required materials to craft an artifact." << endl;
+                }
+            }
+            else if (yesno == "No" || yesno == "no") {
+                cout << "Come again later and i'll make it for you." << endl;
+                break;
+            }
+            else {
+                cout << "That wasnt yes or no." << endl;
+            }
+        }
+        if (craftedsomething == 1) {
+            craftedsomething -= 1;
             cout << "Would you like to craft anything else?" << endl;
+            cin >> craftingchoice;
             if (craftingchoice == "No" || craftingchoice == "no" || craftingchoice == "n" || craftingchoice == "N") {
                 break;
             }
         }
-        break;
+        else {
+            cout << "Come again!" << endl;
+        }
     }
 }
 void Player::setmaxhealth() {
@@ -2399,7 +2494,7 @@ void Player::attack(Character* Target) {
         break;
     case 10: 
         cout << "------------------------------------------------" << endl;
-         if (riddle == false && cipherkey == false && cipherblueprint == 0 && VoidshroudSlicer == false && lightningvoidshroudslicer == false && upgradedvoidshroudslicer == false && shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && goldloomMagnet == false && horsemount == false && dragonmount == false && molotov == 0 && invisibilitypotion == 0) {
+         if (lostartifact == 0 && riddle == false && cipherkey == false && cipherblueprint == 0 && VoidshroudSlicer == false && lightningvoidshroudslicer == false && upgradedvoidshroudslicer == false && shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && goldloomMagnet == false && horsemount == false && dragonmount == false && molotov == 0 && invisibilitypotion == 0) {
             cout << "You have no items yet." << endl;
             cout << "------------------------------------------------" << endl;
             attack(Target);
@@ -2502,7 +2597,7 @@ void Player::attack(Character* Target) {
             cout << "Lightning Glass Shoes (+9 Defence|+12 Attack)" << endl;
         }
         if (defenceupgrade == true || attackupgrade == true || levelupgrade == true || maxhealthtracker > 0 || tracklevelpotion > 0 ||tracksuperiorlevelpotion > 0 || tracksuperpotion > 0 || leveltonic == true ||superiorleveltonic == true || superpotion == true) {
-            cout << "--Upgrades/Potions--" << endl;
+            cout << "--Upgrades/Potions--" << endl;//upgrades/potions category
         }
         if (defenceupgrade == true) {
             cout << "Defence Perk (+10 defence)" << endl;
@@ -2535,7 +2630,7 @@ void Player::attack(Character* Target) {
             cout << "Super Potion (+20 level|+10 attack)" << endl;
         }
         if (travelersbackpack == true || playercompanion == true || goldloomMagnet == true || horsemount == true || dragonmount == true || cipherblueprint > 0 || armorupgrade == true || weaponupgrade == true || lightningshard == true || forgehammer > 0) {
-            cout << "--Special Items--" << endl;
+            cout << "--Special Items--" << endl;//special items category
         }
         if (travelersbackpack == true) {
             cout << "Travelers Backpack (Allows you to hold potions)" << endl;
@@ -2553,7 +2648,12 @@ void Player::attack(Character* Target) {
             cout << "Dragon Mount (Best increase in baselevel on kill)" << endl;
         }
         if (cipherblueprint > 0) {
-            cout << cipherblueprint << " Cipher Blueprint (Use a key to read...)" << endl;   
+            if (cipherblueprint == 1) {
+                cout << cipherblueprint << " Cipher Blueprint (Use a key to read...)" << endl;
+            }
+            else {
+                cout << cipherblueprint << " Cipher Blueprints (Use a key to read...)" << endl;
+            }
         }
         if (armorupgrade == true) {
             cout << "Armor Plating (Used to upgrade armor)" << endl;
@@ -2565,19 +2665,42 @@ void Player::attack(Character* Target) {
             cout << "Lightning Shard (Used to upgrade armor/weapons)" << endl;
         }
         if (forgehammer > 0) {
-            cout << forgehammer << " Forge Hammer (Used with other items to enhance artillery)" << endl;
+            if (forgehammer == 1) {
+                cout << forgehammer << " Forge Hammer (Used with other items to enhance artillery)" << endl;
+            }
+            else {
+                cout << forgehammer << " Forge Hammers (Used with other items to enhance artillery)" << endl;
+            }
+        }
+        if (lostartifact > 0) {
+            if (lostartifact == 1) {
+                cout << lostartifact << " Lost Artifact (Used to craft cursed items)" << endl;
+            }
+            else {
+                cout << lostartifact << " Lost Artifacts (Used to craft cursed items)" << endl;
+            }
         }
         if (invisibilitypotion > 0 || healthtonicitem > 0 && molotov > 0 || cipherkey == true || riddle == true) {
-            cout << "--Usable--" << endl;
+            cout << "--Usable--" << endl;//usable category
         }
         if (invisibilitypotion > 0) {
-            cout << invisibilitypotion << " Invisibility Potion (Skip a battle)" << endl;
+            if (invisibilitypotion == 1) {
+                cout << invisibilitypotion << " Invisibility Potion (Skip a battle)" << endl;
+            }
+            else {
+                cout << invisibilitypotion << " Invisibility Potions (Skip a battle)" << endl;
+            }
         }
         if (healthtonicitem > 0) {
-            cout << healthtonicitem << " Health Tonic (Heal 100,75,50 or 25 based on level)" << endl;
+            cout << healthtonicitem << " Health Tonic (Heal 100,75,50 or 25 based on your level)" << endl;
         }
         if (molotov > 0) {
-            cout << molotov << " Molotov (60% max health dmg)" << endl;
+            if (molotov == 1) {
+                cout << molotov << " Molotov (60% max health dmg)" << endl;
+            }
+            else {
+                cout << molotov << " Molotovs (60% max health dmg)" << endl;
+            }
         }
         if (cipherkey == true) {
             cout << "Cipher Key (Use this to read the blueprint...)" << endl;

@@ -149,4 +149,10 @@ public:
 	int voidshroudtracker = 0;
 	int upgradedvoidshroudtracker = 0;
 	int lightningvoidshroudtracker = 0;
+	int lostartifact = 0;
+	bool cursedheart = false;
+	bool enchantedsachel = false;
+	bool glowingglasses = false;
+	bool fierynecklace = false;
+	bool shinybelt = false;
 };
