@@ -2983,7 +2983,7 @@ void Player::attack(Character* Target) {
                 if (cipherblueprint >= 1) {
                     if (ciphertracker == 0) {
                         ciphertracker += 1;
-                        cout << "You hear a distant roar, 18..." << endl;
+                        cout << "You hear a distant roar, saying, 18..." << endl;
                         cipherblueprint -= 1;
                         if (usetwoitemsquest == true) {
                             questfiveprogress += 1;
@@ -2997,7 +2997,7 @@ void Player::attack(Character* Target) {
                 }
                 else if (ciphertracker == 1) {
                         ciphertracker += 1;
-                        cout << "You hear another distant roar, 20..." << endl;
+                        cout << "You hear a rumble from beneath the surface...20." << endl;
                         cipherblueprint -= 1;
                         if (usetwoitemsquest == true) {
                             questfiveprogress += 1;
@@ -3011,7 +3011,7 @@ void Player::attack(Character* Target) {
                 }
                     else if (ciphertracker == 2) {
                         ciphertracker += 1;
-                        cout << "You hear the last distant roar, 97..." << endl;
+                        cout << "You hear the final whisper...97." << endl;
                         cipherblueprint -= 1;
                         if (usetwoitemsquest == true) {
                             questfiveprogress += 1;
