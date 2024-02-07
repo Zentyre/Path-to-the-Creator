@@ -2146,7 +2146,7 @@ static void gameplay() {
 								Knight.mysteriousstrangerquestactive = true;
       						}
       						else if (randomevent == 4) {
-      							cout << "You must forge 2 pieces of armor." << endl;
+      							cout << "You must forge 3 pieces of armor." << endl;
 								Knight.mysteriousstrangerquest4 = true;
 								Knight.mysteriousstrangerquestactive = true;
       						}

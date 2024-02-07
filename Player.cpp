@@ -75,6 +75,39 @@ void Player::itemusehealthtonic() {
     }
 	cout << "You now have " << health << " health." << endl;
 }
+void mysteriousquest() {
+	int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
+	cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
+	randomgoldloom = r1() % 50 + 1;
+	Goldloom += randomgoldloom;
+    cout << randomgoldloom << " Goldloom, ";
+	randomsoulstone = r1() % 3 + 1;
+	soulstone += randomsoulstone;
+	cout << randomsoulstone << "Soulstone, ";
+	randomlostartifact = r1() % 10 + 1;
+	if (randomlostartifact == 1) {
+	randomgem = r1() % 5 + 2;
+	radiantgem += randomgem;
+	cout << randomgem << "Radiant Gems, ";
+		cout << "1 Lost Artifact." << endl;
+	}
+	else {
+		randomgem = r1() % 5 + 2;
+	radiantgem += randomgem;
+	cout << randomgem << "Radiant Gems.";
+	}
+	mysteriousstrangerquestactive = false;
+    mysteriousstrangerquest = false;
+    mysteriousstrangerquest2 = false;
+    mysteriousstrangerquest3 = false;
+	mysteriousstrangerquest4 = false;
+    mysteriousstrangerquest5 = false;
+    mysteriousstrangerquesttracker = 0;
+    mysteriousstrangerquesttracker2 = 0;
+    mysteriousstrangerquesttracker3 = 0;
+    mysteriousstrangerquesttracker4 = 0;
+	mysteriousstrangerquesttracker5 = 0;
+ }
 void Player::forgerestarting() {
     string forgeUpgrade = "", forgechoice = "";
     while (true) {
@@ -95,6 +128,12 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
                 narsosArmor = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
@@ -103,6 +142,12 @@ void Player::forgerestarting() {
                 checkitems();
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
+                }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
                 }
                 narsosArmor = false;
             }
@@ -121,6 +166,12 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
                 lockhartsArmor = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
@@ -129,6 +180,12 @@ void Player::forgerestarting() {
                 checkitems();
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
+                }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
                 }
                 lockhartsArmor = false;
             }
@@ -147,6 +204,12 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
                 vladimirsArmor = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
@@ -155,6 +218,12 @@ void Player::forgerestarting() {
                 checkitems();
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
+                }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
                 }
                 vladimirsArmor = false;
             }
@@ -173,6 +242,12 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
                 glassshoes = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
@@ -181,6 +256,12 @@ void Player::forgerestarting() {
                 checkitems();
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
+                }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
                 }
                 glassshoes = false;
             }
@@ -199,6 +280,12 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
                 mystichelmet = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
@@ -207,6 +294,12 @@ void Player::forgerestarting() {
                 checkitems();
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
+                }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
                 }
                 mystichelmet = false;
             }
@@ -225,6 +318,12 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
                 dragonscalechestplate = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
@@ -233,6 +332,12 @@ void Player::forgerestarting() {
                 checkitems();
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
+                }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
                 }
                 dragonscalechestplate = false;
             }
@@ -251,6 +356,12 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest5 == true) {
+                    mysteriousstrangerquesttracker5 += 1;
+                    if (mysteriousstrangerquesttracker5 == 2) {
+                        mysteriousquest();
+                    }
+                }
                 flaminglongsword = false;
             }
             else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
@@ -259,6 +370,12 @@ void Player::forgerestarting() {
                 checkitems();
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
+                }
+                if (mysteriousstrangerquest5 == true) {
+                    mysteriousstrangerquesttracker5 += 1;
+                    if (mysteriousstrangerquesttracker5 == 2) {
+                        mysteriousquest();
+                    }
                 }
                 flaminglongsword = false;
             }
@@ -277,6 +394,12 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest5 == true) {
+                    mysteriousstrangerquesttracker5 += 1;
+                    if (mysteriousstrangerquesttracker5 == 2) {
+                        mysteriousquest();
+                    }
+                }
                 Excalibur = false;
             }
             else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
@@ -285,6 +408,12 @@ void Player::forgerestarting() {
                 checkitems();
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
+                }
+                if (mysteriousstrangerquest5 == true) {
+                    mysteriousstrangerquesttracker5 += 1;
+                    if (mysteriousstrangerquesttracker5 == 2) {
+                        mysteriousquest();
+                    }
                 }
                 Excalibur = false;
             }
@@ -303,6 +432,12 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest5 == true) {
+                    mysteriousstrangerquesttracker5 += 1;
+                    if (mysteriousstrangerquesttracker5 == 2) {
+                        mysteriousquest();
+                    }
+                }
                 VoidshroudSlicer = false;
             }
             else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
@@ -311,6 +446,12 @@ void Player::forgerestarting() {
                 checkitems();
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
+                }
+                if (mysteriousstrangerquest5 == true) {
+                    mysteriousstrangerquesttracker5 += 1;
+                    if (mysteriousstrangerquesttracker5 == 2) {
+                        mysteriousquest();
+                    }
                 }
                 VoidshroudSlicer = false;
             }
@@ -2805,29 +2946,7 @@ void Player::attack(Character* Target) {
                 if (mysteriousstrangerquest3 == true) {
                     	mysteriousstrangerquesttracker3 += 1;
 						if (mysteriousstrangerquesttracker3 == 5) {
-							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
-							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
-							randomgoldloom = r1() % 50 + 1;
-							Goldloom += randomgoldloom;
-							cout << randomgoldloom << " Goldloom, ";
-							randomsoulstone = r1() % 3 + 1;
-							soulstone += randomsoulstone;
-							cout << randomsoulstone << "Soulstone, ";
-							randomlostartifact = r1() % 10 + 1;
-							if (randomlostartifact == 1) {
-     							randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems, ";
-								cout << "1 Lost Artifact." << endl;
-							}
-							else {
-								randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems.";
-							}
-							mysteriousstrangerquestactive = false;
-							mysteriousstrangerquest3 = false;
-                            mysteriousstrangerquesttracker3 = 0;
+							mysteriousquest();
 						}
                 }
             }
@@ -2841,29 +2960,7 @@ void Player::attack(Character* Target) {
                 if (mysteriousstrangerquest3 == true) {
                     	mysteriousstrangerquesttracker3 += 1;
 						if (mysteriousstrangerquesttracker3 == 5) {
-							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
-							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
-							randomgoldloom = r1() % 50 + 1;
-							Goldloom += randomgoldloom;
-							cout << randomgoldloom << " Goldloom, ";
-							randomsoulstone = r1() % 3 + 1;
-							soulstone += randomsoulstone;
-							cout << randomsoulstone << "Soulstone, ";
-							randomlostartifact = r1() % 10 + 1;
-							if (randomlostartifact == 1) {
-     							randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems, ";
-								cout << "1 Lost Artifact." << endl;
-							}
-							else {
-								randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems.";
-							}
-							mysteriousstrangerquestactive = false;
-							mysteriousstrangerquest3 = false;
-                            mysteriousstrangerquesttracker3 = 0;
+							mysteriousquest();
 						}
                 }
             }
@@ -2877,29 +2974,7 @@ void Player::attack(Character* Target) {
                 if (mysteriousstrangerquest3 == true) {
                     	mysteriousstrangerquesttracker3 += 1;
 						if (mysteriousstrangerquesttracker3 == 5) {
-							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
-							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
-							randomgoldloom = r1() % 50 + 1;
-							Goldloom += randomgoldloom;
-							cout << randomgoldloom << " Goldloom, ";
-							randomsoulstone = r1() % 3 + 1;
-							soulstone += randomsoulstone;
-							cout << randomsoulstone << "Soulstone, ";
-							randomlostartifact = r1() % 10 + 1;
-							if (randomlostartifact == 1) {
-     							randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems, ";
-								cout << "1 Lost Artifact." << endl;
-							}
-							else {
-								randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems.";
-							}
-							mysteriousstrangerquestactive = false;
-							mysteriousstrangerquest3 = false;
-                            mysteriousstrangerquesttracker3 = 0;
+							mysteriousquest();
 						}
                 }
             }
@@ -2916,29 +2991,7 @@ void Player::attack(Character* Target) {
                         if (mysteriousstrangerquest3 == true) {
                     	mysteriousstrangerquesttracker3 += 1;
 						if (mysteriousstrangerquesttracker3 == 5) {
-							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
-							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
-							randomgoldloom = r1() % 50 + 1;
-							Goldloom += randomgoldloom;
-							cout << randomgoldloom << " Goldloom, ";
-							randomsoulstone = r1() % 3 + 1;
-							soulstone += randomsoulstone;
-							cout << randomsoulstone << "Soulstone, ";
-							randomlostartifact = r1() % 10 + 1;
-							if (randomlostartifact == 1) {
-     							randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems, ";
-								cout << "1 Lost Artifact." << endl;
-							}
-							else {
-								randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems.";
-							}
-							mysteriousstrangerquestactive = false;
-							mysteriousstrangerquest3 = false;
-                            mysteriousstrangerquesttracker3 = 0;
+							mysteriousquest();
 						}
                     }
                 }
@@ -2952,29 +3005,7 @@ void Player::attack(Character* Target) {
                         if (mysteriousstrangerquest3 == true) {
                     	mysteriousstrangerquesttracker3 += 1;
 						if (mysteriousstrangerquesttracker3 == 5) {
-							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
-							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
-							randomgoldloom = r1() % 50 + 1;
-							Goldloom += randomgoldloom;
-							cout << randomgoldloom << " Goldloom, ";
-							randomsoulstone = r1() % 3 + 1;
-							soulstone += randomsoulstone;
-							cout << randomsoulstone << "Soulstone, ";
-							randomlostartifact = r1() % 10 + 1;
-							if (randomlostartifact == 1) {
-     							randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems, ";
-								cout << "1 Lost Artifact." << endl;
-							}
-							else {
-								randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems.";
-							}
-							mysteriousstrangerquestactive = false;
-							mysteriousstrangerquest3 = false;
-                            mysteriousstrangerquesttracker3 = 0;
+							mysteriousquest();
 						}
                     }
                 }
@@ -2988,29 +3019,7 @@ void Player::attack(Character* Target) {
                         if (mysteriousstrangerquest3 == true) {
                     	mysteriousstrangerquesttracker3 += 1;
 						if (mysteriousstrangerquesttracker3 == 5) {
-							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
-							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
-							randomgoldloom = r1() % 50 + 1;
-							Goldloom += randomgoldloom;
-							cout << randomgoldloom << " Goldloom, ";
-							randomsoulstone = r1() % 3 + 1;
-							soulstone += randomsoulstone;
-							cout << randomsoulstone << "Soulstone, ";
-							randomlostartifact = r1() % 10 + 1;
-							if (randomlostartifact == 1) {
-     							randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems, ";
-								cout << "1 Lost Artifact." << endl;
-							}
-							else {
-								randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems.";
-							}
-							mysteriousstrangerquestactive = false;
-							mysteriousstrangerquest3 = false;
-                            mysteriousstrangerquesttracker3 = 0;
+							mysteriousquest();
 						}
                     }
                 }
@@ -3039,29 +3048,7 @@ void Player::attack(Character* Target) {
                     if (mysteriousstrangerquest3 == true) {
                     	mysteriousstrangerquesttracker3 += 1;
 						if (mysteriousstrangerquesttracker3 == 5) {
-							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
-							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
-							randomgoldloom = r1() % 50 + 1;
-							Goldloom += randomgoldloom;
-							cout << randomgoldloom << " Goldloom, ";
-							randomsoulstone = r1() % 3 + 1;
-							soulstone += randomsoulstone;
-							cout << randomsoulstone << "Soulstone, ";
-							randomlostartifact = r1() % 10 + 1;
-							if (randomlostartifact == 1) {
-     							randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems, ";
-								cout << "1 Lost Artifact." << endl;
-							}
-							else {
-								randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems.";
-							}
-							mysteriousstrangerquestactive = false;
-							mysteriousstrangerquest3 = false;
-                            mysteriousstrangerquesttracker3 = 0;
+							mysteriousquest();
 						}
                 }
                 }
