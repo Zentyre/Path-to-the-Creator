@@ -2103,39 +2103,40 @@ static void gameplay() {
 					randomevent = r1() % 100 + 1;
 					if (randomevent == 1 || randomevent == 2 && Knight.mysteriousstrangerquestactive == false) {
 						string yesno = "";
-						cout << "A mysterious stranger has approached..." << endl << "Would you like a quest?" << endl;
+						cout << "A mysterious stranger is approaching..." << endl << "Would you like a quest?" << endl;
 						cin >> ws;
 						getline(cin, yesno);
 						randomevent = r1() % 5 + 1;
 						if (yesno == "Yes" || yesno == "yes" || yesno == "Y" || yesno == "y") {
       						if (randomevent == 1) {
-      							cout << "You must kill 3 bosses." << endl;
+      							cout << "--You must kill 3 bosses--" << endl;
 								Knight.mysteriousstrangerquest = true;
 								Knight.mysteriousstrangerquestactive = true;
       						}
       						else if (randomevent == 2) {
-      							cout << "You must craft a cursed artifact." << endl;
+      							cout << "--You must craft a cursed artifact--" << endl;
 								Knight.mysteriousstrangerquest2 = true;
 								Knight.mysteriousstrangerquestactive = true;
       						}
       						if (randomevent == 3) {
-      							cout << "You must use 5 items." << endl;
+      							cout << "--You must use 5 items--" << endl;
 								Knight.mysteriousstrangerquest3 = true;
 								Knight.mysteriousstrangerquestactive = true;
       						}
       						else if (randomevent == 4) {
-      							cout << "You must forge 3 pieces of armor." << endl;
+      							cout << "--You must forge 3 pieces of armor--" << endl;
 								Knight.mysteriousstrangerquest4 = true;
 								Knight.mysteriousstrangerquestactive = true;
       						}
 							else if (randomevent == 5) {
-      							cout << "You must forge 2 weapons." << endl;
+      							cout << "--You must forge 2 weapons--" << endl;
 								Knight.mysteriousstrangerquest5 = true;
 								Knight.mysteriousstrangerquestactive = true;
       						}
 						}
 						else if (yesno == "No" || yesno == "no" || yesno == "N" || yesno == "n") {
-							cout << "You missed out on a great opportunity." << endl << "Goodbye." << endl;
+							cout << "You missed out on a great opportunity." << endl;
+							cout << "-The mysterious stranger has left-" << endl;
 						}
 						else {
 							cout << "Since you can't type, the mysterious stranger impatiently left you." << endl;
