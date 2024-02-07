@@ -2094,29 +2094,7 @@ static void gameplay() {
 					if (Knight.bossSpawned == true && Knight.mysteriousstrangerquest == true) {
 						mysteriousstrangerquesttracker += 1;
 						if (mysteriousstrangerquesttracker == 3) {
-							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
-							cout << "You have completed my quest " << Knight.getname() << ". Here is your reward for your assistance." << endl;
-							randomgoldloom = r1() % 50 + 1;
-							Knight.Goldloom += randomgoldloom;
-							cout << randomgoldloom << " Goldloom, ";
-							randomsoulstone = r1() % 3 + 1;
-							Knight.soulstone += randomsoulstone;
-							cout << randomsoulstone << "Soulstone, ";
-							randomlostartifact = r1() % 10 + 1;
-							if (randomlostartifact == 1) {
-     							randomgem = r1() % 5 + 2;
-     							Knight.radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems, ";
-								cout << "1 Lost Artifact." << endl;
-							}
-							else {
-								randomgem = r1() % 5 + 2;
-     							Knight.radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems.";
-							}
-							Knight.mysteriousstrangerquestactive = false;
-							Knight.mysteriousstrangerquest = false;
-							Knight.mysteriousstrangerquesttracker = 0;
+							Knight.mysteriousquest();
 						}
 					}
 					if (Knight.bossSpawned == true) {
