@@ -38,11 +38,16 @@ public:
 	void playerclassdreadnought();
 	void playerclasstrickster();
 	void itemusehealthtonic();
+	incrementvillage(int amount) {
+		return villagetracker++;
+	}
 	int stopremessaging = 0;
 	int healthtonicitem = 0;
 	int failedforge = 0;
 	int cipherblueprint = 0;
 	int ciphertracker = 0;
+	int villagetracker = 0;
+	int visittracker = 0;
 	int soulstone = 0;
 	int radiantgem = 0;
 	int questtracker = 0;

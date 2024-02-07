@@ -1117,6 +1117,7 @@ static void gameplay() {
 						Knight.storetracker += 1;
 						Knight.Goldloom += r1() % 16 + 10;
 					}
+					Knight.incrementvillage(1);
 					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == 6) {
 						Knight.stopremessaging = 1;
 						Knight.trickstermove = true;

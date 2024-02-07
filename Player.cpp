@@ -14,6 +14,12 @@ Player::Player(string n, int maxh, int hp, int atk, int def, int baselvl, int li
     lives = live;
 }
 int tracklevelpotion = 0, tracksuperpotion = 0, tracksuperiorlevelpotion = 0;
+void village() {
+    visittracker++;
+    if (visittracker == 1) {
+        cout << "Welcome to the village! I see this is your first visit. Here you take care of this village, and if you do a good job you get rewards." << endl;
+    }
+}
 void Player::playerclassexecutioner() {
     maxhealth -= 14;
     health -= 7;
