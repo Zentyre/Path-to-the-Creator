@@ -80,11 +80,11 @@ void Player::forgerestarting() {
     while (true) {
         cout << "What would you like to upgrade?" << endl;
         if (ciphertracker == 4) {
-            cout << "If you are here to craft the Regenerative Mantle, type Mantle." << endl;
+            cout << "If you are here to craft the Regenerative Mantle instead of using the feature named CRAFTING, type Mantle. I hope this was worth my inconvenience of coding the craft here too." << endl;
         }
         cin >> ws;
         getline(cin, forgeUpgrade);
-        if (forgeUpgrade == "narso's armor" || forgeUpgrade == "Narso's armor" || forgeUpgrade == "Narso's Armor" || forgeUpgrade == "narso's Armor" && (armorupgrade == true || lightningshard == true)) {
+        if (forgeUpgrade == "narso's armor" || forgeUpgrade == "Narso's armor" || forgeUpgrade == "Narso's Armor" || forgeUpgrade == "narso's Armor" && (armorupgrade == true || lightningshard == true) && narsosArmor == true) {
             cout << "What would you like to use to upgrade Narso's Armor? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -95,6 +95,7 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                narsosArmor = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded Narso's Armor using an Armor Upgrade!" << endl;
@@ -103,9 +104,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                narsosArmor = false;
+            }
+            else {
+                cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "lockhart's armor" || forgeUpgrade == "Lockhart's armor" || forgeUpgrade == "Lockhart's Armor" || forgeUpgrade == "lockhart's Armor" && (armorupgrade == true || lightningshard == true)) {
+        else if (forgeUpgrade == "lockhart's armor" || forgeUpgrade == "Lockhart's armor" || forgeUpgrade == "Lockhart's Armor" || forgeUpgrade == "lockhart's Armor" && (armorupgrade == true || lightningshard == true) && lockhartsArmor == true) {
             cout << "What would you like to use to upgrade Lockhart's Armor? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -116,6 +121,7 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                lockhartsArmor = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded Lockhart's Armor using an Armor Upgrade!" << endl;
@@ -124,9 +130,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                lockhartsArmor = false;
+            }
+            else {
+                cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "vladimir's armor" || forgeUpgrade == "Vladimir's armor" || forgeUpgrade == "Vladimir's Armor" || forgeUpgrade == "vladimir's Armor" && (armorupgrade == true || lightningshard == true)) {
+        else if (forgeUpgrade == "vladimir's armor" || forgeUpgrade == "Vladimir's armor" || forgeUpgrade == "Vladimir's Armor" || forgeUpgrade == "vladimir's Armor" && (armorupgrade == true || lightningshard == true) && vladimirsArmor == true) {
             cout << "What would you like to use to upgrade Vladimir's Armor? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -137,6 +147,7 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                vladimirsArmor = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded Vladimir's Armor using an Armor Upgrade!" << endl;
@@ -145,9 +156,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                vladimirsArmor = false;
+            }
+            else {
+                cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "glass shoes" || forgeUpgrade == "Glass shoes" || forgeUpgrade == "glass Shoes" || forgeUpgrade == "Glass Shoes" && (armorupgrade == true || lightningshard == true)) {
+        else if (forgeUpgrade == "glass shoes" || forgeUpgrade == "Glass shoes" || forgeUpgrade == "glass Shoes" || forgeUpgrade == "Glass Shoes" && (armorupgrade == true || lightningshard == true) && glassshoes == true) {
             cout << "What would you like to use to upgrade your Glass Shoes? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -158,6 +173,7 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                glassshoes = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded your Glass Shoes using an Armor Upgrade!" << endl;
@@ -166,9 +182,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                glassshoes = false;
+            }
+            else {
+                cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "mystic helmet" || forgeUpgrade == "Mystic helmet" || forgeUpgrade == "mystic Helmet" || forgeUpgrade == "Mystic Helmet" && (armorupgrade == true || lightningshard == true)) {
+        else if (forgeUpgrade == "mystic helmet" || forgeUpgrade == "Mystic helmet" || forgeUpgrade == "mystic Helmet" || forgeUpgrade == "Mystic Helmet" && (armorupgrade == true || lightningshard == true) && mystichelmet == true) {
             cout << "What would you like to use to upgrade your Mystic Helmet? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -179,6 +199,7 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                mystichelmet = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded your Mystic Helmet using an Armor Upgrade!" << endl;
@@ -187,9 +208,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                mystichelmet = false;
+            }
+            else {
+                cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "dragonscale chestplate" || forgeUpgrade == "Dragonscale chestplate" || forgeUpgrade == "dragonscale Chestplate" || forgeUpgrade == "Dragonscale Chestplate" && (armorupgrade == true || lightningshard == true)) {
+        else if (forgeUpgrade == "dragonscale chestplate" || forgeUpgrade == "Dragonscale chestplate" || forgeUpgrade == "dragonscale Chestplate" || forgeUpgrade == "Dragonscale Chestplate" && (armorupgrade == true || lightningshard == true) && dragonscalechestplate == true) {
             cout << "What would you like to use to upgrade your Dragonscale Chestplate? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -200,6 +225,7 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                dragonscalechestplate = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded your Dragonscale Chestplate using an Armor Upgrade!" << endl;
@@ -208,9 +234,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                dragonscalechestplate = false;
+            }
+            else {
+                cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "flaming longsword" || forgeUpgrade == "Flaming Longsword" || forgeUpgrade == "flaming Longsword" || forgeUpgrade == "Flaming longsword" && (weaponupgrade == true || lightningshard == true)) {
+        else if (forgeUpgrade == "flaming longsword" || forgeUpgrade == "Flaming Longsword" || forgeUpgrade == "flaming Longsword" || forgeUpgrade == "Flaming longsword" && (weaponupgrade == true || lightningshard == true) && flaminglongsword == true) {
             cout << "What would you like to use to upgrade the Flaming Longsword? (Lightning Shard or Weapon Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -221,6 +251,7 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                flaminglongsword = false;
             }
             else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
                 cout << "You have upgraded your Flaming Longsword using a Weapon Upgrade!" << endl;
@@ -229,9 +260,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                flaminglongsword = false;
+            }
+            else {
+                cout << "That wasn't Weapon Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "excalibur" || forgeUpgrade == "Excalibur" && (weaponupgrade == true || lightningshard == true)) {
+        else if (forgeUpgrade == "excalibur" || forgeUpgrade == "Excalibur" && (weaponupgrade == true || lightningshard == true) && Excalibur == true) {
             cout << "What would you like to use to upgrade your Excalibur? (Lightning Shard or Weapon Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -242,6 +277,7 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                Excalibur = false;
             }
             else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
                 cout << "You have upgraded your Excalibur using a Weapon Upgrade!" << endl;
@@ -250,9 +286,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                Excalibur = false;
+            }
+            else {
+                cout << "That wasn't Weapon Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "Voidshroud Slicer" || forgeUpgrade == "Voidshroud slicer" || forgeUpgrade == "voidshroud Slicer" || forgeUpgrade == "voidshroud slicer" && (weaponupgrade == true || lightningshard == true)) {
+        else if (forgeUpgrade == "Voidshroud Slicer" || forgeUpgrade == "Voidshroud slicer" || forgeUpgrade == "voidshroud Slicer" || forgeUpgrade == "voidshroud slicer" && (weaponupgrade == true || lightningshard == true) && VoidshroudSlicer == true) {
             cout << "What would you like to use to upgrade your Voidshroud Slicer? (Lightning Shard or Weapon Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -263,6 +303,7 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                VoidshroudSlicer = false;
             }
             else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
                 cout << "You have upgraded your Voidshroud Slicer using a Weapon Upgrade!" << endl;
@@ -271,15 +312,18 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                VoidshroudSlicer = false;
+            }
+            else {
+                cout << "That wasn't Weapon Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "Mantle" || forgeUpgrade == "mantle") {
+        else if (forgeUpgrade == "Mantle" || forgeUpgrade == "mantle" && radiantgem >= 4 && soulstone >= 2 && Goldloom >= 50 && healthtonicitem >= 1) {
             string yesno = "";
             cout << "Are you sure you want to craft the Regenerative Mantle?" << endl;
             cin >> ws;
             getline(cin, yesno);
             if (yesno == "Yes" || yesno == "yes") {
-                if (radiantgem >= 4 && soulstone >= 2 && Goldloom >= 50 && healthtonicitem >= 1) {
                     cout << "You now have the Regenerative Mantle!" << endl;
                     radiantgem -= 4;
                     soulstone -= 2;
@@ -289,21 +333,18 @@ void Player::forgerestarting() {
                     if (craftanitemquest == true) {
                         questtwoprogress += 1;
                     }
-                }
-                else {
-                    cout << "You don't have the required materials to craft this yet." << endl;
-                }
             }
             else if (yesno == "No" || yesno == "no") {
                 cout << "Come again later and ill make it for you." << endl;
                 break;
             }
             else {
-                cout << "That wasnt yes or no." << endl;
+                cout << "That wasnt yes or no. Try again." << endl;
             }
         }
         else {
-            cout << "That item does not exist. Try again." << endl;
+            cout << "That item does not exist or you dont have the required materials. Try again." << endl;
+            break;
         }
         cout << "Would you like to upgrade something else?" << endl;
         cin >> forgechoice;
@@ -372,6 +413,7 @@ void Player::forgecrafting() {
                     if (craftanitemquest == true) {
                         questtwoprogress += 1;
                     }
+                    ciphertracker = 5;
                 }
                 else {
                     cout << "You don't have the required materials to craft this yet." << endl;
@@ -402,6 +444,30 @@ void Player::forgecrafting() {
                     Goldloom -= 25;
                     if (craftanitemquest == true) {
                         questtwoprogress += 1;
+                    }
+                    if (mysteriousstrangerquest2 == true) {
+							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
+							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
+							randomgoldloom = r1() % 50 + 1;
+							Goldloom += randomgoldloom;
+							cout << randomgoldloom << " Goldloom, ";
+							randomsoulstone = r1() % 3 + 1;
+							soulstone += randomsoulstone;
+							cout << randomsoulstone << "Soulstone, ";
+							randomlostartifact = r1() % 10 + 1;
+							if (randomlostartifact == 1) {
+     							randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems, ";
+								cout << "1 Lost Artifact." << endl;
+							}
+							else {
+								randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems.";
+							}
+							mysteriousstrangerquestactive = false;
+							mysteriousstrangerquest2 = false;
                     }
                     craftedsomething++;
                 }
@@ -2736,6 +2802,34 @@ void Player::attack(Character* Target) {
                 if (usetwoitemsquest == true) {
                     questfiveprogress += 1;
                 }
+                if (mysteriousstrangerquest3 == true) {
+                    	mysteriousstrangerquesttracker3 += 1;
+						if (mysteriousstrangerquesttracker3 == 5) {
+							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
+							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
+							randomgoldloom = r1() % 50 + 1;
+							Goldloom += randomgoldloom;
+							cout << randomgoldloom << " Goldloom, ";
+							randomsoulstone = r1() % 3 + 1;
+							soulstone += randomsoulstone;
+							cout << randomsoulstone << "Soulstone, ";
+							randomlostartifact = r1() % 10 + 1;
+							if (randomlostartifact == 1) {
+     							randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems, ";
+								cout << "1 Lost Artifact." << endl;
+							}
+							else {
+								randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems.";
+							}
+							mysteriousstrangerquestactive = false;
+							mysteriousstrangerquest3 = false;
+                            mysteriousstrangerquesttracker3 = 0;
+						}
+                }
             }
             else if ((itemuse == "Invisibility Potion" || itemuse == "Invisibility potion" || itemuse == "invisibility potion") && invisibilitypotion >= 1) {
                 cout << "You used an Invisibility Potion!" << endl;
@@ -2744,6 +2838,34 @@ void Player::attack(Character* Target) {
                 if (usetwoitemsquest == true) {
                     questfiveprogress += 1;
                 }
+                if (mysteriousstrangerquest3 == true) {
+                    	mysteriousstrangerquesttracker3 += 1;
+						if (mysteriousstrangerquesttracker3 == 5) {
+							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
+							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
+							randomgoldloom = r1() % 50 + 1;
+							Goldloom += randomgoldloom;
+							cout << randomgoldloom << " Goldloom, ";
+							randomsoulstone = r1() % 3 + 1;
+							soulstone += randomsoulstone;
+							cout << randomsoulstone << "Soulstone, ";
+							randomlostartifact = r1() % 10 + 1;
+							if (randomlostartifact == 1) {
+     							randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems, ";
+								cout << "1 Lost Artifact." << endl;
+							}
+							else {
+								randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems.";
+							}
+							mysteriousstrangerquestactive = false;
+							mysteriousstrangerquest3 = false;
+                            mysteriousstrangerquesttracker3 = 0;
+						}
+                }
             }
             else if (itemuse == "Molotov" || itemuse == "molotov" && molotov >= 1) {
                 cout << "------------------------------------------------" << endl;
@@ -2751,6 +2873,34 @@ void Player::attack(Character* Target) {
                 itemusemolotov(Target);
                 if (usetwoitemsquest == true) {
                     questfiveprogress += 1;
+                }
+                if (mysteriousstrangerquest3 == true) {
+                    	mysteriousstrangerquesttracker3 += 1;
+						if (mysteriousstrangerquesttracker3 == 5) {
+							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
+							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
+							randomgoldloom = r1() % 50 + 1;
+							Goldloom += randomgoldloom;
+							cout << randomgoldloom << " Goldloom, ";
+							randomsoulstone = r1() % 3 + 1;
+							soulstone += randomsoulstone;
+							cout << randomsoulstone << "Soulstone, ";
+							randomlostartifact = r1() % 10 + 1;
+							if (randomlostartifact == 1) {
+     							randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems, ";
+								cout << "1 Lost Artifact." << endl;
+							}
+							else {
+								randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems.";
+							}
+							mysteriousstrangerquestactive = false;
+							mysteriousstrangerquest3 = false;
+                            mysteriousstrangerquesttracker3 = 0;
+						}
                 }
             }
             else if ((itemuse == "Cipher Key" || itemuse == "Cipher key"|| itemuse == "cipher key"|| itemuse == "cipher Key") && cipherkey == true && endlessmode == true) {
@@ -2763,6 +2913,34 @@ void Player::attack(Character* Target) {
                         if (usetwoitemsquest == true) {
                             questfiveprogress += 1;
                         }
+                        if (mysteriousstrangerquest3 == true) {
+                    	mysteriousstrangerquesttracker3 += 1;
+						if (mysteriousstrangerquesttracker3 == 5) {
+							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
+							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
+							randomgoldloom = r1() % 50 + 1;
+							Goldloom += randomgoldloom;
+							cout << randomgoldloom << " Goldloom, ";
+							randomsoulstone = r1() % 3 + 1;
+							soulstone += randomsoulstone;
+							cout << randomsoulstone << "Soulstone, ";
+							randomlostartifact = r1() % 10 + 1;
+							if (randomlostartifact == 1) {
+     							randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems, ";
+								cout << "1 Lost Artifact." << endl;
+							}
+							else {
+								randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems.";
+							}
+							mysteriousstrangerquestactive = false;
+							mysteriousstrangerquest3 = false;
+                            mysteriousstrangerquesttracker3 = 0;
+						}
+                }
                     }
                     else if (ciphertracker == 1) {
                         ciphertracker += 1;
@@ -2771,6 +2949,34 @@ void Player::attack(Character* Target) {
                         if (usetwoitemsquest == true) {
                             questfiveprogress += 1;
                         }
+                        if (mysteriousstrangerquest3 == true) {
+                    	mysteriousstrangerquesttracker3 += 1;
+						if (mysteriousstrangerquesttracker3 == 5) {
+							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
+							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
+							randomgoldloom = r1() % 50 + 1;
+							Goldloom += randomgoldloom;
+							cout << randomgoldloom << " Goldloom, ";
+							randomsoulstone = r1() % 3 + 1;
+							soulstone += randomsoulstone;
+							cout << randomsoulstone << "Soulstone, ";
+							randomlostartifact = r1() % 10 + 1;
+							if (randomlostartifact == 1) {
+     							randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems, ";
+								cout << "1 Lost Artifact." << endl;
+							}
+							else {
+								randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems.";
+							}
+							mysteriousstrangerquestactive = false;
+							mysteriousstrangerquest3 = false;
+                            mysteriousstrangerquesttracker3 = 0;
+						}
+                }
                     }
                     else if (ciphertracker == 2) {
                         ciphertracker += 1;
@@ -2779,6 +2985,34 @@ void Player::attack(Character* Target) {
                         if (usetwoitemsquest == true) {
                             questfiveprogress += 1;
                         }
+                        if (mysteriousstrangerquest3 == true) {
+                    	mysteriousstrangerquesttracker3 += 1;
+						if (mysteriousstrangerquesttracker3 == 5) {
+							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
+							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
+							randomgoldloom = r1() % 50 + 1;
+							Goldloom += randomgoldloom;
+							cout << randomgoldloom << " Goldloom, ";
+							randomsoulstone = r1() % 3 + 1;
+							soulstone += randomsoulstone;
+							cout << randomsoulstone << "Soulstone, ";
+							randomlostartifact = r1() % 10 + 1;
+							if (randomlostartifact == 1) {
+     							randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems, ";
+								cout << "1 Lost Artifact." << endl;
+							}
+							else {
+								randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems.";
+							}
+							mysteriousstrangerquestactive = false;
+							mysteriousstrangerquest3 = false;
+                            mysteriousstrangerquesttracker3 = 0;
+						}
+                }
                     }
                     else {
                         cout << "You've already heard all of the clues." << endl;
@@ -2803,6 +3037,34 @@ void Player::attack(Character* Target) {
                     if (usetwoitemsquest == true) {
                         questfiveprogress += 1;
                     }
+                    if (mysteriousstrangerquest3 == true) {
+                    	mysteriousstrangerquesttracker3 += 1;
+						if (mysteriousstrangerquesttracker3 == 5) {
+							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
+							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
+							randomgoldloom = r1() % 50 + 1;
+							Goldloom += randomgoldloom;
+							cout << randomgoldloom << " Goldloom, ";
+							randomsoulstone = r1() % 3 + 1;
+							soulstone += randomsoulstone;
+							cout << randomsoulstone << "Soulstone, ";
+							randomlostartifact = r1() % 10 + 1;
+							if (randomlostartifact == 1) {
+     							randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems, ";
+								cout << "1 Lost Artifact." << endl;
+							}
+							else {
+								randomgem = r1() % 5 + 2;
+     							radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems.";
+							}
+							mysteriousstrangerquestactive = false;
+							mysteriousstrangerquest3 = false;
+                            mysteriousstrangerquesttracker3 = 0;
+						}
+                }
                 }
                 else {
                     cout << "You are wrong, try again." << endl;

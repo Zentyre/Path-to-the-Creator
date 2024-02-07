@@ -156,5 +156,15 @@ public:
 	bool fierynecklace = false;
 	bool shinybelt = false;
 	bool mysteriousstranger = false;
+	bool mysteriousstrangerquestactive = false;
 	bool mysteriousstrangerquest = false;
+	bool mysteriousstrangerquest2 = false;
+	bool mysteriousstrangerquest3 = false;
+	bool mysteriousstrangerquest4 = false;
+	bool mysteriousstrangerquest5 = false;
+	int mysteriousstrangerquesttracker = 0;
+	int mysteriousstrangerquesttracker2 = 0;
+	int mysteriousstrangerquesttracker3 = 0;
+	int mysteriousstrangerquesttracker4 = 0;
+	int mysteriousstrangerquesttracker5 = 0;
 };

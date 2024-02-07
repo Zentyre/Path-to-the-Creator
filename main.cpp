@@ -2091,13 +2091,79 @@ static void gameplay() {
 						cout << "--Your shop now appears more frequently and you get more money! (Goldloom Magnet)--" << endl;
 						cout << endl;
 					}
+					if (Knight.bossSpawned == true && Knight.mysteriousstrangerquest == true) {
+						mysteriousstrangerquesttracker += 1;
+						if (mysteriousstrangerquesttracker == 3) {
+							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
+							cout << "You have completed my quest " << Knight.getname() << ". Here is your reward for your assistance." << endl;
+							randomgoldloom = r1() % 50 + 1;
+							Knight.Goldloom += randomgoldloom;
+							cout << randomgoldloom << " Goldloom, ";
+							randomsoulstone = r1() % 3 + 1;
+							Knight.soulstone += randomsoulstone;
+							cout << randomsoulstone << "Soulstone, ";
+							randomlostartifact = r1() % 10 + 1;
+							if (randomlostartifact == 1) {
+     							randomgem = r1() % 5 + 2;
+     							Knight.radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems, ";
+								cout << "1 Lost Artifact." << endl;
+							}
+							else {
+								randomgem = r1() % 5 + 2;
+     							Knight.radiantgem += randomgem;
+     							cout << randomgem << "Radiant Gems.";
+							}
+							Knight.mysteriousstrangerquestactive = false;
+							Knight.mysteriousstrangerquest = false;
+							Knight.mysteriousstrangerquesttracker = 0;
+						}
+					}
 					if (Knight.bossSpawned == true) {
 						Knight.bossSpawned = false;
 					}
 					randomevent = r1() % 100 + 1;
-					if (randomevent == 1 || randomevent == 2) {
-						cout << "A mysterious stranger has appeared!" << endl;//finish this update
+					if (randomevent == 1 || randomevent == 2 && Knight.mysteriousstrangerquestactive == false) {
+						string yesno = "";
+						cout << "A mysterious stranger has approached..." << endl << "Would you like a quest?" << endl;
+						cin >> ws;
+						getline(cin, yesno);
+						randomevent = r1() % 5 + 1;
+						if (yesno == "Yes" || yesno == "yes" || yesno == "Y" || yesno == "y") {
+      						if (randomevent == 1) {
+      							cout << "You must kill 3 bosses." << endl;
+								Knight.mysteriousstrangerquest = true;
+								Knight.mysteriousstrangerquestactive = true;
+      						}
+      						else if (randomevent == 2) {
+      							cout << "You must craft a cursed artifact." << endl;
+								Knight.mysteriousstrangerquest2 = true;
+								Knight.mysteriousstrangerquestactive = true;
+      						}
+      						if (randomevent == 3) {
+      							cout << "You must use 5 items." << endl;
+								Knight.mysteriousstrangerquest3 = true;
+								Knight.mysteriousstrangerquestactive = true;
+      						}
+      						else if (randomevent == 4) {
+      							cout << "You must forge 2 pieces of armor." << endl;
+								Knight.mysteriousstrangerquest4 = true;
+								Knight.mysteriousstrangerquestactive = true;
+      						}
+							else if (randomevent == 5) {
+      							cout << "You must forge 2 weapons." << endl;
+								Knight.mysteriousstrangerquest5 = true;
+								Knight.mysteriousstrangerquestactive = true;
+      						}
+						}
+						else if (yesno == "No" || yesno == "no" || yesno == "N" || yesno == "n") {
+							cout << "You missed out on a great opportunity." << endl << "Goodbye." << endl;
+						}
+						else {
+							cout << "Since you can't type, the mysterious stranger impatiently left you." << endl;
+						}
 					}
+					//finish this update
 				}
 			}
 		}
