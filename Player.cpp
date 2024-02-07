@@ -2940,9 +2940,9 @@ void Player::attack(Character* Target) {
 							mysteriousstrangerquest3 = false;
                             mysteriousstrangerquesttracker3 = 0;
 						}
-                }
                     }
-                    else if (ciphertracker == 1) {
+                }
+                else if (ciphertracker == 1) {
                         ciphertracker += 1;
                         cout << "You hear another distant roar, 20..." << endl;
                         cipherblueprint -= 1;
@@ -2976,8 +2976,8 @@ void Player::attack(Character* Target) {
 							mysteriousstrangerquest3 = false;
                             mysteriousstrangerquesttracker3 = 0;
 						}
-                }
                     }
+                }
                     else if (ciphertracker == 2) {
                         ciphertracker += 1;
                         cout << "You hear the last distant roar, 97..." << endl;
@@ -3012,11 +3012,10 @@ void Player::attack(Character* Target) {
 							mysteriousstrangerquest3 = false;
                             mysteriousstrangerquesttracker3 = 0;
 						}
+                    }
                 }
-                    }
-                    else {
+                else {
                         cout << "You've already heard all of the clues." << endl;
-                    }
                 }
                 else {
                     cout << "You don't have a cipher blueprint to read." << endl;
