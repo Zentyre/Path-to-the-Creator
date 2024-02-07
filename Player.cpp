@@ -3029,8 +3029,6 @@ void Player::attack(Character* Target) {
                 else {
                     cout << "You don't have a cipher blueprint to read." << endl;
                 }
-                attack(Target);
-                break;
             }
             else if ((itemuse == "riddle" || itemuse == "Riddle") && endlessmode == true && riddle == true) {
                 string riddleanswer = "";
@@ -3040,8 +3038,6 @@ void Player::attack(Character* Target) {
                 if (riddleanswer == "Troll" || riddleanswer == "troll") {
                     cout << "Thats correct. You have proven your worth and shown you deserve these ingredients. In order to make the Regenerative Mantle, you need 4 Radiant Gems, 2 Soulstone, a healing potion and 50 goldloom for the forgers hard work." << endl;
                     ciphertracker += 1;
-                    attack(Target);
-                    break;
                     if (usetwoitemsquest == true) {
                         questfiveprogress += 1;
                     }
@@ -3054,9 +3050,10 @@ void Player::attack(Character* Target) {
                 }
                 else {
                     cout << "You are wrong, try again." << endl;
-                    attack(Target);
-                    break;
                 }
+            }
+            else {
+                cout << "That item doesn't exist or you don't have it to use." << endl;
             }
         }
         else if (yesnobackpack == "No" || yesnobackpack == "no" || yesnobackpack == "n" || yesnobackpack == "N") {
