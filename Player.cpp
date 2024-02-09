@@ -133,11 +133,13 @@ void Player::forgerestarting() {
         }
         cin >> ws;
         getline(cin, forgeUpgrade);
-        if (forgeUpgrade == "narso's armor" || forgeUpgrade == "Narso's armor" || forgeUpgrade == "Narso's Armor" || forgeUpgrade == "narso's Armor" && (armorupgrade == true || lightningshard == true) && narsosArmor == true) {
+        std::transform(forgeUpgrade.begin(), forgeUpgrade.end(), forgeUpgrade.begin(), ::tolower);
+        if (forgeUpgrade == "narso's armor" && (armorupgrade == true || lightningshard == true) && narsosArmor == true) {
             cout << "What would you like to use to upgrade Narso's Armor? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
-            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+            std::transform(forgechoice.begin(), forgechoice.end(), forgechoice.begin(), ::tolower);
+            if (forgechoice == "lightning shard") {
                 cout << "You have upgraded Narso's Armor using a Lightning Shard!" << endl;
                 lightningGodarmor = true;
                 checkitems();
@@ -152,7 +154,7 @@ void Player::forgerestarting() {
                 }
                 narsosArmor = false;
             }
-            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+            else if (forgechoice == "armor upgrade") {
                 cout << "You have upgraded Narso's Armor using an Armor Upgrade!" << endl;
                 upgradedgodarmor = true;
                 checkitems();
@@ -171,11 +173,12 @@ void Player::forgerestarting() {
                 cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "lockhart's armor" || forgeUpgrade == "Lockhart's armor" || forgeUpgrade == "Lockhart's Armor" || forgeUpgrade == "lockhart's Armor" && (armorupgrade == true || lightningshard == true) && lockhartsArmor == true) {
+        else if (forgeUpgrade == "lockhart's armor" && (armorupgrade == true || lightningshard == true) && lockhartsArmor == true) {
             cout << "What would you like to use to upgrade Lockhart's Armor? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
-            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+            std::transform(forgechoice.begin(), forgechoice.end(), forgechoice.begin(), ::tolower);
+            if (forgechoice == "lightning shard") {
                 cout << "You have upgraded Lockhart's Armor using a Lightning Shard!" << endl;
                 lightningGodarmor = true;
                 checkitems();
@@ -190,7 +193,7 @@ void Player::forgerestarting() {
                 }
                 lockhartsArmor = false;
             }
-            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+            else if (forgechoice == "armor upgrade") {
                 cout << "You have upgraded Lockhart's Armor using an Armor Upgrade!" << endl;
                 upgradedgodarmor = true;
                 checkitems();
@@ -209,11 +212,12 @@ void Player::forgerestarting() {
                 cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "vladimir's armor" || forgeUpgrade == "Vladimir's armor" || forgeUpgrade == "Vladimir's Armor" || forgeUpgrade == "vladimir's Armor" && (armorupgrade == true || lightningshard == true) && vladimirsArmor == true) {
+        else if (forgeUpgrade == "vladimir's armor" && (armorupgrade == true || lightningshard == true) && vladimirsArmor == true) {
             cout << "What would you like to use to upgrade Vladimir's Armor? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
-            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+            std::transform(forgechoice.begin(), forgechoice.end(), forgechoice.begin(), ::tolower);
+            if (forgechoice == "lightning shard") {
                 cout << "You have upgraded Vladimir's Armor using a Lightning Shard!" << endl;
                 lightningGodarmor = true;
                 checkitems();
@@ -228,7 +232,7 @@ void Player::forgerestarting() {
                 }
                 vladimirsArmor = false;
             }
-            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+            else if (forgechoice == "armor upgrade") {
                 cout << "You have upgraded Vladimir's Armor using an Armor Upgrade!" << endl;
                 upgradedgodarmor = true;
                 checkitems();
@@ -247,11 +251,12 @@ void Player::forgerestarting() {
                 cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "glass shoes" || forgeUpgrade == "Glass shoes" || forgeUpgrade == "glass Shoes" || forgeUpgrade == "Glass Shoes" && (armorupgrade == true || lightningshard == true) && glassshoes == true) {
+        else if (forgeUpgrade == "glass shoes" && (armorupgrade == true || lightningshard == true) && glassshoes == true) {
             cout << "What would you like to use to upgrade your Glass Shoes? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
-            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+            std::transform(forgechoice.begin(), forgechoice.end(), forgechoice.begin(), ::tolower);
+            if (forgechoice == "lightning shard") {
                 cout << "You have upgraded your Glass Shoes using a Lightning Shard!" << endl;
                 lightningglassshoes = true;
                 checkitems();
@@ -266,7 +271,7 @@ void Player::forgerestarting() {
                 }
                 glassshoes = false;
             }
-            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+            else if (forgechoice == "armor upgrade") {
                 cout << "You have upgraded your Glass Shoes using an Armor Upgrade!" << endl;
                 upgradedglassshoes = true;
                 checkitems();
@@ -289,7 +294,8 @@ void Player::forgerestarting() {
             cout << "What would you like to use to upgrade your Mystic Helmet? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
-            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+            std::transform(forgechoice.begin(), forgechoice.end(), forgechoice.begin(), ::tolower);
+            if (forgechoice == "lightning shard") {
                 cout << "You have upgraded your Mystic Helmet using a Lightning Shard!" << endl;
                 lightningmystichelmet = true;
                 checkitems();
@@ -304,7 +310,7 @@ void Player::forgerestarting() {
                 }
                 mystichelmet = false;
             }
-            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+            else if (forgechoice == "armor upgrade") {
                 cout << "You have upgraded your Mystic Helmet using an Armor Upgrade!" << endl;
                 upgradedmystichelmet = true;
                 checkitems();
@@ -323,11 +329,12 @@ void Player::forgerestarting() {
                 cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "dragonscale chestplate" || forgeUpgrade == "Dragonscale chestplate" || forgeUpgrade == "dragonscale Chestplate" || forgeUpgrade == "Dragonscale Chestplate" && (armorupgrade == true || lightningshard == true) && dragonscalechestplate == true) {
+        else if (forgeUpgrade == "dragonscale chestplate" && (armorupgrade == true || lightningshard == true) && dragonscalechestplate == true) {
             cout << "What would you like to use to upgrade your Dragonscale Chestplate? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
-            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+            std::transform(forgechoice.begin(), forgechoice.end(), forgechoice.begin(), ::tolower);
+            if (forgechoice == "lightning shard") {
                 cout << "You have upgraded Nyour Dragonscale Chestplate using a Lightning Shard!" << endl;
                 lightningdragonscalechestplate = true;
                 checkitems();
@@ -342,7 +349,7 @@ void Player::forgerestarting() {
                 }
                 dragonscalechestplate = false;
             }
-            else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
+            else if (forgechoice == "armor upgrade") {
                 cout << "You have upgraded your Dragonscale Chestplate using an Armor Upgrade!" << endl;
                 upgradedDragonscalechestplate = true;
                 checkitems();
@@ -361,11 +368,12 @@ void Player::forgerestarting() {
                 cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "flaming longsword" || forgeUpgrade == "Flaming Longsword" || forgeUpgrade == "flaming Longsword" || forgeUpgrade == "Flaming longsword" && (weaponupgrade == true || lightningshard == true) && flaminglongsword == true) {
+        else if (forgeUpgrade == "flaming longsword" && (weaponupgrade == true || lightningshard == true) && flaminglongsword == true) {
             cout << "What would you like to use to upgrade the Flaming Longsword? (Lightning Shard or Weapon Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
-            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+            std::transform(forgechoice.begin(), forgechoice.end(), forgechoice.begin(), ::tolower);
+            if (forgechoice == "lightning shard") {
                 cout << "You have upgraded your Flaming Longsword using a Lightning Shard!" << endl;
                 lightningflaminglongsword = true;
                 checkitems();
@@ -380,7 +388,7 @@ void Player::forgerestarting() {
                 }
                 flaminglongsword = false;
             }
-            else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
+            else if (forgechoice == "weapon upgrade") {
                 cout << "You have upgraded your Flaming Longsword using a Weapon Upgrade!" << endl;
                 upgradedflaminglongsword = true;
                 checkitems();
@@ -399,11 +407,12 @@ void Player::forgerestarting() {
                 cout << "That wasn't Weapon Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "excalibur" || forgeUpgrade == "Excalibur" && (weaponupgrade == true || lightningshard == true) && Excalibur == true) {
+        else if (forgeUpgrade == "excalibur" && (weaponupgrade == true || lightningshard == true) && Excalibur == true) {
             cout << "What would you like to use to upgrade your Excalibur? (Lightning Shard or Weapon Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
-            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+            std::transform(forgechoice.begin(), forgechoice.end(), forgechoice.begin(), ::tolower);
+            if (forgechoice == "lightning shard") {
                 cout << "You have upgraded your Excalibur using a Lightning Shard!" << endl;
                 lightningexcalibur = true;
                 checkitems();
@@ -418,7 +427,7 @@ void Player::forgerestarting() {
                 }
                 Excalibur = false;
             }
-            else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
+            else if (forgechoice == "weapon upgrade") {
                 cout << "You have upgraded your Excalibur using a Weapon Upgrade!" << endl;
                 upgradedexcalibur = true;
                 checkitems();
@@ -437,11 +446,12 @@ void Player::forgerestarting() {
                 cout << "That wasn't Weapon Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "Voidshroud Slicer" || forgeUpgrade == "Voidshroud slicer" || forgeUpgrade == "voidshroud Slicer" || forgeUpgrade == "voidshroud slicer" && (weaponupgrade == true || lightningshard == true) && VoidshroudSlicer == true) {
+        else if (forgeUpgrade == "voidshroud slicer" && (weaponupgrade == true || lightningshard == true) && VoidshroudSlicer == true) {
             cout << "What would you like to use to upgrade your Voidshroud Slicer? (Lightning Shard or Weapon Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
-            if (forgechoice == "Lightning Shard" || forgechoice == "Lightning shard" || forgechoice == "lightning shard" || forgechoice == "lightning Shard") {
+            std::transform(forgechoice.begin(), forgechoice.end(), forgechoice.begin(), ::tolower);
+            if (forgechoice == "lightning shard") {
                 cout << "You have upgraded your Voidshroud Slicer using a Lightning Shard!" << endl;
                 lightningvoidshroudslicer = true;
                 checkitems();
@@ -456,7 +466,7 @@ void Player::forgerestarting() {
                 }
                 VoidshroudSlicer = false;
             }
-            else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
+            else if (forgechoice == "weapon upgrade") {
                 cout << "You have upgraded your Voidshroud Slicer using a Weapon Upgrade!" << endl;
                 upgradedvoidshroudslicer = true;
                 checkitems();
@@ -475,12 +485,13 @@ void Player::forgerestarting() {
                 cout << "That wasn't Weapon Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "Mantle" || forgeUpgrade == "mantle" && radiantgem >= 4 && soulstone >= 2 && Goldloom >= 50 && healthtonicitem >= 1) {
+        else if (forgeUpgrade == "mantle" && radiantgem >= 4 && soulstone >= 2 && Goldloom >= 50 && healthtonicitem >= 1) {
             string yesno = "";
             cout << "Are you sure you want to craft the Regenerative Mantle?" << endl;
             cin >> ws;
             getline(cin, yesno);
-            if (yesno == "Yes" || yesno == "yes") {
+            std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+            if (yesno == "yes") {
                     cout << "You now have the Regenerative Mantle!" << endl;
                     radiantgem -= 4;
                     soulstone -= 2;
@@ -491,7 +502,7 @@ void Player::forgerestarting() {
                         questtwoprogress += 1;
                     }
             }
-            else if (yesno == "No" || yesno == "no") {
+            else if (yesno == "no") {
                 cout << "Come again later and ill make it for you." << endl;
                 break;
             }
@@ -505,7 +516,8 @@ void Player::forgerestarting() {
         }
         cout << "Would you like to upgrade something else?" << endl;
         cin >> forgechoice;
-        if (forgechoice == "No" || forgechoice == "no" || forgechoice == "n" || forgechoice == "N") {
+        std::transform(forgechoice.begin(), forgechoice.end(), forgechoice.begin(), ::tolower);
+        if (forgechoice == "no" || forgechoice == "n") {
             break;
         }
     }
@@ -553,12 +565,14 @@ void Player::forgecrafting() {
         cout << "What would you like to craft?" << endl;
         cin >> ws;
         getline(cin, craftingchoice);
-        if (craftingchoice == "Mantle" || craftingchoice == "mantle") {
+        std::transform(craftingchoice.begin(), craftingchoice.end(), craftingchoice.begin(), ::tolower);
+        if (craftingchoice == "mantle") {
             string yesno = "";
             cout << "Are you sure you want to craft the Regenerative Mantle?" << endl;
             cin >> ws;
             getline(cin, yesno);
-            if (yesno == "Yes" || yesno == "yes") {
+            std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+            if (yesno == "yes") {
                 if (radiantgem >= 4 && soulstone >= 2 && Goldloom >= 50 && healthtonicitem >= 1) {
                     cout << "You now have the Regenerative Mantle!" << endl;
                     radiantgem -= 4;
@@ -576,7 +590,7 @@ void Player::forgecrafting() {
                     cout << "You don't have the required materials to craft this yet." << endl;
                 }
             }
-            else if (yesno == "No" || yesno == "no") {
+            else if (yesno == "no") {
                 cout << "Come again later and ill make it for you." << endl;
                 break;
             }
@@ -584,12 +598,13 @@ void Player::forgecrafting() {
                 cout << "That wasnt yes or no." << endl;
             }
         }
-        else if (craftingchoice == "Artifact" || craftingchoice == "artifact") {
+        else if (craftingchoice == "artifact") {
             string yesno = "";
             cout << "Are you sure you want to craft a cursed artifact?" << endl;
             cin >> ws;
             getline(cin, yesno);
-            if (yesno == "Yes" || yesno == "yes") {
+            std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+            if (yesno == "yes" || yesno == "y") {
                 cout << "Would you like to craft the 1-Cursed Heart, 2-Enchanted Sachel, 3-Glowing Glasses, 4-Fiery Necklace or 5-Shiny Belt." << endl;
                 getline(cin, yesno);
                 if (yesno == "1" && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
@@ -659,7 +674,7 @@ void Player::forgecrafting() {
                     cout << "You don't have the required materials to craft an artifact." << endl;
                 }
             }
-            else if (yesno == "No" || yesno == "no") {
+            else if (yesno == "no" || yesno == "n") {
                 cout << "Come again later and i'll make it for you." << endl;
                 break;
             }
