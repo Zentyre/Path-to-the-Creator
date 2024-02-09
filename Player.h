@@ -4,7 +4,6 @@
 #include <iostream>
 #include <cmath>
 #include <random>
-using namespace std;
 class Player : public Character {
 public:
 	Player(string n, int maxh, int hp, int atk, int def, int baselvl, int live);
@@ -28,6 +27,13 @@ public:
 			}
 		}
 	}
+	int incrementvillage(int amount) {
+		return villagetracker++;
+	}
+	int villagetracker = 0;
+	int visittracker = 0;
+	void village();
+	void mysteriousquest();
 	void setmaxhealth();
 	void checkitems();
 	void forgerestarting();
@@ -152,4 +158,22 @@ public:
 	int tracklevelpotion = 0;
 	int tracksuperpotion = 0;
 	int tracksuperiorlevelpotion = 0;
+	int lostartifact = 0;
+	bool cursedheart = false;
+	bool enchantedsachel = false;
+	bool glowingglasses = false;
+	bool fierynecklace = false;
+	bool shinybelt = false;
+	bool mysteriousstranger = false;
+	bool mysteriousstrangerquestactive = false;
+	bool mysteriousstrangerquest = false;
+	bool mysteriousstrangerquest2 = false;
+	bool mysteriousstrangerquest3 = false;
+	bool mysteriousstrangerquest4 = false;
+	bool mysteriousstrangerquest5 = false;
+	int mysteriousstrangerquesttracker = 0;
+	int mysteriousstrangerquesttracker2 = 0;
+	int mysteriousstrangerquesttracker3 = 0;
+	int mysteriousstrangerquesttracker4 = 0;
+	int mysteriousstrangerquesttracker5 = 0;
 };

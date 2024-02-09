@@ -2,8 +2,6 @@
 #include <iostream>
 #include <random>
 #include <cmath>
-using namespace std;
-
 Player::Player(string n, int maxh, int hp, int atk, int def, int baselvl, int live) {
     name = n;
     maxhealth = maxh;
@@ -12,6 +10,46 @@ Player::Player(string n, int maxh, int hp, int atk, int def, int baselvl, int li
     defence = def;
     baselevel = baselvl;
     lives = live;
+}
+random_device outside;
+void Player::village() {
+    visittracker++;
+    if (visittracker == 1) {
+        cout << "Welcome to the village! I see this is your first visit. Here you take care of this village, and if you do a good job you get rewards." << endl;
+    }
+}
+void Player::mysteriousquest() {
+    int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
+    cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
+    randomgoldloom = outside() % 50 + 1;
+    Goldloom += randomgoldloom;
+    cout << randomgoldloom << " Goldloom, ";
+    randomsoulstone = outside() % 3 + 1;
+    soulstone += randomsoulstone;
+    cout << randomsoulstone << "Soulstone, ";
+    randomlostartifact = outside() % 10 + 1;
+    if (randomlostartifact == 1) {
+        randomgem = outside() % 5 + 2;
+        radiantgem += randomgem;
+        cout << randomgem << "Radiant Gems, ";
+        cout << "1 Lost Artifact." << endl;
+    }
+    else {
+        randomgem = outside() % 5 + 2;
+        radiantgem += randomgem;
+        cout << randomgem << "Radiant Gems.";
+    }
+    mysteriousstrangerquestactive = false;
+    mysteriousstrangerquest = false;
+    mysteriousstrangerquest2 = false;
+    mysteriousstrangerquest3 = false;
+    mysteriousstrangerquest4 = false;
+    mysteriousstrangerquest5 = false;
+    mysteriousstrangerquesttracker = 0;
+    mysteriousstrangerquesttracker2 = 0;
+    mysteriousstrangerquesttracker3 = 0;
+    mysteriousstrangerquesttracker4 = 0;
+    mysteriousstrangerquesttracker5 = 0;
 }
 void Player::playerclassexecutioner() {
     maxhealth -= 14;

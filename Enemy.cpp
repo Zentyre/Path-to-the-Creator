@@ -2,7 +2,6 @@
 #include <iostream>
 #include <random>
 #include <cmath>
-using namespace std;
 
 Enemy::Enemy(string n2, int hp2, int atk2, int def2, int live2, int lvl2, int maxh2) {
     name = n2;

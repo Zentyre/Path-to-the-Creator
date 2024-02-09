@@ -3,7 +3,6 @@
 #include "Enemy.h"
 #include <iostream>
 #include <cmath>
-using namespace std;
 
 Character::Character() {
 	name = name;

@@ -8,11 +8,9 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "..//Steam/steam_api.h"
-using namespace std;
-using namespace chrono;
 random_device r1;
 Player Knight("Player", 50, 25, 4, 0, 0, 1);
-int endlessSpawn = 1;
+int endlessSpawn = 1, randomevent = 0;
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
 	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefence = 30, endlesslevel = levele, endlessmaxhealth;
 	xtracker = floor(xtracker / 10);
@@ -1111,6 +1109,7 @@ static void gameplay() {
 						Knight.storetracker += 1;
 						Knight.Goldloom += r1() % 16 + 10;
 					}
+					Knight.incrementvillage(1);
 					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == 6) {
 						Knight.stopremessaging = 1;
 						Knight.trickstermove = true;
@@ -1307,6 +1306,9 @@ static void gameplay() {
 						Knight.radiantgem += 1;
 						cout << "--You stumbled upon a Radiant Gem!--" << endl;
 						cout << endl;
+					}
+					else if (item == 32 || item == 33 || item == 33 || item == 33 || item == 33 && Knight.bossSpawned == true) {
+						Knight.lostartifact = +1;
 					}
 					if (Knight.bossSpawned == true) {
 						Knight.bossSpawned = false;
@@ -2082,14 +2084,70 @@ static void gameplay() {
 						cout << "--Your shop now appears more frequently and you get more money! (Goldloom Magnet)--" << endl;
 						cout << endl;
 					}
+					if (Knight.bossSpawned == true && Knight.mysteriousstrangerquest == true) {
+						Knight.mysteriousstrangerquesttracker += 1;
+						if (Knight.mysteriousstrangerquesttracker == 3) {
+							Knight.mysteriousquest();
+						}
+					}
 					if (Knight.bossSpawned == true) {
 						Knight.bossSpawned = false;
 					}
+					randomevent = r1() % 100 + 1;
+					if (randomevent == 1 || randomevent == 2 && Knight.mysteriousstrangerquestactive == false) {
+						string yesno = "";
+						cout << "A mysterious stranger is approaching..." << endl << "Would you like a quest?" << endl;
+						cin >> ws;
+						getline(cin, yesno);
+						randomevent = r1() % 5 + 1;
+						if (yesno == "Yes" || yesno == "yes" || yesno == "Y" || yesno == "y") {
+							if (randomevent == 1) {
+								cout << "--You must kill 3 bosses--" << endl;
+								Knight.mysteriousstrangerquest = true;
+								Knight.mysteriousstrangerquestactive = true;
+							}
+							else if (randomevent == 2) {
+								cout << "--You must craft a cursed artifact--" << endl;
+								Knight.mysteriousstrangerquest2 = true;
+								Knight.mysteriousstrangerquestactive = true;
+							}
+							if (randomevent == 3) {
+								cout << "--You must use 5 items--" << endl;
+								Knight.mysteriousstrangerquest3 = true;
+								Knight.mysteriousstrangerquestactive = true;
+							}
+							else if (randomevent == 4) {
+								cout << "--You must forge 3 pieces of armor--" << endl;
+								Knight.mysteriousstrangerquest4 = true;
+								Knight.mysteriousstrangerquestactive = true;
+							}
+							else if (randomevent == 5) {
+								cout << "--You must forge 2 weapons--" << endl;
+								Knight.mysteriousstrangerquest5 = true;
+								Knight.mysteriousstrangerquestactive = true;
+							}
+						}
+						else if (yesno == "No" || yesno == "no" || yesno == "N" || yesno == "n") {
+							cout << "You missed out on a great opportunity." << endl;
+							cout << "-The mysterious stranger has left-" << endl;
+						}
+						else {
+							cout << "Since you can't type, the mysterious stranger impatiently left you." << endl;
+						}
+					}
+					//finish this update
 				}
 			}
 		}
 		if (!Knight.isAlive() && Knight.killplayer == false) {
-
+			/*
+			UploadStat("Maxhealth", Knight.getmaxhealth());
+			UploadStat("Health", Knight.gethealth());
+			UploadStat("Attack", Knight.getattackPower());
+			UploadStat("Defence", Knight.getdefence());
+			UploadStat("Level", Knight.getlevel());
+			UploadStat("Baselevel", Knight.getbaselevel());
+			*/
 			cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 			int deathmessage = 0;
 			deathmessage = r1() % 5 + 1;
