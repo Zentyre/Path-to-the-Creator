@@ -2135,19 +2135,10 @@ static void gameplay() {
 							cout << "Since you can't type, the mysterious stranger impatiently left you." << endl;
 						}
 					}
-					//finish this update
 				}
 			}
 		}
 		if (!Knight.isAlive() && Knight.killplayer == false) {
-			/*
-			UploadStat("Maxhealth", Knight.getmaxhealth());
-			UploadStat("Health", Knight.gethealth());
-			UploadStat("Attack", Knight.getattackPower());
-			UploadStat("Defence", Knight.getdefence());
-			UploadStat("Level", Knight.getlevel());
-			UploadStat("Baselevel", Knight.getbaselevel());
-			*/
 			cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 			int deathmessage = 0;
 			deathmessage = r1() % 5 + 1;
