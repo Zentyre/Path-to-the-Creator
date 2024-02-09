@@ -1,7 +1,4 @@
 #include "Enemy.h"
-#include <iostream>
-#include <random>
-#include <cmath>
 
 Enemy::Enemy(string n2, int hp2, int atk2, int def2, int live2, int lvl2, int maxh2) {
     name = n2;
@@ -12,7 +9,6 @@ Enemy::Enemy(string n2, int hp2, int atk2, int def2, int live2, int lvl2, int ma
     maxhealth = maxh2;
     defence = def2;
 }
-random_device r;
 int critchance, d, accuracy, attackself;
 void Enemy::attack(Character* Target) {
     if (Target->trickstermovebool == true && health > 0 && Target->getlevel() >= 100) {

@@ -1,9 +1,5 @@
 #pragma once
 #include "Character.h"
-#include <string>
-#include <iostream>
-#include <cmath>
-#include <random>
 class Player : public Character {
 public:
 	Player(string n, int maxh, int hp, int atk, int def, int baselvl, int live);
@@ -31,8 +27,70 @@ public:
 		return villagetracker++;
 	}
 	int villagetracker = 0;
-	int visittracker = 0;
+	int trackvisits = 0;
+	int villagerandomevent = 0;
 	void village();
+	void playvillage() {
+		if (villagerandomevent == 0) {
+			villagerandomevent = r() % 5 + 1;
+		}
+		if (villagerandomevent == 1) {
+			int randommessage;
+			randommessage = r() % 3;
+			if (randommessage == 0) {
+				cout << "Archers are approaching, stop them from getting too close." << endl;
+			}
+			else if (randommessage == 1) {
+				cout << "The Ogres seem angry. Stop them from expressing it on the villagers!" << endl;
+			}
+			else {
+				cout << "Trolls are invading! Stop them from their evil crimes." << endl;
+			}
+			
+		}
+		else if (villagerandomevent == 2) {
+			int randommessage;
+			randommessage = r() % 3;
+			if (randommessage == 0) {
+				cout << "Bandits are trying to steal from the villagers, stop them!" << endl;
+			}
+			else if (randommessage == 1) {
+				cout << "Goblins are coming to steal all the villagers valuables, put an end to them!" << endl;
+			}
+			else {
+				cout << "A bunch of thugs seem to want to cause trouble, make them change their mind." << endl;
+			}
+		}
+		else if (villagerandomevent == 3) {
+			int randommessage;
+			randommessage = r() % 3;
+			if (randommessage == 0) {
+				cout << "The well broke and they are losing water fast, rebuild it!" << endl;
+			}
+			else if (randommessage == 1) {
+				cout << "There's a fire, put it out quick!!" << endl;
+			}
+			else {
+				cout << "A villagers house was destroyed by a storm, fix it!" << endl;
+			}
+		}
+		else if (villagerandomevent == 4) {
+			int randommessage;
+			randommessage = r() % 3;
+			if (randommessage == 0) {
+				cout << "A villager is sick and needs your help to heal him." << endl;
+			}
+			else if (randommessage == 1) {
+				cout << "The village is running low on supplies, make a donation." << endl;
+			}
+			else {
+				cout << "A villager needs some food, give him some." << endl;
+			}
+		}
+		else {
+			cout << "Your return is welcomed with open arms even though there is nothing wrong." << endl;
+		}
+	}
 	void mysteriousquest();
 	void setmaxhealth();
 	void checkitems();
@@ -55,6 +113,10 @@ public:
 	int questpicker = 0;
 	int questrandomizer = 0;
 	int questrandomizer2 = 0;
+	int food = 0;
+	int wood = 0;
+	int bucketowater = 0;
+	bool visitedbefore = false;
 	bool riddle = false;
 	bool cipherkey = false;
 	bool horsemount = false;

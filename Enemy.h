@@ -1,9 +1,5 @@
 #pragma once
 #include "Character.h"
-#include <string>
-#include <cmath>
-#include <iostream>
-
 class Enemy : public Character {
 public:
 	Enemy(string n2, int hp2, int atk2, int def2, int live2, int lvl2, int maxh2);

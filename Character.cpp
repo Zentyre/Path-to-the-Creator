@@ -1,8 +1,6 @@
 #include "Character.h"
 #include "Player.h"
 #include "Enemy.h"
-#include <iostream>
-#include <cmath>
 
 Character::Character() {
 	name = name;

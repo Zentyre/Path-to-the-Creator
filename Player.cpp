@@ -13,9 +13,21 @@ Player::Player(string n, int maxh, int hp, int atk, int def, int baselvl, int li
 }
 random_device outside;
 void Player::village() {
-    visittracker++;
-    if (visittracker == 1) {
-        cout << "Welcome to the village! I see this is your first visit. Here you take care of this village, and if you do a good job you get rewards." << endl;
+    if (baselevel > 200) {
+        if (visitedbefore == false) {
+            visitedbefore = true;
+            cout << "Welcome to the village! I see this is your first visit. Here you take care of this village, defend them from attackers and help them repair buildings and you'll be rewarded." << endl;
+            playvillage();
+        }
+        else if (villagetracker < 10) {
+            cout << "The villagers are still happy with your work and have no problems. Check again later." << endl;
+        }
+        else {
+            playvillage();
+        }
+    }
+    else {
+        cout << "You have not unlocked this feature yet. You must be baselevel 200." << endl;
     }
 }
 void Player::mysteriousquest() {
