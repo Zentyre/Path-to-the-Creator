@@ -13,13 +13,6 @@ Player::Player(string n, int maxh, int hp, int atk, int def, int baselvl, int li
     baselevel = baselvl;
     lives = live;
 }
-int tracklevelpotion = 0, tracksuperpotion = 0, tracksuperiorlevelpotion = 0;
-void village() {
-    visittracker++;
-    if (visittracker == 1) {
-        cout << "Welcome to the village! I see this is your first visit. Here you take care of this village, and if you do a good job you get rewards." << endl;
-    }
-}
 void Player::playerclassexecutioner() {
     maxhealth -= 14;
     health -= 7;
@@ -58,72 +51,39 @@ void Player::playerclasstrickster() {
 }
 void Player::itemusehealthtonic() {
     setmaxhealth();
-	if (level >= 200) {
-		health += 150;
-	}
-	else if (level >= 150) {
-		health += 100;
-	}
-	else if (level >= 100) {
-		health += 75;
-	}
-	else if (level >= 50) {
-		health += 50;
-	}
-	else {
-		health += 25;
-	}
-	if (health > maxhealth) {
-		health = maxhealth;
-	}
-    if (healthtonicitem >= 1) {
-	    healthtonicitem -= 1;
+    if (level >= 200) {
+        health += 150;
     }
-	cout << "You now have " << health << " health." << endl;
+    else if (level >= 150) {
+        health += 100;
+    }
+    else if (level >= 100) {
+        health += 75;
+    }
+    else if (level >= 50) {
+        health += 50;
+    }
+    else {
+        health += 25;
+    }
+    if (health > maxhealth) {
+        health = maxhealth;
+    }
+    if (healthtonicitem >= 1) {
+        healthtonicitem -= 1;
+    }
+    cout << "You now have " << health << " health." << endl;
 }
-void mysteriousquest() {
-	int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
-	cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
-	randomgoldloom = r1() % 50 + 1;
-	Goldloom += randomgoldloom;
-    cout << randomgoldloom << " Goldloom, ";
-	randomsoulstone = r1() % 3 + 1;
-	soulstone += randomsoulstone;
-	cout << randomsoulstone << "Soulstone, ";
-	randomlostartifact = r1() % 10 + 1;
-	if (randomlostartifact == 1) {
-	randomgem = r1() % 5 + 2;
-	radiantgem += randomgem;
-	cout << randomgem << "Radiant Gems, ";
-		cout << "1 Lost Artifact." << endl;
-	}
-	else {
-		randomgem = r1() % 5 + 2;
-	radiantgem += randomgem;
-	cout << randomgem << "Radiant Gems.";
-	}
-	mysteriousstrangerquestactive = false;
-    mysteriousstrangerquest = false;
-    mysteriousstrangerquest2 = false;
-    mysteriousstrangerquest3 = false;
-	mysteriousstrangerquest4 = false;
-    mysteriousstrangerquest5 = false;
-    mysteriousstrangerquesttracker = 0;
-    mysteriousstrangerquesttracker2 = 0;
-    mysteriousstrangerquesttracker3 = 0;
-    mysteriousstrangerquesttracker4 = 0;
-	mysteriousstrangerquesttracker5 = 0;
- }
 void Player::forgerestarting() {
     string forgeUpgrade = "", forgechoice = "";
     while (true) {
         cout << "What would you like to upgrade?" << endl;
         if (ciphertracker == 4) {
-            cout << "If you are here to craft the Regenerative Mantle instead of using the feature named CRAFTING, type Mantle. I hope this was worth my inconvenience of coding the craft here too." << endl;
+            cout << "If you are here to craft the Regenerative Mantle, type Mantle." << endl;
         }
         cin >> ws;
         getline(cin, forgeUpgrade);
-        if (forgeUpgrade == "narso's armor" || forgeUpgrade == "Narso's armor" || forgeUpgrade == "Narso's Armor" || forgeUpgrade == "narso's Armor" && (armorupgrade == true || lightningshard == true) && narsosArmor == true) {
+        if (forgeUpgrade == "narso's armor" || forgeUpgrade == "Narso's armor" || forgeUpgrade == "Narso's Armor" || forgeUpgrade == "narso's Armor" && (armorupgrade == true || lightningshard == true)) {
             cout << "What would you like to use to upgrade Narso's Armor? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -134,13 +94,6 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest4 == true) {
-                    mysteriousstrangerquesttracker4 += 1;
-                    if (mysteriousstrangerquesttracker4 == 3) {
-                        mysteriousquest();
-                    }
-                }
-                narsosArmor = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded Narso's Armor using an Armor Upgrade!" << endl;
@@ -149,19 +102,9 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest4 == true) {
-                    mysteriousstrangerquesttracker4 += 1;
-                    if (mysteriousstrangerquesttracker4 == 3) {
-                        mysteriousquest();
-                    }
-                }
-                narsosArmor = false;
-            }
-            else {
-                cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "lockhart's armor" || forgeUpgrade == "Lockhart's armor" || forgeUpgrade == "Lockhart's Armor" || forgeUpgrade == "lockhart's Armor" && (armorupgrade == true || lightningshard == true) && lockhartsArmor == true) {
+        else if (forgeUpgrade == "lockhart's armor" || forgeUpgrade == "Lockhart's armor" || forgeUpgrade == "Lockhart's Armor" || forgeUpgrade == "lockhart's Armor" && (armorupgrade == true || lightningshard == true)) {
             cout << "What would you like to use to upgrade Lockhart's Armor? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -172,13 +115,6 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest4 == true) {
-                    mysteriousstrangerquesttracker4 += 1;
-                    if (mysteriousstrangerquesttracker4 == 3) {
-                        mysteriousquest();
-                    }
-                }
-                lockhartsArmor = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded Lockhart's Armor using an Armor Upgrade!" << endl;
@@ -187,19 +123,9 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest4 == true) {
-                    mysteriousstrangerquesttracker4 += 1;
-                    if (mysteriousstrangerquesttracker4 == 3) {
-                        mysteriousquest();
-                    }
-                }
-                lockhartsArmor = false;
-            }
-            else {
-                cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "vladimir's armor" || forgeUpgrade == "Vladimir's armor" || forgeUpgrade == "Vladimir's Armor" || forgeUpgrade == "vladimir's Armor" && (armorupgrade == true || lightningshard == true) && vladimirsArmor == true) {
+        else if (forgeUpgrade == "vladimir's armor" || forgeUpgrade == "Vladimir's armor" || forgeUpgrade == "Vladimir's Armor" || forgeUpgrade == "vladimir's Armor" && (armorupgrade == true || lightningshard == true)) {
             cout << "What would you like to use to upgrade Vladimir's Armor? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -210,13 +136,6 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest4 == true) {
-                    mysteriousstrangerquesttracker4 += 1;
-                    if (mysteriousstrangerquesttracker4 == 3) {
-                        mysteriousquest();
-                    }
-                }
-                vladimirsArmor = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded Vladimir's Armor using an Armor Upgrade!" << endl;
@@ -225,19 +144,9 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest4 == true) {
-                    mysteriousstrangerquesttracker4 += 1;
-                    if (mysteriousstrangerquesttracker4 == 3) {
-                        mysteriousquest();
-                    }
-                }
-                vladimirsArmor = false;
-            }
-            else {
-                cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "glass shoes" || forgeUpgrade == "Glass shoes" || forgeUpgrade == "glass Shoes" || forgeUpgrade == "Glass Shoes" && (armorupgrade == true || lightningshard == true) && glassshoes == true) {
+        else if (forgeUpgrade == "glass shoes" || forgeUpgrade == "Glass shoes" || forgeUpgrade == "glass Shoes" || forgeUpgrade == "Glass Shoes" && (armorupgrade == true || lightningshard == true)) {
             cout << "What would you like to use to upgrade your Glass Shoes? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -248,13 +157,6 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest4 == true) {
-                    mysteriousstrangerquesttracker4 += 1;
-                    if (mysteriousstrangerquesttracker4 == 3) {
-                        mysteriousquest();
-                    }
-                }
-                glassshoes = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded your Glass Shoes using an Armor Upgrade!" << endl;
@@ -263,19 +165,9 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest4 == true) {
-                    mysteriousstrangerquesttracker4 += 1;
-                    if (mysteriousstrangerquesttracker4 == 3) {
-                        mysteriousquest();
-                    }
-                }
-                glassshoes = false;
-            }
-            else {
-                cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "mystic helmet" || forgeUpgrade == "Mystic helmet" || forgeUpgrade == "mystic Helmet" || forgeUpgrade == "Mystic Helmet" && (armorupgrade == true || lightningshard == true) && mystichelmet == true) {
+        else if (forgeUpgrade == "mystic helmet" || forgeUpgrade == "Mystic helmet" || forgeUpgrade == "mystic Helmet" || forgeUpgrade == "Mystic Helmet" && (armorupgrade == true || lightningshard == true)) {
             cout << "What would you like to use to upgrade your Mystic Helmet? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -286,13 +178,6 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest4 == true) {
-                    mysteriousstrangerquesttracker4 += 1;
-                    if (mysteriousstrangerquesttracker4 == 3) {
-                        mysteriousquest();
-                    }
-                }
-                mystichelmet = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded your Mystic Helmet using an Armor Upgrade!" << endl;
@@ -301,19 +186,9 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest4 == true) {
-                    mysteriousstrangerquesttracker4 += 1;
-                    if (mysteriousstrangerquesttracker4 == 3) {
-                        mysteriousquest();
-                    }
-                }
-                mystichelmet = false;
-            }
-            else {
-                cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "dragonscale chestplate" || forgeUpgrade == "Dragonscale chestplate" || forgeUpgrade == "dragonscale Chestplate" || forgeUpgrade == "Dragonscale Chestplate" && (armorupgrade == true || lightningshard == true) && dragonscalechestplate == true) {
+        else if (forgeUpgrade == "dragonscale chestplate" || forgeUpgrade == "Dragonscale chestplate" || forgeUpgrade == "dragonscale Chestplate" || forgeUpgrade == "Dragonscale Chestplate" && (armorupgrade == true || lightningshard == true)) {
             cout << "What would you like to use to upgrade your Dragonscale Chestplate? (Lightning Shard or Armor Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -324,13 +199,6 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest4 == true) {
-                    mysteriousstrangerquesttracker4 += 1;
-                    if (mysteriousstrangerquesttracker4 == 3) {
-                        mysteriousquest();
-                    }
-                }
-                dragonscalechestplate = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded your Dragonscale Chestplate using an Armor Upgrade!" << endl;
@@ -339,19 +207,9 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest4 == true) {
-                    mysteriousstrangerquesttracker4 += 1;
-                    if (mysteriousstrangerquesttracker4 == 3) {
-                        mysteriousquest();
-                    }
-                }
-                dragonscalechestplate = false;
-            }
-            else {
-                cout << "That wasn't Armor Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "flaming longsword" || forgeUpgrade == "Flaming Longsword" || forgeUpgrade == "flaming Longsword" || forgeUpgrade == "Flaming longsword" && (weaponupgrade == true || lightningshard == true) && flaminglongsword == true) {
+        else if (forgeUpgrade == "flaming longsword" || forgeUpgrade == "Flaming Longsword" || forgeUpgrade == "flaming Longsword" || forgeUpgrade == "Flaming longsword" && (weaponupgrade == true || lightningshard == true)) {
             cout << "What would you like to use to upgrade the Flaming Longsword? (Lightning Shard or Weapon Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -362,13 +220,6 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest5 == true) {
-                    mysteriousstrangerquesttracker5 += 1;
-                    if (mysteriousstrangerquesttracker5 == 2) {
-                        mysteriousquest();
-                    }
-                }
-                flaminglongsword = false;
             }
             else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
                 cout << "You have upgraded your Flaming Longsword using a Weapon Upgrade!" << endl;
@@ -377,19 +228,9 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest5 == true) {
-                    mysteriousstrangerquesttracker5 += 1;
-                    if (mysteriousstrangerquesttracker5 == 2) {
-                        mysteriousquest();
-                    }
-                }
-                flaminglongsword = false;
-            }
-            else {
-                cout << "That wasn't Weapon Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "excalibur" || forgeUpgrade == "Excalibur" && (weaponupgrade == true || lightningshard == true) && Excalibur == true) {
+        else if (forgeUpgrade == "excalibur" || forgeUpgrade == "Excalibur" && (weaponupgrade == true || lightningshard == true)) {
             cout << "What would you like to use to upgrade your Excalibur? (Lightning Shard or Weapon Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -400,13 +241,6 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest5 == true) {
-                    mysteriousstrangerquesttracker5 += 1;
-                    if (mysteriousstrangerquesttracker5 == 2) {
-                        mysteriousquest();
-                    }
-                }
-                Excalibur = false;
             }
             else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
                 cout << "You have upgraded your Excalibur using a Weapon Upgrade!" << endl;
@@ -415,19 +249,9 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest5 == true) {
-                    mysteriousstrangerquesttracker5 += 1;
-                    if (mysteriousstrangerquesttracker5 == 2) {
-                        mysteriousquest();
-                    }
-                }
-                Excalibur = false;
-            }
-            else {
-                cout << "That wasn't Weapon Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "Voidshroud Slicer" || forgeUpgrade == "Voidshroud slicer" || forgeUpgrade == "voidshroud Slicer" || forgeUpgrade == "voidshroud slicer" && (weaponupgrade == true || lightningshard == true) && VoidshroudSlicer == true) {
+        else if (forgeUpgrade == "Voidshroud Slicer" || forgeUpgrade == "Voidshroud slicer" || forgeUpgrade == "voidshroud Slicer" || forgeUpgrade == "voidshroud slicer" && (weaponupgrade == true || lightningshard == true)) {
             cout << "What would you like to use to upgrade your Voidshroud Slicer? (Lightning Shard or Weapon Upgrade)" << endl;
             cin >> ws;
             getline(cin, forgechoice);
@@ -438,13 +262,6 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest5 == true) {
-                    mysteriousstrangerquesttracker5 += 1;
-                    if (mysteriousstrangerquesttracker5 == 2) {
-                        mysteriousquest();
-                    }
-                }
-                VoidshroudSlicer = false;
             }
             else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
                 cout << "You have upgraded your Voidshroud Slicer using a Weapon Upgrade!" << endl;
@@ -453,24 +270,15 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
-                if (mysteriousstrangerquest5 == true) {
-                    mysteriousstrangerquesttracker5 += 1;
-                    if (mysteriousstrangerquesttracker5 == 2) {
-                        mysteriousquest();
-                    }
-                }
-                VoidshroudSlicer = false;
-            }
-            else {
-                cout << "That wasn't Weapon Upgrade or Lightning Shard. Try again." << endl;
             }
         }
-        else if (forgeUpgrade == "Mantle" || forgeUpgrade == "mantle" && radiantgem >= 4 && soulstone >= 2 && Goldloom >= 50 && healthtonicitem >= 1) {
+        else if (forgeUpgrade == "Mantle" || forgeUpgrade == "mantle") {
             string yesno = "";
             cout << "Are you sure you want to craft the Regenerative Mantle?" << endl;
             cin >> ws;
             getline(cin, yesno);
             if (yesno == "Yes" || yesno == "yes") {
+                if (radiantgem >= 4 && soulstone >= 2 && Goldloom >= 50 && healthtonicitem >= 1) {
                     cout << "You now have the Regenerative Mantle!" << endl;
                     radiantgem -= 4;
                     soulstone -= 2;
@@ -480,18 +288,21 @@ void Player::forgerestarting() {
                     if (craftanitemquest == true) {
                         questtwoprogress += 1;
                     }
+                }
+                else {
+                    cout << "You don't have the required materials to craft this yet." << endl;
+                }
             }
             else if (yesno == "No" || yesno == "no") {
                 cout << "Come again later and ill make it for you." << endl;
                 break;
             }
             else {
-                cout << "That wasnt yes or no. Try again." << endl;
+                cout << "That wasnt yes or no." << endl;
             }
         }
         else {
-            cout << "That item does not exist or you dont have the required materials. Try again." << endl;
-            break;
+            cout << "That item does not exist. Try again." << endl;
         }
         cout << "Would you like to upgrade something else?" << endl;
         cin >> forgechoice;
@@ -502,7 +313,7 @@ void Player::forgerestarting() {
 }
 void Player::forgecrafting() {
     string craftingchoice = "";
-    int craftedsomething = 0, trackwhatcanbecrafted = 0;
+    int craftedsomething = 0;
     while (true) {
         cout << "You have these crafting materials currently." << endl;
         if (soulstone >= 1) {
@@ -510,7 +321,7 @@ void Player::forgecrafting() {
                 cout << "-" << soulstone << " Soulstone" << endl;
             }
             else {
-            cout << "-" << soulstone << " Soulstones" << endl;
+                cout << "-" << soulstone << " Soulstones" << endl;
             }
         }
         if (radiantgem >= 1) {
@@ -518,27 +329,16 @@ void Player::forgecrafting() {
                 cout << "-" << radiantgem << " Radiant Gem" << endl;
             }
             else {
-            cout << "-" << radiantgem << " Radiant Gems" << endl;
-            } 
+                cout << "-" << radiantgem << " Radiant Gems" << endl;
+            }
         }
         cout << endl << "You can currently craft ";
         if (soulstone >= 2 && radiantgem >= 4 && Goldloom >= 50 && healthtonicitem >= 1) {
-            cout << "the Regenerative Mantle"
-            trackwhatcanbecrafted += 1;
-        }
-        if (lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
-            if (trackwhatcanbecrafted == 1) {
-                cout << ", ";
-            }
-            cout << "any artifact"
-            trackwhatcanbecrafted += 1;
-        }
-        if (trackwhatcanbecrafted == 0) {}
-            cout << "nothing." << endl;
-            break;
+            cout << "the Regenerative Mantle." << endl;
         }
         else {
-            cout << "." << endl;
+            cout << "nothing." << endl;
+            break;
         }
         cout << "What would you like to craft?" << endl;
         cin >> ws;
@@ -556,11 +356,9 @@ void Player::forgecrafting() {
                     Goldloom -= 50;
                     healthtonicitem -= 1;
                     regenerativemantle = true;
-                    craftedsomething++;
                     if (craftanitemquest == true) {
                         questtwoprogress += 1;
                     }
-                    ciphertracker = 5;
                 }
                 else {
                     cout << "You don't have the required materials to craft this yet." << endl;
@@ -574,121 +372,14 @@ void Player::forgecrafting() {
                 cout << "That wasnt yes or no." << endl;
             }
         }
-        else if (craftingchoice == "Artifact" || craftingchoice == "artifact") {
-            tring yesno = "";
-            cout << "Are you sure you want to craft a cursed artifact?" << endl;
-            cin >> ws;
-            getline(cin, yesno);
-            if (yesno == "Yes" || yesno == "yes") {
-                cout << "Would you like to craft the 1-Cursed Heart, 2-Enchanted Sachel, 3-Glowing Glasses, 4-Fiery Necklace or 5-Shiny Belt." << endl;
-                getline(cin, yesno);
-                if (yesno == 1 && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
-                    cout << "You crafted a Cursed Heart!" << endl;
-                    cursedheart = true;
-                    lostartifact -= 1;
-                    soulstone -= 1;
-                    radiantgem -= 1;
-                    Goldloom -= 25;
-                    if (craftanitemquest == true) {
-                        questtwoprogress += 1;
-                    }
-                    if (mysteriousstrangerquest2 == true) {
-							int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
-							cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
-							randomgoldloom = r1() % 50 + 1;
-							Goldloom += randomgoldloom;
-							cout << randomgoldloom << " Goldloom, ";
-							randomsoulstone = r1() % 3 + 1;
-							soulstone += randomsoulstone;
-							cout << randomsoulstone << "Soulstone, ";
-							randomlostartifact = r1() % 10 + 1;
-							if (randomlostartifact == 1) {
-     							randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems, ";
-								cout << "1 Lost Artifact." << endl;
-							}
-							else {
-								randomgem = r1() % 5 + 2;
-     							radiantgem += randomgem;
-     							cout << randomgem << "Radiant Gems.";
-							}
-							mysteriousstrangerquestactive = false;
-							mysteriousstrangerquest2 = false;
-                    }
-                    craftedsomething++;
-                }
-                else if (yesno == 2 && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
-                    cout << "You crafted an Enchanted Sachel!" << endl;
-                    enchantedsachel = true;
-                    lostartifact -= 1;
-                    soulstone -= 1;
-                    radiantgem -= 1;
-                    Goldloom -= 25;
-                    if (craftanitemquest == true) {
-                        questtwoprogress += 1;
-                    }
-                    craftedsomething++;
-                }
-                else if (yesno == 3 && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
-                    cout << "You crafted some Glowing Glasses!" << endl;
-                    glowingglasses = true;
-                    lostartifact -= 1;
-                    soulstone -= 1;
-                    radiantgem -= 1;
-                    Goldloom -= 25;
-                    if (craftanitemquest == true) {
-                        questtwoprogress += 1;
-                    }
-                    craftedsomething++;
-                }
-                else if (yesno == 4 && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
-                    cout << "You crafted the Fiery Necklace!" << endl;
-                    fierynecklace = true;
-                    lostartifact -= 1;
-                    soulstone -= 1;
-                    radiantgem -= 1;
-                    Goldloom -= 25;
-                    if (craftanitemquest == true) {
-                        questtwoprogress += 1;
-                    }
-                    craftedsomething++;
-                }
-                else if (yesno == 5 && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
-                    cout << "You crafted a Shiny Belt!" << endl;
-                    shinybelt = true;
-                    lostartifact -= 1;
-                    soulstone -= 1;
-                    radiantgem -= 1;
-                    Goldloom -= 25;
-                    if (craftanitemquest == true) {
-                        questtwoprogress += 1;
-                    }
-                    craftedsomething++;
-                }
-                else {
-                    cout << "You don't have the required materials to craft an artifact." << endl;
-                }
-            }
-            else if (yesno == "No" || yesno == "no") {
-                cout << "Come again later and i'll make it for you." << endl;
-                break;
-            }
-            else {
-                cout << "That wasnt yes or no." << endl;
-            }
-        }
-        if (craftedsomething == 1) {
-            craftedsomething -= 1;
-            cout << "Would you like to craft anything else?" << endl;
+        if (craftedsomething >= 1) {
             cin >> craftingchoice;
+            cout << "Would you like to craft anything else?" << endl;
             if (craftingchoice == "No" || craftingchoice == "no" || craftingchoice == "n" || craftingchoice == "N") {
                 break;
             }
         }
-        else {
-            cout << "Come again!" << endl;
-        }
+        break;
     }
 }
 void Player::setmaxhealth() {
@@ -793,7 +484,7 @@ void Player::setmaxhealth() {
     else if (classtype == 3 || classtype == 6) {
         charactermaxhealth -= 12;
     }
-   else if (classtype == 4) {
+    else if (classtype == 4) {
         charactermaxhealth += 24;
     }
     else if (classtype == 5) {
@@ -806,7 +497,7 @@ void Player::setmaxhealth() {
 }
 void Player::checkitems() {
     if (Excalibur == true) {
-         if (excaliburtracker == 0) {
+        if (excaliburtracker == 0) {
             attackPower += 14;
             excaliburtracker += 1;
         }
@@ -822,13 +513,13 @@ void Player::checkitems() {
         }
     }
     if (Knife == true) {
-         if (knifetracker == 0) {
+        if (knifetracker == 0) {
             attackPower += 2;
             knifetracker += 1;
-      }
+        }
     }
     if (Sword == true) {
-         if (swordtracker == 0) {
+        if (swordtracker == 0) {
             attackPower += 4.5;
             swordtracker += 1;
         }
@@ -851,29 +542,29 @@ void Player::checkitems() {
     }
     if (helmet == true) {
         if (helmtracker == 0) {
-         defence += 4;
-         maxhealth += 5;
-         helmtracker += 1;
+            defence += 4;
+            maxhealth += 5;
+            helmtracker += 1;
         }
     }
     if (chestplate == true) {
-         if (chesttracker == 0) {
-           defence += 7;
-           maxhealth += 8;
-           chesttracker += 1;
+        if (chesttracker == 0) {
+            defence += 7;
+            maxhealth += 8;
+            chesttracker += 1;
         }
     }
     if (boots == true) {
         if (boottracker == 0) {
-          defence += 3;
-          maxhealth += 4;
-          boottracker += 1;
+            defence += 3;
+            maxhealth += 4;
+            boottracker += 1;
         }
     }
     if (shield == true) {
         if (shieldtracker == 0) {
-          defence += 10;
-          shieldtracker += 1;
+            defence += 10;
+            shieldtracker += 1;
         }
     }
     if (narsosArmor == true || lockhartsArmor == true || vladimirsArmor == true) {
@@ -964,7 +655,7 @@ void Player::checkitems() {
             defence += 10;
             upgradeddragontracker += 1;
         }
-       else if (upgradeddragontracker == 0) {
+        else if (upgradeddragontracker == 0) {
             defence += 18;
             maxhealth += 25;
             upgradeddragontracker += 1;
@@ -1022,7 +713,7 @@ void Player::checkitems() {
         }
     }
     if (upgradedmystichelmet == true) {
-        if (factionchoiceint == 3 && upgradedmystictracker > 0 &&upgradedmystictracker < 2) {
+        if (factionchoiceint == 3 && upgradedmystictracker > 0 && upgradedmystictracker < 2) {
             defence += 9;
             upgradedmystictracker += 1;
         }
@@ -1033,7 +724,7 @@ void Player::checkitems() {
         }
     }
     if (lightningmystichelmet == true) {
-        if (factionchoiceint == 3 && lightningmystictracker > 0 &&lightningmystictracker < 2) {
+        if (factionchoiceint == 3 && lightningmystictracker > 0 && lightningmystictracker < 2) {
             defence += 7;
             lightningmystictracker += 1;
         }
@@ -1107,7 +798,7 @@ void Player::attack(Character* Target) {
     }
     if (classtype == 2) { //executioner attack messages |health =15|attackPower=7|lives=1|
         if (executionermove == true) {
-  cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Soul Surge) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Soul Surge) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
         }
         else if (baselevel >= 50) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
@@ -1122,10 +813,10 @@ void Player::attack(Character* Target) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
         }
     }
-   if (classtype == 3) { //soulweaver attack messages |health =20|attackPower=3|lives=2|
+    if (classtype == 3) { //soulweaver attack messages |health =20|attackPower=3|lives=2|
         if (soulweavermove == true) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Fortuitous Gambit) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
-         }
+        }
         else if (baselevel >= 50) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
         }
@@ -1173,7 +864,7 @@ void Player::attack(Character* Target) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
         }
     }
-     if (classtype == 6) { //trickster attack messages |health =20|attackPower=5|lives=1|
+    if (classtype == 6) { //trickster attack messages |health =20|attackPower=5|lives=1|
         if (trickstermove == true) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Confuse) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
         }
@@ -1204,21 +895,21 @@ void Player::attack(Character* Target) {
             break;
         }
         if (factionchoiceint == 1) {
-			cout << "You are a part of the Shadowborn Syndicate. You gain a 1% increase to attack and defence on kill. You deal more damage with the Voidshroud Slicer." << endl;
+            cout << "You are a part of the Shadowborn Syndicate. You gain a 1% increase to attack and defence on kill. You deal more damage with the Voidshroud Slicer." << endl;
             cout << "-----------------------------------------------" << endl;
-		}
-		else if (factionchoiceint == 2) {
-			cout << "You chose the Emberfall Covenant! You gain a 2% increase to attack on kill. You deal more damage with the Flaming Longsword." << endl;
+        }
+        else if (factionchoiceint == 2) {
+            cout << "You chose the Emberfall Covenant! You gain a 2% increase to attack on kill. You deal more damage with the Flaming Longsword." << endl;
             cout << "-----------------------------------------------" << endl;
-		}
-		else if (factionchoiceint == 3) {
-			cout << "You chose the Celestial Vanguard! You gain a 1% increase to defence and maxhealth on kill. You gain more defence from the Mystic Helmet." << endl;
+        }
+        else if (factionchoiceint == 3) {
+            cout << "You chose the Celestial Vanguard! You gain a 1% increase to defence and maxhealth on kill. You gain more defence from the Mystic Helmet." << endl;
             cout << "-----------------------------------------------" << endl;
-		}
-		else if (factionchoiceint == 4) {
-			cout << "You are a part of the Ironclad Dominion. You gain a 1% increase to attack and maxhealth on kill. You gain more defence from the Dragonscale Chestplate." << endl;
+        }
+        else if (factionchoiceint == 4) {
+            cout << "You are a part of the Ironclad Dominion. You gain a 1% increase to attack and maxhealth on kill. You gain more defence from the Dragonscale Chestplate." << endl;
             cout << "-----------------------------------------------" << endl;
-		}
+        }
         if (classtype == 1) {
             cout << "--The knight class unlocks its special skill (Titans Strike) at level 80. It is just a normal attack but with more damage.--" << endl << endl;
         }
@@ -1257,7 +948,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -1322,7 +1013,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -1395,7 +1086,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -1446,7 +1137,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -1505,7 +1196,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -1570,7 +1261,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -1653,7 +1344,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a healing buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a healing buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -1701,7 +1392,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a healing buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a healing buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -1764,7 +1455,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -1816,7 +1507,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -1855,7 +1546,7 @@ void Player::attack(Character* Target) {
             cout << "-----------------------------------------------" << endl;
             cout << name << ", you have slipped and fallen, losing this turn." << endl;
             fallen = true;
-           
+
             break;
         }
         else {
@@ -1876,41 +1567,41 @@ void Player::attack(Character* Target) {
                 int critchance = 0;
                 critchance = r() % 100 + 1;
                 if (critchance <= 10) {
-                     x = ceil(x * 1.5);
+                    x = ceil(x * 1.5);
                 }
-            if (playercompanion == true) {
-                int randomcompanionevent = 0;
-                cout << "-----------------------------------------------" << endl;
-                randomcompanionevent = r() % 4;
-                if (randomcompanionevent == 0) {
-                    cout << "Your companion has mysteriously made your armor stronger!";
-                    defence += 2;
+                if (playercompanion == true) {
+                    int randomcompanionevent = 0;
+                    cout << "-----------------------------------------------" << endl;
+                    randomcompanionevent = r() % 4;
+                    if (randomcompanionevent == 0) {
+                        cout << "Your companion has mysteriously made your armor stronger!";
+                        defence += 2;
+                    }
+                    else if (randomcompanionevent == 1) {
+                        cout << "Your companion healed you for " << ((level >= 75) ? 30 : floor(level / 1.5)) << "!";
+                        health += ((level >= 75) ? 30 : floor(level / 2.5));
+                    }
+                    else if (randomcompanionevent == 2) {
+                        cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
+                        x += ((level >= 75) ? 30 : floor(level / 2.5));
+                    }
+                    else {
+                        cout << "Your companion didn't do anything this round.";
+                    }
                 }
-                else if (randomcompanionevent == 1) {
-                    cout << "Your companion healed you for " << ((level >= 75) ? 30 : floor(level / 1.5)) << "!";
-                    health += ((level >= 75) ? 30 : floor(level / 2.5));
+                if (regenerativemantle == true) {
+                    setmaxhealth();
+                    int heal = 0;
+                    heal += ceil((getlevel() - getbaselevel()) * .25);
+                    health += heal;
+                    if (health > maxhealth) {
+                        health = maxhealth;
+                        cout << "You had no wounds to heal." << endl;
+                    }
+                    else if (health < maxhealth) {
+                        cout << "You healed for " << heal << " health." << endl;
+                    }
                 }
-                else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
-                    x += ((level >= 75) ? 30 : floor(level / 2.5));
-                }
-                else {
-                    cout << "Your companion didn't do anything this round.";
-                }
-            }
-            if (regenerativemantle == true) {
-                setmaxhealth();
-                int heal = 0;
-                heal += ceil((getlevel() - getbaselevel()) * .25);
-                health += heal;
-                if (health > maxhealth) {
-                    health = maxhealth;
-                    cout << "You had no wounds to heal." << endl;
-                }
-                else if (health < maxhealth) {
-                    cout << "You healed for " << heal << " health." << endl;
-                }
-            }
                 Target->takeDmg(x);
                 cout << "-----------------------------------------------" << endl;
                 cout << name << ", you dealt " << x << " damage and gained an extra life!" << endl;
@@ -1923,7 +1614,7 @@ void Player::attack(Character* Target) {
                 int critchance = 0;
                 critchance = r() % 100 + 1;
                 if (critchance <= 10) {
-                     x = ceil(x * 1.5);
+                    x = ceil(x * 1.5);
                 }
                 if (playercompanion == true) {
                     int randomcompanionevent = 0;
@@ -1933,31 +1624,31 @@ void Player::attack(Character* Target) {
                         cout << "Your companion has mysteriously made your armor stronger!";
                         defence += 2;
                     }
-                     else if (randomcompanionevent == 1) {
+                    else if (randomcompanionevent == 1) {
                         cout << "Your companion healed you for " << ((level >= 75) ? 30 : floor(level / 1.5)) << "!";
                         health += ((level >= 75) ? 30 : floor(level / 2.5));
                     }
                     else if (randomcompanionevent == 2) {
-                         cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
-                         x += ((level >= 75) ? 30 : floor(level / 2.5));
+                        cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
+                        x += ((level >= 75) ? 30 : floor(level / 2.5));
                     }
                     else {
                         cout << "Your companion didn't do anything this round.";
                     }
                 }
                 if (regenerativemantle == true) {
-                setmaxhealth();
-                int heal = 0;
-                heal += ceil((getlevel() - getbaselevel()) * .25);
-                health += heal;
-                if (health > maxhealth) {
-                    health = maxhealth;
-                    cout << "You had no wounds to heal." << endl;
+                    setmaxhealth();
+                    int heal = 0;
+                    heal += ceil((getlevel() - getbaselevel()) * .25);
+                    health += heal;
+                    if (health > maxhealth) {
+                        health = maxhealth;
+                        cout << "You had no wounds to heal." << endl;
+                    }
+                    else if (health < maxhealth) {
+                        cout << "You healed for " << heal << " health." << endl;
+                    }
                 }
-                else if (health < maxhealth) {
-                    cout << "You healed for " << heal << " health." << endl;
-                }
-            }
                 Target->takeDmg(x);
                 cout << "-----------------------------------------------" << endl;
                 cout << name << ", you dealt " << x << " damage." << endl;
@@ -1991,7 +1682,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : level);
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : level) <<  "." << endl;
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : level) << "." << endl;
                     x += ((level >= 75) ? 30 : level);
                 }
                 else {
@@ -2073,7 +1764,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -2119,7 +1810,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -2166,7 +1857,7 @@ void Player::attack(Character* Target) {
                     health += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else if (randomcompanionevent == 2) {
-                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) <<  ".";
+                    cout << "Your companion gave you a damage buff of " << ((level >= 75) ? 30 : floor(level / 1.5)) << ".";
                     x += ((level >= 75) ? 30 : floor(level / 2.5));
                 }
                 else {
@@ -2395,7 +2086,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Dragonscale Chestplate" || purchasechoice == "Dragonscale chestplate" || purchasechoice == "dragonscale chestplate" || purchasechoice == "dragonscale Chestplate"&& shop2 == 10) {
+            else if (purchasechoice == "Dragonscale Chestplate" || purchasechoice == "Dragonscale chestplate" || purchasechoice == "dragonscale chestplate" || purchasechoice == "dragonscale Chestplate" && shop2 == 10) {
                 if (Goldloom >= 250) {
                     cout << "You bought a Dragonscale Chestplate!" << endl;
                     dragonscalechestplate = true;
@@ -2484,7 +2175,7 @@ void Player::attack(Character* Target) {
         cout << endl;
         attack(Target);
         break;
-    case 8: 
+    case 8:
         cout << "-----------------------------------------------" << endl;
         cout << "Welcome to the forge, " << name << "." << endl;
         if (endlessmode == true) {
@@ -2661,61 +2352,61 @@ void Player::attack(Character* Target) {
         cout << "--" << kills << " Kills--" << endl;
         cout << "--" << Goldloom << " Goldloom--" << endl;
         cout << "--" << questscompleted << " Quests Completed--" << endl;
-            if (classtype == 1) {
-                cout << "-Class = Knight-" << endl;
-            }
-            else if (classtype == 2) {
-                cout << "-Class = Executioner-" << endl;
-            }
-            else if (classtype == 3) {
-                cout << "-Class = Soulweaver-" << endl;
-            }
-            else if (classtype == 4) {
-                cout << "-Class = Warforged Engineer-" << endl;
-            }
-            else if (classtype == 5) {
-                cout << "-Class = Dreadnought-" << endl;
-            }
-            else if (classtype == 6) {
-                cout << "-Class = Trickster-" << endl;
-            }
-            cout << "--Quest--" << endl;
-            if (questpicker == 1) {
+        if (classtype == 1) {
+            cout << "-Class = Knight-" << endl;
+        }
+        else if (classtype == 2) {
+            cout << "-Class = Executioner-" << endl;
+        }
+        else if (classtype == 3) {
+            cout << "-Class = Soulweaver-" << endl;
+        }
+        else if (classtype == 4) {
+            cout << "-Class = Warforged Engineer-" << endl;
+        }
+        else if (classtype == 5) {
+            cout << "-Class = Dreadnought-" << endl;
+        }
+        else if (classtype == 6) {
+            cout << "-Class = Trickster-" << endl;
+        }
+        cout << "--Quest--" << endl;
+        if (questpicker == 1) {
             cout << "You have killed " << questoneprogress << "enemies out of 15." << endl;
-            }
-            else if (questpicker == 2) {
-                cout << "You have crafted " << questtwoprogress << "out of 1." << endl;
-            }
-            else if (questpicker == 3) {
-                cout << "You have forged " << questthreeprogress << "out of 1." << endl;
-            }
-            else if (questpicker == 4) {
-                cout << "You have used " << questfourprogress << "out of 2." << endl;
-            }
-            else if (questpicker == 5) {
-                cout << "You have killed " << questfiveprogress << "out of 1." << endl;
-            }
-            cout << endl << endl;
-            cout << " --" << Target->name << " Stats--" << endl;
-            cout << "--" << Target->maxhealth << " Maxhealth--" << endl;
-            cout << "--" << Target->health << " Health--" << endl;
-            cout << "--" << Target->attackPower << " Attack--" << endl;
-            cout << "--" << Target->defence << " Defence--" << endl;
-            cout << "--" << Target->level << " Level--" << endl;
-            cout << "--" << Target->lives << " Lives--" << endl;
+        }
+        else if (questpicker == 2) {
+            cout << "You have crafted " << questtwoprogress << "out of 1." << endl;
+        }
+        else if (questpicker == 3) {
+            cout << "You have forged " << questthreeprogress << "out of 1." << endl;
+        }
+        else if (questpicker == 4) {
+            cout << "You have used " << questfourprogress << "out of 2." << endl;
+        }
+        else if (questpicker == 5) {
+            cout << "You have killed " << questfiveprogress << "out of 1." << endl;
+        }
+        cout << endl << endl;
+        cout << " --" << Target->name << " Stats--" << endl;
+        cout << "--" << Target->maxhealth << " Maxhealth--" << endl;
+        cout << "--" << Target->health << " Health--" << endl;
+        cout << "--" << Target->attackPower << " Attack--" << endl;
+        cout << "--" << Target->defence << " Defence--" << endl;
+        cout << "--" << Target->level << " Level--" << endl;
+        cout << "--" << Target->lives << " Lives--" << endl;
         attack(Target);
         break;
-    case 10: 
+    case 10:
         cout << "------------------------------------------------" << endl;
-         if (lostartifact == 0 && riddle == false && cipherkey == false && cipherblueprint == 0 && VoidshroudSlicer == false && lightningvoidshroudslicer == false && upgradedvoidshroudslicer == false && shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && goldloomMagnet == false && horsemount == false && dragonmount == false && molotov == 0 && invisibilitypotion == 0) {
+        if (riddle == false && cipherkey == false && cipherblueprint == 0 && VoidshroudSlicer == false && lightningvoidshroudslicer == false && upgradedvoidshroudslicer == false && shield == false && levelupgrade == false && superiorleveltonic == false && defenceupgrade == false && narsosArmor == false && vladimirsArmor == false && lockhartsArmor == false && superpotion == false && attackupgrade == false && leveltonic == false && Sword == false && Knife == false && Excalibur == false && accuratesword == false && helmet == false && chestplate == false && boots == false && maxhealthtracker == 0 && tracklevelpotion == 0 && tracksuperiorlevelpotion == 0 && tracksuperpotion == 0 && glassshoes == false && flaminglongsword == false && dragonscalechestplate == false && mystichelmet == false && molotov == 0 && forgehammer == 0 && playercompanion == false && travelersbackpack == false && healthtonicitem == 0 && goldloomMagnet == false && horsemount == false && dragonmount == false && molotov == 0 && invisibilitypotion == 0) {
             cout << "You have no items yet." << endl;
             cout << "------------------------------------------------" << endl;
             attack(Target);
             break;
         }
-         if (Knife == true || Sword == true || Excalibur == true || VoidshroudSlicer == true || accuratesword == true || lightningexcalibur == true || lightningflaminglongsword == true || flaminglongsword == true || lightningvoidshroudslicer == true || upgradedexcalibur == true || upgradedflaminglongsword == true || upgradedvoidshroudslicer == true) {
-             cout << "--Weapons--" << endl;
-         }
+        if (Knife == true || Sword == true || Excalibur == true || VoidshroudSlicer == true || accuratesword == true || lightningexcalibur == true || lightningflaminglongsword == true || flaminglongsword == true || lightningvoidshroudslicer == true || upgradedexcalibur == true || upgradedflaminglongsword == true || upgradedvoidshroudslicer == true) {
+            cout << "--Weapons--" << endl;
+        }
         if (lightningflaminglongsword == true) {
             cout << "Lightning Framing Longsword (+20 Attack)" << endl;
         }
@@ -2809,8 +2500,8 @@ void Player::attack(Character* Target) {
         if (lightningglassshoes == true) {
             cout << "Lightning Glass Shoes (+9 Defence|+12 Attack)" << endl;
         }
-        if (defenceupgrade == true || attackupgrade == true || levelupgrade == true || maxhealthtracker > 0 || tracklevelpotion > 0 ||tracksuperiorlevelpotion > 0 || tracksuperpotion > 0 || leveltonic == true ||superiorleveltonic == true || superpotion == true) {
-            cout << "--Upgrades/Potions--" << endl;//upgrades/potions category
+        if (defenceupgrade == true || attackupgrade == true || levelupgrade == true || maxhealthtracker > 0 || tracklevelpotion > 0 || tracksuperiorlevelpotion > 0 || tracksuperpotion > 0 || leveltonic == true || superiorleveltonic == true || superpotion == true) {
+            cout << "--Upgrades/Potions--" << endl;
         }
         if (defenceupgrade == true) {
             cout << "Defence Perk (+10 defence)" << endl;
@@ -2843,7 +2534,7 @@ void Player::attack(Character* Target) {
             cout << "Super Potion (+20 level|+10 attack)" << endl;
         }
         if (travelersbackpack == true || playercompanion == true || goldloomMagnet == true || horsemount == true || dragonmount == true || cipherblueprint > 0 || armorupgrade == true || weaponupgrade == true || lightningshard == true || forgehammer > 0) {
-            cout << "--Special Items--" << endl;//special items category
+            cout << "--Special Items--" << endl;
         }
         if (travelersbackpack == true) {
             cout << "Travelers Backpack (Allows you to hold potions)" << endl;
@@ -2861,12 +2552,7 @@ void Player::attack(Character* Target) {
             cout << "Dragon Mount (Best increase in baselevel on kill)" << endl;
         }
         if (cipherblueprint > 0) {
-            if (cipherblueprint == 1) {
-                cout << cipherblueprint << " Cipher Blueprint (Use a key to read...)" << endl;
-            }
-            else {
-                cout << cipherblueprint << " Cipher Blueprints (Use a key to read...)" << endl;
-            }
+            cout << cipherblueprint << " Cipher Blueprint (Use a key to read...)" << endl;
         }
         if (armorupgrade == true) {
             cout << "Armor Plating (Used to upgrade armor)" << endl;
@@ -2878,42 +2564,19 @@ void Player::attack(Character* Target) {
             cout << "Lightning Shard (Used to upgrade armor/weapons)" << endl;
         }
         if (forgehammer > 0) {
-            if (forgehammer == 1) {
-                cout << forgehammer << " Forge Hammer (Used with other items to enhance artillery)" << endl;
-            }
-            else {
-                cout << forgehammer << " Forge Hammers (Used with other items to enhance artillery)" << endl;
-            }
-        }
-        if (lostartifact > 0) {
-            if (lostartifact == 1) {
-                cout << lostartifact << " Lost Artifact (Used to craft cursed items)" << endl;
-            }
-            else {
-                cout << lostartifact << " Lost Artifacts (Used to craft cursed items)" << endl;
-            }
+            cout << forgehammer << " Forge Hammer (Used with other items to enhance artillery)" << endl;
         }
         if (invisibilitypotion > 0 || healthtonicitem > 0 && molotov > 0 || cipherkey == true || riddle == true) {
-            cout << "--Usable--" << endl;//usable category
+            cout << "--Usable--" << endl;
         }
         if (invisibilitypotion > 0) {
-            if (invisibilitypotion == 1) {
-                cout << invisibilitypotion << " Invisibility Potion (Skip a battle)" << endl;
-            }
-            else {
-                cout << invisibilitypotion << " Invisibility Potions (Skip a battle)" << endl;
-            }
+            cout << invisibilitypotion << " Invisibility Potion (Skip a battle)" << endl;
         }
         if (healthtonicitem > 0) {
-            cout << healthtonicitem << " Health Tonic (Heal 100,75,50 or 25 based on your level)" << endl;
+            cout << healthtonicitem << " Health Tonic (Heal 100,75,50 or 25 based on level)" << endl;
         }
         if (molotov > 0) {
-            if (molotov == 1) {
-                cout << molotov << " Molotov (60% max health dmg)" << endl;
-            }
-            else {
-                cout << molotov << " Molotovs (60% max health dmg)" << endl;
-            }
+            cout << molotov << " Molotov (60% max health dmg)" << endl;
         }
         if (cipherkey == true) {
             cout << "Cipher Key (Use this to read the blueprint...)" << endl;
@@ -2949,12 +2612,6 @@ void Player::attack(Character* Target) {
                 if (usetwoitemsquest == true) {
                     questfiveprogress += 1;
                 }
-                if (mysteriousstrangerquest3 == true) {
-                    	mysteriousstrangerquesttracker3 += 1;
-						if (mysteriousstrangerquesttracker3 == 5) {
-							mysteriousquest();
-						}
-                }
             }
             else if ((itemuse == "Invisibility Potion" || itemuse == "Invisibility potion" || itemuse == "invisibility potion") && invisibilitypotion >= 1) {
                 cout << "You used an Invisibility Potion!" << endl;
@@ -2962,12 +2619,6 @@ void Player::attack(Character* Target) {
                 itemuseinvispotion(Target); //test to see if works
                 if (usetwoitemsquest == true) {
                     questfiveprogress += 1;
-                }
-                if (mysteriousstrangerquest3 == true) {
-                    	mysteriousstrangerquesttracker3 += 1;
-						if (mysteriousstrangerquesttracker3 == 5) {
-							mysteriousquest();
-						}
                 }
             }
             else if (itemuse == "Molotov" || itemuse == "molotov" && molotov >= 1) {
@@ -2977,64 +2628,43 @@ void Player::attack(Character* Target) {
                 if (usetwoitemsquest == true) {
                     questfiveprogress += 1;
                 }
-                if (mysteriousstrangerquest3 == true) {
-                    	mysteriousstrangerquesttracker3 += 1;
-						if (mysteriousstrangerquesttracker3 == 5) {
-							mysteriousquest();
-						}
-                }
             }
-            else if ((itemuse == "Cipher Key" || itemuse == "Cipher key"|| itemuse == "cipher key"|| itemuse == "cipher Key") && cipherkey == true && endlessmode == true) {
+            else if ((itemuse == "Cipher Key" || itemuse == "Cipher key" || itemuse == "cipher key" || itemuse == "cipher Key") && cipherkey == true && endlessmode == true) {
                 cout << "------------------------------------------------" << endl;
                 if (cipherblueprint >= 1) {
                     if (ciphertracker == 0) {
                         ciphertracker += 1;
-                        cout << "You hear a distant roar, saying, 18..." << endl;
+                        cout << "You hear a distant roar, 18..." << endl;
                         cipherblueprint -= 1;
                         if (usetwoitemsquest == true) {
                             questfiveprogress += 1;
                         }
-                        if (mysteriousstrangerquest3 == true) {
-                    	mysteriousstrangerquesttracker3 += 1;
-						if (mysteriousstrangerquesttracker3 == 5) {
-							mysteriousquest();
-						}
                     }
-                }
-                else if (ciphertracker == 1) {
+                    else if (ciphertracker == 1) {
                         ciphertracker += 1;
-                        cout << "You hear a rumble from beneath the surface...20." << endl;
+                        cout << "You hear another distant roar, 20..." << endl;
                         cipherblueprint -= 1;
                         if (usetwoitemsquest == true) {
                             questfiveprogress += 1;
                         }
-                        if (mysteriousstrangerquest3 == true) {
-                    	mysteriousstrangerquesttracker3 += 1;
-						if (mysteriousstrangerquesttracker3 == 5) {
-							mysteriousquest();
-						}
                     }
-                }
                     else if (ciphertracker == 2) {
                         ciphertracker += 1;
-                        cout << "You hear the final whisper...97." << endl;
+                        cout << "You hear the last distant roar, 97..." << endl;
                         cipherblueprint -= 1;
                         if (usetwoitemsquest == true) {
                             questfiveprogress += 1;
                         }
-                        if (mysteriousstrangerquest3 == true) {
-                    	mysteriousstrangerquesttracker3 += 1;
-						if (mysteriousstrangerquesttracker3 == 5) {
-							mysteriousquest();
-						}
                     }
-                }
-                else {
+                    else {
                         cout << "You've already heard all of the clues." << endl;
+                    }
                 }
                 else {
                     cout << "You don't have a cipher blueprint to read." << endl;
                 }
+                attack(Target);
+                break;
             }
             else if ((itemuse == "riddle" || itemuse == "Riddle") && endlessmode == true && riddle == true) {
                 string riddleanswer = "";
@@ -3044,22 +2674,17 @@ void Player::attack(Character* Target) {
                 if (riddleanswer == "Troll" || riddleanswer == "troll") {
                     cout << "Thats correct. You have proven your worth and shown you deserve these ingredients. In order to make the Regenerative Mantle, you need 4 Radiant Gems, 2 Soulstone, a healing potion and 50 goldloom for the forgers hard work." << endl;
                     ciphertracker += 1;
+                    attack(Target);
+                    break;
                     if (usetwoitemsquest == true) {
                         questfiveprogress += 1;
                     }
-                    if (mysteriousstrangerquest3 == true) {
-                    	mysteriousstrangerquesttracker3 += 1;
-						if (mysteriousstrangerquesttracker3 == 5) {
-							mysteriousquest();
-						}
-                }
                 }
                 else {
                     cout << "You are wrong, try again." << endl;
+                    attack(Target);
+                    break;
                 }
-            }
-            else {
-                cout << "That item doesn't exist or you don't have it to use." << endl;
             }
         }
         else if (yesnobackpack == "No" || yesnobackpack == "no" || yesnobackpack == "n" || yesnobackpack == "N") {
@@ -3071,210 +2696,210 @@ void Player::attack(Character* Target) {
         attack(Target);
         break;
     case 11:
-    if (questtracker == 0) {
-        cout << "--Welcome to the Taskmaster's Plaza.--" << endl << "Which quest would you like?" << endl;
-        questrandomizer = r() % 3 + 1;
-        if (questrandomizer == 1) {
-            cout << "-1-Kill 15 enemies." << endl;
-        }
-        else if (questrandomizer == 2) {
-            cout << "-2-Craft an item.-" << endl;
-        }
-        else if (questrandomizer == 3) {
-            cout << "-3-Forge an item.-" << endl;
-        }
-        questrandomizer2 = r() % 2 + 4;
-        if (questrandomizer2 == 4) {
-            cout << "-4-Use 2 items.-" << endl;
-        }
-        else if (questrandomizer2 == 5) {
-            cout << "-5-Kill a Boss.-" << endl;
-        }
-        cin >> questpicker;
-        if (questpicker == 1 && questrandomizer == 1) {
-            cout << "The quest to kill 15 enemies has been started." << endl;
-            killememiesquest = true;
-        }
-        else if (questpicker == 2 && questrandomizer == 2) {
-            cout << "The quest to craft an item has been started." << endl;
-            craftanitemquest = true;
-        }
-        else if (questpicker == 3 && questrandomizer == 3) {
-            cout << "The quest to forge an item has been started." << endl;
-            forgeanitemquest = true;
-        }
-        else if (questpicker == 4 && questrandomizer2 == 4) {
-            cout << "The quest to use 2 items has been started." << endl;
-            usetwoitemsquest = true;
-        }
-        else if (questpicker == 5 && questrandomizer2 == 5) {
-            cout << "The quest to kill a boss has been started." << endl;
-            killabossquest = true;
-        }
-        else {
-            cout << "That wasn't an option. Try again." << endl;
+        if (questtracker == 0) {
+            cout << "--Welcome to the Taskmaster's Plaza.--" << endl << "Which quest would you like?" << endl;
+            questrandomizer = r() % 3 + 1;
+            if (questrandomizer == 1) {
+                cout << "-1-Kill 15 enemies." << endl;
+            }
+            else if (questrandomizer == 2) {
+                cout << "-2-Craft an item.-" << endl;
+            }
+            else if (questrandomizer == 3) {
+                cout << "-3-Forge an item.-" << endl;
+            }
+            questrandomizer2 = r() % 2 + 4;
+            if (questrandomizer2 == 4) {
+                cout << "-4-Use 2 items.-" << endl;
+            }
+            else if (questrandomizer2 == 5) {
+                cout << "-5-Kill a Boss.-" << endl;
+            }
+            cin >> questpicker;
+            if (questpicker == 1 && questrandomizer == 1) {
+                cout << "The quest to kill 15 enemies has been started." << endl;
+                killememiesquest = true;
+            }
+            else if (questpicker == 2 && questrandomizer == 2) {
+                cout << "The quest to craft an item has been started." << endl;
+                craftanitemquest = true;
+            }
+            else if (questpicker == 3 && questrandomizer == 3) {
+                cout << "The quest to forge an item has been started." << endl;
+                forgeanitemquest = true;
+            }
+            else if (questpicker == 4 && questrandomizer2 == 4) {
+                cout << "The quest to use 2 items has been started." << endl;
+                usetwoitemsquest = true;
+            }
+            else if (questpicker == 5 && questrandomizer2 == 5) {
+                cout << "The quest to kill a boss has been started." << endl;
+                killabossquest = true;
+            }
+            else {
+                cout << "That wasn't an option. Try again." << endl;
+                attack(Target);
+                break;
+            }
+            questtracker = 1;
             attack(Target);
             break;
         }
-        questtracker = 1;
-        attack(Target);
-        break;
-    }
-    else if (questoneprogress >= 15) {
-        int randomitem;
-        cout << "Thank you for getting rid of those persky monsters!" << endl;
-        questtracker = 0;
-        questoneprogress = 0;
-        questscompleted += 1;
-        randomitem = r() % 2;
-        if (randomitem == 0) {
-            int randomamt;
-            randomamt = r() % 3 + 1;
-            soulstone += randomamt;
-            if (randomamt == 1) {
-                cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+        else if (questoneprogress >= 15) {
+            int randomitem;
+            cout << "Thank you for getting rid of those persky monsters!" << endl;
+            questtracker = 0;
+            questoneprogress = 0;
+            questscompleted += 1;
+            randomitem = r() % 2;
+            if (randomitem == 0) {
+                int randomamt;
+                randomamt = r() % 3 + 1;
+                soulstone += randomamt;
+                if (randomamt == 1) {
+                    cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+                }
+                else {
+                    cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
+                }
             }
-            else {
-                cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
-            }
-        }
-        else if (randomitem == 1) {
-            int randomamt;
-            randomamt = r() % 3 + 1;
-            radiantgem += randomamt;
-            if (randomamt == 1) {
-                cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
-            }
-            else {
-                cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+            else if (randomitem == 1) {
+                int randomamt;
+                randomamt = r() % 3 + 1;
+                radiantgem += randomamt;
+                if (randomamt == 1) {
+                    cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
+                }
+                else {
+                    cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+                }
             }
         }
-    }
-    else if (questtwoprogress == 1) {
-        int randomitem;
-        cout << "That item looks pretty good!" << endl;
-        questtracker = 0;
-        questtwoprogress = 0;
-        questscompleted += 1;
-        randomitem = r() % 2;
-        if (randomitem == 0) {
-            int randomamt;
-            randomamt = r() % 5 + 1;
-            soulstone += randomamt;
-            if (randomamt == 1) {
-                cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+        else if (questtwoprogress == 1) {
+            int randomitem;
+            cout << "That item looks pretty good!" << endl;
+            questtracker = 0;
+            questtwoprogress = 0;
+            questscompleted += 1;
+            randomitem = r() % 2;
+            if (randomitem == 0) {
+                int randomamt;
+                randomamt = r() % 5 + 1;
+                soulstone += randomamt;
+                if (randomamt == 1) {
+                    cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+                }
+                else {
+                    cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
+                }
             }
-            else {
-                cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
-            }
-        }
-        else if (randomitem == 1) {
-            int randomamt;
-            randomamt = r() % 5 + 1;
-            radiantgem += randomamt;
-            if (randomamt == 1) {
-                cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
-            }
-            else {
-                cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
-            }
-        }
-    }
-    else if (questthreeprogress == 1) {
-        int randomitem;
-        cout << "That looks much better now. Doesn't it?" << endl;
-        questtracker = 0;
-        questthreeprogress = 0;
-        questscompleted += 1;
-        randomitem = r() % 2;
-        if (randomitem == 0) {
-            int randomamt;
-            randomamt = r() % 4 + 1;
-            soulstone += randomamt;
-            if (randomamt == 1) {
-                cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
-            }
-            else {
-                cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
+            else if (randomitem == 1) {
+                int randomamt;
+                randomamt = r() % 5 + 1;
+                radiantgem += randomamt;
+                if (randomamt == 1) {
+                    cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
+                }
+                else {
+                    cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+                }
             }
         }
-        else if (randomitem == 1) {
-            int randomamt;
-            randomamt = r() % 4 + 1;
-            radiantgem += randomamt;
-            if (randomamt == 1) {
-                cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
+        else if (questthreeprogress == 1) {
+            int randomitem;
+            cout << "That looks much better now. Doesn't it?" << endl;
+            questtracker = 0;
+            questthreeprogress = 0;
+            questscompleted += 1;
+            randomitem = r() % 2;
+            if (randomitem == 0) {
+                int randomamt;
+                randomamt = r() % 4 + 1;
+                soulstone += randomamt;
+                if (randomamt == 1) {
+                    cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+                }
+                else {
+                    cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
+                }
             }
-            else {
-                cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
-            }
-        }
-    }
-    else if (questfourprogress == 2) {
-        int randomitem;
-        cout << "You feel much stronger after those 2 items don't ya??" << endl;
-        questtracker = 0;
-        questfourprogress = 0;
-        questscompleted += 1;
-        randomitem = r() % 2;
-        if (randomitem == 0) {
-            int randomamt;
-            randomamt = r() % 3 + 1;
-            soulstone += randomamt;
-            if (randomamt == 1) {
-                cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
-            }
-            else {
-                cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
-            }
-        }
-        else if (randomitem == 1) {
-            int randomamt;
-            randomamt = r() % 3 + 1;
-            radiantgem += randomamt;
-            if (randomamt == 1) {
-                cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
-            }
-            else {
-                cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+            else if (randomitem == 1) {
+                int randomamt;
+                randomamt = r() % 4 + 1;
+                radiantgem += randomamt;
+                if (randomamt == 1) {
+                    cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
+                }
+                else {
+                    cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+                }
             }
         }
-    }
-    else if (questfiveprogress == 1) {
-        int randomitem;
-        cout << "That boss didn't know what hit em!" << endl;
-        questtracker = 0;
-        questfiveprogress = 0;
-        questscompleted += 1;
-        randomitem = r() % 2;
-        if (randomitem == 0) {
-            int randomamt;
-            randomamt = r() % 4 + 1;
-            soulstone += randomamt;
-            if (randomamt == 1) {
-                cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+        else if (questfourprogress == 2) {
+            int randomitem;
+            cout << "You feel much stronger after those 2 items don't ya??" << endl;
+            questtracker = 0;
+            questfourprogress = 0;
+            questscompleted += 1;
+            randomitem = r() % 2;
+            if (randomitem == 0) {
+                int randomamt;
+                randomamt = r() % 3 + 1;
+                soulstone += randomamt;
+                if (randomamt == 1) {
+                    cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+                }
+                else {
+                    cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
+                }
             }
-            else {
-                cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
+            else if (randomitem == 1) {
+                int randomamt;
+                randomamt = r() % 3 + 1;
+                radiantgem += randomamt;
+                if (randomamt == 1) {
+                    cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
+                }
+                else {
+                    cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+                }
             }
         }
-        else if (randomitem == 1) {
-            int randomamt;
-            randomamt = r() % 4 + 1;
-            radiantgem += randomamt;
-            if (randomamt == 1) {
-                cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
+        else if (questfiveprogress == 1) {
+            int randomitem;
+            cout << "That boss didn't know what hit em!" << endl;
+            questtracker = 0;
+            questfiveprogress = 0;
+            questscompleted += 1;
+            randomitem = r() % 2;
+            if (randomitem == 0) {
+                int randomamt;
+                randomamt = r() % 4 + 1;
+                soulstone += randomamt;
+                if (randomamt == 1) {
+                    cout << "I'm going to give you " << randomamt << " Soulstone." << endl;
+                }
+                else {
+                    cout << "I'm going to give you " << randomamt << " Soulstones." << endl;
+                }
             }
-            else {
-                cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+            else if (randomitem == 1) {
+                int randomamt;
+                randomamt = r() % 4 + 1;
+                radiantgem += randomamt;
+                if (randomamt == 1) {
+                    cout << "I'm going to give you " << randomamt << " Radiant Gem." << endl;
+                }
+                else {
+                    cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
+                }
             }
         }
-    }
-    else {
-        cout << "Come back when you're done with your quest to turn it in." << endl;
-        attack(Target);
-        break;
-    }
+        else {
+            cout << "Come back when you're done with your quest to turn it in." << endl;
+            attack(Target);
+            break;
+        }
     case 182097:
         if (ciphertracker == 3) {
             cout << "You've unlocked a secret blueprint to the Regenerative Mantle. Find some more clues to find the ingredients..." << endl;

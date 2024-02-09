@@ -12,13 +12,7 @@ using namespace std;
 using namespace chrono;
 random_device r1;
 Player Knight("Player", 50, 25, 4, 0, 0, 1);
-int endlessSpawn = 1, randomevent = 0;
-/*
-static void UploadStat(const char* statName, int statValue) {
-	SteamUserStats()->SetStat(statName, statValue);
-	SteamUserStats()->StoreStats();
-}
-*/
+int endlessSpawn = 1;
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
 	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefence = 30, endlesslevel = levele, endlessmaxhealth;
 	xtracker = floor(xtracker / 10);
@@ -30,43 +24,43 @@ Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int lev
 	return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
 }
 Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int lives, int playerclass) {
-    int x = 0, z = 0, enemyhp = 0, enemyatk = 0, enemylives = 0, enemydef = 0, enemylvl = 0, enemymaxh = 0;
-    if (baselevel == 200) {
-        x = 13;
-    }
-    else if (baselevel == 100) {
-        x = 11;
-    }
-    else if (baselevel >= 101) {
-        x = r1() % 2 + 10;
-    }
-    else if (baselevel >= 80) {
-        x = r1() % 4 + 7;
-    }
-    else if (baselevel >= 70) {
-        x = r1() % 4 + 6;
-    }
-    else if (baselevel >= 60) {
-        x = r1() % 4 + 5;
-    }
-    else if (baselevel >= 50) {
-        x = r1() % 4 + 4;
-    }
-    else if (baselevel >= 40) {
-        x = r1() % 4 + 3;
-    }
-    else if (baselevel >= 30) {
-        x = r1() % 4 + 2;
-    }
-    else if (baselevel >= 20) {
-        x = r1() % 4 + 1;
-    }
-    else if (baselevel >= 10) {
-        x = r1() % 3;
-    }
-    else {
-        x = r1() % 2;
-    }
+	int x = 0, z = 0, enemyhp = 0, enemyatk = 0, enemylives = 0, enemydef = 0, enemylvl = 0, enemymaxh = 0;
+	if (baselevel == 200) {
+		x = 13;
+	}
+	else if (baselevel == 100) {
+		x = 11;
+	}
+	else if (baselevel >= 101) {
+		x = r1() % 2 + 10;
+	}
+	else if (baselevel >= 80) {
+		x = r1() % 4 + 7;
+	}
+	else if (baselevel >= 70) {
+		x = r1() % 4 + 6;
+	}
+	else if (baselevel >= 60) {
+		x = r1() % 4 + 5;
+	}
+	else if (baselevel >= 50) {
+		x = r1() % 4 + 4;
+	}
+	else if (baselevel >= 40) {
+		x = r1() % 4 + 3;
+	}
+	else if (baselevel >= 30) {
+		x = r1() % 4 + 2;
+	}
+	else if (baselevel >= 20) {
+		x = r1() % 4 + 1;
+	}
+	else if (baselevel >= 10) {
+		x = r1() % 3;
+	}
+	else {
+		x = r1() % 2;
+	}
 	if (lives >= 2) {
 		enemylives = ceil(lives * .5);
 	}
@@ -75,7 +69,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 	}
 	enemylvl = level;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-			generateEndlessEnemy(baselevel, hp, atk, def, level, lives, playerclass);
+		generateEndlessEnemy(baselevel, hp, atk, def, level, lives, playerclass);
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -89,56 +83,56 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 		}
 	}
 	if (endlessSpawn == 1) {
-    	switch (x) {
-    	case 0:
-        	return new Enemy("Shroom", 20, 3, 0, 1, 1, 20);
-        	break;
-    	case 1:
-        	return new Enemy("Shroom Knight", 25, 4, 0, 1, 2, 25);
-        	break;
-    	case 2:
-        	return new Enemy("Shroom ArchKnight", 30, 5, 2, enemylives, enemylvl, 30);
-        	break;
-    	case 3:
-        	return new Enemy("Noble Shroom", 35, 7, 4, enemylives, enemylvl, 35);
-        	break;
-    	case 4:
-        	return new Enemy("Royal Shroom", 45, 10, 7, enemylives, enemylvl, 45);
-        	break;
-    	case 5:
-        	return new Enemy("Princess Slime", 70, 13, 10, enemylives, enemylvl, 70);
-        	break;
-    	case 6:
-        	return new Enemy("Prince Shroom", 85, 15, 16, enemylives, enemylvl, 85);
-        	break;
-   		case 7:
-        	return new Enemy("King Shroom", 115, 18, 19, enemylives, enemylvl, 115);
-        	break;
-    	case 8:
-        	return new Enemy("Emperor Shroom", 150, 22, 22, enemylives, enemylvl, 150);
-        	break;
-    	case 9:
-        	return new Enemy("Leader Shroom", 170, 25, 27, enemylives, enemylvl, 170);
-        	break;
-    	case 10:
-        	return new Enemy("Divine Shroom", 200, 30, 30, enemylives, enemylvl, 200);
-        	break;
-    	case 11:
+		switch (x) {
+		case 0:
+			return new Enemy("Shroom", 20, 3, 0, 1, 1, 20);
+			break;
+		case 1:
+			return new Enemy("Shroom Knight", 25, 4, 0, 1, 2, 25);
+			break;
+		case 2:
+			return new Enemy("Shroom ArchKnight", 30, 5, 2, enemylives, enemylvl, 30);
+			break;
+		case 3:
+			return new Enemy("Noble Shroom", 35, 7, 4, enemylives, enemylvl, 35);
+			break;
+		case 4:
+			return new Enemy("Royal Shroom", 45, 10, 7, enemylives, enemylvl, 45);
+			break;
+		case 5:
+			return new Enemy("Princess Slime", 70, 13, 10, enemylives, enemylvl, 70);
+			break;
+		case 6:
+			return new Enemy("Prince Shroom", 85, 15, 16, enemylives, enemylvl, 85);
+			break;
+		case 7:
+			return new Enemy("King Shroom", 115, 18, 19, enemylives, enemylvl, 115);
+			break;
+		case 8:
+			return new Enemy("Emperor Shroom", 150, 22, 22, enemylives, enemylvl, 150);
+			break;
+		case 9:
+			return new Enemy("Leader Shroom", 170, 25, 27, enemylives, enemylvl, 170);
+			break;
+		case 10:
+			return new Enemy("Divine Shroom", 200, 30, 30, enemylives, enemylvl, 200);
+			break;
+		case 11:
 			cout << "--A boss has appeared!--" << endl;
-        	return new Enemy("Boss Shroom", 250, 37, 35, enemylives, enemylvl, 250);
+			return new Enemy("Boss Shroom", 250, 37, 35, enemylives, enemylvl, 250);
 			Knight.bossSpawned = true;
-        	break;
-		case 12: 
+			break;
+		case 12:
 			cout << "--An endless mode boss has arrived...--" << endl;
 			Knight.bossSpawned = true;
 			return new Enemy("Jock Mushroom", enemyhp, enemyatk, enemydef, enemylives, enemylvl, enemymaxh);
 			break;
-    	default:
+		default:
 			cout << "The creator has arrived...I wish you luck." << endl;
 			Knight.bossSpawned = true;
-        	return new Enemy("Creator Shroom", 1000, 50, 45, enemylives, enemylvl, 10000);
-        	break;
-    	}
+			return new Enemy("Creator Shroom", 1000, 50, 45, enemylives, enemylvl, 10000);
+			break;
+		}
 	}
 }
 Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, int lives2, int playerclass2) {
@@ -187,7 +181,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 	}
 	enemylvl2 = level2;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-			generateEndlessEnemy(baselevel2, hp2, atk2, def2, level2, lives2, playerclass2);
+		generateEndlessEnemy(baselevel2, hp2, atk2, def2, level2, lives2, playerclass2);
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -202,55 +196,55 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 	}
 	if (endlessSpawn == 1) {
 		switch (x) {
-       	case 0:
-       		return new Enemy("Slime", 20, 1, 0, 1, 0, 20);
-       		break;
-       	case 1:
-       		return new Enemy("Epic Slime", 25, 1, 0, 1, 0, 25);
-       		break;
-       	case 2:
-       		return new Enemy("Superior Slime", 30, 5, 2, enemylives2, enemylvl2, 30);
-       		break;
-       	case 3:
-       		return new Enemy("Super Slime", 35, 7, 4, enemylives2, enemylvl2, 35);
-       		break;
-       	case 4:
-       		return new Enemy("Incredible Slime", 45, 10, 7, enemylives2, enemylvl2, 45);
-       		break;
-       	case 5:
-       		return new Enemy("Superb Slime", 70, 13, 10, enemylives2, enemylvl2, 70);
-       		break;
-       	case 6:
-       		return new Enemy("King Slime", 85, 15, 16, enemylives2, enemylvl2, 85);
-       		break;
-       	case 7:
-       		return new Enemy("Demon Slime", 115, 18, 19, enemylives2, enemylvl2, 115);
-       		break;
-       	case 8:
-       		return new Enemy("Overlord Slime", 150, 22, 22, enemylives2, enemylvl2, 150);
-       		break;
-       	case 9:
-       		return new Enemy("Universal Super Slime", 170, 25, 27, enemylives2, enemylvl2, 170);
-       		break;
-       	case 10:
-       		return new Enemy("Godly Slime", 200, 30, 30, enemylives2, enemylvl2, 200);
-       		break;
-       	case 11:
+		case 0:
+			return new Enemy("Slime", 20, 1, 0, 1, 0, 20);
+			break;
+		case 1:
+			return new Enemy("Epic Slime", 25, 1, 0, 1, 0, 25);
+			break;
+		case 2:
+			return new Enemy("Superior Slime", 30, 5, 2, enemylives2, enemylvl2, 30);
+			break;
+		case 3:
+			return new Enemy("Super Slime", 35, 7, 4, enemylives2, enemylvl2, 35);
+			break;
+		case 4:
+			return new Enemy("Incredible Slime", 45, 10, 7, enemylives2, enemylvl2, 45);
+			break;
+		case 5:
+			return new Enemy("Superb Slime", 70, 13, 10, enemylives2, enemylvl2, 70);
+			break;
+		case 6:
+			return new Enemy("King Slime", 85, 15, 16, enemylives2, enemylvl2, 85);
+			break;
+		case 7:
+			return new Enemy("Demon Slime", 115, 18, 19, enemylives2, enemylvl2, 115);
+			break;
+		case 8:
+			return new Enemy("Overlord Slime", 150, 22, 22, enemylives2, enemylvl2, 150);
+			break;
+		case 9:
+			return new Enemy("Universal Super Slime", 170, 25, 27, enemylives2, enemylvl2, 170);
+			break;
+		case 10:
+			return new Enemy("Godly Slime", 200, 30, 30, enemylives2, enemylvl2, 200);
+			break;
+		case 11:
 			cout << "--A boss has appeared!--" << endl;
 			Knight.bossSpawned = true;
-       		return new Enemy("Boss Slime", 250, 37, 35, enemylives2, enemylvl2, 250);
-       		break;
-       	case 12: 
-       		cout << "--An endless mode boss has arrived...--" << endl;
+			return new Enemy("Boss Slime", 250, 37, 35, enemylives2, enemylvl2, 250);
+			break;
+		case 12:
+			cout << "--An endless mode boss has arrived...--" << endl;
 			Knight.bossSpawned = true;
-       		return new Enemy("Jock Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
-       		break;
-       	default:
+			return new Enemy("Jock Slime", enemyhp2, enemyatk2, enemydef2, enemylives2, enemylvl2, enemymaxh2);
+			break;
+		default:
 			cout << "The creator has arrived...I wish you luck." << endl;
 			Knight.bossSpawned = true;
-       		return new Enemy("Creator Slime", 1000, 50, 45, enemylives2, enemylvl2, 1000);
-       		break;
-       	}
+			return new Enemy("Creator Slime", 1000, 50, 45, enemylives2, enemylvl2, 1000);
+			break;
+		}
 	}
 }
 Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, int lives3, int playerclass3) {
@@ -299,7 +293,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 	}
 	enemylvl3 = level3;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-			generateEndlessEnemy(baselevel3, hp3, atk3, def3, level3, lives3, playerclass3);
+		generateEndlessEnemy(baselevel3, hp3, atk3, def3, level3, lives3, playerclass3);
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -313,56 +307,56 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 		}
 	}
 	if (endlessSpawn == 1) {
-    	switch (x) {
-    	case 0:
-    		return new Enemy("Croc", 20, 3, 0, 1, 0, 20);
-    		break;
-    	case 1:
-    		return new Enemy("Croc Pot", 25, 4, 0, 1, 0, 25);
-    		break;
-    	case 2:
-    		return new Enemy("Mini Croc", 30, 5, 2, enemylives3, enemylvl3, 30);
-    		break;
-    	case 3:
-    		return new Enemy("Big Croc", 35, 7, 4, enemylives3, enemylvl3, 35);
-    		break;
-    	case 4:
-    		return new Enemy("Land Croc", 45, 10, 7, enemylives3, enemylvl3, 45);
-    		break;
-    	case 5:
-    		return new Enemy("Sharptooth Croc", 70, 13, 10, enemylives3, enemylvl3, 70);
-    		break;
-    	case 6:
-    		return new Enemy("King Croc", 85, 15, 16, enemylives3, enemylvl3, 85);
-    		break;
-    	case 7:
-    		return new Enemy("Develish Croc", 115, 18, 19, enemylives3, enemylvl3, 115);
-    		break;
-    	case 8:
-    		return new Enemy("Crocodile Dundee", 150, 22, 22, enemylives3, enemylvl3, 150);
-    		break;
-    	case 9:
-    		return new Enemy("Killer Croc", 170, 25, 27, enemylives3, enemylvl3, 170);
-    		break;
-    	case 10:
-    		return new Enemy("Transcendent Croc", 200, 30, 30, enemylives3, enemylvl3, 200);
-    		break;
-    	case 11:
+		switch (x) {
+		case 0:
+			return new Enemy("Croc", 20, 3, 0, 1, 0, 20);
+			break;
+		case 1:
+			return new Enemy("Croc Pot", 25, 4, 0, 1, 0, 25);
+			break;
+		case 2:
+			return new Enemy("Mini Croc", 30, 5, 2, enemylives3, enemylvl3, 30);
+			break;
+		case 3:
+			return new Enemy("Big Croc", 35, 7, 4, enemylives3, enemylvl3, 35);
+			break;
+		case 4:
+			return new Enemy("Land Croc", 45, 10, 7, enemylives3, enemylvl3, 45);
+			break;
+		case 5:
+			return new Enemy("Sharptooth Croc", 70, 13, 10, enemylives3, enemylvl3, 70);
+			break;
+		case 6:
+			return new Enemy("King Croc", 85, 15, 16, enemylives3, enemylvl3, 85);
+			break;
+		case 7:
+			return new Enemy("Develish Croc", 115, 18, 19, enemylives3, enemylvl3, 115);
+			break;
+		case 8:
+			return new Enemy("Crocodile Dundee", 150, 22, 22, enemylives3, enemylvl3, 150);
+			break;
+		case 9:
+			return new Enemy("Killer Croc", 170, 25, 27, enemylives3, enemylvl3, 170);
+			break;
+		case 10:
+			return new Enemy("Transcendent Croc", 200, 30, 30, enemylives3, enemylvl3, 200);
+			break;
+		case 11:
 			cout << "--A boss has appeared!--" << endl;
 			Knight.bossSpawned = true;
-    		return new Enemy("Florida Croc", 250, 37, 35, enemylives3, enemylvl3, 250);
-    		break;
-    	case 12: 
-    		cout << "--An endless mode boss has arrived...--" << endl;
+			return new Enemy("Florida Croc", 250, 37, 35, enemylives3, enemylvl3, 250);
+			break;
+		case 12:
+			cout << "--An endless mode boss has arrived...--" << endl;
 			Knight.bossSpawned = true;
-    		return new Enemy("Jock Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
-    		break;
-    	default:
+			return new Enemy("Jock Croc", enemyhp3, enemyatk3, enemydef3, enemylives3, enemylvl3, enemymaxh3);
+			break;
+		default:
 			cout << "The creator has arrived...I wish you luck." << endl;
 			Knight.bossSpawned = true;
-    		return new Enemy("Creator Croc", 1000, 50, 45, enemylives3, enemylvl3, 1000);
-    		break;
-    	}
+			return new Enemy("Creator Croc", 1000, 50, 45, enemylives3, enemylvl3, 1000);
+			break;
+		}
 	}
 }
 Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, int lives4, int playerclass4) {
@@ -411,7 +405,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 	}
 	enemylvl4 = level4;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-			generateEndlessEnemy(baselevel4, hp4, atk4, def4, level4, lives4, playerclass4);
+		generateEndlessEnemy(baselevel4, hp4, atk4, def4, level4, lives4, playerclass4);
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -425,56 +419,56 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 		}
 	}
 	if (endlessSpawn == 1) {
-    	switch (x) {
-    	case 0:
-    		return new Enemy("Roo", 20, 3, 0, 1, 0, 20);
-    		break;
-    	case 1:
-    		return new Enemy("Joey Roo", 25, 4, 0, 1, 0, 25);
-    		break;
-    	case 2:
-    		return new Enemy("Kangaroo", 30, 5, 2, enemylives4, enemylvl4, 30);
-    		break;
-    	case 3:
-    		return new Enemy("Mother Roo", 35, 7, 4, enemylives4, enemylvl4, 35);
-    		break;
-    	case 4:
-    		return new Enemy("Boxer Roo", 45, 10, 7, enemylives4, enemylvl4, 45);
-    		break;
-    	case 5:
-    		return new Enemy("Jumping Roo", 70, 13, 10, enemylives4, enemylvl4, 70);
-    		break;
-    	case 6:
-    		return new Enemy("Killer Roo", 85, 15, 16, enemylives4, enemylvl4, 85);
-    		break;
-    	case 7:
-    		return new Enemy("Crackhead Roo", 115, 18, 19, enemylives4, enemylvl4, 115);
-    		break;
-    	case 8:
-    		return new Enemy("Aussie Roo", 150, 22, 22, enemylives4, enemylvl4, 150);
-    		break;
-    	case 9:
-    		return new Enemy("Jacked Roo", 170, 25, 27, enemylives4, enemylvl4, 170);
-    		break;
-    	case 10:
-    		return new Enemy("Paragon Roo", 200, 30, 30, enemylives4, enemylvl4, 200);
-    		break;
-    	case 11:
+		switch (x) {
+		case 0:
+			return new Enemy("Roo", 20, 3, 0, 1, 0, 20);
+			break;
+		case 1:
+			return new Enemy("Joey Roo", 25, 4, 0, 1, 0, 25);
+			break;
+		case 2:
+			return new Enemy("Kangaroo", 30, 5, 2, enemylives4, enemylvl4, 30);
+			break;
+		case 3:
+			return new Enemy("Mother Roo", 35, 7, 4, enemylives4, enemylvl4, 35);
+			break;
+		case 4:
+			return new Enemy("Boxer Roo", 45, 10, 7, enemylives4, enemylvl4, 45);
+			break;
+		case 5:
+			return new Enemy("Jumping Roo", 70, 13, 10, enemylives4, enemylvl4, 70);
+			break;
+		case 6:
+			return new Enemy("Killer Roo", 85, 15, 16, enemylives4, enemylvl4, 85);
+			break;
+		case 7:
+			return new Enemy("Crackhead Roo", 115, 18, 19, enemylives4, enemylvl4, 115);
+			break;
+		case 8:
+			return new Enemy("Aussie Roo", 150, 22, 22, enemylives4, enemylvl4, 150);
+			break;
+		case 9:
+			return new Enemy("Jacked Roo", 170, 25, 27, enemylives4, enemylvl4, 170);
+			break;
+		case 10:
+			return new Enemy("Paragon Roo", 200, 30, 30, enemylives4, enemylvl4, 200);
+			break;
+		case 11:
 			cout << "--A boss has appeared!--" << endl;
 			Knight.bossSpawned = true;
-    		return new Enemy("Boomaroo", 250, 37, 35, enemylives4, enemylvl4, 250);
-    		break;
-    	case 12: 
-    		cout << "--An endless mode boss has arrived...--" << endl;
+			return new Enemy("Boomaroo", 250, 37, 35, enemylives4, enemylvl4, 250);
+			break;
+		case 12:
+			cout << "--An endless mode boss has arrived...--" << endl;
 			Knight.bossSpawned = true;
-    		return new Enemy("Jock Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
-    		break;
-    	default:
+			return new Enemy("Jock Roo", enemyhp4, enemyatk4, enemydef4, enemylives4, enemylvl4, enemymaxh4);
+			break;
+		default:
 			cout << "The creator has arrived...I wish you luck." << endl;
 			Knight.bossSpawned = true;
-    		return new Enemy("Creator Kangaroo", 1000, 50, 45, enemylives4, enemylvl4, enemymaxh4);
-    		break;
-    	}
+			return new Enemy("Creator Kangaroo", 1000, 50, 45, enemylives4, enemylvl4, enemymaxh4);
+			break;
+		}
 	}
 }
 Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, int lives5, int playerclass5) {
@@ -523,7 +517,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 	}
 	enemylvl5 = level5;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-			generateEndlessEnemy(baselevel5, hp5, atk5, def5, level5, lives5, playerclass5);
+		generateEndlessEnemy(baselevel5, hp5, atk5, def5, level5, lives5, playerclass5);
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -536,57 +530,57 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 			x = 12;
 		}
 	}
-    if (endlessSpawn == 1) {
-    	switch (x) {
-    	case 0:
-    		return new Enemy("Skeleton", 20, 3, 0, 1, 0, 20);
-    		break;
-    	case 1:
-    		return new Enemy("Skellie", 25, 4, 0, 1, 0, 25);
-    		break;
-    	case 2:
-    		return new Enemy("Enchanted Bow Skeleton", 30, 5, 2, enemylives5, enemylvl5, 30);
-    		break;
-    	case 3:
-    		return new Enemy("Aimbot Skellie", 35, 7, 4, enemylives5, enemylvl5, 35);
-    		break;
-    	case 4:
-    		return new Enemy("Sharpshooter Skeleton", 45, 10, 7, enemylives5, enemylvl5, 45);
-    		break;
-    	case 5:
-    		return new Enemy("Bony Bill", 70, 13, 10, enemylives5, enemylvl5, 70);
-    		break;
-    	case 6:
-    		return new Enemy("Crazy Bones", 85, 15, 16, enemylives5, enemylvl5, 85);
-    		break;
-    	case 7:
-    		return new Enemy("Broken Bone Skeleton", 115, 18, 19, enemylives5, enemylvl5, 115);
-    		break;
-    	case 8:
-    		return new Enemy("Boogie Bone", 150, 22, 22, enemylives5, enemylvl5, 150);
-    		break;
-    	case 9:
-    		return new Enemy("Ranked Skeleton", 170, 25, 27, enemylives5, enemylvl5, 170);
-    		break;
-    	case 10:
-    		return new Enemy("Captain Skellie", 200, 30, 30, enemylives5, enemylvl5, 200);
-    		break;
-    	case 11:
+	if (endlessSpawn == 1) {
+		switch (x) {
+		case 0:
+			return new Enemy("Skeleton", 20, 3, 0, 1, 0, 20);
+			break;
+		case 1:
+			return new Enemy("Skellie", 25, 4, 0, 1, 0, 25);
+			break;
+		case 2:
+			return new Enemy("Enchanted Bow Skeleton", 30, 5, 2, enemylives5, enemylvl5, 30);
+			break;
+		case 3:
+			return new Enemy("Aimbot Skellie", 35, 7, 4, enemylives5, enemylvl5, 35);
+			break;
+		case 4:
+			return new Enemy("Sharpshooter Skeleton", 45, 10, 7, enemylives5, enemylvl5, 45);
+			break;
+		case 5:
+			return new Enemy("Bony Bill", 70, 13, 10, enemylives5, enemylvl5, 70);
+			break;
+		case 6:
+			return new Enemy("Crazy Bones", 85, 15, 16, enemylives5, enemylvl5, 85);
+			break;
+		case 7:
+			return new Enemy("Broken Bone Skeleton", 115, 18, 19, enemylives5, enemylvl5, 115);
+			break;
+		case 8:
+			return new Enemy("Boogie Bone", 150, 22, 22, enemylives5, enemylvl5, 150);
+			break;
+		case 9:
+			return new Enemy("Ranked Skeleton", 170, 25, 27, enemylives5, enemylvl5, 170);
+			break;
+		case 10:
+			return new Enemy("Captain Skellie", 200, 30, 30, enemylives5, enemylvl5, 200);
+			break;
+		case 11:
 			cout << "--A boss has appeared!--" << endl;
 			Knight.bossSpawned = true;
-    		return new Enemy("Super Skellie", 250, 37, 35, enemylives5, enemylvl5, 250);
-    		break;
-    	case 12: 
-    		cout << "--An endless mode boss has arrived...--" << endl;
+			return new Enemy("Super Skellie", 250, 37, 35, enemylives5, enemylvl5, 250);
+			break;
+		case 12:
+			cout << "--An endless mode boss has arrived...--" << endl;
 			Knight.bossSpawned = true;
-    		return new Enemy("Jock Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
-    		break;
-    	default:
+			return new Enemy("Jock Skeleton", enemyhp5, enemyatk5, enemydef5, enemylives5, enemylvl5, enemymaxh5);
+			break;
+		default:
 			cout << "The creator has arrived...I wish you luck." << endl;
 			Knight.bossSpawned = true;
-    		return new Enemy("Creator Skeleton", 1000, 50, 45, enemylives5, enemylvl5, 1000);
-    		break;
-    	}
+			return new Enemy("Creator Skeleton", 1000, 50, 45, enemylives5, enemylvl5, 1000);
+			break;
+		}
 	}
 }
 static void gameplay() {
@@ -1117,7 +1111,6 @@ static void gameplay() {
 						Knight.storetracker += 1;
 						Knight.Goldloom += r1() % 16 + 10;
 					}
-					Knight.incrementvillage(1);
 					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == 6) {
 						Knight.stopremessaging = 1;
 						Knight.trickstermove = true;
@@ -1314,9 +1307,6 @@ static void gameplay() {
 						Knight.radiantgem += 1;
 						cout << "--You stumbled upon a Radiant Gem!--" << endl;
 						cout << endl;
-					}
-					else if (item == 32 || item == 33 || item == 33 || item == 33 || item == 33 && Knight.bossSpawned == true) {
-						Knight.lostartifact =+ 1;
 					}
 					if (Knight.bossSpawned == true) {
 						Knight.bossSpawned = false;
@@ -2092,70 +2082,14 @@ static void gameplay() {
 						cout << "--Your shop now appears more frequently and you get more money! (Goldloom Magnet)--" << endl;
 						cout << endl;
 					}
-					if (Knight.bossSpawned == true && Knight.mysteriousstrangerquest == true) {
-						mysteriousstrangerquesttracker += 1;
-						if (mysteriousstrangerquesttracker == 3) {
-							Knight.mysteriousquest();
-						}
-					}
 					if (Knight.bossSpawned == true) {
 						Knight.bossSpawned = false;
 					}
-					randomevent = r1() % 100 + 1;
-					if (randomevent == 1 || randomevent == 2 && Knight.mysteriousstrangerquestactive == false) {
-						string yesno = "";
-						cout << "A mysterious stranger is approaching..." << endl << "Would you like a quest?" << endl;
-						cin >> ws;
-						getline(cin, yesno);
-						randomevent = r1() % 5 + 1;
-						if (yesno == "Yes" || yesno == "yes" || yesno == "Y" || yesno == "y") {
-      						if (randomevent == 1) {
-      							cout << "--You must kill 3 bosses--" << endl;
-								Knight.mysteriousstrangerquest = true;
-								Knight.mysteriousstrangerquestactive = true;
-      						}
-      						else if (randomevent == 2) {
-      							cout << "--You must craft a cursed artifact--" << endl;
-								Knight.mysteriousstrangerquest2 = true;
-								Knight.mysteriousstrangerquestactive = true;
-      						}
-      						if (randomevent == 3) {
-      							cout << "--You must use 5 items--" << endl;
-								Knight.mysteriousstrangerquest3 = true;
-								Knight.mysteriousstrangerquestactive = true;
-      						}
-      						else if (randomevent == 4) {
-      							cout << "--You must forge 3 pieces of armor--" << endl;
-								Knight.mysteriousstrangerquest4 = true;
-								Knight.mysteriousstrangerquestactive = true;
-      						}
-							else if (randomevent == 5) {
-      							cout << "--You must forge 2 weapons--" << endl;
-								Knight.mysteriousstrangerquest5 = true;
-								Knight.mysteriousstrangerquestactive = true;
-      						}
-						}
-						else if (yesno == "No" || yesno == "no" || yesno == "N" || yesno == "n") {
-							cout << "You missed out on a great opportunity." << endl;
-							cout << "-The mysterious stranger has left-" << endl;
-						}
-						else {
-							cout << "Since you can't type, the mysterious stranger impatiently left you." << endl;
-						}
-					}
-					//finish this update
 				}
 			}
 		}
 		if (!Knight.isAlive() && Knight.killplayer == false) {
-			/*
-			UploadStat("Maxhealth", Knight.getmaxhealth());
-			UploadStat("Health", Knight.gethealth());
-			UploadStat("Attack", Knight.getattackPower());
-			UploadStat("Defence", Knight.getdefence());
-			UploadStat("Level", Knight.getlevel());
-			UploadStat("Baselevel", Knight.getbaselevel());
-			*/
+
 			cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
 			int deathmessage = 0;
 			deathmessage = r1() % 5 + 1;

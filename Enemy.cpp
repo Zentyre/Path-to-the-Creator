@@ -20,18 +20,18 @@ void Enemy::attack(Character* Target) {
         critchance = r() % 100 + 1;
         attackself = r() % 100 + 1;
         if (attackself > 60 && critchance > 70) {
-             d = r() % 10 + ceil(attackPower * 1.5);
-             health -= d;
-             cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
-             cout << "The " << name << " has " << health << " remaining." << endl;
-             trickstermovebool = false;
+            d = r() % 10 + ceil(attackPower * 1.5);
+            health -= d;
+            cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
+            cout << "The " << name << " has " << health << " remaining." << endl;
+            trickstermovebool = false;
         }
         else if (attackself > 60) {
-             d = r() % 10 + attackPower;
-             health -= d;
-             cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
-             cout << "The " << name << " has " << health << " remaining." << endl;
-             trickstermovebool = false;
+            d = r() % 10 + attackPower;
+            health -= d;
+            cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
+            cout << "The " << name << " has " << health << " remaining." << endl;
+            trickstermovebool = false;
         }
         else if (attackself <= 60 && critchance > 70) {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
@@ -52,18 +52,18 @@ void Enemy::attack(Character* Target) {
         critchance = r() % 100 + 1;
         attackself = r() % 100 + 1;
         if (attackself > 60 && critchance > 70) {
-             d = r() % 7 + ceil(attackPower * 1.5);
-             health -= d;
-             cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
-             cout << "The " << name << " has " << health << " remaining." << endl;
-             trickstermovebool = false;
+            d = r() % 7 + ceil(attackPower * 1.5);
+            health -= d;
+            cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
+            cout << "The " << name << " has " << health << " remaining." << endl;
+            trickstermovebool = false;
         }
         else if (attackself > 60) {
-             d = r() % 7 + attackPower;
-             health -= d;
-             cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
-             cout << "The " << name << " has " << health << " remaining." << endl;
-             trickstermovebool = false;
+            d = r() % 7 + attackPower;
+            health -= d;
+            cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
+            cout << "The " << name << " has " << health << " remaining." << endl;
+            trickstermovebool = false;
         }
         else if (attackself <= 60 && critchance > 70) {
             cout << "The enemy resisted your willpower and did not get confused." << endl;

@@ -22,7 +22,7 @@ public:
 		}
 		health -= dmg;
 		if (health <= 0) {
-		lives -= 1;
+			lives -= 1;
 			if (lives > 0) {
 				health = maxhealth - floor(baselevel * .8);
 			}
@@ -38,16 +38,11 @@ public:
 	void playerclassdreadnought();
 	void playerclasstrickster();
 	void itemusehealthtonic();
-	incrementvillage(int amount) {
-		return villagetracker++;
-	}
 	int stopremessaging = 0;
 	int healthtonicitem = 0;
 	int failedforge = 0;
 	int cipherblueprint = 0;
 	int ciphertracker = 0;
-	int villagetracker = 0;
-	int visittracker = 0;
 	int soulstone = 0;
 	int radiantgem = 0;
 	int questtracker = 0;
@@ -154,22 +149,7 @@ public:
 	int voidshroudtracker = 0;
 	int upgradedvoidshroudtracker = 0;
 	int lightningvoidshroudtracker = 0;
-	int lostartifact = 0;
-	bool cursedheart = false;
-	bool enchantedsachel = false;
-	bool glowingglasses = false;
-	bool fierynecklace = false;
-	bool shinybelt = false;
-	bool mysteriousstranger = false;
-	bool mysteriousstrangerquestactive = false;
-	bool mysteriousstrangerquest = false;
-	bool mysteriousstrangerquest2 = false;
-	bool mysteriousstrangerquest3 = false;
-	bool mysteriousstrangerquest4 = false;
-	bool mysteriousstrangerquest5 = false;
-	int mysteriousstrangerquesttracker = 0;
-	int mysteriousstrangerquesttracker2 = 0;
-	int mysteriousstrangerquesttracker3 = 0;
-	int mysteriousstrangerquesttracker4 = 0;
-	int mysteriousstrangerquesttracker5 = 0;
+	int tracklevelpotion = 0;
+	int tracksuperpotion = 0;
+	int tracksuperiorlevelpotion = 0;
 };

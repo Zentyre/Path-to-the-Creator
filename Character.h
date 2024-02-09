@@ -5,9 +5,6 @@
 #include <thread>
 using namespace std;
 class Character {
-protected:
-	int baselevel;
-	int kills;
 public:
 	Character();
 	string factionchoice = "";
@@ -19,6 +16,8 @@ public:
 	int attackPower;
 	int defence;
 	int maxhealth;
+	int baselevel;
+	int kills;
 	int factionchoiceint = 0;
 	int lives;
 	int Goldloom = 0;

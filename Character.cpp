@@ -97,7 +97,7 @@ void Character::takeDmg(int dmg) {
 }
 bool Character::isAlive() {
 	if (lives <= 0 || killplayer == true) {
-			return false;
+		return false;
 	}
 	else {
 		return true;
