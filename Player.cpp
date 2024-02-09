@@ -144,6 +144,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                narsosArmor = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded Narso's Armor using an Armor Upgrade!" << endl;
@@ -152,6 +159,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                narsosArmor = false;
             }
         }
         else if (forgeUpgrade == "lockhart's armor" || forgeUpgrade == "Lockhart's armor" || forgeUpgrade == "Lockhart's Armor" || forgeUpgrade == "lockhart's Armor" && (armorupgrade == true || lightningshard == true)) {
@@ -165,6 +179,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                lockhartsArmor = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded Lockhart's Armor using an Armor Upgrade!" << endl;
@@ -173,6 +194,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                lockhartsArmor = false;
             }
         }
         else if (forgeUpgrade == "vladimir's armor" || forgeUpgrade == "Vladimir's armor" || forgeUpgrade == "Vladimir's Armor" || forgeUpgrade == "vladimir's Armor" && (armorupgrade == true || lightningshard == true)) {
@@ -186,6 +214,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                vladimirsArmor = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded Vladimir's Armor using an Armor Upgrade!" << endl;
@@ -194,6 +229,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                vladimirsArmor = false;
             }
         }
         else if (forgeUpgrade == "glass shoes" || forgeUpgrade == "Glass shoes" || forgeUpgrade == "glass Shoes" || forgeUpgrade == "Glass Shoes" && (armorupgrade == true || lightningshard == true)) {
@@ -207,6 +249,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                glassshoes = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded your Glass Shoes using an Armor Upgrade!" << endl;
@@ -215,6 +264,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                glassshoes = false;
             }
         }
         else if (forgeUpgrade == "mystic helmet" || forgeUpgrade == "Mystic helmet" || forgeUpgrade == "mystic Helmet" || forgeUpgrade == "Mystic Helmet" && (armorupgrade == true || lightningshard == true)) {
@@ -228,6 +284,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                mystichelmet = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded your Mystic Helmet using an Armor Upgrade!" << endl;
@@ -236,6 +299,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                mystichelmet = false;
             }
         }
         else if (forgeUpgrade == "dragonscale chestplate" || forgeUpgrade == "Dragonscale chestplate" || forgeUpgrade == "dragonscale Chestplate" || forgeUpgrade == "Dragonscale Chestplate" && (armorupgrade == true || lightningshard == true)) {
@@ -249,6 +319,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                dragonscalechestplate = false;
             }
             else if (forgechoice == "Armor Upgrade" || forgechoice == "Armor upgrade" || forgechoice == "armor Upgrade" || forgechoice == "armor upgrade") {
                 cout << "You have upgraded your Dragonscale Chestplate using an Armor Upgrade!" << endl;
@@ -257,6 +334,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                dragonscalechestplate = false;
             }
         }
         else if (forgeUpgrade == "flaming longsword" || forgeUpgrade == "Flaming Longsword" || forgeUpgrade == "flaming Longsword" || forgeUpgrade == "Flaming longsword" && (weaponupgrade == true || lightningshard == true)) {
@@ -270,6 +354,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                flaminglongsword = false;
             }
             else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
                 cout << "You have upgraded your Flaming Longsword using a Weapon Upgrade!" << endl;
@@ -278,6 +369,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                flaminglongsword = false;
             }
         }
         else if (forgeUpgrade == "excalibur" || forgeUpgrade == "Excalibur" && (weaponupgrade == true || lightningshard == true)) {
@@ -291,6 +389,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                Excalibur = false;
             }
             else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
                 cout << "You have upgraded your Excalibur using a Weapon Upgrade!" << endl;
@@ -299,6 +404,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                Excalibur = false;
             }
         }
         else if (forgeUpgrade == "Voidshroud Slicer" || forgeUpgrade == "Voidshroud slicer" || forgeUpgrade == "voidshroud Slicer" || forgeUpgrade == "voidshroud slicer" && (weaponupgrade == true || lightningshard == true)) {
@@ -312,6 +424,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                VoidshroudSlicer = false;
             }
             else if (forgechoice == "Weapon Upgrade" || forgechoice == "Weapon upgrade" || forgechoice == "weapon Upgrade" || forgechoice == "weapon upgrade") {
                 cout << "You have upgraded your Voidshroud Slicer using a Weapon Upgrade!" << endl;
@@ -320,6 +439,13 @@ void Player::forgerestarting() {
                 if (forgeanitemquest == true) {
                     questthreeprogress += 1;
                 }
+                if (mysteriousstrangerquest4 == true) {
+                    mysteriousstrangerquesttracker4 += 1;
+                    if (mysteriousstrangerquesttracker4 == 3) {
+                        mysteriousquest();
+                    }
+                }
+                VoidshroudSlicer = false;
             }
         }
         else if (forgeUpgrade == "Mantle" || forgeUpgrade == "mantle") {
@@ -363,7 +489,7 @@ void Player::forgerestarting() {
 }
 void Player::forgecrafting() {
     string craftingchoice = "";
-    int craftedsomething = 0;
+    int craftedsomething = 0, trackwhatcanbecrafted = 0;
     while (true) {
         cout << "You have these crafting materials currently." << endl;
         if (soulstone >= 1) {
@@ -371,7 +497,7 @@ void Player::forgecrafting() {
                 cout << "-" << soulstone << " Soulstone" << endl;
             }
             else {
-                cout << "-" << soulstone << " Soulstones" << endl;
+            cout << "-" << soulstone << " Soulstones" << endl;
             }
         }
         if (radiantgem >= 1) {
@@ -379,16 +505,27 @@ void Player::forgecrafting() {
                 cout << "-" << radiantgem << " Radiant Gem" << endl;
             }
             else {
-                cout << "-" << radiantgem << " Radiant Gems" << endl;
-            }
+            cout << "-" << radiantgem << " Radiant Gems" << endl;
+            } 
         }
         cout << endl << "You can currently craft ";
         if (soulstone >= 2 && radiantgem >= 4 && Goldloom >= 50 && healthtonicitem >= 1) {
-            cout << "the Regenerative Mantle." << endl;
+            cout << "the Regenerative Mantle";
+            trackwhatcanbecrafted += 1;
         }
-        else {
+        if (lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
+            if (trackwhatcanbecrafted == 1) {
+                cout << ", ";
+            }
+            cout << "any artifact";
+            trackwhatcanbecrafted += 1;
+        }
+        if (trackwhatcanbecrafted == 0) {
             cout << "nothing." << endl;
             break;
+        }
+        else {
+            cout << "." << endl;
         }
         cout << "What would you like to craft?" << endl;
         cin >> ws;
@@ -406,9 +543,11 @@ void Player::forgecrafting() {
                     Goldloom -= 50;
                     healthtonicitem -= 1;
                     regenerativemantle = true;
+                    craftedsomething++;
                     if (craftanitemquest == true) {
                         questtwoprogress += 1;
                     }
+                    ciphertracker = 5;
                 }
                 else {
                     cout << "You don't have the required materials to craft this yet." << endl;
@@ -422,16 +561,103 @@ void Player::forgecrafting() {
                 cout << "That wasnt yes or no." << endl;
             }
         }
-        if (craftedsomething >= 1) {
-            cin >> craftingchoice;
+        else if (craftingchoice == "Artifact" || craftingchoice == "artifact") {
+            string yesno = "";
+            cout << "Are you sure you want to craft a cursed artifact?" << endl;
+            cin >> ws;
+            getline(cin, yesno);
+            if (yesno == "Yes" || yesno == "yes") {
+                cout << "Would you like to craft the 1-Cursed Heart, 2-Enchanted Sachel, 3-Glowing Glasses, 4-Fiery Necklace or 5-Shiny Belt." << endl;
+                getline(cin, yesno);
+                if (yesno == "1" && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
+                    cout << "You crafted a Cursed Heart!" << endl;
+                    cursedheart = true;
+                    lostartifact -= 1;
+                    soulstone -= 1;
+                    radiantgem -= 1;
+                    Goldloom -= 25;
+                    if (craftanitemquest == true) {
+                        questtwoprogress += 1;
+                    }
+                    if (mysteriousstrangerquest2 == true) {
+						mysteriousquest();
+                    }
+                    craftedsomething++;
+                }
+                else if (yesno == "2" && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
+                    cout << "You crafted an Enchanted Sachel!" << endl;
+                    enchantedsachel = true;
+                    lostartifact -= 1;
+                    soulstone -= 1;
+                    radiantgem -= 1;
+                    Goldloom -= 25;
+                    if (craftanitemquest == true) {
+                        questtwoprogress += 1;
+                    }
+                    craftedsomething++;
+                }
+                else if (yesno == "3" && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
+                    cout << "You crafted some Glowing Glasses!" << endl;
+                    glowingglasses = true;
+                    lostartifact -= 1;
+                    soulstone -= 1;
+                    radiantgem -= 1;
+                    Goldloom -= 25;
+                    if (craftanitemquest == true) {
+                        questtwoprogress += 1;
+                    }
+                    craftedsomething++;
+                }
+                else if (yesno == "4" && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
+                    cout << "You crafted the Fiery Necklace!" << endl;
+                    fierynecklace = true;
+                    lostartifact -= 1;
+                    soulstone -= 1;
+                    radiantgem -= 1;
+                    Goldloom -= 25;
+                    if (craftanitemquest == true) {
+                        questtwoprogress += 1;
+                    }
+                    craftedsomething++;
+                }
+                else if (yesno == "5" && lostartifact > 0 && soulstone >= 1 && radiantgem >= 2 && Goldloom >= 25) {
+                    cout << "You crafted a Shiny Belt!" << endl;
+                    shinybelt = true;
+                    lostartifact -= 1;
+                    soulstone -= 1;
+                    radiantgem -= 1;
+                    Goldloom -= 25;
+                    if (craftanitemquest == true) {
+                        questtwoprogress += 1;
+                    }
+                    craftedsomething++;
+                }
+                else {
+                    cout << "You don't have the required materials to craft an artifact." << endl;
+                }
+            }
+            else if (yesno == "No" || yesno == "no") {
+                cout << "Come again later and i'll make it for you." << endl;
+                break;
+            }
+            else {
+                cout << "That wasnt yes or no." << endl;
+            }
+        }
+        if (craftedsomething == 1) {
+            craftedsomething -= 1;
             cout << "Would you like to craft anything else?" << endl;
+            cin >> craftingchoice;
             if (craftingchoice == "No" || craftingchoice == "no" || craftingchoice == "n" || craftingchoice == "N") {
                 break;
             }
         }
-        break;
+        else {
+            cout << "Come again! but craft something next time." << endl;
+        }
     }
 }
+
 void Player::setmaxhealth() {
     int charactermaxhealth = 0;
     if (level >= 500) {
