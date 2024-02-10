@@ -24,7 +24,7 @@ public:
 		}
 	}
 	int incrementvillage(int amount) {
-		return villagetracker++;
+		return villagetracker + amount;
 	}
 	int villagetracker = 0;
 	int trackvisits = 0;
@@ -142,6 +142,7 @@ public:
 	bool lightningGodarmor = false;
 	bool accuratesword = false;
 	bool shield = false;
+	bool fasttravel = false;
 	bool trickstermove = false;
 	bool soulweavermove = false;
 	bool warforgedmove = false;

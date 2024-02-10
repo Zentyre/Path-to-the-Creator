@@ -3333,6 +3333,8 @@ void Player::attack(Character* Target) {
             attack(Target);
             break;
         }
+    case 13:
+        village();
     case 182097:
         if (ciphertracker == 3) {
             cout << "You've unlocked a secret blueprint to the Regenerative Mantle. Find some more clues to find the ingredients..." << endl;

@@ -1108,7 +1108,12 @@ static void gameplay() {
 						Knight.storetracker += 1;
 						Knight.Goldloom += r() % 16 + 10;
 					}
-					Knight.incrementvillage(1);
+					if (Knight.fasttravel == true) {
+						Knight.incrementvillage(2);
+					}
+					else {
+						Knight.incrementvillage(1);
+					}
 					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == 6) {
 						Knight.stopremessaging = 1;
 						Knight.trickstermove = true;
@@ -2084,6 +2089,11 @@ static void gameplay() {
 					else if (item == 21 && Knight.goldloomMagnet == false) {
 						Knight.goldloomMagnet = true;
 						cout << "--Your shop now appears more frequently and you get more money! (Goldloom Magnet)--" << endl;
+						cout << endl;
+					}
+					else if (item == 22 && Knight.fasttravel == false) {
+						Knight.fasttravel = true;
+						cout << "--You have unlocked fast travel! You can now visit the village 2x faster." << endl;
 						cout << endl;
 					}
 					if (Knight.bossSpawned == true && Knight.mysteriousstrangerquest == true) {
