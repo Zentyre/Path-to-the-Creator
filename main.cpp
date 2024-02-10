@@ -14,9 +14,9 @@ Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int lev
 	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefence = 30, endlesslevel = levele, endlessmaxhealth;
 	xtracker = floor(xtracker / 10);
 	x = xtracker;
-	endlesshealth = endlesshealth + (15 * x);
-	endlessattack = endlessattack + (5 * x);
-	endlessdefence = endlessdefence + (4 * x);
+	endlesshealth = endlesshealth + (12 * x);
+	endlessattack = endlessattack + (4 * x);
+	endlessdefence = endlessdefence + (3 * x);
 	endlessmaxhealth = endlesshealth;
 	return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefence, endlesslevel, 1, endlessmaxhealth);
 }
@@ -66,7 +66,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 	}
 	enemylvl = level;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-		generateEndlessEnemy(baselevel, hp, atk, def, level, lives, playerclass);
+		generateEndlessEnemy(Knight.baselevel, Knight.health, Knight.attackPower, Knight.defence, Knight.level, Knight.lives, Knight.getclass());
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -178,7 +178,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 	}
 	enemylvl2 = level2;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-		generateEndlessEnemy(baselevel2, hp2, atk2, def2, level2, lives2, playerclass2);
+		generateEndlessEnemy(Knight.baselevel, Knight.health, Knight.attackPower, Knight.defence, Knight.level, Knight.lives, Knight.getclass());
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -290,7 +290,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 	}
 	enemylvl3 = level3;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-		generateEndlessEnemy(baselevel3, hp3, atk3, def3, level3, lives3, playerclass3);
+		generateEndlessEnemy(Knight.baselevel, Knight.health, Knight.attackPower, Knight.defence, Knight.level, Knight.lives, Knight.getclass());
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -402,7 +402,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 	}
 	enemylvl4 = level4;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-		generateEndlessEnemy(baselevel4, hp4, atk4, def4, level4, lives4, playerclass4);
+		generateEndlessEnemy(Knight.baselevel, Knight.health, Knight.attackPower, Knight.defence, Knight.level, Knight.lives, Knight.getclass());
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -514,7 +514,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 	}
 	enemylvl5 = level5;
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
-		generateEndlessEnemy(baselevel5, hp5, atk5, def5, level5, lives5, playerclass5);
+		generateEndlessEnemy(Knight.baselevel, Knight.health, Knight.attackPower, Knight.defence, Knight.level, Knight.lives, Knight.getclass());
 	}
 	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
@@ -611,110 +611,81 @@ static void gameplay() {
 		cout << endl;
 		cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought, 6- Trickster or 7- Random?" << endl;
 		cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
-		int playerclasschoice = 0, cinFailchoice = 0, classcurrency = 0;
-		cin >> playerclasschoice;
-		if (cin.fail()) {
-			cout << endl;
-			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "You typed a letter...I asked for a number. You lose privledge to choose your class now." << endl;
-			cinFailchoice = r() % 6 + 1;
-			if (cinFailchoice == 1) {
-				cout << "You chose Knight!" << endl;
-			}
-			else if (cinFailchoice == 2) {
-				Knight.playerclassexecutioner();
-				cout << "You chose Executioner!" << endl;
-			}
-			else if (cinFailchoice == 3) {
-				Knight.playerclasssoulweaver();
-				cout << "You chose Soulweaver!" << endl;
-			}
-			else if (cinFailchoice == 4) {
-				Knight.playerclasswarforged();
-				cout << "You chose Warforged Engineer!" << endl;
-			}
-			else if (cinFailchoice == 5) {
-				Knight.playerclassdreadnought();
-				cout << "You chose Dreadnought!" << endl;
-			}
-			else if (cinFailchoice == 6) {
-				Knight.playerclasstrickster();
-				cout << "You chose Trickster!" << endl;
-			}
-		}
-		else if (playerclasschoice == 1) {
+		int cinFailchoice = 0, classcurrency = 0, playerclasschoiceint = 0;
+		string playerclasschoice = "";
+		getline(cin, playerclasschoice);
+		if (playerclasschoice == "1") {
 			cout << "You chose Knight!" << endl;
 		}
-		else if (playerclasschoice == 2) {
+		else if (playerclasschoice == "2") {
 			Knight.playerclassexecutioner();
 			cout << "You chose Executioner!" << endl;
 		}
-		else if (playerclasschoice == 3) {
+		else if (playerclasschoice == "3") {
 			Knight.playerclasssoulweaver();
 			cout << "You chose Soulweaver!" << endl;
 		}
-		else if (playerclasschoice == 4) {
+		else if (playerclasschoice == "4") {
 			Knight.playerclasswarforged();
 			cout << "You chose Warforged Engineer!" << endl;
 		}
-		else if (playerclasschoice == 5) {
+		else if (playerclasschoice == "5") {
 			Knight.playerclassdreadnought();
 			cout << "You chose Dreadnought!" << endl;
 		}
-		else if (playerclasschoice == 6) {
+		else if (playerclasschoice == "6") {
 			Knight.playerclasstrickster();
 			cout << "You chose Trickster!" << endl;
 		}
-		else if (playerclasschoice == 7) {
-			playerclasschoice = r() % 6 + 1;
-			if (playerclasschoice == 1) {
+		else if (playerclasschoice == "7") {
+			playerclasschoiceint = r() % 6 + 1;
+			if (playerclasschoiceint == 1) {
 				cout << "You were given Knight." << endl;
 			}
-			else if (playerclasschoice == 2) {
+			else if (playerclasschoiceint == 2) {
 				Knight.playerclassexecutioner();
 				cout << "You were given Executioner." << endl;
 			}
-			else if (playerclasschoice == 3) {
+			else if (playerclasschoiceint == 3) {
 				Knight.playerclasssoulweaver();
 				cout << "You were given Soulweaver." << endl;
 			}
-			else if (playerclasschoice == 4) {
+			else if (playerclasschoiceint == 4) {
 				Knight.playerclasswarforged();
 				cout << "You were given Warforged Engineer." << endl;
 			}
-			else if (playerclasschoice == 5) {
+			else if (playerclasschoiceint == 5) {
 				Knight.playerclassdreadnought();
 				cout << "You were given Dreadnought." << endl;
 			}
-			else if (playerclasschoice == 6) {
+			else if (playerclasschoiceint == 6) {
 				Knight.playerclasstrickster();
 				cout << "You were given Trickster." << endl;
 			}
 		}
 		else {
 			cout << "You chose nothing so I will choose for you." << endl;
-			playerclasschoice = r() % 6 + 1;
-			if (playerclasschoice == 1) {
+			playerclasschoiceint = r() % 6 + 1;
+			if (playerclasschoiceint == 1) {
 				cout << "You were given Knight." << endl;
 			}
-			else if (playerclasschoice == 2) {
+			else if (playerclasschoiceint == 2) {
 				Knight.playerclassexecutioner();
 				cout << "You were given Executioner." << endl;
 			}
-			else if (playerclasschoice == 3) {
+			else if (playerclasschoiceint == 3) {
 				Knight.playerclasssoulweaver();
 				cout << "You were given Soulweaver." << endl;
 			}
-			else if (playerclasschoice == 4) {
+			else if (playerclasschoiceint == 4) {
 				Knight.playerclasswarforged();
 				cout << "You were given Warforged Engineer." << endl;
 			}
-			else if (playerclasschoice == 5) {
+			else if (playerclasschoiceint == 5) {
 				Knight.playerclassdreadnought();
 				cout << "You were given Dreadnought." << endl;
 			}
-			else if (playerclasschoice == 6) {
+			else if (playerclasschoiceint == 6) {
 				Knight.playerclasstrickster();
 				cout << "You were given Trickster." << endl;
 			}
@@ -1114,27 +1085,27 @@ static void gameplay() {
 					else {
 						Knight.incrementvillage(1);
 					}
-					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == 6) {
+					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == "6") {
 						Knight.stopremessaging = 1;
 						Knight.trickstermove = true;
 						cout << "You have unlocked your Trickster skill, Confuse!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == 4) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == "4") {
 						Knight.stopremessaging = 1;
 						Knight.warforgedmove = true;
-						cout << "You have unlocked your Warforged Engineer skill, Guardians Respite!" << endl;
+						cout << "You have unlocked your Warforged Engineer skill, Risky Detonation!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 90 && playerclasschoice == 3) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 90 && playerclasschoice == "3") {
 						Knight.stopremessaging = 1;
 						Knight.soulweavermove = true;
 						cout << "You have unlocked your Soulweaver skill, Fortuitous Gambit!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 80 && playerclasschoice == 1) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 80 && playerclasschoice == "1") {
 						Knight.stopremessaging = 1;
 						Knight.knightmove = true;
 						cout << "You have unlocked your special Knight skill, Titans Strike!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == 5) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == "5") {
 						Knight.stopremessaging = 1;
 						Knight.dreadnoughtmove = true;
 						cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
@@ -1286,34 +1257,6 @@ static void gameplay() {
 						cout << "--The shop now refreshes more frequently and you get more Goldloom! (Goldloom Magnet)--" << endl;
 						cout << endl;
 					}
-					else if ((item == 21 || item == 22) && Knight.endlessmode == true) {
-						Knight.cipherblueprint += 1;
-						cout << "--You got a cipher blueprint! Use the key to read it...--" << endl;
-						cout << endl;
-					}
-					else if ((item == 23 || item == 24) && Knight.endlessmode == true) {
-						Knight.cipherkey == true;
-						cout << "--You got a cipher key! Use it on blueprints to unlock new information...--" << endl;
-						cout << endl;
-					}
-					else if ((item == 25 || item == 26) && Knight.endlessmode == true && Knight.ciphertracker == 3) {
-						Knight.riddle == true;
-						cout << "--You acquired a special riddle! Use it from your backpack...--" << endl;
-						cout << endl;
-					}
-					else if ((item == 27 || item == 28) && Knight.endlessmode == true && Knight.ciphertracker == 4) {
-						Knight.soulstone += 1;
-						cout << "--You found a rate Soulstone!--" << endl;
-						cout << endl;
-					}
-					else if ((item == 29 || item == 30 || item == 31) && Knight.endlessmode == true && Knight.ciphertracker == 4) {
-						Knight.radiantgem += 1;
-						cout << "--You stumbled upon a Radiant Gem!--" << endl;
-						cout << endl;
-					}
-					else if (item == 32 || item == 33 || item == 33 || item == 33 || item == 33 && Knight.bossSpawned == true) {
-						Knight.lostartifact = +1;
-					}
 					if (Knight.bossSpawned == true) {
 						Knight.bossSpawned = false;
 					}
@@ -1371,7 +1314,7 @@ static void gameplay() {
 				cout << "-Class = Trickster-" << endl;
 			}
 			cout << "Would you like to try Again? (Y/N)" << endl;
-			Knight.delay(3);
+			Knight.delay(10);
 			string retry = "";
 			cin >> retry;
 			if (retry == "N" || retry == "n") {
@@ -1379,6 +1322,12 @@ static void gameplay() {
 			}
 			else if (retry == "Y" || retry == "y") {
 				cout << endl << endl;
+				Knight.maxhealth = 50;
+				Knight.health = 25;
+				Knight.attackPower = 4;
+				Knight.defence = 0;
+				Knight.level = 0;
+				Knight.lives = 1;
 			}
 			else {
 				cout << "Not a valid answer, I'm kicking you out." << endl;
@@ -1432,6 +1381,12 @@ static void gameplay() {
 			}
 			else if (playagain == "Y" || playagain == "y") {
 				cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+				Knight.maxhealth = 50;
+				Knight.health = 25;
+				Knight.attackPower = 4;
+				Knight.defence = 0;
+				Knight.level = 0;
+				Knight.lives = 1;
 			}
 			else {
 				cout << "Not a valid answer, goodbye." << endl;
@@ -1450,84 +1405,82 @@ static void gameplay() {
 		cout << endl;
 		cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought or 6- Trickster?" << endl;
 		cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
-		int playerclasschoice = 0, cinFailchoice = 0, classcurrency = 0;
-		cin >> playerclasschoice;
-		if (cin.fail()) {
-			cout << endl;
-			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "You typed a letter...I asked for a number. You lose privledge to choose your class now." << endl;
-			cinFailchoice = r() % 6 + 1;
-			if (cinFailchoice == 1) {
-				cout << "You chose Knight!" << endl;
-			}
-			else if (cinFailchoice == 2) {
-				Knight.playerclassexecutioner();
-				cout << "You chose Executioner!" << endl;
-			}
-			else if (cinFailchoice == 3) {
-				Knight.playerclasssoulweaver();
-				cout << "You chose Soulweaver!" << endl;
-			}
-			else if (cinFailchoice == 4) {
-				Knight.playerclasswarforged();
-				cout << "You chose Warforged Engineer!" << endl;
-			}
-			else if (cinFailchoice == 5) {
-				Knight.playerclassdreadnought();
-				cout << "You chose Dreadnought!" << endl;
-			}
-			else if (cinFailchoice == 6) {
-				Knight.playerclasstrickster();
-				cout << "You chose Trickster!" << endl;
-			}
-		}
-		else if (playerclasschoice == 1) {
+		int cinFailchoice = 0, classcurrency = 0, playerclasschoiceint = 0;
+		string playerclasschoice = "";
+		cin >> ws;
+		getline(cin, playerclasschoice);
+		if (playerclasschoice == "1") {
 			cout << "You chose Knight!" << endl;
 		}
-		else if (playerclasschoice == 2) {
+		else if (playerclasschoice == "2") {
 			Knight.playerclassexecutioner();
 			cout << "You chose Executioner!" << endl;
 		}
-		else if (playerclasschoice == 3) {
+		else if (playerclasschoice == "3") {
 			Knight.playerclasssoulweaver();
 			cout << "You chose Soulweaver!" << endl;
 		}
-		else if (playerclasschoice == 4) {
+		else if (playerclasschoice == "4") {
 			Knight.playerclasswarforged();
 			cout << "You chose Warforged Engineer!" << endl;
 		}
-		else if (playerclasschoice == 5) {
+		else if (playerclasschoice == "5") {
 			Knight.playerclassdreadnought();
 			cout << "You chose Dreadnought!" << endl;
 		}
-		else if (playerclasschoice == 6) {
+		else if (playerclasschoice == "6") {
 			Knight.playerclasstrickster();
 			cout << "You chose Trickster!" << endl;
 		}
-		else {
-			cout << "You chose nothing so I will choose for you." << endl;
-			playerclasschoice = r() % 6 + 1;
-			if (playerclasschoice == 1) {
+		else if (playerclasschoice == "7") {
+			playerclasschoiceint = r() % 6 + 1;
+			if (playerclasschoiceint == 1) {
 				cout << "You were given Knight." << endl;
 			}
-			else if (playerclasschoice == 2) {
+			else if (playerclasschoiceint == 2) {
 				Knight.playerclassexecutioner();
 				cout << "You were given Executioner." << endl;
 			}
-			else if (playerclasschoice == 3) {
+			else if (playerclasschoiceint == 3) {
 				Knight.playerclasssoulweaver();
 				cout << "You were given Soulweaver." << endl;
 			}
-			else if (playerclasschoice == 4) {
+			else if (playerclasschoiceint == 4) {
 				Knight.playerclasswarforged();
 				cout << "You were given Warforged Engineer." << endl;
 			}
-			else if (playerclasschoice == 5) {
+			else if (playerclasschoiceint == 5) {
 				Knight.playerclassdreadnought();
 				cout << "You were given Dreadnought." << endl;
 			}
-			else if (playerclasschoice == 6) {
+			else if (playerclasschoiceint == 6) {
+				Knight.playerclasstrickster();
+				cout << "You were given Trickster." << endl;
+			}
+		}
+		else {
+			cout << "You chose nothing so I will choose for you." << endl;
+			playerclasschoiceint = r() % 6 + 1;
+			if (playerclasschoiceint == 1) {
+				cout << "You were given Knight." << endl;
+			}
+			else if (playerclasschoiceint == 2) {
+				Knight.playerclassexecutioner();
+				cout << "You were given Executioner." << endl;
+			}
+			else if (playerclasschoiceint == 3) {
+				Knight.playerclasssoulweaver();
+				cout << "You were given Soulweaver." << endl;
+			}
+			else if (playerclasschoiceint == 4) {
+				Knight.playerclasswarforged();
+				cout << "You were given Warforged Engineer." << endl;
+			}
+			else if (playerclasschoiceint == 5) {
+				Knight.playerclassdreadnought();
+				cout << "You were given Dreadnought." << endl;
+			}
+			else if (playerclasschoiceint == 6) {
 				Knight.playerclasstrickster();
 				cout << "You were given Trickster." << endl;
 			}
@@ -1888,21 +1841,20 @@ static void gameplay() {
 						}
 					}
 					if (Knight.factionchoiceint == 1) {
-						Knight.attackPower += ceil(Knight.getattackPower() * .01);
-						Knight.defence += ceil(Knight.getdefence() * .01);
+						Knight.attackPower += ceil(Knight.getattackPower() * .005);
+						Knight.defence += ceil(Knight.getdefence() * .005);
 					}
 					else if (Knight.factionchoiceint == 2) {
-						Knight.attackPower += ceil(Knight.getattackPower() * .02);
+						Knight.attackPower += ceil(Knight.getattackPower() * .01);
 					}
 					else if (Knight.factionchoiceint == 3) {
-						Knight.maxhealth += ceil(Knight.getmaxhealth() * .01);
-						Knight.defence += ceil(Knight.getdefence() * .01);
+						Knight.maxhealth += ceil(Knight.getmaxhealth() * .005);
+						Knight.defence += ceil(Knight.getdefence() * .005);
 					}
 					else if (Knight.factionchoiceint == 4) {
-						Knight.attackPower += ceil(Knight.getattackPower() * .01);
-						Knight.maxhealth += ceil(Knight.getmaxhealth() * .01);
+						Knight.attackPower += ceil(Knight.getattackPower() * .005);
+						Knight.maxhealth += ceil(Knight.getmaxhealth() * .005);
 					}
-					Knight.setmaxhealth();
 					if (Knight.dragonmount == true) {
 						Knight.incrementbaselevel(4);
 					}
@@ -1924,23 +1876,23 @@ static void gameplay() {
 						Knight.storetracker += 1;
 						Knight.Goldloom += r() % 16 + 10;
 					}
-					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == 6) {
+					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == "6") {
 						Knight.trickstermove = true;
 						cout << "You have unlocked your Trickster skill, Confuse!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == 4) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == "4") {
 						Knight.warforgedmove = true;
-						cout << "You have unlocked your Warforged Engineer skill, Guardians Respite!" << endl;
+						cout << "You have unlocked your Warforged Engineer skill, Risky Detonation!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 90 && playerclasschoice == 3) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 90 && playerclasschoice == "3") {
 						Knight.soulweavermove = true;
 						cout << "You have unlocked your Soulweaver skill, Fortuitous Gambit!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 80 && playerclasschoice == 1) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 80 && playerclasschoice == "1") {
 						Knight.knightmove = true;
 						cout << "You have unlocked your special Knight skill, Titans Strike!" << endl;
 					}
-					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == 5) {
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == "5") {
 						Knight.dreadnoughtmove = true;
 						cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
 					}
@@ -2086,15 +2038,51 @@ static void gameplay() {
 						cout << "--You can now progress the fastest! (Dragon Mount)--" << endl;
 						cout << endl;
 					}
-					else if (item == 21 && Knight.goldloomMagnet == false) {
+					else if (item == 21 || item == 22) {
+						Knight.cipherblueprint += 1;
+						cout << "--You got a cipher blueprint! Use the key to read it...--" << endl;
+						cout << endl;
+					}
+					else if (item == 23 || item == 24 && Knight.cipherkey == false) {
+						Knight.cipherkey == true;
+						cout << "--You got a cipher key! Use it on blueprints to unlock new information...--" << endl;
+						cout << endl;
+					}
+					else if ((item == 25 || item == 26) && Knight.ciphertracker == 3) {
+						Knight.riddle == true;
+						cout << "--You acquired a special riddle! Use it from your backpack...--" << endl;
+						cout << endl;
+					}
+					else if ((item == 27 || item == 28) && Knight.ciphertracker == 4) {
+						Knight.soulstone += 1;
+						cout << "--You found a rate Soulstone!--" << endl;
+						cout << endl;
+					}
+					else if ((item == 29 || item == 30 || item == 31) && Knight.endlessmode == true && Knight.ciphertracker == 4) {
+						Knight.radiantgem += 1;
+						cout << "--You stumbled upon a Radiant Gem!--" << endl;
+						cout << endl;
+					}
+					else if (item == 32 || item == 33 || item == 34 || item == 35 || item == 36 && Knight.bossSpawned == true) {
+						Knight.lostartifact = +1;
+						cout << "--You found a Lost Artifact!.--" << endl;
+						cout << endl;
+					}
+					else if (item == 37 && Knight.goldloomMagnet == false) {
 						Knight.goldloomMagnet = true;
 						cout << "--Your shop now appears more frequently and you get more money! (Goldloom Magnet)--" << endl;
 						cout << endl;
 					}
-					else if (item == 22 && Knight.fasttravel == false) {
+					else if (item == 38 && Knight.fasttravel == false) {
 						Knight.fasttravel = true;
 						cout << "--You have unlocked fast travel! You can now visit the village 2x faster." << endl;
 						cout << endl;
+					}
+					if (Knight.killememiesquest = true) {
+						Knight.questoneprogress += 1;
+						if (Knight.questoneprogress >= 15) {
+							cout << "Your quest is ready to be turned in." << endl;
+						}
 					}
 					if (Knight.bossSpawned == true && Knight.mysteriousstrangerquest == true) {
 						Knight.mysteriousstrangerquesttracker += 1;
@@ -2146,6 +2134,7 @@ static void gameplay() {
 						else {
 							cout << "Since you can't type, the mysterious stranger impatiently left you." << endl;
 						}
+						Knight.setmaxhealth();
 					}
 				}
 			}
@@ -2198,7 +2187,7 @@ static void gameplay() {
 				cout << "-Class = Trickster-" << endl;
 			}
 			cout << "Would you like to try Again? (Y/N)" << endl;
-			Knight.delay(3);
+			Knight.delay(10);
 			string retry = "";
 			cin >> retry;
 			if (retry == "N" || retry == "n") {
@@ -2206,6 +2195,12 @@ static void gameplay() {
 			}
 			else if (retry == "Y" || retry == "y") {
 				cout << endl << endl;
+				Knight.maxhealth = 50;
+				Knight.health = 25;
+				Knight.attackPower = 4;
+				Knight.defence = 0;
+				Knight.level = 0;
+				Knight.lives = 1;
 			}
 			else {
 				cout << "Not a valid answer, I'm kicking you out." << endl;

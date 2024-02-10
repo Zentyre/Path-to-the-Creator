@@ -1143,7 +1143,7 @@ void Player::attack(Character* Target) {
     }
     else if (classtype == 4 && storymode == true) { //warforged engineer attack messages |health =40|attackPower=3|lives=1|
         if (warforgedmove == true) {
-            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Guardians Respite) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Risky Detonation) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
         }
         else if (baselevel >= 50) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
@@ -1160,7 +1160,7 @@ void Player::attack(Character* Target) {
     }
     else if (classtype == 5 && storymode == true) { //dreadnought attack messages |health =50|attackPower=1|lives=1|
         if (dreadnoughtmove == true) {
-            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Healing Remedy) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Fortress Fury) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
         }
         else if (baselevel >= 50) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
@@ -1214,7 +1214,7 @@ void Player::attack(Character* Target) {
     }
     else if (classtype == 2 && endlessmode == true) { //endless executioner attack messages |health =15|attackPower=7|lives=1|
         if (baselevel > 200) {
-            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Titans Strike) 7 (Store) 8 (Forgery) 9 (Stats) 10 (Inventory) 11 (Quests) 12 (Village) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Soul Surge) 7 (Store) 8 (Forgery) 9 (Stats) 10 (Inventory) 11 (Quests) 12 (Village) 0 (Special Skill Info)" << endl;
         }
         else if (executionermove == true) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Soul Surge) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
@@ -1234,7 +1234,7 @@ void Player::attack(Character* Target) {
     }
     else if (classtype == 3 && endlessmode == true) { //endless soulweaver attack messages |health =20|attackPower=3|lives=2|
         if (baselevel > 200) {
-            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Titans Strike) 7 (Store) 8 (Forgery) 9 (Stats) 10 (Inventory) 11 (Quests) 12 (Village) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Fortuitous Gambit) 7 (Store) 8 (Forgery) 9 (Stats) 10 (Inventory) 11 (Quests) 12 (Village) 0 (Special Skill Info)" << endl;
         }
         else if (soulweavermove == true) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Fortuitous Gambit) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
@@ -1254,10 +1254,10 @@ void Player::attack(Character* Target) {
     }
     else if (classtype == 4 && endlessmode == true) { //endless warforged engineer attack messages |health =40|attackPower=3|lives=1|
         if (baselevel > 200) {
-            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Titans Strike) 7 (Store) 8 (Forgery) 9 (Stats) 10 (Inventory) 11 (Quests) 12 (Village) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Risky Detonation) 7 (Store) 8 (Forgery) 9 (Stats) 10 (Inventory) 11 (Quests) 12 (Village) 0 (Special Skill Info)" << endl;
         }
         else if (warforgedmove == true) {
-            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Guardians Respite) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Risky Detonation) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
         }
         else if (baselevel >= 50) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
@@ -1274,10 +1274,10 @@ void Player::attack(Character* Target) {
     }
     else if (classtype == 5 && endlessmode == true) { //endless dreadnought attack messages |health =50|attackPower=1|lives=1|
         if (baselevel > 200) {
-            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Titans Strike) 7 (Store) 8 (Forgery) 9 (Stats) 10 (Inventory) 11 (Quests) 12 (Village) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Fortress Fury) 7 (Store) 8 (Forgery) 9 (Stats) 10 (Inventory) 11 (Quests) 12 (Village) 0 (Special Skill Info)" << endl;
         }
         else if (dreadnoughtmove == true) {
-            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Healing Remedy) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Fortress Fury) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
         }
         else if (baselevel >= 50) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
@@ -1294,7 +1294,7 @@ void Player::attack(Character* Target) {
     }
    else if (classtype == 6 && endlessmode == true) { //endless trickster attack messages |health =20|attackPower=5|lives=1|
         if (baselevel > 200) {
-            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Titans Strike) 7 (Store) 8 (Forgery) 9 (Stats) 10 (Inventory) 11 (Quests) 12 (Village) 0 (Special Skill Info)" << endl;
+            cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Confuse) 7 (Store) 8 (Forgery) 9 (Stats) 10 (Inventory) 11 (Quests) 12 (Village) 0 (Special Skill Info)" << endl;
         }
         else if (trickstermove == true) {
             cout << "Choose: 1 (" << 4 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 8 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " dmg) 2 (" << 2 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 5 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 3 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 11 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "dmg) 4 (" << 6 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 9 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " heal) 5 (" << 7 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << "-" << 12 + (((level >= 75) ? 30 : floor(level / 2.5))) + attackPower << " lifesteal) 6 (Confuse) 7 (Store) 8 (Forge) 9 (Stats) 10 (Inventory) 11 (Quests) 0 (Special Skill Info)" << endl;
@@ -1326,19 +1326,19 @@ void Player::attack(Character* Target) {
             break;
         }
         if (factionchoiceint == 1) {
-            cout << "You are a part of the Shadowborn Syndicate. You gain a 1% increase to attack and defence on kill. You deal more damage with the Voidshroud Slicer." << endl;
+            cout << "You are a part of the Shadowborn Syndicate. You gain a .5% increase to attack and defence on kill. You deal more damage with the Voidshroud Slicer." << endl;
             cout << "-----------------------------------------------" << endl;
         }
         else if (factionchoiceint == 2) {
-            cout << "You chose the Emberfall Covenant! You gain a 2% increase to attack on kill. You deal more damage with the Flaming Longsword." << endl;
+            cout << "You chose the Emberfall Covenant! You gain a 1% increase to attack on kill. You deal more damage with the Flaming Longsword." << endl;
             cout << "-----------------------------------------------" << endl;
         }
         else if (factionchoiceint == 3) {
-            cout << "You chose the Celestial Vanguard! You gain a 1% increase to defence and maxhealth on kill. You gain more defence from the Mystic Helmet." << endl;
+            cout << "You chose the Celestial Vanguard! You gain a .5% increase to defence and maxhealth on kill. You gain more defence from the Mystic Helmet." << endl;
             cout << "-----------------------------------------------" << endl;
         }
         else if (factionchoiceint == 4) {
-            cout << "You are a part of the Ironclad Dominion. You gain a 1% increase to attack and maxhealth on kill. You gain more defence from the Dragonscale Chestplate." << endl;
+            cout << "You are a part of the Ironclad Dominion. You gain a .5% increase to attack and maxhealth on kill. You gain more defence from the Dragonscale Chestplate." << endl;
             cout << "-----------------------------------------------" << endl;
         }
         if (classtype == 1) {
@@ -2335,14 +2335,16 @@ void Player::attack(Character* Target) {
             break;
         }
     case 7:
-        if (storetracker >= 5) {
+        if (storetracker >= 6) {
             cout << "Welcome to my store, you are welcome to browse my wares..." << endl;
-            cout << "Spelling does count, make sure to be precise in my shop. **NOTS** Only Forge Hammer, Invisibility Potion and Molotov can be bought more than once." << endl;
+            cout << "Spelling does count, make sure to be precise in my shop. **NOTES** Only Forge Hammer, Invisibility Potion and Molotov can be bought more than once." << endl;
             cout << "You currently have " << Goldloom << " Goldloom to spend." << endl << endl;
-            int shop1, shop2, shop3;
-            shop1 = r() % 5 + 1;
-            shop2 = r() % 5 + 6;
-            shop3 = r() % 5 + 11;
+            if (storesave == 0) {
+                shop1 = r() % 5 + 1;
+                shop2 = r() % 5 + 6;
+                shop3 = r() % 5 + 11;
+                storesave = 1;
+            }
             if (shop1 == 1) {
                 cout << "Armor Plating - 100 - A mysterious plating that enhances armor if combined with a forgehammer..." << endl << endl;
             }
@@ -2407,6 +2409,7 @@ void Player::attack(Character* Target) {
                     Goldloom -= 100;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 100) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
@@ -2420,6 +2423,7 @@ void Player::attack(Character* Target) {
                     Goldloom -= 100;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 100) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
@@ -2427,16 +2431,51 @@ void Player::attack(Character* Target) {
                 }
             }
             else if (purchasechoice == "Forge Hammer" || purchasechoice == "forge Hammer" || purchasechoice == "Forge hammer" || purchasechoice == "forge hammer" && shop1 == 3) {
-                if (Goldloom >= 50) {
-                    cout << "You bought a Forge Hammer!" << endl;
-                    forgehammer += 1;
-                    Goldloom -= 50;
-                    storetracker = 0;
-                    checkitems();
-                }
-                else if (Goldloom < 50) {
-                    cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
-                    storetracker -= 1;
+                while (true) {
+                    string yesno = "";
+                    int amountbought = 0;
+                    if (Goldloom >= 25 && amountbought == 1) {
+                        cout << "You bought a Forge Hammer!" << endl;
+                        forgehammer += 1;
+                        Goldloom -= 50;
+                        storetracker = 0;
+                        checkitems();
+                        amountbought += 1;
+                        storesave = 0;
+                    }
+                    else if (Goldloom >= 50 && amountbought == 0) {
+                        cout << "You bought a Forge Hammer!" << endl;
+                        forgehammer += 1;
+                        Goldloom -= 50;
+                        storetracker = 0;
+                        checkitems();
+                        amountbought += 1;
+                        storesave = 0;
+                    }
+                    else if (Goldloom < 50 && amountbought == 0) {
+                        cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
+                        storetracker -= 1;
+                        break;
+                    }
+                    else if (Goldloom < 25 && amountbought == 1) {
+                        cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
+                        storetracker -= 1;
+                        break;
+                    }
+                    if (amountbought == 1) {
+                        cout << "Would you like to buy another one for 25 Goldloom?" << endl;
+                        cin >> ws;
+                        getline(cin, yesno);
+                        std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+                        cout << "Would you like to buy another one for 125 Goldloom?" << endl;
+                        cin >> ws;
+                        getline(cin, yesno);
+                        std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+                        if (yesno == "no" || yesno == "n") {
+                            cout << "Your loss." << endl;
+                            break;
+                        }
+                    }
                 }
             }
             else if (purchasechoice == "Lightning Shard" || purchasechoice == "lightning Shard" || purchasechoice == "Lightning shard" || purchasechoice == "lightning shard" && shop1 == 4) {
@@ -2446,6 +2485,7 @@ void Player::attack(Character* Target) {
                     Goldloom -= 200;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 200) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
@@ -2459,6 +2499,7 @@ void Player::attack(Character* Target) {
                     Goldloom -= 400;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 400) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
@@ -2472,6 +2513,7 @@ void Player::attack(Character* Target) {
                     Goldloom -= 250;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 250) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
@@ -2485,6 +2527,7 @@ void Player::attack(Character* Target) {
                     Goldloom -= 500;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 500) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
@@ -2498,6 +2541,7 @@ void Player::attack(Character* Target) {
                     Goldloom -= 250;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 250) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
@@ -2505,16 +2549,47 @@ void Player::attack(Character* Target) {
                 }
             }
             else if (purchasechoice == "Molotov" || purchasechoice == "molotov" && shop2 == 9) {
-                if (Goldloom >= 250) {
-                    cout << "You bought a Molotov!" << endl;
-                    molotov += 1;
-                    Goldloom -= 250;
-                    storetracker = 0;
-                    checkitems();
-                }
-                else if (Goldloom < 250) {
-                    cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
-                    storetracker -= 1;
+                while (true) {
+                    int amountbought = 0;
+                    string yesno = "";
+                    if (Goldloom >= 125 && amountbought == 1) {
+                        cout << "You bought a Molotov!" << endl;
+                        molotov += 1;
+                        Goldloom -= 250;
+                        storetracker = 0;
+                        amountbought += 1;
+                        checkitems();
+                        storesave = 0;
+                    }
+                    else if (Goldloom >= 250 && amountbought == 0) {
+                        cout << "You bought a Molotov!" << endl;
+                        molotov += 1;
+                        Goldloom -= 250;
+                        storetracker = 0;
+                        amountbought += 1;
+                        checkitems();
+                        storesave = 0;
+                    }
+                    else if (Goldloom < 250 && amountbought == 0) {
+                        cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
+                        storetracker -= 1;
+                        break;
+                    }
+                    else if (Goldloom < 125 && amountbought == 1) {
+                        cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
+                        storetracker -= 1;
+                        break;
+                    }
+                    if (amountbought == 1) {
+                        cout << "Would you like to buy another one for 125 Goldloom?" << endl;
+                        cin >> ws;
+                        getline(cin, yesno);
+                        std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+                        if (yesno == "no" || yesno == "n") {
+                            cout << "Your loss." << endl;
+                            break;
+                        }
+                    }
                 }
             }
             else if (purchasechoice == "Dragonscale Chestplate" || purchasechoice == "Dragonscale chestplate" || purchasechoice == "dragonscale chestplate" || purchasechoice == "dragonscale Chestplate" && shop2 == 10) {
@@ -2524,6 +2599,7 @@ void Player::attack(Character* Target) {
                     Goldloom -= 250;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 250) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
@@ -2537,6 +2613,7 @@ void Player::attack(Character* Target) {
                     Goldloom -= 300;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 300) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
@@ -2550,6 +2627,7 @@ void Player::attack(Character* Target) {
                     Goldloom -= 150;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 150) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
@@ -2563,6 +2641,7 @@ void Player::attack(Character* Target) {
                     Goldloom -= 250;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 250) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
@@ -2576,19 +2655,21 @@ void Player::attack(Character* Target) {
                     Goldloom -= 250;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 250) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Voidshroud Slicer" || purchasechoice == "voidshroud Slicer" || purchasechoice == "Voidshroud slicer" || purchasechoice == "voidshroud slicer" && shop3 == 14) {
+            else if (purchasechoice == "Voidshroud Slicer" || purchasechoice == "voidshroud Slicer" || purchasechoice == "Voidshroud slicer" || purchasechoice == "voidshroud slicer" && shop3 == 15) {
                 if (Goldloom >= 300) {
                     cout << "You bought a Voidshroud Slicer!" << endl;
                     VoidshroudSlicer = true;
                     Goldloom -= 300;
                     storetracker = 0;
                     checkitems();
+                    storesave = 0;
                 }
                 else if (Goldloom < 300) {
                     cout << "You are too broke for this item and have lost access to the shop for this round." << endl;
@@ -2755,21 +2836,8 @@ void Player::attack(Character* Target) {
             }
             cout << "-----------------------------------------------" << endl;
             forgerestarting();
-            if (failedforge = 1) {
-                failedforge = 0;
-                attack(Target);
-                break;
-            }
-            cout << "Would you like to upgrade something else?" << endl;
-            cin >> forgerestart;
-            if (forgerestart == "Yes" || forgerestart == "yes" || forgerestart == "y" || forgerestart == "Y") {
-                forgerestarting();
-            }
-            else if (forgerestart == "No" || forgerestart == "no" || forgerestart == "n" || forgerestart == "N") {
-                attack(Target);
-                break;
-            }
         }
+        attack(Target);
         break;
     case 9:
         cout << " --Your Stats--" << endl;
@@ -2803,19 +2871,19 @@ void Player::attack(Character* Target) {
         }
         cout << "--Quest--" << endl;
         if (questpicker == 1) {
-            cout << "You have killed " << questoneprogress << "enemies out of 15." << endl;
+            cout << "You have killed " << questoneprogress << " enemies out of 15." << endl;
         }
         else if (questpicker == 2) {
-            cout << "You have crafted " << questtwoprogress << "out of 1." << endl;
+            cout << "You have crafted " << questtwoprogress << " out of 1." << endl;
         }
         else if (questpicker == 3) {
-            cout << "You have forged " << questthreeprogress << "out of 1." << endl;
+            cout << "You have forged " << questthreeprogress << " out of 1." << endl;
         }
         else if (questpicker == 4) {
-            cout << "You have used " << questfourprogress << "out of 2." << endl;
+            cout << "You have used " << questfourprogress << " out of 2." << endl;
         }
         else if (questpicker == 5) {
-            cout << "You have killed " << questfiveprogress << "out of 1." << endl;
+            cout << "You have killed " << questfiveprogress << " out of 1." << endl;
         }
         cout << endl << endl;
         cout << " --" << Target->name << " Stats--" << endl;
@@ -3340,6 +3408,7 @@ void Player::attack(Character* Target) {
         else {
             cout << "Nice try bud, I knew you would try that." << endl;
         }
+        break;
     default:
         cout << "-------------------------" << endl;
         cout << "Invalid Move, try again!" << endl;

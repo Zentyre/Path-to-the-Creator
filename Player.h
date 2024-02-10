@@ -115,6 +115,10 @@ public:
 	int questrandomizer2 = 0;
 	int food = 0;
 	int wood = 0;
+	int shop1 = 0;
+	int shop2 = 0;
+	int shop3 = 0;
+	int storesave = 0;
 	int bucketowater = 0;
 	bool visitedbefore = false;
 	bool riddle = false;
