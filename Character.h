@@ -6,7 +6,7 @@
 #include <cmath>
 #include <random>
 using namespace std;
-random_device r;
+static random_device r;
 class Character {
 public:
 	Character();

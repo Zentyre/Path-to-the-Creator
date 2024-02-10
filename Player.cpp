@@ -11,7 +11,6 @@ Player::Player(string n, int maxh, int hp, int atk, int def, int baselvl, int li
     baselevel = baselvl;
     lives = live;
 }
-random_device outside;
 void Player::village() {
     if (baselevel > 200) {
         if (visitedbefore == false) {
@@ -33,21 +32,21 @@ void Player::village() {
 void Player::mysteriousquest() {
     int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
     cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
-    randomgoldloom = outside() % 50 + 1;
+    randomgoldloom = r() % 50 + 1;
     Goldloom += randomgoldloom;
     cout << randomgoldloom << " Goldloom, ";
-    randomsoulstone = outside() % 3 + 1;
+    randomsoulstone = r() % 3 + 1;
     soulstone += randomsoulstone;
     cout << randomsoulstone << "Soulstone, ";
-    randomlostartifact = outside() % 10 + 1;
+    randomlostartifact = r() % 10 + 1;
     if (randomlostartifact == 1) {
-        randomgem = outside() % 5 + 2;
+        randomgem = r() % 5 + 2;
         radiantgem += randomgem;
         cout << randomgem << "Radiant Gems, ";
         cout << "1 Lost Artifact." << endl;
     }
     else {
-        randomgem = outside() % 5 + 2;
+        randomgem = r() % 5 + 2;
         radiantgem += randomgem;
         cout << randomgem << "Radiant Gems.";
     }
@@ -1088,7 +1087,6 @@ void Player::checkitems() {
 }
 void Player::attack(Character* Target) {
     setmaxhealth();
-    random_device r;
     int playerInput, x, h;
     string purchasechoice = "", yesnobackpack = "", yesnopurchase = "", forgerestart = "", forgeOption = "";
     int accuracy = 0;
