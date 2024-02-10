@@ -2337,8 +2337,8 @@ void Player::attack(Character* Target) {
     case 7:
         if (storetracker >= 6) {
             cout << "Welcome to my store, you are welcome to browse my wares..." << endl;
-            cout << "Spelling does count, make sure to be precise in my shop. **NOTES** Only Forge Hammer, Invisibility Potion and Molotov can be bought more than once." << endl;
-            cout << "You currently have " << Goldloom << " Goldloom to spend." << endl << endl;
+            cout << "Spelling does count, make sure to be precise in my shop. **NOTES** Only Forge Hammer and Molotov can be bought more than once at a time. Don't buy something you already have." << endl;
+            cout << "You currently have " << Goldloom << " Goldloom to spend. Spend it wisely..." << endl << endl;
             if (storesave == 0) {
                 shop1 = r() % 5 + 1;
                 shop2 = r() % 5 + 6;
@@ -2737,7 +2737,7 @@ void Player::attack(Character* Target) {
                     cout << "-Narso's Armor (+20 defence)-" << endl;
                 }
                 if (vladimirsArmor == true) {
-                    cout << "-Vladirmir's Armor (+20 defence)-" << endl;
+                    cout << "-Vladimir's Armor (+20 defence)-" << endl;
                 }
                 if (lockhartsArmor == true) {
                     cout << "-Lockhart's Armor (+20 defence)-" << endl;
@@ -2811,7 +2811,7 @@ void Player::attack(Character* Target) {
                 cout << "-Narso's Armor (+20 defence)-" << endl;
             }
             if (vladimirsArmor == true) {
-                cout << "-Vladirmir's Armor (+20 defence)-" << endl;
+                cout << "-Vladimir's Armor (+20 defence)-" << endl;
             }
             if (lockhartsArmor == true) {
                 cout << "-Lockhart's Armor (+20 defence)-" << endl;

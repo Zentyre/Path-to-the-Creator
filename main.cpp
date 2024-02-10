@@ -721,7 +721,7 @@ static void gameplay() {
 			cin >> doesnothing;
 			cout << "I dont even care, whatever you just entered did absolutely nothing. You're stuck with the name you gave me before now." << endl;
 		}
-		cout << "Where would you like to journey" << Knight.getname() << " ?" << endl;
+		cout << "Where would you like to journey " << Knight.getname() << " ?" << endl;
 		cout << "-1-Mushroom Kingdom-" << endl;
 		cout << "-2-Gooey Glade-" << endl;
 		cout << "-3-Croc Isle-" << endl;
@@ -1516,7 +1516,7 @@ static void gameplay() {
 			cin >> doesnothing;
 			cout << "I dont even care, whatever you just entered did absolutely nothing. You're stuck with the name you gave me before now." << endl;
 		}
-		cout << "Where would you like to journey" << Knight.getname() << " ?" << endl;
+		cout << "Where would you like to journey " << Knight.getname() << " ?" << endl;
 		cout << "-1-Mushroom Kingdom-" << endl;
 		cout << "-2-Gooey Glade-" << endl;
 		cout << "-3-Croc Isle-" << endl;

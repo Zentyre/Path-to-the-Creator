@@ -141,7 +141,7 @@ public:
 	bool boots = false;
 	bool narsosArmor = false;
 	bool lockhartsArmor = false;
-	bool vladimirsArmor = false;
+	bool vladimirsArmor = true;
 	bool upgradedgodarmor = false;
 	bool lightningGodarmor = false;
 	bool accuratesword = false;
@@ -157,7 +157,7 @@ public:
 	bool defenceupgrade = false;
 	bool levelupgrade = false;
 	bool attackupgrade = false;
-	bool armorupgrade = false;
+	bool armorupgrade = true;
 	bool weaponupgrade = false;
 	bool flaminglongsword = false;
 	bool VoidshroudSlicer = false;
