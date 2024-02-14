@@ -7,7 +7,7 @@ Enemy::Enemy(string n2, int hp2, int atk2, int def2, int live2, int lvl2, int ma
     lives = live2;
     level = lvl2;
     maxhealth = maxh2;
-    defence = def2;
+    defense = def2;
 }
 int critchance, d, accuracy, attackself;
 void Enemy::attack(Character* Target) {

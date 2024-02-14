@@ -12,12 +12,12 @@ public:
 	Character();
 	string factionchoice = "";
 	string name = "";
-	string enemyDefenceReduction = "";
+	string enemydefenseReduction = "";
 	string getname();
 	int level;
 	int health;
 	int attackPower;
-	int defence;
+	int defense;
 	int maxhealth;
 	int baselevel;
 	int kills;
@@ -31,7 +31,7 @@ public:
 	int getbaselevel();
 	int getlives();
 	int gethealth();
-	int getdefence();
+	int getdefense();
 	int getattackPower();
 	int getlevel();
 	int incrementbaselevel(int amount);

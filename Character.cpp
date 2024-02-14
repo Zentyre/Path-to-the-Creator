@@ -10,7 +10,7 @@ Character::Character() {
 	maxhealth = 50;
 	kills = 0;
 	level = 0;
-	defence = 0;
+	defense = 0;
 	baselevel = 0;
 }
 int Character::getclass() {
@@ -22,8 +22,8 @@ int Character::getbaselevel() {
 int Character::getattackPower() {
 	return attackPower;
 }
-int Character::getdefence() {
-	return defence;
+int Character::getdefense() {
+	return defense;
 }
 int Character::gethealth() {
 	return health;
@@ -80,7 +80,7 @@ void Character::itemusemolotov(Character* Target) {
 	molotov -= 1;
 }
 void Character::takeDmg(int dmg) {
-	dmg = ceil(dmg - defence);
+	dmg = ceil(dmg - defense);
 	if (dmg < 0) {
 		dmg = 0;
 	}
