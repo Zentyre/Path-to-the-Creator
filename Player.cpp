@@ -3600,6 +3600,8 @@ void Player::village() {
             cout << "The villagers are still happy with your work and have no problems. Check again later." << endl;
         }
         else {
+            visitedbefore = true;
+            cout << "Welcome to the village! I see this is your first visit. Here you take care of this village, defend them from attackers and help them repair buildings and you'll be rewarded." << endl;
             isplayingvillage = true;
      		string yesno = "";
      		if (villagerandomevent == 0) {
@@ -3609,39 +3611,51 @@ void Player::village() {
      			int randommessage;
      			randommessage = r() % 3;
      			if (randommessage == 0) {
+                    Enemy::saveOldEnemy;
      				cout << "Archers are approaching, stop them from getting too close." << endl;
-     				Enemy("Archer", floor(health * .85), ceil(attackPower * .85), floor(defense * .85), ceil(lives/2), level * .85, floor(maxhealth * .85));
-     				Player::attack;
-     			}
+                    newenemyname = "Archer";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
      			else if (randommessage == 1) {
+                    Enemy::saveOldEnemy;
      				cout << "The Ogres seem angry. Stop them from expressing it on the villagers!" << endl;
-     				Enemy("Ogre", floor(health * .85), ceil(attackPower * .85), floor(defense * .85), ceil(lives/2), level * .85, floor(maxhealth * .85));
-     				Player::attack;
-     			}
+     			    newenemyname = "Ogre";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
      			else {
+                    Enemy::saveOldEnemy;
      				cout << "Trolls are invading! Stop them from their evil crimes." << endl;
-     				Enemy("Troll", floor(health * .85), ceil(attackPower * .85), floor(defense * .85), ceil(lives/2), level * .85, floor(maxhealth * .85));
-     				Player::attack;
-     			}
+     			    newenemyname = "Troll";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
      		}
      		else if (villagerandomevent == 2) {
      			int randommessage;
      			randommessage = r() % 3;
      			if (randommessage == 0) {
+                    Enemy::saveOldEnemy;
      				cout << "Bandits are trying to steal from the villagers, stop them!" << endl;
-     				Enemy("Bandit", floor(health * .85), ceil(attackPower * .85), floor(defense * .85), ceil(lives/2), level * .85, floor(maxhealth * .85));
-     				Player::attack;
-     			}
+                    newenemyname = "Bandit";
+                    updateEnemyStats;
+                    villageAttackActive = true;			
+                }
      			else if (randommessage == 1) {
+                    Enemy::saveOldEnemy;
      				cout << "Goblins are coming to steal all the villagers valuables, put an end to them!" << endl;
-     				Enemy("Goblin", floor(health * .85), ceil(attackPower * .85), floor(defense * .85), ceil(lives/2), level * .85, floor(maxhealth * .85));
-     				Player::attack;
-     			}
+     			    newenemyname = "Goblin";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
      			else {
+                    Enemy::saveOldEnemy;
      				cout << "A bunch of thugs seem to want to cause trouble, make them change their mind." << endl;
-     				Enemy("Thug", floor(health * .85), ceil(attackPower * .85), floor(defense * .85), ceil(lives/2), level * .85, floor(maxhealth * .85));
-     				Player::attack;
-     			}
+     			    newenemyname = "Thug";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
      		}
      		else if (villagerandomevent == 3) {
      			int randommessage;
@@ -3653,7 +3667,7 @@ void Player::village() {
      				cin >> ws;
      				getline(cin, yesno);
      				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y" && wood >= 2) {
+     				if (yesno == "yes" || yesno == "y") {
      					wood -= 2;
      					cout << "You have repaired the villages well! You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
      					soulstone += 1;
@@ -3680,7 +3694,7 @@ void Player::village() {
      				cin >> ws;
      				getline(cin, yesno);
      				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y" && bucketowater >= 1) {
+     				if (yesno == "yes" || yesno == "y") {
      					wood -= 2;
      					cout << "You have put out the fire! You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
      					soulstone += 1;
@@ -3699,7 +3713,7 @@ void Player::village() {
      				cin >> ws;
      				getline(cin, yesno);
      				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if ((yesno == "yes" || yesno == "y") && wood >= 5) {
+     				if ((yesno == "yes" || yesno == "y")&& wood > 5) {
      					wood -= 2;
      					cout << "You have repaired the house! You got 1 Soulstone, 3 Radiant Gems and 1 Food." << endl;
      					soulstone += 1;
@@ -3725,7 +3739,7 @@ void Player::village() {
      				cin >> ws;
      				getline(cin, yesno);
      				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y" && medicine >= 1) {
+     				if (yesno == "yes" || yesno == "y") {
      					wood -= 2;
      					cout << "You give the villager the medicine and he starts to feel better. You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
      					soulstone += 1;
@@ -3744,7 +3758,7 @@ void Player::village() {
      				cin >> ws;
      				getline(cin, yesno);
      				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if ((yesno == "yes" || yesno == "y") && wood >= 3 && food >= 2) {
+     				if (yesno == "yes" || yesno == "y") {
      					wood -= 2;
      					cout << "You have helped this poor villager! You got 2 Soulstone, 3 Radiant Gems and 1 Lost Artifact." << endl;
      					soulstone += 2;
@@ -3763,7 +3777,7 @@ void Player::village() {
      				cin >> ws;
      				getline(cin, yesno);
      				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if ((yesno == "yes" || yesno == "y") && food >= 3) {
+     				if (yesno == "yes" || yesno == "y") {
      					wood -= 2;
      					cout << "You have given the villager food! You got 1 Soulstone and 2 Radiant Gems." << endl;
      					soulstone += 1;
@@ -3778,6 +3792,7 @@ void Player::village() {
      		else {
      			cout << "Your return is welcomed with open arms, but there is nothing wrong." << endl;
      		}
+
         }
     }
     else {
