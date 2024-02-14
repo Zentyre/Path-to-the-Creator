@@ -2099,7 +2099,7 @@ static void gameplay() {
 						cout << "--You have unlocked fast travel! You can now visit the village 2x faster." << endl;
 						cout << endl;
 					}
-					if (Knight.killememiesquest = true) {
+					if (Knight.killememiesquest == true) {
 						Knight.questoneprogress += 1;
 						if (Knight.questoneprogress >= 15) {
 							cout << "Your quest is ready to be turned in." << endl;
