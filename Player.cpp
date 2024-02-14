@@ -89,7 +89,7 @@ void Player::village() {
      					food += 1;
      					villagerandomevent = 0;
      				}
-     				else if (yesno == "no") {
+     				else if (yesno =="no" || yesno == "n") {
      					cout << "Come back when you have enough wood to save the village." << endl;
      				}
      			}
@@ -116,7 +116,7 @@ void Player::village() {
      					food += 1;
      					villagerandomevent = 0;
      				}
-     				else if (yesno == "no") {
+     				else if (yesno =="no" || yesno == "n") {
      					cout << "Come back when you have water to save the village." << endl;
      				}
      			}
@@ -135,7 +135,7 @@ void Player::village() {
      					food += 1;
      					villagerandomevent = 0;
      				}
-     				else if (yesno == "no") {
+     				else if (yesno =="no" || yesno == "n") {
      					cout << "Come back when you have enough wood to save the village." << endl;
      				}
      				else {
@@ -161,7 +161,7 @@ void Player::village() {
      					food += 1;
      					villagerandomevent = 0;
      				}
-     				else if (yesno == "no") {
+     				else if (yesno =="no" || yesno == "n") {
      					cout << "Come back when you have medicine to save the villager." << endl;
      				}
      			}
@@ -180,7 +180,7 @@ void Player::village() {
      					lostartifact++;
      					villagerandomevent = 0;
      				}
-     				else if (yesno == "no") {
+     				else if (yesno =="no" || yesno == "n") {
      					cout << "Come back when you have wood and food to save the villager." << endl;
      				}
      			}
@@ -198,7 +198,7 @@ void Player::village() {
      					radiantgem += 2;
      					villagerandomevent = 0;
      				}
-     				else if (yesno == "no") {
+     				else if (yesno =="no" || yesno == "n") {
      					cout << "Come back when you have food to save the villager." << endl;
      				}
      			}
@@ -286,7 +286,7 @@ void Player::village() {
      					food += 1;
      					villagerandomevent = 0;
      				}
-     				else if (yesno == "no") {
+     				else if (yesno =="no" || yesno == "n") {
      					cout << "Come back when you have enough wood to save the village." << endl;
      				}
      			}
@@ -313,7 +313,7 @@ void Player::village() {
      					food += 1;
      					villagerandomevent = 0;
      				}
-     				else if (yesno == "no") {
+     				else if (yesno =="no" || yesno == "n") {
      					cout << "Come back when you have water to save the village." << endl;
      				}
      			}
@@ -332,7 +332,7 @@ void Player::village() {
      					food += 1;
      					villagerandomevent = 0;
      				}
-     				else if (yesno == "no") {
+     				else if (yesno =="no" || yesno == "n") {
      					cout << "Come back when you have enough wood to save the village." << endl;
      				}
      				else {
@@ -358,7 +358,7 @@ void Player::village() {
      					food += 1;
      					villagerandomevent = 0;
      				}
-     				else if (yesno == "no") {
+     				else if (yesno =="no" || yesno == "n") {
      					cout << "Come back when you have medicine to save the villager." << endl;
      				}
      			}
@@ -377,7 +377,7 @@ void Player::village() {
      					lostartifact++;
      					villagerandomevent = 0;
      				}
-     				else if (yesno == "no") {
+     				else if (yesno =="no" || yesno == "n") {
      					cout << "Come back when you have wood and food to save the villager." << endl;
      				}
      			}
@@ -395,7 +395,7 @@ void Player::village() {
      					radiantgem += 2;
      					villagerandomevent = 0;
      				}
-     				else if (yesno == "no") {
+     				else if (yesno =="no" || yesno == "n") {
      					cout << "Come back when you have food to save the villager." << endl;
      				}
      			}
@@ -882,7 +882,7 @@ void Player::forgerestarting() {
                         questtwoprogress += 1;
                     }
             }
-            else if (yesno == "no") {
+            else if (yesno =="no" || yesno == "n") {
                 cout << "Come again later and ill make it for you." << endl;
                 break;
             }
@@ -970,7 +970,7 @@ void Player::forgecrafting() {
                     cout << "You don't have the required materials to craft this yet." << endl;
                 }
             }
-            else if (yesno == "no") {
+            else if (yesno =="no" || yesno == "n") {
                 cout << "Come again later and ill make it for you." << endl;
                 break;
             }
@@ -1054,7 +1054,7 @@ void Player::forgecrafting() {
                     cout << "You don't have the required materials to craft an artifact." << endl;
                 }
             }
-            else if (yesno == "no" || yesno == "n") {
+            else if (yesno =="no" || yesno == "n") {
                 cout << "Come again later and i'll make it for you." << endl;
                 break;
             }
@@ -2852,7 +2852,7 @@ void Player::attack(Character* Target) {
                         cin >> ws;
                         getline(cin, yesno);
                         std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-                        if (yesno == "no" || yesno == "n") {
+                        if (yesno =="no" || yesno == "n") {
                             cout << "Your loss." << endl;
                             break;
                         }
@@ -2966,7 +2966,7 @@ void Player::attack(Character* Target) {
                         cin >> ws;
                         getline(cin, yesno);
                         std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-                        if (yesno == "no" || yesno == "n") {
+                        if (yesno =="no" || yesno == "n") {
                             cout << "Your loss." << endl;
                             break;
                         }
@@ -3469,7 +3469,8 @@ void Player::attack(Character* Target) {
         cout << "Are there any items you would like to use? Y?N" << endl;
         cin >> ws;
         getline(cin, yesnobackpack);
-        if (yesnobackpack == "Yes" || yesnobackpack == "yes" || yesnobackpack == "y" || yesnobackpack == "Y") {
+        std::transform(yesnobackpack.begin(), yesnobackpack.end(), yesnobackpack.begin(), ::tolower);
+        if (yesnobackpack == "yes" || yesnobackpack == "y") {
             cout << "Which item would you like to use?" << endl << endl;
             if (healthtonicitem >= 1) {
                 cout << "-Health Tonic-" << endl;
@@ -3483,17 +3484,21 @@ void Player::attack(Character* Target) {
             if (cipherkey == true && endlessmode == true) {
                 cout << "-Cipher Key-" << endl;
             }
+            if (riddle == true && endlessmode == true) {
+                cout << "-Riddle-" << endl;
+            }
             string itemuse = "";
             cin >> ws;
             getline(cin, itemuse);
-            if ((itemuse == "Health Tonic" || itemuse == "Health tonic" || itemuse == "health tonic") && healthtonicitem >= 1) {
+            std::transform(itemuse.begin(), itemuse.end(), itemuse.begin(), ::tolower);
+            if (itemuse == "health tonic" && healthtonicitem >= 1) {
                 cout << "You used a Health Tonic!" << endl;
                 itemusehealthtonic();
                 if (usetwoitemsquest == true) {
                     questfiveprogress += 1;
                 }
             }
-            else if ((itemuse == "Invisibility Potion" || itemuse == "Invisibility potion" || itemuse == "invisibility potion") && invisibilitypotion >= 1) {
+            else if (itemuse == "invisibility potion" && invisibilitypotion >= 1) {
                 cout << "You used an Invisibility Potion!" << endl;
                 usinginvispotion = true;
                 itemuseinvispotion(Target); //test to see if works
@@ -3501,7 +3506,7 @@ void Player::attack(Character* Target) {
                     questfiveprogress += 1;
                 }
             }
-            else if (itemuse == "Molotov" || itemuse == "molotov" && molotov >= 1) {
+            else if (itemuse == "molotov" && molotov >= 1) {
                 cout << "------------------------------------------------" << endl;
                 cout << "You used a Molotov!" << endl;
                 itemusemolotov(Target);
@@ -3509,7 +3514,7 @@ void Player::attack(Character* Target) {
                     questfiveprogress += 1;
                 }
             }
-            else if ((itemuse == "Cipher Key" || itemuse == "Cipher key" || itemuse == "cipher key" || itemuse == "cipher Key") && cipherkey == true && endlessmode == true) {
+            else if (itemuse == "cipher key" && cipherkey == true && endlessmode == true) {
                 cout << "------------------------------------------------" << endl;
                 if (cipherblueprint >= 1) {
                     if (ciphertracker == 0) {
@@ -3546,7 +3551,7 @@ void Player::attack(Character* Target) {
                 attack(Target);
                 break;
             }
-            else if ((itemuse == "riddle" || itemuse == "Riddle") && endlessmode == true && riddle == true) {
+            else if (itemuse == "riddle" && endlessmode == true && riddle == true) {
                 string riddleanswer = "";
                 cout << "In the heart of shadows, where secrets are born" << endl << "a creature of riddles, with wisdom adorned." << endl << "Its tongue is a puzzle, its voice a maze" << endl << "Speak its name, unlock the hidden ways." << endl;
                 cin >> ws;
@@ -3567,7 +3572,7 @@ void Player::attack(Character* Target) {
                 }
             }
         }
-        else if (yesnobackpack == "No" || yesnobackpack == "no" || yesnobackpack == "n" || yesnobackpack == "N") {
+        else if (yesnobackpack == "no" || yesnobackpack == "n") {
             cout << "Then we shall move on." << endl << endl;
         }
         else {
