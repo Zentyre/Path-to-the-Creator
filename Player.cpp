@@ -2774,16 +2774,26 @@ void Player::attack(Character* Target) {
             cout << "Would you like to buy anything this visit?" << endl;
             cin >> ws;
             getline(cin, yesnopurchase);
-            if (yesnopurchase == "n" || yesnopurchase == "N" || yesnopurchase == "no" || yesnopurchase == "No") {
+            std::transform(yesnopurchase.begin(), yesnopurchase.end(), yesnopurchase.begin(), ::tolower);
+            if (yesnopurchase == "n" || yesnopurchase == "no") {
                 cout << "Maybe next time." << endl << endl;
+                attack(Target);
+                break;
+            }
+            else if (yesnopurchase == "yes" || yesnopurchase == "y") {
+                cout << "Great!" << endl;
+            }
+            else {
+                cout << "Not a valid answer." << endl;
                 attack(Target);
                 break;
             }
             cout << "What would you like to buy this visit?" << endl << endl;
             cin >> ws;
             getline(cin, purchasechoice);
+            std::transform(purchasechoice.begin(), purchasechoice.end(), purchasechoice.begin(), ::tolower);
             cout << endl;
-            if (purchasechoice == "Armor Plating" || purchasechoice == "armor Plating" || purchasechoice == "Armor plating" || purchasechoice == "armor plating" && shop1 == 1) {
+            if (purchasechoice == "armor plating" && shop1 == 1) {
                 if (Goldloom >= 100) {
                     cout << "You bought Armor Plating!" << endl;
                     armorupgrade = true;
@@ -2797,7 +2807,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Sharpening Stone" || purchasechoice == "sharpening Stone" || purchasechoice == "Sharpening stone" || purchasechoice == "sharpening stone" && shop1 == 2) {
+            else if (purchasechoice == "sharpening stone" && shop1 == 2) {
                 if (Goldloom >= 100) {
                     cout << "You bought a Sharpening Stone!" << endl;
                     weaponupgrade = true;
@@ -2811,7 +2821,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Forge Hammer" || purchasechoice == "forge Hammer" || purchasechoice == "Forge hammer" || purchasechoice == "forge hammer" && shop1 == 3) {
+            else if (purchasechoice == "forge hammer" && shop1 == 3) {
                 while (true) {
                     string yesno = "";
                     int amountbought = 0;
@@ -2859,7 +2869,7 @@ void Player::attack(Character* Target) {
                     }
                 }
             }
-            else if (purchasechoice == "Lightning Shard" || purchasechoice == "lightning Shard" || purchasechoice == "Lightning shard" || purchasechoice == "lightning shard" && shop1 == 4) {
+            else if (purchasechoice == "lightning shard" && shop1 == 4) {
                 if (Goldloom >= 200) {
                     cout << "You bought a Lightning Shard!" << endl;
                     lightningshard = true;
@@ -2873,7 +2883,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Invisibility Potion" || purchasechoice == "invisibility Potion" || purchasechoice == "Invisibility potion" || purchasechoice == "invisibility potion" && shop1 == 5) {
+            else if (purchasechoice == "invisibility potion" && shop1 == 5) {
                 if (Goldloom >= 400) {
                     cout << "You bought an Invisibility Potion!" << endl;
                     invisibilitypotion += 1;
@@ -2887,7 +2897,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Travelers Backpack" || purchasechoice == "travelers Backpack" || purchasechoice == "Travelers backpack" || purchasechoice == "travelers backpack" && shop2 == 6) {
+            else if (purchasechoice == "travelers backpack" && shop2 == 6) {
                 if (Goldloom >= 250) {
                     cout << "You bought A Travelers Backpack!" << endl;
                     travelersbackpack = true;
@@ -2901,7 +2911,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Companion" || purchasechoice == "companion" && shop2 == 7) {
+            else if (purchasechoice == "companion" && shop2 == 7) {
                 if (Goldloom >= 500) {
                     cout << "You bought your own special Companion!" << endl;
                     playercompanion = true;
@@ -2915,7 +2925,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Flaming Longsword" || purchasechoice == "Flaming longsword" || purchasechoice == "flaming longsword" || purchasechoice == "flaming Longsword" && shop2 == 8) {
+            else if (purchasechoice == "flaming Longsword" && shop2 == 8) {
                 if (Goldloom >= 250) {
                     cout << "You bought your very own Flaming Longsword!" << endl;
                     flaminglongsword = true;
@@ -2929,7 +2939,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Molotov" || purchasechoice == "molotov" && shop2 == 9) {
+            else if (purchasechoice == "molotov" && shop2 == 9) {
                 while (true) {
                     int amountbought = 0;
                     string yesno = "";
@@ -2973,7 +2983,7 @@ void Player::attack(Character* Target) {
                     }
                 }
             }
-            else if (purchasechoice == "Dragonscale Chestplate" || purchasechoice == "Dragonscale chestplate" || purchasechoice == "dragonscale chestplate" || purchasechoice == "dragonscale Chestplate" && shop2 == 10) {
+            else if (purchasechoice == "dragonscale chestplate" && shop2 == 10) {
                 if (Goldloom >= 250) {
                     cout << "You bought a Dragonscale Chestplate!" << endl;
                     dragonscalechestplate = true;
@@ -2987,7 +2997,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Maxhealth Upgrade" || purchasechoice == "Maxhealth upgrade" || purchasechoice == "maxhealth upgrade" || purchasechoice == "maxhealth Upgrade" && shop3 == 11) {
+            else if (purchasechoice == "maxhealth upgrade" && shop3 == 11) {
                 if (Goldloom >= 300) {
                     cout << "You bought a Maxhealth upgrade!" << endl;
                     maxhealthupgradeitem = true;
@@ -3001,7 +3011,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Healing Potion" || purchasechoice == "Healing potion" || purchasechoice == "healing potion" || purchasechoice == "healing Potion" && shop3 == 12) {
+            else if (purchasechoice == "healing potion" && shop3 == 12) {
                 if (Goldloom >= 150) {
                     cout << "You bought a Healing Potion!" << endl;
                     healingpotionitem = true;
@@ -3015,7 +3025,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Glass Shoes" || purchasechoice == "Glass shoes" || purchasechoice == "glass shoes" || purchasechoice == "glass Shoes" && shop3 == 13) {
+            else if (purchasechoice == "glass shoes" && shop3 == 13) {
                 if (Goldloom >= 250) {
                     cout << "You bought the lost glass shoe!" << endl;
                     glassshoes = true;
@@ -3029,7 +3039,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Mystic Helmet" || purchasechoice == "Mystic helmet" || purchasechoice == "mystic helmet" || purchasechoice == "mystic Helmet" && shop3 == 14) {
+            else if (purchasechoice == "mystic helmet" && shop3 == 14) {
                 if (Goldloom >= 250) {
                     cout << "You bought a Mystic Helmet!" << endl;
                     mystichelmet = true;
@@ -3043,7 +3053,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "Voidshroud Slicer" || purchasechoice == "voidshroud Slicer" || purchasechoice == "Voidshroud slicer" || purchasechoice == "voidshroud slicer" && shop3 == 15) {
+            else if (purchasechoice == "voidshroud slicer" && shop3 == 15) {
                 if (Goldloom >= 300) {
                     cout << "You bought a Voidshroud Slicer!" << endl;
                     VoidshroudSlicer = true;
@@ -3556,7 +3566,8 @@ void Player::attack(Character* Target) {
                 cout << "In the heart of shadows, where secrets are born" << endl << "a creature of riddles, with wisdom adorned." << endl << "Its tongue is a puzzle, its voice a maze" << endl << "Speak its name, unlock the hidden ways." << endl;
                 cin >> ws;
                 getline(cin, riddleanswer);
-                if (riddleanswer == "Troll" || riddleanswer == "troll") {
+                std::transform(riddleanswer.begin(), riddleanswer.end(), riddleanswer.begin(), ::tolower);
+                if (riddleanswer == "troll") {
                     cout << "Thats correct. You have proven your worth and shown you deserve these ingredients. In order to make the Regenerative Mantle, you need 4 Radiant Gems, 2 Soulstone, a healing potion and 50 goldloom for the forgers hard work." << endl;
                     ciphertracker += 1;
                     if (usetwoitemsquest == true) {
