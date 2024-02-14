@@ -3653,7 +3653,7 @@ void Player::village() {
      				cin >> ws;
      				getline(cin, yesno);
      				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
+     				if (yesno == "yes" || yesno == "y" && wood >= 2) {
      					wood -= 2;
      					cout << "You have repaired the villages well! You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
      					soulstone += 1;
@@ -3680,7 +3680,7 @@ void Player::village() {
      				cin >> ws;
      				getline(cin, yesno);
      				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
+     				if (yesno == "yes" || yesno == "y" && bucketowater >= 1) {
      					wood -= 2;
      					cout << "You have put out the fire! You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
      					soulstone += 1;
@@ -3699,7 +3699,7 @@ void Player::village() {
      				cin >> ws;
      				getline(cin, yesno);
      				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if ((yesno == "yes" || yesno == "y") && wood > 5) {
+     				if ((yesno == "yes" || yesno == "y") && wood >= 5) {
      					wood -= 2;
      					cout << "You have repaired the house! You got 1 Soulstone, 3 Radiant Gems and 1 Food." << endl;
      					soulstone += 1;
@@ -3725,7 +3725,7 @@ void Player::village() {
      				cin >> ws;
      				getline(cin, yesno);
      				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
+     				if (yesno == "yes" || yesno == "y" && medicine >= 1) {
      					wood -= 2;
      					cout << "You give the villager the medicine and he starts to feel better. You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
      					soulstone += 1;
@@ -3744,7 +3744,7 @@ void Player::village() {
      				cin >> ws;
      				getline(cin, yesno);
      				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
+     				if ((yesno == "yes" || yesno == "y") && wood >= 3 && food >= 2) {
      					wood -= 2;
      					cout << "You have helped this poor villager! You got 2 Soulstone, 3 Radiant Gems and 1 Lost Artifact." << endl;
      					soulstone += 2;
@@ -3763,7 +3763,7 @@ void Player::village() {
      				cin >> ws;
      				getline(cin, yesno);
      				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
+     				if ((yesno == "yes" || yesno == "y") && food >= 3) {
      					wood -= 2;
      					cout << "You have given the villager food! You got 1 Soulstone and 2 Radiant Gems." << endl;
      					soulstone += 1;
