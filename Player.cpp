@@ -11,6 +11,405 @@ Player::Player(string n, int maxh, int hp, int atk, int def, int baselvl, int li
     baselevel = baselvl;
     lives = live;
 }
+void Player::village() {
+    if (baselevel > 200) {
+        if (visitedbefore == false) {
+            visitedbefore = true;
+            cout << "Welcome to the village! I see this is your first visit. Here you take care of this village, defend them from attackers and help them repair buildings and you'll be rewarded." << endl;
+            isplayingvillage = true;
+     		string yesno = "";
+     		if (villagerandomevent == 0) {
+     			villagerandomevent = r() % 5 + 1;
+     		}
+     		if (villagerandomevent == 1) {
+     			int randommessage;
+     			randommessage = r() % 3;
+     			if (randommessage == 0) {
+                    Enemy::saveOldEnemy;
+     				cout << "Archers are approaching, stop them from getting too close." << endl;
+                    newenemyname = "Archer";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
+     			else if (randommessage == 1) {
+                    Enemy::saveOldEnemy;
+     				cout << "The Ogres seem angry. Stop them from expressing it on the villagers!" << endl;
+     			    newenemyname = "Ogre";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
+     			else {
+                    Enemy::saveOldEnemy;
+     				cout << "Trolls are invading! Stop them from their evil crimes." << endl;
+     			    newenemyname = "Troll";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
+     		}
+     		else if (villagerandomevent == 2) {
+     			int randommessage;
+     			randommessage = r() % 3;
+     			if (randommessage == 0) {
+                    Enemy::saveOldEnemy;
+     				cout << "Bandits are trying to steal from the villagers, stop them!" << endl;
+                    newenemyname = "Bandit";
+                    updateEnemyStats;
+                    villageAttackActive = true;			
+                }
+     			else if (randommessage == 1) {
+                    Enemy::saveOldEnemy;
+     				cout << "Goblins are coming to steal all the villagers valuables, put an end to them!" << endl;
+     			    newenemyname = "Goblin";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
+     			else {
+                    Enemy::saveOldEnemy;
+     				cout << "A bunch of thugs seem to want to cause trouble, make them change their mind." << endl;
+     			    newenemyname = "Thug";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
+     		}
+     		else if (villagerandomevent == 3) {
+     			int randommessage;
+     			randommessage = r() % 3;
+     			if (randommessage == 0) {
+     				cout << "The well broke and they are losing water fast, rebuild it!" << endl;
+     				cout << "You need 2 wood to repair this. You have " << wood << "wood." << endl;
+     				cout << "Would you like to repair it?" << endl;
+     				cin >> ws;
+     				getline(cin, yesno);
+     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+     				if (yesno == "yes" || yesno == "y") {
+     					wood -= 2;
+     					cout << "You have repaired the villages well! You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
+     					soulstone += 1;
+     					radiantgem += 2;
+     					food += 1;
+     					villagerandomevent = 0;
+     				}
+     				else if (yesno == "no") {
+     					cout << "Come back when you have enough wood to save the village." << endl;
+     				}
+     			}
+     			else if (randommessage == 1) {
+     				cout << "There's a fire, put it out quick!!" << endl;
+     				if (bucketowater == 0) {
+     					cout << "You need a water bucket to put out the fire. You have " << bucketowater << " water buckets." << endl;
+     				}
+     				else if (bucketowater > 1) {
+     					cout << "You need a water bucket to put out the fire. You have " << bucketowater << " water buckets." << endl;
+     				}
+     				else if (bucketowater == 1) {
+     					cout << "You need a water bucket to put out the fire. You have " << bucketowater << " water bucket." << endl;
+     				}
+     				cout << "Would you like to put out the fire?" << endl;
+     				cin >> ws;
+     				getline(cin, yesno);
+     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+     				if (yesno == "yes" || yesno == "y") {
+     					wood -= 2;
+     					cout << "You have put out the fire! You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
+     					soulstone += 1;
+     					radiantgem += 2;
+     					food += 1;
+     					villagerandomevent = 0;
+     				}
+     				else if (yesno == "no") {
+     					cout << "Come back when you have water to save the village." << endl;
+     				}
+     			}
+     			else {
+     				cout << "A villagers house was destroyed by a storm, fix it!" << endl;
+     				cout << "You need 5 wood to repair the house. You have " << wood << " wood." << endl;
+     				cout << "Would you like to repair the house?" << endl;
+     				cin >> ws;
+     				getline(cin, yesno);
+     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+     				if ((yesno == "yes" || yesno == "y")&& wood > 5) {
+     					wood -= 2;
+     					cout << "You have repaired the house! You got 1 Soulstone, 3 Radiant Gems and 1 Food." << endl;
+     					soulstone += 1;
+     					radiantgem += 3;
+     					food += 1;
+     					villagerandomevent = 0;
+     				}
+     				else if (yesno == "no") {
+     					cout << "Come back when you have enough wood to save the village." << endl;
+     				}
+     				else {
+     					cout << "You don't have enough wood for this. Come back when you have more." << endl;
+     				}
+     			}
+     		}
+     		else if (villagerandomevent == 4) {
+     			int randommessage;
+     			randommessage = r() % 3;
+     			if (randommessage == 0) {
+     				cout << "A villager is sick and needs your help to heal him." << endl;
+     				cout << "You need medicine to heal the villager. You have " << medicine << " medical supplies." << endl;
+     				cout << "Would you like to heal the villager?" << endl;
+     				cin >> ws;
+     				getline(cin, yesno);
+     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+     				if (yesno == "yes" || yesno == "y") {
+     					wood -= 2;
+     					cout << "You give the villager the medicine and he starts to feel better. You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
+     					soulstone += 1;
+     					radiantgem += 2;
+     					food += 1;
+     					villagerandomevent = 0;
+     				}
+     				else if (yesno == "no") {
+     					cout << "Come back when you have medicine to save the villager." << endl;
+     				}
+     			}
+     			else if (randommessage == 1) {
+     				cout << "The village is running low on supplies, make a donation." << endl;
+     				cout << "You need 3 wood and 2 food to donate to this villager. You have " << wood << " wood and " << food << " food." << endl;
+     				cout << "Would you like to donate to the villager?" << endl;
+     				cin >> ws;
+     				getline(cin, yesno);
+     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+     				if (yesno == "yes" || yesno == "y") {
+     					wood -= 2;
+     					cout << "You have helped this poor villager! You got 2 Soulstone, 3 Radiant Gems and 1 Lost Artifact." << endl;
+     					soulstone += 2;
+     					radiantgem += 3;
+     					lostartifact++;
+     					villagerandomevent = 0;
+     				}
+     				else if (yesno == "no") {
+     					cout << "Come back when you have wood and food to save the villager." << endl;
+     				}
+     			}
+     			else {
+     				cout << "A villager needs some food, give him some." << endl;
+     				cout << "You need 3 food to help the villager. You have " << food << " food." << endl;
+     				cout << "Would you like give the villager some food?" << endl;
+     				cin >> ws;
+     				getline(cin, yesno);
+     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+     				if (yesno == "yes" || yesno == "y") {
+     					wood -= 2;
+     					cout << "You have given the villager food! You got 1 Soulstone and 2 Radiant Gems." << endl;
+     					soulstone += 1;
+     					radiantgem += 2;
+     					villagerandomevent = 0;
+     				}
+     				else if (yesno == "no") {
+     					cout << "Come back when you have food to save the villager." << endl;
+     				}
+     			}
+     		}
+     		else {
+     			cout << "Your return is welcomed with open arms, but there is nothing wrong." << endl;
+     		}
+        }
+        else if (villagetracker < 10) {
+            cout << "The villagers are still happy with your work and have no problems. Check again later." << endl;
+        }
+        else {
+            visitedbefore = true;
+            cout << "Welcome to the village! I see this is your first visit. Here you take care of this village, defend them from attackers and help them repair buildings and you'll be rewarded." << endl;
+            isplayingvillage = true;
+     		string yesno = "";
+     		if (villagerandomevent == 0) {
+     			villagerandomevent = r() % 5 + 1;
+     		}
+     		if (villagerandomevent == 1) {
+     			int randommessage;
+     			randommessage = r() % 3;
+     			if (randommessage == 0) {
+                    Enemy::saveOldEnemy;
+     				cout << "Archers are approaching, stop them from getting too close." << endl;
+                    newenemyname = "Archer";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
+     			else if (randommessage == 1) {
+                    Enemy::saveOldEnemy;
+     				cout << "The Ogres seem angry. Stop them from expressing it on the villagers!" << endl;
+     			    newenemyname = "Ogre";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
+     			else {
+                    Enemy::saveOldEnemy;
+     				cout << "Trolls are invading! Stop them from their evil crimes." << endl;
+     			    newenemyname = "Troll";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
+     		}
+     		else if (villagerandomevent == 2) {
+     			int randommessage;
+     			randommessage = r() % 3;
+     			if (randommessage == 0) {
+                    Enemy::saveOldEnemy;
+     				cout << "Bandits are trying to steal from the villagers, stop them!" << endl;
+                    newenemyname = "Bandit";
+                    updateEnemyStats;
+                    villageAttackActive = true;			
+                }
+     			else if (randommessage == 1) {
+                    Enemy::saveOldEnemy;
+     				cout << "Goblins are coming to steal all the villagers valuables, put an end to them!" << endl;
+     			    newenemyname = "Goblin";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
+     			else {
+                    Enemy::saveOldEnemy;
+     				cout << "A bunch of thugs seem to want to cause trouble, make them change their mind." << endl;
+     			    newenemyname = "Thug";
+                    updateEnemyStats;
+                    villageAttackActive = true;
+                }
+     		}
+     		else if (villagerandomevent == 3) {
+     			int randommessage;
+     			randommessage = r() % 3;
+     			if (randommessage == 0) {
+     				cout << "The well broke and they are losing water fast, rebuild it!" << endl;
+     				cout << "You need 2 wood to repair this. You have " << wood << "wood." << endl;
+     				cout << "Would you like to repair it?" << endl;
+     				cin >> ws;
+     				getline(cin, yesno);
+     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+     				if (yesno == "yes" || yesno == "y") {
+     					wood -= 2;
+     					cout << "You have repaired the villages well! You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
+     					soulstone += 1;
+     					radiantgem += 2;
+     					food += 1;
+     					villagerandomevent = 0;
+     				}
+     				else if (yesno == "no") {
+     					cout << "Come back when you have enough wood to save the village." << endl;
+     				}
+     			}
+     			else if (randommessage == 1) {
+     				cout << "There's a fire, put it out quick!!" << endl;
+     				if (bucketowater == 0) {
+     					cout << "You need a water bucket to put out the fire. You have " << bucketowater << " water buckets." << endl;
+     				}
+     				else if (bucketowater > 1) {
+     					cout << "You need a water bucket to put out the fire. You have " << bucketowater << " water buckets." << endl;
+     				}
+     				else if (bucketowater == 1) {
+     					cout << "You need a water bucket to put out the fire. You have " << bucketowater << " water bucket." << endl;
+     				}
+     				cout << "Would you like to put out the fire?" << endl;
+     				cin >> ws;
+     				getline(cin, yesno);
+     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+     				if (yesno == "yes" || yesno == "y") {
+     					wood -= 2;
+     					cout << "You have put out the fire! You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
+     					soulstone += 1;
+     					radiantgem += 2;
+     					food += 1;
+     					villagerandomevent = 0;
+     				}
+     				else if (yesno == "no") {
+     					cout << "Come back when you have water to save the village." << endl;
+     				}
+     			}
+     			else {
+     				cout << "A villagers house was destroyed by a storm, fix it!" << endl;
+     				cout << "You need 5 wood to repair the house. You have " << wood << " wood." << endl;
+     				cout << "Would you like to repair the house?" << endl;
+     				cin >> ws;
+     				getline(cin, yesno);
+     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+     				if ((yesno == "yes" || yesno == "y")&& wood > 5) {
+     					wood -= 2;
+     					cout << "You have repaired the house! You got 1 Soulstone, 3 Radiant Gems and 1 Food." << endl;
+     					soulstone += 1;
+     					radiantgem += 3;
+     					food += 1;
+     					villagerandomevent = 0;
+     				}
+     				else if (yesno == "no") {
+     					cout << "Come back when you have enough wood to save the village." << endl;
+     				}
+     				else {
+     					cout << "You don't have enough wood for this. Come back when you have more." << endl;
+     				}
+     			}
+     		}
+     		else if (villagerandomevent == 4) {
+     			int randommessage;
+     			randommessage = r() % 3;
+     			if (randommessage == 0) {
+     				cout << "A villager is sick and needs your help to heal him." << endl;
+     				cout << "You need medicine to heal the villager. You have " << medicine << " medical supplies." << endl;
+     				cout << "Would you like to heal the villager?" << endl;
+     				cin >> ws;
+     				getline(cin, yesno);
+     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+     				if (yesno == "yes" || yesno == "y") {
+     					wood -= 2;
+     					cout << "You give the villager the medicine and he starts to feel better. You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
+     					soulstone += 1;
+     					radiantgem += 2;
+     					food += 1;
+     					villagerandomevent = 0;
+     				}
+     				else if (yesno == "no") {
+     					cout << "Come back when you have medicine to save the villager." << endl;
+     				}
+     			}
+     			else if (randommessage == 1) {
+     				cout << "The village is running low on supplies, make a donation." << endl;
+     				cout << "You need 3 wood and 2 food to donate to this villager. You have " << wood << " wood and " << food << " food." << endl;
+     				cout << "Would you like to donate to the villager?" << endl;
+     				cin >> ws;
+     				getline(cin, yesno);
+     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+     				if (yesno == "yes" || yesno == "y") {
+     					wood -= 2;
+     					cout << "You have helped this poor villager! You got 2 Soulstone, 3 Radiant Gems and 1 Lost Artifact." << endl;
+     					soulstone += 2;
+     					radiantgem += 3;
+     					lostartifact++;
+     					villagerandomevent = 0;
+     				}
+     				else if (yesno == "no") {
+     					cout << "Come back when you have wood and food to save the villager." << endl;
+     				}
+     			}
+     			else {
+     				cout << "A villager needs some food, give him some." << endl;
+     				cout << "You need 3 food to help the villager. You have " << food << " food." << endl;
+     				cout << "Would you like give the villager some food?" << endl;
+     				cin >> ws;
+     				getline(cin, yesno);
+     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
+     				if (yesno == "yes" || yesno == "y") {
+     					wood -= 2;
+     					cout << "You have given the villager food! You got 1 Soulstone and 2 Radiant Gems." << endl;
+     					soulstone += 1;
+     					radiantgem += 2;
+     					villagerandomevent = 0;
+     				}
+     				else if (yesno == "no") {
+     					cout << "Come back when you have food to save the villager." << endl;
+     				}
+     			}
+     		}
+     		else {
+     			cout << "Your return is welcomed with open arms, but there is nothing wrong." << endl;
+     		}
+
+        }
+    }
+    else {
+        cout << "You have not unlocked this feature yet. You must be baselevel 200." << endl;
+    }
+}
 void Player::mysteriousquest() {
     int randomgoldloom = 0, randomsoulstone = 0, randomgem = 0, randomlostartifact = 0;
     cout << "You have completed my quest " << name << ". Here is your reward for your assistance." << endl;
@@ -3398,404 +3797,5 @@ void Player::attack(Character* Target) {
         cout << endl;
         attack(Target);
         break;
-    }
-}
-void Player::village() {
-    if (baselevel > 200) {
-        if (visitedbefore == false) {
-            visitedbefore = true;
-            cout << "Welcome to the village! I see this is your first visit. Here you take care of this village, defend them from attackers and help them repair buildings and you'll be rewarded." << endl;
-            isplayingvillage = true;
-     		string yesno = "";
-     		if (villagerandomevent == 0) {
-     			villagerandomevent = r() % 5 + 1;
-     		}
-     		if (villagerandomevent == 1) {
-     			int randommessage;
-     			randommessage = r() % 3;
-     			if (randommessage == 0) {
-                    Enemy::saveOldEnemy;
-     				cout << "Archers are approaching, stop them from getting too close." << endl;
-                    newenemyname = "Archer";
-                    updateEnemyStats;
-                    villageAttackActive = true;
-                }
-     			else if (randommessage == 1) {
-                    Enemy::saveOldEnemy;
-     				cout << "The Ogres seem angry. Stop them from expressing it on the villagers!" << endl;
-     			    newenemyname = "Ogre";
-                    updateEnemyStats;
-                    villageAttackActive = true;
-                }
-     			else {
-                    Enemy::saveOldEnemy;
-     				cout << "Trolls are invading! Stop them from their evil crimes." << endl;
-     			    newenemyname = "Troll";
-                    updateEnemyStats;
-                    villageAttackActive = true;
-                }
-     		}
-     		else if (villagerandomevent == 2) {
-     			int randommessage;
-     			randommessage = r() % 3;
-     			if (randommessage == 0) {
-                    Enemy::saveOldEnemy;
-     				cout << "Bandits are trying to steal from the villagers, stop them!" << endl;
-                    newenemyname = "Bandit";
-                    updateEnemyStats;
-                    villageAttackActive = true;			
-                }
-     			else if (randommessage == 1) {
-                    Enemy::saveOldEnemy;
-     				cout << "Goblins are coming to steal all the villagers valuables, put an end to them!" << endl;
-     			    newenemyname = "Goblin";
-                    updateEnemyStats;
-                    villageAttackActive = true;
-                }
-     			else {
-                    Enemy::saveOldEnemy;
-     				cout << "A bunch of thugs seem to want to cause trouble, make them change their mind." << endl;
-     			    newenemyname = "Thug";
-                    updateEnemyStats;
-                    villageAttackActive = true;
-                }
-     		}
-     		else if (villagerandomevent == 3) {
-     			int randommessage;
-     			randommessage = r() % 3;
-     			if (randommessage == 0) {
-     				cout << "The well broke and they are losing water fast, rebuild it!" << endl;
-     				cout << "You need 2 wood to repair this. You have " << wood << "wood." << endl;
-     				cout << "Would you like to repair it?" << endl;
-     				cin >> ws;
-     				getline(cin, yesno);
-     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
-     					wood -= 2;
-     					cout << "You have repaired the villages well! You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
-     					soulstone += 1;
-     					radiantgem += 2;
-     					food += 1;
-     					villagerandomevent = 0;
-     				}
-     				else if (yesno == "no") {
-     					cout << "Come back when you have enough wood to save the village." << endl;
-     				}
-     			}
-     			else if (randommessage == 1) {
-     				cout << "There's a fire, put it out quick!!" << endl;
-     				if (bucketowater == 0) {
-     					cout << "You need a water bucket to put out the fire. You have " << bucketowater << " water buckets." << endl;
-     				}
-     				else if (bucketowater > 1) {
-     					cout << "You need a water bucket to put out the fire. You have " << bucketowater << " water buckets." << endl;
-     				}
-     				else if (bucketowater == 1) {
-     					cout << "You need a water bucket to put out the fire. You have " << bucketowater << " water bucket." << endl;
-     				}
-     				cout << "Would you like to put out the fire?" << endl;
-     				cin >> ws;
-     				getline(cin, yesno);
-     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
-     					wood -= 2;
-     					cout << "You have put out the fire! You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
-     					soulstone += 1;
-     					radiantgem += 2;
-     					food += 1;
-     					villagerandomevent = 0;
-     				}
-     				else if (yesno == "no") {
-     					cout << "Come back when you have water to save the village." << endl;
-     				}
-     			}
-     			else {
-     				cout << "A villagers house was destroyed by a storm, fix it!" << endl;
-     				cout << "You need 5 wood to repair the house. You have " << wood << " wood." << endl;
-     				cout << "Would you like to repair the house?" << endl;
-     				cin >> ws;
-     				getline(cin, yesno);
-     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if ((yesno == "yes" || yesno == "y")&& wood > 5) {
-     					wood -= 2;
-     					cout << "You have repaired the house! You got 1 Soulstone, 3 Radiant Gems and 1 Food." << endl;
-     					soulstone += 1;
-     					radiantgem += 3;
-     					food += 1;
-     					villagerandomevent = 0;
-     				}
-     				else if (yesno == "no") {
-     					cout << "Come back when you have enough wood to save the village." << endl;
-     				}
-     				else {
-     					cout << "You don't have enough wood for this. Come back when you have more." << endl;
-     				}
-     			}
-     		}
-     		else if (villagerandomevent == 4) {
-     			int randommessage;
-     			randommessage = r() % 3;
-     			if (randommessage == 0) {
-     				cout << "A villager is sick and needs your help to heal him." << endl;
-     				cout << "You need medicine to heal the villager. You have " << medicine << " medical supplies." << endl;
-     				cout << "Would you like to heal the villager?" << endl;
-     				cin >> ws;
-     				getline(cin, yesno);
-     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
-     					wood -= 2;
-     					cout << "You give the villager the medicine and he starts to feel better. You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
-     					soulstone += 1;
-     					radiantgem += 2;
-     					food += 1;
-     					villagerandomevent = 0;
-     				}
-     				else if (yesno == "no") {
-     					cout << "Come back when you have medicine to save the villager." << endl;
-     				}
-     			}
-     			else if (randommessage == 1) {
-     				cout << "The village is running low on supplies, make a donation." << endl;
-     				cout << "You need 3 wood and 2 food to donate to this villager. You have " << wood << " wood and " << food << " food." << endl;
-     				cout << "Would you like to donate to the villager?" << endl;
-     				cin >> ws;
-     				getline(cin, yesno);
-     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
-     					wood -= 2;
-     					cout << "You have helped this poor villager! You got 2 Soulstone, 3 Radiant Gems and 1 Lost Artifact." << endl;
-     					soulstone += 2;
-     					radiantgem += 3;
-     					lostartifact++;
-     					villagerandomevent = 0;
-     				}
-     				else if (yesno == "no") {
-     					cout << "Come back when you have wood and food to save the villager." << endl;
-     				}
-     			}
-     			else {
-     				cout << "A villager needs some food, give him some." << endl;
-     				cout << "You need 3 food to help the villager. You have " << food << " food." << endl;
-     				cout << "Would you like give the villager some food?" << endl;
-     				cin >> ws;
-     				getline(cin, yesno);
-     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
-     					wood -= 2;
-     					cout << "You have given the villager food! You got 1 Soulstone and 2 Radiant Gems." << endl;
-     					soulstone += 1;
-     					radiantgem += 2;
-     					villagerandomevent = 0;
-     				}
-     				else if (yesno == "no") {
-     					cout << "Come back when you have food to save the villager." << endl;
-     				}
-     			}
-     		}
-     		else {
-     			cout << "Your return is welcomed with open arms, but there is nothing wrong." << endl;
-     		}
-        }
-        else if (villagetracker < 10) {
-            cout << "The villagers are still happy with your work and have no problems. Check again later." << endl;
-        }
-        else {
-            visitedbefore = true;
-            cout << "Welcome to the village! I see this is your first visit. Here you take care of this village, defend them from attackers and help them repair buildings and you'll be rewarded." << endl;
-            isplayingvillage = true;
-     		string yesno = "";
-     		if (villagerandomevent == 0) {
-     			villagerandomevent = r() % 5 + 1;
-     		}
-     		if (villagerandomevent == 1) {
-     			int randommessage;
-     			randommessage = r() % 3;
-     			if (randommessage == 0) {
-                    Enemy::saveOldEnemy;
-     				cout << "Archers are approaching, stop them from getting too close." << endl;
-                    newenemyname = "Archer";
-                    updateEnemyStats;
-                    villageAttackActive = true;
-                }
-     			else if (randommessage == 1) {
-                    Enemy::saveOldEnemy;
-     				cout << "The Ogres seem angry. Stop them from expressing it on the villagers!" << endl;
-     			    newenemyname = "Ogre";
-                    updateEnemyStats;
-                    villageAttackActive = true;
-                }
-     			else {
-                    Enemy::saveOldEnemy;
-     				cout << "Trolls are invading! Stop them from their evil crimes." << endl;
-     			    newenemyname = "Troll";
-                    updateEnemyStats;
-                    villageAttackActive = true;
-                }
-     		}
-     		else if (villagerandomevent == 2) {
-     			int randommessage;
-     			randommessage = r() % 3;
-     			if (randommessage == 0) {
-                    Enemy::saveOldEnemy;
-     				cout << "Bandits are trying to steal from the villagers, stop them!" << endl;
-                    newenemyname = "Bandit";
-                    updateEnemyStats;
-                    villageAttackActive = true;			
-                }
-     			else if (randommessage == 1) {
-                    Enemy::saveOldEnemy;
-     				cout << "Goblins are coming to steal all the villagers valuables, put an end to them!" << endl;
-     			    newenemyname = "Goblin";
-                    updateEnemyStats;
-                    villageAttackActive = true;
-                }
-     			else {
-                    Enemy::saveOldEnemy;
-     				cout << "A bunch of thugs seem to want to cause trouble, make them change their mind." << endl;
-     			    newenemyname = "Thug";
-                    updateEnemyStats;
-                    villageAttackActive = true;
-                }
-     		}
-     		else if (villagerandomevent == 3) {
-     			int randommessage;
-     			randommessage = r() % 3;
-     			if (randommessage == 0) {
-     				cout << "The well broke and they are losing water fast, rebuild it!" << endl;
-     				cout << "You need 2 wood to repair this. You have " << wood << "wood." << endl;
-     				cout << "Would you like to repair it?" << endl;
-     				cin >> ws;
-     				getline(cin, yesno);
-     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
-     					wood -= 2;
-     					cout << "You have repaired the villages well! You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
-     					soulstone += 1;
-     					radiantgem += 2;
-     					food += 1;
-     					villagerandomevent = 0;
-     				}
-     				else if (yesno == "no") {
-     					cout << "Come back when you have enough wood to save the village." << endl;
-     				}
-     			}
-     			else if (randommessage == 1) {
-     				cout << "There's a fire, put it out quick!!" << endl;
-     				if (bucketowater == 0) {
-     					cout << "You need a water bucket to put out the fire. You have " << bucketowater << " water buckets." << endl;
-     				}
-     				else if (bucketowater > 1) {
-     					cout << "You need a water bucket to put out the fire. You have " << bucketowater << " water buckets." << endl;
-     				}
-     				else if (bucketowater == 1) {
-     					cout << "You need a water bucket to put out the fire. You have " << bucketowater << " water bucket." << endl;
-     				}
-     				cout << "Would you like to put out the fire?" << endl;
-     				cin >> ws;
-     				getline(cin, yesno);
-     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
-     					wood -= 2;
-     					cout << "You have put out the fire! You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
-     					soulstone += 1;
-     					radiantgem += 2;
-     					food += 1;
-     					villagerandomevent = 0;
-     				}
-     				else if (yesno == "no") {
-     					cout << "Come back when you have water to save the village." << endl;
-     				}
-     			}
-     			else {
-     				cout << "A villagers house was destroyed by a storm, fix it!" << endl;
-     				cout << "You need 5 wood to repair the house. You have " << wood << " wood." << endl;
-     				cout << "Would you like to repair the house?" << endl;
-     				cin >> ws;
-     				getline(cin, yesno);
-     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if ((yesno == "yes" || yesno == "y")&& wood > 5) {
-     					wood -= 2;
-     					cout << "You have repaired the house! You got 1 Soulstone, 3 Radiant Gems and 1 Food." << endl;
-     					soulstone += 1;
-     					radiantgem += 3;
-     					food += 1;
-     					villagerandomevent = 0;
-     				}
-     				else if (yesno == "no") {
-     					cout << "Come back when you have enough wood to save the village." << endl;
-     				}
-     				else {
-     					cout << "You don't have enough wood for this. Come back when you have more." << endl;
-     				}
-     			}
-     		}
-     		else if (villagerandomevent == 4) {
-     			int randommessage;
-     			randommessage = r() % 3;
-     			if (randommessage == 0) {
-     				cout << "A villager is sick and needs your help to heal him." << endl;
-     				cout << "You need medicine to heal the villager. You have " << medicine << " medical supplies." << endl;
-     				cout << "Would you like to heal the villager?" << endl;
-     				cin >> ws;
-     				getline(cin, yesno);
-     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
-     					wood -= 2;
-     					cout << "You give the villager the medicine and he starts to feel better. You got 1 Soulstone, 2 Radiant Gems and 1 Food." << endl;
-     					soulstone += 1;
-     					radiantgem += 2;
-     					food += 1;
-     					villagerandomevent = 0;
-     				}
-     				else if (yesno == "no") {
-     					cout << "Come back when you have medicine to save the villager." << endl;
-     				}
-     			}
-     			else if (randommessage == 1) {
-     				cout << "The village is running low on supplies, make a donation." << endl;
-     				cout << "You need 3 wood and 2 food to donate to this villager. You have " << wood << " wood and " << food << " food." << endl;
-     				cout << "Would you like to donate to the villager?" << endl;
-     				cin >> ws;
-     				getline(cin, yesno);
-     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
-     					wood -= 2;
-     					cout << "You have helped this poor villager! You got 2 Soulstone, 3 Radiant Gems and 1 Lost Artifact." << endl;
-     					soulstone += 2;
-     					radiantgem += 3;
-     					lostartifact++;
-     					villagerandomevent = 0;
-     				}
-     				else if (yesno == "no") {
-     					cout << "Come back when you have wood and food to save the villager." << endl;
-     				}
-     			}
-     			else {
-     				cout << "A villager needs some food, give him some." << endl;
-     				cout << "You need 3 food to help the villager. You have " << food << " food." << endl;
-     				cout << "Would you like give the villager some food?" << endl;
-     				cin >> ws;
-     				getline(cin, yesno);
-     				std::transform(yesno.begin(), yesno.end(), yesno.begin(), ::tolower);
-     				if (yesno == "yes" || yesno == "y") {
-     					wood -= 2;
-     					cout << "You have given the villager food! You got 1 Soulstone and 2 Radiant Gems." << endl;
-     					soulstone += 1;
-     					radiantgem += 2;
-     					villagerandomevent = 0;
-     				}
-     				else if (yesno == "no") {
-     					cout << "Come back when you have food to save the villager." << endl;
-     				}
-     			}
-     		}
-     		else {
-     			cout << "Your return is welcomed with open arms, but there is nothing wrong." << endl;
-     		}
-
-        }
-    }
-    else {
-        cout << "You have not unlocked this feature yet. You must be baselevel 200." << endl;
     }
 }
