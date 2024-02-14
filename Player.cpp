@@ -3091,7 +3091,8 @@ void Player::attack(Character* Target) {
             cout << "Are you here for forging or crafting?" << endl;
             cin >> ws;
             getline(cin, forgeOption);
-            if (forgeOption == "Forging" || forgeOption == "forging") {
+            std::transform(forgeOption.begin(), forgeOption.end(), forgeOption.begin(), ::tolower);
+            if (forgeOption == "forging") {
                 if ((weaponupgrade == false && armorupgrade == false && lightningshard == false && forgehammer == 0 && radiantgem == 0 && soulstone == 0)) {
                     cout << "You have no upgrades to use yet. Go buy some from the store." << endl;
                     cout << "-----------------------------------------------" << endl;
@@ -3154,7 +3155,7 @@ void Player::attack(Character* Target) {
                 cout << "-----------------------------------------------" << endl;
                 forgerestarting();
             }
-            else if (forgeOption == "Crafting" || forgeOption == "crafting") {
+            else if (forgeOption == "crafting") {
                 forgecrafting();
                 attack(Target);
                 break;
