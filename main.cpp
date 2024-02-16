@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "..//Steam/steam_api.h"
-Player Knight("Player", 50, 25, 4, 0, 0, 1);
+Player Knight("Player", 5000, 5000, 5000, 5000, 5000, 1);
 int endlessSpawn = 1, randomevent = 0, villagetracker = 0;
 bool disableGeneration = false;
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
@@ -578,22 +578,19 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 static void gameplay() {
 	string modeChoice = "";
 	cout << "Would you like to play in story mode or compete in... endless mode?" << endl;
-	cin >> modeChoice;
-	if (modeChoice == "Story" || modeChoice == "story") {
-		Knight.storymode = true;
-	}
-	else if (modeChoice == "Endless" || modeChoice == "endless") {
-		Knight.endlessmode = true;
-	}
-	else {
-		cout << "I'll choose for you then since you can't type." << endl;
-		int randomMode;
-		randomMode = r() % 2;
-		if (randomMode == 0) {
+	while (true) {
+		cin >> modeChoice;
+		std::transform(modeChoice.begin(), modeChoice.end(), modeChoice.begin(), ::tolower);
+		if (modeChoice == "story") {
 			Knight.storymode = true;
+			break;
+		}
+		else if (modeChoice == "endless") {
+			Knight.endlessmode = true;
+			break;
 		}
 		else {
-			Knight.endlessmode = true;
+			cout << "Try again. Type endless or story." << endl;
 		}
 	}
 	while (Knight.storymode == true) {
@@ -1130,7 +1127,7 @@ static void gameplay() {
 						cout << "-Ironclad Dominion - A faction for those who believe they can become the best of the best..." << endl;
 						cin >> ws;
 						getline(cin, Knight.factionchoice);
-						std::transform(factionchoice.begin(), factionchoice.end(), factionchoice.begin(), ::tolower);
+						std::transform(Knight.factionchoice.begin(), Knight.factionchoice.end(), Knight.factionchoice.begin(), ::tolower);
 						if (Knight.factionchoice == "shadowborn syndicate") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Shadowborn Syndicate. Welcome to the land of no return." << endl;
@@ -1895,44 +1892,19 @@ static void gameplay() {
 						Knight.dreadnoughtmove = true;
 						cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
 					}
-					if (Knight.villageAttackActive == true) {
-						villagetracker += 1;
-						if (villagetracker == 3) {
-							Knight.villageAttackActive = false;
-							cout << "You got 2 soulstone, 3 wood, 1 medicine and 2 food!";
-							Knight.soulstone += 2;
-							Knight.wood += 3;
-							Knight.medicine += 1;
-							Knight.food += 2;
-							if (r() % 10 + 1 == 1) {
-								Knight.lostartifact += 1;
-								cout << " You were lucky and also recieved a lost artifact!" << endl;
-							}
-							else {
-								cout << endl;
-							}
-							Knight.villagerandomevent = 0;
-							Slime->bringBackEnemy;
-							disableGeneration = true;
-						}
-						else {
-							cout << 3 - villagetracker << " more " << Knight.newenemyname << " are coming!" << endl;
-							Slime = new Enemy(Knight.newenemyname, floor(Knight.gethealth() * .85), ceil(Knight.getattackPower() * .85), floor(Knight.getdefense() * .85), ceil(Knight.getlives()/2), Knight.getlevel() * .85, floor(Knight.getmaxhealth() * .85));
-						}
-					}
-					if (areachoiceint == 1 && Knight.villageAttackActive == false && disableGeneration == false) {
+					if (areachoiceint == 1) {
 						Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefense(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
-					else if (areachoiceint == 2 && Knight.villageAttackActive == false && disableGeneration == false) {
+					else if (areachoiceint == 2) {
 						Slime = generateEnemy2(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefense(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
-					else if (areachoiceint == 3 && Knight.villageAttackActive == false && disableGeneration == false) {
+					else if (areachoiceint == 3) {
 						Slime = generateEnemy3(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefense(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
-					else if (areachoiceint == 4 && Knight.villageAttackActive == false && disableGeneration == false) {
+					else if (areachoiceint == 4) {
 						Slime = generateEnemy4(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefense(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
-					else if (areachoiceint == 5 && Knight.villageAttackActive == false && disableGeneration == false) {
+					else if (areachoiceint == 5) {
 						Slime = generateEnemy5(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefense(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
 					cout << "You are now level " << Knight.getbaselevel() << "." << endl;
@@ -1944,7 +1916,7 @@ static void gameplay() {
 						cout << "-Ironclad Dominion - A faction for those who believe they can become the best of the best..." << endl;
 						cin >> ws;
 						getline(cin, Knight.factionchoice);
-						std::transform(factionchoice.begin(), factionchoice.end(), factionchoice.begin(), ::tolower);
+						std::transform(Knight.factionchoice.begin(), Knight.factionchoice.end(), Knight.factionchoice.begin(), ::tolower);
 						if (Knight.factionchoice == "shadowborn syndicate") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Shadowborn Syndicate. Welcome to the land of no return." << endl;
@@ -2246,16 +2218,24 @@ int main() {
 		gameplay();
 	}
 	else {
-		cout << "Steam initialization failed. You can still play if you don't mind your stats not saving to leaderboard in endless mode." << endl;
-		cout << "Would you still like to play?" << endl;
-		string yesorno;
-		cin >> yesorno;
-		if (yesorno == "Y" || yesorno == "y" || yesorno == "Yes" || yesorno == "yes") {
-			gameplay();
-		}
-		else {
-			cout << "Came back soon!" << endl;
-		}
+			cout << "Steam initialization failed. You can still play if you don't mind your stats not saving to leaderboard in endless mode." << endl;
+			cout << "Would you still like to play?" << endl;
+			while (true) {
+				string yesorno;
+				cin >> yesorno;
+				std::transform(yesorno.begin(), yesorno.end(), yesorno.begin(), ::tolower);
+				if (yesorno == "y" || yesorno == "yes") {
+					gameplay();
+					break;
+				}
+				else if (yesorno == "n" || yesorno == "no") {
+					cout << "Came back soon!" << endl;
+					break;
+				}
+				else {
+					cout << "Not a valid answer, try again." << endl;
+				}
+			}
 	}
 	return 0;
 }

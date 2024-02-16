@@ -59,4 +59,11 @@ public:
 	void delay(int x) {
 		this_thread::sleep_for(chrono::seconds(x));
 	}
+	string newName = "";
+	int newHealth = 0;
+	int newAttack = 0;
+	int newDefense = 0;
+	int newLives = 0;
+	int newLevel = 0;
+	int newMaxhealth = 0;
 };

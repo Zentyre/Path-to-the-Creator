@@ -27,10 +27,11 @@ public:
 	int incrementvillage(int amount) {
 		return villagetracker + amount;
 	}
+	int randommessage = 3;
 	int villagetracker = 0;
 	int trackvisits = 0;
 	int villagerandomevent = 0;
-	void village();
+	void village(Enemy*Target);
 	void mysteriousquest();
 	void setmaxhealth();
 	void checkitems();
@@ -82,7 +83,7 @@ public:
 	bool boots = false;
 	bool narsosArmor = false;
 	bool lockhartsArmor = false;
-	bool vladimirsArmor = true;
+	bool vladimirsArmor = false;
 	bool upgradedgodarmor = false;
 	bool lightningGodarmor = false;
 	bool accuratesword = false;
@@ -98,7 +99,7 @@ public:
 	bool defenseupgrade = false;
 	bool levelupgrade = false;
 	bool attackupgrade = false;
-	bool armorupgrade = true;
+	bool armorupgrade = false;
 	bool weaponupgrade = false;
 	bool flaminglongsword = false;
 	bool VoidshroudSlicer = false;
@@ -185,16 +186,4 @@ public:
 	int mysteriousstrangerquesttracker3 = 0;
 	int mysteriousstrangerquesttracker4 = 0;
 	int mysteriousstrangerquesttracker5 = 0;
-	string newenemyname = "";
-	bool villageAttackActive = false;
-    void updateEnemyStats(Enemy& enemy, string newName, int newHealth, int newAttack, int newDefense, int newLives, int newLevel, int newMaxhealth) {
-		newName = newenemyname;
-		newHealth = floor(health * .85);
-		newAttack = ceil(attackPower * .85);
-		newDefense = floor(defense * .85);
-		newLives = ceil(lives/2);
-		newLevel = ceil(level * .85);
-		newMaxhealth = floor(maxhealth * .85);
-        enemy.updateStats(newName ,newHealth, newAttack, newDefense, newLives, newLevel, newMaxhealth);
-    }
 };

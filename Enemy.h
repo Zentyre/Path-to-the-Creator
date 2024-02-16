@@ -23,27 +23,4 @@ public:
 			}
 		}
 	}
-	void updateStats(string newName, int newHealth, int newAttack, int newDefense, int newLives, int newLevel, int newMaxhealth) {
-        name = newName;
-		health = newHealth;
-        attackPower = newAttack;
-        defense = newDefense;
-		lives = newLives;
-		level = newLevel;
-		maxhealth = newMaxhealth;
-    }
-	string oldName = "";
-	int oldHealth = 0, oldAttack = 0, oldDefense = 0, oldLives = 0, oldLevel = 0, oldMaxhealth = 0;
-	void saveOldEnemy() {
-		oldName = name;
-		oldHealth = health;
-		oldAttack = attackPower;
-		oldDefense = defense;
-		oldLives = lives;
-		oldLevel = level;
-		oldMaxhealth = maxhealth;
-	}
-	Enemy* bringBackEnemy() {
-		return new Enemy(oldName, oldHealth, oldAttack, oldDefense, oldLives, oldLevel, oldMaxhealth);
-	}
 };
