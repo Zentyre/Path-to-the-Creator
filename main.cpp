@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "..//Steam/steam_api.h"
-Player Knight("Player", 5000, 5000, 5000, 5000, 5000, 1);
+Player Knight("Player", 50, 25, 4, 0, 0, 1);
 int endlessSpawn = 1, randomevent = 0, villagetracker = 0;
 bool disableGeneration = false;
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
@@ -604,7 +604,8 @@ static void gameplay() {
 		cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought, 6- Trickster or 7- Random?" << endl;
 		cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
 		int cinFailchoice = 0, classcurrency = 0, playerclasschoiceint = 0;
-		string playerclasschoice = "";
+		string playerclasschoice = ""; 
+		cin >> ws;
 		getline(cin, playerclasschoice);
 		if (playerclasschoice == "1") {
 			cout << "You chose Knight!" << endl;
@@ -1128,22 +1129,22 @@ static void gameplay() {
 						cin >> ws;
 						getline(cin, Knight.factionchoice);
 						std::transform(Knight.factionchoice.begin(), Knight.factionchoice.end(), Knight.factionchoice.begin(), ::tolower);
-						if (Knight.factionchoice == "shadowborn syndicate") {
+						if (Knight.factionchoice == "shadowborn syndicate" || Knight.factionchoice == "shadowborn") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Shadowborn Syndicate. Welcome to the land of no return." << endl;
 							Knight.factionchoiceint = 1;
 						}
-						else if (Knight.factionchoice == "emberfall covenant") {
+						else if (Knight.factionchoice == "emberfall covenant" || Knight.factionchoice == "emberfall") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Emberfall Covenant! Good luck on your journey to wield the ancient flames." << endl;
 							Knight.factionchoiceint = 2;
 						}
-						else if (Knight.factionchoice == "celestial vanguard") {
+						else if (Knight.factionchoice == "celestial vanguard" || Knight.factionchoice == "celestial") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Celestial Vanguard! I hope you will find the light in this darkness." << endl;
 							Knight.factionchoiceint = 3;
 						}
-						else if (Knight.factionchoice == "ironclad dominion") {
+						else if (Knight.factionchoice == "ironclad dominion" || Knight.factionchoice == "ironclad") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Ironclad Dominion. I wish you well, becoming the best." << endl;
 							Knight.factionchoiceint = 4;
@@ -1308,10 +1309,11 @@ static void gameplay() {
 				cout << "-Class = Trickster-" << endl;
 			}
 			cout << "Would you like to try Again? (Y/N)" << endl;
-			Knight.delay(10);
+			Knight.delay(3);
 			string retry = "";
 			cin >> retry;
 			if (retry == "N" || retry == "n") {
+				SteamAPI_Shutdown();
 				break;
 			}
 			else if (retry == "Y" || retry == "y") {
@@ -1321,6 +1323,7 @@ static void gameplay() {
 				Knight.attackPower = 4;
 				Knight.defense = 0;
 				Knight.level = 0;
+				Knight.baselevel = 0;
 				Knight.lives = 1;
 			}
 			else {
@@ -1371,6 +1374,7 @@ static void gameplay() {
 			cin >> playagain;
 			if (playagain == "N" || playagain == "n") {
 				cout << "Hope to see you again soon!";
+				SteamAPI_Shutdown();
 				break;
 			}
 			else if (playagain == "Y" || playagain == "y") {
@@ -1380,13 +1384,16 @@ static void gameplay() {
 				Knight.attackPower = 4;
 				Knight.defense = 0;
 				Knight.level = 0;
+				Knight.baselevel = 0;
 				Knight.lives = 1;
 			}
 			else {
 				cout << "Not a valid answer, goodbye." << endl;
+				SteamAPI_Shutdown();
 				break;
 			}
 		}
+		SteamAPI_Shutdown();
 	}
 	//start of endless mode
 	while (Knight.endlessmode == true) {
@@ -1397,7 +1404,7 @@ static void gameplay() {
 		cout << "At levels 15, 25, 50 and 100, you gain new abilities. Every 100 levels a boss spawns and every 50 levels a mini boss spawns." << endl;
 		cout << "I wish you well on your conquest." << endl;
 		cout << endl;
-		cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought or 6- Trickster?" << endl;
+		cout << "Would you like to be a 1- Knight, 2- Executioner, 3- Soulweaver, 4- Warforged Engineer, 5- Dreadnought, 6- Trickster or 7- Random?" << endl;
 		cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
 		int cinFailchoice = 0, classcurrency = 0, playerclasschoiceint = 0;
 		string playerclasschoice = "";
@@ -1917,22 +1924,22 @@ static void gameplay() {
 						cin >> ws;
 						getline(cin, Knight.factionchoice);
 						std::transform(Knight.factionchoice.begin(), Knight.factionchoice.end(), Knight.factionchoice.begin(), ::tolower);
-						if (Knight.factionchoice == "shadowborn syndicate") {
+						if (Knight.factionchoice == "shadowborn syndicate" || Knight.factionchoice == "shadowborn") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Shadowborn Syndicate. Welcome to the land of no return." << endl;
 							Knight.factionchoiceint = 1;
 						}
-						else if (Knight.factionchoice == "emberfall covenant") {
+						else if (Knight.factionchoice == "emberfall covenant" || Knight.factionchoice == "emberfall") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Emberfall Covenant! Good luck on your journey to wield the ancient flames." << endl;
 							Knight.factionchoiceint = 2;
 						}
-						else if (Knight.factionchoice == "celestial vanguard") {
+						else if (Knight.factionchoice == "celestial vanguard" || Knight.factionchoice == "celestial") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Celestial Vanguard! I hope you will find the light in this darkness." << endl;
 							Knight.factionchoiceint = 3;
 						}
-						else if (Knight.factionchoice == "ironclad dominion") {
+						else if (Knight.factionchoice == "ironclad dominion" || Knight.factionchoice == "ironclad") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Ironclad Dominion. I wish you well, becoming the best." << endl;
 							Knight.factionchoiceint = 4;
@@ -2185,10 +2192,11 @@ static void gameplay() {
 				cout << "-Class = Trickster-" << endl;
 			}
 			cout << "Would you like to try Again? (Y/N)" << endl;
-			Knight.delay(10);
+			Knight.delay(3);
 			string retry = "";
 			cin >> retry;
 			if (retry == "N" || retry == "n") {
+				SteamAPI_Shutdown();
 				break;
 			}
 			else if (retry == "Y" || retry == "y") {
@@ -2198,23 +2206,27 @@ static void gameplay() {
 				Knight.attackPower = 4;
 				Knight.defense = 0;
 				Knight.level = 0;
+				Knight.baselevel = 0;
 				Knight.lives = 1;
 			}
 			else {
 				cout << "Not a valid answer, I'm kicking you out." << endl;
+				SteamAPI_Shutdown();
 				break;
 			}
 		}
 		else if (Knight.killplayer == true) {
 			cout << Knight.getname() << " you should try to be less indecisive." << endl;
 			cout << "Game Over." << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+			SteamAPI_Shutdown();
 			break;
 		}
 	}
 	SteamAPI_Shutdown();
 }
 int main() {
-	if (SteamAPI_Init()) {
+	SteamAPI_Init();
+	if (SteamAPI_Init() == true) {
 		gameplay();
 	}
 	else {
