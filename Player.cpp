@@ -2843,7 +2843,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "flaming Longsword" && shop2 == 8) {
+            else if (purchasechoice == "flaming longsword" && shop2 == 8) {
                 if (Goldloom >= 250) {
                     cout << "You bought your very own Flaming Longsword!" << endl;
                     flaminglongsword = true;
