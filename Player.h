@@ -27,7 +27,7 @@ public:
 	int incrementvillage(int amount) {
 		return villagetracker + amount;
 	}
-	int randommessage = 3;
+	int randommessage = 0;
 	int villagetracker = 0;
 	int trackvisits = 0;
 	int villagerandomevent = 0;
