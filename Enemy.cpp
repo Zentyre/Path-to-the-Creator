@@ -19,28 +19,28 @@ void Enemy::attack(Character* Target) {
             health -= d;
             cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
             cout << "The " << name << " has " << health << " remaining." << endl;
-            trickstermovebool = false;
+            Target->trickstermovebool = false;
         }
         else if (attackself > 60) {
             d = r() % 10 + attackPower;
             health -= d;
             cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
             cout << "The " << name << " has " << health << " remaining." << endl;
-            trickstermovebool = false;
+            Target->trickstermovebool = false;
         }
         else if (attackself <= 60 && critchance > 70) {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
             d = r() % 10 + ceil(attackPower * 1.5);
             cout << name << " has crit and dealt " << d << " damage." << endl;
             Target->takeDmg(d);
-            trickstermovebool = false;
+            Target->trickstermovebool = false;
         }
         else {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
             d = r() % 10 + attackPower;
             cout << name << " dealt " << d << " damage." << endl;
             Target->takeDmg(d);
-            trickstermovebool = false;
+            Target->trickstermovebool = false;
         }
     }
     else if (Target->trickstermovebool == true && health > 0) {
@@ -51,28 +51,28 @@ void Enemy::attack(Character* Target) {
             health -= d;
             cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
             cout << "The " << name << " has " << health << " remaining." << endl;
-            trickstermovebool = false;
+            Target->trickstermovebool = false;
         }
         else if (attackself > 60) {
             d = r() % 7 + attackPower;
             health -= d;
             cout << "The enemy got confused and attacked itself for " << d << " damage!" << endl;
             cout << "The " << name << " has " << health << " remaining." << endl;
-            trickstermovebool = false;
+            Target->trickstermovebool = false;
         }
         else if (attackself <= 60 && critchance > 70) {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
             d = r() % 7 + ceil(attackPower * 1.5);
             cout << name << " has crit and dealt " << d << " damage." << endl;
             Target->takeDmg(d);
-            trickstermovebool = false;
+            Target->trickstermovebool = false;
         }
         else {
             cout << "The enemy resisted your willpower and did not get confused." << endl;
             d = r() % 7 + attackPower;
             cout << name << " dealt " << d << " damage." << endl;
             Target->takeDmg(d);
-            trickstermovebool = false;
+            Target->trickstermovebool = false;
         }
     }
     else if (health > 0 && getlevel() >= 100) {
