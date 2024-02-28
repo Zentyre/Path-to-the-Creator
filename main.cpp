@@ -1318,13 +1318,7 @@ static void gameplay() {
 			}
 			else if (retry == "Y" || retry == "y") {
 				cout << endl << endl;
-				Knight.maxhealth = 50;
-				Knight.health = 25;
-				Knight.attackPower = 4;
-				Knight.defense = 0;
-				Knight.level = 0;
-				Knight.baselevel = 0;
-				Knight.lives = 1;
+				Knight.resetKnight();
 			}
 			else {
 				cout << "Not a valid answer, I'm kicking you out." << endl;
@@ -1379,13 +1373,7 @@ static void gameplay() {
 			}
 			else if (playagain == "Y" || playagain == "y") {
 				cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
-				Knight.maxhealth = 50;
-				Knight.health = 25;
-				Knight.attackPower = 4;
-				Knight.defense = 0;
-				Knight.level = 0;
-				Knight.baselevel = 0;
-				Knight.lives = 1;
+				Knight.resetKnight();
 			}
 			else {
 				cout << "Not a valid answer, goodbye." << endl;
@@ -2201,13 +2189,7 @@ static void gameplay() {
 			}
 			else if (retry == "Y" || retry == "y") {
 				cout << endl << endl;
-				Knight.maxhealth = 50;
-				Knight.health = 25;
-				Knight.attackPower = 4;
-				Knight.defense = 0;
-				Knight.level = 0;
-				Knight.baselevel = 0;
-				Knight.lives = 1;
+				Knight.resetKnight();
 			}
 			else {
 				cout << "Not a valid answer, I'm kicking you out." << endl;
