@@ -107,7 +107,6 @@ public:
 	bool lightningvoidshroudslicer = false;
 	bool upgradedflaminglongsword = false;
 	bool lightningflaminglongsword = false;
-	bool maxhealthupgradeitem = false;
 	bool healingpotionitem = false;
 	bool lightningshard = false;
 	bool glassshoes = false;
@@ -186,10 +185,8 @@ public:
 	int mysteriousstrangerquesttracker3 = 0;
 	int mysteriousstrangerquesttracker4 = 0;
 	int mysteriousstrangerquesttracker5 = 0;
-
-
-
-	int resetKnight() {
+	//reset knight function
+	void resetKnight() {
 		maxhealth = 50;
 		health = 25;
 		attackPower = 4;
@@ -265,7 +262,6 @@ public:
 		bool lightningvoidshroudslicer = false;
 		bool upgradedflaminglongsword = false;
 		bool lightningflaminglongsword = false;
-		bool maxhealthupgradeitem = false;
 		bool healingpotionitem = false;
 		bool lightningshard = false;
 		bool glassshoes = false;

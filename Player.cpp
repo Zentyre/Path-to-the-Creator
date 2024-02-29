@@ -2918,7 +2918,7 @@ void Player::attack(Character* Target) {
             else if (purchasechoice == "maxhealth upgrade" && shop3 == 11) {
                 if (Goldloom >= 300) {
                     cout << "You bought a Maxhealth upgrade!" << endl;
-                    maxhealthupgradeitem = true;
+                    maxhealthtracker += 1;
                     Goldloom -= 300;
                     storetracker = 0;
                     checkitems();

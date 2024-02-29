@@ -1104,6 +1104,11 @@ static void gameplay() {
 						Knight.dreadnoughtmove = true;
 						cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
 					}
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 80 && playerclasschoice == "2") {
+						Knight.stopremessaging = 1;
+						Knight.executionermove = true;
+						cout << "You have unlocked your special Executioner skill, Soul Surge!" << endl;
+					}
 					if (areachoiceint == 1) {
 						Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefense(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
@@ -1868,24 +1873,34 @@ static void gameplay() {
 						Knight.Goldloom += r() % 16 + 10;
 					}
 					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == "6") {
+						Knight.stopremessaging = 1;
 						Knight.trickstermove = true;
 						cout << "You have unlocked your Trickster skill, Confuse!" << endl;
 					}
 					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == "4") {
+						Knight.stopremessaging = 1;
 						Knight.warforgedmove = true;
 						cout << "You have unlocked your Warforged Engineer skill, Risky Detonation!" << endl;
 					}
 					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 90 && playerclasschoice == "3") {
+						Knight.stopremessaging = 1;
 						Knight.soulweavermove = true;
 						cout << "You have unlocked your Soulweaver skill, Fortuitous Gambit!" << endl;
 					}
 					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 80 && playerclasschoice == "1") {
+						Knight.stopremessaging = 1;
 						Knight.knightmove = true;
 						cout << "You have unlocked your special Knight skill, Titans Strike!" << endl;
 					}
 					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 75 && playerclasschoice == "5") {
+						Knight.stopremessaging = 1;
 						Knight.dreadnoughtmove = true;
 						cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
+					}
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 80 && playerclasschoice == "2") {
+						Knight.stopremessaging = 1;
+						Knight.executionermove = true;
+						cout << "You have unlocked your special Executioner skill, Soul Surge!" << endl;
 					}
 					if (areachoiceint == 1) {
 						Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefense(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
