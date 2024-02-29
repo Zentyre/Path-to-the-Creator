@@ -1173,6 +1173,7 @@ static void gameplay() {
 							cout << "-Your quest is ready to turn in!-" << endl;
 						}
 					}
+					Knight.DLC1tracker++;
 					int enemyrandommessage;
 					enemyrandommessage = r() % 5;
 					if (enemyrandommessage == 0) {
@@ -1878,6 +1879,7 @@ static void gameplay() {
 						Knight.storetracker += 1;
 						Knight.Goldloom += r() % 16 + 10;
 					}
+					Knight.DLC1tracker++;
 					if (Knight.isAlive() == true && Knight.getbaselevel() >= 50 && playerclasschoice == "6") {
 						Knight.stopremessaging = 1;
 						Knight.trickstermove = true;
