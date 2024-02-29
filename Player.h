@@ -27,6 +27,7 @@ public:
 	int incrementvillage(int amount) {
 		return villagetracker + amount;
 	}
+	int DLC1tracker = 0;
 	int randommessage = 0;
 	int villagetracker = 0;
 	int trackvisits = 0;
@@ -43,6 +44,7 @@ public:
 	void playerclassdreadnought();
 	void playerclasstrickster();
 	void itemusehealthtonic();
+	int calculatePoints(const std::string& input);
 	int stopremessaging = 0;
 	int healthtonicitem = 0;
 	int failedforge = 0;

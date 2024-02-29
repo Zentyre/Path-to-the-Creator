@@ -12,6 +12,29 @@ Player::Player(string n, int maxh, int hp, int atk, int def, int baselvl, int li
     lives = live;
 }
 Enemy enemy("null", 0, 0, 0, 0, 0, 0);
+int calculatePoints(const std::string& input) {
+    std::map<char, int> letterPoints = {
+        {'a', 1}, {'b', 3}, {'c', 3}, {'d', 2}, {'e', 1},
+        {'f', 4}, {'g', 2}, {'h', 4}, {'i', 1}, {'j', 8},
+        {'k', 5}, {'l', 1}, {'m', 3}, {'n', 1}, {'o', 1},
+        {'p', 3}, {'q', 10}, {'r', 1}, {'s', 1}, {'t', 1},
+        {'u', 1}, {'v', 4}, {'w', 4}, {'x', 8}, {'y', 4},
+        {'z', 10}
+    };
+
+    int totalPoints = 0;
+    for (char letter : input) {
+        // Convert the letter to lowercase for case-insensitive comparison
+        char lowercaseLetter = std::tolower(letter);
+        
+        // Check if the letter is in the map
+        if (letterPoints.find(lowercaseLetter) != letterPoints.end()) {
+            // Add the corresponding points to the total
+            totalPoints += letterPoints[lowercaseLetter];
+        }
+    }
+    return totalPoints;
+}
 void Player::village(Enemy*Target) {
     if (baselevel > 200) {
         if (visitedbefore == true) {
@@ -1387,7 +1410,7 @@ void Player::checkitems() {
 void Player::attack(Character* Target) {
     setmaxhealth();
     int playerInput, x, h;
-    string purchasechoice = "", yesnobackpack = "", yesnopurchase = "", forgerestart = "", forgeOption = "";
+    string purchasechoice = "", yesnobackpack = "", yesnopurchase = "", forgerestart = "", forgeOption = "", game = "";
     int accuracy = 0;
     if (classtype == 1 && storymode == true) { //knight attack messages |health =25|attackPower=4|lives=1|
         if (knightmove == true) {
@@ -3734,6 +3757,63 @@ void Player::attack(Character* Target) {
         village(&enemy);
         attack(Target);
         break;
+    case 13:
+        if (DLC1tracker >= 10) {
+            int amountneeded = r() % 50 + 1;
+            int amount = 0;
+            cout << "Input up to 8 letters and see if you can get " << amountneeded << " points!" << endl;
+            cin >> ws;
+            getline(cin, game);
+            int points = calculatePoints(game);
+            if (points >= amountneeded) {
+                cout << "You did it!" << endl;
+                amount = r() % 201 + 50;
+                Goldloom += amount;
+                cout << "You got " << amount << " Goldloom, ";
+                amount = r() % 3 + 1;
+                if (amount == 1) {
+                    cout << amount << "Forgehammer and "
+                }
+                else {
+                    cout << amount << "Forgehammers and "
+                }
+                amount = r() % 10 + 2;
+                int random = r() % 7 + 1;
+                if (random == 1) {
+                    attackPower += amount;
+                    cout << amount << " attack!"
+                }
+                else if (random == 2) {
+                    health += amount;
+                    cout << amount << " health!"
+                }
+                else if (random == 3) {
+                    maxhealth += amount;
+                    cout << amount << " maxhealth!"
+                }
+                else if (random == 4) {
+                    defense += amount;
+                    cout << amount << " defense!"
+                }
+                else if (random == 5) {
+                    level += amount;
+                    cout << amount << " levels!"
+                }
+                else if (random == 6) {
+                    baselevel += amount;
+                    cout << amount << " baselevels!"
+                }
+                else {
+                    lives += 1;
+                    cout << "one life!"
+                }
+            }
+            else {
+                cout << "You didn't meet the " << amoundneeded << " point requirement. Try again next time." << endl;
+                attack(Target);
+                break;
+            }
+        }
     case 182097:
         if (ciphertracker == 3) {
             cout << "You've unlocked a secret blueprint to the Regenerative Mantle. Find some more clues to find the ingredients..." << endl;

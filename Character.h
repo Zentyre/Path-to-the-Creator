@@ -5,6 +5,7 @@
 #include <thread>
 #include <cmath>
 #include <random>
+#include <map>
 using namespace std;
 static random_device r;
 class Character {
