@@ -3772,44 +3772,44 @@ void Player::attack(Character* Target) {
                 cout << "You got " << amount << " Goldloom, ";
                 amount = r() % 3 + 1;
                 if (amount == 1) {
-                    cout << amount << "Forgehammer and "
+                    cout << amount << "Forgehammer and ";
                 }
                 else {
-                    cout << amount << "Forgehammers and "
+                    cout << amount << "Forgehammers and ";
                 }
                 amount = r() % 10 + 2;
                 int random = r() % 7 + 1;
                 if (random == 1) {
                     attackPower += amount;
-                    cout << amount << " attack!"
+                    cout << amount << " attack!" << endl;
                 }
                 else if (random == 2) {
                     health += amount;
-                    cout << amount << " health!"
+                    cout << amount << " health!" << endl;
                 }
                 else if (random == 3) {
                     maxhealth += amount;
-                    cout << amount << " maxhealth!"
+                    cout << amount << " maxhealth!" << endl;
                 }
                 else if (random == 4) {
                     defense += amount;
-                    cout << amount << " defense!"
+                    cout << amount << " defense!" << endl;
                 }
                 else if (random == 5) {
                     level += amount;
-                    cout << amount << " levels!"
+                    cout << amount << " levels!" << endl;
                 }
                 else if (random == 6) {
                     baselevel += amount;
-                    cout << amount << " baselevels!"
+                    cout << amount << " baselevels!" << endl;
                 }
                 else {
                     lives += 1;
-                    cout << "one life!"
+                    cout << "one life!" << endl;
                 }
             }
             else {
-                cout << "You didn't meet the " << amoundneeded << " point requirement. Try again next time." << endl;
+                cout << "You didn't meet the " << amountneeded << " point requirement. Try again next time." << endl;
                 attack(Target);
                 break;
             }
