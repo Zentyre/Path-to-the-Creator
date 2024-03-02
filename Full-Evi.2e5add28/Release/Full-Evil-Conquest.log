@@ -1,0 +1,56 @@
+﻿  main.cpp
+C:\Users\drago\source\repos\Path-to-the-Creator\Enemy.h(22,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\drago\source\repos\Path-to-the-Creator\Player.h(23,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(10,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(57,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(68,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(69,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(70,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(71,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(169,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(180,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(181,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(182,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(183,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(281,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(292,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(293,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(294,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(295,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(393,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(404,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(405,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(406,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(407,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(505,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(516,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(517,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(518,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(519,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1042,33): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1043,29): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1046,33): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1049,31): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1050,29): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1053,33): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1054,31): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1068,30): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1840,33): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1841,29): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1844,33): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1847,31): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1848,29): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1851,33): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1852,31): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1868,30): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(2044,24): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(2049,21): warning C4553: '==': result of expression not used; did you intend '='?
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 279 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Full-Evil-Conquest.vcxproj -> C:\Users\drago\source\repos\Path-to-the-Creator\Release\Full-Evil-Conquest.exe
