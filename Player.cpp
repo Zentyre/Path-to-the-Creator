@@ -12,7 +12,7 @@ Player::Player(string n, int maxh, int hp, int atk, int def, int baselvl, int li
     lives = live;
 }
 Enemy enemy("null", 0, 0, 0, 0, 0, 0);
-int calculatePoints(const std::string& input) {
+int Player::calculatePoints(const std::string& input) {
     std::map<char, int> letterPoints = {
         {'a', (r() % 10 + 1)}, {'b', (r() % 10 + 1)}, {'c', (r() % 10 + 1)}, {'d', (r() % 10 + 1)}, {'e', (r() % 10 + 1)},
         {'f', (r() % 10 + 1)}, {'g', (r() % 10 + 1)}, {'h', (r() % 10 + 1)}, {'i', (r() % 10 + 1)}, {'j', (r() % 10 + 1)},
@@ -3759,6 +3759,7 @@ void Player::attack(Character* Target) {
         break;
     case 13:
         if (DLC1tracker >= 10) {
+            DLC1tracker -= 10;
             int amountneeded = r() % 50 + 1;
             int amount = 0;
             cout << "Input up to 8 letters and see if you can get " << amountneeded << " points!" << endl;
@@ -3772,10 +3773,10 @@ void Player::attack(Character* Target) {
                 cout << "You got " << amount << " Goldloom, ";
                 amount = r() % 3 + 1;
                 if (amount == 1) {
-                    cout << amount << "Forgehammer and ";
+                    cout << amount << " Forgehammer and ";
                 }
                 else {
-                    cout << amount << "Forgehammers and ";
+                    cout << amount << " Forgehammers and ";
                 }
                 amount = r() % 10 + 2;
                 int random = r() % 7 + 1;
@@ -3807,12 +3808,19 @@ void Player::attack(Character* Target) {
                     lives += 1;
                     cout << "one life!" << endl;
                 }
+                attack(Target);
+                break;
             }
             else {
                 cout << "You didn't meet the " << amountneeded << " point requirement. Try again next time." << endl;
                 attack(Target);
                 break;
             }
+        }
+        else {
+            cout << "This is not ready for you yet. Come back later" << endl;
+            attack(Target);
+            break;
         }
     case 182097:
         if (ciphertracker == 3) {
