@@ -2235,7 +2235,7 @@ int main() {
 		gameplay();
 	}
 	else {
-			cout << "Steam initialization failed. You can still play if you don't mind." << endl;
+			cout << "Steam initialization failed. You can still play if you don't mind your stats not saving to leaderboard in endless mode." << endl;
 			cout << "Would you still like to play?" << endl;
 			while (true) {
 				string yesorno;
