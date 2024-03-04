@@ -3152,35 +3152,53 @@ void Player::attack(Character* Target) {
         break;
     case 9:
         cout << " --Your Stats--" << endl;
-        cout << "--" << maxhealth << " Maxhealth--" << endl;
-        cout << "--" << health << " Health--" << endl;
-        cout << "--" << attackPower << " Attack--" << endl;
-        cout << "--" << defense << " defense--" << endl;
-        cout << "--" << baselevel << " Baselevel--" << endl;
-        cout << "--" << level + baselevel << " Level--" << endl;
-        cout << "--" << lives << " Lives--" << endl;
-        cout << "--" << kills << " Kills--" << endl;
-        cout << "--" << Goldloom << " Goldloom--" << endl;
-        cout << "--" << questscompleted << " Quests Completed--" << endl;
+        cout << "-" << maxhealth << " Maxhealth-" << endl;
+        cout << "-" << health << " Health-" << endl;
+        cout << "-" << attackPower << " Attack-" << endl;
+        cout << "-" << defense << " defense-" << endl;
+        cout << "-" << baselevel << " Baselevel-" << endl;
+        cout << "-" << level + baselevel << " Level-" << endl;
+        cout << "-" << lives << " Lives-" << endl;
+        cout << "-" << kills << " Kills-" << endl;
+        cout << "-" << Goldloom << " Goldloom-" << endl;
+        cout << "-" << questscompleted << " Quests Completed-" << endl;
+        if (factionchoice != "") {
+            cout << "--Faction:" << factionchoice << "--" << endl;
+        }
+        if (difficulty == 1) {
+            cout << "--Difficulty:Very Easy--" << endl;
+        }
+        else if (difficulty == 2) {
+            cout << "--Difficulty:Easy--" << endl;
+        }
+        else if (difficulty == 3) {
+            cout << "--Difficulty:Normal--" << endl;
+        }
+        else if (difficulty == 4) {
+            cout << "--Difficulty:Hard--" << endl;
+        }
+        else if (difficulty == 5) {
+            cout << "--Difficulty:Very Hard--" << endl;
+        }
         if (classtype == 1) {
-            cout << "-Class = Knight-" << endl;
+            cout << "-Class:Knight-" << endl;
         }
         else if (classtype == 2) {
-            cout << "-Class = Executioner-" << endl;
+            cout << "-Class:Executioner-" << endl;
         }
         else if (classtype == 3) {
-            cout << "-Class = Soulweaver-" << endl;
+            cout << "-Class:Soulweaver-" << endl;
         }
         else if (classtype == 4) {
-            cout << "-Class = Warforged Engineer-" << endl;
+            cout << "-Class:Warforged Engineer-" << endl;
         }
         else if (classtype == 5) {
-            cout << "-Class = Dreadnought-" << endl;
+            cout << "-Class:Dreadnought-" << endl;
         }
         else if (classtype == 6) {
-            cout << "-Class = Trickster-" << endl;
+            cout << "-Class:Trickster-" << endl;
         }
-        cout << "--Quest--" << endl;
+        cout << "--Quest Progress--" << endl;
         if (questpicker == 1) {
             cout << "You have killed " << questoneprogress << " enemies out of 15." << endl;
         }
@@ -3196,7 +3214,6 @@ void Player::attack(Character* Target) {
         else if (questpicker == 5) {
             cout << "You have killed " << questfiveprogress << " out of 1." << endl;
         }
-        cout << difficulty << endl;
         cout << endl << endl;
         cout << " --" << Target->name << " Stats--" << endl;
         cout << "--" << Target->maxhealth << " Maxhealth--" << endl;
@@ -3606,6 +3623,9 @@ void Player::attack(Character* Target) {
                     cout << "I'm going to give you " << randomamt << " Radiant Gems." << endl;
                 }
             }
+            if (factionchoiceint != 0) {
+                factionquesttracker += 1;
+            }
         }
         else if (questtwoprogress == 1) {
             int randomitem;
@@ -3732,6 +3752,8 @@ void Player::attack(Character* Target) {
             attack(Target);
             break;
         }
+        attack(Target);
+        break;
     case 12:
         village(&enemy);
         attack(Target);

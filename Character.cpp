@@ -13,6 +13,12 @@ Character::Character() {
 	defense = 0;
 	baselevel = 0;
 }
+void Character::stringUppercaseFaction() {
+	factionchoice[0] = std::toupper(factionchoice[0]);
+	size_t pos = factionchoice.find(' ');
+	if (pos != std::string::npos && pos + 1 < factionchoice.length())
+		factionchoice[pos + 1] = std::toupper(factionchoice[pos + 1]);
+}
 int Character::getclass() {
 	return classtype;
 }

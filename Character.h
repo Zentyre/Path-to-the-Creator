@@ -8,6 +8,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <cctype>
 using namespace std;
 static random_device r;
 class Character {
@@ -41,6 +42,7 @@ public:
 	int incrementkills();
 	int getkills();
 	int getmaxhealth();
+	void stringUppercaseFaction();
 	int maxhealthtracker = 0;
 	int classtype = 1;
 	int invisibilitypotion = 0;

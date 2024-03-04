@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "..//Steam/steam_api.h"
-Player Knight("Player", 50, 25, 4, 0, 0, 1);
+Player Knight("Player", 500, 500, 500, 500, 500, 1);
 int endlessSpawn = 1, randomevent = 0, villagetracker = 0, chest = 0;
 bool disableGeneration = false;
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
@@ -735,31 +735,31 @@ static void gameplay() {
 			cout << endl;
 			cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get the invaders!-" << endl << endl;
 			areachoiceint = 1;
-			Knight.difficulty = "Very Easy";
+			Knight.difficulty = 1;
 		}
 		else if (areachoice == "gooey glade" || areachoice == "2") {
 			cout << endl;
 			cout << "-Welcome to the uneasy feeling area of the slimes. Good Luck Surviving!-" << endl << endl;
 			areachoiceint = 2;
-			Knight.difficulty = "Easy";
+			Knight.difficulty = 2;
 		}
 		else if (areachoice == "croc isle" || areachoice == "3") {
 			cout << endl;
 			cout << "-Welcome to the land of the crocs. Go find that croc king!-" << endl << endl;
 			areachoiceint = 3;
-			Knight.difficulty = "Normal";
+			Knight.difficulty = 3;
 		}
 		else if (areachoice == "hopscotch highlands" || areachoice == "4") {
 			cout << endl;
 			cout << "-Welcome to the land of the kangaroos, attack that zoo owner!-" << endl << endl;
 			areachoiceint = 4;
-			Knight.difficulty = "Hard";
+			Knight.difficulty = 4;
 		}
 		else if (areachoice == "skeletal sanctum" || areachoice == "5") {
 			cout << endl;
 			cout << "-Welcome to the graveyeard of your dead family...just kidding. Look out there's a skeleton!-" << endl << endl;
 			areachoiceint = 5;
-			Knight.difficulty = "Very Hard";
+			Knight.difficulty = 5;
 		}
 		else {
 			cout << "That area doesn't exist so I guess I'll choose for you" << endl;
@@ -1142,21 +1142,25 @@ static void gameplay() {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Shadowborn Syndicate. Welcome to the land of no return." << endl;
 							Knight.factionchoiceint = 1;
+							Knight.stringUppercaseFaction();
 						}
 						else if (Knight.factionchoice == "emberfall covenant") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Emberfall Covenant! Good luck on your journey to wield the ancient flames." << endl;
 							Knight.factionchoiceint = 2;
+							Knight.stringUppercaseFaction();
 						}
 						else if (Knight.factionchoice == "celestial vanguard") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Celestial Vanguard! I hope you will find the light in this darkness." << endl;
 							Knight.factionchoiceint = 3;
+							Knight.stringUppercaseFaction();
 						}
 						else if (Knight.factionchoice == "ironclad dominion") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Ironclad Dominion. I wish you well, becoming the best." << endl;
 							Knight.factionchoiceint = 4;
+							Knight.stringUppercaseFaction();
 						}
 					}
 					if (Knight.killememiesquest == true) {
@@ -1526,11 +1530,11 @@ static void gameplay() {
 			cout << "I dont even care, whatever you just entered did absolutely nothing. You're stuck with the name you gave me before now." << endl;
 		}
 		cout << "Where would you like to journey " << Knight.getname() << " ?" << endl;
-		cout << "-1-Mushroom Kingdom-" << endl;
-		cout << "-2-Gooey Glade-" << endl;
-		cout << "-3-Croc Isle-" << endl;
-		cout << "-4-Hopscotch Highlands-" << endl;
-		cout << "-5-Skeletal Sanctum-" << endl;
+		cout << "-1-Mushroom Kingdom-Difficulty:Very Easy-" << endl;
+		cout << "-2-Gooey Glade-Difficulty:Easy-" << endl;
+		cout << "-3-Croc Isle-Difficulty:Normal-" << endl;
+		cout << "-4-Hopscotch Highlands-Difficulty:Hard-" << endl;
+		cout << "-5-Skeletal Sanctum-Difficulty:Very Hard-" << endl;
 		string areachoice = "";
 		int areachoiceint = 0;
 		cin >> ws;
@@ -1540,26 +1544,31 @@ static void gameplay() {
 			cout << endl;
 			cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get the invaders!-" << endl << endl;
 			areachoiceint = 1;
+			Knight.difficulty = 1;
 		}
 		else if (areachoice == "gooey glade" || areachoice == "2") {
 			cout << endl;
 			cout << "-Welcome to the uneasy feeling area of the slimes. Good Luck Surviving!-" << endl << endl;
 			areachoiceint = 2;
+			Knight.difficulty = 2;
 		}
 		else if (areachoice == "croc isle" || areachoice == "3") {
 			cout << endl;
 			cout << "-Welcome to the land of the crocs. Go find that croc king!-" << endl << endl;
 			areachoiceint = 3;
+			Knight.difficulty = 3;
 		}
 		else if (areachoice == "hopscotch highlands" || areachoice == "4") {
 			cout << endl;
 			cout << "-Welcome to the land of the kangaroos, attack that zoo owner!-" << endl << endl;
 			areachoiceint = 4;
+			Knight.difficulty = 4;
 		}
 		else if (areachoice == "skeletal sanctum" || areachoice == "5") {
 			cout << endl;
 			cout << "-Welcome to the graveyeard of your dead family...just kidding. Look out there's a skeleton!-" << endl << endl;
 			areachoiceint = 5;
+			Knight.difficulty = 5;
 		}
 		else {
 			cout << "That area doesn't exist so I guess I'll choose for you" << endl;
@@ -1934,21 +1943,25 @@ static void gameplay() {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Shadowborn Syndicate. Welcome to the land of no return." << endl;
 							Knight.factionchoiceint = 1;
+							Knight.stringUppercaseFaction();
 						}
 						else if (Knight.factionchoice == "emberfall covenant") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Emberfall Covenant! Good luck on your journey to wield the ancient flames." << endl;
 							Knight.factionchoiceint = 2;
+							Knight.stringUppercaseFaction();
 						}
 						else if (Knight.factionchoice == "celestial vanguard") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Celestial Vanguard! I hope you will find the light in this darkness." << endl;
 							Knight.factionchoiceint = 3;
+							Knight.stringUppercaseFaction();
 						}
 						else if (Knight.factionchoice == "ironclad dominion") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Ironclad Dominion. I wish you well, becoming the best." << endl;
 							Knight.factionchoiceint = 4;
+							Knight.stringUppercaseFaction();
 						}
 					}
 					if (Knight.killememiesquest == true) {

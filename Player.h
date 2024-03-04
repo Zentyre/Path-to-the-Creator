@@ -111,6 +111,7 @@ public:
 	int soulstone = 0;
 	int radiantgem = 0;
 	int questtracker = 0;
+	int factionquesttracker = 0;
 	int questpicker = 0;
 	int questrandomizer = 0;
 	int questrandomizer2 = 0;
@@ -245,7 +246,7 @@ public:
 	int mysteriousstrangerquesttracker3 = 0;
 	int mysteriousstrangerquesttracker4 = 0;
 	int mysteriousstrangerquesttracker5 = 0;
-	string difficulty = "";
+	int difficulty = 0;
 
 	void ResetKnight() {
 		health = 25;
@@ -401,6 +402,6 @@ public:
 		mysteriousstrangerquesttracker3 = 0;
 		mysteriousstrangerquesttracker4 = 0;
 		mysteriousstrangerquesttracker5 = 0;
-		difficulty = "";
+		difficulty = 0;
 	}
 };
