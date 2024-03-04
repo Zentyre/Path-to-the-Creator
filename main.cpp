@@ -77,41 +77,41 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 	if (endlessSpawn == 1) {
 		switch (x) {
 		case 0:
-			return new Enemy("Shroom", 20, 3, 0, 1, 1, 20);
+			return new Enemy("Shroom", 10, 2, 0, 1, 1, 10);
 			break;
 		case 1:
-			return new Enemy("Shroom Knight", 25, 4, 0, 1, 2, 25);
+			return new Enemy("Shroom Knight", 15, 2, 0, 1, 2, 15);
 			break;
 		case 2:
-			return new Enemy("Shroom ArchKnight", 30, 5, 2, enemylives, enemylvl, 30);
+			return new Enemy("Shroom ArchKnight", 20, 3, 1, enemylives, enemylvl, 20);
 			break;
 		case 3:
-			return new Enemy("Noble Shroom", 35, 7, 4, enemylives, enemylvl, 35);
+			return new Enemy("Noble Shroom", 30, 4, 2, enemylives, enemylvl, 30);
 			break;
 		case 4:
-			return new Enemy("Royal Shroom", 45, 10, 7, enemylives, enemylvl, 45);
+			return new Enemy("Royal Shroom", 35, 6, 3, enemylives, enemylvl, 35);
 			break;
 		case 5:
-			return new Enemy("Princess Slime", 70, 13, 10, enemylives, enemylvl, 70);
+			return new Enemy("Princess Slime", 45, 9, 6, enemylives, enemylvl, 45);
 			break;
 		case 6:
-			return new Enemy("Prince Shroom", 85, 15, 16, enemylives, enemylvl, 85);
+			return new Enemy("Prince Shroom", 55, 13, 9, enemylives, enemylvl, 55);
 			break;
 		case 7:
-			return new Enemy("King Shroom", 115, 18, 19, enemylives, enemylvl, 115);
+			return new Enemy("King Shroom", 70, 15, 12, enemylives, enemylvl, 70);
 			break;
 		case 8:
-			return new Enemy("Emperor Shroom", 150, 22, 22, enemylives, enemylvl, 150);
+			return new Enemy("Emperor Shroom", 85, 17, 15, enemylives, enemylvl, 85);
 			break;
 		case 9:
-			return new Enemy("Leader Shroom", 170, 25, 27, enemylives, enemylvl, 170);
+			return new Enemy("Leader Shroom", 100, 20, 18, enemylives, enemylvl, 100);
 			break;
 		case 10:
-			return new Enemy("Divine Shroom", 200, 30, 30, enemylives, enemylvl, 200);
+			return new Enemy("Divine Shroom", 135, 24, 21, enemylives, enemylvl, 135);
 			break;
 		case 11:
 			cout << "--A boss has appeared!--" << endl;
-			return new Enemy("Boss Shroom", 250, 37, 35, enemylives, enemylvl, 250);
+			return new Enemy("Boss Shroom", 150, 30, 27, enemylives, enemylvl, 150);
 			Knight.bossSpawned = true;
 			break;
 		case 12:
@@ -122,7 +122,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 		default:
 			cout << "The creator has arrived...I wish you luck." << endl;
 			Knight.bossSpawned = true;
-			return new Enemy("Creator Shroom", 1000, 50, 45, enemylives, enemylvl, 10000);
+			return new Enemy("Creator Shroom", 500, 37, 30, enemylives, enemylvl, 500);
 			break;
 		}
 	}
@@ -189,42 +189,42 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 	if (endlessSpawn == 1) {
 		switch (x) {
 		case 0:
-			return new Enemy("Slime", 20, 1, 0, 1, 0, 20);
+			return new Enemy("Slime", 15, 1, 0, 1, 0, 15);
 			break;
 		case 1:
-			return new Enemy("Epic Slime", 25, 1, 0, 1, 0, 25);
+			return new Enemy("Epic Slime", 20, 1, 0, 1, 0, 20);
 			break;
 		case 2:
-			return new Enemy("Superior Slime", 30, 5, 2, enemylives2, enemylvl2, 30);
+			return new Enemy("Superior Slime", 25, 5, 2, enemylives2, enemylvl2, 25);
 			break;
 		case 3:
-			return new Enemy("Super Slime", 35, 7, 4, enemylives2, enemylvl2, 35);
+			return new Enemy("Super Slime", 30, 7, 4, enemylives2, enemylvl2, 30);
 			break;
 		case 4:
-			return new Enemy("Incredible Slime", 45, 10, 7, enemylives2, enemylvl2, 45);
+			return new Enemy("Incredible Slime", 40, 10, 7, enemylives2, enemylvl2, 40);
 			break;
 		case 5:
-			return new Enemy("Superb Slime", 70, 13, 10, enemylives2, enemylvl2, 70);
+			return new Enemy("Superb Slime", 55, 13, 10, enemylives2, enemylvl2, 55);
 			break;
 		case 6:
-			return new Enemy("King Slime", 85, 15, 16, enemylives2, enemylvl2, 85);
+			return new Enemy("King Slime", 70, 15, 16, enemylives2, enemylvl2, 70);
 			break;
 		case 7:
-			return new Enemy("Demon Slime", 115, 18, 19, enemylives2, enemylvl2, 115);
+			return new Enemy("Demon Slime", 95, 18, 19, enemylives2, enemylvl2, 95);
 			break;
 		case 8:
-			return new Enemy("Overlord Slime", 150, 22, 22, enemylives2, enemylvl2, 150);
+			return new Enemy("Overlord Slime", 115, 22, 22, enemylives2, enemylvl2, 115);
 			break;
 		case 9:
-			return new Enemy("Universal Super Slime", 170, 25, 27, enemylives2, enemylvl2, 170);
+			return new Enemy("Universal Super Slime", 135, 25, 27, enemylives2, enemylvl2, 135);
 			break;
 		case 10:
-			return new Enemy("Godly Slime", 200, 30, 30, enemylives2, enemylvl2, 200);
+			return new Enemy("Godly Slime", 150, 30, 30, enemylives2, enemylvl2, 150);
 			break;
 		case 11:
 			cout << "--A boss has appeared!--" << endl;
 			Knight.bossSpawned = true;
-			return new Enemy("Boss Slime", 250, 37, 35, enemylives2, enemylvl2, 250);
+			return new Enemy("Boss Slime", 200, 37, 35, enemylives2, enemylvl2, 200);
 			break;
 		case 12:
 			cout << "--An endless mode boss has arrived...--" << endl;
@@ -234,7 +234,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 		default:
 			cout << "The creator has arrived...I wish you luck." << endl;
 			Knight.bossSpawned = true;
-			return new Enemy("Creator Slime", 1000, 50, 45, enemylives2, enemylvl2, 1000);
+			return new Enemy("Creator Slime", 750, 45, 40, enemylives2, enemylvl2, 1750);
 			break;
 		}
 	}
@@ -431,24 +431,24 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 			return new Enemy("Jumping Roo", 70, 13, 10, enemylives4, enemylvl4, 70);
 			break;
 		case 6:
-			return new Enemy("Killer Roo", 85, 15, 16, enemylives4, enemylvl4, 85);
+			return new Enemy("Killer Roo", 100, 15, 16, enemylives4, enemylvl4, 100);
 			break;
 		case 7:
-			return new Enemy("Crackhead Roo", 115, 18, 19, enemylives4, enemylvl4, 115);
+			return new Enemy("Crackhead Roo", 125, 18, 19, enemylives4, enemylvl4, 125);
 			break;
 		case 8:
-			return new Enemy("Aussie Roo", 150, 22, 22, enemylives4, enemylvl4, 150);
+			return new Enemy("Aussie Roo", 160, 22, 22, enemylives4, enemylvl4, 160);
 			break;
 		case 9:
-			return new Enemy("Jacked Roo", 170, 25, 27, enemylives4, enemylvl4, 170);
+			return new Enemy("Jacked Roo", 180, 25, 27, enemylives4, enemylvl4, 180);
 			break;
 		case 10:
-			return new Enemy("Paragon Roo", 200, 30, 30, enemylives4, enemylvl4, 200);
+			return new Enemy("Paragon Roo", 215, 30, 30, enemylives4, enemylvl4, 215);
 			break;
 		case 11:
 			cout << "--A boss has appeared!--" << endl;
 			Knight.bossSpawned = true;
-			return new Enemy("Boomaroo", 250, 37, 35, enemylives4, enemylvl4, 250);
+			return new Enemy("Boomaroo", 275, 37, 35, enemylives4, enemylvl4, 275);
 			break;
 		case 12:
 			cout << "--An endless mode boss has arrived...--" << endl;
@@ -458,7 +458,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 		default:
 			cout << "The creator has arrived...I wish you luck." << endl;
 			Knight.bossSpawned = true;
-			return new Enemy("Creator Kangaroo", 1000, 50, 45, enemylives4, enemylvl4, enemymaxh4);
+			return new Enemy("Creator Kangaroo", 1500, 50, 45, enemylives4, enemylvl4, 1500);
 			break;
 		}
 	}
@@ -543,24 +543,24 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 			return new Enemy("Bony Bill", 70, 13, 10, enemylives5, enemylvl5, 70);
 			break;
 		case 6:
-			return new Enemy("Crazy Bones", 85, 15, 16, enemylives5, enemylvl5, 85);
+			return new Enemy("Crazy Bones", 100, 19, 18, enemylives5, enemylvl5, 100);
 			break;
 		case 7:
-			return new Enemy("Broken Bone Skeleton", 115, 18, 19, enemylives5, enemylvl5, 115);
+			return new Enemy("Broken Bone Skeleton", 130, 21, 19, enemylives5, enemylvl5, 130);
 			break;
 		case 8:
-			return new Enemy("Boogie Bone", 150, 22, 22, enemylives5, enemylvl5, 150);
+			return new Enemy("Boogie Bone", 165, 24, 21, enemylives5, enemylvl5, 165);
 			break;
 		case 9:
-			return new Enemy("Ranked Skeleton", 170, 25, 27, enemylives5, enemylvl5, 170);
+			return new Enemy("Ranked Skeleton", 185, 26, 24, enemylives5, enemylvl5, 185);
 			break;
 		case 10:
-			return new Enemy("Captain Skellie", 200, 30, 30, enemylives5, enemylvl5, 200);
+			return new Enemy("Captain Skellie", 215, 34, 32, enemylives5, enemylvl5, 215);
 			break;
 		case 11:
 			cout << "--A boss has appeared!--" << endl;
 			Knight.bossSpawned = true;
-			return new Enemy("Super Skellie", 250, 37, 35, enemylives5, enemylvl5, 250);
+			return new Enemy("Super Skellie", 275, 45, 39, enemylives5, enemylvl5, 275);
 			break;
 		case 12:
 			cout << "--An endless mode boss has arrived...--" << endl;
@@ -570,7 +570,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 		default:
 			cout << "The creator has arrived...I wish you luck." << endl;
 			Knight.bossSpawned = true;
-			return new Enemy("Creator Skeleton", 1000, 50, 45, enemylives5, enemylvl5, 1000);
+			return new Enemy("Creator Skeleton", 2000, 95, 78, enemylives5, enemylvl5, 2000);
 			break;
 		}
 	}
@@ -605,6 +605,7 @@ static void gameplay() {
 		cout << "-Knight has average health and damage-" << endl << "-Executioner has a lot less health and a lot more damage-" << endl << "-Soulweaver starts with 1 extra life for less attack/health and a special move-" << endl << "-Warforged Engineer has slightly higher health for slightly lower damage and a special move-" << endl << "-Dreadnought has a lot more health / maxhealth and a lot less damage-" << endl << "-Trickster has a little less health for barely more attack, and a special move.-" << endl;
 		int cinFailchoice = 0, classcurrency = 0, playerclasschoiceint = 0;
 		string playerclasschoice = "";
+		cin >> ws;
 		getline(cin, playerclasschoice);
 		if (playerclasschoice == "1") {
 			cout << "You chose Knight!" << endl;
@@ -720,11 +721,11 @@ static void gameplay() {
 			cout << "I dont even care, whatever you just entered did absolutely nothing. You're stuck with the name you gave me before now." << endl;
 		}
 		cout << "Where would you like to journey " << Knight.getname() << " ?" << endl;
-		cout << "-1-Mushroom Kingdom-" << endl;
-		cout << "-2-Gooey Glade-" << endl;
-		cout << "-3-Croc Isle-" << endl;
-		cout << "-4-Hopscotch Highlands-" << endl;
-		cout << "-5-Skeletal Sanctum-" << endl;
+		cout << "-1-Mushroom Kingdom-Difficulty:Very Easy-" << endl;
+		cout << "-2-Gooey Glade-Difficulty:Easy-" << endl;
+		cout << "-3-Croc Isle-Difficulty:Normal-" << endl;
+		cout << "-4-Hopscotch Highlands-Difficulty:Hard-" << endl;
+		cout << "-5-Skeletal Sanctum-Difficulty:Very Hard-" << endl;
 		string areachoice = "";
 		int areachoiceint = 0;
 		cin >> ws;
@@ -734,26 +735,31 @@ static void gameplay() {
 			cout << endl;
 			cout << "-Welcome to the happy Kingdom of the Mushrooms! Normally you would be welcomed by, well a mushroom, but right now they are being invaded. Go get the invaders!-" << endl << endl;
 			areachoiceint = 1;
+			Knight.difficulty = "Very Easy";
 		}
 		else if (areachoice == "gooey glade" || areachoice == "2") {
 			cout << endl;
 			cout << "-Welcome to the uneasy feeling area of the slimes. Good Luck Surviving!-" << endl << endl;
 			areachoiceint = 2;
+			Knight.difficulty = "Easy";
 		}
 		else if (areachoice == "croc isle" || areachoice == "3") {
 			cout << endl;
 			cout << "-Welcome to the land of the crocs. Go find that croc king!-" << endl << endl;
 			areachoiceint = 3;
+			Knight.difficulty = "Normal";
 		}
 		else if (areachoice == "hopscotch highlands" || areachoice == "4") {
 			cout << endl;
 			cout << "-Welcome to the land of the kangaroos, attack that zoo owner!-" << endl << endl;
 			areachoiceint = 4;
+			Knight.difficulty = "Hard";
 		}
 		else if (areachoice == "skeletal sanctum" || areachoice == "5") {
 			cout << endl;
 			cout << "-Welcome to the graveyeard of your dead family...just kidding. Look out there's a skeleton!-" << endl << endl;
 			areachoiceint = 5;
+			Knight.difficulty = "Very Hard";
 		}
 		else {
 			cout << "That area doesn't exist so I guess I'll choose for you" << endl;
@@ -1103,6 +1109,10 @@ static void gameplay() {
 						Knight.dreadnoughtmove = true;
 						cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
 					}
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 80 && playerclasschoice == "2") {
+						Knight.executionermove = true;
+						cout << "You have unlocked your special Executioner skill, Soul Surge!" << endl;
+					}
 					if (areachoiceint == 1) {
 						Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefense(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
@@ -1308,7 +1318,7 @@ static void gameplay() {
 				cout << "-Class = Trickster-" << endl;
 			}
 			cout << "Would you like to try Again? (Y/N)" << endl;
-			Knight.delay(10);
+			Knight.delay(3);
 			string retry = "";
 			cin >> retry;
 			if (retry == "N" || retry == "n") {
@@ -1316,12 +1326,7 @@ static void gameplay() {
 			}
 			else if (retry == "Y" || retry == "y") {
 				cout << endl << endl;
-				Knight.maxhealth = 50;
-				Knight.health = 25;
-				Knight.attackPower = 4;
-				Knight.defense = 0;
-				Knight.level = 0;
-				Knight.lives = 1;
+				Knight.ResetKnight();
 			}
 			else {
 				cout << "Not a valid answer, I'm kicking you out." << endl;
@@ -1375,12 +1380,7 @@ static void gameplay() {
 			}
 			else if (playagain == "Y" || playagain == "y") {
 				cout << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl << endl;
-				Knight.maxhealth = 50;
-				Knight.health = 25;
-				Knight.attackPower = 4;
-				Knight.defense = 0;
-				Knight.level = 0;
-				Knight.lives = 1;
+				Knight.ResetKnight();
 			}
 			else {
 				cout << "Not a valid answer, goodbye." << endl;
@@ -1892,6 +1892,10 @@ static void gameplay() {
 						Knight.dreadnoughtmove = true;
 						cout << "You have unlocked your special Dreadnought skill, Healing Remedy!" << endl;
 					}
+					else if (Knight.isAlive() == true && Knight.getbaselevel() >= 80 && playerclasschoice == "2") {
+						Knight.executionermove = true;
+						cout << "You have unlocked your special Executioner skill, Soul Surge!" << endl;
+					}
 					if (areachoiceint == 1) {
 						Slime = generateEnemy(Knight.getbaselevel(), Knight.getmaxhealth(), Knight.getattackPower(), Knight.getdefense(), Knight.getlevel(), Knight.getlives(), Knight.getclass());
 					}
@@ -2185,7 +2189,7 @@ static void gameplay() {
 				cout << "-Class = Trickster-" << endl;
 			}
 			cout << "Would you like to try Again? (Y/N)" << endl;
-			Knight.delay(10);
+			Knight.delay(3);
 			string retry = "";
 			cin >> retry;
 			if (retry == "N" || retry == "n") {
@@ -2193,12 +2197,7 @@ static void gameplay() {
 			}
 			else if (retry == "Y" || retry == "y") {
 				cout << endl << endl;
-				Knight.maxhealth = 50;
-				Knight.health = 25;
-				Knight.attackPower = 4;
-				Knight.defense = 0;
-				Knight.level = 0;
-				Knight.lives = 1;
+				Knight.ResetKnight();
 			}
 			else {
 				cout << "Not a valid answer, I'm kicking you out." << endl;

@@ -2844,7 +2844,7 @@ void Player::attack(Character* Target) {
                     storetracker -= 1;
                 }
             }
-            else if (purchasechoice == "flaming Longsword" && shop2 == 8) {
+            else if (purchasechoice == "flaming longsword" && shop2 == 8) {
                 if (Goldloom >= 250) {
                     cout << "You bought your very own Flaming Longsword!" << endl;
                     flaminglongsword = true;
@@ -2919,7 +2919,7 @@ void Player::attack(Character* Target) {
             else if (purchasechoice == "maxhealth upgrade" && shop3 == 11) {
                 if (Goldloom >= 300) {
                     cout << "You bought a Maxhealth upgrade!" << endl;
-                    maxhealthupgradeitem = true;
+                    maxhealthtracker += 1;
                     Goldloom -= 300;
                     storetracker = 0;
                     checkitems();
@@ -3196,6 +3196,7 @@ void Player::attack(Character* Target) {
         else if (questpicker == 5) {
             cout << "You have killed " << questfiveprogress << " out of 1." << endl;
         }
+        cout << difficulty << endl;
         cout << endl << endl;
         cout << " --" << Target->name << " Stats--" << endl;
         cout << "--" << Target->maxhealth << " Maxhealth--" << endl;
