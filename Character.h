@@ -5,6 +5,9 @@
 #include <thread>
 #include <cmath>
 #include <random>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 static random_device r;
 class Character {
