@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <cctype>
+#include <unordered_map>
 using namespace std;
 static random_device r;
 class Character {
@@ -64,11 +65,4 @@ public:
 	void delay(int x) {
 		this_thread::sleep_for(chrono::seconds(x));
 	}
-	string newName = "";
-	int newHealth = 0;
-	int newAttack = 0;
-	int newDefense = 0;
-	int newLives = 0;
-	int newLevel = 0;
-	int newMaxhealth = 0;
 };

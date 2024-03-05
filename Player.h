@@ -254,7 +254,66 @@ public:
 	int mysteriousstrangerquesttracker4 = 0;
 	int mysteriousstrangerquesttracker5 = 0;
 	int difficulty = 0;
+	void playGemstoneMining() {
+		int attempts = 0;
+		if (playercompanion == true) {
+			attempts = 5;
+		}
+		else {
+			attempts = 3;
+		}
+		int totalScore = 0;
+		cout << "Welcome to the Gemstone Mining Minigame!" << endl;
+		cout << "You have " << attempts << " attempts to mine for gemstones." << endl;
 
+		for (int i = 0; i < attempts; ++i) {
+			cout << "\nAttempt " << i + 1 << endl;
+			cout << "Choose your mining tool:" << endl;
+			cout << "1. Pickaxe" << endl;
+			cout << "2. Chisel" << endl;
+			cout << "3. Hammer" << endl;
+
+			int choice;
+			cin >> choice;
+			int roll = r() % 5 + 1;
+
+			switch (choice) {
+			case 1:
+				if (roll >= 4) {
+					cout << "You found a ruby! Worth 50 goldloom." << endl;
+					totalScore += 50;
+				}
+				else {
+					cout << "You found nothing valuable." << endl;
+				}
+				break;
+			case 2:
+				if (roll >= 3) {
+					cout << "You found an emerald! Worth 40 goldloom." << endl;
+					totalScore += 40;
+				}
+				else {
+					cout << "You found nothing valuable." << endl;
+				}
+				break;
+			case 3:
+				if (roll >= 2) {
+					cout << "You found a sapphire! Worth 30 goldloom." << endl;
+					totalScore += 30;
+				}
+				else {
+					cout << "You found nothing valuable." << endl;
+				}
+				break;
+			default:
+				cout << "Invalid choice!" << endl;
+				break;
+			}
+		}
+
+		cout << "\nYou made it out with: " << totalScore << " goldloom." << endl << endl;
+		Goldloom += totalScore;
+	}
 	void ResetKnight() {
 		health = 25;
 		attackPower = 4;

@@ -7,7 +7,7 @@ int endlessSpawn = 1, randomevent = 0, villagetracker = 0, chest = 0;
 bool disableGeneration = false;
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
 	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefense = 30, endlesslevel = levele, endlessmaxhealth;
-	if (Knight.difficulty <= 3) {
+	if (Knight.difficulty <= 2) {
 		xtracker = ceil(xtracker / 2);
 		x = xtracker;
 		endlesshealth = endlesshealth + (10 * x);
@@ -16,20 +16,29 @@ Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int lev
 		endlessmaxhealth = endlesshealth;
 		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefense, endlesslevel, 1, endlessmaxhealth);
 	}
+	else if (Knight.difficulty == 3) {
+		xtracker = ceil(xtracker / 2);
+		x = xtracker;
+		endlesshealth = endlesshealth + (12 * x);
+		endlessattack = endlessattack + (5 * x);
+		endlessdefense = endlessdefense + (4 * x);
+		endlessmaxhealth = endlesshealth;
+		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefense, endlesslevel, 1, endlessmaxhealth);
+	}
 	else if (Knight.difficulty == 4) {
 		xtracker = ceil(xtracker / 2);
 		x = xtracker;
 		endlesshealth = endlesshealth + (15 * x);
-		endlessattack = endlessattack + (5 * x);
-		endlessdefense = endlessdefense + (4 * x);
+		endlessattack = endlessattack + (6 * x);
+		endlessdefense = endlessdefense + (5 * x);
 		endlessmaxhealth = endlesshealth;
 		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefense, endlesslevel, 1, endlessmaxhealth);
 	}
 	else if (Knight.difficulty == 5) {
 		x = xtracker;
 		endlesshealth = endlesshealth + (15 * x);
-		endlessattack = endlessattack + (5 * x);
-		endlessdefense = endlessdefense + (4 * x);
+		endlessattack = endlessattack + (6 * x);
+		endlessdefense = endlessdefense + (5 * x);
 		endlessmaxhealth = endlesshealth;
 		return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefense, endlesslevel, 1, endlessmaxhealth);
 	}
@@ -83,7 +92,7 @@ Enemy* generateEnemy(int baselevel, int hp, int atk, int def, int level, int liv
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
 		generateEndlessEnemy(Knight.baselevel, Knight.health, Knight.attackPower, Knight.defense, Knight.level, Knight.lives, Knight.getclass());
 	}
-	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
+	if (Knight.endlessmode == true && Knight.getkills() > 200 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp = ceil(hp * 1.25);
 			enemyatk = ceil(def * 2);
@@ -196,7 +205,7 @@ Enemy* generateEnemy2(int baselevel2, int hp2, int atk2, int def2, int level2, i
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
 		generateEndlessEnemy(Knight.baselevel, Knight.health, Knight.attackPower, Knight.defense, Knight.level, Knight.lives, Knight.getclass());
 	}
-	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
+	if (Knight.endlessmode == true && Knight.getkills() > 200 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp2 = ceil(hp2 * 1.25);
 			enemyatk2 = ceil(def2 * 2);
@@ -309,7 +318,7 @@ Enemy* generateEnemy3(int baselevel3, int hp3, int atk3, int def3, int level3, i
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
 		generateEndlessEnemy(Knight.baselevel, Knight.health, Knight.attackPower, Knight.defense, Knight.level, Knight.lives, Knight.getclass());
 	}
-	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
+	if (Knight.endlessmode == true && Knight.getkills() > 200 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp3 = ceil(hp3 * 1.25);
 			enemyatk3 = ceil(def3 * 2);
@@ -422,7 +431,7 @@ Enemy* generateEnemy4(int baselevel4, int hp4, int atk4, int def4, int level4, i
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
 		generateEndlessEnemy(Knight.baselevel, Knight.health, Knight.attackPower, Knight.defense, Knight.level, Knight.lives, Knight.getclass());
 	}
-	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
+	if (Knight.endlessmode == true && Knight.getkills() > 200 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp4 = ceil(hp4 * 1.25);
 			enemyatk4 = ceil(def4 * 2);
@@ -535,7 +544,7 @@ Enemy* generateEnemy5(int baselevel5, int hp5, int atk5, int def5, int level5, i
 	if (Knight.endlessmode == true && Knight.getkills() > 250 && Knight.getkills() % 50 != 0) {
 		generateEndlessEnemy(Knight.baselevel, Knight.health, Knight.attackPower, Knight.defense, Knight.level, Knight.lives, Knight.getclass());
 	}
-	if (Knight.endlessmode == true && Knight.getkills() > 50 && Knight.getkills() != 200) {
+	if (Knight.endlessmode == true && Knight.getkills() > 200 && Knight.getkills() != 200) {
 		if (Knight.getkills() % 50 == 0) {
 			enemyhp5 = ceil(hp5 * 1.25);
 			enemyatk5 = ceil(def5 * 2);
