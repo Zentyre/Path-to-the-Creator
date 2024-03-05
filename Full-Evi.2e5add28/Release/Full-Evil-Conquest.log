@@ -51,8 +51,14 @@ C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(1911,30): warning C4244
 C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(2095,24): warning C4553: '==': result of expression not used; did you intend '='?
 C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(2100,21): warning C4553: '==': result of expression not used; did you intend '='?
   Generating code
-  1 of 340 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(37): warning C4715: 'generateEndlessEnemy': not all control paths return a value
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(602): warning C4715: 'generateEnemy5': not all control paths return a value
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(489): warning C4715: 'generateEnemy4': not all control paths return a value
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(376): warning C4715: 'generateEnemy3': not all control paths return a value
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(263): warning C4715: 'generateEnemy2': not all control paths return a value
+C:\Users\drago\source\repos\Path-to-the-Creator\main.cpp(150): warning C4715: 'generateEnemy': not all control paths return a value
+  10 of 340 functions ( 2.9%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+    8 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Full-Evil-Conquest.vcxproj -> C:\Users\drago\source\repos\Path-to-the-Creator\Release\Full-Evil-Conquest.exe
