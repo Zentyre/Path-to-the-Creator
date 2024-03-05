@@ -7,11 +7,11 @@ int endlessSpawn = 1, randomevent = 0, villagetracker = 0, chest = 0;
 bool disableGeneration = false;
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
 	int x = 1, xtracker = (baselevele - 250), endlesshealth = 500, endlessattack = 50, endlessdefense = 30, endlesslevel = levele, endlessmaxhealth;
-	xtracker = floor(xtracker / 10);
+	xtracker = ceil(xtracker / 2);
 	x = xtracker;
-	endlesshealth = endlesshealth + (12 * x);
-	endlessattack = endlessattack + (4 * x);
-	endlessdefense = endlessdefense + (3 * x);
+	endlesshealth = endlesshealth + (15 * x);
+	endlessattack = endlessattack + (5 * x);
+	endlessdefense = endlessdefense + (4 * x);
 	endlessmaxhealth = endlesshealth;
 	return new Enemy("Endless Enemy", endlesshealth, endlessattack, endlessdefense, endlesslevel, 1, endlessmaxhealth);
 	endlessSpawn = 0;
