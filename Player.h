@@ -24,7 +24,7 @@ public:
 			}
 		}
 	}
-	int incrementvillage(int amount) {
+	int incrementvillage(int amount) const {
 		return villagetracker + amount;
 	}
 	int generateRandom(int min, int max) {

@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "..//Steam/steam_api.h"
-Player Knight("Player", 500, 500, 500, 500, 500, 1);
+Player Knight("Player", 50, 25, 4, 0, 0, 1);
 int endlessSpawn = 1, randomevent = 0, villagetracker = 0, chest = 0;
 bool disableGeneration = false;
 Enemy* generateEndlessEnemy(int baselevele, int hpe, int atke, int defe, int levele, int livese, int playerclasse) {
