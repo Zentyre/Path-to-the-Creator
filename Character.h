@@ -42,7 +42,7 @@ public:
 	int incrementkills();
 	int getkills();
 	int getmaxhealth();
-	void stringUppercaseFaction();
+	void capitalizeFirstLetterOfEveryWord(std::string& inputString);
 	int maxhealthtracker = 0;
 	int classtype = 1;
 	int invisibilitypotion = 0;

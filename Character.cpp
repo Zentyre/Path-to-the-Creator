@@ -13,11 +13,18 @@ Character::Character() {
 	defense = 0;
 	baselevel = 0;
 }
-void Character::stringUppercaseFaction() {
-	factionchoice[0] = std::toupper(factionchoice[0]);
-	size_t pos = factionchoice.find(' ');
-	if (pos != std::string::npos && pos + 1 < factionchoice.length())
-		factionchoice[pos + 1] = std::toupper(factionchoice[pos + 1]);
+void Character::capitalizeFirstLetterOfEveryWord(std::string& inputString) {
+	bool capitalizeNext = true;
+
+	for (char& c : inputString) {
+		if (std::isspace(c)) {
+			capitalizeNext = true;
+		}
+		else if (capitalizeNext) {
+			c = std::toupper(c);
+			capitalizeNext = false;
+		}
+	}
 }
 int Character::getclass() {
 	return classtype;

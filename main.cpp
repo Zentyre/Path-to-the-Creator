@@ -1148,25 +1148,25 @@ static void gameplay() {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Shadowborn Syndicate. Welcome to the land of no return." << endl;
 							Knight.factionchoiceint = 1;
-							Knight.stringUppercaseFaction();
+							Knight.capitalizeFirstLetterOfEveryWord(Knight.factionchoice);
 						}
 						else if (Knight.factionchoice == "emberfall covenant") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Emberfall Covenant! Good luck on your journey to wield the ancient flames." << endl;
 							Knight.factionchoiceint = 2;
-							Knight.stringUppercaseFaction();
+							Knight.capitalizeFirstLetterOfEveryWord(Knight.factionchoice);
 						}
 						else if (Knight.factionchoice == "celestial vanguard") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Celestial Vanguard! I hope you will find the light in this darkness." << endl;
 							Knight.factionchoiceint = 3;
-							Knight.stringUppercaseFaction();
+							Knight.capitalizeFirstLetterOfEveryWord(Knight.factionchoice);
 						}
 						else if (Knight.factionchoice == "ironclad dominion") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Ironclad Dominion. I wish you well, becoming the best." << endl;
 							Knight.factionchoiceint = 4;
-							Knight.stringUppercaseFaction();
+							Knight.capitalizeFirstLetterOfEveryWord(Knight.factionchoice);
 						}
 					}
 					if (Knight.killememiesquest == true) {
@@ -1279,7 +1279,7 @@ static void gameplay() {
 					}
 					chest = r() % 100 + 1;
 					if (chest == 1) {
-						Knight.pins = 3;         // Number of pins in the lock
+						Knight.pins = 4;         // Number of pins in the lock
 						Knight.minRange = 1;     // Minimum value for each pin
 						Knight.maxRange = 2;     // Maximum value for each pin
 						Knight.attempts = 3;     // Number of attempts
@@ -1949,25 +1949,25 @@ static void gameplay() {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Shadowborn Syndicate. Welcome to the land of no return." << endl;
 							Knight.factionchoiceint = 1;
-							Knight.stringUppercaseFaction();
+							Knight.capitalizeFirstLetterOfEveryWord(Knight.factionchoice);
 						}
 						else if (Knight.factionchoice == "emberfall covenant") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Emberfall Covenant! Good luck on your journey to wield the ancient flames." << endl;
 							Knight.factionchoiceint = 2;
-							Knight.stringUppercaseFaction();
+							Knight.capitalizeFirstLetterOfEveryWord(Knight.factionchoice);
 						}
 						else if (Knight.factionchoice == "celestial vanguard") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Celestial Vanguard! I hope you will find the light in this darkness." << endl;
 							Knight.factionchoiceint = 3;
-							Knight.stringUppercaseFaction();
+							Knight.capitalizeFirstLetterOfEveryWord(Knight.factionchoice);
 						}
 						else if (Knight.factionchoice == "ironclad dominion") {
 							cout << "-----------------------------------------------" << endl;
 							cout << "You chose the Ironclad Dominion. I wish you well, becoming the best." << endl;
 							Knight.factionchoiceint = 4;
-							Knight.stringUppercaseFaction();
+							Knight.capitalizeFirstLetterOfEveryWord(Knight.factionchoice);
 						}
 					}
 					if (Knight.killememiesquest == true) {
@@ -2166,7 +2166,7 @@ static void gameplay() {
 						}
 						chest = r() % 100 + 1;
 						if (chest == 1) {
-							Knight.pins = 3;         // Number of pins in the lock
+							Knight.pins = 4;         // Number of pins in the lock
 							Knight.minRange = 1;     // Minimum value for each pin
 							Knight.maxRange = 2;     // Maximum value for each pin
 							Knight.attempts = 3;     // Number of attempts

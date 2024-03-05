@@ -40,6 +40,13 @@ public:
 		cout << "You encounter a locked chest. To open it, you must pick the lock." << endl;
 		cout << "The lock has " << pins << " pins. Each pin requires a number between " << minRange << " and " << maxRange << "." << endl;
 
+		if (playercompanion == true) {
+			cout << "Your companion revealed the first 2 pins! The lock combination so far is: ";
+			for (int i = 0; i < 2; ++i) {
+				cout << lockCombination[i] << " ";
+			}
+		}
+
 		for (int attempt = 1; attempt <= attempts; ++attempt) {
 			cout << "Attempt " << attempt << "/" << attempts << ": Enter your guesses, separated by spaces: ";
 
@@ -75,11 +82,11 @@ public:
 				cout << "You got " << itemgive << " radiant gems" << endl;
 				break;
 			}
-			else if (attempts > 0) {
+			else if (attempt <= 2) {
 				cout << "Incorrect combination. Try again." << endl;
 			}
 			else {
-				cout << "You failed to pick the lock." << endl;
+				cout << "You failed to pick the lock." << endl << endl;
 			}
 		}
 	}
